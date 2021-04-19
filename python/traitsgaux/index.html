@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Categories - Cours info TSI</title>
+    <title>Traits généraux - Cours info TSI</title>
     
 
     
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/python/traitsgaux/">
     <nav id="sidebar" class="">
 
 
@@ -94,7 +94,7 @@
   
     
     <li data-nav-id="/python/" title="Python" class="dd-item
-        
+        parent
         
         
         ">
@@ -120,7 +120,7 @@
  
   
     
-      <li data-nav-id="/python/traitsgaux/" title="Traits généraux" class="dd-item ">
+      <li data-nav-id="/python/traitsgaux/" title="Traits généraux" class="dd-item active">
         <a href="/python/traitsgaux/">
         Traits généraux
         
@@ -263,14 +263,28 @@
                   <span class="links">
                  
                  
-                   Categories
+                   Traits généraux
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#typage-dynamique">Typage dynamique</a></li>
+    <li><a href="#principe-dindentation">Principe d&rsquo;indentation</a></li>
+    <li><a href="#portée-lexicale">Portée lexicale</a></li>
+    <li><a href="#appel-de-fonction-par-valeur">Appel de fonction par valeur</a></li>
+    <li><a href="#draft-true"><code>valeur de 'a' dans le programme principal avant l'appel de la fonction : 2</code><br>
+<code>valeur de 'a' au début de la fonction : 2</code><br>
+<code>valeur de 'a' à la fin de la fonction : 4</code><br>
+<code>valeur de 'a' dans le programme principal après l'appel de la fonction : 2</code>&mdash;
+title: &ldquo;Traitsgaux&rdquo;
+date: 2021-04-19T04:12:25+02:00
+draft: true</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -288,15 +302,36 @@
         
 
 
+<h1 id="traits-généraux">Traits généraux</h1>
+<h2 id="typage-dynamique">Typage dynamique</h2>
+<h2 id="principe-dindentation">Principe d&rsquo;indentation</h2>
+<h2 id="portée-lexicale">Portée lexicale</h2>
+<h2 id="appel-de-fonction-par-valeur">Appel de fonction par valeur</h2>
+<p>Lors de l&rsquo;appel d&rsquo;une fonction, les arguments sont copiés et la fonction travaille alors uniquement sur cette copie. Cette copie disparaît lors du retour au programme appelant. Cela implique en particulier que, si la fonction modifie la valeur d&rsquo;un de ses arguments, seule la copie sera modifiée ; la variable du programme appelant, elle, ne sera pas modifiée. On dit que les arguments d&rsquo;une fonction sont transmis <strong>par valeurs</strong>.</p>
+
+<div class="notices note" ><p>Dans le langage Java, la modification d&rsquo;une variable passée en argument d&rsquo;une fonction par la fonction elle-même modifie aussi la variable en dehors de la fonction. On dit alors que les arguments sont transmis par référence.</p>
+</div>
+
+<p>Exemple :</p>
+<pre><code>def foo(a) :
+    print(&quot;valeur de 'a' au début de la fonction :&quot;,a)
+    a = a*2
+    print(&quot;valeur de 'a' à la fin de la fonction :&quot;,a)
+
+a = 2
+print(&quot;valeur de 'a' dans le programme principal avant l'appel de la fonction :&quot;,a)
+foo(a)
+print(&quot;valeur de 'a' dans le programme principal après l'appel de la fonction :&quot;,a)
+</code></pre><h2 id="draft-true"><code>valeur de 'a' dans le programme principal avant l'appel de la fonction : 2</code><br>
+<code>valeur de 'a' au début de la fonction : 2</code><br>
+<code>valeur de 'a' à la fin de la fonction : 4</code><br>
+<code>valeur de 'a' dans le programme principal après l'appel de la fonction : 2</code>&mdash;
+title: &ldquo;Traitsgaux&rdquo;
+date: 2021-04-19T04:12:25+02:00
+draft: true</h2>
 
 
-
-<ul>
-	
-</ul>
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -331,8 +366,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -346,6 +379,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -362,6 +396,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -462,3 +499,4 @@
 
   </body>
 </html>
+

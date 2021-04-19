@@ -7,5 +7,50 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
     <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate><atom:link href="http://example.org/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Traits généraux</title>
+      <link>http://example.org/python/traitsgaux/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/python/traitsgaux/</guid>
+      <description>Traits généraux Typage dynamique Principe d&amp;rsquo;indentation Portée lexicale Appel de fonction par valeur Lors de l&amp;rsquo;appel d&amp;rsquo;une fonction, les arguments sont copiés et la fonction travaille alors uniquement sur cette copie. Cette copie disparaît lors du retour au programme appelant. Cela implique en particulier que, si la fonction modifie la valeur d&amp;rsquo;un de ses arguments, seule la copie sera modifiée ; la variable du programme appelant, elle, ne sera pas modifiée.</description>
+    </item>
+    
+    <item>
+      <title>Types de base</title>
+      <link>http://example.org/python/typesbase/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/python/typesbase/</guid>
+      <description>Types de base Opérations sur les entiers (int) Opérations sur les flottants (float) Opérations sur les booléens (bool) Comparaisons </description>
+    </item>
+    
+    <item>
+      <title>Types structurés</title>
+      <link>http://example.org/python/typesstruct/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/python/typesstruct/</guid>
+      <description>Types structurés Structures indicées immuables (chaînes, tuples) Listes Dictionnaires </description>
+    </item>
+    
+    <item>
+      <title>Strucutres de contrôle</title>
+      <link>http://example.org/python/structcontr/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/python/structcontr/</guid>
+      <description>Strucutres de contrôle Instruction d&amp;rsquo;affectation Instuction conditionnelle Boucle while Boucle for Définition d&amp;rsquo;une donction </description>
+    </item>
+    
+    <item>
+      <title>Divers</title>
+      <link>http://example.org/python/divers/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/python/divers/</guid>
+      <description>Divers Commentaires Utilisation de print Importation de modules Manipulation de fichier texte Assertion </description>
+    </item>
+    
   </channel>
 </rss>
