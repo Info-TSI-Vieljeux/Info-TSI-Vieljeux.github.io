@@ -12,22 +12,22 @@
     
 
     
-    <link href="/css/nucleus.css?1618799709" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1618799709" rel="stylesheet">
-    <link href="/css/hybrid.css?1618799709" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1618799709" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1618799709" rel="stylesheet">
-    <link href="/css/auto-complete.css?1618799709" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1618799709" rel="stylesheet">
-    <link href="/css/theme.css?1618799709" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1618799709" rel="stylesheet">
+    <link href="/css/nucleus.css?1618801312" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1618801312" rel="stylesheet">
+    <link href="/css/hybrid.css?1618801312" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1618801312" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1618801312" rel="stylesheet">
+    <link href="/css/auto-complete.css?1618801312" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1618801312" rel="stylesheet">
+    <link href="/css/theme.css?1618801312" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1618801312" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1618799709" rel="stylesheet">
+    <link href="/css/theme-green.css?1618801312" rel="stylesheet">
     
-    <link href="/css/foo.css?1618799709" rel="stylesheet"><link href="/css/bar.css?1618799709" rel="stylesheet">
+    <link href="/css/foo.css?1618801312" rel="stylesheet"><link href="/css/bar.css?1618801312" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1618799709"></script>
+    <script src="/js/jquery-3.3.1.min.js?1618801312"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -67,14 +67,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1618799709"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1618799709"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1618801312"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1618801312"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1618799709"></script>
+<script type="text/javascript" src="/js/search.js?1618801312"></script>
 
     
   </div>
@@ -276,13 +276,6 @@
     <li><a href="#principe-dindentation">Principe d&rsquo;indentation</a></li>
     <li><a href="#portée-lexicale">Portée lexicale</a></li>
     <li><a href="#appel-de-fonction-par-valeur">Appel de fonction par valeur</a></li>
-    <li><a href="#draft-true"><code>valeur de 'a' dans le programme principal avant l'appel de la fonction : 2</code><br>
-<code>valeur de 'a' au début de la fonction : 2</code><br>
-<code>valeur de 'a' à la fin de la fonction : 4</code><br>
-<code>valeur de 'a' dans le programme principal après l'appel de la fonction : 2</code>&mdash;
-title: &ldquo;Traitsgaux&rdquo;
-date: 2021-04-19T04:12:25+02:00
-draft: true</a></li>
   </ul>
 </nav>
     </div>
@@ -307,11 +300,10 @@ draft: true</a></li>
 <h2 id="principe-dindentation">Principe d&rsquo;indentation</h2>
 <h2 id="portée-lexicale">Portée lexicale</h2>
 <h2 id="appel-de-fonction-par-valeur">Appel de fonction par valeur</h2>
-<p>Lors de l&rsquo;appel d&rsquo;une fonction, les arguments sont copiés et la fonction travaille alors uniquement sur cette copie. Cette copie disparaît lors du retour au programme appelant. Cela implique en particulier que, si la fonction modifie la valeur d&rsquo;un de ses arguments, seule la copie sera modifiée ; la variable du programme appelant, elle, ne sera pas modifiée. On dit que les arguments d&rsquo;une fonction sont transmis <strong>par valeurs</strong>.</p>
-
-<div class="notices note" ><p>Dans le langage Java, la modification d&rsquo;une variable passée en argument d&rsquo;une fonction par la fonction elle-même modifie aussi la variable en dehors de la fonction. On dit alors que les arguments sont transmis par référence.</p>
-</div>
-
+<p>Lors de l&rsquo;appel d&rsquo;une fonction, les arguments sont copiés et la fonction travaille alors uniquement sur cette copie.<br>
+La copie disparaît lors du retour au programme principal.<br>
+Si la fonction modifie la valeur d&rsquo;un de ses arguments, seule la copie sera modifiée, pas la variable du programme principal.<br>
+On dit que les arguments d&rsquo;une fonction sont transmis <strong>par valeurs</strong> (par contraste avec la transmission par référence comme dans le langage Java où une modification de l&rsquo;argument dans la fonction se répercute dans le programme principal).</p>
 <p>Exemple :</p>
 <pre><code>def foo(a) :
     print(&quot;valeur de 'a' au début de la fonction :&quot;,a)
@@ -322,13 +314,10 @@ a = 2
 print(&quot;valeur de 'a' dans le programme principal avant l'appel de la fonction :&quot;,a)
 foo(a)
 print(&quot;valeur de 'a' dans le programme principal après l'appel de la fonction :&quot;,a)
-</code></pre><h2 id="draft-true"><code>valeur de 'a' dans le programme principal avant l'appel de la fonction : 2</code><br>
-<code>valeur de 'a' au début de la fonction : 2</code><br>
-<code>valeur de 'a' à la fin de la fonction : 4</code><br>
-<code>valeur de 'a' dans le programme principal après l'appel de la fonction : 2</code>&mdash;
-title: &ldquo;Traitsgaux&rdquo;
-date: 2021-04-19T04:12:25+02:00
-draft: true</h2>
+</code></pre><p><code>valeur de 'a' dans le programme principal avant l'appel de la fonction : ...</code><br>
+<code>valeur de 'a' au début de la fonction : ...</code><br>
+<code>valeur de 'a' à la fin de la fonction : ...</code><br>
+<code>valeur de 'a' dans le programme principal après l'appel de la fonction : ...</code></p>
 
 
 <footer class="footline">
@@ -477,19 +466,19 @@ draft: true</h2>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1618799709"></script>
-    <script src="/js/perfect-scrollbar.min.js?1618799709"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1618799709"></script>
-    <script src="/js/jquery.sticky.js?1618799709"></script>
-    <script src="/js/featherlight.min.js?1618799709"></script>
-    <script src="/js/highlight.pack.js?1618799709"></script>
+    <script src="/js/clipboard.min.js?1618801312"></script>
+    <script src="/js/perfect-scrollbar.min.js?1618801312"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1618801312"></script>
+    <script src="/js/jquery.sticky.js?1618801312"></script>
+    <script src="/js/featherlight.min.js?1618801312"></script>
+    <script src="/js/highlight.pack.js?1618801312"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1618799709"></script>
-    <script src="/js/learn.js?1618799709"></script>
-    <script src="/js/hugo-learn.js?1618799709"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1618801312"></script>
+    <script src="/js/learn.js?1618801312"></script>
+    <script src="/js/hugo-learn.js?1618801312"></script>
     
         
-            <script src="/mermaid/mermaid.js?1618799709"></script>
+            <script src="/mermaid/mermaid.js?1618801312"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -13,7 +13,10 @@
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/python/traitsgaux/</guid>
-      <description>Traits généraux Typage dynamique Principe d&amp;rsquo;indentation Portée lexicale Appel de fonction par valeur Lors de l&amp;rsquo;appel d&amp;rsquo;une fonction, les arguments sont copiés et la fonction travaille alors uniquement sur cette copie. Cette copie disparaît lors du retour au programme appelant. Cela implique en particulier que, si la fonction modifie la valeur d&amp;rsquo;un de ses arguments, seule la copie sera modifiée ; la variable du programme appelant, elle, ne sera pas modifiée.</description>
+      <description>Traits généraux Typage dynamique Principe d&amp;rsquo;indentation Portée lexicale Appel de fonction par valeur Lors de l&amp;rsquo;appel d&amp;rsquo;une fonction, les arguments sont copiés et la fonction travaille alors uniquement sur cette copie.
+La copie disparaît lors du retour au programme principal.
+Si la fonction modifie la valeur d&amp;rsquo;un de ses arguments, seule la copie sera modifiée, pas la variable du programme principal.
+On dit que les arguments d&amp;rsquo;une fonction sont transmis par valeurs (par contraste avec la transmission par référence comme dans le langage Java où une modification de l&amp;rsquo;argument dans la fonction se répercute dans le programme principal).</description>
     </item>
     
     <item>
