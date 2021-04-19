@@ -512,14 +512,14 @@ div.notices.info p {
     background: #FFF2DB;
 }
 div.notices.info p:first-child:after {
-    content: 'Important';
+    content: 'Info';
 }
 div.notices.warning p {
     border-top: 30px solid rgba(217, 83, 79, 0.8);
     background: #FAE2E2;
 }
 div.notices.warning p:first-child:after {
-    content: 'Attention';
+    content: 'Warning';
 }
 div.notices.note p {
     border-top: 30px solid #6AB0DE;
@@ -533,7 +533,7 @@ div.notices.tip p {
     background: #E6F9E6;
 }
 div.notices.tip p:first-child:after {
-    content: 'Conseil';
+    content: 'Tip';
 }
 
 /* attachments shortcode */

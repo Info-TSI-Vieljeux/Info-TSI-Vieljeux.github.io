@@ -3,67 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://cordier-info.github.io/cours_python/cours1/</loc>
+    <loc>http://example.org/python/</loc>
+    <lastmod>2021-03-06T14:20:50+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cordier-info.github.io/tp_python/tp2/</loc>
+    <loc>http://example.org/</loc>
+    <lastmod>2021-03-06T14:20:50+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cordier-info.github.io/cours_python/cours2/</loc>
+    <loc>http://example.org/categories/</loc>
   </url>
   
   <url>
-    <loc>https://cordier-info.github.io/tp_python/tp3/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/cours_python/cours3/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/tp_python/tp4/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/cours_python/cours4/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/tp_python/tp5/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/cours_python/cours5/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/tp_python/tp6/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/cours_python/cours6/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/cours_python/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cordier-info.github.io/tp_python/</loc>
+    <loc>http://example.org/tags/</loc>
   </url>
   
 </urlset>
