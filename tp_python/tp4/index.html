@@ -8,7 +8,7 @@
 <meta name="author" content="Cordier-Info">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Tags - Cours Python</title>
+    <title>TP4 : Structures de contrôle - Cours Python</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -62,7 +62,7 @@ onload='renderMathInElement(document.body);'></script>
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/tp_python/tp4/">
     <nav id="sidebar" class="">
 
 
@@ -283,7 +283,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/tp_python/" title="TP Python" class="dd-item
-        
+        parent
         
         
         ">
@@ -351,7 +351,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/tp_python/tp4/" title="TP4 : Structures de contrôle" class="dd-item ">
+      <li data-nav-id="/tp_python/tp4/" title="TP4 : Structures de contrôle" class="dd-item active">
         <a href="/tp_python/tp4/">
         TP4 : Structures de contrôle
         
@@ -452,14 +452,26 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Tags
+                   TP4 : Structures de contrôle
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#exercice-0">Exercice 0</a></li>
+    <li><a href="#exercice-1">Exercice 1</a></li>
+    <li><a href="#exercice-2">Exercice 2</a></li>
+    <li><a href="#exercice-3">Exercice 3</a></li>
+    <li><a href="#exercice-4">Exercice 4</a></li>
+    <li><a href="#exercice-5">Exercice 5</a></li>
+    <li><a href="#exercice-6">Exercice 6</a></li>
+    <li><a href="#exercice-7">Exercice 7</a></li>
+    <li><a href="#exercice-8">Exercice 8</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -477,15 +489,90 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-
-
-
+<h1 id="tp4--structures-de-contrôle">TP4 : Structures de contrôle</h1>
+<p><em>Lien vers le repository GitHub du TP : <a href="https://classroom.github.com/a/_smX5cgY">https://classroom.github.com/a/_smX5cgY</a></em></p>
+<h2 id="exercice-0">Exercice 0</h2>
+<p>Compléter le programme <code>exo_0.py</code> pour qu&rsquo;il ne cesse de demander le nom de l&rsquo;utilisateur tant que sa réponse ne fait pas partie de la liste de noms autorisés.<!-- raw HTML omitted --></p>
+<p> </p>
+<h2 id="exercice-1">Exercice 1</h2>
+<p>Le ROT13 (rotate by 13 places) est un cas particulier du chiffre de César, un algorithme simpliste de <strong>chiffrement</strong> de texte.<br>
+Comme son nom l’indique, il s’agit d’un décalage de 13 caractères de chaque lettre du texte à chiffrer. Son principal aspect pratique est que le codage et le décodage se font exactement de la même manière.</p>
+<p>Indications :</p>
 <ul>
-	
+<li>utiliser la chaîne de caractères &lsquo;abcdefghijklmnopqrstuvwxyz&rsquo;.</li>
+<li>l&rsquo;opérateur <code>in</code> ou la méthode <code>isalpha</code> permettront de savoir si un caractère est alphabétique.</li>
+<li>transformer le caractère (l&rsquo;opérateur <code>%</code> peut s&rsquo;avérer utile).</li>
+<li>les caractères accentués et les majuscules n&rsquo;ont pas été modifiés.</li>
 </ul>
+<p>Écrire un programme (dans <code>exo_1.py</code>) permettant de décoder l&rsquo;énoncé de l&rsquo;exercice 2.</p>
+<p> </p>
+<h2 id="exercice-2">Exercice 2</h2>
+<p>Épever ha cebtenzzr dhv genafsbezr ha grkgr qr znavèer à pr dhr yn cerzvèer rg yn qreavèer yrgger qr pundhr zbg erfgr vapunatér nybef dhr yrf yrggerf qr zvyvrh fbag zéynatérf nh unfneq. Ln cbapghngvba qbvg erfgre ra cynpr. Oa cbheen hgvyvfre yn sbapgvba enaqbz.fuhssyr() qh cnpxntr enaqbz dhv zéynatr yrf qvsséeragf éyézragf dh&rsquo;ba yhv qbaar ra nethzrag.</p>
+<p>Texte à modifier (voir <code>exo_2.py</code>) :</p>
+<blockquote>
+<p>On avale à pleine gorgée le mensonge qui nous flatte, et on boit goutte à goutte une vérité qui nous est amère.</p>
+</blockquote>
+<p>On pourra utiliser la fonction <code>random.shuffle()</code> du package random qui mélange les différents éléments qu&rsquo;on lui donne en argument en se rappelant que les chaînes de caractères sont immuables, il faut donc les transformer en listes (grâce à <code>list(chaîne)</code>) si on veut les modifier.</p>
+<p> </p>
+<h2 id="exercice-3">Exercice 3</h2>
+<p>Les alcanes linéaires sont les hydrocarbures de formule brute $C_nH_{2n+2}$ dont les carbones forment une chaîne linéaire.<br>
+Écrire (dans <code>exo_3.py</code>) un programme donnant la formule semi-développée d&rsquo;un tel alcane à partir d&rsquo;une formule brute.<br>
+Par exemple : si <code>brut = 'C4H10'</code> alors le programme doit afficher <code>CH3-CH2-CH2-CH3</code>.</p>
+<p> </p>
+<h2 id="exercice-4">Exercice 4</h2>
+<p>L&rsquo;algorithme de Luhn est une formule de <strong>somme de contrôle</strong> permettant de valider un numéro de carte bancaire.<br>
+On considère le numéro de carte comme une suite de nombres à 1 chiffre.</p>
+<ol>
+<li>Renverser la liste.</li>
+<li>Prendre tous les chiffres en position paire dans la liste renversée (2e chiffre, 4e chiffre, etc.) et doubler leur valeur,<br>
+si le résultat dépasse 10, on ajoute les deux chiffres du résultat (par exemple $6\rightarrow 12 \rightarrow 3$).</li>
+<li>Sommer tous les nombres de la nouvelle liste (les modifiés et les non-modifiés)</li>
+<li>Si cette somme vaut 0 modulo 10. Le numéro de carte est valide.</li>
+</ol>
+<p>Écrire (dans <code>exo_4.py</code>) un programme permettant de vérifier un numéro de carte.</p>
+<p><img src="/cb.jpg" alt=""></p>
+<h2 id="exercice-5">Exercice 5</h2>
+<p>Que fait ce programme et comment ? (Écrire votre réponse dans <code>exo_5.md</code>)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">nmax <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+x <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>]
+<span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, nmax<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>) :
+    <span style="color:#66d9ef">print</span>(x)
+    x <span style="color:#f92672">=</span> [([<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span>x)[i] <span style="color:#f92672">+</span> (x<span style="color:#f92672">+</span>[<span style="color:#ae81ff">0</span>])[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)]
+</code></pre></div><p> </p>
+<h2 id="exercice-6">Exercice 6</h2>
+<p>Dans la série &ldquo;The Wire&rdquo;, les dealers codent les numéros de téléphone en utilisant une méthode (&ldquo;jump the five&rdquo;) qui repose sur la disposition des touches sur le clavier.</p>
+<p>Chaque numéro (sauf le 5 et le 0) permute avec celui qui se trouve de l&rsquo;autre côté du 5. <!-- raw HTML omitted -->Le 5 et le 0 sont intervertis.</p>
+<p>Écrire (dans <code>exo_6.py</code>) un programme qui crypte et décrypte les numéros de téléphone.</p>
+<p>Crypter le numéro de Vieljeux : &ldquo;05 46 34 79 32‬&rdquo;.</p>
+<p><img src="/payphone.png?width=400" alt=""></p>
+<h2 id="exercice-7">Exercice 7</h2>
+<p>La <strong>distance de Hamming</strong> entre deux chaînes de caractères de même longueur est le nombre de positions où les caractères sont différents. C&rsquo;est une notion très importante en théorie du signal puisqu&rsquo;elle mesure la corruption d&rsquo;un message transmis.</p>
+<p>Écrire (dans <code>exo_7.py</code>) un programme pour calculer la distance de Hamming entre deux chaînes.</p>
+<p> </p>
+<h2 id="exercice-8">Exercice 8</h2>
+<p>La suite de Syracuse est une suite d&rsquo;entiers naturels définie de la manière suivante : <!-- raw HTML omitted -->on part d&rsquo;un nombre entier plus grand que zéro ;</p>
+<ul>
+<li>s’il est pair, on le divise par 2 ;</li>
+<li>s’il est impair, on le multiplie par 3 et on ajoute 1.</li>
+</ul>
+<p>En répétant l’opération, on obtient une suite d&rsquo;entiers positifs dont chacun ne dépend que de son prédécesseur.<!-- raw HTML omitted --></p>
+<p>Lorsque 1 est atteint, un cycle de longueur 3 se répète sans fin : 1, 4, 2, 1, 4, 2, 1,&hellip;</p>
+<p>On ajoute donc une nouvelle règle :</p>
+<ul>
+<li>si 1 est atteint, la suite s&rsquo;arrête.<!-- raw HTML omitted --></li>
+</ul>
+<ol>
+<li>Construire un programme qui calcule la suite de syracuse du nombre 27 (<code>exo_8a.py</code>).</li>
+<li>Appelons <em>temps de vol</em> le nombre de termes de la suite. Modifier le programme pour qu&rsquo;il donne le temps de vol plutôt que les différents termes (<code>exo_8b.py</code>).</li>
+</ol>
+<p>La conjecture de Syracuse (ou Collatz) dit que toutes les suites de Syracuse ont une fin.</p>
+<ol start="3">
+<li>Prouver que la conjecture est vérifiée pour tous les entiers inférieurs à 100 (<code>exo_8c.py</code>).</li>
+</ol>
+<p><img src="/collatz.png" alt=""></p>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -635,6 +722,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -647,6 +735,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -680,6 +771,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -695,6 +787,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -763,3 +858,4 @@ onload='renderMathInElement(document.body);'></script>
 
   </body>
 </html>
+

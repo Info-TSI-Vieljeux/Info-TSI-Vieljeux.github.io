@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TP Python on Cours Python</title>
+    <link>https://cordier-info.github.io/tp_python/</link>
+    <description>Recent content in TP Python on Cours Python</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://cordier-info.github.io/tp_python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TP2 : Bases et Chaînes</title>
+      <link>https://cordier-info.github.io/tp_python/tp2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cordier-info.github.io/tp_python/tp2/</guid>
+      <description>TP2 : Cours 1 et 2 Lien vers le repository GitHub du TP : https://classroom.github.com/a/Prcpdubn
+Exercice 1 Expliquer le résultat surprenant du code suivant dans exo_1.md :
+d = 8 e = 2 from math import * sqrt(d ** e) 16.88210319127114
+ Exercice 2 Combien de fois une feuille de papier d&amp;rsquo;épaisseur $e = 0,1$ mm doit-elle être pliée pour atteindre la Lune ?
+Écrire dans exo_2.py un script Python qui calcule et imprime la réponse sans utiliser de boucle.</description>
+    </item>
+    
+    <item>
+      <title>TP3 : Listes, Tuples et boucles</title>
+      <link>https://cordier-info.github.io/tp_python/tp3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cordier-info.github.io/tp_python/tp3/</guid>
+      <description>TP3 : Listes, tuples et boucles Lien vers le repository GitHub du TP : https://classroom.github.com/a/8UyWSW6k
+Exercice 1 Reproduire ces jolies règles de multiplication que l&amp;rsquo;on trouve dans le Talkhys, un traité d’arithmétique d’Ibn Albanna, mathématicien marocain de la première moitié du XIIIe siècle (code à écrire dans exo_1.py)
+ 1 × 1 = 1 11 × 11 = 121 111 × 111 = 12321 1111 × 1111 = 1234321 11111 × 11111 = 123454321 111111 × 111111 = 12345654321 1111111 × 1111111 = 1234567654321 11111111 × 11111111 = 123456787654321 111111111 × 111111111 = 12345678987654321   Exercice 2 Une liste peut être utilisée comme une représentation simple d&amp;rsquo;un polynôme, $P(x)$, où les éléments sont les coefficients des puissances de $x$ successives et les indices sont les puissances elles-mêmes.</description>
+    </item>
+    
+    <item>
+      <title>TP4 : Structures de contrôle</title>
+      <link>https://cordier-info.github.io/tp_python/tp4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cordier-info.github.io/tp_python/tp4/</guid>
+      <description>TP4 : Structures de contrôle Lien vers le repository GitHub du TP : https://classroom.github.com/a/_smX5cgY
+Exercice 0 Compléter le programme exo_0.py pour qu&amp;rsquo;il ne cesse de demander le nom de l&amp;rsquo;utilisateur tant que sa réponse ne fait pas partie de la liste de noms autorisés. Exercice 1 Le ROT13 (rotate by 13 places) est un cas particulier du chiffre de César, un algorithme simpliste de chiffrement de texte.
+Comme son nom l’indique, il s’agit d’un décalage de 13 caractères de chaque lettre du texte à chiffrer.</description>
+    </item>
+    
+    <item>
+      <title>TP5 : Fonctions et Fichiers</title>
+      <link>https://cordier-info.github.io/tp_python/tp5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cordier-info.github.io/tp_python/tp5/</guid>
+      <description>TP5 : Fonctions et Fichiers Lien vers le repository GitHub du TP : https://classroom.github.com/a/qRVUwdoz
+Exercice 1 Le code suivant essaye de calculer le solde d&amp;rsquo;un compte épargne ayant un taux d&amp;rsquo;intérêt de 5% et un solde initial de 100 € après quatre années.
+solde = 100 def ajoute_intérêt(solde,taux) : solde += solde * taux/100 for année in range(4) : ajoute_intérêt(100,5) print(&amp;#39;Solde après l\&amp;#39;année {} : {:.2f} €&amp;#39;.format(année+1,solde)) Solde après l&#39;année 1 : 100.</description>
+    </item>
+    
+    <item>
+      <title>TP6 : Projets</title>
+      <link>https://cordier-info.github.io/tp_python/tp6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cordier-info.github.io/tp_python/tp6/</guid>
+      <description>TP6 - Projets Lien vers le repository GitHub du TP : https://classroom.github.com/a/v7xsQyLB
+Projet 1 : Jeu de Nim Avec l&amp;rsquo;aide de la première partie de cette vidéo ou de toute autre source, découvrir l&amp;rsquo;algorithme de Bouton permettant de gagner au jeu de Nim. Construire ensuite un programme qui :
+ propose au joueur de construire le jeu de Nim qu&amp;rsquo;il souhaite (nombre de lignes et nombre de jetons par ligne), choisit de commencer ou non pour s&amp;rsquo;assurer une position gagnante (la machine doit gagner), laisse l&amp;rsquo;humain décider des jetons qu&amp;rsquo;il veut retirer (choix de la ligne, choix du nombre de jetons) lorsque c&amp;rsquo;est son tour puis joue de manière optimale lorsque c&amp;rsquo;est le tour de la machine… Jusqu&amp;rsquo;à gagner, affiche la disposition des jetons à chaque tour.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -8,7 +8,7 @@
 <meta name="author" content="Cordier-Info">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Tags - Cours Python</title>
+    <title>TP6 : Projets - Cours Python</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -62,7 +62,7 @@ onload='renderMathInElement(document.body);'></script>
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/tp_python/tp6/">
     <nav id="sidebar" class="">
 
 
@@ -283,7 +283,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/tp_python/" title="TP Python" class="dd-item
-        
+        parent
         
         
         ">
@@ -393,7 +393,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/tp_python/tp6/" title="TP6 : Projets" class="dd-item ">
+      <li data-nav-id="/tp_python/tp6/" title="TP6 : Projets" class="dd-item active">
         <a href="/tp_python/tp6/">
         TP6 : Projets
         
@@ -452,14 +452,28 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Tags
+                   TP6 : Projets
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#projet-1--jeu-de-nim">Projet 1 : Jeu de Nim</a></li>
+    <li><a href="#projet-2--compression">Projet 2 : Compression</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#première-mission-">Première mission :</a></li>
+            <li><a href="#deuxième-mission-">Deuxième mission :</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -477,15 +491,81 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-
-
-
+<h1 id="tp6---projets">TP6 - Projets</h1>
+<p><em>Lien vers le repository GitHub du TP : <a href="https://classroom.github.com/a/v7xsQyLB">https://classroom.github.com/a/v7xsQyLB</a></em></p>
+<h2 id="projet-1--jeu-de-nim">Projet 1 : Jeu de Nim</h2>
+<p>Avec l&rsquo;aide de la première partie de cette <a href="https://www.youtube.com/watch?v=2jahbr5wMHk">vidéo</a> ou de toute autre source, découvrir l&rsquo;algorithme de Bouton permettant de gagner au jeu de Nim.
+Construire ensuite un programme qui :</p>
 <ul>
-	
+<li>propose au joueur de construire le jeu de Nim qu&rsquo;il souhaite (nombre de lignes et nombre de jetons par ligne),</li>
+<li>choisit de commencer ou non pour s&rsquo;assurer une position gagnante (la machine doit gagner),</li>
+<li>laisse l&rsquo;humain décider des jetons qu&rsquo;il veut retirer (choix de la ligne, choix du nombre de jetons) lorsque c&rsquo;est son tour puis joue de manière optimale lorsque c&rsquo;est le tour de la machine…  Jusqu&rsquo;à gagner,</li>
+<li>affiche la disposition des jetons à chaque tour.</li>
 </ul>
+<p>Le corps du programme doit contenir (cf. <code>projet_1.py</code>) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python">nim <span style="color:#f92672">=</span> initialise()
+affiche(nim)
+<span style="color:#66d9ef">while</span> sum(nim) <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> :
+    ns <span style="color:#f92672">=</span> nim_somme(nim)
+    <span style="color:#66d9ef">if</span> ns <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> :
+        nim <span style="color:#f92672">=</span> tour_humain(nim)
+    <span style="color:#66d9ef">else</span> :
+        nim <span style="color:#f92672">=</span> tour_machine(nim,ns)
+    affiche(nim)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Vous avez perdu...</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><p>Reste à écrire les différentes fonctions&hellip;</p>
+<p><img src="/nimo.png" alt=""></p>
+<h2 id="projet-2--compression">Projet 2 : Compression</h2>
+<p>Les fichiers image <em>portable bitmap file format</em>  <code>.pbm</code> sont extrèmement simples. C&rsquo;est juste un texte ASCII qui comporte :</p>
+<ul>
+<li>un nombre magique indiquant le format : <code>P1</code></li>
+<li>la largeur $L$ et la hauteur $H$ de l&rsquo;image : <code>5 3</code> dans l&rsquo;exemple</li>
+<li>puis une suite de $L\times H$ (= 15 dans notre cas) 1 et 0 correspondants à des pixels noirs ou blancs.</li>
+</ul>
+<p>Le fichier <code>exemple.pbm</code> contient ainsi le texte :</p>
+<pre><code>P1
+5 6
+11111
+10101
+11111
+10101
+10001
+11111
+</code></pre><p>Et il ressemble à :</p>
+<p><img src="/exemple.png?width=400" alt=""></p>
+<p> </p>
+<h4 id="première-mission-">Première mission :</h4>
+<p>Vous allez écrire un programme dans <code>projet_2a.py</code> qui convertit l&rsquo;image jpeg couleur <code>Darwin.jpg</code> en fichier <code>.pbm</code>. Il faudra au préalable convertir chaque pixel de l&rsquo;image d&rsquo;origine en un pixel noir ou blanc (s&rsquo;inspirer du cours).</p>
+<p>Enregistrer le fichier créé sous le nom <code>imageNB.pbm</code> et le copier dans le repository.</p>
+<p>Certes, ce format est simple et universel mais il a le défaut de prendre beaucoup plus de place mémoire que nécessaire. La raison en est l&rsquo;utilisation de caractères texte pour encoder l&rsquo;information. Les caractères <code>&quot;1&quot;</code> et <code>&quot;0&quot;</code> par exemple utilisent 8 bits plutôt que 1.</p>
+<p>Mais l&rsquo;objectif est d&rsquo;aller plus loin que cette simple substitution en implémentant une réelle compression (quasi optimale) du fichier <code>imageNB.pbm</code> créé.</p>
+<p> </p>
+<h4 id="deuxième-mission-">Deuxième mission :</h4>
+<p>Commencer par lire  l'<a href="download/Tangente.pdf">article de Tangente</a> sur l'<strong>algorithme glouton</strong> et/ou regarder <a href="https://youtu.be/yrOj8XvroIE">cette vidéo</a>.</p>
+<p>Faire un premier programme <code>projet_2b.py</code> qui détermine les fréquences des différents caractères utilisés dans le fichier <code>imageNB.pbm</code> (<code>'0'</code>, <code>'1'</code>, <code>'P'</code>, <code>'7'</code>, <code>'9'</code>, <code>6</code>, <code>\n</code> et <code>' '</code>&hellip; Attention, le retour à la ligne et l&rsquo;espace sont des caractères comme les autres).</p>
+<p>Construire à la main l&rsquo;arbre de Huffman pour ces 8 caractères en suivant la méthode indiquée dans l&rsquo;article ou la vidéo et en déduire les 8 codes binaires qui remplaceront les 8 caractères dans le fichier compressé. Les noter dans le fichier <code>projet_2b.md</code>.</p>
+<p>Construire un programme <code>projet_2c.py</code> qui remplace chaque caractère du fichier à compresser par son code binaire puis qui écrit ce code binaire dans un fichier de données <code>imageNB_comp.dat</code>.<!-- raw HTML omitted -->Méthode pour écrire dans un fichier en binaire :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;imageNB_comp.dat&#39;</span>,<span style="color:#e6db74">&#39;wb&#39;</span>)
+<span style="color:#75715e"># s : chaîne de caractères obtenue en remplaçant chaque caractère</span>
+<span style="color:#75715e"># du fichier original par son code issu de l&#39;arbre</span>
+s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;1001110011...&#39;</span> 
+<span style="color:#75715e"># b est la transcription de ce code en bytes</span>
+b <span style="color:#f92672">=</span> bytes(int(s[i : i <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>], <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(s), <span style="color:#ae81ff">8</span>))
+<span style="color:#75715e"># puis on l&#39;écrit dans f</span>
+f<span style="color:#f92672">.</span>write(b)
+f<span style="color:#f92672">.</span>close()
+</code></pre></div><p>Comparer et commenter les tailles des fichiers <code>imageNB.pbm</code> et  <code>imageNB_comp.dat</code>. <!-- raw HTML omitted -->Comment se fait-il que le fichier jpeg de départ ait une taille comparable au fichier compressé alors qu&rsquo;il s&rsquo;agit d&rsquo;une image couleur (émettre une ou des  hypothèses) ? <!-- raw HTML omitted -->Vous noterez tout ça dans <code>projet_2c.md</code>.</p>
+<p>Enfin, écrire un programme <code>projet_2d.py</code> qui décompresse <code>imageNB_comp.dat</code> en un fichier  <code>imageNB_decomp.pbm</code> et vérifier à sa taille qu&rsquo;il n&rsquo;y a pas eu perte d&rsquo;information.</p>
+<p>Méthode pour lire un fichier en binaire et récupérer le résultat sous la forme d&rsquo;un chaîne de caractères constituée de <code>'1'</code> et de <code>'0'</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;imageNB_comp.dat&#39;</span>,<span style="color:#e6db74">&#39;rb&#39;</span>)
+code_bytes <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
+f<span style="color:#f92672">.</span>close()
+code_texte <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#66d9ef">for</span> b <span style="color:#f92672">in</span> code_bytes :
+    code_texte <span style="color:#f92672">+=</span> format(b,<span style="color:#e6db74">&#39;08b&#39;</span>) <span style="color:#75715e"># on obtient le texte codé (avec seulement des 1 et des 0)</span>
+</code></pre></div>
 
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -635,6 +715,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -647,6 +728,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -711,6 +795,7 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
                     
                 
                 
@@ -763,3 +848,4 @@ onload='renderMathInElement(document.body);'></script>
 
   </body>
 </html>
+

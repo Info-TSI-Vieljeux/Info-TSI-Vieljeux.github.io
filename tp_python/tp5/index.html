@@ -8,7 +8,7 @@
 <meta name="author" content="Cordier-Info">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Tags - Cours Python</title>
+    <title>TP5 : Fonctions et Fichiers - Cours Python</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -62,7 +62,7 @@ onload='renderMathInElement(document.body);'></script>
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/tp_python/tp5/">
     <nav id="sidebar" class="">
 
 
@@ -283,7 +283,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/tp_python/" title="TP Python" class="dd-item
-        
+        parent
         
         
         ">
@@ -372,7 +372,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/tp_python/tp5/" title="TP5 : Fonctions et Fichiers" class="dd-item ">
+      <li data-nav-id="/tp_python/tp5/" title="TP5 : Fonctions et Fichiers" class="dd-item active">
         <a href="/tp_python/tp5/">
         TP5 : Fonctions et Fichiers
         
@@ -452,14 +452,25 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Tags
+                   TP5 : Fonctions et Fichiers
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#exercice-1">Exercice 1</a></li>
+    <li><a href="#exercice-2">Exercice 2</a></li>
+    <li><a href="#exercice-3">Exercice 3</a></li>
+    <li><a href="#exercice-4">Exercice 4</a></li>
+    <li><a href="#exercice-5">Exercice 5</a></li>
+    <li><a href="#exercice-6">Exercice 6</a></li>
+    <li><a href="#exercice-7">Exercice 7</a></li>
+    <li><a href="#exercice-8">Exercice 8</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -477,15 +488,74 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-
-
-
+<h1 id="tp5--fonctions-et-fichiers">TP5 : Fonctions et Fichiers</h1>
+<p><em>Lien vers le repository GitHub du TP : <a href="https://classroom.github.com/a/qRVUwdoz">https://classroom.github.com/a/qRVUwdoz</a></em></p>
+<h2 id="exercice-1">Exercice 1</h2>
+<p>Le code suivant essaye de calculer le solde d&rsquo;un compte épargne ayant un taux d&rsquo;intérêt de 5% et un solde initial de 100 € après quatre années.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">solde <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ajoute_intérêt</span>(solde,taux) :
+    solde <span style="color:#f92672">+=</span> solde <span style="color:#f92672">*</span> taux<span style="color:#f92672">/</span><span style="color:#ae81ff">100</span>
+    
+<span style="color:#66d9ef">for</span> année <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">4</span>) :
+    ajoute_intérêt(<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">5</span>)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Solde après l</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">année {} : {:.2f} €&#39;</span><span style="color:#f92672">.</span>format(année<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,solde))
+</code></pre></div><pre><code>Solde après l'année 1 : 100.00 €
+Solde après l'année 2 : 100.00 €
+Solde après l'année 3 : 100.00 €
+Solde après l'année 4 : 100.00 €
+</code></pre>
+<p>Expliquer pourquoi cela ne marche pas et trouver une alternative (<code>exo_1.md</code> et <code>exo_1.py</code>)</p>
+<p>Question subsidiaire : dans Futurama, Fry a été cryogénisé alors qu&rsquo;il avait 93 cts sur son compte en banque. 1000 ans plus tard, il retourne dans sa banque. Combien lui ont rapporté les 2,25% d&rsquo;intérêt ?<!-- raw HTML omitted -->Faire afficher le résultat par <code>exo_1.py</code>.</p>
+<p><img src="/Fry.jpeg" alt=""></p>
+<h2 id="exercice-2">Exercice 2</h2>
+<p>La portée d&rsquo;un projectile lancé avec un angle $\alpha$ et une vitesse $v$ depuis le sol sur un terrain plat vaut (si on néglige les frottements, la courbure et la rotation de la Terre) :<!-- raw HTML omitted -->
+$d = \frac{v^2 \sin 2\alpha}{g}$<!-- raw HTML omitted -->
+où $g$ est la pesanteur ($g = 9,81\text{ m.s}^{-2}$).<!-- raw HTML omitted -->
+La hauteur maximale atteinte par le projectile (la flèche) est :<!-- raw HTML omitted -->
+$h = \frac{v^2 \sin ^2 \alpha}{2g}$</p>
+<p>Écrire dans <code>exo_2.py</code> une fonction qui renvoie la portée et la hauteur atteinte par un projectile en prenant $\alpha$ et $v$ en argument.
+Tester la fonction pour $\alpha = 30°$ et $v=10\text{ m.s}^{-1}$.</p>
+<p> </p>
+<h2 id="exercice-3">Exercice 3</h2>
+<p>Écrire dans <code>exo_3.py</code> deux fonctions prenant chacune en argument deux listes de trois nombres représentant les coordonnées de deux vecteurs et qui renvoient le <strong>produit scalaire</strong>
+et le <strong>produit vectoriel</strong> de ces deux vecteurs.</p>
+<p> </p>
+<h2 id="exercice-4">Exercice 4</h2>
+<p>Écrire dans <code>exo_4.py</code> un testeur de tautologie :</p>
 <ul>
-	
+<li>
+<p>Écrire d&rsquo;abord une fonction <code>rel_1(a,b)</code> (de signature <code>rel_1(bool,bool)</code>$\rightarrow$ <code>bool</code>) qui retourne $\neg(a\lor b)$ et une fonction <code>rel_2(a,b)</code> (de signature <code>rel_2(bool,bool)</code>$\rightarrow$ <code>bool</code>) qui retourne $\neg a \land \neg b$.</p>
+</li>
+<li>
+<p>Puis écrire une fonction <code>test_tauto(fct_1,fct_2)</code> (de signature <code>test_tauto(fonction,fonction)</code>$\rightarrow$ <code>bool</code>) qui teste si l&rsquo;équivalence matérielle (correspondant à l&rsquo;opérateur Python <code>==</code>) entre deux fonctions logiques (à deux entrées chacune) $\text{fct}_1(a,b)\leftrightarrow \text{fct}_2(a,b)$  est une tautologie (cela revient à déterminer si les deux fonctions sont d&rsquo;accord dans tous les cas possibles, donc si leurs tables de vérité sont les mêmes).<br>
+La fonction <code>test_tauto</code> prouve donc l&rsquo;équivalence logique entre les deux fonctions logiques : $\text{fct}_1\equiv \text{fct}_2$</p>
+</li>
+<li>
+<p>Prouvez alors la <strong>premiere loi de De Morgan</strong> : $\neg(a\lor b)\equiv \neg a\land\neg b$.</p>
+</li>
 </ul>
+<p>Petit cours sur l&rsquo;algèbre booléenne dans <a href="https://www.youtube.com/watch?v=_9nogCrIrIY">cette vidéo</a>.</p>
+<p> </p>
+<!-- raw HTML omitted -->
+<hr>
+<!-- raw HTML omitted -->
+<h2 id="exercice-5">Exercice 5</h2>
+<p>De nombreuses données scientifiques se présentent sous forme de tableaux ; une façon simple de les transmettre est de les représenter par un <strong>fichier CSV</strong> (pour comma-separated value) :
+il s’agit d’un simple fichier texte, chaque ligne de texte correspondant à une ligne du tableau et un caractère spécial (virgule ou point-virgule le plus souvent) aux séparations entre les colonnes.<!-- raw HTML omitted --></p>
+<p>Le fichier <!-- raw HTML omitted -->meteo.csv<!-- raw HTML omitted --> donne le cumul des précipitations (en mm) et l&rsquo;ensoleillement (en h) pour différentes villes pour l&rsquo;année 2018.<!-- raw HTML omitted -->Écrire dans <code>exo_5.py</code> un programme qui récupère les données et affiche les villes de la plus pluvieuse à la moins pluvieuse puis les villes de la plus ensoleillée à la moins ensoleillée.<!-- raw HTML omitted -->Attention, le séparateur décimal de ces données n&rsquo;est pas le point anglo-saxon (utilisé par Python) mais la virgule.
+Il faudra les remplacer par des points grâce à la méthode de chaine de caractères <code>.replace('ancien','nouveau')</code>. <!-- raw HTML omitted -->Le séparateur de colonne est, lui, le point-virgule.</p>
+<p> </p>
+<h2 id="exercice-6">Exercice 6</h2>
+<p>Compléter le programme <code>exo_6.py</code> pour que le fichier texte créé ( <code>samedi_censure.txt</code>) soit une copie censurée du texte dans <!-- raw HTML omitted -->samedi.txt<!-- raw HTML omitted --> ; les noms propres &ldquo;Françoise&rdquo;, &ldquo;Mirougrain&rdquo;, &ldquo;Eulalie&rdquo;, &ldquo;Octave&rdquo; et &ldquo;Legrandin&rdquo; devront être remplacés par des astérisques.<!-- raw HTML omitted -->Ajouter ensuite le texte censuré <code>samedi_censure.txt</code> au repository.</p>
+<p> </p>
+<h2 id="exercice-7">Exercice 7</h2>
+<p>En utilisant la librairie PIL, créer un programme (<code>exo_7.py</code>) qui importe l&rsquo;image <!-- raw HTML omitted -->ascii.jpg<!-- raw HTML omitted --> et la convertit en &ldquo;ASCII art&rdquo; en imprimant à l&rsquo;écran des caractères différents en fonction de la valeur de l&rsquo;intensité moyenne d&rsquo;un pixel.</p>
+<p><img src="/leonce.png" alt=""></p>
+<h2 id="exercice-8">Exercice 8</h2>
+<p>Modifier le fichier <code>exo_8.py</code> pour qu&rsquo;il affiche le graphique des patients en réa pour toute la France lorsque l&rsquo;utilisateur tape <code>0</code> lors du choix du département.</p>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -635,6 +705,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -647,6 +718,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -696,6 +770,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -711,6 +786,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -763,3 +841,4 @@ onload='renderMathInElement(document.body);'></script>
 
   </body>
 </html>
+

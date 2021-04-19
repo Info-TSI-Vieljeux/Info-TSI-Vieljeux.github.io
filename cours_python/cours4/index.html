@@ -8,7 +8,7 @@
 <meta name="author" content="Cordier-Info">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Tags - Cours Python</title>
+    <title>Structures de contrôle - Cours Python</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -62,7 +62,7 @@ onload='renderMathInElement(document.body);'></script>
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/cours_python/cours4/">
     <nav id="sidebar" class="">
 
 
@@ -123,7 +123,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/cours_python/" title="Cours Python" class="dd-item
-        
+        parent
         
         
         ">
@@ -212,7 +212,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/cours_python/cours4/" title="Structures de contrôle" class="dd-item ">
+      <li data-nav-id="/cours_python/cours4/" title="Structures de contrôle" class="dd-item active">
         <a href="/cours_python/cours4/">
         <b>4. </b>Structures de contrôle
         
@@ -452,14 +452,27 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Tags
+                   Structures de contrôle
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#if--elif--else"><code>if</code> &hellip; <code>elif</code> &hellip; <code>else</code></a></li>
+    <li><a href="#boucles-while">Boucles <code>while</code></a></li>
+    <li><a href="#break-continue-et-else"><code>break</code>, <code>continue</code> et <code>else</code></a>
+      <ul>
+        <li><a href="#break"><code>break</code></a></li>
+        <li><a href="#continue"><code>continue</code></a></li>
+        <li><a href="#else"><code>else</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#la-gestion-des-exceptions">La gestion des exceptions</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -477,15 +490,213 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-
-
-
+<h1 id="structures-de-contrôle">Structures de contrôle</h1>
+<p>Python étant un langage impératif, il possède des structures de contrôle permettant de dévier le flot d&rsquo;exécution.
+Les structures de contrôle travaillent sur des blocs d&rsquo;instructions contigües qui sont repérés par leur indentation en Python.</p>
+<p>Les deux grandes familles de commandes de blocs sont :</p>
 <ul>
-	
+<li>les alternatives : exécuter un bloc d&rsquo;instructions si une certaine condition est réunie (<em>si &hellip; sinon si &hellip; sinon</em>) ;</li>
+<li>les boucles : exécuter un bloc d&rsquo;instructions à plusieurs reprises (boucle &ldquo;<em>tant que</em>&rdquo; et les boucles avec compteur <code>for</code> déjà rencontrées).</li>
 </ul>
+<p> </p>
+<p> </p>
+<h2 id="if--elif--else"><code>if</code> &hellip; <code>elif</code> &hellip; <code>else</code></h2>
+<p>La structure <code>if ... elif ... else</code> permet d&rsquo;exécuter des instructions seulement si une condition, donnée par le résultat d&rsquo;un ou plusieurs tests logiques, est vérifiée.</p>
+<p><code>if</code> &lt;<em>expression logique 1</em>&gt; :<br>
+        &lt;<em>bloc d&rsquo;instructions 1</em>&gt;<br>
+<code>elif</code> &lt;<em>expression logique 2</em>&gt; :<br>
+        &lt;<em>bloc d&rsquo;instructions 2</em>&gt;<br>
+<strong>&hellip;</strong><br>
+<code>else</code> :<br>
+        &lt;<em>bloc d&rsquo;instructions</em>&gt;</p>
+<p>Si l'&lt;<em>expression logique 1</em>&gt; est évaluée comme vraie, le &lt;<em>bloc d&rsquo;instructions 1</em>&gt; est exécuté ; dans le cas contraire, si l'&lt;<em>expression logique 2</em>&gt; est évaluée comme vraie, le &lt;<em>bloc d&rsquo;instructions 2</em>&gt; est exécuté, et ainsi de suite ; et si aucune des expressions logiques précédentes n&rsquo;est vraie, le bloc d&rsquo;instructions faisant suite au <code>else:</code> est exécuté.</p>
+<p>Par exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>) :
+    <span style="color:#66d9ef">if</span> x<span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span> :
+        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est inférieur ou égal à 3&#39;</span>)
+    <span style="color:#66d9ef">elif</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span> :
+        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est plus grand que 5&#39;</span>)
+    <span style="color:#66d9ef">else</span> :
+        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;doit être 4 ou 5&#39;</span>)
+</code></pre></div><pre><code>0 est inférieur ou égal à 3
+1 est inférieur ou égal à 3
+2 est inférieur ou égal à 3
+3 est inférieur ou égal à 3
+4 doit être 4 ou 5
+5 doit être 4 ou 5
+6 est plus grand que 5
+7 est plus grand que 5
+8 est plus grand que 5
+9 est plus grand que 5
+</code></pre>
+
+<div class="notices note" ><p>Python reconnaît comme vrai n&rsquo;importe quel type de donnée (même pas besoin d&rsquo;expression logique) du moment qu&rsquo;il ne s&rsquo;agit ni de l&rsquo;entier <code>0</code>, du décimal <code>0.</code>, de la chaîne de caractères vide <code>''</code>, du tuple vide <code>()</code>, de la liste vide <code>[]</code>, ou encore de la valeur <code>None</code>.</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>) :
+    
+    <span style="color:#66d9ef">if</span> x :                       <span style="color:#75715e"># vrai pour tout x ≠ 0</span>
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;, &#39;</span>,end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>)
+        
+    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> :                   <span style="color:#75715e"># vrai pour tout x impair</span>
+        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est impair&#39;</span>, end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>)
+    <span style="color:#66d9ef">else</span> :
+        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est pair&#39;</span>, end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>)
+        
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&#39;</span>,end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;.&#39;</span>)              <span style="color:#75715e"># pour le point final</span>
+</code></pre></div><pre><code>0 est pair, 1 est impair, 2 est pair, 3 est impair, 4 est pair, 5 est impair, 6 est pair, 7 est impair, 8 est pair, 9 est impair.
+</code></pre>
+<p>Exemple :<br>
+Dans le calendrier grégorien, une année est bissextile si elle est divisible par 4 sauf si elle est aussi divisible par 100 à part les années divisibles par 400 qui sont bien bissextiles.<br>
+Le programme suivant détermine si une année est bissextile :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">année <span style="color:#f92672">=</span> <span style="color:#ae81ff">2020</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">400</span> :
+    est_bissextile <span style="color:#f92672">=</span> True
+<span style="color:#66d9ef">elif</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> :
+    est_bissextile <span style="color:#f92672">=</span> False
+<span style="color:#66d9ef">elif</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span> :
+    est_bissextile <span style="color:#f92672">=</span> True
+<span style="color:#66d9ef">else</span> :
+    est_bissextile <span style="color:#f92672">=</span> False
+s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;est une&#39;</span> <span style="color:#66d9ef">if</span> est_bissextile <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;n&#39;est pas une&#34;</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;L&#39;année&#34;</span>, année , s ,<span style="color:#e6db74">&#34;année bissextile.&#34;</span>)
+</code></pre></div><p><code>L'année 2020 est une année bissextile.</code></p>
+<p> </p>
+<p> </p>
+<h2 id="boucles-while">Boucles <code>while</code></h2>
+<p>Alors qu&rsquo;une boucle <code>for</code> tourne un nombre de fois fixé à l&rsquo;avance, une boucle <code>while</code> exécute son bloc d&rsquo;instructions tant qu&rsquo;une certaine condition est validée.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> :
+    i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">print</span>(i,end <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">La boucle est finie...&#39;</span>)
+</code></pre></div><pre><code>1.2.3.4.5.6.7.8.9.10.
+La boucle est finie...
+</code></pre>
+<p>Le compteur <code>i</code> est initialisé à <code>0</code> et comme <code>0</code> est inférieur à <code>10</code>, la boucle <code>while</code> démarre. À chaque itération, <code>i</code> est incrémenté de <code>1</code> et sa valeur affichée. Puis <code>i</code> atteint <code>10</code> et à l&rsquo;itération suivante <code>i &lt; 10</code> devient faux, la boucle s&rsquo;arrête et l&rsquo;éxécution reprend après la boucle.<br>
+On voit avec cet exemple qu&rsquo;un équivalent de boucle <code>for</code> peut facilement être construit avec une boucle <code>while</code>.</p>
+<p>Un exemple plus intéressant :<br>
+implémentons l&rsquo;algorithme d&rsquo;Euclide permettant de déterminer le plus grand diviseur commun de deux entiers.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a , b <span style="color:#f92672">=</span> <span style="color:#ae81ff">1920</span> , <span style="color:#ae81ff">1080</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;pgcd({},{}) = &#39;</span><span style="color:#f92672">.</span>format(a,b),end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>)
+<span style="color:#66d9ef">while</span> b :
+    a , b <span style="color:#f92672">=</span> b, a <span style="color:#f92672">%</span> b
+<span style="color:#66d9ef">print</span>(a)
+</code></pre></div><p><code>pgcd(1920,1080) = 120</code></p>
+<p>La boucle continue jusqu&rsquo;à ce que <code>b</code> divise <code>a</code>. À chaque itération, <code>b</code> prend la valeur du reste de la division euclidienne de <code>a</code> par <code>b</code> et <code>a</code> prend l&rsquo;ancienne valeur de <code>b</code>.<br>
+<code>while b</code> est équivalent à <code>while b != 0</code> puisque la valeur <code>0</code> est évaluée comme fausse.</p>
+<p> </p>
+<p> </p>
+<h2 id="break-continue-et-else"><code>break</code>, <code>continue</code> et <code>else</code></h2>
+<p>Python propose 3 instructions supplémentaires pour contrôler le flux d&rsquo;un programme.</p>
+<h3 id="break"><code>break</code></h3>
+<p>L&rsquo;instruction <code>break</code>, placée dans le bloc d&rsquo;instructions d&rsquo;une boucle, met immédiatement fin à cette boucle lorsqu&rsquo;arrive son tour d&rsquo;être exécutée.<br>
+L&rsquo;exécution reprend à l&rsquo;instruction suivant la boucle.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">while</span> True :
+    x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> (x <span style="color:#f92672">%</span> <span style="color:#ae81ff">15</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">%</span> <span style="color:#ae81ff">25</span>) :
+        <span style="color:#66d9ef">break</span>
+<span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est divisible à la fois par 15 et 25.&#39;</span>)
+</code></pre></div><p><code>75 est divisible à la fois par 15 et 25.</code></p>
+<p>La condition du <code>while</code> est ici littéralement toujours vraie donc la seule sortie possible de la boucle passe par une exécution de l&rsquo;instruction <code>break</code>, ce qui ne peut arriver que si <code>x</code> est à la fois divisible par 15 et 25.</p>
+<p>De la même manière, pour trouver l&rsquo;indice de la première occurrence d&rsquo;un nombre négatif dans une liste :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">99</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">37</span>, <span style="color:#ae81ff">43</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">124</span>]
+<span style="color:#66d9ef">for</span> i, a <span style="color:#f92672">in</span> enumerate(liste) :
+    <span style="color:#66d9ef">if</span> a <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> :
+        <span style="color:#66d9ef">break</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;L&#39;élément d&#39;indice&#34;</span>,i,<span style="color:#e6db74">&#34;valant&#34;</span>,a,<span style="color:#e6db74">&#34;est le premier élément négatif.&#34;</span>)
+</code></pre></div><p><code>L'élément d'indice 5 valant -2 est le premier élément négatif.</code></p>
+
+<div class="notices note" ><p>Après la sortie de la boucle, les variables <code>i</code> et <code>a</code> gardent les valeurs qu&rsquo;elles ont au moment de l&rsquo;instruction <code>break</code>.</p>
+</div>
+
+<p> </p>
+<h3 id="continue"><code>continue</code></h3>
+<p><code>continue</code> marche comme <code>break</code> mais au lieu de sortir de la boucle, l&rsquo;instruction force immédiatement la prochaine itération de la boucle sans accomplir le reste des instructions du bloc pour l&rsquo;itération en cours.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">11</span>) :
+    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> :
+        <span style="color:#66d9ef">continue</span>
+    <span style="color:#66d9ef">print</span>(i,<span style="color:#e6db74">&#39;est pair&#39;</span>)
+</code></pre></div><pre><code>2 est pair
+4 est pair
+6 est pair
+8 est pair
+10 est pair
+</code></pre>
+<p>Si <code>i</code> n&rsquo;est pas divisible par 2 et donc que <code>i % 2 = 1</code>, ce qui est considéré comme <code>True</code>, <code>continue</code> est appelé et on passe alors directement au <code>i</code> suivant, et donc l&rsquo;instruction <code>print</code> est sautée.</p>
+<p> </p>
+<h3 id="else"><code>else</code></h3>
+<p>On peut faire suivre une boucle <code>for</code> ou <code>while</code> d&rsquo;un bloc introduit par une instruction <code>else</code>. Ce bloc n&rsquo;est exécuté que si la boucle se termine &ldquo;normalement&rdquo;, i.e. sans rencontrer un <code>break</code>.<br>
+Pour voir son utilité, reprenons le code repérant la première occurrence d&rsquo;un nombre négatif.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">99</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">37</span>, <span style="color:#ae81ff">43</span>, <span style="color:#ae81ff">124</span>]
+<span style="color:#66d9ef">for</span> i, a <span style="color:#f92672">in</span> enumerate(liste) :
+    <span style="color:#66d9ef">if</span> a <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> :
+        <span style="color:#66d9ef">break</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;L&#39;élément d&#39;indice&#34;</span>,i,<span style="color:#e6db74">&#34;valant&#34;</span>,a,<span style="color:#e6db74">&#34;est le premier élément négatif.&#34;</span>)
+</code></pre></div><p><code>L'élément d'indice 8 valant 124 est le premier élément négatif.</code></p>
+<p>On constate que le programme se comporte bizarrement si la liste ne contient que des nombres positifs.<br>
+Un <code>else</code> va nous sauver :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">99</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">37</span>, <span style="color:#ae81ff">43</span>, <span style="color:#ae81ff">124</span>]
+<span style="color:#66d9ef">for</span> i, a <span style="color:#f92672">in</span> enumerate(liste) :
+    <span style="color:#66d9ef">if</span> a <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;L&#39;élément d&#39;indice&#34;</span>,i,<span style="color:#e6db74">&#34;valant&#34;</span>,a,<span style="color:#e6db74">&#34;est le premier élément négatif.&#34;</span>)
+        <span style="color:#66d9ef">break</span>
+<span style="color:#66d9ef">else</span> :
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Aucun élément négatif&#34;</span>)
+</code></pre></div><p><code>Aucun élément négatif</code></p>
+<p>Autre exemple d&rsquo;utilisation : une manière peu élégante de déterminer le plus grand diviseur d&rsquo;un nombre.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">2019</span>
+b <span style="color:#f92672">=</span> a <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">while</span> b <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> :
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> a <span style="color:#f92672">%</span> b :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;le plus grand diviseur de&#39;</span>,a,<span style="color:#e6db74">&#39;est&#39;</span>,b)
+        <span style="color:#66d9ef">break</span>
+    b <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">else</span> :
+    <span style="color:#66d9ef">print</span>(a,<span style="color:#e6db74">&#39;est premier !&#39;</span>)
+</code></pre></div><p><code>le plus grand diviseur de 2019 est 673</code></p>
+<p> </p>
+<p> </p>
+<h2 id="la-gestion-des-exceptions">La gestion des exceptions</h2>
+<p>Python distingue deux types d&rsquo;erreurs :</p>
+<ul>
+<li>les <strong>erreurs de syntaxe</strong> : elles correspondent à des erreurs dans la grammaire du langage et sont toujours fatales. Elles se soldent par un pénible <code>Syntaxerror : invalid syntax</code> ou encore un <code>IndentationError: expected an indented block</code>. Exemple typique : <code>if a = 2 :</code> (au lieu de <code>if a == 2</code>).</li>
+<li>les <strong>exceptions</strong> : erreurs non syntaxiques rencontrées pendant l&rsquo;exécution. Exemples : <code>ZeroDivisionError</code>, <code>NameError</code>, <code>TypeError</code>. Elles nes sont pas forcément fatales si on les gère en amont.</li>
+</ul>
+<p>Gestion des exceptions : on peut indiquer à l&rsquo;interprète quoi faire s&rsquo;il rencontre une exception lors de l&rsquo;exécution. Pour cela, on utilise les instructions <code>try :</code>  et <code>except :</code>.<br>
+Le bloc introduit par <code>try</code> correspond à ce qui doit être exécuté en l&rsquo;absence d&rsquo;exception, et celui introduit par <code>except</code> permet de gérer une exception donnée.</p>
+<p>Prenons l&rsquo;exemple de la gestion d&rsquo;une division par zéro :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>) :
+    y <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> i
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;1 /&#39;</span>,i,<span style="color:#e6db74">&#39;=&#39;</span>,y)
+</code></pre></div><p><code>1 / -2 = -0.5</code><br>
+<code>1 / -1 = -1.0</code>    <img src="/exception.png" alt=""></p>
+<p>L&rsquo;exécution a été interrompue&hellip; Mais si on utilise <code>try / except</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>) :
+    <span style="color:#66d9ef">try</span> :
+        y <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> i
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;1 /&#39;</span>,i,<span style="color:#e6db74">&#39;=&#39;</span>,y)
+    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ZeroDivisionError</span> :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;1 / 0 : Division par zéro impossible !&#39;</span>)
+</code></pre></div><p><code>1 / -2 = -0.5</code><br>
+<code>1 / -1 = -1.0</code><br>
+<code>1 / -1 = -1.0</code> <br>
+<code>1 / 0 : Division par zéro impossible !</code><br>
+<code>1 / 1 = 1.0</code><br>
+<code>1 / 2 = 0.5</code></p>
+<p>L&rsquo;exécution va à son terme.</p>
+<p>Autre exemple classique : gérer les entrées farfelues de l&rsquo;utilisateur.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">while</span> True:
+    <span style="color:#66d9ef">try</span> :
+        x <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;Entrez un nombre svp : &#34;</span>))
+        <span style="color:#66d9ef">break</span>
+    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span> :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Oops! Pas un nombre valide. Essayez à nouveau... &#34;</span>)
+</code></pre></div><p>On verra un <a href="../cours6/#lire-un-fichier">dernier exemple un peu plus touffu</a> dans le chapitre 6 sur la manipulation de fichier.</p>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -520,8 +731,6 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -535,6 +744,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -584,6 +796,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -599,6 +812,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -763,3 +979,4 @@ onload='renderMathInElement(document.body);'></script>
 
   </body>
 </html>
+

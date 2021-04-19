@@ -8,7 +8,7 @@
 <meta name="author" content="Cordier-Info">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Tags - Cours Python</title>
+    <title>Fonctions - Cours Python</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -62,7 +62,7 @@ onload='renderMathInElement(document.body);'></script>
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/cours_python/cours5/">
     <nav id="sidebar" class="">
 
 
@@ -123,7 +123,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/cours_python/" title="Cours Python" class="dd-item
-        
+        parent
         
         
         ">
@@ -233,7 +233,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/cours_python/cours5/" title="Fonctions" class="dd-item ">
+      <li data-nav-id="/cours_python/cours5/" title="Fonctions" class="dd-item active">
         <a href="/cours_python/cours5/">
         <b>5. </b>Fonctions
         
@@ -452,14 +452,24 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Tags
+                   Fonctions
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#définir-et-appeler-une-fonction">Définir et appeler une fonction</a></li>
+    <li><a href="#chainededocumentation">Chaîne de documentation</a></li>
+    <li><a href="#argumentnomme">Argument nommé</a></li>
+    <li><a href="#valeurpardefaut">Valeur par défaut des arguments</a></li>
+    <li><a href="#porteedesvariables">Portée des variables</a></li>
+    <li><a href="#fonctions-lambda--des-fonctions-anonymes">Fonctions lambda : des fonctions anonymes</a></li>
+    <li><a href="#les-assertions">Les assertions</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -477,15 +487,248 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-
-
-
+<h1 id="fonctions">Fonctions</h1>
+<p>Une fonction consiste en un bloc d&rsquo;instructions qui peut être appelé et exécuté à différents endroits et à plusieurs reprises dans le programme.<br>
+Deux avantages à l&rsquo;utilisation de fonctions :</p>
 <ul>
-	
+<li>elles permettent de réutiliser du code sans avoir à le réécrire,</li>
+<li>elles permettent de décomposer un problème complexe en différentes procédures plus simples, chacune prise en charge par sa propre fonction.</li>
 </ul>
+<p>Le code est rendu plus clair et plus facile à débuguer.</p>
+<p> </p>
+<p> </p>
+<h2 id="définir-et-appeler-une-fonction">Définir et appeler une fonction</h2>
+<p>L&rsquo;instruction <code>def</code> initialise la définition d&rsquo;une fonction en lui donnant un nom et des arguments, s&rsquo;il y en a, que la fonction s&rsquo;attendra à recevoir lorsqu&rsquo;elle sera appelée.</p>
+<p>Les instructions de la fonction sont écrites dans un bloc indenté qui suit le <code>def</code>.</p>
+<p>Si à un point quelconque de l&rsquo;exécution du bloc, une instruction <code>return</code> est rencontrée, la valeur spécifiée est renvoyée.</p>
+<p>Par exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">carré</span>(x) :
+    x_carré <span style="color:#f92672">=</span> x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+    <span style="color:#66d9ef">return</span> x_carré
+nombre <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+nombre_au_carré <span style="color:#f92672">=</span> carré(nombre)
+<span style="color:#66d9ef">print</span>(nombre,<span style="color:#e6db74">&#39;au carré vaut&#39;</span>,nombre_au_carré)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;8 au carré vaut&#39;</span>,carré(<span style="color:#ae81ff">8</span>))
+</code></pre></div><p><code>2 au carré vaut 4</code></p>
+<p><code>8 au carré vaut 64</code></p>
+<p>Pour que la fonction renvoie plus d&rsquo;une valeur, on les emballe dans un tuple.</p>
+<p>Exemple : le programme suivant donne les racines d&rsquo;un trinôme du second degré.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> math
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">racines</span>(a,b,c) :
+    d <span style="color:#f92672">=</span> b<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>a<span style="color:#f92672">*</span>c
+    r1 <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">-</span> math<span style="color:#f92672">.</span>sqrt(d))<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">/</span>a
+    r2 <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">+</span> math<span style="color:#f92672">.</span>sqrt(d))<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">/</span>a
+    <span style="color:#66d9ef">return</span> r1, r2
+
+<span style="color:#66d9ef">print</span>(racines(<span style="color:#ae81ff">1.</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1.</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">6.</span>))
+</code></pre></div><p><code>(-2.0, 3.0)</code></p>
+
+<div class="notices note" ><p>Une fonction n&rsquo;est pas obligée de renvoyer explicitement un objet. Si la fin du code est atteinte sans rencontrer un <code>return</code>, la valeur spéciale <code>None</code> est renvoyée.</p>
+</div>
 
 
-<footer class=" footline" >
+<div class="notices info" ><p>La définition d&rsquo;une fonction peut être écrite n&rsquo;importe où dans un programme mais une fonction ne peut pas être appelée avant sa définition.</p>
+</div>
+
+
+<div class="notices info" ><p>Les fonctions peuvent aussi être <strong>imbriquées</strong> mais une fonction définie à l&rsquo;intérieur d&rsquo;une autre fonction ne peut pas être appelée à l&rsquo;extérieur de cette fonction.</p>
+</div>
+
+<p> </p>
+<p> </p>
+<h2 id="chainededocumentation">Chaîne de documentation</h2>
+<p>La première ligne du bloc d&rsquo;une fonction peut servir à la documenter par une chaîne de caractères.</p>
+<p>Pour cette chaîne, appelée <code>docstring</code>, il est recommandé d&rsquo;utiliser le triple guillemet qui permet d&rsquo;écrire simplement sur plusieurs lignes.</p>
+<p>Exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">racines</span>(a,b,c) :
+    <span style="color:#e6db74">&#34;&#34;&#34;Retourne les racines de ax^2 + bx + c.&#34;&#34;&#34;</span>
+    d <span style="color:#f92672">=</span> b<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>a<span style="color:#f92672">*</span>c
+    r1 <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">-</span> math<span style="color:#f92672">.</span>sqrt(d))<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">/</span>a
+    r2 <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">+</span> math<span style="color:#f92672">.</span>sqrt(d))<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">/</span>a
+    <span style="color:#66d9ef">return</span> r1, r2
+</code></pre></div><p>Ce <code>docstring</code> devient alors un attribut spécial de la fonction accessible par <code>__doc__</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">racines<span style="color:#f92672">.</span>__doc__
+</code></pre></div><p><code>'Retourne les racines de ax^2 + bx + c.'</code></p>
+<p>Une chaîne de documentation devrait expliquer comment utiliser la fonction (quels arguments lui donner et quels objets elle retourne) mais pas détailler son implémentation.</p>
+<p>On peut à tout moment renommer une fonction :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rac <span style="color:#f92672">=</span> racines
+rac<span style="color:#f92672">.</span>__doc__
+</code></pre></div><p><code>'Retourne les racines de ax^2 + bx + c.'</code></p>
+<p> </p>
+<p> </p>
+<h2 id="argumentnomme">Argument nommé</h2>
+<p>Dans l&rsquo;exemple précédent, les arguments sont passés à la fonction dans l&rsquo;ordre dans lequel ils apparaissent dans la définition.
+Si on veut pouvoir les passer dans un ordre arbitraire, on nomme explicitement les arguments :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">racines(a<span style="color:#f92672">=</span><span style="color:#ae81ff">1.</span>, c<span style="color:#f92672">=-</span><span style="color:#ae81ff">6.</span>, b <span style="color:#f92672">=-</span><span style="color:#ae81ff">1.</span>)
+</code></pre></div><p><code>(-2.0, 3.0)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">racines(b<span style="color:#f92672">=-</span><span style="color:#ae81ff">1.</span>, c<span style="color:#f92672">=-</span><span style="color:#ae81ff">6.</span>, a <span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><p><code>(-2.0, 3.0)</code></p>
+<p> </p>
+<p> </p>
+<h2 id="valeurpardefaut">Valeur par défaut des arguments</h2>
+<p>On peut aussi donner à une fonction un <strong>argument &lsquo;optionnel&rsquo;</strong> : si l&rsquo;appel de la fonction ne précise pas l&rsquo;argument, une valeur par défaut est fournie.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exprime_longueur</span>(mesure, unité<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;m&#39;</span>) :
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;La longueur vaut {:.2f} {}&#39;</span><span style="color:#f92672">.</span>format(mesure,unité)
+exprime_longueur(<span style="color:#ae81ff">32.831</span>,<span style="color:#e6db74">&#39;cm&#39;</span>)
+</code></pre></div><p><code>'La longueur vaut 32.83 cm'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">exprime_longueur(<span style="color:#ae81ff">10.1</span>)
+</code></pre></div><p><code>'La longueur vaut 10.10 m'</code></p>
+<p>Attention, les arguments par défaut sont affectés dès que l&rsquo;interprète rencontre la définition pour la première fois. Cela peut amener à des résultats inattendus, en particulier avec des objets muables.<br>
+Exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fonc</span>(une_liste <span style="color:#f92672">=</span> []) :
+    une_liste<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">7</span>)
+    <span style="color:#66d9ef">return</span> une_liste
+<span style="color:#66d9ef">print</span>(fonc())
+<span style="color:#66d9ef">print</span>(fonc())
+<span style="color:#66d9ef">print</span>(fonc())
+</code></pre></div><p><code>[7]</code></p>
+<p><code>[7, 7]</code></p>
+<p><code>[7, 7, 7]</code></p>
+<p>Comme une variable prenant la valeur d&rsquo;un argument par défaut est affectée au moment de la définition, changer l&rsquo;affectation de la variable ensuite est sans effet sur l&rsquo;argument par défaut.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">unité_par_défaut <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;m&#39;</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exprime_longueur</span>(mesure, unité <span style="color:#f92672">=</span> unité_par_défaut) :
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;La longueur vaut {:.2f} {}&#39;</span><span style="color:#f92672">.</span>format(mesure,unité)
+exprime_longueur(<span style="color:#ae81ff">10.1</span>)
+</code></pre></div><p><code>'La longueur vaut 10.10 m'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">unité_par_défaut <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;année lumière&#39;</span>
+exprime_longueur(<span style="color:#ae81ff">10.1</span>)
+</code></pre></div><p><code>'La longueur vaut 10.10 m'</code></p>
+<p> </p>
+<p> </p>
+<h2 id="porteedesvariables">Portée des variables</h2>
+
+<div class="notices info" ><p>Une fonction peut définir et utiliser ses propres variables. Ces variables sont alors dites <strong>locales</strong>.<br>
+À l&rsquo;inverse, les variables affectées en dehors du bloc d&rsquo;une fonction peuvent être utilisées partout et sont dites <strong>globales</strong>.</p>
+</div>
+
+<p>Exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fct</span>() :
+    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+    <span style="color:#66d9ef">print</span>(a,b)
+b <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>
+fct()
+</code></pre></div><p><code>5 6</code></p>
+<p>Comme <code>b</code> n&rsquo;est pas définie dans la bloc de la fonction, Python va la chercher dans le champ global. Mais il faut que <code>b</code> soit affectée avant l&rsquo;appel de la fonction.</p>
+<p>Que se passe-t-il si une fonction définit une variable locale avec le même nom qu&rsquo;une variable globale ?</p>
+<p>Le champ local est scruté en premier.</p>
+<p>Exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fct</span>() :
+    a <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+    <span style="color:#66d9ef">print</span>(a)
+a <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>
+fct()
+<span style="color:#66d9ef">print</span>(a)
+</code></pre></div><p><code>5</code></p>
+<p><code>6</code></p>
+<p>Notons bien que la variable locale <code>a</code> n&rsquo;existe que dans le bloc de définition, qu&rsquo;elle ait ou non le même nom qu&rsquo;une variable globale ne change rien.
+Elle disparait quand l&rsquo;interprète sort de la fonction et n&rsquo;écrase donc pas la variable globale <code>a</code>.</p>
+<p>Dans l&rsquo;ordre, Python regarde d&rsquo;abord le champ <em>local</em>, puis <em>non local</em> (le champ englobant la fonction intérieure dans le cas de fonctions imbriquées),
+puis <em>global</em>, puis <em>built-in</em> (les fonctions natives qu&rsquo;il convient donc de ne pas redéfinir).</p>
+
+<div class="notices note" ><p>Une fonction ne peut pas modifier une variable globale sans préciser qu&rsquo;elle le souhaite.</p>
+</div>
+
+<p>Exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fct1</span>() :
+    <span style="color:#66d9ef">print</span>(x)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fct2</span>() :
+    x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">print</span>(x)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fct1()   <span style="color:#75715e"># pas de problème</span>
+</code></pre></div><p><code>2</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fct2()   <span style="color:#75715e"># aïe</span>
+</code></pre></div><p><code>UnboundLocalError: local variable 'x' referenced before assignment</code></p>
+<p>Pour régler le problème, il faut utiliser le mot clé <code>global</code> pour réaffecter la variable globale dans la fonction.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fct2</span>() :
+    <span style="color:#66d9ef">global</span> x
+    x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">print</span>(x)
+
+fct2()
+</code></pre></div><p><code>3</code></p>
+
+<div class="notices warning" ><p>Ce type de réaffectation est néanmoins à éviter, car il amène pas mal de confusion. C&rsquo;est souvent plus logique de passer <code>x</code> en argument de la fonction.</p>
+</div>
+
+<hr>
+<p>Illsutration avec des listes de parts de pizza :</p>
+<p>Il peut être intéressant d&rsquo;utiliser une fonction pour construire une liste des différents termes d&rsquo;une <strong>suite définie par récurrence</strong> :</p>
+<p>&ldquo;<em>The lazy caterer sequence</em>&rdquo; (la suite du traiteur paresseux en français) est une suite
+donnant le nombre maximum de morceaux de pizza pouvant être obtenus avec un certain nombre de coupes droites.</p>
+<p>Il est simple de voir que $f(0)=1$, $f(1)=2$ et $f(2)=4$.</p>
+<p>Et on peut déterminer la relation de récurrence suivante :</p>
+<p>$f(n)=f(n-1)+n$</p>
+<p>Pour afficher les différents éléments consécutifs de la suite dans une même liste :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(suite) :
+    suite<span style="color:#f92672">.</span>append(suite[n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>n)
+suite <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>]
+<span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">16</span>) :
+    f(suite) <span style="color:#75715e"># n et suite sont définis dans le champ global</span>
+<span style="color:#66d9ef">print</span>(suite)
+</code></pre></div><p><code>[1, 2, 4, 7, 11, 16, 22, 29, 37, 46, 56, 67, 79, 92, 106, 121]</code></p>
+<p> </p>
+<p> </p>
+<h2 id="fonctions-lambda--des-fonctions-anonymes">Fonctions lambda : des fonctions anonymes</h2>
+<p>Avec le mot-clé <code>lambda</code>, vous pouvez créer de petites fonctions anonymes très pratiques pour définir des fonctions mathématiques.<br>
+Ces fonctions ne doivent contenir que des expressions. Ainsi, les instructions conditionnelles ou les boucles ou même un <code>print</code> sont interdits.</p>
+<p>Exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x : x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>x <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
+
+<span style="color:#66d9ef">print</span>(f(<span style="color:#ae81ff">4.</span>))
+</code></pre></div><p><code>6.0</code></p>
+<p>On peut passer plus d&rsquo;un argument à une fonction <code>lambda</code> grâce à un tuple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> x,y : x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>x<span style="color:#f92672">*</span>y <span style="color:#f92672">+</span> y<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+f(<span style="color:#ae81ff">2.</span>,<span style="color:#ae81ff">3.</span>)
+</code></pre></div><p><code>25.0</code></p>
+<p>L&rsquo;explication du terme &ldquo;fonction anonyme&rdquo; prend son sens avec l&rsquo;utilisation de listes de fonctions.</p>
+<p>Exemple de construction d&rsquo;une liste de fonctions sans utiliser <code>lambda</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">const</span>(x) :
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1.</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lin</span>(x) :
+    <span style="color:#66d9ef">return</span> x
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">carré</span>(x) :
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cube</span>(x) :
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span>
+fliste <span style="color:#f92672">=</span> [const,lin,carré,cube]
+fliste[<span style="color:#ae81ff">3</span>](<span style="color:#ae81ff">5</span>)
+</code></pre></div><p><code>125</code></p>
+<p><code>fliste[3]</code> correspond à la fonction cube et on lui passe l&rsquo;argument <code>5</code>.</p>
+<p>On peut aller plus vite avec les fonctions <code>lambda</code> (ici réellement anonymes) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fliste <span style="color:#f92672">=</span> [<span style="color:#66d9ef">lambda</span> x : <span style="color:#ae81ff">1</span>,
+          <span style="color:#66d9ef">lambda</span> x : x,
+          <span style="color:#66d9ef">lambda</span> x : x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>,
+          <span style="color:#66d9ef">lambda</span> x : x<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span>]
+fliste[<span style="color:#ae81ff">3</span>](<span style="color:#ae81ff">5</span>)
+</code></pre></div><p><code>125</code></p>
+<p>Les fonctions <code>lambda</code> peuvent aussi se montrer pratiques lorsqu&rsquo;on les associe avec la fonction native <code>sorted()</code>.<br>
+En effet, <code>sorted(liste, key = fonction)</code> peut prendre en argument une fonction via le mot clé <code>key</code>. Cette fonction agit alors sur chaque élément de la liste à trier et <code>sorted()</code> trie la liste en fonction du résulat.</p>
+<p>Exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">halogènes <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;At&#39;</span>,<span style="color:#ae81ff">85</span>),(<span style="color:#e6db74">&#39;Br&#39;</span>,<span style="color:#ae81ff">35</span>),(<span style="color:#e6db74">&#39;Cl&#39;</span>,<span style="color:#ae81ff">17</span>),(<span style="color:#e6db74">&#39;F&#39;</span>,<span style="color:#ae81ff">9</span>),(<span style="color:#e6db74">&#39;I&#39;</span>,<span style="color:#ae81ff">53</span>)]
+</code></pre></div><p>Si on veut trier cette liste de tuples contenant le symbole d&rsquo;un élément halogène et son numéro atomique par numéro atomique croissant on peut utiliser une fonction <code>lambda</code> dont le rôle est de récupérer le 2e élément de chaque tuple (= chaque élément de la liste) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sorted(halogènes, key <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> e : e[<span style="color:#ae81ff">1</span>])
+</code></pre></div><p><code>[('F', 9), ('Cl', 17), ('Br', 35), ('I', 53), ('At', 85)]</code></p>
+<p> </p>
+<p> </p>
+<h2 id="les-assertions">Les assertions</h2>
+<p>Les assertions sont un moyen simple de s&rsquo;assurer, avant de continuer, qu&rsquo;une condition est respectée.</p>
+<p>On utilise la syntaxe : <code>assert test</code>. Si le test renvoie <code>True</code>, l&rsquo;exécution se poursuit normalement. Sinon, une exception <code>AssertionError</code> est levée.  On peut utiliser les assertions pour s&rsquo;assurer que les arguments d&rsquo;une fonction vont permettre son exécution.</p>
+<p>On peut par exemple reprendre la définition de la fonction <code>racines</code> pour s&rsquo;assurer que les arguments passés sont bien des nombres (et renvoyer un message explicatif si ce n&rsquo;est pas le cas) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">racines</span>(a,b,c) :
+    <span style="color:#e6db74">&#34;&#34;&#34;Retourne les racines de ax^2 + bx + c.&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">assert</span> (type(a) <span style="color:#f92672">is</span> (float <span style="color:#f92672">or</span> int)) <span style="color:#f92672">and</span> (type(b) <span style="color:#f92672">is</span> (float <span style="color:#f92672">or</span> int)) <span style="color:#f92672">and</span> (type(c) <span style="color:#f92672">is</span> (float <span style="color:#f92672">or</span> int)),\
+    	<span style="color:#e6db74">&#34;les arguments de la fonction &#39;racines&#39; doivent être des nombres !&#34;</span>
+    d <span style="color:#f92672">=</span> b<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>a<span style="color:#f92672">*</span>c
+    r1 <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">-</span> math<span style="color:#f92672">.</span>sqrt(d))<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">/</span>a
+    r2 <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">+</span> math<span style="color:#f92672">.</span>sqrt(d))<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">/</span>a
+    <span style="color:#66d9ef">return</span> r1, r2
+</code></pre></div><pre><code>racines(1,6,'-1')
+</code></pre><p><code>AssertionError: les arguments de la fonction racines doivent être des nombres !</code></p>
+
+
+<footer class="footline">
 	
 </footer>
 
@@ -520,8 +763,6 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -535,6 +776,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -600,6 +844,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -615,6 +860,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -763,3 +1011,4 @@ onload='renderMathInElement(document.body);'></script>
 
   </body>
 </html>
+

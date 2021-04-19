@@ -8,7 +8,7 @@
 <meta name="author" content="Cordier-Info">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Tags - Cours Python</title>
+    <title>Chaînes de caractères - Cours Python</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -62,7 +62,7 @@ onload='renderMathInElement(document.body);'></script>
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/cours_python/cours2/">
     <nav id="sidebar" class="">
 
 
@@ -123,7 +123,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/cours_python/" title="Cours Python" class="dd-item
-        
+        parent
         
         
         ">
@@ -170,7 +170,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/cours_python/cours2/" title="Chaînes de caractères" class="dd-item ">
+      <li data-nav-id="/cours_python/cours2/" title="Chaînes de caractères" class="dd-item active">
         <a href="/cours_python/cours2/">
         <b>2. </b>Chaînes de caractères
         
@@ -452,14 +452,23 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Tags
+                   Chaînes de caractères
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#définir-une-chaîne-de-caractères">Définir une chaîne de caractères</a></li>
+    <li><a href="#echappement">Caractères d&rsquo;échappement</a></li>
+    <li><a href="#indexation-et-slicing">Indexation et slicing</a></li>
+    <li><a href="#methodeschaines">Méthodes liées aux chaînes</a></li>
+    <li><a href="#la-fonction-print">La fonction <code>print</code></a></li>
+    <li><a href="#formatage">Formatage des chaînes de caractères</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -477,15 +486,415 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
+<h1 id="les-chaînes-de-caractères">Les chaînes de caractères</h1>
+<h2 id="définir-une-chaîne-de-caractères">Définir une chaîne de caractères</h2>
+<p>Une chaîne de caractères (type <code>str</code> pour l&rsquo;anglais string) est une suite ordonnée de caractères.<br>
+Pour définir une variable de ce type, il suffit d&rsquo;encadrer des caractères par <code>'</code> ou <code>&quot;</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">salutation <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bonjour, monsieur &#34;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">nom <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Raoul&#39;</span>
+</code></pre></div><p>Des chaînes de caractères peuvent être <strong>concaténées</strong> (= assemblées) en utilisant l&rsquo;opérateur <code>+</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;abc&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;def&#39;</span>
+</code></pre></div><p><code>'abcdef'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">salutation <span style="color:#f92672">+</span> nom
+</code></pre></div><p><code>'Bonjour, monsieur Raoul'</code></p>
+<p>On peut aussi utiliser l&rsquo;opérateur <code>*</code> pour répéter plusieurs fois la même chaîne (<strong>dupliquer</strong>) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">10</span>
+</code></pre></div><p><code>'aaaaaaaaaa'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;-o-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>
+</code></pre></div><p><code>'-o--o--o--o--o-'</code></p>
+<p>Et on peut combiner <code>*</code> et <code>+</code> (en utilisant des parenthèses) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(<span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;B&#39;</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>
+</code></pre></div><p><code>'aaaaBaaaaBaaaaB'</code></p>
+<p> </p>
+<p>Une chaîne vide est définie simplement comme <code>''</code> ou <code>&quot;&quot;</code>.</p>
+<p>Enfin, la fonction <code>str()</code> convertit un objet (nombre entier, nombre décimal, liste, etc.) en chaîne de caractères :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">str(<span style="color:#ae81ff">42</span>)
+</code></pre></div><p><code>'42'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">str(<span style="color:#ae81ff">3.4e5</span>)
+</code></pre></div><p><code>'340000.0'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">str(<span style="color:#ae81ff">3.4e20</span>)
+</code></pre></div><p><code>'3.4e+20'</code></p>
+<p> </p>
+<p>La fonction native <code>len()</code> permet de connaître le nombre de caractère d&rsquo;une chaîne de caractères (bien noter que les espaces, les fins de ligne ou encore la ponctuation sont aussi des caractères) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">len(salutation)
+</code></pre></div><p><code>18</code></p>
+<p> </p>
+<p> </p>
+<h2 id="echappement">Caractères d&rsquo;échappement</h2>
+<p>Comme on peut utiliser <code>''</code> ou <code>&quot;&quot;</code> pour définir une chaîne, on peut intégrer une citation dans une citation :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;Et il cria : &#34;Mais pourquoi ?&#34;&#39;</span>
+</code></pre></div><p><code>'Et il cria : &quot;Mais pourquoi ?&quot;'</code></p>
+<p>Et pour ajouter encore un niveau de citation, ou pour sauter une ligne, ou pour mettre une apostrophe si notre chaîne est déjà encadrée par des apostrophes, ou pour&hellip; ?<br>
+On utilise les <strong>caractères d&rsquo;échappement</strong>, introduits par un backslash &ldquo;<code>\</code>&quot; !<br>
+Exemples :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">phrase <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Et il cria : </span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">Mais pourquoi ?</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">&#34;</span>
+phrase
+</code></pre></div><p><code>'Et il cria : &quot;Mais pourquoi ?&quot;'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(phrase)
+</code></pre></div><p><code>Et il cria : &quot;Mais pourquoi ?&quot;</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;C</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">est donc pour ça...&#39;</span>
+</code></pre></div><p><code>&quot;C'est donc pour ça...&quot;</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">matières <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Maths</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Physique</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Anglais&#39;</span>
+matières
+</code></pre></div><p><code>'Maths\nPhysique\nAnglais'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(matières)
+</code></pre></div><p><code>Maths</code></p>
+<p><code>Physique</code></p>
+<p><code>Anglais</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Caractères d&rsquo;échappement courants</th>
+<th style="text-align:left">Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>\'</code></td>
+<td style="text-align:left">apostrophe (')</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>\&quot;</code></td>
+<td style="text-align:left">guillemets (&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>\n</code></td>
+<td style="text-align:left">fin de ligne (LF)</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>\r</code></td>
+<td style="text-align:left">retour chariot (CR)</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>\t</code></td>
+<td style="text-align:left">tabulation</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>\b</code></td>
+<td style="text-align:left">retour arrière (backspace)</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>\\</code></td>
+<td style="text-align:left">le caractère backslash</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>\u</code>,<code>\U</code>,<code>\N{}</code></td>
+<td style="text-align:left">caractère unicode</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>\x</code></td>
+<td style="text-align:left">caractères codés sur un seul byte</td>
+</tr>
+</tbody>
+</table>
+<p>Si vous voulez pouvoir écrire une chaîne de caractères sans qu&rsquo;un caractère d&rsquo;échappement n&rsquo;ait d&rsquo;effet :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chainebrute <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;Pour une nouvelle ligne, on utilise \n.&#34;</span>
+chainebrute
+</code></pre></div><p><code>'Pour une nouvelle ligne, on utilise \\n.'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(chainebrute)
+</code></pre></div><p><code>Pour une nouvelle ligne, on utilise \n.</code></p>
+<p>Cela peut s&rsquo;avérer pratique pour écrire le chemin d&rsquo;un fichier sous windows mais écrire des slash à la place (comme sous Unix) est une autre possibilité :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;C:\repertoire\fichier.txt&#39;</span>
+</code></pre></div><p><code>'C:\\repertoire\\fichier.txt'</code></p>
+<p>Si on doit utiliser <code>\n</code> de manière répétée, le triple guillemet peut nous sauver. Encadré par <code>'''</code> ou <code>&quot;&quot;&quot;</code>, plus besoin de <code>\n</code> pour une nouvelle ligne :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;un
+</span><span style="color:#e6db74">deux
+</span><span style="color:#e6db74">trois&#34;&#34;&#34;</span>
+<span style="color:#66d9ef">print</span>(a)
+</code></pre></div><p><code>un</code></p>
+<p><code>deux</code></p>
+<p><code>trois</code></p>
+<p>Les strings sont composés de caractères <strong>Unicode</strong> dans Python 3. Unicode est un standard décrivant plus de 100 000 caractères. Chaque caractère se voit assigner un nombre qui est ensuite encodé comme une suite de bytes (qui peuvent être de 8 bits pour le codage UTF-8 le plus répandu et utilisé par Python, de 16 bits, ou de 32 bits).
+On a ainsi :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\u00E9</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\N{LATIN SMALL LETTER E WITH ACUTE}</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\xE9</span><span style="color:#e6db74">&#39;</span>
+</code></pre></div><p><code>True</code></p>
+<p><code>\x</code> permet d&rsquo;appeler par leur code les 256 premiers caractères (premier byte).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\x43\x61\x66\xE9</span><span style="color:#e6db74">&#39;</span>
+</code></pre></div><p><code>'Café'</code></p>
+<p>Cela permet de comprendre ce que Python retourne lorsqu&rsquo;on entre l&rsquo;expression suivante :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;prépa ST</span><span style="color:#ae81ff">\b\b</span><span style="color:#e6db74">TSI&#39;</span>
+</code></pre></div><p><code>'prépa ST\x08\x08TSI'</code></p>
+<p>En effet, le retour arrière <code>\b</code> a le code <code>\x08</code> (c&rsquo;est le huitième caractère).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;prépa ST</span><span style="color:#ae81ff">\b\b</span><span style="color:#e6db74">TSI&#39;</span>)
+</code></pre></div><p><code>prépa TSI</code></p>
+<p> </p>
+<p> </p>
+<h2 id="indexation-et-slicing">Indexation et slicing</h2>
+<p><strong>Indexer</strong> une chaîne permet d&rsquo;accéder à un caractère individuel de la chaîne. L&rsquo;indice correspond à la position du caractère. Une chaîne de caractère est un exemple de <strong>séquence</strong> et comme pour toutes les séquences, l'<strong>indice du premier élément est <code>0</code></strong> et l&rsquo;indice du dernier élément d&rsquo;une chaîne de n caractères est donc <code>n-1</code>.<br>
+Le caractère est retourné dans une chaîne de longueur 1.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Lycée Vieljeux&#39;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[<span style="color:#ae81ff">0</span>]
+</code></pre></div><p><code>'L'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[<span style="color:#ae81ff">6</span>]
+</code></pre></div><p><code>'V'</code></p>
+<p>Les indices positifs comptent dans le sens de la lecture. Mais on peut aussi compter à partir de la fin en utilisant des <strong>indices négatifs</strong> commençant par <code>-1</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</code></pre></div><p><code>'x'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>]
+</code></pre></div><p><code>'j'</code></p>
+<p>Essayer d&rsquo;indexer en dehors de la chaîne lève une exception <code>IndexError</code> qui stoppe l&rsquo;interprète.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">len(a)
+</code></pre></div><p><code>14</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[<span style="color:#ae81ff">14</span>]
+</code></pre></div><p><code>IndexError: string index out of range</code></p>
+<p> </p>
+<p>Le <strong>slicing</strong> (<strong>découpage</strong>) <code>s[i:j]</code> permet d&rsquo;extraire des éléments de la chaîne ; il extrait une sous-chaîne limitée par les caractères ciblés par les deux indices, incluant l&rsquo;indice <code>i</code> et excluant l&rsquo;indice <code>j</code>.<br>
+Si le premier indice est omis <code>s[:j]</code>, il est supposé valoir <code>0</code>. Si le deuxième est omis, le slicing s&rsquo;étend jusqu&rsquo;à la fin de la chaîne.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">9</span>]
+</code></pre></div><p><code>'cée Vie'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[:<span style="color:#ae81ff">5</span>]
+</code></pre></div><p><code>'Lycée'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[<span style="color:#ae81ff">6</span>:]
+</code></pre></div><p><code>'Vieljeux'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[:]
+</code></pre></div><p><code>'Lycée Vieljeux'</code></p>
+<p>Ces règles assurent qu&rsquo;une sous-chaîne est longue de <code>j-i</code> caractères (pour des <code>j</code> et <code>i</code> positifs) et que <code>s[:i] + s[i:] == s</code>.<br>
+On peut alors  récupérer une tranche de longueur <code>r</code> avec <code>s[i:i+r]</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;PrépaTSIdeVieljeux&#39;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b[:<span style="color:#ae81ff">5</span>]
+</code></pre></div><p><code>'Prépa'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b[<span style="color:#ae81ff">5</span>:<span style="color:#ae81ff">8</span>]
+</code></pre></div><p><code>'TSI'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b[<span style="color:#ae81ff">10</span>:]
+</code></pre></div><p><code>'Vieljeux'</code></p>
+<p> </p>
+
+<div class="notices info" ><p>Contrairement à l&rsquo;indexation, un slicing en dehors des limites ne lève pas d&rsquo;erreur.</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b[<span style="color:#ae81ff">10</span>:<span style="color:#ae81ff">20</span>]
+</code></pre></div><p><code>'Vieljeux'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b[<span style="color:#ae81ff">20</span>:]
+</code></pre></div><p><code>''</code></p>
+<p> </p>
+<p>Un troisième nombre (optionnel) dans un découpage donne un <strong>pas</strong> (qui vaut par défaut <code>1</code> s&rsquo;il est omis) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b[::<span style="color:#ae81ff">2</span>]
+</code></pre></div><p><code>'PéaSdVeju'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b[<span style="color:#ae81ff">1</span>::<span style="color:#ae81ff">2</span>]
+</code></pre></div><p><code>'rpTIeilex'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">9</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</code></pre></div><p><code>'xuejleiV'</code></p>
+<p>Le pas de <code>-1</code> dans cette dernière expression correspond à une progression de droite à gauche. Cette découpe commence donc au dernier caractère (<code>-1</code> en première position), avance vers la gauche caractère par caractère (<code>-1</code> en dernière position) et s&rsquo;arrête au caractère précédant le <code>9</code> dans ce sens, donc le caractère <code>10</code>.</p>
+<p><strong>Renverser une chaîne de caractères</strong> devient très simple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</code></pre></div><p><code>'xuejleiV eécyL'</code></p>
+<p> </p>
+<p>Pour tester si une chaîne contient une certaine sous-chaîne, on utilise l&rsquo;opérateur <code>in</code> (attention à la casse).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;Vie&#39;</span> <span style="color:#f92672">in</span> b
+</code></pre></div><p><code>True</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;vie&#39;</span> <span style="color:#f92672">in</span> b
+</code></pre></div><p><code>False</code></p>
+<p> </p>
+<p> </p>
+<h2 id="methodeschaines">Méthodes liées aux chaînes</h2>
+<p>Les chaînes sont des objets Python <strong>immuables</strong>,  c.-à-d. qu&rsquo;on ne peut pas réaffecter un caractère de la chaîne.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;l&#39;</span>
+</code></pre></div><p><code>TypeError: 'str' object does not support item assignment</code></p>
+<p>On peut &ldquo;augmenter&rdquo; une chaîne mais cela crée systématiquement une nouvelle chaîne.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34; de la Rochelle&#34;</span>
+<span style="color:#66d9ef">print</span>(a)
+</code></pre></div><p><code>Lycée Vieljeux de la Rochelle</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Léonce &#39;</span> <span style="color:#f92672">+</span>  a[<span style="color:#ae81ff">6</span>:<span style="color:#ae81ff">14</span>]
+<span style="color:#66d9ef">print</span>(b)
+</code></pre></div><p><code>Léonce Vieljeux</code></p>
+<p> </p>
+<p>Beaucoup de méthodes permettent de manipuler et transformer les chaînes. On y a accès par la notation point &ldquo;<code>.</code>&rdquo;. Quelques méthodes utiles :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">méthode</th>
+<th style="text-align:left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>center(longueur,sous-chaîne)</code></td>
+<td style="text-align:left">Complète de part et d&rsquo;autre la chaîne par la sous-chaîne pour que le résultat ait la taille <code>longueur</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>endswith(suffixe)</code></td>
+<td style="text-align:left">Retourne <code>True</code> si la chaîne finit par la sous-chaîne <code>suffixe</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>startwith(préfixe)</code></td>
+<td style="text-align:left">Retourne <code>True</code> si la chaîne commence par la sous-chaîne <code>préfixe</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>index(sous-chaîne)</code></td>
+<td style="text-align:left">Retourne l&rsquo;indice de début de la  <code>sous-chaîne</code> dans le chaîne.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>strip(cars)</code></td>
+<td style="text-align:left">Retourne une copie de la chaîne où les éventuels caractères précisés par <em>cars</em> en début ou fin de chaîne sont retirés. Si <code>cars</code> est omis, ce sont les espaces éventuels qui sont retirés.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>upper()</code></td>
+<td style="text-align:left">Retourne une copie de la chaîne avec tous les caractères en majuscule.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>lower()</code></td>
+<td style="text-align:left">Retourne une copie de la chaîne avec tous les caractères en minuscule.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>title()</code></td>
+<td style="text-align:left">Retourne une copie de la chaîne  où tous les mots commencent par une capitale et les autres caractères sont en minuscule.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>replace(old,new)</code></td>
+<td style="text-align:left">Retourne une copie de la chaîne où chaque sous-chaîne <code>old</code> est remplacée par la sous-chaîne <code>new</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>split(sep)</code></td>
+<td style="text-align:left">Retourne une liste de sous-chaînes obtenues par découpe de la chaîne à chaque séparateur <code>sep</code>. Si <code>sep</code> n&rsquo;est pas précisé, la découpe se fait sur les espaces.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>join([list])</code></td>
+<td style="text-align:left">Utilise la chaîne comme un séparateur pour joindre les différentes chaînes inclues dans la liste.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>isalpha()</code></td>
+<td style="text-align:left">Retourne <code>True</code> si tous les caractères de la chaîne sont alphabétiques.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>isdigit()</code></td>
+<td style="text-align:left">Retourne <code>True</code> si tous les caractères de la chaîne sont des chiffres.</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>Comme ces méthodes retournent toutes une nouvelle chaîne, on peut les enchaîner.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;--Prépa TSI du lycée Léonce Vieljeux&#39;</span>
+c<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;--&#39;</span>)<span style="color:#f92672">.</span>upper()<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;LÉONCE &#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>)<span style="color:#f92672">.</span>center(<span style="color:#ae81ff">51</span>,<span style="color:#e6db74">&#39;-&#39;</span>)
+</code></pre></div><p><code>'------------PRÉPA TSI DU LYCÉE VIELJEUX------------'</code></p>
+<p> </p>
+<p>Autres exemples d&rsquo;utilisation des méthodes :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">d <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;java python c++ fortran&#39;</span>
+d<span style="color:#f92672">.</span>isalpha()
+</code></pre></div><p><code>False</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">e <span style="color:#f92672">=</span> d<span style="color:#f92672">.</span>title()
+e
+</code></pre></div><p><code>'Java Python C++ Fortran'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> e<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; &#39;</span>,<span style="color:#e6db74">&#39; !</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; !&#39;</span>
+f
+</code></pre></div><p><code>'Java !\nPython !\nC++ !\nFortran !'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(f)
+</code></pre></div><p><code>Java !</code></p>
+<p><code>Python !</code></p>
+<p><code>C++ !</code></p>
+<p><code>Fortran !</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f<span style="color:#f92672">.</span>index(<span style="color:#e6db74">&#39;Python&#39;</span>)
+</code></pre></div><p><code>7</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f[<span style="color:#ae81ff">7</span>:]<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;Py&#39;</span>)  <span style="color:#75715e"># &#34;\n&#34; est compté comme un caractère unique. </span>
+</code></pre></div><p><code>True</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f[<span style="color:#ae81ff">7</span>:<span style="color:#ae81ff">13</span>]<span style="color:#f92672">.</span>isalpha()
+</code></pre></div><p><code>True</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">g <span style="color:#f92672">=</span> d<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; &#39;</span>)
+g
+</code></pre></div><p><code>['java', 'python', 'c++', 'fortran']</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">h <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; !</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(g)
+<span style="color:#66d9ef">print</span>(h, end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; !&#39;</span>)
+</code></pre></div><p><code>java !</code></p>
+<p><code>python !</code></p>
+<p><code>c++ !</code></p>
+<p><code>fortran !</code></p>
+<p> </p>
+<p> </p>
+<h2 id="la-fonction-print">La fonction <code>print</code></h2>
+<p>La fonction native <code>print()</code> prend en argument une liste d&rsquo;objet et, de manière optionnelle, des arguments <code>end</code> et <code>sep</code> qui spécifient comment doit terminer la chaîne et quels caractères utiliser pour séparer les objets imprimés.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">nom, jour, mois <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Darwin&#39;</span>, <span style="color:#ae81ff">12</span>, <span style="color:#e6db74">&#39;février&#39;</span>
+<span style="color:#66d9ef">print</span>(nom,<span style="color:#e6db74">&#39;est né le&#39;</span>,jour,mois,<span style="color:#ae81ff">1809</span>)
+</code></pre></div><p><code>Darwin est né le 12 février 1809</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;C</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">est&#39;</span>,<span style="color:#e6db74">&#39;tout&#39;</span>,<span style="color:#e6db74">&#39;collé&#39;</span>,sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>,end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; !!!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p><code>C'esttoutcollé !!!</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;a&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;b&#39;</span>)
+<span style="color:#66d9ef">print</span>()
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;c&#39;</span>)
+</code></pre></div><p><code>a</code></p>
+<p><code>b</code></p>
+<p> </p>
+<p><code>c</code></p>
+<p>Sans argument, <code>print</code> imprime le caractère de fin de ligne <code>\n</code> car c&rsquo;est la valeur de l&rsquo;argument <code>end</code> par défaut. Donc pour empêcher la fin de ligne après chaque appel de <code>print</code>, il faut donner une autre valeur à <code>end</code> comme <code>end = ''</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Pas de nouvelle ligne.&#39;</span>,end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;La preuve !&#39;</span>)
+</code></pre></div><p><code>Pas de nouvelle ligne. La preuve !</code></p>
+<p>Avec un peu de pratique, on peut même utiliser <code>print</code> pour fabriquer des tableaux de texte :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">entête <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;| Indice des prix des tulipes |&#39;</span>
+ligne <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;+&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">16</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">13</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;+&#39;</span>
+<span style="color:#66d9ef">print</span>(ligne, entête, ligne,
+<span style="color:#e6db74">&#39;|  23 févr. 1636 |        100 |&#39;</span>,
+<span style="color:#e6db74">&#39;|  25  nov. 1636 |        673 |&#39;</span>,
+<span style="color:#e6db74">&#39;|   1 févr. 1637 |       1366 |&#39;</span>, ligne, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><pre><code>+-----------------------------+
+| Indice des prix des tulipes |
++-----------------------------+
+|  23 févr. 1636 |        100 |
+|  25  nov. 1636 |        673 |
+|   1 févr. 1637 |       1366 |
++-----------------------------+
+</code></pre>
+<p> </p>
+<p> </p>
+<h2 id="formatage">Formatage des chaînes de caractères</h2>
+<p>Grâce à la méthode de chaînes de caractères <code>.format()</code>, la chaîne peut contenir la valeur d&rsquo;une variable.<br>
+La syntaxe la plus simple est :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;{} plus {} égale {}&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#e6db74">&#39;cinq&#39;</span>)
+</code></pre></div><p><code>'2 plus 3 égale cinq'</code></p>
+<p>Les arguments de la méthode <code>str.format()</code> sont insérés à la place des accolades &ldquo;<code>{}</code>&rdquo; dans la chaîne principale <code>str</code>.<br>
+Un nombre entre accolades se réfère à la position de l&rsquo;objet passé à la méthode (on peut aussi utiliser des noms s&rsquo;ils ont été affectés). Cela permet d&rsquo;utiliser plusieurs fois le même argument.<br>
+Rq : la zone entre les accolades s&rsquo;appelle champ de formatage.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;{1} plus {0} égale {2}&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#e6db74">&#39;cinq&#39;</span>)
+</code></pre></div><p><code>'3 plus 2 égale cinq'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;{0} plus {0} égale {1}&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>)
+</code></pre></div><p><code>'2 plus 2 égale 4'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;{nb1} plus {nb2} égale {rés}&#39;</span><span style="color:#f92672">.</span>format(nb1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>,nb2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>,rés <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;cinq&#39;</span>)
+</code></pre></div><p><code>'2 plus 3 égale cinq'</code></p>
+<p> </p>
+<p>On peut aussi spécifier une taille minimale à la chaîne qui sera insérée. Si la chaîne passée à la méthode est plus petite que la taille indiquée, elle est complétée par des espaces. La valeur de cette taille souhaitée est placée après un signe &ldquo;<code>:</code>&rdquo; dans l&rsquo;accolade. La chaîne insérée est naturellement justifiée à gauche, comportement modifiable grâce à l&rsquo;ajout de &ldquo;<code>&gt;</code>&rdquo; ou &ldquo;<code>^</code>&rdquo;.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;==={0:12}===&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;Python&#39;</span>)
+</code></pre></div><p><code>'===Python      ==='</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;==={0:&gt;12}===&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;Python&#39;</span>)
+</code></pre></div><p><code>'===      Python==='</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;==={0:^12}===&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;Python&#39;</span>)
+</code></pre></div><p><code>'===   Python   ==='</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;==={0:2}===&#39;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;Python&#39;</span>) <span style="color:#75715e"># Si la taille de la chaîne insérée dépasse la taille allouée, pas de problème...</span>
+</code></pre></div><p><code>'===Python==='</code></p>
+<p> </p>
+<p>Cette méthode est aussi utile pour <strong>formater les nombres</strong> qui seront affichés.<br>
+Une lettre ajoutée dans l&rsquo;accolade spécifie le système de numération : <code>d</code> pour la base 10, <code>b</code> pour les binaires, <code>x</code> ou <code>X</code> pour les hexadécimaux (en minuscules ou majuscules).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">254</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;a = {0:d} en base 10&#39;</span><span style="color:#f92672">.</span>format(a))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;a = {0:b} en binaire&#39;</span><span style="color:#f92672">.</span>format(a))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;a = {0:x} en héxadécimal (minuscules)&#39;</span><span style="color:#f92672">.</span>format(a))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;a = {0:X} en héxadécimal (majuscules)&#39;</span><span style="color:#f92672">.</span>format(a))
+</code></pre></div><pre><code>a = 254 en base 10
+a = 11111110 en binaire
+a = fe en héxadécimal (minuscules)
+a = FE en héxadécimal (majuscules)
+</code></pre>
+<p>Si on veut que tous les nombres affichés ait la même taille (pour les aligner, par exemple), on peut ajouter des zéros à gauche pour compléter.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;a = {a:05d}&#39;</span><span style="color:#f92672">.</span>format(a <span style="color:#f92672">=</span> <span style="color:#ae81ff">254</span>)
+</code></pre></div><p><code>'a = 00254'</code></p>
+<p>Par défaut, seul le signe d&rsquo;un nombre négatif est affiché. C&rsquo;est là encore customisable en ajoutant un signe avant la valeur de la longueur minimum : <code>'+'</code> affiche toujours le signe
+et <code>''</code> ajoute un espace devant si le nombre est positif.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a , b <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">25</span> , <span style="color:#ae81ff">12</span>
+s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;{0:+5d}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{1:+5d}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">= {2:+3d}&#39;</span><span style="color:#f92672">.</span>format(a,b,a <span style="color:#f92672">+</span> b)
+<span style="color:#66d9ef">print</span>(s)
+</code></pre></div><pre><code>  -25
+  +12
+= -13
+</code></pre>
+<p>Les <code>floats</code> aussi ont leurs formats propres. Ajouter &ldquo;<code>e</code>&rdquo; ou &ldquo;<code>E</code>&rdquo; en fin d&rsquo;accolade impose un affichage en notation scientifique alors que &ldquo;<code>f</code>&rdquo; impose l&rsquo;écriture décimale. Et placer &ldquo;<code>.p</code>&rdquo; (où <code>p</code> est un nombre) après le signe &ldquo;<code>:</code>&rdquo; précise le nombre <code>p</code> de décimales que l&rsquo;on souhaite (la précision).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.6235e-6</span>
+</code></pre></div><p><code>1.6235e-06</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;{0:.1e}&#39;</span><span style="color:#f92672">.</span>format(a), end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;   &#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;{0:.8E}&#39;</span><span style="color:#f92672">.</span>format(a), end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;   &#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;{0:.8f}&#39;</span><span style="color:#f92672">.</span>format(a), end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;   &#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;{0:.5f}&#39;</span><span style="color:#f92672">.</span>format(a)) <span style="color:#75715e"># Attention à ne pas tout tronquer !</span>
+</code></pre></div><p><code>1.6e-06   1.62350000E-06   0.00000162   0.00000</code></p>
 
 
-
-<ul>
-	
-</ul>
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -520,8 +929,6 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -535,6 +942,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -552,6 +962,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -567,6 +978,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -763,3 +1177,4 @@ onload='renderMathInElement(document.body);'></script>
 
   </body>
 </html>
+

@@ -8,7 +8,7 @@
 <meta name="author" content="Cordier-Info">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Tags - Cours Python</title>
+    <title>Manipulation de fichiers - Cours Python</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -62,7 +62,7 @@ onload='renderMathInElement(document.body);'></script>
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/cours_python/cours6/">
     <nav id="sidebar" class="">
 
 
@@ -123,7 +123,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/cours_python/" title="Cours Python" class="dd-item
-        
+        parent
         
         
         ">
@@ -254,7 +254,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/cours_python/cours6/" title="Manipulation de fichiers" class="dd-item ">
+      <li data-nav-id="/cours_python/cours6/" title="Manipulation de fichiers" class="dd-item active">
         <a href="/cours_python/cours6/">
         <b>6. </b>Manipulation de fichiers
         
@@ -452,14 +452,28 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Tags
+                   Manipulation de fichiers
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#interaction-avec-le-système-dexploitation">Interaction avec le système d&rsquo;exploitation</a></li>
+    <li><a href="#lectureetecriture">Lecture et écriture de fichiers</a>
+      <ul>
+        <li><a href="#ouvrir-et-fermer-un-fichier">Ouvrir et fermer un fichier</a></li>
+        <li><a href="#ecrire">Écrire dans un fichier</a></li>
+        <li><a href="#lire-un-fichier">Lire un fichier</a></li>
+      </ul>
+    </li>
+    <li><a href="#fichiers-image">Fichiers image</a></li>
+    <li><a href="#interaction-avec-lutilisateur--la-fonction-input">Interaction avec l&rsquo;utilisateur : la fonction <code>input()</code></a></li>
+    <li><a href="#web">Récupérer des données sur le web</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -477,15 +491,302 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-
-
-
+<h1 id="manipulation-de-fichiers">Manipulation de fichiers</h1>
+<h2 id="interaction-avec-le-système-dexploitation">Interaction avec le système d&rsquo;exploitation</h2>
+<p>Le module <code>os</code> offre la possibilité d&rsquo;interagir avec le système d&rsquo;exploitation indépendamment de la plateforme utilisée.</p>
 <ul>
-	
+<li><code>os.getcwd()</code> renvoie le répertoire courant (répertoire depuis lequel le programme est exécuté) sous forme de chaîne.</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+
+os<span style="color:#f92672">.</span>getcwd()
+</code></pre></div><p><code>'/Users/cordiermarc/Documents/prof/informatique/Python_6'</code></p>
+<ul>
+<li><code>os.chdir('répertoire')</code> permet de changer le répertoire courant pour le répertoire donné en argument. On peut soit donner le chemin absolu (qui commence par la racine, <code>/</code> sur un système Unix)
+soit un chemin relatif (qui commence par <code>.</code> pour désigner le répertoire courant).</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">os<span style="color:#f92672">.</span>chdir(<span style="color:#e6db74">&#39;/Users/cordiermarc/Documents&#39;</span>)
+os<span style="color:#f92672">.</span>getcwd()
+</code></pre></div><p><code>'/Users/cordiermarc/Documents'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">os<span style="color:#f92672">.</span>chdir(<span style="color:#e6db74">&#39;./prof/informatique/Python_6&#39;</span>)
+os<span style="color:#f92672">.</span>getcwd()
+</code></pre></div><p><code>'/Users/cordiermarc/Documents/prof/informatique/Python_6'</code></p>
+<ul>
+<li><code>os.listdir('répertoire')</code> permet de connaître le contenu d&rsquo;un répertoire. Le nom raccourci du répertoire courant est <code>'.'</code>.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">os<span style="color:#f92672">.</span>listdir(<span style="color:#e6db74">&#39;.&#39;</span>)
+</code></pre></div><pre><code>['.DS_Store',
+ 'puissances.txt',
+ 'images',
+ 'monfichier.rtf',
+ 'monfichier.txt',
+ 'cours6.ipynb',
+ 'ensoleillement.txt',
+ '.ipynb_checkpoints']
+</code></pre>
+<ul>
+<li><code>os.path</code> est un sous-module qui propose plusieurs fonctions permettant de jouer avec les chemins d&rsquo;accès et les noms de fichier. On en verra un exemple d&rsquo;utilisation à la fin du document.</li>
+</ul>
+<p> </p>
+<p> </p>
+<h2 id="lectureetecriture">Lecture et écriture de fichiers</h2>
+<p>Jusque-là, les différentes données de nos programmes étaient directement écrites dans le code et les sorties s&rsquo;affichaient sur le shell.</p>
+<p>Mais il est souvent plus utile d&rsquo;importer des données ou d&rsquo;écrire les sorties dans des fichiers plutôt que sur l&rsquo;écran. Pour cela, Python utilise l&rsquo;objet <code>file</code>.</p>
+<p> </p>
+<p> </p>
+<h3 id="ouvrir-et-fermer-un-fichier">Ouvrir et fermer un fichier</h3>
+<p>Un objet <code>file</code> est créé par l&rsquo;utilisation de la fonction <code>open(nom du fichier,mode)</code> qui prend deux arguments.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;monfichier.txt&#39;</span>,<span style="color:#e6db74">&#39;w&#39;</span>)
+</code></pre></div><ul>
+<li>
+<p>Le premier argument, <em>nom du fichier</em>, est une chaîne contenant le nom du fichier. Ce nom peut être donné avec le chemin d&rsquo;accès absolu ou seulement l&rsquo;arborescence relative au dossier dans lequel le programme est exécuté.
+En écrivant un nom sans chemin, le fichier se trouve dans le répertoire courant.</p>
+</li>
+<li>
+<p>Le deuxième argument, <em>mode</em>, est une chaîne d&rsquo;un ou deux caractères décrivant la façon dont le fichier est utilisé.<br>
+<em>mode</em> peut être <code>r</code> quand le fichier n&rsquo;est accédé qu&rsquo;en lecture, <code>w</code> en écriture seulement (un fichier existant portant le même nom sera alors écrasé)
+et <code>a</code> ouvre le fichier en mode ajout (toute donnée écrite dans le fichier est automatiquement ajoutée à la fin). <code>r+</code> ouvre le fichier en mode lecture/écriture. L&rsquo;argument mode est optionnel, sa valeur par défaut est <code>r</code>.<br>
+<code>b</code> collé à la fin du mode indique que le fichier doit être ouvert en mode binaire c&rsquo;est-à-dire que les données sont lues et écrites sous forme d&rsquo;octets (type bytes).
+Ce mode est à utiliser pour les fichiers contenant autre chose que du texte.</p>
+</li>
+</ul>
+<p>Les objets <code>file</code> sont fermés grâce à la méthode <code>close()</code> : <code>f.close()</code> par exemple. Python ferme les fichiers automatiquement lorsque le programme se termine.</p>
+<p> </p>
+<p> </p>
+<h3 id="ecrire">Écrire dans un fichier</h3>
+<p>La méthode <code>write()</code> d&rsquo;un objet <code>file</code> écrit une chaîne de caractères dans le fichier et renvoie le nombre de caractères inscrits.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#39;Coucou monde !&#39;</span>)
+</code></pre></div><p><code>14</code></p>
+<p>Plus pratique, la fonction native <code>print()</code> peut accepter en argument un objet <code>file</code>. Plutôt que d&rsquo;être affichée sur le shell, la sortie de <code>print()</code> est alors redirigée vers ce fichier.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">35</span>, <span style="color:#e6db74">&#39;Cl&#39;</span>, <span style="color:#ae81ff">2</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>, file<span style="color:#f92672">=</span>f)
+f<span style="color:#f92672">.</span>close()
+</code></pre></div><p>Exemple : le programme suivant écrit les quatre premières puissances de tous les entiers entre 1 et 1000, chaque champ étant séparé par une virgule, dans le fichier puissances.txt.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fi <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;puissances.txt&#39;</span>,<span style="color:#e6db74">&#39;w&#39;</span>)
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1001</span>) :
+    <span style="color:#66d9ef">print</span>(i, i<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>, i<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span>, i<span style="color:#f92672">**</span><span style="color:#ae81ff">4</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;, &#39;</span>, file<span style="color:#f92672">=</span>fi)
+fi<span style="color:#f92672">.</span>close()
+</code></pre></div><p> </p>
+<p> </p>
+<h3 id="lire-un-fichier">Lire un fichier</h3>
+<p>Pour lire <code>n</code> bytes d&rsquo;un fichier, on utilise <code>f.read(n)</code>. En omettant <code>n</code>, tout le fichier est lu.<br>
+<code>readline()</code> lit une seule ligne d&rsquo;un fichier jusqu&rsquo;au, en l&rsquo;incluant, caractère <code>\n</code> de nouvelle ligne. Un nouvel appel de <code>readline()</code> lit la ligne suivante et ainsi de suite. <code>read()</code> et <code>readline()</code> renvoie toutes les deux une chaîne vide lorsque la fin du fichier est atteinte.<br>
+Pour lire en une fois toutes les lignes dans une liste de chaînes, on utilise <code>f.readlines()</code>.</p>
+<p>Les objet <code>file</code> sont itérables. On peut ainsi retourner chaque ligne d&rsquo;un fichier une à une en utilisant une boucle :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;monfichier.txt&#39;</span>)
+<span style="color:#66d9ef">for</span> ligne <span style="color:#f92672">in</span> f :
+    <span style="color:#66d9ef">print</span>(ligne, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
+f<span style="color:#f92672">.</span>close()
+</code></pre></div><pre><code>Coucou monde !
+35Cl2
+</code></pre>
+<p>Comme <code>ligne</code> contient déjà le caractère de nouvelle ligne lorsqu&rsquo;elle est lue, on utilise <code>end = ''</code> pour empêcher <code>print</code> d&rsquo;en ajouter un autre.<br>
+Cette méthode de lecture ligne à ligne est à privilégier pour les gros fichiers à moins de vraiment vouloir contenir en mémoire l&rsquo;ensemble du fichier.</p>
+<p>Pour lire les nombres du fichier <code>'puissance.txt'</code> écrit précédemment, les colonnes doivent être converties en une liste d&rsquo;entiers.<br>
+Pour cela, chaque ligne doit être décomposée en ses différents champs et chaque champ explicitement converti en entier grâce à <code>int()</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fo <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;puissances.txt&#39;</span>)
+carrés, cubes, puiss4 <span style="color:#f92672">=</span> [],[],[]
+lignes <span style="color:#f92672">=</span> fo<span style="color:#f92672">.</span>readlines()
+fo<span style="color:#f92672">.</span>close()
+<span style="color:#66d9ef">for</span> ligne <span style="color:#f92672">in</span> lignes :
+    champs <span style="color:#f92672">=</span> ligne<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;,&#39;</span>)
+    carrés<span style="color:#f92672">.</span>append(int(champs[<span style="color:#ae81ff">1</span>]))
+    cubes<span style="color:#f92672">.</span>append(int(champs[<span style="color:#ae81ff">2</span>]))
+    puiss4<span style="color:#f92672">.</span>append(int(champs[<span style="color:#ae81ff">3</span>]))
+n <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>
+<span style="color:#66d9ef">print</span>(n, <span style="color:#e6db74">&#39;au cube vaut&#39;</span>, cubes[n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</code></pre></div><pre><code>500 au cube vaut 125000000
+</code></pre>
+
+<div class="notices note" ><p>Mais en pratique, il vaut mieux utiliser les bibliothèques NumPy (2e semestre) ou Pandas pour des fichiers de données comme celui-ci.<br>
+Vous apprendrez aussi à utiliser les méthodes des bases de données.</p>
+</div>
+
+<hr>
+<p>La fonction suivante permet d&rsquo;ouvrir proprement un fichier en gérant l&rsquo;exception qui serait levée par sa non présence et d&rsquo;afficher quelques informations :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ouverture</span>(nom_du_fichier) :
+    <span style="color:#66d9ef">try</span> :
+        fichier <span style="color:#f92672">=</span> open(nom_du_fichier,<span style="color:#e6db74">&#39;r&#39;</span>)
+    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">IOError</span> :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Oups ! Fichier absent...&#34;</span>)
+        <span style="color:#66d9ef">return</span>
+    <span style="color:#66d9ef">else</span> : <span style="color:#75715e"># bloc exécuté seulement si l&#39;exception n&#39;est pas rencontrée</span>
+        lignes <span style="color:#f92672">=</span> fichier<span style="color:#f92672">.</span>readlines()
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;{} contient {} lignes.&#39;</span><span style="color:#f92672">.</span>format(nom_du_fichier,len(lignes)))
+        fichier<span style="color:#f92672">.</span>close()
+    <span style="color:#66d9ef">finally</span> : <span style="color:#75715e"># bloc exécuté dans tous les cas (que le fichier ait été ouvert ou non)</span>
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Terminé avec le fichier {}&#39;</span><span style="color:#f92672">.</span>format(nom_du_fichier))
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;La première ligne de {} est:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{}&#39;</span><span style="color:#f92672">.</span>format(nom_du_fichier,lignes[<span style="color:#ae81ff">0</span>]))
+    <span style="color:#75715e"># autres instructions</span>
+    <span style="color:#66d9ef">return</span>
+</code></pre></div><hr>
+<p>Dans cet autre exemple, on va créer un petit gif qui illustre le théorème de La Hire :</p>
+<p>le programme produit un nouveau dossier <code>petitgif</code> dans lequel il crée 40 fichiers <code>svg</code> aux noms incrémentés (de <code>fig00.svg</code> à <code>fig39.svg</code>) décrivant des cercles et des segments.</p>
+<p>Le <code>svg</code> pour Scalable Vector Graphics est un format de données ASCII, donc texte, conçu pour décrire des ensembles de graphiques vectoriels et basé sur le XML, un langage utilisant des balises <code>&lt;...&gt;</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#f92672">import</span> math
+
+nfigs <span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span>
+<span style="color:#75715e"># on crée un répertoire &#39;petigif&#39; à partir du répertoire courant s&#39;il n&#39;existe pas déjà</span>
+rép_actuel <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getcwd()
+nv_rép <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(rép_actuel, <span style="color:#e6db74">&#39;petitgif&#39;</span>) 
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(nv_rép):  
+    os<span style="color:#f92672">.</span>mkdir(nv_rép)                           
+    
+hauteur_cadre, largeur_cadre <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">500</span>
+<span style="color:#75715e"># positions du centre du grand cercle :</span>
+cx, cy <span style="color:#f92672">=</span> hauteur_cadre <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>, largeur_cadre <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+<span style="color:#75715e"># rayons des trois cercles</span>
+r1, r2, r3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">10</span>
+
+<span style="color:#75715e"># liste d&#39;angles pour faire tourner le petit disque :</span>
+alphas <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>pi <span style="color:#f92672">/</span> nfigs <span style="color:#f92672">*</span> n <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(nfigs)]
+
+<span style="color:#66d9ef">for</span> n, alpha <span style="color:#f92672">in</span> enumerate(alphas):
+    filename <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(nv_rép, <span style="color:#e6db74">&#39;fig{:02d}.svg&#39;</span><span style="color:#f92672">.</span>format(n))
+    image <span style="color:#f92672">=</span> open(filename, <span style="color:#e6db74">&#39;w&#39;</span>)   
+    <span style="color:#75715e"># En-tête du fichier SVG :</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;&#34;&#34;&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+</span><span style="color:#e6db74">                 &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34;
+</span><span style="color:#e6db74">                      xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;
+</span><span style="color:#e6db74">                      width=&#34;{}&#34; height=&#34;{}&#34; style=&#34;background: {}&#34;&gt;&#34;&#34;&#34;</span><span style="color:#f92672">.</span>format(hauteur_cadre, largeur_cadre, <span style="color:#e6db74">&#39;#ffffff&#39;</span>), file<span style="color:#f92672">=</span>image)
+    
+    <span style="color:#75715e"># grand cercle bleu :</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;circle cx=&#34;{}&#34; cy=&#34;{}&#34; r=&#34;{}&#34; style=&#34;stroke: blue; stroke-width: 2px; fill: none;&#34;/&gt;&#39;</span><span style="color:#f92672">.</span>format(cx, cy, r1),file<span style="color:#f92672">=</span>image)
+    
+    <span style="color:#75715e"># grands diamètres 1 à 4 :</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;line x1=&#34;{}&#34; y1=&#34;{}&#34; x2=&#34;{}&#34; y2=&#34;{}&#34; stroke=&#34;blue&#34; /&gt;&#39;</span><span style="color:#f92672">.</span>format(cx,cy<span style="color:#f92672">-</span>r1,cx,cy<span style="color:#f92672">+</span>r1), file<span style="color:#f92672">=</span>image)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;line x1=&#34;{}&#34; y1=&#34;{}&#34; x2=&#34;{}&#34; y2=&#34;{}&#34; stroke=&#34;blue&#34; /&gt;&#39;</span><span style="color:#f92672">.</span>format(cx<span style="color:#f92672">-</span>r1,cy,cx<span style="color:#f92672">+</span>r1,cy), file<span style="color:#f92672">=</span>image)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;line x1=&#34;{}&#34; y1=&#34;{}&#34; x2=&#34;{}&#34; y2=&#34;{}&#34; stroke=&#34;blue&#34; /&gt;&#39;</span><span style="color:#f92672">.</span>format(cx<span style="color:#f92672">+</span>r1<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>cos(math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>),cy<span style="color:#f92672">+</span>r1<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>sin(math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>),cx<span style="color:#f92672">-</span>r1<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>cos(math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>),cy<span style="color:#f92672">-</span>r1<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>sin(math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>)), file<span style="color:#f92672">=</span>image)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;line x1=&#34;{}&#34; y1=&#34;{}&#34; x2=&#34;{}&#34; y2=&#34;{}&#34; stroke=&#34;blue&#34; /&gt;&#39;</span><span style="color:#f92672">.</span>format(cx<span style="color:#f92672">+</span>r1<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>cos(<span style="color:#f92672">-</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>),cy<span style="color:#f92672">+</span>r1<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>sin(<span style="color:#f92672">-</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>),cx<span style="color:#f92672">-</span>r1<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>cos(<span style="color:#f92672">-</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>),cy<span style="color:#f92672">-</span>r1<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>sin(<span style="color:#f92672">-</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>)), file<span style="color:#f92672">=</span>image)
+    
+    <span style="color:#75715e"># cercle rouge à l&#39;intérieur du cercle bleu déplacé d&#39;un angle alpha à chaque itération </span>
+    cx2, cy2 <span style="color:#f92672">=</span> cx <span style="color:#f92672">+</span> (r1<span style="color:#f92672">-</span>r2) <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>cos(alpha), cy <span style="color:#f92672">+</span> (r1<span style="color:#f92672">-</span>r2) <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>sin(alpha)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;circle cx=&#34;{}&#34; cy=&#34;{}&#34; r=&#34;{}&#34; style=&#34;stroke: red; fill: none; &#34;/&gt;&#39;</span><span style="color:#f92672">.</span>format(cx2, cy2, r2), file<span style="color:#f92672">=</span>image)
+    
+    cx3, cy3 <span style="color:#f92672">=</span> cx <span style="color:#f92672">+</span> r1 <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>cos(alpha), cy
+    cx4, cy4 <span style="color:#f92672">=</span> cx , cy <span style="color:#f92672">+</span> r1 <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>sin(alpha)
+    cx5, cy5 <span style="color:#f92672">=</span> cx <span style="color:#f92672">+</span> r1 <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>cos(alpha<span style="color:#f92672">+</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>)<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>cos(math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>), cy <span style="color:#f92672">-</span> r1 <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>cos(alpha<span style="color:#f92672">+</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>)<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>sin(math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>)
+    cx6, cy6 <span style="color:#f92672">=</span> cx <span style="color:#f92672">+</span> r1 <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>sin(alpha<span style="color:#f92672">+</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>)<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>cos(math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>) , cy <span style="color:#f92672">+</span> r1 <span style="color:#f92672">*</span> math<span style="color:#f92672">.</span>sin(alpha<span style="color:#f92672">+</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>)<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>sin(math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>)
+    
+    <span style="color:#75715e"># petits diamètres 1 et 2 :</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;line x1=&#34;{}&#34; y1=&#34;{}&#34; x2=&#34;{}&#34; y2=&#34;{}&#34; stroke=&#34;red&#34; /&gt;&#39;</span><span style="color:#f92672">.</span>format(cx3,cy3,cx4,cy4), file<span style="color:#f92672">=</span>image)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;line x1=&#34;{}&#34; y1=&#34;{}&#34; x2=&#34;{}&#34; y2=&#34;{}&#34; stroke=&#34;red&#34; /&gt;&#39;</span><span style="color:#f92672">.</span>format(cx5,cy5,cx6,cy6), file<span style="color:#f92672">=</span>image)
+    
+    <span style="color:#75715e"># 4 petits disques :  </span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;circle cx=&#34;{}&#34; cy=&#34;{}&#34; r=&#34;{}&#34; style=&#34;stroke: purple; fill: purple;&#34;/&gt;&#39;</span><span style="color:#f92672">.</span>format(cx3, cy3, r3), file<span style="color:#f92672">=</span>image)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;circle cx=&#34;{}&#34; cy=&#34;{}&#34; r=&#34;{}&#34; style=&#34;stroke: purple; fill: purple;&#34;/&gt;&#39;</span><span style="color:#f92672">.</span>format(cx4, cy4, r3), file<span style="color:#f92672">=</span>image)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;circle cx=&#34;{}&#34; cy=&#34;{}&#34; r=&#34;{}&#34; style=&#34;stroke: purple; fill: purple;&#34;/&gt;&#39;</span><span style="color:#f92672">.</span>format(cx5, cy5, r3), file<span style="color:#f92672">=</span>image)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;circle cx=&#34;{}&#34; cy=&#34;{}&#34; r=&#34;{}&#34; style=&#34;stroke: purple; fill: purple;&#34;/&gt;&#39;</span><span style="color:#f92672">.</span>format(cx6, cy6, r3), file<span style="color:#f92672">=</span>image)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;&lt;/svg&gt;&#39;</span>, file<span style="color:#f92672">=</span>image)
+</code></pre></div><p>On peut utiliser ensuite le logiciel libre <a href="https://imagemagick.org/index.php">ImageMagick software</a> qui permet de créer un gif à partir d&rsquo;une série d&rsquo;images via la ligne de commande (une fois dans le répertoire <em>petitgif</em>) :<br>
+<code>convert -delay 5 -loop 0 fig*.svg animation.gif</code></p>
+<p><img src="/animation.gif" alt=""></p>
+<p> </p>
+<p> </p>
+<h2 id="fichiers-image">Fichiers image</h2>
+<p>Grâce à la librairie PIL (python imaging library) Python permet aussi de manipuler des fichiers image.</p>
+<p>Les fonctions de ce module permettent d&rsquo;avoir accès aux pixels d&rsquo;une image par leurs coordonnées cartésiennes (<em>colonne</em>,<em>ligne</em>) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+
+image <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>open(<span style="color:#e6db74">&#39;images/Darwin.jpg&#39;</span>)
+largeur, hauteur <span style="color:#f92672">=</span> image<span style="color:#f92672">.</span>size
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;largeur : {} pixels, hauteur : {} pixels&#39;</span><span style="color:#f92672">.</span>format(largeur,hauteur))
+</code></pre></div><p><code>largeur : 700 pixels, hauteur : 967 pixels</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pixels_image <span style="color:#f92672">=</span> image<span style="color:#f92672">.</span>load()
+pixels_image[<span style="color:#ae81ff">23</span>,<span style="color:#ae81ff">102</span>]
+</code></pre></div><p><code>(90, 78, 66)</code></p>
+
+<div class="notices info" ><p>Chaque pixel contient un tuple de 3 éléments codant sa couleur au format RGB : chacune des 3 couleurs primaires, rouge, vert et bleu, est codée par un byte de 8 bits autorisant donc 256 valeurs (0 pour le noir, 255 pour la couleur saturée). Cela fait en tout une palette de $256^3$ soit plus de 16 millions de couleurs.</p>
+</div>
+
+<p>Supposons que l&rsquo;on souhaite transformer une photo en couleur en une photo noir et blanc (ou plutôt en niveaux de gris).</p>
+<p>On peut commencer par définir une fonction <code>intensité_moyenne(pixel)</code> qui fait la moyenne des intensités des 3 couleurs de chaque pixel. Puis on affecte cette valeur unique à chacune des intensités des 3 couleurs dans une nouvelle image (cela donne une teinte plus ou moins foncée de gris).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">intensité_moyenne</span>(pixel) :
+    Imoy <span style="color:#f92672">=</span> (pixel[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span>pixel[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>pixel[<span style="color:#ae81ff">2</span>])<span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>
+    <span style="color:#66d9ef">return</span> int(Imoy)
+
+image_NB <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#34;RGB&#34;</span>, (largeur, hauteur), <span style="color:#e6db74">&#34;black&#34;</span>)
+pixels_image_NB <span style="color:#f92672">=</span> image_NB<span style="color:#f92672">.</span>load()
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(largeur) :
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(hauteur) :
+        Imoy <span style="color:#f92672">=</span> intensité_moyenne(pixels_image[i,j])
+        pixels_image_NB[i,j] <span style="color:#f92672">=</span> (Imoy,Imoy,Imoy)
+
+<span style="color:#66d9ef">print</span>(pixels_image[<span style="color:#ae81ff">23</span>,<span style="color:#ae81ff">102</span>],pixels_image_NB[<span style="color:#ae81ff">23</span>,<span style="color:#ae81ff">102</span>])
+image_NB<span style="color:#f92672">.</span>save(<span style="color:#e6db74">&#39;images/Darwin_N&amp;B.jpg&#39;</span>)
+</code></pre></div><p><code>(90, 78, 66) (78, 78, 78)</code></p>
+<p><img src="/resultat.jpg" alt=""></p>
+<p>On peut aussi créer une image à partir de rien comme dans cet exemple où la couleur des pixels dépend de leurs positions :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">img <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>new( <span style="color:#e6db74">&#39;RGB&#39;</span>, (<span style="color:#ae81ff">250</span>,<span style="color:#ae81ff">250</span>), <span style="color:#e6db74">&#34;black&#34;</span>) 
+pixels <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>load() 
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(img<span style="color:#f92672">.</span>size[<span style="color:#ae81ff">0</span>]):    
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(img<span style="color:#f92672">.</span>size[<span style="color:#ae81ff">1</span>]):    
+        pixels[i,j] <span style="color:#f92672">=</span> (i, j, <span style="color:#ae81ff">100</span>) 
+img
+</code></pre></div><p><img src="/output_52.png" alt=""></p>
+<p> </p>
+<p> </p>
+<h2 id="interaction-avec-lutilisateur--la-fonction-input">Interaction avec l&rsquo;utilisateur : la fonction <code>input()</code></h2>
+<p>La plupart des scripts élaborés nécessitent à un moment ou à un autre une intervention de l&rsquo;utilisateur (entrée d&rsquo;un paramètre, clic de souris sur un bouton, etc.). Dans un script en mode texte (comme ceux que nous avons créés jusqu&rsquo;à présent), la méthode la plus simple consiste à employer la fonction native <code>input()</code>. Cette fonction provoque une interruption dans le programme courant. L&rsquo;utilisateur est invité à entrer des caractères au clavier et à terminer avec <code>&lt;Enter&gt;</code>. Lorsque cette touche est enfoncée, l&rsquo;exécution du programme se poursuit, et la fonction fournit en retour une valeur correspondant à ce que l&rsquo;utilisateur a entré. Cette valeur peut alors être assignée à une variable quelconque.</p>
+<p>Si un argument est donné, il est affiché à l&rsquo;écran :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Quel est votre film préféré ?&#34;</span>)
+s <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;--&gt;&#39;</span>)
+</code></pre></div><p><code>Quel est votre film préféré ?</code></p>
+<p><code>--&gt;</code> <strong>La Vie de Brian</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s
+</code></pre></div><p><code>'La Vie de Brian'</code></p>
+<p><code>input()</code> convertit ce qui a été entré au clavier en chaîne de caractères. Si on attend d&rsquo;autres types de données, il faut utiliser les fonctions de conversion <code>int()</code> ou <code>float</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#39;Choisir un chiffre :&#39;</span>))
+a<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>
+</code></pre></div><p><code>Choisir un chiffre :</code> <strong>4</strong></p>
+<p><code>8</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> float(input(<span style="color:#e6db74">&#39;Choisir un chiffre :&#39;</span>))
+a<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>
+</code></pre></div><p><code>Choisir un chiffre :</code> <strong>2</strong></p>
+<p><code>4.0</code></p>
+<p> </p>
+<p> </p>
+<h2 id="web">Récupérer des données sur le web</h2>
+<p>Exemple de programme :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">import</span> matplotlib.dates <span style="color:#f92672">as</span> mdates
+<span style="color:#f92672">from</span> dateutil.parser <span style="color:#f92672">import</span> parse
+
+dep <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Numéro du département ? &#34;</span>)
+
+<span style="color:#75715e"># données gouvernementales covid</span>
+url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.data.gouv.fr/fr/datasets/r/63352e38-d353-4b54-bfd1-f1b3ee1cabd7&#34;</span>
+download <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
+brut <span style="color:#f92672">=</span> download<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#75715e"># pour transformer les bytes récupérés en string</span>
+lignes <span style="color:#f92672">=</span> brut<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+date, hosp <span style="color:#f92672">=</span> [],[]
+<span style="color:#66d9ef">for</span> ligne <span style="color:#f92672">in</span> lignes[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>] : <span style="color:#75715e"># on saute l&#39;en-tête et ne garde que les sexes 0 correspondant à la somme féminin+masculin</span>
+    champs <span style="color:#f92672">=</span> ligne<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;;&#39;</span>)
+    <span style="color:#66d9ef">if</span> champs[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#34;{}&#34;&#39;</span><span style="color:#f92672">.</span>format(dep) :
+        date<span style="color:#f92672">.</span>append(parse(champs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;&#34;&#39;</span>))) <span style="color:#75715e"># parse() sert à convertir la chaîne de caractères en une date</span>
+        hosp<span style="color:#f92672">.</span>append(int(champs[<span style="color:#ae81ff">4</span>]))
+
+<span style="color:#75715e"># liste noms des départements</span>
+url2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://static.data.gouv.fr/resources/departements-et-leurs-regions/20190815-175403/departements-region.csv&#34;</span>
+download2 <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url2)
+brut2 <span style="color:#f92672">=</span> download2<span style="color:#f92672">.</span>content<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+lignes2 <span style="color:#f92672">=</span> brut2<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">for</span> li <span style="color:#f92672">in</span> lignes2 :
+    ch <span style="color:#f92672">=</span> li<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;,&#39;</span>)
+    <span style="color:#66d9ef">if</span> ch[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">==</span>str(dep) :
+        nom_dep <span style="color:#f92672">=</span> ch[<span style="color:#ae81ff">1</span>]
+
+fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">10</span>))
+ax<span style="color:#f92672">.</span>plot(date,hosp)
+plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Patients Covid en réa en {}&#34;</span><span style="color:#f92672">.</span>format(nom_dep), fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>)
+ax<span style="color:#f92672">.</span>xaxis<span style="color:#f92672">.</span>set_major_formatter(mdates<span style="color:#f92672">.</span>DateFormatter(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">/%m&#39;</span>))
+ax<span style="color:#f92672">.</span>xaxis<span style="color:#f92672">.</span>set_major_locator(mdates<span style="color:#f92672">.</span>DayLocator(interval<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>))
+fig<span style="color:#f92672">.</span>autofmt_xdate()
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/covid17.png" alt="covid17"></p>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -520,8 +821,6 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -535,6 +834,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -616,6 +918,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -634,6 +937,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -763,3 +1069,4 @@ onload='renderMathInElement(document.body);'></script>
 
   </body>
 </html>
+

@@ -8,7 +8,7 @@
 <meta name="author" content="Cordier-Info">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Tags - Cours Python</title>
+    <title>Séquences et itérables - Cours Python</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -62,7 +62,7 @@ onload='renderMathInElement(document.body);'></script>
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/cours_python/cours3/">
     <nav id="sidebar" class="">
 
 
@@ -123,7 +123,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/cours_python/" title="Cours Python" class="dd-item
-        
+        parent
         
         
         ">
@@ -191,7 +191,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/cours_python/cours3/" title="Séquences et itérables" class="dd-item ">
+      <li data-nav-id="/cours_python/cours3/" title="Séquences et itérables" class="dd-item active">
         <a href="/cours_python/cours3/">
         <b>3. </b>Séquences et itérables
         
@@ -452,14 +452,41 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Tags
+                   Séquences et itérables
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#séquences">Séquences</a>
+      <ul>
+        <li><a href="#listes">Listes</a>
+          <ul>
+            <li><a href="#indexation">Indexation</a></li>
+            <li><a href="#slicing">Slicing</a></li>
+            <li><a href="#mutabilite">Mutabilité des listes</a></li>
+            <li><a href="#methodes">Méthodes</a></li>
+          </ul>
+        </li>
+        <li><a href="#tuples">Tuples</a></li>
+      </ul>
+    </li>
+    <li><a href="#iterables">Objets itérables</a>
+      <ul>
+        <li><a href="#boucle-for">Boucle <code>for</code></a></li>
+        <li><a href="#range"><code>range()</code></a></li>
+        <li><a href="#enumerate"><code>enumerate</code></a></li>
+        <li><a href="#zip"><code>zip</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#dictionnaires">Dictionnaires</a></li>
+    <li><a href="#ensembles">Ensembles</a></li>
+    <li><a href="#comprehension">Listes par compréhension</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -477,15 +504,569 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
+<h1 id="séquences-et-itérables">Séquences et itérables</h1>
+<h2 id="séquences">Séquences</h2>
+<h3 id="listes">Listes</h3>
+<p>Python connaît différents types de données combinées, utilisés pour regrouper plusieurs valeurs. La plus souple est la liste, qui peut être écrite comme une suite, placée entre crochets, de valeurs (éléments) séparées par des virgules. Les éléments d&rsquo;une liste ne sont pas obligatoirement tous du même type, bien qu&rsquo;à l&rsquo;usage ce soit souvent le cas.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste1 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;deux&#39;</span>, <span style="color:#ae81ff">3.14</span>, <span style="color:#ae81ff">0</span>]
+liste1
+</code></pre></div><p><code>[1, 'deux', 3.14, 0]</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+liste2 <span style="color:#f92672">=</span> [<span style="color:#f92672">-</span><span style="color:#ae81ff">2.5</span>, a, liste1, a<span style="color:#f92672">==</span><span style="color:#ae81ff">2</span>, True]
+liste2
+</code></pre></div><p><code>[-2.5, 4, [1, 'deux', 3.14, 0], False, True]</code></p>
+<p>Pour créer une liste vide :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste0 <span style="color:#f92672">=</span> []
+liste0
+</code></pre></div><p><code>[]</code></p>
+<p> </p>
+<p> </p>
+<h4 id="indexation">Indexation</h4>
 
+<div class="notices info" ><p>Comme les chaînes de caractères, <strong>les listes peuvent être indicées et découpées</strong> (slicing) :</p>
+</div>
 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste1[<span style="color:#ae81ff">1</span>]
+</code></pre></div><p><code>'deux'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste2[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</code></pre></div><p><code>True</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste2[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">1</span>]
+</code></pre></div><p><code>'deux'</code></p>
+<p>Ce dernier exemple permet de retrouver le deuxième (indice <code>1</code>) élément du troisième (indice <code>2</code>) élément de la liste2. Cela marche car il se trouve que <code>liste2[2]</code> est une liste et <code>liste1[1]</code> est la chaîne de caractère <code>'deux'</code>. Et une chaîne de caractère étant elle-même indiçable, on peut écrire :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste2[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">1</span>][<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</code></pre></div><p><code>'x'</code></p>
 
+<div class="notices info" ><p>On peut utiliser l&rsquo;opérateur <code>in</code> pour tester l&rsquo;appartenance à une liste :</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1</span> <span style="color:#f92672">in</span> liste1
+</code></pre></div><p><code>True</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;deux&#39;</span> <span style="color:#f92672">in</span> liste2
+</code></pre></div><p><code>False</code></p>
+<p>On voit dans ce deuxième exemple que l&rsquo;opérateur <code>in</code> ne regarde pas à l&rsquo;intérieur des listes contenues dans les listes (on dit qu&rsquo;il n&rsquo;agit pas récursivement).</p>
+
+<div class="notices info" ><p>Les listes sont <strong>concaténables</strong> :</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste1 <span style="color:#f92672">+</span> liste2
+</code></pre></div><p><code>[1, 'deux', 3.14, 0, -2.5, 4, [1, 'deux', 3.14, 0], False, True]</code></p>
+
+<div class="notices info" ><p>La fonction <code>len()</code> permet de connaître la taille d&rsquo;une liste :</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">len(liste1)
+</code></pre></div><p><code>4</code></p>
+<p><code>len()</code> ne compte que les éléments au premier niveau de la liste et non ceux des sous-listes :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">len(liste2)
+</code></pre></div><p><code>5</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">len(liste2[<span style="color:#ae81ff">2</span>])
+</code></pre></div><p><code>4</code></p>
+<p> </p>
+<p> </p>
+<h4 id="slicing">Slicing</h4>
+<p>On découpe les listes comme on a découpé les chaînes de caractères :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.</span>, <span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">0.2</span>, <span style="color:#ae81ff">0.3</span>, <span style="color:#ae81ff">0.4</span>, <span style="color:#ae81ff">0.5</span>]
+L[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">4</span>]
+</code></pre></div><p><code>[0.1, 0.2, 0.3]</code></p>
+<p>On peut obtenir une copie renversée d&rsquo;une liste en la découpant avec un pas de -1 :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</code></pre></div><p><code>[0.5, 0.4, 0.3, 0.2, 0.1, 0.0]</code></p>
+<p>Grâce au pas, on peut aussi sélectionner des éléments périodiquement :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L[<span style="color:#ae81ff">1</span>::<span style="color:#ae81ff">2</span>]
+</code></pre></div><p><code>[0.1, 0.3, 0.5]</code></p>
+<p> </p>
+<p> </p>
+<h4 id="mutabilite">Mutabilité des listes</h4>
+
+<div class="notices warning" ><p>Contrairement aux chaînes de caractères, les listes sont des objets <strong>mutables</strong>, c&rsquo;est-à-dire qu&rsquo;on peut modifier leur contenu.</p>
+</div>
+
+<p>On peut ainsi réaffecter des éléments :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L1 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+L1[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;oups&#39;</span>
+L1
+</code></pre></div><p><code>[1, 2, 'oups']</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L2 <span style="color:#f92672">=</span> L1
+L1[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">99</span>
+L2
+</code></pre></div><p><code>[1, -99, 'oups']</code></p>
+<p>On remarque que modifier <code>L1</code> a modifié <code>L2</code>. En effet, <code>L1</code> et <code>L2</code> référencent la même liste, stockée dans un unique espace mémoire.</p>
+<p>Pour créer une nouvelle liste, copie de la liste de départ, mais indépendante, il y a plusieurs solutions :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L2 <span style="color:#f92672">=</span> L1<span style="color:#f92672">.</span>copy()
+L3 <span style="color:#f92672">=</span> L1[:]
+L4 <span style="color:#f92672">=</span> list(L1)
+L2[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span>L3[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span>L4[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ok&#39;</span>
+<span style="color:#66d9ef">print</span>(L1,L2,L3,L4)
+</code></pre></div><p><code>[1, -99, 'oups'] [1, 'ok', 'oups'] [1, 'ok', 'oups'] [1, 'ok', 'oups']</code></p>
+<p>Si une liste contient une variable affectée à une certaine valeur et que cette variable est réaffectée, la liste garde l&rsquo;ancienne valeur car au moment de la définition de la liste, c&rsquo;est la valeur de la variable et non la variable elle-même qui est stockée en mémoire.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+L3 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, a]
+a <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+L3
+</code></pre></div><p><code>[1, 2, 3]</code></p>
+<p><img src="/memoire.png" alt=""></p>
+<p>Que deviendrait la <code>liste2</code> du début après l&rsquo;instruction <code>a=2</code> ?</p>
+<p>Des affectations de tranches sont également possibles, ce qui peut  modifier la taille de la liste ou même la vider complètement :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">lettres <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#e6db74">&#39;g&#39;</span>]
+lettres[<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;C&#39;</span>, <span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#e6db74">&#39;E&#39;</span>]
+lettres
+</code></pre></div><p><code>['a', 'b', 'C', 'D', 'E', 'f', 'g']</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">lettres[<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> []
+lettres
+</code></pre></div><p><code>['a', 'b', 'f', 'g']</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">lettres[:] <span style="color:#f92672">=</span> [] <span style="color:#75715e"># pour vider entièrement la liste</span>
+lettres
+</code></pre></div><p><code>[]</code></p>
+<p> </p>
+<p> </p>
+<h4 id="methodes">Méthodes</h4>
+<p>Le type <code>list</code> dispose, comme le type <code>string</code>, de méthodes supplémentaires, accessibles avec la notation point &ldquo;<code>.</code>&rdquo;.<br>
+Et comme les listes sont des objets muables, elles peuvent être agrandies ou rétrécies &ldquo;sur place&rdquo; (sans avoir à copier le contenu dans un nouvel objet).<br>
+Pour cela, on utilise les méthodes suivantes :</p>
 <ul>
-	
+<li><code>append(x)</code> : ajoute l&rsquo;élément <code>x</code> à la fin d&rsquo;une liste.</li>
+<li><code>extend(liste_b)</code> : étend la liste en y ajoutant tous les éléments de la <code>liste_b</code>.</li>
+<li><code>insert(i,x)</code>: insère l&rsquo;élément <code>x</code> à la position <code>i</code>.</li>
+<li><code>remove(x)</code>: supprime de la liste le premier élément dont la valeur est égale à <code>x</code>. Une exception <code>ValueError</code> est levée s&rsquo;il n&rsquo;existe aucun élément avec cette valeur.</li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">q <span style="color:#f92672">=</span> []
+q<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">4</span>)
+q
+</code></pre></div><p><code>[4]</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">q<span style="color:#f92672">.</span>extend([<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>])
+q
+</code></pre></div><p><code>[4, 6, 7, 8]</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">q<span style="color:#f92672">.</span>insert(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>)
+q
+</code></pre></div><p><code>[4, 5, 6, 7, 8]</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">q<span style="color:#f92672">.</span>remove(<span style="color:#ae81ff">7</span>)
+q
+</code></pre></div><p><code>[4, 5, 6, 8]</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">méthodes utiles</th>
+<th style="text-align:left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>index(x)</code></td>
+<td style="text-align:left">retourne l&rsquo;indice de l&rsquo;élément x (le plus petit s&rsquo;il est là plusieurs fois)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>pop()</code></td>
+<td style="text-align:left">retire et retourne le dernier élément de la liste</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>reverse()</code></td>
+<td style="text-align:left">inverse l&rsquo;ordre des éléments (directement dans la liste et non dans une copie comme <code>liste[::-1]</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>sort()</code></td>
+<td style="text-align:left">ordonne les éléments dans la liste</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>copy()</code></td>
+<td style="text-align:left">retourne une copie de la liste (équivaut à <code>liste[:]</code>)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>count(x)</code></td>
+<td style="text-align:left">renvoie le nombre d&rsquo;éléments ayant la valeur <em>x</em> dans la liste</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">q<span style="color:#f92672">.</span>index(<span style="color:#ae81ff">8</span>)
+</code></pre></div><p><code>3</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">q <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">q<span style="color:#f92672">.</span>sort()
+q
+</code></pre></div><p><code>[-1, 0, 2, 3]</code></p>
+<p>Pour obtenir une copie triée d&rsquo;une liste sans modifier la liste originale, on peut utiliser la fonction native <code>sorted()</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">q <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;A&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>]
+sorted(q)
+</code></pre></div><p><code>['A', 'a', 'b', 'c', 'e']</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">q
+</code></pre></div><p><code>['a', 'e', 'A', 'c', 'b']</code></p>
+<p>On peut aussi utiliser cette fonction pour qu&rsquo;elle retourne une liste inversée :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sorted(q, reverse<span style="color:#f92672">=</span>True)
+</code></pre></div><p><code>['e', 'c', 'b', 'a', 'A']</code></p>
+<p>Les méthodes <code>append()</code> et <code>pop()</code> sont adaptées pour des données structurées en piles (stack en anglais) où le principe est &ldquo;dernier arrivé, premier sorti&rdquo; (LIFO pour l&rsquo;anglais &ldquo;last in, first out&rdquo;). Cela sert en particulier pour la gestion de la mémoire. Vous en réentendrez parler.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">stack <span style="color:#f92672">=</span> []
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">1</span>)
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">2</span>)
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">3</span>)
+stack<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">4</span>)
+<span style="color:#66d9ef">print</span>(stack)
+</code></pre></div><p><code>[1, 2, 3, 4]</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">stack<span style="color:#f92672">.</span>pop()
+</code></pre></div><p><code>4</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(stack)
+</code></pre></div><p><code>[1, 2, 3]</code></p>
+<p>La méthode des chaînes de caractères <code>split()</code> permet de créer une liste à partir d&rsquo;une chaîne donnée (si non indiqué, le séparateur est l&rsquo;espace).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mois <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;jan. févr. avr. mai juin&#39;</span>
+mois<span style="color:#f92672">.</span>split()
+</code></pre></div><p><code>['jan.', 'févr.', 'avr.', 'mai', 'juin']</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">noms <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Alphonse et Dudule et Raoul et Ursula&#39;</span>
+noms<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39; et &#39;</span>)
+</code></pre></div><p><code>['Alphonse', 'Dudule', 'Raoul', 'Ursula']</code></p>
+<p> </p>
+<p> </p>
+<h3 id="tuples">Tuples</h3>
+<p>Nous avons vu que les listes et les chaînes de caractères ont beaucoup de propriétés en commun, comme l&rsquo;indexation et le slicing. Ce sont des exemples de <strong>séquences</strong>.
+
+<div class="notices info" ><p>Les  <strong>séquences</strong> sont une des principales structure de données native en Python. Ce sont des collections <strong>ordonnées</strong> d&rsquo;objets qui peuvent être <strong>indicées</strong> et <strong>découpées</strong>.</p>
+</div>
+</p>
+<p>Il existe également un autre type standard de séquence : le tuple.</p>
+<p>Un tuple consiste en différentes valeurs séparées par des virgules (avec ou sans parenthèses autour) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;deux&#39;</span>, <span style="color:#ae81ff">3.0</span>, <span style="color:#ae81ff">4</span>
+t
+</code></pre></div><p><code>(1, 'deux', 3.0, 4)</code></p>
+<p>Comme un tuple est une séquence, il peut être indexé ou découpé.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t[<span style="color:#ae81ff">1</span>]
+</code></pre></div><p><code>'deux'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>]
+</code></pre></div><p><code>('deux', 3.0)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;essai de réaffectation&#39;</span>
+</code></pre></div><p><code>TypeError: 'tuple' object does not support item assignment</code></p>
+<p>Le dernier exemple montre que les tuples sont des objets immuables.</p>
+<p>Pour créer un tuple vide, pas de problèmes :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t <span style="color:#f92672">=</span> ()
+</code></pre></div><p>Par contre, c&rsquo;est plus compliqué de créer un tuple ne contenant qu&rsquo;un élément (un singleton) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span>,)
+</code></pre></div><p>Si les tuples peuvent sembler similaires aux listes, ils sont généralement utilisés dans des cas et pour des raisons particulières du fait de leur principale différence :
+
+<div class="notices info" ><p>Les tuples sont <strong>immuables</strong> !</p>
+</div>
+
+Les tuples sont donc utiles lorsqu&rsquo;une séquence ne peut ou ne devrait pas être modifiée.</p>
+<p>On place souvent dans des tuples des collections hétérogènes d&rsquo;éléments auxquelles on  accèder par &ldquo;déballage&rdquo;.<br>
+L&rsquo;instruction <code>t = 1, 'deux', 3.0</code> est un exemple d&rsquo;emballage de tuple : les valeurs <code>1</code>, <code>'deux'</code>, <code>3.0</code> sont &ldquo;emballées&rdquo; ensemble.<br>
+On peut ensuite déballer le tuple. Comme on l&rsquo;a déjà vu, cela permet des affectations multiples.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;deux&#39;</span>, <span style="color:#ae81ff">3.0</span>
+x , y, z <span style="color:#f92672">=</span> t
+<span style="color:#66d9ef">print</span>(x,y,z)
+</code></pre></div><p><code>1 deux 3.0</code></p>
+<p> </p>
+<p> </p>
+<h2 id="iterables">Objets itérables</h2>
+
+<div class="notices info" ><p>Les chaînes de caractères, les listes et les tuples sont des exemple d&rsquo;objets <strong>itérables</strong> : des objets composés d&rsquo;un ensemble d&rsquo;éléments  qui peuvent être sélectionnés un par un (= déballés ou unpacked en anglais).</p>
+</div>
 
 
-<footer class=" footline" >
+<div class="notices note" ><p>Toutes les séquences sont des itérables, mais l&rsquo;inverse n&rsquo;est pas vrai (les ensembles (sets), par exemple, sont des itérables mais pas des séquences).</p>
+</div>
+
+<p>L&rsquo;opérateur <code>*</code> permet de <strong>déballer un itérable</strong> (unpack). Cela peut s&rsquo;avérer pratique lorsqu&rsquo;une fonction prend en argument plusieurs éléments.<br>
+Prenons l&rsquo;exemple de la fonction <code>math.hypot(x,y)</code> qui calcule $\sqrt{a^2+b^2}$ :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> math
+c <span style="color:#f92672">=</span> [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
+math<span style="color:#f92672">.</span>hypot(c)
+</code></pre></div><p><code>TypeError: hypot expected 2 arguments, got 1</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">math<span style="color:#f92672">.</span>hypot(<span style="color:#f92672">*</span>c)
+</code></pre></div><p><code>5.0</code></p>
+<p>C&rsquo;est bien plus simple que d&rsquo;aller récupérer les éléments de la liste en les indexant (<code>math.hypot(c[0],c[1])</code>).</p>
+<p> </p>
+<p> </p>
+<h3 id="boucle-for">Boucle <code>for</code></h3>
+<p>C&rsquo;est souvent utile de récupérer et d&rsquo;utiliser un à un chacun des éléments d&rsquo;un objet itérable.<br>
+La syntaxe Python pour une telle opération est plutôt naturelle :<br>
+<strong>for</strong> <em>élément</em> <strong>in</strong> <em>objet itérable</em> <strong>:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste_de_fruits <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;pomme&#39;</span>, <span style="color:#e6db74">&#39;banane&#39;</span>, <span style="color:#e6db74">&#39;orange&#39;</span>, <span style="color:#e6db74">&#39;pamplemousse&#39;</span>]
+<span style="color:#66d9ef">for</span> fruit <span style="color:#f92672">in</span> liste_de_fruits :
+    <span style="color:#66d9ef">print</span>(fruit)
+</code></pre></div><p><code>pomme</code></p>
+<p><code>banane</code></p>
+<p><code>orange</code></p>
+<p><code>pamplemousse</code></p>
+<p>Chacun son tour, un élément de l&rsquo;objet itérable <code>liste_de_fruits</code> est affecté à la variable <code>fruit</code> dans le block d&rsquo;instructions qui suit le signe <code>:</code>.<br>
+Chaque ligne de ce bloc, le corps de la boucle, doit être indentée par le même nombre d&rsquo;espaces (c&rsquo;est recommandé d&rsquo;utiliser 4 espaces ou une tabulation par niveau d&rsquo;indentation). C&rsquo;est cette indentation qui permet, en Python, de savoir qu&rsquo;on est ou non toujours dans la boucle.<br>
+La structuration du code par indentation est une des principales caractéristiques du langage Python (et un des principaux griefs contre lui).</p>
+<p>Une boucle peut très bien être imbriquée dans une autre boucle (il faut indenter le corps de la boucle intérieure d&rsquo;un niveau de plus) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> fruit <span style="color:#f92672">in</span> liste_de_fruits :
+    <span style="color:#66d9ef">for</span> lettre <span style="color:#f92672">in</span> fruit :
+        <span style="color:#66d9ef">print</span>(lettre,end <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.&#39;</span>)
+    <span style="color:#66d9ef">print</span>()
+</code></pre></div><p><code>p.o.m.m.e.</code></p>
+<p><code>b.a.n.a.n.e.</code></p>
+<p><code>o.r.a.n.g.e.</code></p>
+<p><code>p.a.m.p.l.e.m.o.u.s.s.e.</code></p>
+<p>Le <code>end = '.'</code> du <code>print</code> dans la boucle intérieure permet de placer un point après chaque lettre tout en évitant la nouvelle ligne à chaque appel de la fonction.<br>
+Le <code>print()</code> de la boucle extérieure permet d&rsquo;aller à la ligne à la fin de chaque mot.</p>
+<p> </p>
+<p> </p>
+<h3 id="range"><code>range()</code></h3>
+<p>Si vous devez itérer sur une suite d&rsquo;entiers, la fonction native <code>range()</code> est faite pour cela. Elle génère un objet de type séquence qui permet de créer des suites arithmétiques :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>) :
+    <span style="color:#66d9ef">print</span>(i, end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>)
+</code></pre></div><p><code>0 1 2 3 4</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>) :
+    <span style="color:#66d9ef">print</span>(i, end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>)
+</code></pre></div><p><code>1 2 3 4</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">2</span>) :
+    <span style="color:#66d9ef">print</span>(i, end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>)
+</code></pre></div><p><code>0 2 4</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>) :
+    <span style="color:#66d9ef">print</span>(i, end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>)
+</code></pre></div><p><code>10 8 6 4 2</code></p>
+<p><code>range()</code> prend donc trois arguments (entier de départ, entier de fin, le pas) dont deux optionnels (range commence à zéro et le pas vaut 1 par défaut).<br>
+Le dernier entier produit par range est celui précédant la valeur de l&rsquo;entier de fin.</p>
+<hr>
+<p><strong>Exemple</strong> : écrire les 20 premiers termes de la suite de Fibonacci définie par $a_1=1$, $a_2=1$ et la relation de récurrence $a_i = a_{i-1}+a_{i-2}$.</p>
+<p><em>Première méthode : ajouter des éléments à une liste</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+fib <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>]
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>,n) :
+    fib<span style="color:#f92672">.</span>append(fib[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>fib[i<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>])
+<span style="color:#66d9ef">print</span>(<span style="color:#f92672">*</span>fib)
+</code></pre></div><p><code>1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765</code></p>
+<!-- raw HTML omitted -->
+<p><em>Deuxième méthode (moins consommatrice de mémoire) : on peut se débrouiller pour ne stocker à tout moment que deux éléments.</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+a, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">print</span>(a, b, end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>)
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range (<span style="color:#ae81ff">2</span>,n) :
+    a, b <span style="color:#f92672">=</span> b, a<span style="color:#f92672">+</span>b
+    <span style="color:#66d9ef">print</span>(b, end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>)
+</code></pre></div><p><code>1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765</code></p>
+<p> </p>
+<p> </p>
+<h3 id="enumerate"><code>enumerate</code></h3>
+<p>Comme <code>range()</code> produit une suite d&rsquo;entiers, on peut l&rsquo;utiliser pour afficher l&rsquo;indice de l&rsquo;élément d&rsquo;une liste à chaque itération dans une boucle <code>for</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">marsupiaux <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;kangooroo&#39;</span> , <span style="color:#e6db74">&#39;koala&#39;</span> , <span style="color:#e6db74">&#39;wombat&#39;</span>]
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(marsupiaux)) :
+    <span style="color:#66d9ef">print</span>(i, <span style="color:#e6db74">&#39; : &#39;</span>, marsupiaux[i])
+</code></pre></div><p><code>0  :  kangooroo</code></p>
+<p><code>1  :  koala</code></p>
+<p><code>2  :  wombat</code></p>
+<p>On peut réaliser la même chose plus efficacement en utilisant <code>enumerate()</code>.<br>
+Cette fonction prend un objet itérable en argument et produit, pour chaque élément de l&rsquo;objet, un tuple (<em>numéro</em>, <em>élément</em>) associant un numéro à l&rsquo;élément lui-même.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i, marsupial <span style="color:#f92672">in</span> enumerate(marsupiaux) :
+    <span style="color:#66d9ef">print</span>(i, <span style="color:#e6db74">&#39; : &#39;</span>, marsupial)
+</code></pre></div><p><code>0  :  kangooroo</code></p>
+<p><code>1  :  koala</code></p>
+<p><code>2  :  wombat</code></p>
+<p>Chaque tuple (<em>numéro</em>, <em>élément</em>) a été déballé dans la boucle <code>for</code> en les affectant aux variables <code>i</code> et <code>marsupial</code>.</p>
+<p>On peut faire commencer la numérotation d'<code>enumerate</code> à une autre valeur que <code>0</code> (mais le numéro ne correspondra alors plus à l&rsquo;indice).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i, marsupial <span style="color:#f92672">in</span> enumerate(marsupiaux,<span style="color:#ae81ff">1</span>) :
+    <span style="color:#66d9ef">print</span>(i, <span style="color:#e6db74">&#39; : &#39;</span>, marsupial)
+</code></pre></div><p><code>1  :  kangooroo</code></p>
+<p><code>2  :  koala</code></p>
+<p><code>3  :  wombat</code></p>
+<p> </p>
+<p> </p>
+<h3 id="zip"><code>zip</code></h3>
+<p>Pour faire des boucles sur plusieurs séquences en même temps, on peut utiliser la fonction <code>zip()</code> afin d’associer les éléments des différentes séquences entre eux.<br>
+Elle crée un objet itérable composé de tuples couplant les termes de même indice des différentes séquences en argument.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
+b <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>]
+<span style="color:#66d9ef">for</span> pair <span style="color:#f92672">in</span> zip(a,b) :
+    <span style="color:#66d9ef">print</span>(pair)
+</code></pre></div><p><code>(1, 'a')</code></p>
+<p><code>(2, 'b')</code></p>
+<p><code>(3, 'c')</code></p>
+<p><code>(4, 'd')</code></p>
+<p>Ce n&rsquo;est donc pas grave que les listes n&rsquo;aient pas la même taille, <code>zip</code> les associe tant qu&rsquo;elle peut.</p>
+<p>On peut aussi utiliser <code>zip</code> pour dézipper des séquences de tuples :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">z <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;a&#39;</span>),(<span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#39;b&#39;</span>),(<span style="color:#ae81ff">3</span>,<span style="color:#e6db74">&#39;c&#39;</span>),(<span style="color:#ae81ff">4</span>,<span style="color:#e6db74">&#39;d&#39;</span>))
+A , B <span style="color:#f92672">=</span> zip(<span style="color:#f92672">*</span>z)
+<span style="color:#66d9ef">print</span>(A, B, sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p><code>(1, 2, 3, 4) </code></p>
+<p><code>('a', 'b', 'c', 'd')</code></p>
+<p>Comme <code>zip</code> ne copie pas les éléments vers un nouvel objet, cette méthode est rapide et économe en mémoire ; mais cela signifie aussi qu&rsquo;on ne peut itérer sur les éléments zippés qu&rsquo;une seule fois et qu&rsquo;on ne peut pas les indicer.</p>
+<p> </p>
+<p> </p>
+<h2 id="dictionnaires">Dictionnaires</h2>
+<p>&ldquo;dictionnary&rdquo; est le nom en Python a une structure de données très pratique : la <strong>table de hachage</strong>.<br>
+Un dictionnaire est un contenant, comme une liste ou un tuple, mais au lieu d&rsquo;indicer les objets s&rsquo;y trouvant (appelés <strong>valeurs</strong>) par un nombre, on utilise une <strong>clé</strong>.</p>
+<p>Une clé peut être n&rsquo;importe quel objet immuable, mais il s&rsquo;agit le plus souvent d&rsquo;une chaîne de caractères.</p>
+<p>Exemple où les clés sont des prénoms et les valeurs, des notes :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">note <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Giselle&#39;</span> : <span style="color:#ae81ff">7.5</span>, <span style="color:#e6db74">&#39;Alphonse&#39;</span> : <span style="color:#ae81ff">12</span>, <span style="color:#e6db74">&#39;Dudule&#39;</span> : <span style="color:#ae81ff">7.5</span>, <span style="color:#e6db74">&#39;Berthe&#39;</span> : <span style="color:#ae81ff">16.5</span>}
+</code></pre></div><p>Chaque valeur peut être récupérée grâce à la clé, comme s&rsquo;il s&rsquo;agisait d&rsquo;un indice :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">note[<span style="color:#e6db74">&#39;Dudule&#39;</span>]
+</code></pre></div><p><code>7.5</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">prenom <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Berhe&#39;</span>
+note[prenom]
+</code></pre></div><p><code>16.5</code></p>
+<p>On peut ajouter une entrée au dictionnaire de la même façon :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">note[<span style="color:#e6db74">&#39;Raoul&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>
+note
+</code></pre></div><p><code>{'Giselle': 7.5, 'Alphonse': 12, 'Dudule': 7.5, 'Berthe': 16.5, 'Raoul': 14}</code></p>
+<p>Les dictionnaires sont des objets mutables.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">note[<span style="color:#e6db74">&#39;Berthe&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>
+note
+</code></pre></div><p><code>{'Giselle': 7.5, 'Alphonse': 12, 'Dudule': 7.5, 'Berthe': 18, 'Raoul': 14}</code></p>
+<p>Le constructeur <code>dict()</code> permet de fabriquer un dictionnaire à partir d&rsquo;une séquence de paires (<em>clé</em>, <em>valeur</em>) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chiffres_romain <span style="color:#f92672">=</span> dict([(<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;I&#39;</span>),(<span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#39;II&#39;</span>),(<span style="color:#ae81ff">3</span>,<span style="color:#e6db74">&#39;III&#39;</span>),(<span style="color:#ae81ff">4</span>,<span style="color:#e6db74">&#39;IV&#39;</span>),(<span style="color:#ae81ff">5</span>,(<span style="color:#e6db74">&#39;V&#39;</span>))])
+chiffres_romain[<span style="color:#ae81ff">4</span>]
+</code></pre></div><p><code>'IV'</code></p>
+<p>Attention, 4 n&rsquo;est pas un indice, ici, mais bien une clé.</p>
+<p>Si les clés utilisées peuvent constituer des noms de variables, la construction d&rsquo;un dictionnaire devient encore plus simple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">masse <span style="color:#f92672">=</span> dict(Mercure <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.301e23</span>, Vénus <span style="color:#f92672">=</span> <span style="color:#ae81ff">4.867e24</span>, Terre <span style="color:#f92672">=</span> <span style="color:#ae81ff">5.972e24</span>)
+masse[<span style="color:#e6db74">&#39;Terre&#39;</span>]
+</code></pre></div><p><code>5.972e+24</code></p>
+
+<div class="notices info" ><p>Chaque clé doit être unique, mais les valeurs peuvent être identiques (comme les notes de Dudule et Giselle).</p>
+</div>
+
+<p>Tenter d&rsquo;indicer un dictionnaire par une clé inexistante se solde par une erreur. Pour y échapper, on utilise la méthode <code>get(clé)</code>. Un second argument permet de retourner une valeur par défaut en cas d&rsquo;absence de la clé (sans ce deuxième argument, <code>get</code> retournera <code>None</code>).</p>
+<p>Exemple d&rsquo;utilisation : fabriquons une liste de 12 éléments pris au hasard parmi les entiers de 1 à 10 et mettons au point une méthode pour compter les occurrences de chacun des 10 entiers :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
+L <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">12</span>) :
+    L <span style="color:#f92672">+=</span> [randint(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>)]
+effectifs <span style="color:#f92672">=</span> dict()
+<span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> L :
+    effectifs[e] <span style="color:#f92672">=</span> effectifs<span style="color:#f92672">.</span>get(e,<span style="color:#ae81ff">0</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">print</span>(effectifs)
+</code></pre></div><p><code>{3: 1, 6: 1, 8: 3, 2: 1, 10: 2, 7: 2, 1: 1, 9: 1}</code></p>
+<p>Les méthodes <code>keys</code> et <code>values</code> permettents de récupérer les <em>clés</em> et <em>valeurs</em> d&rsquo;un dictionnaire sous forme d&rsquo;itérables, ce qui peut s&rsquo;avérer pratique pour un tracer, par exemple.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+clés <span style="color:#f92672">=</span> effectifs<span style="color:#f92672">.</span>keys()
+valeurs <span style="color:#f92672">=</span> effectifs<span style="color:#f92672">.</span>values()
+plt<span style="color:#f92672">.</span>bar(clés, valeurs)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/barplot.png?width=800px" alt=""></p>
+
+<div class="notices note" ><p>Les dictionnaires sont des ensemble de paires <em>clé</em>-<em>valeur</em> qui n&rsquo;ont aucun ordre particulier. Les dictionnaires ne sont donc pas des séquences.</p>
+</div>
+
+<p> </p>
+<p> </p>
+<h2 id="ensembles">Ensembles</h2>
+<p>Un ensemble (<em>set</em> en anglais) est une collection non ordonnée d&rsquo;objets uniques. Les ensembles sont très pratiques pour retirer des éléments dupliqués d&rsquo;une séquence et pour déterminer l&rsquo;union, l&rsquo;intersection ou la différence entre deux collections.</p>
+
+<div class="notices note" ><p>Comme ils ne sont pas ordonnées, les ensembles ne peuvent pas être indicés ou découpés. Ce ne sont pas des séquences.</p>
+</div>
+
+<p>On crée un ensemble en listant ses éléments à l&rsquo;intérieur d&rsquo;accolades <code>{...}</code> ou en utilisant le constructeur <code>set()</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;Coucou !&#39;</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;Coucou !&#39;</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>}
+s
+</code></pre></div><p><code>{1, 2, 3, 4, 'Coucou !'}</code></p>
+<p>En transformant la liste <code>L</code> de la section précédente (sur les dictionnaires) en ensemble, on peut facilement déterminer le nombre d&rsquo;éléments dupliqués contenus dans <code>L</code> et les éliminer par la même occasion :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">S <span style="color:#f92672">=</span> set(L)
+<span style="color:#66d9ef">print</span>(S)
+nb_duplicata <span style="color:#f92672">=</span> len(L) <span style="color:#f92672">-</span> len(S)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Nombre de redondances dans L :&#39;</span>,nb_duplicata)
+</code></pre></div><p><code>{1, 2, 3, 6, 7, 8, 9, 10}</code></p>
+<p><code>Nombre de redondances dans L : 4</code></p>
+<p>Méthodes s&rsquo;appliquant aux ensembles :</p>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A.isdisjoint(B,...)</code></td>
+<td>Est-ce que A et B (et autres) sont disjoints ($A \cap B = \emptyset$) ?</td>
+</tr>
+<tr>
+<td><code>A.issubset(B)</code>  <!-- raw HTML omitted -->(ou <code>A &lt;= B</code>)</td>
+<td>Est-ce que A est inclus dans B (au sens large) ($A \subseteq B$) ?</td>
+</tr>
+<tr>
+<td><code>A &lt; B</code></td>
+<td>Est-ce que A est inclus dans B (au sens strict) ($A \subset B$) ?</td>
+</tr>
+<tr>
+<td><code>A.union(B,...)</code>  <!-- raw HTML omitted -->(ou <code>A | B | ...</code>)</td>
+<td>Union de A et B (et autres) $A\cup B$</td>
+</tr>
+<tr>
+<td><code>A.intersection(B,...)</code>  <!-- raw HTML omitted -->(ou <code>A &amp; B &amp; ...</code>)</td>
+<td>Intersection de A et B (et autres) $A\cap B$</td>
+</tr>
+<tr>
+<td><code>A.difference(B,...)</code>  <!-- raw HTML omitted -->(ou <code>A - B - ...</code>)</td>
+<td>Différence entre A et B (et autres) $A\backslash B$</td>
+</tr>
+<tr>
+<td><code>A.symmetric_difference(B,...)</code>  <!-- raw HTML omitted -->(ou <code>A ^ B ^ ...</code>)</td>
+<td>Différence symémtrique entre A et B (et autres) $A\Delta B$</td>
+</tr>
+</tbody>
+</table>
+<p>Pour illustrer l&rsquo;utilité des ensembles, voyons comment ils rendent simplissime le passage du crible d&rsquo;Ératosthène sur les nombres entiers inférieurs à 100 pour y isoler les nombres premiers :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+P <span style="color:#f92672">=</span> set(range(<span style="color:#ae81ff">2</span>,n)) <span style="color:#75715e"># ensemble des entiers de 2 à 99</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>,n<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>) :
+  M <span style="color:#f92672">=</span> set(range(<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>i,n,i)) <span style="color:#75715e"># ensemble des multiples de i (autres que i)</span>
+  P <span style="color:#f92672">=</span> P <span style="color:#f92672">-</span> M  <span style="color:#75715e"># on retire ces multiples de la liste de départ</span>
+<span style="color:#66d9ef">print</span>(P) 
+</code></pre></div><p><code>{2, 3, 67, 5, 7, 71, 73, 11, 13, 79, 17, 19, 83, 23, 89, 29, 31, 97, 37, 41, 43, 47, 53, 59, 61}</code></p>
+<p> </p>
+<p> </p>
+<h2 id="comprehension">Listes par compréhension</h2>
+<p>La construction de listes par compréhension permet de créer une liste à partir d&rsquo;un autre objet itérable en une seule ligne de code.<br>
+Par exemple, étant donné une liste de nombres, une liste des carrés de ces nombres peut être créée ainsi :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">xliste <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>]
+x2liste <span style="color:#f92672">=</span> [x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> xliste]
+</code></pre></div><p>La méthode classique prend un peu plus de temps pour s&rsquo;exécuter et sa syntaxe est plus lourde :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x2liste <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> xliste :
+    x2liste<span style="color:#f92672">.</span>append(x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+x2liste
+</code></pre></div><p><code>[1, 4, 9, 16, 25, 36]</code></p>
+<p>Comme on le voit, une construction d&rsquo;une liste par compréhension est analogue à une définition mathématique.</p>
+<p>On peut aussi placer des conditions dans la définition :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">if</span> x <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">else</span> x<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span> <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> xliste]
+</code></pre></div><p><code>[1, 8, 9, 64, 25, 216]</code></p>
+<p>On a ici mis au carré les nombres impairs et au cube les nombres pairs de <code>xliste</code>.</p>
+<p>On l&rsquo;a dit, la construction par compréhension se base sur n&rsquo;importe quel itérable, pas forcément une liste :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[x<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span> <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>)]
+</code></pre></div><p><code>[1, 8, 27, 64, 125, 216, 343, 512, 729]</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[w<span style="color:#f92672">.</span>upper() <span style="color:#66d9ef">for</span> w <span style="color:#f92672">in</span> <span style="color:#e6db74">&#39;abc xyz&#39;</span>]
+</code></pre></div><p><code>['A', 'B', 'C', ' ', 'X', 'Y', 'Z']</code></p>
+<p>Enfin, une liste construite par compréhension peut être imbriquée.<br>
+Le code suivant va permettre d&rsquo;applatir une liste de listes :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">vliste <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>],[<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>],[<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>]]
+[c <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> vliste <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> v]
+</code></pre></div><p><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]</code></p>
+<p>La première boucle parcourt les différentes listes intérieurs de <code>vliste</code> et la deuxième boucle parcourt les éléments de ces listes intérieures.</p>
+<hr>
+<p><strong>Exemple</strong> : supposons que l&rsquo;on veuille transposer une matrice <code>M</code> 3 × 3.</p>
+<ul>
+<li><em>Sans compréhension de liste :</em></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">M <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>],
+     [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>],
+     [<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>]]
+MT <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>],[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>],[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>]]
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>) :
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>) :
+        MT[i][j] <span style="color:#f92672">=</span> M[j][i]
+<span style="color:#66d9ef">for</span> l <span style="color:#f92672">in</span> MT :
+    <span style="color:#66d9ef">print</span>(l)
+</code></pre></div><pre><code>[1, 4, 7]
+[2, 5, 8]
+[3, 6, 9]
+</code></pre><ul>
+<li><em>Avec compréhension de liste :</em></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">MT <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>) :
+    MT<span style="color:#f92672">.</span>append([col[i] <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> M])
+<span style="color:#66d9ef">for</span> l <span style="color:#f92672">in</span> MT :
+    <span style="color:#66d9ef">print</span>(l)
+</code></pre></div><pre><code>[1, 4, 7]
+[2, 5, 8]
+[3, 6, 9]
+</code></pre><p>Notons toutefois que le package de programmation scientifique NumPy (étudié plus tard) propose une méthode bien meilleure pour gérer les matrices.</p>
+<hr>
+<p>Les dictionnaires aussi ont droit à leur construction par compréhension. Dans l&rsquo;exemple suivant, on crée un dictionnaire reportant le nombre de fois que chaque mot apparaît dans un texte.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">texte <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;texte avec répétitions servant de test pour déterminer le nombre de répétitions de chaque mot dans le texte&#34;&#34;&#34;</span>
+decompte <span style="color:#f92672">=</span> {mot: texte<span style="color:#f92672">.</span>split()<span style="color:#f92672">.</span>count(mot) <span style="color:#66d9ef">for</span> mot <span style="color:#f92672">in</span> set(texte<span style="color:#f92672">.</span>split())}
+decompte
+</code></pre></div><p><code>{'pour': 1, 'déterminer': 1, 'avec': 1, 'servant': 1, 'texte': 2, 'le': 2, 'chaque': 1, 'test': 1, 'mot': 1, 'nombre': 1, 'répétitions': 2, 'de': 3, 'dans': 1}</code></p>
+<p> </p>
+
+
+<footer class="footline">
 	
 </footer>
 
@@ -520,8 +1101,6 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -535,6 +1114,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -568,6 +1150,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -583,6 +1166,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -763,3 +1349,4 @@ onload='renderMathInElement(document.body);'></script>
 
   </body>
 </html>
+
