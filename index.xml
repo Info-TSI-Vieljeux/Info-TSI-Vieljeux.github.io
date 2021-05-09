@@ -23,7 +23,10 @@ Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/python/typesbase/</guid>
-      <description>Types de base Opérations sur les entiers (int) Opérations sur les flottants (float) Opérations sur les booléens (bool) Comparaisons </description>
+      <description>Types de base Les types de baseen python (les catégories fondamentales des objets manipulés) sont :
+  Les entiers int (en anglais, entier se dit integer).
+Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est illimitée en Python.
+   Les flottants float. Ce sont des approximations de nombres réels. La méthode d&amp;rsquo;écriture en machine de ces nombres, équivalente à une écriture scientifique pour nombre binaire, explique leur nom : ce sont des nombres à virgule flottante.</description>
     </item>
     
     <item>
@@ -32,7 +35,9 @@ Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/python/typesstruct/</guid>
-      <description>Types structurés Structures indicées immuables (chaînes, tuples) Listes Dictionnaires </description>
+      <description>Types structurés Les types structurés (chaînes, tuiles, listes, dictionnaires, ensembles) sont des objets composés ; ils contiennent eux-mêmes d&amp;rsquo;autres objets.
+ Structures indicées immuables (chaînes, tuples) On peut parcourir les éléments présents dans une structure indicée à l&amp;rsquo;aide d&amp;rsquo;un indice (un nombre entier étiquetant l&amp;rsquo;indice). Les structures indicés sont donc ordonnées, ce sont des séquences. L&amp;rsquo;indice commence toujours à 0.
+Et donc si la structure contient n éléments, le dernier indice est n-1.</description>
     </item>
     
     <item>
@@ -41,9 +46,9 @@ Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/python/structcontr/</guid>
-      <description>Strucutres de contrôle Instruction d&amp;rsquo;affectation Lorsqu&amp;rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction id().
+      <description>Strucutres de contrôle Instruction d&amp;rsquo;affectation Définition Lorsqu&amp;rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction id().
 id(3.7) 4387417928
-Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&amp;rsquo;est à ça que servent les variables. Une variable est liée à un objet grâce à une affectation et identifie cet objet pour les calculs suivants.</description>
+Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&amp;rsquo;est à ça que servent les variables.</description>
     </item>
     
     <item>

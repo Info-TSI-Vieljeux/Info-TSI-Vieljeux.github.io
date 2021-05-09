@@ -12,22 +12,22 @@
     
 
     
-    <link href="/css/nucleus.css?1618883196" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1618883196" rel="stylesheet">
-    <link href="/css/hybrid.css?1618883196" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1618883196" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1618883196" rel="stylesheet">
-    <link href="/css/auto-complete.css?1618883196" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1618883196" rel="stylesheet">
-    <link href="/css/theme.css?1618883196" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1618883196" rel="stylesheet">
+    <link href="/css/nucleus.css?1620530822" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1620530822" rel="stylesheet">
+    <link href="/css/hybrid.css?1620530822" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1620530822" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1620530822" rel="stylesheet">
+    <link href="/css/auto-complete.css?1620530822" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1620530822" rel="stylesheet">
+    <link href="/css/theme.css?1620530822" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1620530822" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1618883196" rel="stylesheet">
+    <link href="/css/theme-green.css?1620530822" rel="stylesheet">
     
-    <link href="/css/foo.css?1618883196" rel="stylesheet"><link href="/css/bar.css?1618883196" rel="stylesheet">
+    <link href="/css/foo.css?1620530822" rel="stylesheet"><link href="/css/bar.css?1620530822" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1618883196"></script>
+    <script src="/js/jquery-3.3.1.min.js?1620530822"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -67,14 +67,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1618883196"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1618883196"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1620530822"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1620530822"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1618883196"></script>
+<script type="text/javascript" src="/js/search.js?1620530822"></script>
 
     
   </div>
@@ -272,11 +272,19 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#instruction-daffectation">Instruction d&rsquo;affectation</a></li>
+    <li><a href="#instruction-daffectation">Instruction d&rsquo;affectation</a>
+      <ul>
+        <li><a href="#définition">Définition</a></li>
+        <li><a href="#instruction-plutôt-quexpression">Instruction plutôt qu&rsquo;expression</a></li>
+        <li><a href="#réaffectation">Réaffectation</a></li>
+        <li><a href="#affectation-parallèle">Affectation parallèle</a></li>
+        <li><a href="#noms-de-variable">Noms de variable</a></li>
+      </ul>
+    </li>
     <li><a href="#instuction-conditionnelle">Instuction conditionnelle</a></li>
     <li><a href="#boucle-while">Boucle <code>while</code></a></li>
     <li><a href="#boucle-for">Boucle <code>for</code></a></li>
-    <li><a href="#définition-dune-donction">Définition d&rsquo;une donction</a></li>
+    <li><a href="#définition-dune-fonction">Définition d&rsquo;une fonction</a></li>
   </ul>
 </nav>
     </div>
@@ -298,26 +306,91 @@
 
 <h1 id="strucutres-de-contrôle">Strucutres de contrôle</h1>
 <h2 id="instruction-daffectation">Instruction d&rsquo;affectation</h2>
+<h3 id="définition">Définition</h3>
 <p>Lorsqu&rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction <code>id()</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(<span style="color:#ae81ff">3.7</span>)
 </code></pre></div><p><code>4387417928</code></p>
 <p>Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&rsquo;est à ça que servent les variables. Une variable est liée à un objet grâce à une <strong>affectation</strong> et identifie cet objet pour les calculs suivants. Une affectation est une instruction (pas de retour).</p>
 <p>En Python, une affectation s&rsquo;opère avec le symbole <code>=</code>.</p>
-<p>La variable est un tiroir avec une étiquette.</p>
-<p><img src="/variable0.png" alt=""></p>
-<p><img src="/variable1.png" alt=""></p>
+<p>La variable est un tiroir avec une étiquette. Et comme on l&rsquo;a vu, en Python, pas besoin de choisir un tiroir correspondant au type d&rsquo;objet qu&rsquo;il va contenir, c&rsquo;est l&rsquo;interpréteur qui s&rsquo;en charge pour nous (le typage est dynamique).</p>
+<p><img src="/variable0.png?width=500px" alt=""></p>
+<p><img src="/variable1.png?width=500px" alt=""></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">*</span> b
+b <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>
+a <span style="color:#f92672">*</span> b
 </code></pre></div><p><code>-6</code></p>
 <p>Si on veut pouvoir utiliser le résultat de <code>a * b</code> pour des calculs ultérieurs, il faut lui aussi le stocker en mémoire.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> a <span style="color:#f92672">*</span> b
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c
+c
 </code></pre></div><p><code>-6</code></p>
+<p>On peut interroger le type d&rsquo;une variable avec la fonction <code>type()</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>
+type(c)
+</code></pre></div><p><code>&lt;class 'tuple'&gt;</code></p>
+<p> </p>
+<h3 id="instruction-plutôt-quexpression">Instruction plutôt qu&rsquo;expression</h3>
+<p>Le fait que l&rsquo;affectation soir une instruction plutôt qu&rsquo;une expression est un choix d&rsquo;écriture du langage (en C, l&rsquo;affectation est une expression).<br>
+D&rsquo;ailleurs, Python 3.8 a introduit l&rsquo;opérateur <code>:=</code> (dit le <em>walrus opérator</em> ou <em>opérateur de morse</em> du fait de sa ressemblance à un morse&hellip;) permettant justement une <strong>expression d&rsquo;affectation</strong> au sein d&rsquo;une expression plus large. L&rsquo;intérêt est de permettre de raccourcir l&rsquo;écriture ou d&rsquo;éviter les répétitions dans certains cas.<br>
+L&rsquo;opérateur de morse n&rsquo;est pas à connaître, mais il va nous permettre, dans les deux exemples suivants, de bien faire la différence entre une instruction et une expression.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">if</span> (n :<span style="color:#f92672">=</span> len(a)) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>:
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;La liste est trop grande ({n} élements alors qu&#39;on en attend 5 au plus)&#34;</span>)
+</code></pre></div><blockquote>
+<p>Montrer que sans <code>:=</code>, on avait soit une répétition, soit une ligne en plus.</p>
+</blockquote>
+<p>Autre exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">while</span> (choix :<span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;Entrer q ou p : &#39;</span>)) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;q&#39;</span>:
+    <span style="color:#66d9ef">if</span> choix <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;p&#39;</span>:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Salut !&#34;</span>)
+</code></pre></div><blockquote>
+<p>Comment aurait-on dû écrire ce code sans <code>:=</code> ?</p>
+</blockquote>
+<p> </p>
+<h3 id="réaffectation">Réaffectation</h3>
+<p>Une affectation ne retourne rien mais a un effet sur la mémoire : l&rsquo;adresse de la variable est modifiée à chaque nouvelle affectation. C&rsquo;est ce qui rend possible les <strong>réaffectations</strong> à partir de la variable elle-même.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(a)
+</code></pre></div><p><code>4304751488</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><p><code>4304751520</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+id(a)
+</code></pre></div><p><code>4304751520</code></p>
+
+<div class="notices info" ><p>Ces types de <strong>réaffectation</strong> sont si fréquents qu&rsquo;il existe une notation raccourcie : <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>//=</code>, <code>%=</code>.<br>
+Ainsi, <code>a += 1</code> équivaut à <code>a = a + 1</code> et <code>b /= 5</code> équivaut à <code>b = b/5</code>.</p>
+</div>
+
+<p> </p>
+<h3 id="affectation-parallèle">Affectation parallèle</h3>
+<p>Comment faire si on veut permuter les valeurs auxquelles sont liées deux variables ? Dès qu&rsquo;on écrit <code>a = b</code>, la valeur initiale de <code>a</code> est perdue. Et si on commence par <code>b = a</code>, c&rsquo;est la valeur initiale de <code>b</code> qui est perdue. Il faudrait donc utiliser une variable temporaire et écrire : <code>tmp = a</code>, <code>a = b</code> et <code>b = tmp</code>.<br>
+Mais l&rsquo;affectation parallèle de Python va nous permettre d&rsquo;être plus élégants. Il suffit en effet d&rsquo;une petite ligne :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;haut&#39;</span>
+b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bas&#39;</span>
+a , b <span style="color:#f92672">=</span> b , a
+<span style="color:#66d9ef">print</span>(a,b)
+</code></pre></div><p><code>bas haut</code></p>
+<p><strong>L&rsquo;affectation parallèle</strong> repose sur le dépaquetage (<em>unpacking</em>) de tuples. En effet, des objets séparés par des virgules forment un tuple (pas besoin de parenthèses). Donc <code>a,b,c = 1,2,3</code> correspond au dépaquetage du tuple <code>(1,2,3)</code> sur les 3 variables <code>a</code>, <code>b</code> et <code>c</code>.</p>
+<p> </p>
+<h3 id="noms-de-variable">Noms de variable</h3>
+<p>Règles sur les noms de variables :</p>
+<ul>
+<li>ils sont sensibles à la casse (minuscule ou majuscule)</li>
+<li>ils peuvent contenir n&rsquo;importe quelles lettres ou chiffres et le tiret-bas &ldquo;_&rdquo; mais ne doivent pas commencer par un chiffre.</li>
+<li>certains noms sont interdits (attention en particulier à lambda) :</li>
+</ul>
+<p><code>and</code>  <code>assert</code>  <code>break</code>  <code>class</code>  <code>continue</code>  <code>def</code>  <code>del</code>  <code>elif</code>  <code>else</code>  <code>except</code>  <code>finally</code>  <code>for</code>  <code>from</code>  <code>global</code>  <code>if</code>  <code>import</code>  <code>in</code>  <code>is</code>  <code>lambda</code>  <code>nonlocal</code>  <code>not</code>  <code>or</code>  <code>pass</code>  <code>print</code>  <code>raise</code>  <code>return</code>  <code>try</code>  <code>while</code>  <code>yield</code></p>
+
+<div class="notices warning" ><p>Il est important pour la lisibilité de son code de donner les noms les plus explicites possibles aux variables. Les rapports de jury le répète tous les ans&hellip;</p>
+</div>
+
+<p>Rapport 2019 de l&rsquo;épreuve de Centrale par exemple :</p>
+<blockquote>
+<p><strong>Des noms de variables explicites aident à la compréhension du code. De trop nombreux candidats utilisent des noms de variables quelconques (a, b, c&hellip;) ce qui nuit à la compréhension du programme. La clarté du programme (en particulier le choix des noms de variables) ainsi que la présence de commentaires opportuns sont prises en compte dans l’évaluation.</strong></p>
+</blockquote>
+<p> </p>
 <h2 id="instuction-conditionnelle">Instuction conditionnelle</h2>
 <h2 id="boucle-while">Boucle <code>while</code></h2>
 <h2 id="boucle-for">Boucle <code>for</code></h2>
-<h2 id="définition-dune-donction">Définition d&rsquo;une donction</h2>
+<h2 id="définition-dune-fonction">Définition d&rsquo;une fonction</h2>
 
 
 <footer class="footline">
@@ -469,19 +542,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1618883196"></script>
-    <script src="/js/perfect-scrollbar.min.js?1618883196"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1618883196"></script>
-    <script src="/js/jquery.sticky.js?1618883196"></script>
-    <script src="/js/featherlight.min.js?1618883196"></script>
-    <script src="/js/highlight.pack.js?1618883196"></script>
+    <script src="/js/clipboard.min.js?1620530822"></script>
+    <script src="/js/perfect-scrollbar.min.js?1620530822"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1620530822"></script>
+    <script src="/js/jquery.sticky.js?1620530822"></script>
+    <script src="/js/featherlight.min.js?1620530822"></script>
+    <script src="/js/highlight.pack.js?1620530822"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1618883196"></script>
-    <script src="/js/learn.js?1618883196"></script>
-    <script src="/js/hugo-learn.js?1618883196"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1620530822"></script>
+    <script src="/js/learn.js?1620530822"></script>
+    <script src="/js/hugo-learn.js?1620530822"></script>
     
         
-            <script src="/mermaid/mermaid.js?1618883196"></script>
+            <script src="/mermaid/mermaid.js?1620530822"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

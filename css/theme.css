@@ -519,7 +519,7 @@ div.notices.warning p {
     background: #FAE2E2;
 }
 div.notices.warning p:first-child:after {
-    content: 'Warning';
+    content: 'Attention';
 }
 div.notices.note p {
     border-top: 30px solid #6AB0DE;
