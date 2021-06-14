@@ -3,27 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://example.org/semestre_2/bonnes_pratiques/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_1/tp1recherche/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_1/tp2imbrication/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/python/traitsgaux/</loc>
-    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/python/typesbase/</loc>
-    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/python/typesstruct/</loc>
-    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/python/structcontr/</loc>
-    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/python/divers/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url>
   
@@ -33,8 +28,48 @@
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>http://example.org/python/typesbase/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_1/</loc>
+    <lastmod>2021-03-06T14:20:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_2/graphes/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/python/typesstruct/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_2/</loc>
+    <lastmod>2021-03-06T14:20:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/python/structcontr/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_2/tp/</loc>
+    <lastmod>2021-03-06T14:20:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/python/divers/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2021-03-06T14:20:50+01:00</lastmod>
   </url>
   
   <url>

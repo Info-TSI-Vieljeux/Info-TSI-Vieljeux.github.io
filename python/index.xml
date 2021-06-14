@@ -46,7 +46,7 @@ Et donc si la structure contient n éléments, le dernier indice est n-1.</descr
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/python/structcontr/</guid>
-      <description>Strucutres de contrôle Instruction d&amp;rsquo;affectation Définition Lorsqu&amp;rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction id().
+      <description>Structures de contrôle Instruction d&amp;rsquo;affectation Définition Lorsqu&amp;rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction id().
 id(3.7) 4387417928
 Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&amp;rsquo;est à ça que servent les variables.</description>
     </item>

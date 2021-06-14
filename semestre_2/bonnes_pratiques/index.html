@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Tags - Cours info TSI</title>
+    <title>Les bonnes pratiques - Cours info TSI</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -64,7 +64,7 @@ onload='renderMathInElement(document.body);'></script>
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/semestre_2/bonnes_pratiques/">
     <nav id="sidebar" class="">
 
 
@@ -340,7 +340,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_2/" title="Semestre 2" class="dd-item
-        
+        parent
         
         
         ">
@@ -368,7 +368,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_2/bonnes_pratiques/" title="Les bonnes pratiques" class="dd-item ">
+      <li data-nav-id="/semestre_2/bonnes_pratiques/" title="Les bonnes pratiques" class="dd-item active">
         <a href="/semestre_2/bonnes_pratiques/">
         Les bonnes pratiques
         
@@ -474,14 +474,26 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Tags
+                   Les bonnes pratiques
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#protéger-ses-blocs-en-commentant-son-code">Protéger ses blocs en commentant son code</a>
+      <ul>
+        <li><a href="#préconditions">préconditions</a></li>
+        <li><a href="#postconditions">postconditions</a></li>
+      </ul>
+    </li>
+    <li><a href="#utiliser-des-fonctions">Utiliser des fonctions</a></li>
+    <li><a href="#documenter-ses-fonctions">Documenter ses fonctions</a></li>
+    <li><a href="#contraindre-les-spécifications-avec-des-assertions">Contraindre les spécifications avec des assertions</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -499,15 +511,32 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-
-
-
+<h1 id="les-bonnes-pratiques">Les bonnes pratiques</h1>
+<p> </p>
+<h2 id="protéger-ses-blocs-en-commentant-son-code">Protéger ses blocs en commentant son code</h2>
+<p>Un bloc de code utilise généralement un ou plusieurs paramètres appelés paramètres d&rsquo;entrées et construit à partir d&rsquo;eux un ou plusieurs paramètres de sortie.</p>
+<p>Dans l&rsquo;idéal, on commente chaque bloc de code (boucles et fonctions) via l&rsquo;utilisation de <code>#</code> en précisant dans la mesure du possibles les 3 éléments suivants :</p>
 <ul>
-	
+<li>préconditions</li>
+<li>postconditions</li>
+<li>invariant</li>
 </ul>
+<h3 id="préconditions">préconditions</h3>
+<p>Ce sont les conditions que doivent vérifier impérativement les paramètres d&rsquo;entrée pour que le code fasse ce qui est attendu.</p>
+<h3 id="postconditions">postconditions</h3>
+<p>Ce sont les conditions que doivent vérifier impérativement les paramètres de sortie (après le bloc).</p>
+<p>Par exemple, si le bloc de code calcule une note sur 20, le param</p>
+<p> </p>
+<h2 id="utiliser-des-fonctions">Utiliser des fonctions</h2>
+<p> </p>
+<h2 id="documenter-ses-fonctions">Documenter ses fonctions</h2>
+<p>On indique les types attendus des entrées (les paramètres) et des sorties (les retours) ainsi que les préconditions et les postconditions.</p>
+<p> </p>
+<h2 id="contraindre-les-spécifications-avec-des-assertions">Contraindre les spécifications avec des assertions</h2>
+<p> </p>
 
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -689,6 +718,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -703,6 +733,7 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
                     
                 
                 
@@ -719,6 +750,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -787,3 +821,4 @@ onload='renderMathInElement(document.body);'></script>
 
   </body>
 </html>
+

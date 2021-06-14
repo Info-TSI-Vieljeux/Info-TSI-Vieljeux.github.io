@@ -512,7 +512,7 @@ div.notices.info p {
     background: #FFF2DB;
 }
 div.notices.info p:first-child:after {
-    content: 'Info';
+    content: 'Important';
 }
 div.notices.warning p {
     border-top: 30px solid rgba(217, 83, 79, 0.8);
@@ -534,6 +534,22 @@ div.notices.tip p {
 }
 div.notices.tip p:first-child:after {
     content: 'Tip';
+}
+
+div.notices.theo p {
+    border-top: 30px solid rgba(188, 128, 255, 0.8);
+    background: rgba(188, 128, 255, 0.2);
+}
+div.notices.theo p:first-child:after {
+    content: 'Théorème';
+}
+
+div.notices.def p {
+    border-top: 30px solid #6AB0DE;
+    background: #E7F2FA;
+}
+div.notices.def p:first-child:after {
+    content: 'Définition';
 }
 
 /* attachments shortcode */

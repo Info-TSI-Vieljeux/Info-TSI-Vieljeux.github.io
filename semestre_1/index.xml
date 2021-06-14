@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Semestre 1 on Cours info TSI</title>
+    <link>http://example.org/semestre_1/</link>
+    <description>Recent content in Semestre 1 on Cours info TSI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate><atom:link href="http://example.org/semestre_1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TP 1 : recherche simple</title>
+      <link>http://example.org/semestre_1/tp1recherche/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_1/tp1recherche/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TP 2 : boucles imbriquées</title>
+      <link>http://example.org/semestre_1/tp2imbrication/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_1/tp2imbrication/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

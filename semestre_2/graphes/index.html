@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Tags - Cours info TSI</title>
+    <title>Graphes - Cours info TSI</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -64,7 +64,7 @@ onload='renderMathInElement(document.body);'></script>
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/semestre_2/graphes/">
     <nav id="sidebar" class="">
 
 
@@ -340,7 +340,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_2/" title="Semestre 2" class="dd-item
-        
+        parent
         
         
         ">
@@ -389,7 +389,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_2/graphes/" title="Graphes" class="dd-item ">
+      <li data-nav-id="/semestre_2/graphes/" title="Graphes" class="dd-item active">
         <a href="/semestre_2/graphes/">
         Graphes
         
@@ -474,14 +474,42 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Tags
+                   Graphes
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#un-peu-dhistoire">Un peu d&rsquo;histoire</a></li>
+    <li><a href="#vocabulaire">Vocabulaire</a>
+      <ul>
+        <li><a href="#graphes-non-orientés">Graphes non orientés</a></li>
+        <li><a href="#graphes-orientés">Graphes orientés</a></li>
+        <li><a href="#degré-dun-sommet">Degré d&rsquo;un sommet</a></li>
+        <li><a href="#chemin-chaîne-cycle-et-circuit">Chemin, chaîne, cycle et circuit</a></li>
+        <li><a href="#distance-dans-un-graphe">Distance dans un graphe</a></li>
+        <li><a href="#connexité">Connexité</a></li>
+      </ul>
+    </li>
+    <li><a href="#représentation-dun-graphe">Représentation d&rsquo;un graphe</a>
+      <ul>
+        <li><a href="#listes-dadjacence">Listes d&rsquo;adjacence</a></li>
+        <li><a href="#matrice-dadjacence">Matrice d&rsquo;adjacence</a></li>
+      </ul>
+    </li>
+    <li><a href="#parcours-dun-graphe">Parcours d&rsquo;un graphe</a>
+      <ul>
+        <li><a href="#algorithme-de-parcours-en-largeur">Algorithme de parcours en largeur</a></li>
+        <li><a href="#algorithme-de-parcours-en-profondeur">Algorithme de parcours en profondeur</a></li>
+      </ul>
+    </li>
+    <li><a href="#graphes-pondérés">Graphes pondérés</a></li>
+    <li><a href="#problème-du-plus-court-chemin--algorithme-de-dijkstra">Problème du plus court chemin : algorithme de Dijkstra</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -499,15 +527,474 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
+<h1 id="les-graphes">Les graphes</h1>
+<p>Quelques points et des traits pour les relier suffisent pour créer un graphe. Cette grande simplicité est pourtant à l&rsquo;origine d&rsquo;un foisonnement mathématiques impressionnant.</p>
+<h2 id="un-peu-dhistoire">Un peu d&rsquo;histoire</h2>
+<p>L&rsquo;acte de naissance de la théorie des graphes date d&rsquo;une petite énigme à laquelle s&rsquo;attelaient sans succès les habitants de Königsberg. Comment un voyageur pouvait  traverser les sept ponts sans jamais passer deux fois sur le même pont ?
+<strong>Euler</strong> résout le problème et fonda du même coup la théorie des graphes !
+<img src="/konigsberg.png" alt=""></p>
+<p>Un graphe permet d&rsquo;extraire  l&rsquo;essence du problème : les <strong>arêtes</strong> sont les ponts et les <strong>sommets</strong> (ou nœuds) sont les zones accessibles depuis ces ponts (séparées par les bras de rivière).</p>
+<p>La forme précise des lignes reliant les points n&rsquo;a pas d&rsquo;importance : elles ne font qu&rsquo;indiquer l&rsquo;existance de laison entre ces points (cela illustre le caractère <strong>topologique</strong> et non géométrique du problème).
+<img src="/konigraphe.png?width=600" alt=""></p>
+<p>Euler compris alors que ce qu&rsquo;on appelerait ensuite un chemin eulérien (un cheminreliant chaque sommet en ne passant qu&rsquo;une fois par chaque arête) n&rsquo;est possible que si le graphe ne compte pas plus de deux sommets d&rsquo;où partent un nombre impair d&rsquo;arêtes. Or dans le cas de Königsberg, c&rsquo;est le cas de chacun des sept sommets. Un chemin eulérien y est donc impossible !</p>
 
+<div class="notices tip" ><p>Lorsqu&rsquo;on trace un chemin eulérien sur un graphe, trois types de sommets se présentent : un sommet peut être soit un point de départ, soit un point d&rsquo;arrivée, soit un point traversé (on y arrive puis on en repart). Et pour ces derniers, on aura toujours un nombre pair d&rsquo;arêtes (autant d&rsquo;arrivées que de départs)&hellip;</p>
+</div>
 
+<p>Ce premier pas d&rsquo;Euler eut lieu en 1737, il fallut attendre ensuite plus de cent ans pour que Kirchhoff réutilise des graphes pour déterminer les intensités circulant dans les différentes branches d&rsquo;un circuit électrique ; il met alors au point la notion d'<strong>arbre</strong>,  des graphes sans boucle, en 1847.</p>
+<p>Dix ans plus tard, c&rsquo;est au tour de la chimie de s&rsquo;attaquer aux graphes. En 1857, Cayley s&rsquo;intéresse aux différentes structures possibles (isomères) d&rsquo;une molécule ayant $n$ atomes de carbone et $2n+2$ atomes d&rsquo;hydrogène (un alcane). Cela revient à trouver tous les arbres à $3n+2$ éléments tels que de chaque élément (chaque sommet) partent exactement une ou quatre arêtes (symbolisant les liaisons chimiques).</p>
+<p>En 1869, enfin, les mathématiciens redécouvrent les graphes, par la voix de Jordan qui, sans connaître les travaux de Cayley, retrouve ses résultats.</p>
+<p>Les jeux ne sont pas en reste : en 1859, le mathématicien et physicien irlandais William Hamilton invente &ldquo;The Icosian Game&rdquo;, dont le but est de visiter une et une seule fois tous les sommets d&rsquo;un dodécaèdre régulier. Un tel chemin est depuis appelé <em>hamiltonien</em>.<!-- raw HTML omitted -->
+Apparemment voisin du problème du chemin eulérien (visiter une et une seule fois chaque arête), le problème du chemin hamiltonien est en réalité beaucoup plus difficile.<!-- raw HTML omitted -->
+Pour ce qui est du jeu que vous pouvez tester ci-dessous, une règle supplémentaire impose que la fin du chemin soit adjacente à son début. En rejoignant le point de départ, on formerait alors un <strong>cycle</strong> et on appelle ainsi cycle hamiltonnien un cycle passant par tous les sommets.</p>
+<p> 
+ </p>
+<p align="center"><iframe src="https://trinket.io/embed/glowscript/dee1a2653f?outputOnly=true&amp;start=result" width="800" height="500" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></p>
 
+<p>Le deuxième moitié du 20<!-- raw HTML omitted -->e<!-- raw HTML omitted --> siècle et l&rsquo;avènement de l&rsquo;informatique voit la théorie des graphes prendre son véritable essor : c&rsquo;est en effet l&rsquo;outil idéal pour décrire les réseaux complexes modernes.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/DdaElt6oP6w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>Les réseaux sont partout : les réseaux sociaux et les réseaux de communication, mais on trouve aussi des réseaux dans des champs scientifiques très différents comme en biologie, logistique, linguistique, économie, etc.</p>
+<p>La théorie des graphes donne un langage commun à la description de ces réseaux.</p>
+<p> 
+ </p>
+<h2 id="vocabulaire">Vocabulaire</h2>
+<h3 id="graphes-non-orientés">Graphes non orientés</h3>
+
+<div class="notices def" ><p>Un graphe $G$ est un ensemble de sommets (ou nœuds) S (notés $s_i$) et d&rsquo;arêtes A (notées $\{s_i,s_j\}$) reliant deux à deux ces sommets. On note un tel graphe : $G = (S,A)$.</p>
+</div>
+
+<p>Quelques exemples dans des champs variés :</p>
+<table>
+<thead>
+<tr>
+<th>Réseau</th>
+<th>Sommets</th>
+<th>Arêtes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>transport aérien</td>
+<td>aéroports</td>
+<td>vols</td>
+</tr>
+<tr>
+<td>plans routiers</td>
+<td>carrefours</td>
+<td>tronçons de routes</td>
+</tr>
+<tr>
+<td>réseau génétique</td>
+<td>gènes</td>
+<td>facteurs de transcription</td>
+</tr>
+<tr>
+<td>cerveau</td>
+<td>neurones</td>
+<td>synapses</td>
+</tr>
+<tr>
+<td>colonie de fourmis</td>
+<td>jonctions</td>
+<td>traces de phéromones</td>
+</tr>
+<tr>
+<td>appels téléphoniques</td>
+<td>numéro</td>
+<td>appel</td>
+</tr>
+<tr>
+<td>réseau de citation</td>
+<td>auteur</td>
+<td>citation</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/exgraphe.png?width=500" alt="">
+Est représenté ci-dessus le graphe $G=(S,A)$ avec $S=\{1,2,3,4,5,6\}$ et $A=\{\{1,2\},\{1,5\},\{2,5\},\{3,3\},\{4,6\}\}$</p>
+
+<div class="notices def" ><p>Une <strong>boucle</strong> est une arête reliant un sommet à lui-même</p>
+</div>
+
+<p>Exemple : il y a une boucle sur le sommet $3$.</p>
+
+<div class="notices def" ><p>L&rsquo;ensemble des <strong>sommets adjacents</strong> (joints par une arête) au sommet $s_i$, autrement dit les <strong>voisins</strong> du sommet $s_i$, se note : $Adj(s_i)=\{s_j \in S,\{ s_i,s_j \}\in A\}$.</p>
+</div>
+
+<p>Exemple : $Adj(2)=\{1,5\}$</p>
+<p>
+<div class="notices def" ><p>Un graphe non orienté est dit <strong>simple</strong> s&rsquo;il ne comporte pas de boucle et jamais plus d&rsquo;une arête entre deux sommets.</p>
+</div>
+
+Le graphe ci-dessus n&rsquo;est donc pas simple.</p>
+
+<div class="notices def" ><p>On appelle <strong>ordre</strong> d&rsquo;un graphe le nombre de ses sommets ($card(S)$ ou plus simplement $|S|$).</p>
+</div>
+
+<p>Exemple : pour le graphe ci-dessus $|S|=6$</p>
+
+<div class="notices def" ><p>On appelle <strong>taille</strong> d&rsquo;un graphe le nombre de ses arêtes ($card(A)$ ou $|A|$).</p>
+</div>
+
+<p>Exemple : pour le graphe ci-dessus $|A|=5$</p>
+<p> 
+ </p>
+<h3 id="graphes-orientés">Graphes orientés</h3>
+<p>Les arêtes d&rsquo;un graphe non orienté sont symétriques, elles se parcourent indifféremment dans les deux sens, mais ce n&rsquo;est pas toujours très pertinent. Considérons les exemples suivants :</p>
 <ul>
-	
+<li>Supposons que l&rsquo;on veuille modéliser un plan routier. On associe naturellement un carrefour à un sommet et une rue à une arête. Mais on a besoin en plus  d&rsquo;une notion de direction pour représenter les rues à sens unique.</li>
+<li>Pour modéliser des relations sociales, une arête entre Alice et Bob modélise un lien, mais comment représenter le fait que Bob connaisse Alice, mais que l&rsquo;inverse soit faux ?</li>
+<li>Dans un réseau d&rsquo;ordinateur, en particulier sans fil, le lien entre deux nœuds est généralement non symétrique dans le sens où un message peut être envoyé de A vers B, mais pas l&rsquo;inverse.</li>
 </ul>
+<p>Pour modéliser ce type de situation, on utilise des <strong>graphes orientés</strong>.</p>
+
+<div class="notices def" ><p>Dans un graphe orienté, les sommets sont reliés par des <strong>arcs</strong> que l&rsquo;on peut identifier à des couples de sommets (un couple a un ordre) : au couple $(a,b)$ correspond un arc d&rsquo;origine $a$ et d&rsquo;extrémité $b$.</p>
+</div>
+
+<p><img src="/incident.png?width=400" alt=""></p>
+
+<div class="notices def" ><p>L&rsquo;arc $a = (s_i,s_j)$ est dit <strong>sortant</strong> en $s_i$ et <strong>incident</strong> ou <strong>entrant</strong> en $s_j$, et $s_j$ est un <strong>successeur</strong> de $s_i$, tandis que $s_i$ est un <strong>prédécesseur</strong> de $s_j$.</p>
+</div>
 
 
-<footer class=" footline" >
+<div class="notices def" ><p>L&rsquo;ensemble des successeurs d&rsquo;un sommet $s_i \in S$ est noté $Succ(s_i) = \{s_j \in S,(s_i,s_j) \in A\}$.<br>
+L&rsquo;ensemble des prédécesseurs d&rsquo;un sommet $s_i \in S$ est noté $Pred(s_i) = \{s_j \in S,(s_j,s_i) \in A\}$.</p>
+</div>
+
+<p>Un graphe orienté permet, par exemple, de résumer les relations dans un chi-fou-mi (ici dans la variante puits montrant bien que jouer &ldquo;pierre&rdquo; est sans intérêt, ou encore dans la variante <a href="https://youtu.be/Kov2G0GouBw">pierre-feuille-ciseaux-lézard-spock</a> de The Big Bang Theory).
+<img src="/chifoumi.png?width=800" alt=""></p>
+<p>Pour &ldquo;pierre-feuille-ciseaux-puits&rdquo;, le graphe $G(S,A)$ a pour sommets $S=\{pierre,feuille,ciseaux,puits\}$ et pour arêtes $A=\{(ciseaux,feuille),(feuille,puits),(feuille,pierre),(puits,pierre),(puits,ciseaux),(pierre,ciseaux)\}$.</p>
+<p> 
+ </p>
+<h3 id="degré-dun-sommet">Degré d&rsquo;un sommet</h3>
+
+<div class="notices def" ><p>Dans un graphe non-orienté, le <strong>degré d&rsquo;un sommet</strong> $s$ est le nombre d&rsquo;arêtes incidentes à ce sommet (une boucle comptant pour 2).<br>
+Dans le cas d&rsquo;un graphe simple, on aura $d(s) = |Adj(s)|$ (nombre de sommets adjacents).</p>
+</div>
+
+
+<div class="notices def" ><p>Dans un graphe orienté, le <strong>degré sortant</strong> d&rsquo;un sommet $s$, noté $d_+(s)$, est le nombre d&rsquo;arcs partant de $s$ (de la forme $(s,v)$ avec $s,v \in S$).<br>
+Dans le cas d&rsquo;un graphe simple, on aura $d_+(s) = |Succ(s)|$ (nombre de successeurs).<br>
+De même, le <strong>degré entrant</strong> d&rsquo;un sommet $s$, noté $d_−(s)$, est le nombre d&rsquo;arcs arrivant en $s$ (de la forme $(v, s)$ avec $s,v \in S$).<br>
+Dans le cas d&rsquo;un graphe simple, on aura $d_−(s) = |Pred(s)|$ (nombre de prédécesseurs).<br>
+Le <strong>degré d&rsquo;un sommet $s$ d&rsquo;un graphe orienté</strong> est donc la somme des degré entrant et sortant : $d(s) = d_+(s) + d_−(s)$.</p>
+</div>
+
+<p><img src="/degchifoumi.png?width=600" alt="">
+Exemple : $d_+(puits)=2$ et $d_-(puits)=1$, d&rsquo;où $d(puits) = d_+(puits) + d_−(puits)=2+1=3$</p>
+<p>
+<div class="notices theo" ><p>Pour tout graphe, la somme des degrés de chaque sommet est le double du nombre d&rsquo;arêtes. $$\sum_{s \in S} d(s) = 2*|A|$$</p>
+</div>
+
+$d(puits)=d(feuille)=d(ciseaux)=d(pierre)=3$ d&rsquo;où $\sum_{s \in S} d(s) = 12$. Et on a bien $|A|=6$.
+
+<div class="notices theo" ><p>Et pour un graphe orienté, la somme des degrés entrant vaut la somme des degrés sortants et est aussi égal au nombre d&rsquo;arêtes. $$\sum_{s \in S} d_+(s) = \sum_{s \in S} d_-(s) = |A|$$</p>
+</div>
+</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>$d_+$</th>
+<th>$d_-$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>puits</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>feuille</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ciseaux</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>pierre</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>$\sum_{s \in S} d_+(s) =\sum_{s \in S} d_-(s) =|A|=6$</p>
+
+<div class="notices theo" ><p>On en déduit que pour tout graphe, il y a un nombre pair de sommets à degré impair.</p>
+</div>
+
+<p>Le degré d&rsquo;un sommet est un concept simple, mais fécond, utilisé dans des contextes très différents. Dans un réseau social, le degré d&rsquo;un sommet traduit l&rsquo;importance d&rsquo;une personne dans le groupe. Dans un réseau de communication comme Internet, on apprend beaucoup sur l&rsquo;organisation réelle du réseau à partir de la distribution obtenue en ordonnant les sommets par leurs degrés.</p>
+<p> 
+ </p>
+<h3 id="chemin-chaîne-cycle-et-circuit">Chemin, chaîne, cycle et circuit</h3>
+<h4 id="cas-des-graphes-orientés">Cas des graphes orientés</h4>
+<p>Soit $G = (S, A)$ un graphe orienté.</p>
+
+<div class="notices def" ><p>Un <strong>chemin</strong> d&rsquo;un sommet $u$ vers un sommet $v$ est une séquence $&lt; s_0,s_1,s_2,&hellip;,s_k &gt;$ de sommets tels que $u = s_0$, $v = s_k$ et $(s_{i−1},s_i) \in A$ pour tout $i \in \{1,&hellip;,k\}$.<br>
+On dira que le chemin contient les sommets $s_0,s_1,&hellip;,s_k$ et les arcs $(s_0,s_1),(s_1,s_2),&hellip;,(s_{k−1},s_k)$.<br>
+La <strong>longueur du chemin</strong> est le nombre d&rsquo;arcs dans le chemin, c&rsquo;est-à-dire $k$.</p>
+</div>
+
+
+<div class="notices def" ><p>S&rsquo;il existe un chemin de $u$ à $v$, on dira que $v$ est <strong>accessible</strong> à partir de $u$.</p>
+</div>
+
+
+<div class="notices def" ><p>Un chemin $&lt; s_0,s_1,&hellip;,s_k &gt;$ forme un <strong>circuit</strong> si $s_0 = s_k$ et si le chemin comporte au moins un arc ($k ≥ 1$).</p>
+</div>
+
+
+<div class="notices def" ><p>Une <strong>boucle</strong> est un circuit de longueur $1$.</p>
+</div>
+
+<p><img src="/exchemin.png?width=450" alt=""></p>
+<ul>
+<li>$&lt;6,3,2,1&gt;$ est un chemin du graphe.</li>
+<li>$&lt;1,5,3,2,1&gt;$ est un circuit.</li>
+</ul>
+<h4 id="cas-des-graphes-non-orientés">Cas des graphes non orientés</h4>
+
+<div class="notices def" ><p>Si $G = (S, A)$ est un graphe non orienté, on parlera de <strong>chaîne</strong> au lieu de chemin, et de <strong>cycle</strong> au lieu de circuit.<br>
+Dans le cas d&rsquo;un cycle, toutes les arêtes doivent être distinctes.<br>
+Un graphe sans cycle est dit <strong>acyclique</strong>.</p>
+</div>
+
+<p>
+<div class="notices def" ><p>Un <strong>arbre</strong> est est un graphe acyclique et connexe.</p>
+</div>
+
+<img src="/RERA.png" alt="">
+<img src="/RERC.jpg" alt="">
+La ligne A du RER forme un arbre, mais pas la ligne C.</p>
+<p> 
+ </p>
+<h3 id="distance-dans-un-graphe">Distance dans un graphe</h3>
+<p>La notion de longueur de chemin nous permet ensuite de définir la notion de distance dans un graphe.</p>
+
+<div class="notices def" ><p>Soit un graphe $G=(S,A)$.
+La <strong>distance</strong> d&rsquo;un sommet à un autre est la longueur du plus court chemin/chaîne entre ces deux sommets, ou $\infty$ s&rsquo;il n&rsquo;y a pas un tel chemin/chaîne :<br>
+$$
+\forall x,y \in S,d(x,y)=\left\lbrace
+\begin{array}{ll} k \; &amp;\text{si le plus court chemin de x vers y est de longueur k}\\ \infty  &amp;\text{sinon}\end{array}\right.
+$$</p>
+</div>
+
+
+<div class="notices def" ><p>Le <strong>diamètre</strong> du graphe est la plus grande distance entre deux sommets.</p>
+</div>
+
+<p>Exemple : dans le graphe orienté ci-dessus $d(2,3)=3$, et $d(3,6)=\infty$ (le sommet $6$ n&rsquo;est pas accessible depuis le sommet $3$). Le diamètre du graphe vaut, lui, 4 (il s&rsquo;agit de $d(6,5)$).</p>
+<p> 
+ </p>
+<h3 id="connexité">Connexité</h3>
+
+<div class="notices def" ><p>Un graphe non orienté est <strong>connexe</strong> si chaque sommet est accessible à partir de n&rsquo;importe quel autre (pour tout couple de sommets distincts $(s_i,s_j) \in S^2$, il existe une chaîne entre $s_i$ et $s_j$).</p>
+</div>
+
+<p><img src="/connexe.png?width=800" alt="">
+Le graphe comportant les sommets $1,2,3,4$ n&rsquo;est pas connexe mais celui comportant les sommets $5,6,7,8$ l&rsquo;est !</p>
+<p> 
+ </p>
+<h2 id="représentation-dun-graphe">Représentation d&rsquo;un graphe</h2>
+<h3 id="listes-dadjacence">Listes d&rsquo;adjacence</h3>
+<p>Soit le graphe $G = (S,A)$ d&rsquo;ordre $n$. On suppose que les sommets de $S$ sont numérotés de $1$ à $n$.
+
+<div class="notices def" ><p>La représentation par listes d&rsquo;adjacence de $G$ consiste en un tableau $T$ de $n$ listes, une pour chaque sommet de $S$.<br>
+Pour chaque sommet $s_i \in S$, la liste d&rsquo;adjacence $T[s_i]$ est une liste de tous les sommets $s_j$ tels qu&rsquo;il existe un arc $(s_i,s_j) \in A$ ou une arête $\{s_i,s_j\} \in A$.<br>
+Autrement dit, pour chaque sommet, on liste ses voisins accessibles.</p>
+</div>
+</p>
+<p>Les sommets de chaque liste d&rsquo;adjacence sont généralement listés selon un ordre arbitraire.</p>
+<p>Pour l&rsquo;implémentation Python, on peut soit utiliser des listes imbriqués, soit un dictionnaire.</p>
+<p>Exemple :
+<img src="/listadj.png?width=400" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Avec un dictionnaire</span>
+T <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>:[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>],<span style="color:#ae81ff">2</span>:[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>],<span style="color:#ae81ff">3</span>:[],<span style="color:#ae81ff">4</span>:[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]}
+<span style="color:#75715e"># Avec des listes imbriquées</span>
+T <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>],[],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]]
+</code></pre></div><p>L&rsquo;avantage du dictionnaire est qu&rsquo;il n&rsquo;impose pas d&rsquo;avoir une correspondance entre le numéro du sommet et la position dans la liste d&rsquo;adjacence (dans le cas de listes imbriquées <code>T[0]</code> sera toujours la liste correspondant au premier sommet, <code>T[1]</code>, celle du deuxième, etc.).</p>
+<p><strong>Taille mémoire nécessaire</strong>: si le graphe G est orienté, la somme des longueurs des listes d&rsquo;adjacence est égale au nombre d&rsquo;arcs de A, puisque l&rsquo;existence d&rsquo;un arc $(s_i,s_j)$ se traduit par la présence de $s_j$ dans la liste d&rsquo;adjacence de $T[s_i]$.<br>
+En revanche, si le graphe n&rsquo;est pas orienté, la somme des longueurs de toutes les listes d&rsquo;adjacence est égale à deux fois le nombre d&rsquo;arêtes du graphe, puisque si ${s_i,s_j}$ est une arête, alors $s_i$ appartient à la liste d&rsquo;adjacence de $T[s_j]$, et vice versa.</p>
+
+<div class="notices info" ><p>Par conséquent, la liste d&rsquo;adjacence d&rsquo;un graphe ayant $n$ sommets et $m$ arcs ou arêtes nécessite de l&rsquo;ordre de $O(n + m)$ emplacements mémoire.</p>
+</div>
+
+<p><strong>Opérations sur les listes d&rsquo;adjacence</strong> : il n&rsquo;existe pas de moyen plus rapide que de parcourir la liste d&rsquo;adjacence de $T[s_i]$ jusqu&rsquo;à trouver $s_j$ pour tester l&rsquo;existence d&rsquo;un arc $(s_i, s_j)$ ou d&rsquo;une arête ${s_i, s_j }$ avec une représentation par liste d&rsquo;adjacence.<br>
+En revanche, le calcul du degré d&rsquo;un sommet, ou l&rsquo;accès à tous les successeurs d&rsquo;un sommet, est très efficace : il suffit de parcourir la liste d&rsquo;adjacence associée au sommet.
+
+<div class="notices info" ><p>D&rsquo;une façon plus générale, le parcours de l&rsquo;ensemble des arcs/arêtes nécessite le parcours de toutes les listes d&rsquo;adjacence, et prendra un temps de l&rsquo;ordre de $p$, où $p$ est le nombre d&rsquo;arcs/arêtes.</p>
+</div>
+</p>
+<p>Le calcul des prédécesseurs d&rsquo;un sommet est mal aisé avec cette représentation, et nécessite le parcours de toutes les listes d&rsquo;adjacences de $T$. Une solution dans le cas où l&rsquo;on a besoin de connaître les prédécesseurs d&rsquo;un sommet est de maintenir, en plus de la liste d&rsquo;adjacence des successeurs, la liste d&rsquo;adjacence des prédécesseurs.</p>
+<p> 
+ </p>
+<h3 id="matrice-dadjacence">Matrice d&rsquo;adjacence</h3>
+<p>Soit le graphe $G = (S,A)$ d&rsquo;ordre $n$. On suppose que les sommets de $S$ sont numérotés de $1$ à $n$.
+
+<div class="notices def" ><p>La représentation par matrice d&rsquo;adjacence de $G$ consiste en une matrice booléenne $M=(m_{i,j})$ de taille $n\times n$ telle que $m_{i,j} = 1$ si $ (i,j) \in A$, et $m_{i,j} = 0$ sinon.</p>
+</div>
+</p>
+<p><img src="/matadj.png?width=600" alt=""></p>
+
+<div class="notices tip" ><p>La matrice d&rsquo;adjacence d&rsquo;un graphe non orienté sera toujours symétrique, mais pas nécessairement celle d&rsquo;un graphe orienté.</p>
+</div>
+
+<p>Implémentation Python :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">M <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>],[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>]]
+<span style="color:#75715e"># pour savoir si un arc joint le sommet 1 au sommet 3</span>
+M[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">2</span>]
+<span style="color:#75715e"># pour savoir si un arc joint le sommet 3 au sommet 1</span>
+M[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">0</span>]
+</code></pre></div><p><strong>Taille mémoire nécessaire</strong> :
+
+<div class="notices info" ><p>La matrice d&rsquo;adjacence d&rsquo;un graphe ayant $n$ sommets nécessite de l&rsquo;ordre de $O(n^2)$ emplacements mémoire.<br>
+Si le nombre d&rsquo;arcs est très inférieur à $n^2$ (on parle alors de graphe creux), cette représentation est loin d&rsquo;être optimale.</p>
+</div>
+</p>
+<p><strong>Opérations sur les matrices d&rsquo;adjacence</strong> :<br>
+le test de l&rsquo;existence d&rsquo;un arc ou d&rsquo;une arête avec une représentation par matrice d&rsquo;adjacence est immédiat (il suffit de tester directement la case correspondante de la matrice).<br>
+En revanche, connaître le degré d&rsquo;un sommet nécessite le parcours de toute une ligne (ou toute une colonne) de la matrice.
+
+<div class="notices info" ><p>D&rsquo;une façon plus générale, le parcours de l&rsquo;ensemble des arcs/arêtes nécessite la consultation de la totalité de la matrice, et prendra un temps de l&rsquo;ordre de $n^2$.</p>
+</div>
+</p>
+<p><strong>Application</strong> :
+Combien y a-t-il de chemins menant d&rsquo;un sommet à un autre en exactement $n$ coups ?</p>
+<p>On cherche donc les chemins de longueur $n$ entre deux sommets $i$ et $j$.<br>
+Soit $M = (m_{i,j})$ la matrice d&rsquo;adjacence d&rsquo;un graphe $G(S,A)$. $M$ est donc aussi le nombre de chemin de $i$ à $j$ de longueur $1$ (une seul arête), que l&rsquo;on va noter $m_{i,j}(1)$.<br>
+L&rsquo;idée est alors de découper le chemin de longueur $n$ en un chemin de longueur $n-1$  suivi d&rsquo;un chemin de longueur $1$. Le nombre $m_{i,j}(n)$ de chemins de longueur $n$ est ainsi donné par :
+$$ m_{i,j}(n)=\sum_{k=1}^{|S|}m_{i,k}(n-1)\times m_{k,j}(1)$$
+Pour $ m_{i,j}(2) $, on obtient $m_{i,j}(n)=\sum_{k=1}^{|S|}m_{i,k}(1)\times m_{k,j}(1)$ qui n&rsquo;est autre que $M^2$ (on reconnaît en effet la formule du produit matriciel).<br>
+Et par une récurrence immédiate, pour des chemins de longueur $n$, il suffit de calculer $M^n$.</p>
+<p>Exemple : combien y a-t-il de chemins de longueur 4 entre les sommets 2 et 3 du graphe représenté ci-dessous.
+<img src="/exmat.png?width=450" alt="">
+La matrice d&rsquo;adjacence du graphe vaut $M = \begin{pmatrix}1&amp;1&amp;0\\0&amp;0&amp;1\\1&amp;1&amp;0\end{pmatrix}$.
+Utilisons Python pour calculer $M^4$ :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np <span style="color:#75715e"># librairie très utile pour les calculs sur matrices</span>
+<span style="color:#f92672">from</span> numpy.linalg <span style="color:#f92672">import</span> matrix_power
+
+M <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>],[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>]]
+M <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(M) <span style="color:#75715e"># on convertit M en tableau numpy</span>
+M4 <span style="color:#f92672">=</span> matrix_power(M,<span style="color:#ae81ff">4</span>)
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Il y a {M4[2][0]} chemins de longueur 4 du sommet 3 au sommet 1.&#34;</span>)
+</code></pre></div><p><code>Il y a 3 chemins de longueur 4 du sommet 3 au sommet 1.</code>
+<img src="/solexmat.png" alt=""></p>
+<p> 
+ </p>
+<h2 id="parcours-dun-graphe">Parcours d&rsquo;un graphe</h2>
+<p>Pour déterminer si un sommet est accessible depuis un autre sommet, il faut pouvoir parcourir méthodiquement l&rsquo;ensemble du graphe.</p>
+<h3 id="algorithme-de-parcours-en-largeur">Algorithme de parcours en largeur</h3>
+<p>Une première méthode, l&rsquo;algorithme de parcours en largeur (ou breadth-first algorithm), consiste à partir d&rsquo;un nœud, d&rsquo;explorer tous ses successeurs, puis les successeurs de chacun de ses successeurs, etc., jusqu&rsquo;à ce qu&rsquo;il n&rsquo;y ait plus de sommets.<br>
+Cela revient à inspecter le graphe par couche concentrique de plus en plus éloignées du nœud source.</p>
+<p><img src="/gifbreadth.gif?width=700" alt=""></p>
+<p>Pour implémenter un tel algorithme, la structure de données adaptée est la <strong>file</strong>.</p>
+<p>
+<div class="notices note" ><p>Les files (queues en anglais) sont des structures dynamiques (les éléments sont enfilés ou défilés) qui, à l&rsquo;instar d&rsquo;une file d&rsquo;attente à une caisse, c&rsquo;est  le premier arrivé qui est le premier retiré (FIFO pour &ldquo;first in first out&rdquo;). Les files sont utilisées par exemple lorsqu&rsquo;il y a une possibilité d&rsquo;encombrement (pour une imprimante partagée par exemple).</p>
+</div>
+
+<img src="/queue.png?width=600" alt=""></p>
+<p>L&rsquo;idée est de placer chaque nouveau successeur au bout d&rsquo;une file (enfiler), puis de retirer un à un (défiler) les premiers arrivés (donc les plus proches) lorsqu&rsquo;ils sont à leur tour inspectés.</p>
+<p>Pour l&rsquo;implémentation des files, on pourrait utiliser des listes python en ajoutant toujours les éléments à la fin et les retirant au début, mais ce n&rsquo;est pas très efficace. En effet, l&rsquo;ajout et le retrait d&rsquo;éléments se feront avec une complexité linéaire (proportionnelle à la taille de la liste), sans tirer partie de la structure particulièrement simple des files où seule deux positions (première et dernière) nous intéresse.<br>
+Mais comme souvent en python, un module dédié, ici <code>collecions.deque</code>, peut nous venir en aide. Il implément efficacement les files en permettant un enfilage et un défilage en temps constant.</p>
+<p><img src="/breadth.png?width=700" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">G <span style="color:#f92672">=</span> {}
+G[<span style="color:#e6db74">&#34;Bob&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Alice&#34;</span>,<span style="color:#e6db74">&#34;Dave&#34;</span>,<span style="color:#e6db74">&#34;Charlie&#34;</span>]
+G[<span style="color:#e6db74">&#34;Alice&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Elisa&#34;</span>]
+G[<span style="color:#e6db74">&#34;Charlie&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Elisa&#34;</span>,<span style="color:#e6db74">&#34;Hector&#34;</span>]
+G[<span style="color:#e6db74">&#34;Dave&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Farid&#34;</span>,<span style="color:#e6db74">&#34;Gus&#34;</span>]
+G[<span style="color:#e6db74">&#34;Elisa&#34;</span>] <span style="color:#f92672">=</span> []
+G[<span style="color:#e6db74">&#34;Farid&#34;</span>] <span style="color:#f92672">=</span> []
+G[<span style="color:#e6db74">&#34;Gus&#34;</span>] <span style="color:#f92672">=</span> []
+G[<span style="color:#e6db74">&#34;Hector&#34;</span>] <span style="color:#f92672">=</span> []
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parcours_largeur</span>(G,depart):
+    file <span style="color:#f92672">=</span> deque()
+    file<span style="color:#f92672">.</span>append(depart)
+    Sommets <span style="color:#f92672">=</span> []
+    vus <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">while</span> file :
+        sommet <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>popleft() <span style="color:#75715e"># méthode de la classe deque permettant de défiler (équivaut à pop(0) sur une liste)</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> vus :
+            file <span style="color:#f92672">+=</span> G[sommet]
+            vus<span style="color:#f92672">.</span>append(sommet) <span style="color:#75715e"># on marque les sommets vus (évite ici d&#39;avoir 2 Elisa, mais ça peut être bien pire)</span>
+            Sommets<span style="color:#f92672">.</span>append(sommet)
+    <span style="color:#66d9ef">return</span> Sommets
+</code></pre></div><p><code>parcours_largeur(G,&quot;Bob&quot;)</code> renvoie
+<code>['Bob', 'Alice', 'Dave', 'Charlie', 'Elisa', 'Farid', 'Gus', 'Hector']</code>.
+
+<div class="notices warning" ><p>Si on ne marque pas les sommets vus (ici grâce à la liste <code>vus</code>), on  se retrouve avec une boucle infinie dès qu&rsquo;il y a un circuit ou un cycle (le simple graphe 🦉⇆🐘 par exemple).</p>
+</div>
+</p>
+<p> 
+ </p>
+<h3 id="algorithme-de-parcours-en-profondeur">Algorithme de parcours en profondeur</h3>
+<p>Cette fois-ci, on explore jusqu&rsquo;au bout chaque chaîne de successeurs du nœud source avant de passer à la suivante.</p>
+<p><img src="/gifdepth.gif?width=700" alt=""></p>
+<p>Cette fois-ci, la structure de données dynamique adaptée est la <strong>pile</strong>.</p>
+<p>
+<div class="notices note" ><p>Les piles (stacks en anglais) sont des structures dynamiques (des éléments sont ajoutés = empilés, ou retirés = dépilés) ayant la propriété que l’élément extrait est celui qui y a été introduit le plus récemment (&ldquo;dernier entré, premier sortie&rdquo; ou LIFO &ldquo;last in first out&rdquo; en anglais). C&rsquo;est l&rsquo;équivalent informatique d&rsquo;une pile d&rsquo;assiettes. Cette structure est par exemple utilisée dans la fonction &ldquo;annuler&rdquo; (CTR-Z) d&rsquo;un logiciel ou encore dans le traitement des fonctions récursives (les piles seront étudiées plus en détail en seconde année).</p>
+</div>
+
+<img src="/piles.png?width=550" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parcours_profondeur</span>(G,depart):
+    pile <span style="color:#f92672">=</span> deque()
+    pile<span style="color:#f92672">.</span>append(depart)
+    Sommets <span style="color:#f92672">=</span> []
+    vus <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">while</span> pile :
+        sommet <span style="color:#f92672">=</span> pile<span style="color:#f92672">.</span>pop()
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> vus :
+            pile <span style="color:#f92672">+=</span> G[sommet]
+            vus<span style="color:#f92672">.</span>append(sommet)
+            Sommets<span style="color:#f92672">.</span>append(sommet)
+    <span style="color:#66d9ef">return</span> Sommets
+</code></pre></div><p><code>parcours_largeur(G,&quot;Bob&quot;)</code> renvoie
+<code>['Bob', 'Charlie', 'Hector', 'Elisa', 'Dave', 'Gus', 'Farid', 'Alice']</code>.</p>
+<p> 
+ </p>
+<h2 id="graphes-pondérés">Graphes pondérés</h2>
+<p>La modélisation de réseaux réels peut dans certains cas être améliorée en attribuant des valeurs (des poids) aux sommets ou aux arêtes/arcs.</p>
+<p>Par exemple, pour modéliser un réseau ferroviaire, cela sera intéressant d&rsquo;attribuer sur chaque arête modélisant les jonctions entre deux gares la distance correspondante.<br>
+On obtient alors un <strong>graphe pondéré</strong>.</p>
+<p>On utilise aussi souvent des graphes pondérés, plus particulièrement des arbres de probabilité (où chaque branche est affublée d&rsquo;une probabilité) pour calculer des probabilités conditionnelles.<br>
+Exemple :
+<img src="/arbreproba.png?width=400" alt=""></p>
+<p>Très souvent (particulièrement pour les réseaux de communication), l&rsquo;information ajoutée au graphe un temps ou une distance et se pose alors le problème de l&rsquo;optimisation d&rsquo;un trajet entre deux sommets.</p>
+<p> 
+ </p>
+<h2 id="problème-du-plus-court-chemin--algorithme-de-dijkstra">Problème du plus court chemin : algorithme de Dijkstra</h2>
+
+<div class="notices tip" ><p>Pas au programme de TSI mais plus prudent d&rsquo;en avoir entendu parler pour l&rsquo;épreuve de Centrale qui jusqu&rsquo;à maintenant était commune aux autres sections.</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parcours_largeur</span>(G,depart,arrivee):
+    file <span style="color:#f92672">=</span> [(depart,[depart])]
+    vus <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">while</span> file :
+        sommet,chemin <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>)
+        <span style="color:#66d9ef">if</span> sommet <span style="color:#f92672">==</span> arrivee :
+            <span style="color:#66d9ef">return</span> chemin
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> vus :
+            <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G[sommet] :
+                nv_chemin <span style="color:#f92672">=</span> chemin<span style="color:#f92672">+</span>[s]
+                file<span style="color:#f92672">.</span>append((s,nv_chemin))
+            vus<span style="color:#f92672">.</span>append(sommet) 
+    <span style="color:#66d9ef">return</span> False
+
+<span style="color:#66d9ef">print</span>(parcours_largeur(G,<span style="color:#e6db74">&#34;Minimes&#34;</span>,<span style="color:#e6db74">&#34;Stade&#34;</span>))
+</code></pre></div><p><code>['Minimes', 'Hôpital', 'Verdun', 'Stade']</code></p>
+
+
+<footer class="footline">
 	
 </footer>
 
@@ -689,6 +1176,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -703,6 +1191,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -720,6 +1211,7 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
+                    
                 
                 
 
@@ -735,6 +1227,9 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -787,3 +1282,4 @@ onload='renderMathInElement(document.body);'></script>
 
   </body>
 </html>
+
