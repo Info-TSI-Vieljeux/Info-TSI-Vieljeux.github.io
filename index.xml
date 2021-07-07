@@ -24,7 +24,9 @@ Dans l&amp;rsquo;idéal, on commente chaque bloc de code (boucles et fonctions) 
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/semestre_1/tp1recherche/</guid>
-      <description></description>
+      <description>TP 1 : Recherche séquentielle dans un tableau unidimensionnel. Dictionnaires. Recherche d&amp;rsquo;un élément dans une liste  Écrire une fonction recherche qui prend pour argument un élément et une liste et qui retourne True si l&amp;rsquo;élément est présent et False sinon.
+Le corps de la fonction devra comprendre une boucle.
+  Dans le pire des cas (élément ne se trouvant pas dans la liste), combien de comparaisons doit-on opérer pour savoir si un élément est présent dans une liste de taille 400 ?</description>
     </item>
     
     <item>
@@ -33,7 +35,55 @@ Dans l&amp;rsquo;idéal, on commente chaque bloc de code (boucles et fonctions) 
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/semestre_1/tp2imbrication/</guid>
+      <description>Algorithmes opérant sur une structure séquentielle par boucles imbriquées Chercher un mot dans un texte  Écrire une fonction cherche_mot qui recherche si un mot est présent dans un texte.
+Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&amp;rsquo;est pas plus long que le texte.
+ # importation de la classique liste de mots de passe rockyou (cela prend quelques secondes) from urllib.</description>
+    </item>
+    
+    <item>
+      <title>TP 2 : boucles imbriquées</title>
+      <link>http://example.org/semestre_1/tp4dicho/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_1/tp4dicho/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>TP 2 : boucles imbriquées</title>
+      <link>http://example.org/semestre_1/tp5recu/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_1/tp5recu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TP 2 : boucles imbriquées</title>
+      <link>http://example.org/semestre_1/tp6tri/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_1/tp6tri/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TP 2 : boucles imbriquées</title>
+      <link>http://example.org/semestre_1/tp7image/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_1/tp7image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TP 3 : utilisation de modules/bibliothèques</title>
+      <link>http://example.org/semestre_1/tp3data/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_1/tp3data/</guid>
+      <description>On va se placer dans le champ le plus porteur de la science informatique actuelle, l&amp;rsquo;analyse de données (data science) pour constater comment l&amp;rsquo;utilisation de modules adaptés peut simplifier le travail.
+Exploration d&amp;rsquo;un jeu de données Statistiques simples import pandas as pd # bibliothèques dédiée au traitement de jeux de données import matplotlib.pyplot as plt # bibliothèque graphique import seaborn as sns # bibliothèque graphique reposant sur matplotlib et dédiée plus particulièrement à la représentation de jeux de données import numpy as np # bibliothèque puissante permettant de gérer des tableaux multidimensionnels import plotly.</description>
     </item>
     
     <item>
@@ -96,7 +146,9 @@ Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâ
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/python/divers/</guid>
-      <description>Divers Commentaires Utilisation de print Importation de modules Manipulation de fichier texte Assertion </description>
+      <description>Divers Commentaires Tous les langages de programmations permettent d&amp;rsquo;introduire des commentaires dans le code qui servent d&amp;rsquo;aides et de repères à celui qui lit le code, mais qui sont ignorés lors de l&amp;rsquo;exécution.
+En Python, les commentaires sont introduits par le symbole dièse (hashtag) #.
+ Utilisation de print print est la première fonction native que l&amp;rsquo;on rencontre. C&amp;rsquo;est une fonction à effet de bord : elle ne retourne rien (elle est de type None), mais elle permet d&amp;rsquo;afficher une chaîne de caractères, ou le contenu d&amp;rsquo;une variable, quel que soit son type.</description>
     </item>
     
   </channel>

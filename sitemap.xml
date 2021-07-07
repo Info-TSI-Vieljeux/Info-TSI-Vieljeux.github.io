@@ -18,6 +18,31 @@
   </url>
   
   <url>
+    <loc>http://example.org/semestre_1/tp4dicho/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_1/tp5recu/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_1/tp6tri/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_1/tp7image/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_1/tp3data/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/python/traitsgaux/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url>

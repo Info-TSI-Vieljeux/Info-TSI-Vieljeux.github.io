@@ -65,7 +65,7 @@ onload='renderMathInElement(document.body);'></script>
     
 	
   </head>
-  <body class="" data-url="/semestre_1/tp2imbrication/">
+  <body class="" data-url="/semestre_1/tp5recu/">
     <nav id="sidebar" class="">
 
 
@@ -312,7 +312,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_1/tp2imbrication/" title="TP 2 : boucles imbriquées" class="dd-item active">
+      <li data-nav-id="/semestre_1/tp2imbrication/" title="TP 2 : boucles imbriquées" class="dd-item ">
         <a href="/semestre_1/tp2imbrication/">
         TP 2 : boucles imbriquées
         
@@ -354,7 +354,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_1/tp5recu/" title="TP 2 : boucles imbriquées" class="dd-item ">
+      <li data-nav-id="/semestre_1/tp5recu/" title="TP 2 : boucles imbriquées" class="dd-item active">
         <a href="/semestre_1/tp5recu/">
         TP 2 : boucles imbriquées
         
@@ -587,12 +587,7 @@ onload='renderMathInElement(document.body);'></script>
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#chercher-un-mot-dans-un-texte">Chercher un mot dans un texte</a></li>
-    <li><a href="#chercher-un-doublon">Chercher un doublon</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -610,178 +605,6 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-<h1 id="algorithmes-opérant-sur-une-structure-séquentielle-par-boucles-imbriquées">Algorithmes opérant sur une structure séquentielle par boucles imbriquées</h1>
-<h2 id="chercher-un-mot-dans-un-texte">Chercher un mot dans un texte</h2>
-<blockquote>
-<p>Écrire une fonction <code>cherche_mot</code> qui recherche si un mot est présent dans un texte.<br>
-Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&rsquo;est pas plus long que le texte.</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># importation de la classique liste de mots de passe rockyou (cela prend quelques secondes)</span>
-<span style="color:#f92672">from</span> urllib.request <span style="color:#f92672">import</span> urlopen
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://cordier-phychi.toile-libre.org/Info/github/rockyou.txt&#39;</span>
-rockyou <span style="color:#f92672">=</span> urlopen(url)<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;latin-1&#39;</span>)
-<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Le fichier rockyou contient {len(rockyou.split())} mots de passe !&#34;</span>)
-</code></pre></div><p>`Le fichier rockyou contient 14445388 mots de passe !</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># vous pouvez tester la présence de votre mot de passe dans la liste</span>
-mot_de_passe <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;...&#39;</span>
-cherche_mot(mot_de_passe,rockyou)
-</code></pre></div><blockquote>
-<p>Sans ce soucier de l&rsquo;implémentation, combien faudra-t-il faire au minimum de comparaisons pour s&rsquo;assurer qu&rsquo;un mot de 3 caractères est absent d&rsquo;une chaîne de 10 caractères ?</p>
-</blockquote>
-<p>Traçons l&rsquo;évolution du temps d&rsquo;exécution de <code>cherche_mot</code> en fonction de la taille du texte (cela peut prendre quelques secondes&hellip;).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> time <span style="color:#f92672">import</span> time
-<span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
-plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;ggplot&#39;</span>)
-
-I, T_in, T_ch <span style="color:#f92672">=</span> [], [], []
-
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10000</span>,<span style="color:#ae81ff">500000</span>,<span style="color:#ae81ff">10000</span>) :
-    mot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&amp;&#39;</span><span style="color:#f92672">*</span>(i<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>)
-    texte <span style="color:#f92672">=</span> rockyou[:i]
-    start <span style="color:#f92672">=</span> time()
-    cherche_mot(mot,texte)
-    stop <span style="color:#f92672">=</span> time()
-    <span style="color:#66d9ef">try</span> :
-        T_ch<span style="color:#f92672">.</span>append(stop<span style="color:#f92672">-</span>start)
-    <span style="color:#66d9ef">except</span> :
-        <span style="color:#66d9ef">pass</span>
-    I<span style="color:#f92672">.</span>append(i)
-
-plt<span style="color:#f92672">.</span>figure(figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">5</span>))
-
-<span style="color:#66d9ef">try</span> :
-    plt<span style="color:#f92672">.</span>plot(I,T_ch)
-<span style="color:#66d9ef">except</span> : 
-    <span style="color:#66d9ef">pass</span>
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;longeur du texte (longueur mot = moitié longueur texte)&#34;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;temps d&#39;exécution (s)&#34;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Temps d&#39;excution de &#39;cherche_mot&#39; en fonction de la taille du texte&#34;</span>)
-</code></pre></div><p><img src="/rechmot.png" alt=""></p>
-<h2 id="chercher-un-doublon">Chercher un doublon</h2>
-<p>La fonction suivante cherche si un élément d&rsquo;une liste se trouve en double et le cas échéant, le retourne.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche_duplicata</span>(liste) :
-    N <span style="color:#f92672">=</span> len(liste)
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N) :
-        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(N) :
-            <span style="color:#66d9ef">if</span> i <span style="color:#f92672">!=</span> j <span style="color:#f92672">and</span> liste[i] <span style="color:#f92672">==</span> liste[j] :
-                <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Un élément en double a été trouvé :&#39;</span>)
-                <span style="color:#66d9ef">return</span> liste[i]
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Pas de doublons trouvés 😞&#39;</span>
-liste_fruits <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;🍓&#34;</span>, <span style="color:#e6db74">&#34;🍐&#34;</span>, <span style="color:#e6db74">&#34;🍊&#34;</span>, <span style="color:#e6db74">&#34;🍌&#34;</span>, <span style="color:#e6db74">&#34;🍍&#34;</span>, <span style="color:#e6db74">&#34;🍑&#34;</span>, <span style="color:#e6db74">&#34;🍎&#34;</span>, <span style="color:#e6db74">&#34;🍈&#34;</span>, <span style="color:#e6db74">&#34;🍊&#34;</span>, <span style="color:#e6db74">&#34;🍇&#34;</span>]
-a <span style="color:#f92672">=</span> cherche_duplicata(liste_fruits)
-<span style="color:#66d9ef">print</span>(a)
-</code></pre></div><p><code>Un élément en double a été trouvé :</code>\
-<code>🍊</code></p>
-<blockquote>
-<p>Combien de comparaisons sont opérées au maximum si la liste contient 200 éléments ?</p>
-</blockquote>
-<p>On peut aisément améliorer la fonction en évitant de doubler les comparaisons :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche_duplicata_bis</span>(liste) :
-    N <span style="color:#f92672">=</span> len(liste)
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) :
-        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,N) :
-            <span style="color:#66d9ef">if</span> liste[i] <span style="color:#f92672">==</span> liste[j] :
-                <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Un élément en double a été trouvé :&#39;</span>)
-                <span style="color:#66d9ef">return</span> liste[i]
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Pas de doublons trouvés 😞&#39;</span>
-liste_fruits <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;🍓&#34;</span>, <span style="color:#e6db74">&#34;🍐&#34;</span>, <span style="color:#e6db74">&#34;🍊&#34;</span>, <span style="color:#e6db74">&#34;🍌&#34;</span>, <span style="color:#e6db74">&#34;🍍&#34;</span>, <span style="color:#e6db74">&#34;🍑&#34;</span>, <span style="color:#e6db74">&#34;🍎&#34;</span>, <span style="color:#e6db74">&#34;🍈&#34;</span>, <span style="color:#e6db74">&#34;🍊&#34;</span>, <span style="color:#e6db74">&#34;🍇&#34;</span>]
-a <span style="color:#f92672">=</span> cherche_duplicata(liste_fruits)
-<span style="color:#66d9ef">print</span>(a)
-</code></pre></div><p><code>Un élément en double a été trouvé :</code>\
-<code>🍊</code></p>
-<blockquote>
-<p>Combien de comparaisons sont opérées au maximum avec cette nouvelle fonction si la liste contient 200 éléments ?</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Pour vous aider à raisonner</span>
-N <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) :
-    L <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,N) :
-        L<span style="color:#f92672">.</span>append((i,j))
-    <span style="color:#66d9ef">print</span>(L)
-</code></pre></div><p><code>[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9)]</code><br>
-<code>[(1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9)]</code><br>
-<code>[(2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9)]</code><br>
-<code>[(3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9)]</code><br>
-<code>[(4, 5), (4, 6), (4, 7), (4, 8), (4, 9)]</code><br>
-<code>[(5, 6), (5, 7), (5, 8), (5, 9)]</code><br>
-<code>[(6, 7), (6, 8), (6, 9)]</code><br>
-<code>[(7, 8), (7, 9)]</code><br>
-<code>[(8, 9)]</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
-
-I, T_dup, T_dup_bis <span style="color:#f92672">=</span> [], [], []
-
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">200</span>,<span style="color:#ae81ff">5000</span>,<span style="color:#ae81ff">200</span>) :
-    L <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(i)]
-    start <span style="color:#f92672">=</span> time()
-    cherche_duplicata(L)
-    stop1 <span style="color:#f92672">=</span> time()
-    cherche_duplicata_bis(L)
-    stop2 <span style="color:#f92672">=</span> time()
-    I<span style="color:#f92672">.</span>append(i)
-    T_dup<span style="color:#f92672">.</span>append(stop1<span style="color:#f92672">-</span>start)
-    T_dup_bis<span style="color:#f92672">.</span>append(stop2<span style="color:#f92672">-</span>stop1)
-    
-fig,axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">3</span>,figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>))
-axs[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot(I,T_dup)
-axs[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34;cherche_duplicata&#34;</span>)
-axs[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>plot(I,T_dup_bis,c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#3388BB&#39;</span>,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cherche_duplicata_bis&#34;</span>)
-axs[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34;cherche_duplicata_bis&#34;</span>)
-axs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>plot(I,T_dup,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cherche_duplicata&#34;</span>)
-axs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>plot(I,T_dup_bis,c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#3388BB&#39;</span>,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cherche_duplicata_bis&#34;</span>)
-axs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34;Comparaison&#34;</span>)
-axs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>legend()
-</code></pre></div><p><img src="/comp_dupl.png" alt=""></p>
-<p>On constate que même si l&rsquo;amélioration est visible entre les deux fonctions, le comportement général (la classe de complexité comme on le verra plus tard) est identique.</p>
-<p> 
- </p>
-<h1 id="intégration-numérique">Intégration numérique</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">trapeze</span>(f, a, b): 
-    <span style="color:#66d9ef">return</span> (f(a) <span style="color:#f92672">+</span> f(b))<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> (b <span style="color:#f92672">-</span> a)
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rect_gauche</span>(f, a, b):
-    <span style="color:#66d9ef">return</span> f(a)<span style="color:#f92672">*</span>(b<span style="color:#f92672">-</span>a)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">integrale</span>(f, a, b, n, methode):
-    p <span style="color:#f92672">=</span> (b<span style="color:#f92672">-</span>a)<span style="color:#f92672">/</span>n
-    s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n) :
-        s <span style="color:#f92672">+=</span> methode(f,a<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>p,a<span style="color:#f92672">+</span>(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>p)
-    <span style="color:#66d9ef">return</span> s
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x) :
-    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>cos(x)<span style="color:#f92672">*</span>x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
-<span style="color:#f92672">import</span> matplotlib.patches <span style="color:#f92672">as</span> patches
-
-a <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>pi
-b <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>np<span style="color:#f92672">.</span>pi
-x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(a,b,<span style="color:#ae81ff">2000</span>)
-y <span style="color:#f92672">=</span> f(x)
-n_possibles <span style="color:#f92672">=</span> (<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">200</span>)
-
-fig,axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">2</span>,figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>))
-<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>) :
-    n <span style="color:#f92672">=</span> n_possibles[k]
-    p <span style="color:#f92672">=</span> (b<span style="color:#f92672">-</span>a)<span style="color:#f92672">/</span>n
-    I_rect <span style="color:#f92672">=</span> integrale(f,a,b,n,rect_gauche)
-    I_trap <span style="color:#f92672">=</span> integrale(f,a,b,n,trapeze)
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n) :
-        rect <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>Polygon(((a<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>p,<span style="color:#ae81ff">0</span>),(a<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>p,f(a<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>p)),(a<span style="color:#f92672">+</span>(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>p,f(a<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>p)),(a<span style="color:#f92672">+</span>(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>p,<span style="color:#ae81ff">0</span>),(a<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>p,<span style="color:#ae81ff">0</span>)),alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>,facecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#9988DD&#39;</span>,edgecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#9988DD&#39;</span>)
-        trap <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>Polygon(((a<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>p,<span style="color:#ae81ff">0</span>),(a<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>p,f(a<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>p)),(a<span style="color:#f92672">+</span>(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>p,f(a<span style="color:#f92672">+</span>(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>p)),(a<span style="color:#f92672">+</span>(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>p,<span style="color:#ae81ff">0</span>),(a<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>p,<span style="color:#ae81ff">0</span>)),alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>,edgecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#3388BB&#39;</span>)
-        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>) :
-            axs[k][j]<span style="color:#f92672">.</span>plot(x,y,c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#EE6666&#39;</span>)
-        axs[k][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>add_patch(rect)
-        axs[k][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>add_patch(trap)
-    axs[k][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">4</span>,s<span style="color:#f92672">=</span>f<span style="color:#e6db74">&#39;I = {I_rect:.2f}&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">18</span>,c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;w&#39;</span>,horizontalalignment<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;center&#39;</span>)
-    axs[k][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">4</span>,s<span style="color:#f92672">=</span>f<span style="color:#e6db74">&#39;I = {I_trap:.2f}&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">18</span>,c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;w&#39;</span>,horizontalalignment<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;center&#39;</span>)
-</code></pre></div><p><img src="/integ.png" alt=""></p>
-<p>À comparer à :
-$$ \int_{-\pi}^{3\pi/2}(x^2\cos(x)+10)dx = 2+23\pi-9\frac{\pi^2}{4}\approx 52,05$$</p>
-<blockquote>
-<p>Pour quelle valeur de $n$, la valeur de $I$ atteint-elle 52,05 avec la méthode des rectangles à gauche ?<br>
-Vous appelerez cette valeur <code>n_cible</code> et votre code devra l&rsquo;afficher.</p>
-</blockquote>
 
 
 <footer class="footline">
@@ -951,26 +774,6 @@ Vous appelerez cette valeur <code>n_cible</code> et votre code devra l&rsquo;aff
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1002,6 +805,26 @@ Vous appelerez cette valeur <code>n_cible</code> et votre code devra l&rsquo;aff
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
