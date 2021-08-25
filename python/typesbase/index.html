@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1627254243" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1627254243" rel="stylesheet">
-    <link href="/css/hybrid.css?1627254243" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1627254243" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1627254243" rel="stylesheet">
-    <link href="/css/auto-complete.css?1627254243" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1627254243" rel="stylesheet">
-    <link href="/css/theme.css?1627254243" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1627254243" rel="stylesheet">
+    <link href="/css/nucleus.css?1629908111" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1629908111" rel="stylesheet">
+    <link href="/css/hybrid.css?1629908111" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1629908111" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1629908111" rel="stylesheet">
+    <link href="/css/auto-complete.css?1629908111" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1629908111" rel="stylesheet">
+    <link href="/css/theme.css?1629908111" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1629908111" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1627254243" rel="stylesheet">
+    <link href="/css/theme-green.css?1629908111" rel="stylesheet">
     
-    <link href="/css/foo.css?1627254243" rel="stylesheet"><link href="/css/bar.css?1627254243" rel="stylesheet">
+    <link href="/css/foo.css?1629908111" rel="stylesheet"><link href="/css/bar.css?1629908111" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1627254243"></script>
+    <script src="/js/jquery-3.3.1.min.js?1629908111"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1627254243"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1627254243"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1629908111"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1629908111"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1627254243"></script>
+<script type="text/javascript" src="/js/search.js?1629908111"></script>
 
     
   </div>
@@ -281,6 +281,27 @@ onload='renderMathInElement(document.body);'></script>
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/semestre_1/tp0/" title="TP 0 : Démarrage" class="dd-item ">
+        <a href="/semestre_1/tp0/">
+        TP 0 : Démarrage
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -629,7 +650,7 @@ onload='renderMathInElement(document.body);'></script>
 
 
 <h1 id="types-de-base">Types de base</h1>
-<p>Les types de baseen python (les catégories fondamentales des objets manipulés) sont :</p>
+<p>Les types de base en python (les catégories fondamentales des objets manipulés) sont :</p>
 <ul>
 <li>
 <p>Les <strong>entiers</strong> <code>int</code> (en anglais, <em>entier</em> se dit <em>integer</em>).<br>
@@ -676,32 +697,45 @@ Exemple :<br>
  </p>
 <h2 id="opérations-sur-les-entiers-int">Opérations sur les entiers (<code>int</code>)</h2>
 <p>Les entiers sont stables pour les opérations suivantes (le résultat est un entier).</p>
+<p> </p>
 <h3 id="addition-">Addition <code>+</code></h3>
 <p><code>&gt;&gt;&gt; 2+3</code><br>
 <code>5</code></p>
+<p> </p>
 <h3 id="soustraction--">Soustraction <code>-</code></h3>
 <p><code>&gt;&gt;&gt; 2-3</code><br>
 <code>-1</code></p>
+<p> </p>
 <h3 id="multiplication-">Multiplication <code>*</code></h3>
 <p><code>&gt;&gt;&gt; 2*3</code><br>
 <code>6</code></p>
+<p> </p>
 <h3 id="division-entière-">Division entière <code>//</code></h3>
 <p><code>a//b</code> donne le quotient de la division euclidienne de <code>a</code> par <code>b</code>.</p>
 <p><code>&gt;&gt;&gt; 2//3</code><br>
-<code>0</code><br>
-Attention à ne pas confondre avec la division décimale <code>/</code>. Si on travaille avec des entiers, de précision infinie, il est contre-productif d&rsquo;introduire des flottants en utilisant <code>/</code> plutôt que <code>//</code>.</p>
+<code>0</code>
+
+<div class="notices warning" ><p>Attention à ne pas confondre avec la division décimale <code>/</code>.</p>
+</div>
+
+
+<div class="notices tip" ><p>Si on travaille avec des entiers, de précision infinie, il est contre-productif d&rsquo;introduire des flottants en utilisant <code>/</code> plutôt que <code>//</code>.</p>
+</div>
+</p>
+<p> </p>
 <h3 id="modulo-">Modulo <code>%</code></h3>
 <p><code>a%b</code> donne le reste de la division euclidienne de <code>a</code> par <code>b</code>.</p>
 <p><code>&gt;&gt;&gt; 2%3</code><br>
 <code>1</code>
 
-<div class="notices info" ><p>L&rsquo;opérateur modulo sert énormément en informatique, notamment pour éviter de dépasser des valeurs.</p>
+<div class="notices info" ><p>L&rsquo;opérateur modulo sert énormément en informatique, notamment pour éviter de dépasser des valeurs (<code>i%8</code> ne dépassera jamais 7, quoi que valle <code>i</code>).</p>
 </div>
 </p>
 <p>Les opérations suivent les règles de priorité habituelles, et on utilise les parenthèses pour les modifier :<br>
 <code>&gt;&gt;&gt; 8//2*(2+2)</code><br>
-<code>16</code><br>
-Que va donner <code>5*3%2</code> ?  Et <code>5*(3%2)</code> ?</p>
+<code>16</code></p>
+<p>Que va donner <code>5*3%2</code> ?  Et <code>5*(3%2)</code> ?</p>
+<p> </p>
 <h3 id="puissance-">Puissance <code>**</code></h3>
 <p><code>&gt;&gt;&gt; 2**3</code><br>
 <code>8</code></p>
@@ -717,7 +751,10 @@ Que va donner <code>5*3%2</code> ?  Et <code>5*(3%2)</code> ?</p>
 </p>
 <p> </p>
 <h2 id="opérations-sur-les-flottants-float">Opérations sur les flottants (<code>float</code>)</h2>
-<p>Du moment qu&rsquo;un des deux nombres est un flottant, les opérations <code>+</code>, <code>-</code> et <code>*</code> donnent des flottants.</p>
+
+<div class="notices info" ><p>Du moment qu&rsquo;un des deux nombres est un flottant, les opérations <code>+</code>, <code>-</code> et <code>*</code> donnent des flottants.</p>
+</div>
+
 <p>Exemples :<br>
 <code>&gt;&gt;&gt; 3-1.0</code><br>
 <code>2.0</code><br>
@@ -732,10 +769,11 @@ Exemple :<br>
 <code>0.30000000000000004</code></p>
 </div>
 
-<p>La division décimale <code>/</code> retourne un flottant même avec deux entiers, et même si le résultat est entier :<br>
-<code>&gt;&gt;&gt; 3/2.1</code><br>
-<code>1.4285714285714286</code><br>
-<code>&gt;&gt;&gt; 10/5</code><br>
+
+<div class="notices note" ><p>La division décimale <code>/</code> retourne un flottant même avec deux entiers, et même si le résultat est entier :</p>
+</div>
+
+<p><code>&gt;&gt;&gt; 10/5</code><br>
 <code>2.0</code></p>
 <p> </p>
 <h2 id="opérations-sur-les-booléens-bool">Opérations sur les booléens (<code>bool</code>)</h2>
@@ -1165,6 +1203,22 @@ Exemple : que vaut <code>not 7.5 &lt; 0.9 or 4 == 4</code> ?</p>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1249,19 +1303,19 @@ Exemple : que vaut <code>not 7.5 &lt; 0.9 or 4 == 4</code> ?</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1627254243"></script>
-    <script src="/js/perfect-scrollbar.min.js?1627254243"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1627254243"></script>
-    <script src="/js/jquery.sticky.js?1627254243"></script>
-    <script src="/js/featherlight.min.js?1627254243"></script>
-    <script src="/js/highlight.pack.js?1627254243"></script>
+    <script src="/js/clipboard.min.js?1629908111"></script>
+    <script src="/js/perfect-scrollbar.min.js?1629908111"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1629908111"></script>
+    <script src="/js/jquery.sticky.js?1629908111"></script>
+    <script src="/js/featherlight.min.js?1629908111"></script>
+    <script src="/js/highlight.pack.js?1629908111"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1627254243"></script>
-    <script src="/js/learn.js?1627254243"></script>
-    <script src="/js/hugo-learn.js?1627254243"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1629908111"></script>
+    <script src="/js/learn.js?1629908111"></script>
+    <script src="/js/hugo-learn.js?1629908111"></script>
     
         
-            <script src="/mermaid/mermaid.js?1627254243"></script>
+            <script src="/mermaid/mermaid.js?1629908111"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

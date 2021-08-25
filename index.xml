@@ -13,9 +13,21 @@
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/semestre_2/bonnes_pratiques/</guid>
-      <description>Les bonnes pratiques  Protéger ses blocs en commentant son code Un bloc de code utilise généralement un ou plusieurs paramètres appelés paramètres d&amp;rsquo;entrées et construit à partir d&amp;rsquo;eux un ou plusieurs paramètres de sortie.
-Dans l&amp;rsquo;idéal, on commente chaque bloc de code (boucles et fonctions) via l&amp;rsquo;utilisation de # en précisant dans la mesure du possibles les 3 éléments suivants :
- préconditions postconditions invariant  préconditions Ce sont les conditions que doivent vérifier impérativement les paramètres d&amp;rsquo;entrée pour que le code fasse ce qui est attendu.</description>
+      <description>Les bonnes pratiques Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&amp;rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est devenu subitement complètement cryptique.
+Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusement qu&amp;rsquo;il était facilement évitable&amp;hellip;
+ Protéger ses blocs d&amp;rsquo;instructions en commentant son code Commenter son code via l&amp;rsquo;utilisation de # est la principale protection contre de telles autotortures.</description>
+    </item>
+    
+    <item>
+      <title>TP 0 : Démarrage</title>
+      <link>http://example.org/semestre_1/tp0/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_1/tp0/</guid>
+      <description>TP 0 : Démarrage Cliquez sur cette invitation pour récupérer le notebook du TP. Exo 1 Combien de fois une feuille de papier d’épaisseur $e=0,1$ mm doit-elle être pliée pour atteindre la Lune ?
+ Écrivez dans la cellule suivante un code permettant d&amp;rsquo;obtenir la réponse. Le plus simple est d&amp;rsquo;utiliser une boucle while.
+ Wolfram alpha vous donne avec précision la distance Terre-Lune.
+### VOTRE CODE  Dans la cellule suivante, affectez à la variable nb_plis la valeur entière trouvée.</description>
     </item>
     
     <item>
@@ -30,6 +42,16 @@ Le corps de la fonction devra comprendre une boucle.
     </item>
     
     <item>
+      <title>Traits généraux</title>
+      <link>http://example.org/python/traitsgaux/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/python/traitsgaux/</guid>
+      <description>Traits généraux Introduction Shell et IDE Python est un langage de programmation interprété développé par Guido van Rossum en 1989. Langage impératif de haut-niveau doté d&amp;rsquo;une syntaxe simple, Python s&amp;rsquo;adapte à de nombreux contextes grâce à sa modularité ; une importante librairie de modules et packages permet en effet d&amp;rsquo;étendre ses capacités.
+Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;utilisateur entre une commande Python qui est interprétée immédiatement lorsque Entrée est tapée.</description>
+    </item>
+    
+    <item>
       <title>TP 2 : boucles imbriquées</title>
       <link>http://example.org/semestre_1/tp2imbrication/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
@@ -37,6 +59,28 @@ Le corps de la fonction devra comprendre une boucle.
       <guid>http://example.org/semestre_1/tp2imbrication/</guid>
       <description>Algorithmes opérant sur une structure séquentielle par boucles imbriquées Chercher un mot dans un texte  Écrire une fonction cherche_mot naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.
 Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&amp;rsquo;est pas plus long que le texte.</description>
+    </item>
+    
+    <item>
+      <title>Types de base</title>
+      <link>http://example.org/python/typesbase/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/python/typesbase/</guid>
+      <description>Types de base Les types de base en python (les catégories fondamentales des objets manipulés) sont :
+  Les entiers int (en anglais, entier se dit integer).
+Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est illimitée en Python.
+   Les flottants float. Ce sont des approximations de nombres réels. La méthode d&amp;rsquo;écriture en machine de ces nombres, équivalente à une écriture scientifique pour nombre binaire, explique leur nom : ce sont des nombres à virgule flottante.</description>
+    </item>
+    
+    <item>
+      <title>Graphes</title>
+      <link>http://example.org/semestre_2/graphes/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_2/graphes/</guid>
+      <description>Les graphes Quelques points et des traits pour les relier suffisent pour créer un graphe. Cette grande simplicité est pourtant à l&amp;rsquo;origine d&amp;rsquo;un foisonnement mathématiques impressionnant.
+Un peu d&amp;rsquo;histoire L&amp;rsquo;acte de naissance de la théorie des graphes date d&amp;rsquo;une petite énigme à laquelle s&amp;rsquo;attelaient sans succès les habitants de Königsberg. Comment un voyageur pouvait traverser les sept ponts sans jamais passer deux fois sur le même pont ? Euler résout le problème et fonda du même coup la théorie des graphes !</description>
     </item>
     
     <item>
@@ -48,6 +92,28 @@ Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont 
       <description>L&amp;rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.
 On va se placer dans un des champs les plus porteurs de la science informatique actuelle, l&amp;rsquo;analyse de données, pour constater comment l&amp;rsquo;utilisation de modules adaptés peut simplifier le travail.
 Exploration d&amp;rsquo;un jeu de données Statistiques simples import pandas as pd # bibliothèques dédiée au traitement de jeux de données import matplotlib.</description>
+    </item>
+    
+    <item>
+      <title>Types structurés</title>
+      <link>http://example.org/python/typesstruct/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/python/typesstruct/</guid>
+      <description>Types structurés Les types structurés (chaînes, tuiles, listes, dictionnaires, ensembles) sont des objets composés ; ils contiennent eux-mêmes d&amp;rsquo;autres objets.
+Certains de ces objets composites sont en plus indicés. Comme leur nom l&amp;rsquo;indique, on peut parcourir les éléments présents d&amp;rsquo;une structure indicée à l&amp;rsquo;aide d&amp;rsquo;un indice (un nombre entier étiquetant l&amp;rsquo;indice). Les structures indicés sont donc ordonnées, ce sont des séquences. L&amp;rsquo;indice commence toujours à 0.
+Et donc si la structure contient n éléments, le dernier indice est n-1.</description>
+    </item>
+    
+    <item>
+      <title>Strucutres de contrôle</title>
+      <link>http://example.org/python/structcontr/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/python/structcontr/</guid>
+      <description>Structures de contrôle Instruction d&amp;rsquo;affectation Définition Lorsqu&amp;rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction id().
+id(3.7) 4387417928
+Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&amp;rsquo;est à ça que servent les variables.</description>
     </item>
     
     <item>
@@ -92,60 +158,6 @@ Plusieurs stratégies existent. On va en passer certaines en revue et essayer de
       <guid>http://example.org/semestre_1/tp7image/</guid>
       <description>Tableau de pixels et images Importer une image PIL (python imaging library) est l&amp;rsquo;une des librairies Python permettant de manipuler des fichiers image. On va l&amp;rsquo;utiliser en association avec numpy qui est le module de choix pour jouer avec des tableaux numériques.
 from PIL import Image import urllib.request # pour récupérer une image sur le web from IPython.display import display # pour afficher dans le notebook import matplotlib.pyplot as plt import numpy as np plt.</description>
-    </item>
-    
-    <item>
-      <title>Traits généraux</title>
-      <link>http://example.org/python/traitsgaux/</link>
-      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
-      <guid>http://example.org/python/traitsgaux/</guid>
-      <description>Traits généraux Introduction Shell et IDE Python est un langage de programmation interprété développé par Guido van Rossum en 1989. Langage impératif de haut-niveau doté d&amp;rsquo;une syntaxe simple, Python s&amp;rsquo;adapte à de nombreux contextes grâce à sa modularité ; une importante librairie de modules et packages permet en effet d&amp;rsquo;étendre ses capacités.
-Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;utilisateur entre une commande Python qui est interprétée immédiatement lorsque Entrée est tapée.</description>
-    </item>
-    
-    <item>
-      <title>Types de base</title>
-      <link>http://example.org/python/typesbase/</link>
-      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
-      <guid>http://example.org/python/typesbase/</guid>
-      <description>Types de base Les types de baseen python (les catégories fondamentales des objets manipulés) sont :
-  Les entiers int (en anglais, entier se dit integer).
-Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est illimitée en Python.
-   Les flottants float. Ce sont des approximations de nombres réels. La méthode d&amp;rsquo;écriture en machine de ces nombres, équivalente à une écriture scientifique pour nombre binaire, explique leur nom : ce sont des nombres à virgule flottante.</description>
-    </item>
-    
-    <item>
-      <title>Graphes</title>
-      <link>http://example.org/semestre_2/graphes/</link>
-      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
-      <guid>http://example.org/semestre_2/graphes/</guid>
-      <description>Les graphes Quelques points et des traits pour les relier suffisent pour créer un graphe. Cette grande simplicité est pourtant à l&amp;rsquo;origine d&amp;rsquo;un foisonnement mathématiques impressionnant.
-Un peu d&amp;rsquo;histoire L&amp;rsquo;acte de naissance de la théorie des graphes date d&amp;rsquo;une petite énigme à laquelle s&amp;rsquo;attelaient sans succès les habitants de Königsberg. Comment un voyageur pouvait traverser les sept ponts sans jamais passer deux fois sur le même pont ? Euler résout le problème et fonda du même coup la théorie des graphes !</description>
-    </item>
-    
-    <item>
-      <title>Types structurés</title>
-      <link>http://example.org/python/typesstruct/</link>
-      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
-      <guid>http://example.org/python/typesstruct/</guid>
-      <description>Types structurés Les types structurés (chaînes, tuiles, listes, dictionnaires, ensembles) sont des objets composés ; ils contiennent eux-mêmes d&amp;rsquo;autres objets.
- Structures indicées immuables (chaînes, tuples) On peut parcourir les éléments présents dans une structure indicée à l&amp;rsquo;aide d&amp;rsquo;un indice (un nombre entier étiquetant l&amp;rsquo;indice). Les structures indicés sont donc ordonnées, ce sont des séquences. L&amp;rsquo;indice commence toujours à 0.
-Et donc si la structure contient n éléments, le dernier indice est n-1.</description>
-    </item>
-    
-    <item>
-      <title>Strucutres de contrôle</title>
-      <link>http://example.org/python/structcontr/</link>
-      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
-      <guid>http://example.org/python/structcontr/</guid>
-      <description>Structures de contrôle Instruction d&amp;rsquo;affectation Définition Lorsqu&amp;rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction id().
-id(3.7) 4387417928
-Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&amp;rsquo;est à ça que servent les variables.</description>
     </item>
     
     <item>

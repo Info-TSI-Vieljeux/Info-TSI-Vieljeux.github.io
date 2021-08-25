@@ -8,6 +8,18 @@
     <language>fr</language>
     <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate><atom:link href="http://example.org/semestre_1/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>TP 0 : Démarrage</title>
+      <link>http://example.org/semestre_1/tp0/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_1/tp0/</guid>
+      <description>TP 0 : Démarrage Cliquez sur cette invitation pour récupérer le notebook du TP. Exo 1 Combien de fois une feuille de papier d’épaisseur $e=0,1$ mm doit-elle être pliée pour atteindre la Lune ?
+ Écrivez dans la cellule suivante un code permettant d&amp;rsquo;obtenir la réponse. Le plus simple est d&amp;rsquo;utiliser une boucle while.
+ Wolfram alpha vous donne avec précision la distance Terre-Lune.
+### VOTRE CODE  Dans la cellule suivante, affectez à la variable nb_plis la valeur entière trouvée.</description>
+    </item>
+    
+    <item>
       <title>TP 1 : recherche simple</title>
       <link>http://example.org/semestre_1/tp1recherche/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>

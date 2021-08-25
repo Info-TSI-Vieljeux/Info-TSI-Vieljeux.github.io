@@ -8,37 +8,12 @@
   </url>
   
   <url>
+    <loc>http://example.org/semestre_1/tp0/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/semestre_1/tp1recherche/</loc>
-    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/semestre_1/tp2imbrication/</loc>
-    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/semestre_1/tp3data/</loc>
-    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/semestre_1/tp4dicho/</loc>
-    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/semestre_1/tp5recu/</loc>
-    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/semestre_1/tp6tri/</loc>
-    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://example.org/semestre_1/tp7image/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url>
   
@@ -53,6 +28,11 @@
   </url>
   
   <url>
+    <loc>http://example.org/semestre_1/tp2imbrication/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/python/typesbase/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url>
@@ -64,6 +44,11 @@
   
   <url>
     <loc>http://example.org/semestre_2/graphes/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_1/tp3data/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url>
   
@@ -83,8 +68,28 @@
   </url>
   
   <url>
+    <loc>http://example.org/semestre_1/tp4dicho/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/semestre_2/tp/</loc>
     <lastmod>2021-03-06T14:20:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_1/tp5recu/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_1/tp6tri/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/semestre_1/tp7image/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url>
   
   <url>

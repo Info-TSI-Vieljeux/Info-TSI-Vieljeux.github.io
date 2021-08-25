@@ -13,9 +13,9 @@
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/semestre_2/bonnes_pratiques/</guid>
-      <description>Les bonnes pratiques  Protéger ses blocs en commentant son code Un bloc de code utilise généralement un ou plusieurs paramètres appelés paramètres d&amp;rsquo;entrées et construit à partir d&amp;rsquo;eux un ou plusieurs paramètres de sortie.
-Dans l&amp;rsquo;idéal, on commente chaque bloc de code (boucles et fonctions) via l&amp;rsquo;utilisation de # en précisant dans la mesure du possibles les 3 éléments suivants :
- préconditions postconditions invariant  préconditions Ce sont les conditions que doivent vérifier impérativement les paramètres d&amp;rsquo;entrée pour que le code fasse ce qui est attendu.</description>
+      <description>Les bonnes pratiques Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&amp;rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est devenu subitement complètement cryptique.
+Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusement qu&amp;rsquo;il était facilement évitable&amp;hellip;
+ Protéger ses blocs d&amp;rsquo;instructions en commentant son code Commenter son code via l&amp;rsquo;utilisation de # est la principale protection contre de telles autotortures.</description>
     </item>
     
     <item>

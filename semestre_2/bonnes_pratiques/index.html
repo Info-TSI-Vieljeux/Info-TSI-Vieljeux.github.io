@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1627254243" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1627254243" rel="stylesheet">
-    <link href="/css/hybrid.css?1627254243" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1627254243" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1627254243" rel="stylesheet">
-    <link href="/css/auto-complete.css?1627254243" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1627254243" rel="stylesheet">
-    <link href="/css/theme.css?1627254243" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1627254243" rel="stylesheet">
+    <link href="/css/nucleus.css?1629908111" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1629908111" rel="stylesheet">
+    <link href="/css/hybrid.css?1629908111" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1629908111" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1629908111" rel="stylesheet">
+    <link href="/css/auto-complete.css?1629908111" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1629908111" rel="stylesheet">
+    <link href="/css/theme.css?1629908111" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1629908111" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1627254243" rel="stylesheet">
+    <link href="/css/theme-green.css?1629908111" rel="stylesheet">
     
-    <link href="/css/foo.css?1627254243" rel="stylesheet"><link href="/css/bar.css?1627254243" rel="stylesheet">
+    <link href="/css/foo.css?1629908111" rel="stylesheet"><link href="/css/bar.css?1629908111" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1627254243"></script>
+    <script src="/js/jquery-3.3.1.min.js?1629908111"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1627254243"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1627254243"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1629908111"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1629908111"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1627254243"></script>
+<script type="text/javascript" src="/js/search.js?1629908111"></script>
 
     
   </div>
@@ -281,6 +281,27 @@ onload='renderMathInElement(document.body);'></script>
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/semestre_1/tp0/" title="TP 0 : Démarrage" class="dd-item ">
+        <a href="/semestre_1/tp0/">
+        TP 0 : Démarrage
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -589,15 +610,17 @@ onload='renderMathInElement(document.body);'></script>
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#protéger-ses-blocs-en-commentant-son-code">Protéger ses blocs en commentant son code</a>
+    <li><a href="#protéger-ses-blocs-dinstructions-en-commentant-son-code">Protéger ses blocs d&rsquo;instructions en commentant son code</a>
       <ul>
         <li><a href="#préconditions">préconditions</a></li>
         <li><a href="#postconditions">postconditions</a></li>
+        <li><a href="#invariant">invariant</a></li>
       </ul>
     </li>
     <li><a href="#utiliser-des-fonctions">Utiliser des fonctions</a></li>
     <li><a href="#documenter-ses-fonctions">Documenter ses fonctions</a></li>
     <li><a href="#contraindre-les-spécifications-avec-des-assertions">Contraindre les spécifications avec des assertions</a></li>
+    <li><a href="#tester">Tester</a></li>
   </ul>
 </nav>
     </div>
@@ -618,28 +641,175 @@ onload='renderMathInElement(document.body);'></script>
 
 
 <h1 id="les-bonnes-pratiques">Les bonnes pratiques</h1>
+<p>Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est devenu subitement complètement cryptique.</p>
+<p><img src="https://c.tenor.com/A7NIlRIBtNoAAAAM/brooklyn99-brooklyn-nine-nine.gif" alt=""></p>
+<p>Le temps perdu est alors énorme et vécu d&rsquo;autant plus douloureusement qu&rsquo;il était facilement évitable&hellip;</p>
+<p><img src="https://c.tenor.com/UsEL0CtIGKwAAAAC/trash-computer.gif" alt=""></p>
 <p> </p>
-<h2 id="protéger-ses-blocs-en-commentant-son-code">Protéger ses blocs en commentant son code</h2>
-<p>Un bloc de code utilise généralement un ou plusieurs paramètres appelés paramètres d&rsquo;entrées et construit à partir d&rsquo;eux un ou plusieurs paramètres de sortie.</p>
-<p>Dans l&rsquo;idéal, on commente chaque bloc de code (boucles et fonctions) via l&rsquo;utilisation de <code>#</code> en précisant dans la mesure du possibles les 3 éléments suivants :</p>
+<h2 id="protéger-ses-blocs-dinstructions-en-commentant-son-code">Protéger ses blocs d&rsquo;instructions en commentant son code</h2>
+<p><strong>Commenter son code</strong> via l&rsquo;utilisation de <code>#</code> est la principale protection contre de telles autotortures.</p>
+<p>Il ne s&rsquo;agit pas de commenter chaque ligne comme on voit parfois&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a,b <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>	<span style="color:#75715e"># j&#39;affecte la valeur 2 à la variable a et la valeur 3 à b</span>
+c <span style="color:#f92672">=</span> a<span style="color:#f92672">+</span>b 	<span style="color:#75715e"># j&#39;affecte à c le résultat de l&#39;addition entre a et b</span>
+<span style="color:#66d9ef">print</span>(c) 	<span style="color:#75715e"># j&#39;affiche le résultat</span>
+</code></pre></div><p><img src="https://c.tenor.com/QfyQ4kMW834AAAAM/yuck-gross.gif" alt="">
+Il faut au contraire se concenter sur les points délicats susceptibles d&rsquo;échapper à son moi du futur (qui n&rsquo;a jamais autant de mémoire qu&rsquo;on le pense).</p>
+<p>C&rsquo;est souvent intéressant d&rsquo;y <strong>justifier ses choix de programmation</strong> comme celui d&rsquo;utiliser une structure de données plutôt qu&rsquo;une autre (un dictionnaire plutôt qu&rsquo;une liste par exemple). Ces différents choix sont en effet sensés ne rien devoir au hasard, donc autant noter clairement ce qui vous a fait préférer telle option plutôt qu&rsquo;une autre, histoire que votre lecteur puisse comprendre votre démarche (et pour aider votre moi du futur à s&rsquo;y retrouver).</p>
+<p>De manière plus systématique, une structure minimale de commentaires permet de cadrer rapidement les points clé d&rsquo;un bloc d&rsquo;instruction (qu&rsquo;il s&rsquo;agisse d&rsquo;une boucle ou d&rsquo;une fonction).<br>
+Un bloc de code utilise généralement un ou plusieurs paramètres appelés paramètres d&rsquo;entrées et construit à partir d&rsquo;eux un ou plusieurs paramètres de sortie.<br>
+Dans l&rsquo;idéal, on commente alors chaque bloc de code en précisant dans la mesure du possibles les 3 éléments suivants :</p>
 <ul>
-<li>préconditions</li>
-<li>postconditions</li>
-<li>invariant</li>
+<li><strong>préconditions</strong></li>
+<li><strong>postconditions</strong></li>
+<li><strong>invariant</strong></li>
 </ul>
 <h3 id="préconditions">préconditions</h3>
 <p>Ce sont les conditions que doivent vérifier impérativement les paramètres d&rsquo;entrée pour que le code fasse ce qui est attendu.</p>
 <h3 id="postconditions">postconditions</h3>
 <p>Ce sont les conditions que doivent vérifier impérativement les paramètres de sortie (après le bloc).</p>
-<p>Par exemple, si le bloc de code calcule une note sur 20, le param</p>
-<p> </p>
+<p>Par exemple, si le bloc de code calcule une moyenne sur 20, la postcondition sea que la variable de sortie soit bien un flottant compris entre 0 et 20.</p>
+<h3 id="invariant">invariant</h3>
+<p>L&rsquo;invariant est la propriété qui devra être vérifiée à chaque itération de manière à ce que la précondition aboutisse bien au final à la poscondition.</p>
+<p>Exemple d&rsquo;une division euclidienne :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># ce code permet de calculer le quotient et le reste de la division euclidienne de a par b</span>
+<span style="color:#75715e"># préconditions : a ≥ 0 et b &gt; 0</span>
+a, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">5</span>
+
+r <span style="color:#f92672">=</span> a
+q <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">while</span> r <span style="color:#f92672">&gt;=</span> b : <span style="color:#75715e"># invariant : a = b*q + r</span>
+    r <span style="color:#f92672">=</span> r<span style="color:#f92672">-</span>b
+    q <span style="color:#f92672">=</span> q<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+    
+<span style="color:#66d9ef">print</span>(q,r)
+<span style="color:#75715e"># postconditions : a = b*q + r, 0 ≤ r &lt; b, a et b inchangés</span>
+</code></pre></div><p> </p>
 <h2 id="utiliser-des-fonctions">Utiliser des fonctions</h2>
+<p>Autre pratique améliorant son code : l&rsquo;utilisation de fonctions.</p>
+<p>But :</p>
+<ul>
+<li>éviter de réécrire du code : on appelle la fonction contenant le code à la place (toute répétition de code est globalement à éviter, comme dans un texte littéraire) ;</li>
+<li>simplifier la lecture du code (et plus les noms des fonctions seront clairs, plus la compréhension du code sera simplifiée) ;</li>
+<li>rendre son code modulaire : les fonctions construites sont autant d&rsquo;outils ayant une mission clairement définie. Et on peut très bien utiliser des fonctions au sein d&rsquo;autres fonctions pour améliorer encore la lisibilité.</li>
+</ul>
 <p> </p>
 <h2 id="documenter-ses-fonctions">Documenter ses fonctions</h2>
-<p>On indique les types attendus des entrées (les paramètres) et des sorties (les retours) ainsi que les préconditions et les postconditions.</p>
+<p>Les fonctions ont pour vocation d&rsquo;être réutilisées (par vous ou par d&rsquo;autres) et demande donc une attention particulière à leur description. Les fonctions ont ainsi droit à une forme de commentaire spéciale, le <strong>docstring</strong>, qui peut être interrogée directement par l&rsquo;utilisateur (voir note ci-dessous).</p>
+<p>On indique les types attendus des entrées (les paramètres) et des sorties (les retours) en inscrivant la <strong>signature</strong> de la fonction dans son docstring et on y ajoute les préconditions et les postconditions ainsi qu&rsquo;une brêve descritpion.</p>
+<p>exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">moyenne</span>(notes) :
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    calcule une moyenne sur 20 à partir de différentes notes sur 20
+</span><span style="color:#e6db74">    moyenne(notes:list) -&gt; moy:float
+</span><span style="color:#e6db74">    précondition : la liste notes contient des nombres entre 0 et 20
+</span><span style="color:#e6db74">    postcondition : 0 ≤ moy ≤ 20
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    moy <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> notes :
+        moy <span style="color:#f92672">+=</span> n
+    moy <span style="color:#f92672">/=</span> len(notes)
+    <span style="color:#66d9ef">return</span> moy
+</code></pre></div>
+<div class="notices note" ><p>On peut afficher le docstring d&rsquo;une fonction via la méthode <code>.__doc__</code>.</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(moyenne<span style="color:#f92672">.</span>__doc__)
+</code></pre></div><p><code>calcule une moyenne sur 20 à partir de différentes notes sur 20</code><br>
+<code>moyenne(notes:list) -&gt; moy:float</code><br>
+<code>précondition : la liste notes contient des nombres entre 0 et 20</code><br>
+<code>postcondition : 0 ≤ moy ≤ 20</code></p>
 <p> </p>
 <h2 id="contraindre-les-spécifications-avec-des-assertions">Contraindre les spécifications avec des assertions</h2>
-<p> </p>
+<p>En sus de noter les préconditions dans les commentaires, on peut aussi tenter de s&rsquo;assurer qu&rsquo;elles sont bien vérifiées.
+Qui vous assure en effet que votre fonction, par ailleurs parfaitement sage lorsque les entrées respectent les préconditions ne devienne pas folle dans certains cas loufoques ? C&rsquo;est bien vous qui serez blamé lorsque l&rsquo;entrée farfelue causera une catastrophe&hellip;</p>
+<p>L&rsquo;explosion du vol 501 d&rsquo;Ariane est à cet égard un exemple édifiant. Un même programme ayant parfaitement accompli son œuvre de nombreuses années pour Ariane 4 a été réutilisé en toute sérénité dans le nouveau modèle. Mais voilà&hellip;
+<img src="/vol501.jpg?width=400" alt="">
+Le plan de vol différent d&rsquo;Ariane 5 provoquait des accélérations très supérieures à celles enregistrées sur Ariane 4 jusqu&rsquo;à déborder la capacité alors allouée au codage de ces mesures dans la station inertielle. La valeur élevée non prévue a planté le programme car elle a d&rsquo;abord été répercutée sans lever d&rsquo;erreur et du coup mal interprétée par les dispositifs de correction de trajectoire. Une petite assertion bien placée aurait peut-être pu économiser 1 milliard d&rsquo;euros&hellip;</p>
+<p>Exemple (aux répercutions moins coûteuses) : pour s&rsquo;assurer que le notes passées en argument sont bien des nombres entre 0 et 20, on peut écrire dans le corps de la fonction :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> notes :
+    <span style="color:#66d9ef">assert</span> type(n) <span style="color:#f92672">in</span> (int,float) <span style="color:#f92672">and</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">&lt;=</span>n<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">20</span>
+</code></pre></div><p> </p>
+<h2 id="tester">Tester</h2>
+<p>Quand un code ne donne pas le résultat attendu, il faut partir à la recherche de l&rsquo;erreur. Pour cela, le plus simple est d&rsquo;utiliser un <strong>jeu de test</strong>.</p>
+<p>Il s&rsquo;agit tout simplement de disposer des <code>print</code> tout le long de son code pour afficher conjointement les valeurs à cette endroit du code des différentes variables et les valeurs qu&rsquo;on aimerait qu&rsquo;elles aient.</p>
+<p>Le plus efficace est d&rsquo;adopter une démarche dichotomique pour placer ces tests : début-milieu-fin dans un premier temps, puis on découpe en deux début-milieu et milieu-fin, etc.</p>
+<p>Prenons un exemple. Le programme suivant est sensé décider si la suite de caractères qu&rsquo;on a entré au clavier est un palindrome ou non :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bug</span>() :
+    res <span style="color:#f92672">=</span> []
+    fini <span style="color:#f92672">=</span> False
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Ajoutez des caractères un par un en validant avec entrée, puis appuyez sur entrée pour terminer&#39;</span>)
+    <span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span> fini :
+        elem <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;&#39;</span>)
+        <span style="color:#66d9ef">if</span> elem <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span> :
+            fini <span style="color:#f92672">=</span> True
+        <span style="color:#66d9ef">else</span> :
+            res<span style="color:#f92672">.</span>append(elem)
+    tmp <span style="color:#f92672">=</span> res
+    tmp<span style="color:#f92672">.</span>reverse()
+    Pal <span style="color:#f92672">=</span> (res <span style="color:#f92672">==</span> tmp)
+    <span style="color:#66d9ef">if</span> Pal :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;palindrome&#39;</span>)
+    <span style="color:#66d9ef">else</span> :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;pas palindrome&#39;</span>)
+</code></pre></div><p>Lançons <code>bug</code> et entrons les caractères <code>'a'</code>,<code>'2'</code>,<code>'a'</code>.<br>
+La fonction affiche alors :
+<code>palindrome</code><br>
+Jusque-là tout va bien.<br>
+Entrons maintenant <code>'a'</code>,<code>'2'</code>,<code>'b'</code>.<br>
+La fonction affiche maintenant&hellip;
+<code>palindrome</code></p>
+<p><img src="https://thumbs.gfycat.com/DependentAnguishedBetafish-size_restricted.gif" alt=""></p>
+<p>Donc ça bugue. Mettons en place note démarche systématique en inserrant un premier <code>print</code> à peu près au milieu, juste après le <code>while</code>. À ce niveau, on a construit la liste <code>res</code>, affichons-la au côté de ce qu&rsquo;on attend qu&rsquo;elle soit.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bug</span>() :
+    res <span style="color:#f92672">=</span> []
+    fini <span style="color:#f92672">=</span> False
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Ajoutez des caractères un par un en validant avec entrée, puis appuyez sur entrée pour terminer&#39;</span>)
+    <span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span> fini :
+        elem <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;&#39;</span>)
+        <span style="color:#66d9ef">if</span> elem <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span> :
+            fini <span style="color:#f92672">=</span> True
+        <span style="color:#66d9ef">else</span> :
+            res<span style="color:#f92672">.</span>append(elem)
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;res devrait être [&#39;a&#39;,&#39;2&#39;,&#39;b&#39;] et est&#34;</span>,res)
+    tmp <span style="color:#f92672">=</span> res
+    tmp<span style="color:#f92672">.</span>reverse()
+    Pal <span style="color:#f92672">=</span> (res <span style="color:#f92672">==</span> tmp)
+    <span style="color:#66d9ef">if</span> Pal :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;palindrome&#39;</span>)
+    <span style="color:#66d9ef">else</span> :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;pas palindrome&#39;</span>)
+</code></pre></div><p>Après avoir relancé <code>bug()</code> et retapé <code>'a'</code>,<code>'2'</code> et <code>'b'</code>, on voit s&rsquo;afficher : <code>res devrait être ['a','2','b'] et est ['a', '2', 'b']</code><br>
+On sait maintenant que la première partie du code fait son boulot !</p>
+<p>Concentrons-nous sur la deuxième partie en plaçant un <code>print</code> avant le <code>if</code>. On a ici une nouvelle variable, <code>tmp</code>, en plus de <code>res</code>. Testons les deux :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bug</span>() :
+    res <span style="color:#f92672">=</span> []
+    fini <span style="color:#f92672">=</span> False
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Ajoutez des caractères un par un en validant avec entrée, puis appuyez sur entrée pour terminer&#39;</span>)
+    <span style="color:#66d9ef">while</span> <span style="color:#f92672">not</span> fini :
+        elem <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;&#39;</span>)
+        <span style="color:#66d9ef">if</span> elem <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span> :
+            fini <span style="color:#f92672">=</span> True
+        <span style="color:#66d9ef">else</span> :
+            res<span style="color:#f92672">.</span>append(elem)
+    <span style="color:#75715e">#print(&#34;res devrait être [&#39;a&#39;,&#39;2&#39;,&#39;b&#39;] et est&#34;,res)</span>
+    tmp <span style="color:#f92672">=</span> res
+    tmp<span style="color:#f92672">.</span>reverse()
+    Pal <span style="color:#f92672">=</span> (res <span style="color:#f92672">==</span> tmp)
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{tmp = } {res = }&#39;</span>)
+    <span style="color:#66d9ef">if</span> Pal :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;palindrome&#39;</span>)
+    <span style="color:#66d9ef">else</span> :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;pas palindrome&#39;</span>)
+</code></pre></div><p>S&rsquo;affiche alors : <code>tmp = ['b', '2', 'a'] res = ['b', '2', 'a']</code></p>
+<p>Aha ! <code>tmp</code> a la bonne tête, mais<code>res</code> aussi a été modifié, et ça, ce n&rsquo;était pas prévu&hellip; Le problème est donc dans les 3 lignes qui précèdent le <code>print</code>. On pourrait placer un nouveau test entre ces lignes, mais vous aurez sans doute déjà trouvé le piège dans lequel le codeur est tombé.</p>
+<p>On aurait pu être tenté de ne pas retester <code>res</code> à cette étape puisqu&rsquo;on venait de le faire au test précédent, mais comme le montre cet exemple, cela aurait été une funeste erreur (un bug dans la chasse au bug) !</p>
+<p>L&rsquo;expérience la plus vexante et retorse, elle aussi vécue par beaucoup, voit le codeur présenter fièrement un programme qui répond parfaitement à ses attentes, mais qui crashe piteusement à la première utilisation d&rsquo;une autre personne&hellip;</p>
+<p><img src="https://i.pinimg.com/originals/2a/b4/f8/2ab4f866c5e7dce9cd493a94e6d7beb1.gif" alt=""></p>
+<p>Une des raisons possibles est qu&rsquo;il n&rsquo;ait pas testé son programme pour des entrées suffisamment différentes. Et si le testeur n&rsquo;a pas reçu le mémo l&rsquo;obligeant à ne tenter que les quelques entrées que le codeur a validées, il se retrouve en terrain miné !</p>
+<p>Morale : <strong>il faut tester le plus largement possible les entrées d&rsquo;un programme</strong>.</p>
+<p>Pour ne pas non plus se perdre dans une revue systématique, vous gagnerez à <strong>partitionner le domaîne des entrées</strong> en grandes classes. Une classe est telle qu&rsquo;à l&rsquo;intérieur, le programme réagisse de la même façon avec toutes les entrées. Il suffit alors de ne tester qu&rsquo;une seule valeur par classe.<br>
+Exemple : si vous fabriquez une fonction valeur absolue, plutôt que de tester des milliers de nombres, on peut se contenter de tester une valeur dans chacune des trois classes suivantes correspondantes aux différents comportements de la fonction (et donc aux différents branchements de son code) : entrées $&lt; 0$, entrées $&gt; 0$ et la frontière entrées $=0$.</p>
+<p>En conclusion, mieux vous aurez défini l&rsquo;ensemble des entrées acceptables et bien inspecté leurs frontières, plus facilement vous pourrez guider le lecteur de votre code à l&rsquo;intérieur de ces frontières de bon fonctionnement via les préconditions. Car s&rsquo;il est évident pour votre moi du présent que votre code demande nécessairement un type de données précis et qu&rsquo;il ne viendrait à l&rsquo;idée de personne d&rsquo;utiliser autre chose, attendez seulement quelques temps que le doute vous assaille en le relisant&hellip; Et s&rsquo;il vous arrive d&rsquo;hésiter un tant soit peu, imaginez quelqu&rsquo;un d&rsquo;autre !</p>
 
 
 <footer class="footline">
@@ -896,6 +1066,22 @@ onload='renderMathInElement(document.body);'></script>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -985,19 +1171,19 @@ onload='renderMathInElement(document.body);'></script>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1627254243"></script>
-    <script src="/js/perfect-scrollbar.min.js?1627254243"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1627254243"></script>
-    <script src="/js/jquery.sticky.js?1627254243"></script>
-    <script src="/js/featherlight.min.js?1627254243"></script>
-    <script src="/js/highlight.pack.js?1627254243"></script>
+    <script src="/js/clipboard.min.js?1629908111"></script>
+    <script src="/js/perfect-scrollbar.min.js?1629908111"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1629908111"></script>
+    <script src="/js/jquery.sticky.js?1629908111"></script>
+    <script src="/js/featherlight.min.js?1629908111"></script>
+    <script src="/js/highlight.pack.js?1629908111"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1627254243"></script>
-    <script src="/js/learn.js?1627254243"></script>
-    <script src="/js/hugo-learn.js?1627254243"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1629908111"></script>
+    <script src="/js/learn.js?1629908111"></script>
+    <script src="/js/hugo-learn.js?1629908111"></script>
     
         
-            <script src="/mermaid/mermaid.js?1627254243"></script>
+            <script src="/mermaid/mermaid.js?1629908111"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

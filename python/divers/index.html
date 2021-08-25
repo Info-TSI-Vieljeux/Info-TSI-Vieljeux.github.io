@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1627254243" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1627254243" rel="stylesheet">
-    <link href="/css/hybrid.css?1627254243" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1627254243" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1627254243" rel="stylesheet">
-    <link href="/css/auto-complete.css?1627254243" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1627254243" rel="stylesheet">
-    <link href="/css/theme.css?1627254243" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1627254243" rel="stylesheet">
+    <link href="/css/nucleus.css?1629908111" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1629908111" rel="stylesheet">
+    <link href="/css/hybrid.css?1629908111" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1629908111" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1629908111" rel="stylesheet">
+    <link href="/css/auto-complete.css?1629908111" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1629908111" rel="stylesheet">
+    <link href="/css/theme.css?1629908111" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1629908111" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1627254243" rel="stylesheet">
+    <link href="/css/theme-green.css?1629908111" rel="stylesheet">
     
-    <link href="/css/foo.css?1627254243" rel="stylesheet"><link href="/css/bar.css?1627254243" rel="stylesheet">
+    <link href="/css/foo.css?1629908111" rel="stylesheet"><link href="/css/bar.css?1629908111" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1627254243"></script>
+    <script src="/js/jquery-3.3.1.min.js?1629908111"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1627254243"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1627254243"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1629908111"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1629908111"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1627254243"></script>
+<script type="text/javascript" src="/js/search.js?1629908111"></script>
 
     
   </div>
@@ -281,6 +281,27 @@ onload='renderMathInElement(document.body);'></script>
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/semestre_1/tp0/" title="TP 0 : Démarrage" class="dd-item ">
+        <a href="/semestre_1/tp0/">
+        TP 0 : Démarrage
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -606,6 +627,7 @@ onload='renderMathInElement(document.body);'></script>
         <li><a href="#lire-un-fichier">Lire un fichier</a></li>
       </ul>
     </li>
+    <li><a href="#les-assertions">Les assertions</a></li>
   </ul>
 </nav>
     </div>
@@ -723,7 +745,8 @@ fi<span style="color:#f92672">.</span>close()
  </p>
 <h3 id="lire-un-fichier">Lire un fichier</h3>
 <p>Pour lire <code>n</code> bytes d&rsquo;un fichier, on utilise <code>f.read(n)</code>. En omettant <code>n</code>, tout le fichier est lu.<br>
-<code>readline()</code> lit une seule ligne d&rsquo;un fichier jusqu&rsquo;au, en l&rsquo;incluant, caractère <code>\n</code> de nouvelle ligne. Un nouvel appel de <code>readline()</code> lit la ligne suivante et ainsi de suite. <code>read()</code> et <code>readline()</code> renvoie toutes les deux une chaîne vide lorsque la fin du fichier est atteinte.<br>
+<code>readline()</code> lit une seule ligne d&rsquo;un fichier jusqu&rsquo;au, en l&rsquo;incluant, caractère <code>\n</code> de nouvelle ligne. Un nouvel appel de <code>readline()</code> lit la ligne suivante et ainsi de suite.<br>
+<code>read()</code> et <code>readline()</code> renvoie toutes les deux une chaîne vide lorsque la fin du fichier est atteinte.<br>
 Pour lire en une fois toutes les lignes dans une liste de chaînes, on utilise <code>f.readlines()</code>.</p>
 <p>Les objet <code>file</code> sont itérables. On peut ainsi retourner chaque ligne d&rsquo;un fichier une à une en utilisant une boucle :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;monfichier.txt&#39;</span>)
@@ -731,9 +754,22 @@ Pour lire en une fois toutes les lignes dans une liste de chaînes, on utilise <
     <span style="color:#66d9ef">print</span>(ligne, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
 f<span style="color:#f92672">.</span>close()
 </code></pre></div><p><code>Coucou monde !</code><br>
+<code>.</code><br>
+<code>.</code><br>
+<code>.</code><br>
 <code>Kill all humans</code></p>
 <p>Comme <code>ligne</code> contient déjà le caractère de nouvelle ligne lorsqu&rsquo;elle est lue, on utilise <code>end = ''</code> pour empêcher <code>print</code> d&rsquo;en ajouter un autre.<br>
 Cette méthode de lecture ligne à ligne est à privilégier pour les gros fichiers à moins de vraiment vouloir contenir en mémoire l&rsquo;ensemble du fichier.</p>
+<p>Grâce à la méthode <code>split</code>, on peut transformer un texte en une liste de ces éléments. L’argument de split correspond aux caractères utilisés comme séparateur. Par défaut il s’agit du caractère d’espacement <code>' '</code> (si on veut découper un texte en paragraphe, on utilisera le caractère d’échappement de retour à la ligne <code>\n</code>).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fo <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;monfichier.txt&#39;</span>)
+texte <span style="color:#f92672">=</span> fo<span style="color:#f92672">.</span>read()
+liste1 <span style="color:#f92672">=</span> texte<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+liste2 <span style="color:#f92672">=</span> texte<span style="color:#f92672">.</span>split()
+<span style="color:#66d9ef">print</span>(liste1)
+<span style="color:#66d9ef">print</span>(liste2)
+fo<span style="color:#f92672">.</span>close()
+</code></pre></div><p><code>['Coucou monde !', '.', '.', '.', 'Kill all humans']</code><br>
+<code>['Coucou', 'monde', '!', '.', '.', '.', 'Kill', 'all', 'humans']</code></p>
 <p>Pour lire les nombres du fichier <code>'puissance.txt'</code> écrit précédemment, les colonnes doivent être converties en une liste d&rsquo;entiers.<br>
 Pour cela, chaque ligne doit être décomposée en ses différents champs et chaque champ explicitement converti en entier grâce à <code>int()</code> :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fo <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;puissances.txt&#39;</span>)
@@ -750,17 +786,27 @@ n <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>
 </code></pre></div><p><code>500 au cube vaut 125000000</code></p>
 
 <div class="notices note" ><p>Mais en pratique, il vaut mieux utiliser les bibliothèques NumPy ou Pandas pour des fichiers de données comme celui-ci.<br>
-Vous apprendrez aussi à utiliser les méthodes des bases de données.</p>
+Vous apprendrez aussi au 3<sup>e</sup> trimestre à utiliser les méthodes des <em>bases de données</em>.</p>
 </div>
 
-<p>Grâce à la méthode <code>split</code>, on peut transformer un texte en une liste de ces éléments. L&rsquo;argument de <code>split</code> correspond aux caractères utilisés comme séparateur, par défaut il s&rsquo;agit du caractère d&rsquo;espacement <code>' '</code> (si on veut découper un texte en paragraphe, on utilisera le caractère d&rsquo;échappement de retour à la ligne <code>\n</code>).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fo <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;monfichier.txt&#39;</span>)
-texte <span style="color:#f92672">=</span> fo<span style="color:#f92672">.</span>readlines()
+<p> </p>
+<h2 id="les-assertions">Les assertions</h2>
+<p>Les assertions sont un moyen simple de s’assurer, avant de continuer, qu’une condition est respectée.</p>
+<p>On utilise la syntaxe : <code>assert test</code>. Si le test renvoie <code>True</code>, l’exécution se poursuit normalement. Sinon, une exception <code>AssertionError</code> est levée.</p>
+<p>On peut utiliser les assertions pour s’assurer que les arguments d’une fonction vont permettre son exécution.</p>
+<p>On peut par exemple sécuriser la définition d&rsquo;une fonction racines donnant les racines d&rsquo;un trinôme du second degré. On va s’assurer que les arguments passés sont bien des nombres (et renvoyer un message explicatif si ce n’est pas le cas) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> math
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">racines</span>(a,b,c) :
+    <span style="color:#e6db74">&#34;&#34;&#34;Retourne les racines de ax^2 + bx + c&#34;&#34;&#34;</span>
+    type_nombre <span style="color:#f92672">=</span> (float,int)
+    <span style="color:#66d9ef">assert</span> (type(a) <span style="color:#f92672">in</span> type_nombre) <span style="color:#f92672">and</span> (type(b) <span style="color:#f92672">in</span> type_nombre) <span style="color:#f92672">and</span> (type(c) <span style="color:#f92672">in</span> type_nombre),<span style="color:#e6db74">&#34;les arguments doivent être des nombres !&#34;</span>
+    d <span style="color:#f92672">=</span> b<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>a<span style="color:#f92672">*</span>c
+    r1 <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">-</span> math<span style="color:#f92672">.</span>sqrt(d))<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">/</span>a
+    r2 <span style="color:#f92672">=</span> (<span style="color:#f92672">-</span>b <span style="color:#f92672">+</span> math<span style="color:#f92672">.</span>sqrt(d))<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">/</span>a
+    <span style="color:#66d9ef">return</span> r1, r2
+</code></pre></div><p><code>racines(1,6,5)</code> retourne <code>(-5.0, -1.0)</code>, mais <code>racines(1,6,'5')</code> lève l&rsquo;erreur suivante :<br>
+<code>AssertionError: les arguments de la fonction racines doivent être des nombres !</code></p>
 
-
-
-
-<span style="color:#75715e">## Assertion</span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1021,6 +1067,22 @@ texte <span style="color:#f92672">=</span> fo<span style="color:#f92672">.</span
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1105,19 +1167,19 @@ texte <span style="color:#f92672">=</span> fo<span style="color:#f92672">.</span
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1627254243"></script>
-    <script src="/js/perfect-scrollbar.min.js?1627254243"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1627254243"></script>
-    <script src="/js/jquery.sticky.js?1627254243"></script>
-    <script src="/js/featherlight.min.js?1627254243"></script>
-    <script src="/js/highlight.pack.js?1627254243"></script>
+    <script src="/js/clipboard.min.js?1629908111"></script>
+    <script src="/js/perfect-scrollbar.min.js?1629908111"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1629908111"></script>
+    <script src="/js/jquery.sticky.js?1629908111"></script>
+    <script src="/js/featherlight.min.js?1629908111"></script>
+    <script src="/js/highlight.pack.js?1629908111"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1627254243"></script>
-    <script src="/js/learn.js?1627254243"></script>
-    <script src="/js/hugo-learn.js?1627254243"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1629908111"></script>
+    <script src="/js/learn.js?1629908111"></script>
+    <script src="/js/hugo-learn.js?1629908111"></script>
     
         
-            <script src="/mermaid/mermaid.js?1627254243"></script>
+            <script src="/mermaid/mermaid.js?1629908111"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
