@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Strucutres de contrôle - Cours info TSI</title>
+    <title>Les nombres en machine - Cours info TSI</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -65,7 +65,7 @@ onload='renderMathInElement(document.body);'></script>
     
 	
   </head>
-  <body class="" data-url="/python/structcontr/">
+  <body class="" data-url="/semestre_2/nombre/">
     <nav id="sidebar" class="">
 
 
@@ -126,7 +126,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/python/" title="Python" class="dd-item
-        parent
+        
         
         
         ">
@@ -215,7 +215,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/python/structcontr/" title="Strucutres de contrôle" class="dd-item active">
+      <li data-nav-id="/python/structcontr/" title="Strucutres de contrôle" class="dd-item ">
         <a href="/python/structcontr/">
         Strucutres de contrôle
         
@@ -467,7 +467,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_2/" title="Semestre 2" class="dd-item
-        
+        parent
         
         
         ">
@@ -556,7 +556,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_2/nombre/" title="Les nombres en machine" class="dd-item ">
+      <li data-nav-id="/semestre_2/nombre/" title="Les nombres en machine" class="dd-item active">
         <a href="/semestre_2/nombre/">
         Les nombres en machine
         
@@ -636,7 +636,7 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Strucutres de contrôle
+                   Les nombres en machine
                  
                   </span>
                 </div>
@@ -645,35 +645,24 @@ onload='renderMathInElement(document.body);'></script>
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#instruction-daffectation">Instruction d&rsquo;affectation</a>
+    <li><a href="#les-différentes-bases">Les différentes bases</a>
       <ul>
-        <li><a href="#définition">Définition</a></li>
-        <li><a href="#instruction-plutôt-quexpression">Instruction plutôt qu&rsquo;expression</a></li>
-        <li><a href="#réaffectation">Réaffectation</a></li>
-        <li><a href="#affectation-parallèle">Affectation parallèle</a></li>
-        <li><a href="#noms-de-variable">Noms de variable</a></li>
+        <li><a href="#conversions">Conversions</a></li>
+        <li><a href="#usages-des-différentes-bases">Usages des différentes bases</a></li>
       </ul>
     </li>
-    <li><a href="#instuction-conditionnelle">Instuction conditionnelle</a>
+    <li><a href="#codage-des-nombres-entiers-en-machine">Codage des nombres entiers en machine</a>
       <ul>
-        <li><a href="#ifelifelse"><code>if</code>,<code>elif</code>,<code>else</code></a></li>
+        <li><a href="#nombres-entiers-naturels">Nombres entiers naturels</a></li>
+        <li><a href="#nombres-entiers-relatifs">Nombres entiers relatifs</a></li>
       </ul>
     </li>
-    <li><a href="#boucle-while">Boucle <code>while</code></a>
+    <li><a href="#codage-des-nombres-décimaux-en-machine">Codage des nombres décimaux en machine</a>
       <ul>
-        <li><a href="#break"><code>break</code></a></li>
-        <li><a href="#return"><code>return</code></a></li>
+        <li><a href="#nombres-dyadiques">Nombres dyadiques</a></li>
+        <li><a href="#nombres-en-virgule-flottante">Nombres en virgule flottante</a></li>
       </ul>
     </li>
-    <li><a href="#boucle-for">Boucle <code>for</code></a>
-      <ul>
-        <li><a href="#range"><code>range</code></a></li>
-        <li><a href="#une-chaîne-de-caractères">une chaîne de caractères</a></li>
-        <li><a href="#une-liste-un-tuple">une liste, un tuple</a></li>
-        <li><a href="#un-dictionnaire">un dictionnaire</a></li>
-      </ul>
-    </li>
-    <li><a href="#définition-dune-fonction">Définition d&rsquo;une fonction</a></li>
   </ul>
 </nav>
     </div>
@@ -693,355 +682,349 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-<h1 id="structures-de-contrôle">Structures de contrôle</h1>
-<h2 id="instruction-daffectation">Instruction d&rsquo;affectation</h2>
-<h3 id="définition">Définition</h3>
-<p>Lorsqu&rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction <code>id()</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(<span style="color:#ae81ff">3.7</span>)
-</code></pre></div><p><code>4387417928</code></p>
-<p>Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&rsquo;est à ça que servent les variables. Une variable est liée à un objet grâce à une <strong>affectation</strong> et identifie cet objet pour les calculs suivants. Une affectation est une instruction (pas de retour).</p>
-<p>En Python, une affectation s&rsquo;opère avec le symbole <code>=</code>.</p>
+<h1 id="représentation-des-nombres">Représentation des nombres</h1>
+<p>Comment un nombre est-il représenté à l&rsquo;intérieur d&rsquo;un ordinateur ?</p>
+<p>L&rsquo;espace pour représenter un nombre en machine est limité. Si cette limitation n&rsquo;a pas trop d&rsquo;impact pour les entiers (surtout en Python !) elle devient très handicapante pour représenter les réels.</p>
 
-<div class="notices note" ><p>En pseudocode, on utilise généralement <code>:=</code> ou <code>←</code> pour les affectations.</p>
-</div>
-
-<p>La variable est un tiroir avec une étiquette. Et comme on l&rsquo;a vu, en Python, pas besoin de choisir un tiroir correspondant au type d&rsquo;objet qu&rsquo;il va contenir, c&rsquo;est l&rsquo;interpréteur qui s&rsquo;en charge pour nous (le typage est dynamique).</p>
-<p><img src="/variable0.png?width=500px" alt=""></p>
-<p><img src="/variable1.png?width=500px" alt=""></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-b <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>
-a <span style="color:#f92672">*</span> b
-</code></pre></div><p><code>-6</code></p>
-<p>Si on veut pouvoir utiliser le résultat de <code>a * b</code> pour des calculs ultérieurs, il faut lui aussi le stocker en mémoire.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> a <span style="color:#f92672">*</span> b
-c
-</code></pre></div><p><code>-6</code></p>
-<p>On peut interroger le type d&rsquo;une variable avec la fonction <code>type()</code> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>
-type(c)
-</code></pre></div><p><code>&lt;class 'tuple'&gt;</code></p>
-<p> </p>
-<h3 id="instruction-plutôt-quexpression">Instruction plutôt qu&rsquo;expression</h3>
-<p>Le fait que l&rsquo;affectation soir une instruction plutôt qu&rsquo;une expression est un choix d&rsquo;écriture du langage (en C, l&rsquo;affectation est une expression).<br>
-D&rsquo;ailleurs, Python 3.8 a introduit l&rsquo;opérateur <code>:=</code> (dit le <em>walrus opérator</em> ou <em>opérateur de morse</em> du fait de sa ressemblance à un morse&hellip;) permettant justement une <strong>expression d&rsquo;affectation</strong> au sein d&rsquo;une expression plus large. L&rsquo;intérêt est de permettre de raccourcir l&rsquo;écriture ou d&rsquo;éviter les répétitions dans certains cas.<br>
-L&rsquo;opérateur de morse n&rsquo;est pas à connaître, mais il va nous permettre, dans les deux exemples suivants, de bien faire la différence entre une instruction et une expression.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">if</span> (n :<span style="color:#f92672">=</span> len(a)) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>:
-    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;La liste est trop grande ({n} élements alors qu&#39;on en attend 5 au plus)&#34;</span>)
-</code></pre></div><blockquote>
-<p>Montrer que sans <code>:=</code>, on aurait soit une répétition, soit une ligne en plus.</p>
-</blockquote>
-<p>Autre exemple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">while</span> (choix :<span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;Entrer q ou p : &#39;</span>)) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;q&#39;</span>:
-    <span style="color:#66d9ef">if</span> choix <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;p&#39;</span>:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Salut !&#34;</span>)
-</code></pre></div><blockquote>
-<p>Comment aurait-on dû écrire ce code sans <code>:=</code> ?</p>
-</blockquote>
-<p> </p>
-<h3 id="réaffectation">Réaffectation</h3>
-<p>Une affectation ne retourne rien mais a un effet sur la mémoire : l&rsquo;adresse de la variable est modifiée à chaque nouvelle affectation. C&rsquo;est ce qui rend possible les <strong>réaffectations</strong> à partir de la variable elle-même.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(a)
-</code></pre></div><p><code>4304751488</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><p><code>4304751520</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-id(a)
-</code></pre></div><p><code>4304751520</code></p>
-
-<div class="notices info" ><p>Ces types de <strong>réaffectation</strong> sont si fréquents qu&rsquo;il existe une notation raccourcie : <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>//=</code>, <code>%=</code>.<br>
-Ainsi, <code>a += 1</code> équivaut à <code>a = a + 1</code> et <code>b /= 5</code> équivaut à <code>b = b/5</code>.</p>
+<div class="notices info" ><p>La représentation machine d&rsquo;un nombre est appelée <strong>mot machine</strong>. Sa taille est généralement aujourd&rsquo;hui de 64 bits.</p>
 </div>
 
 <p> </p>
-<h3 id="affectation-parallèle">Affectation parallèle</h3>
-<p>Comment faire si on veut permuter les valeurs auxquelles sont liées deux variables ? Dès qu&rsquo;on écrit <code>a = b</code>, la valeur initiale de <code>a</code> est perdue. Et si on commence par <code>b = a</code>, c&rsquo;est la valeur initiale de <code>b</code> qui est perdue. Il faudrait donc utiliser une variable temporaire et écrire : <code>tmp = a</code>, <code>a = b</code> et <code>b = tmp</code>.<br>
-Mais l&rsquo;affectation parallèle de Python va nous permettre d&rsquo;être plus élégants. Il suffit en effet d&rsquo;une petite ligne :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;haut&#39;</span>
-b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bas&#39;</span>
-a , b <span style="color:#f92672">=</span> b , a
-<span style="color:#66d9ef">print</span>(a,b)
-</code></pre></div><p><code>bas haut</code></p>
-
-<div class="notices info" ><p><strong>L&rsquo;affectation parallèle</strong> repose sur le <strong>dépaquetage (<em>unpacking</em>) de tuples</strong>.<br>
-En effet, des objets séparés par des virgules forment un tuple (pas besoin de parenthèses). Donc <code>a,b,c = 1,2,3</code> correspond au dépaquetage du tuple <code>(1,2,3)</code> sur les 3 variables <code>a</code>, <code>b</code> et <code>c</code>.</p>
-</div>
-
-<p> </p>
-<h3 id="noms-de-variable">Noms de variable</h3>
-<p>Règles sur les noms de variables :</p>
+<h2 id="les-différentes-bases">Les différentes bases</h2>
+<p>Une écriture en base $b$ utilise $b$ chiffres différents :</p>
 <ul>
-<li>ils sont sensibles à la casse (minuscule ou majuscule)</li>
-<li>ils peuvent contenir n&rsquo;importe quelles lettres ou chiffres et le tiret-bas &ldquo;_&rdquo; mais ne doivent pas commencer par un chiffre.</li>
-<li>certains noms sont interdits (attention en particulier à lambda) :</li>
+<li>0, 1, 2, 3, 4, 5, 6, 7, 8 et 9 pour la base décimale</li>
+<li>0 et 1 pour la base binaire</li>
+<li>0, 1, 2, 3 pour la base 4</li>
+<li>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E et F pour la base hexadécimale</li>
 </ul>
-<p><code>and</code>  <code>assert</code>  <code>break</code>  <code>class</code>  <code>continue</code>  <code>def</code>  <code>del</code>  <code>elif</code>  <code>else</code>  <code>except</code>  <code>finally</code>  <code>for</code>  <code>from</code>  <code>global</code>  <code>if</code><br>
-<code>import</code>  <code>in</code>  <code>is</code>  <code>lambda</code>  <code>nonlocal</code>  <code>not</code>  <code>or</code>  <code>pass</code>  <code>print</code>  <code>raise</code>  <code>return</code>  <code>try</code>  <code>while</code>  <code>yield</code></p>
+<p>Un nombre $a$ écrit dans une basse $b$ se note $(a_n a_{n-1}\cdots a_0)_b$ avec $(a_n a_{n-1}\cdots a_0)_b = a_n\times b^n + a_{n-1} \times b^{n-1}+ \cdots + a_0 = \sum\limits_{i=0}^{n} a_i,b^i$</p>
+<p> </p>
+<h3 id="conversions">Conversions</h3>
 
-<div class="notices warning" ><p>Il est important pour la lisibilité de son code de donner les noms les plus explicites possibles aux variables. Les rapports de jury le répète tous les ans&hellip;</p>
+<div class="notices tip" ><p>La conversion d’une base à une autre n’est pas un objectif de formation d&rsquo;après le B.O. Néanmoins, la comparaison et les pièges des algorithmes qui suivent dépassent le simple enjeu de la conversion. Moralité, pas besoin d&rsquo;apprendre par cœur ces algorithmes, mais leur étude est conseillée.</p>
 </div>
 
-<p>Rapport 2019 de l&rsquo;épreuve de Centrale par exemple :</p>
+<ul>
+<li><strong>Pour convertir un nombre d&rsquo;une base $b&lt;10$  vers la base 10</strong> :</li>
+</ul>
+<p>Il suffit de calculer la somme précédente (si $b&gt;10$, il faut en plus donner la valeur des nouveaux chiffres).</p>
+<p>Comparaison de deux algorithmes :</p>
+<ul>
+<li>Algorithme classique :</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convbvers10</span>(a,b) :
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Convertit a de la base b à la base 10
+</span><span style="color:#e6db74">    le nombre à convertir a doit être passé en argument 
+</span><span style="color:#e6db74">    sous la forme d&#39;une chaine de caractères &#39;a_n...a_0&#39;
+</span><span style="color:#e6db74">    b, la base, est un entier inférieur à 10.
+</span><span style="color:#e6db74">    La fonction retourne un entier en base 10.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    n <span style="color:#f92672">=</span> len(a)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> a :
+        s <span style="color:#f92672">+=</span> int(e)<span style="color:#f92672">*</span>b<span style="color:#f92672">**</span>n
+        n <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">return</span> s
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">convbvers10(<span style="color:#e6db74">&#39;100101101&#39;</span>,<span style="color:#ae81ff">2</span>)
+</code></pre></div><p><code>301</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">convbvers10(<span style="color:#e6db74">&#39;10231&#39;</span>,<span style="color:#ae81ff">4</span>)
+</code></pre></div><p><code>301</code></p>
+<ul>
+<li><em>Méthode de Horner</em> (qui utilise des multiplications imbriquées) :</li>
+</ul>
+<p>$a = ((((a_nb+a_{n-1})b+a_{n-2})b+\cdots)b+a_1)b+a_0$</p>
+<p>Implémentée en Python, cela donne :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convbvers10_Horner</span>(a,b) :
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Convertit a de la base b à la base 10 en utilisant la méthode de Horner
+</span><span style="color:#e6db74">    le nombre à convertir a doit être passé en argument 
+</span><span style="color:#e6db74">    sous la forme d&#39;une chaine de caractères &#39;a_n...a_0&#39;
+</span><span style="color:#e6db74">    b, la base, est un entier inférieur à 10.
+</span><span style="color:#e6db74">    La fonction retourne un entier en base 10.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,len(a)) :
+        s <span style="color:#f92672">=</span> s<span style="color:#f92672">*</span>b <span style="color:#f92672">+</span> int(a[i])
+    <span style="color:#66d9ef">return</span>(s)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">convbvers10_Horner(<span style="color:#e6db74">&#39;100101101&#39;</span>,<span style="color:#ae81ff">2</span>)
+</code></pre></div><p><code>301</code></p>
 <blockquote>
-<p><strong>Des noms de variables explicites aident à la compréhension du code. De trop nombreux candidats utilisent des noms de variables quelconques (a, b, c&hellip;) ce qui nuit à la compréhension du programme. La clarté du programme (en particulier le choix des noms de variables) ainsi que la présence de commentaires opportuns sont prises en compte dans l’évaluation.</strong></p>
+<p>Lequel de ces deux algorithmes est le plus eficace ?</p>
 </blockquote>
 <p> </p>
-<h2 id="instuction-conditionnelle">Instuction conditionnelle</h2>
-<p>Les instructions conditionnelles permettent de rediriger le flot d&rsquo;exécution d&rsquo;un programme en proposant des alternatives.</p>
-<h3 id="ifelifelse"><code>if</code>,<code>elif</code>,<code>else</code></h3>
-<p>La structure <code>if ... elif ... else</code> permet d&rsquo;exécuter des instructions seulement si une condition, donnée par le résultat d&rsquo;un ou plusieurs tests logiques, est vérifiée.</p>
-<p><code>if</code> &lt;<em>expression logique 1</em>&gt; :<br>
-        &lt;<em>bloc d&rsquo;instructions 1</em>&gt;<br>
-<code>elif</code> &lt;<em>expression logique 2</em>&gt; :<br>
-        &lt;<em>bloc d&rsquo;instructions 2</em>&gt;<br>
-<strong>&hellip;</strong><br>
-<code>else</code> :<br>
-        &lt;<em>bloc d&rsquo;instructions</em>&gt;</p>
-<p>Si l'&lt;<em>expression logique 1</em>&gt; est évaluée comme vraie, le &lt;<em>bloc d&rsquo;instructions 1</em>&gt; est exécuté ; dans le cas contraire, si l'&lt;<em>expression logique 2</em>&gt; est évaluée comme vraie, le &lt;<em>bloc d&rsquo;instructions 2</em>&gt; est exécuté, et ainsi de suite ; et si aucune des expressions logiques précédentes n&rsquo;est vraie, le bloc d&rsquo;instructions faisant suite au <code>else:</code> est exécuté.</p>
-<p>Par exemple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>) :
-    <span style="color:#66d9ef">if</span> x<span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span> :
-        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est inférieur ou égal à 3&#39;</span>)
-    <span style="color:#66d9ef">elif</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span> :
-        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est plus grand que 5&#39;</span>)
-    <span style="color:#66d9ef">else</span> :
-        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;doit être 4 ou 5&#39;</span>)
-</code></pre></div><pre><code>0 est inférieur ou égal à 3
-1 est inférieur ou égal à 3
-2 est inférieur ou égal à 3
-3 est inférieur ou égal à 3
-4 doit être 4 ou 5
-5 doit être 4 ou 5
-6 est plus grand que 5
-7 est plus grand que 5
-8 est plus grand que 5
-9 est plus grand que 5
-</code></pre>
 
-<div class="notices note" ><p>Python reconnaît comme vrai n&rsquo;importe quel type de donnée (même pas besoin d&rsquo;expression logique) du moment qu&rsquo;il ne s&rsquo;agit ni de l&rsquo;entier <code>0</code>, du décimal <code>0.</code>, de la chaîne de caractères vide <code>''</code>, du tuple vide <code>()</code>, de la liste vide <code>[]</code>, ou encore de la valeur <code>None</code>.</p>
+<div class="notices info" ><p>la fonction Python native <code>int()</code> permet aussi de convertir un nombre écrit dans une base $b$ vers la base décimale en ajoutant $b$ en argument.</p>
 </div>
 
-<p>Exemple :<br>
-Dans le calendrier grégorien, une année est bissextile si elle est divisible par 4 sauf si elle est aussi divisible par 100 à l&rsquo;exception des années divisibles par 400 qui sont bien bissextiles.<br>
-Le programme suivant détermine si une année est bissextile :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">année <span style="color:#f92672">=</span> <span style="color:#ae81ff">2022</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">400</span> :
-    est_bissextile <span style="color:#f92672">=</span> True
-<span style="color:#66d9ef">elif</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> :
-    est_bissextile <span style="color:#f92672">=</span> False
-<span style="color:#66d9ef">elif</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span> :
-    est_bissextile <span style="color:#f92672">=</span> True
-<span style="color:#66d9ef">else</span> :
-    est_bissextile <span style="color:#f92672">=</span> False
-s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;est une&#39;</span> <span style="color:#66d9ef">if</span> est_bissextile <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;n&#39;est pas une&#34;</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;L&#39;année&#34;</span>, année , s ,<span style="color:#e6db74">&#34;année bissextile.&#34;</span>)
-</code></pre></div><p><code>L'année 2022 n'est pas une année bissextile.</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int(<span style="color:#e6db74">&#39;10231&#39;</span>,<span style="color:#ae81ff">4</span>)
+</code></pre></div><p><code>301</code></p>
 <p> </p>
+<ul>
+<li><strong>Pour convertir de la base 10 vers la base $b$</strong> :</li>
+</ul>
+<p>On peut remarquer que le quotient de la division euclidienne de $a=(a_n a_{n-1}\cdots a_0)_b$ par $b$ vaut $(a_n a_{n-1}\cdots a_1)_b$ et que le reste vaut $a_0$. De même, le quotient de la division euclidienne de $(a_n a_{n-1}\cdots a_1)_b$  par $b$ vaut $(a_n a_{n-1}\cdots a_2)_b$ et le reste vaut $a_1$. Et on continue tant que le quotient est non nul. On obtient ainsi la décomposition de $a$ dans la base $b$.</p>
+<p>Un algorithme en découle naturellement :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">conv10versb</span>(a,b) :
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Arguments : nombre à convertir et base cible
+</span><span style="color:#e6db74">    la fonction retourne une chaîne de caractère 
+</span><span style="color:#e6db74">    correspondant au nombre a dans la base b.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    <span style="color:#66d9ef">while</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> :
+        s <span style="color:#f92672">=</span> str(a<span style="color:#f92672">%</span>b) <span style="color:#f92672">+</span> s <span style="color:#75715e"># le dernier terme est ajouté à gauche de la chaîne !</span>
+        a <span style="color:#f92672">//=</span> b
+    <span style="color:#66d9ef">return</span> s
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conv10versb(<span style="color:#ae81ff">301</span>,<span style="color:#ae81ff">2</span>)
+</code></pre></div><p><code>'100101101'</code></p>
 <p> </p>
-<h2 id="boucle-while">Boucle <code>while</code></h2>
-<p>Une boucle <code>while</code> ou &ldquo;tant que&rdquo; permet de répéter une suite d&rsquo;instructions <em>tant qu'</em> une condition est respectée.<br>
-La suite d&rsquo;instructions répétées devra être indentée et forme alors le corps de la boucle.</p>
 
-<div class="notices warning" ><p>Les boucles <code>while</code> sont dangereuses ! Rien ne dit en effet que la condition sera un jour fausse et la boucle peut donc tourner indéfiniment.<br>
-Les boucles infinis posent le problème de la terminaison d&rsquo;un programme.</p>
+<div class="notices info" ><p>les fonctions Python natives <code>bin()</code> et <code>hex()</code> permettent de convertir directement un nombre de la base 10 vers les bases respectives 2 et 16 (ces fonctions retournent des chaînes de caractères).</p>
 </div>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> :
-    i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">print</span>(i,end <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.&#39;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">La boucle est finie...&#39;</span>)
-</code></pre></div><pre><code>1.2.3.4.5.6.7.8.9.10.
-La boucle est finie...
-</code></pre>
-<p>Le compteur <code>i</code> est initialisé à <code>0</code> et comme <code>0</code> est inférieur à <code>10</code>, la boucle <code>while</code> démarre. À chaque itération, <code>i</code> est incrémenté de <code>1</code> et sa valeur affichée. Puis <code>i</code> atteint <code>10</code> et à l&rsquo;itération suivante <code>i &lt; 10</code> devient faux, la boucle s&rsquo;arrête et l&rsquo;éxécution reprend après la boucle.</p>
-<p>Un exemple plus intéressant :<br>
-implémentons l&rsquo;algorithme d&rsquo;Euclide permettant de déterminer le plus grand diviseur commun de deux entiers.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a , b <span style="color:#f92672">=</span> <span style="color:#ae81ff">1920</span> , <span style="color:#ae81ff">1080</span>
-<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;pgcd({a},{b}) = &#39;</span>,end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>)
-<span style="color:#66d9ef">while</span> b :
-    a , b <span style="color:#f92672">=</span> b, a <span style="color:#f92672">%</span> b
-<span style="color:#66d9ef">print</span>(a)
-</code></pre></div><p><code>pgcd(1920,1080) = 120</code></p>
-<p>La boucle continue jusqu&rsquo;à ce que <code>b</code> divise <code>a</code>. À chaque itération, <code>b</code> prend la valeur du reste de la division euclidienne de <code>a</code> par <code>b</code> et <code>a</code> prend l&rsquo;ancienne valeur de <code>b</code>.<br>
-<code>while b</code> est équivalent à <code>while b != 0</code> puisque la valeur <code>0</code> est évaluée comme fausse.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bin(<span style="color:#ae81ff">301</span>,<span style="color:#ae81ff">2</span>)
+</code></pre></div><p><code>'0b100101101'</code></p>
 <p> </p>
-<h3 id="break"><code>break</code></h3>
-<p>L&rsquo;instruction <code>break</code>, placée dans le bloc d&rsquo;instructions d&rsquo;une boucle, met immédiatement fin à cette boucle lorsqu&rsquo;arrive son tour d&rsquo;être exécutée.<br>
-L&rsquo;exécution reprend à l&rsquo;instruction suivant la boucle.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">while</span> True :
-    x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> (x <span style="color:#f92672">%</span> <span style="color:#ae81ff">15</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">%</span> <span style="color:#ae81ff">25</span>) :
-        <span style="color:#66d9ef">break</span>
-<span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est divisible à la fois par 15 et 25.&#39;</span>)
-</code></pre></div><p><code>75 est divisible à la fois par 15 et 25.</code></p>
-<p>La condition du <code>while</code> est ici littéralement toujours vraie donc la seule sortie possible de la boucle passe par une exécution de l&rsquo;instruction <code>break</code>, ce qui ne peut arriver que si <code>x</code> est à la fois divisible par 15 et 25 (c&rsquo;est une pratique risquée !).</p>
-<p>De la même manière, pour trouver l&rsquo;indice de la première occurrence d&rsquo;un nombre négatif dans une liste :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">99</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">37</span>, <span style="color:#ae81ff">43</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">124</span>]
-<span style="color:#66d9ef">for</span> i, a <span style="color:#f92672">in</span> enumerate(liste) :
-    <span style="color:#66d9ef">if</span> a <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> :
-        <span style="color:#66d9ef">break</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;L&#39;élément d&#39;indice&#34;</span>,i,<span style="color:#e6db74">&#34;valant&#34;</span>,a,<span style="color:#e6db74">&#34;est le premier élément négatif.&#34;</span>)
-</code></pre></div><p><code>L'élément d'indice 5 valant -2 est le premier élément négatif.</code></p>
+<h3 id="usages-des-différentes-bases">Usages des différentes bases</h3>
+<ul>
+<li><strong>La base binaire</strong> :</li>
+</ul>
+<p>C&rsquo;est la base naturelle de l&rsquo;ordinateur. Avec ses deux caractères (0 et 1), c&rsquo;est la seule que peut adresser directement un ordinateur dont la nature même n&rsquo;est qu&rsquo;interrupteurs, passant ou non. Chaque bit est un chiffre binaire.</p>
+<p>En base 2, les calculs sont facilités et la plupart des algorithmes scolaires des opérations de base marchent, voir sont simplifiés.<br>
+Prenons l&rsquo;exemple de la multiplication : chaque 1 du second facteur décale le premier facteur d&rsquo;autant de rangs que son propre rang dans le second facteur, puis on additionne entre eux tous les différents termes obtenus (on utilisera cette méthode dans l&rsquo;algorithme de multiplication égyptienne du TP8) .</p>
+<p><img src="/multi2.png?width=180" alt=""></p>
+<p>En Python, on peut écrire un nombre directement en base 2 si on le précède des caractères <code>0b</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0b1011011</span>
+b <span style="color:#f92672">=</span> <span style="color:#ae81ff">0b1011</span>
+a<span style="color:#f92672">*</span>b
+bin(a<span style="color:#f92672">*</span>b)
+</code></pre></div><p><code>'0b1111101001'</code></p>
+<p> </p>
+<ul>
+<li><strong>La base hexadécimale</strong> :</li>
+</ul>
+<p>La base 16 joue un rôle particulier en informatique. Pour quelle raison ? L’écriture binaire d’un nombre présente l’inconvénient d’être très longue. Une base plus élevée est à cet égard préférable. Le choix de la base 10 pourrait paraître naturel, mais malheureusement, convertir un nombre de la base 10 à la base 2 ou inversement n’est pas simple. En revanche, nous allons voir que passer de la base 2 à la base 16 est naturel.</p>
+<p>Pour écrire un nombre en base 16, nous avons besoin d’un caractère pour chacun des entiers de 0 à 15 ; on complète donc les chiffres de 0 à 9 par les lettres a, b, c, d, e et f.<br>
+Ainsi, $(\text{a})_{16} = 10$, $(\text{b})_{16} = 11$, $(\text{c})_{16} = 12$, $(\text{d})_{16} = 13$, $(\text{e})_{16} = 14$, $(\text{f})_{16} = 15$.</p>
+<p>Sachant que $2^4 = 16$, tout nombre écrit en base 2 à l’aide de 4 chiffres s’écrit en base 16 à l’aide d’un seul chiffre :</p>
+<p><img src="/table2.png?width=550" alt=""></p>
+<p>Aussi, pour convertir un nombre quelconque de la base 2 à la base 16, il suffit de regrouper les chiffres qui le composent par paquet de 4 et convertir chacun de ces paquets en un chiffre en base 16.</p>
+<p>Par exemple $(1100,0111,1110,1011)_2$ = $(\text{c}7\text{eb})_{16}$.</p>
+<p>Un octet (8 bits) est donc représenté par au plus deux caractères hexadécimaux, ce qui explique l&rsquo;intérêt de cette base (les octets, unité de mémoire, sont partout en informatique).<br>Exemple : une couleur peut être définie par trois octets représentant ses composantes RVB (voir <a href="http://cordier-phychi.toile-libre.org/Info/cours6.html">Python 6</a>, &ldquo;Fichiers image&rdquo;). Ci-dessous, chaque mot de 3 octets sert aussi à coder la couleur en HTML :</p>
+<p><font color=ff0000> ff0000 </font>  <font color=00ff00> 00ff00 </font>  <font color=0000ff> 0000ff </font>  
+<font color=aa00aa> aa00aa </font>  <font color=777777> 777777 </font>  <font color=a3850e> a3850e </font>  
+<font color=07ab98> 07ab98 </font> (code HTML du dernier mot : <code>&lt;font color=07ab98&gt; 07ab98 &lt;/font&gt;</code>)</p>
+<p>$256^3 = 16,777,216$ couleurs différentes sont ainsi accessibles.</p>
+<p>Comme pour les nombres binaires, Python permet d&rsquo;écrire directement en base 16 si on précède le nombre des caractères <code>0x</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">0xd</span>
+</code></pre></div><p><code>13</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bin(<span style="color:#ae81ff">0xd</span>)
+</code></pre></div><p><code>'0b1101'</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hex(<span style="color:#ae81ff">0b11110111</span>)
+</code></pre></div><p><code>'0xf7'</code></p>
 
-<div class="notices note" ><p>Après la sortie de la boucle, les variables <code>i</code> et <code>a</code> gardent les valeurs qu&rsquo;elles ont au moment de l&rsquo;instruction <code>break</code>.</p>
+<div class="notices note" ><p>La plus &ldquo;efficace&rdquo; des bases est la base ternaire, suivie de près par la base binaire (où la notion d&rsquo;efficacité est définie dans <a href="http://cordier-phychi.toile-libre.org/Info/github/AmSci-2001-11-Hayes-ternary.pdf">l&rsquo;article en lien</a>).</p>
 </div>
 
 <p> </p>
-<h3 id="return"><code>return</code></h3>
-<p>L&rsquo;instruction <code>return</code> permet elle aussi de s&rsquo;échapper d&rsquo;une boucle.</p>
-<p>En effet, l&rsquo;utilisation du <code>return</code> a pour effet de sortir du corps d&rsquo;une fonction donc à fortiori, si une boucle est utilisée dans la définition de cette fonction, le <code>return</code> permet aussi d&rsquo;en sortir.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">vol</span>(i) :
-    t <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) :
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> i<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> :
-            i <span style="color:#f92672">//=</span> <span style="color:#ae81ff">2</span>
-        <span style="color:#66d9ef">elif</span> i <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> :
-            i <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
-        <span style="color:#66d9ef">else</span> :
-            <span style="color:#66d9ef">return</span> t
-        t <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</code></pre></div><p><code>vol(27)</code> renvoie alors <code>111</code>.</p>
+<h2 id="codage-des-nombres-entiers-en-machine">Codage des nombres entiers en machine</h2>
+<h3 id="nombres-entiers-naturels">Nombres entiers naturels</h3>
+<p>Les entiers naturels sont essentiellement utilisés pour représenter les adresses en mémoire.<br>
+Un mot machine de n bits permet de représenter tous les nombres naturels compris entre 0 et $2^n − 1$. Ainsi, un octet permet de coder les entiers allant de $0 = (00)_{16} = (0000,0000)_2$ à $255 = (\text{ff})_{16} = (1111,1111)_2$, et 64 bits (soit 8 octets) tous les nombres allant de $0 = (0000,0000,0000,0000)_{16}$ à $2^{64}−1 = (\text{ffff},\text{ffff},\text{ffff},\text{ffff})_{16}$.</p>
+<p><img src="/entnat2.png?width=750" alt=""></p>
+<h3 id="nombres-entiers-relatifs">Nombres entiers relatifs</h3>
+<p>Il faut un bit supplémentaire pour coder le signe. Le premier bit, 0 pour un nombre positif et 1 pour un nombre négatif, est donc réservé.<br>
+Ainsi, le plus grand entier relatif représentable sur n bits vaut $2^{n-1}-1$. Pour un processeur 64 bits, cela correspond à $2^{63}-1=(7\text{fff},\text{ffff},\text{ffff},\text{ffff})_{16}$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">63</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</code></pre></div><p><code>9223372036854775807</code></p>
 <p> </p>
+<ul>
+<li><strong>codage binaire naturel signé</strong></li>
+</ul>
+<p>La méthode paraissant la plus simple pour coder les nombres relatifs est alors le <strong>codage binaire naturel signé</strong> : on place le bit de signe devant la valeur absolue de l&rsquo;entier codé normalement sur $n-1$ bits. Par exemple, sur 4 bits, 3 est codé par le mot <code>0011</code> et -3 par <code>1011</code>.</p>
+<p>Simple, oui, mais cela pose 2 problèmes :</p>
+<ul>
+<li>il y a 2 représentations de 0 (les mots <code>0000</code> et <code>1000</code> sur 4 bits),</li>
+<li>les opérations arithmétiques ne sont pas faciles (l&rsquo;addition &ldquo;normale&rdquo; de 3 et -3 codés ainsi sur 4 bits donnerait <code>1110</code>, soit -6&hellip;).</li>
+</ul>
 <p> </p>
-<h2 id="boucle-for">Boucle <code>for</code></h2>
-<p>Une boucle <code>for</code> se différencie d&rsquo;une boucle <code>while</code> en ce que le nombre d&rsquo;itérations est connu à l&rsquo;avance.</p>
-<p>La structure d&rsquo;une telle boucle est en effet :</p>
-<p><code>for</code> &lt;<em>élément</em>&gt; <code>in</code> &lt;<em>itérable</em>&gt;  :<br>
-        &lt;<em>bloc d&rsquo;instructions</em>&gt;</p>
-<p>L&rsquo;itérable est une collection d&rsquo;éléments et le bloc d&rsquo;instructions est alors répété autant de fois que l&rsquo;itérable contient d&rsquo;éléments.</p>
-<p>Passons en revue quelques itérables.</p>
-<h3 id="range"><code>range</code></h3>
-<p><code>range</code> permet d&rsquo;itérer sur une suite arithmétique d&rsquo;entiers :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>) :
-	<span style="color:#66d9ef">print</span>(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.&#34;</span>)
-</code></pre></div><p><code>0.1.2.3.4.</code></p>
+<ul>
+<li><strong>complément à 2</strong></li>
+</ul>
+<p>La solution qui a été adoptée pour éviter ces problèmes est le <strong>complément à 2</strong> :</p>
+<p>Ce codage découle du problème posé par l&rsquo;addition précédente : comment faire pour que l&rsquo;addition de 2 nombres opposés vaille 0 ? La solution est d&rsquo;utiliser l&rsquo;absence du bit $n+1$ dans un codage à $n$ bits. Par exemple, à 4 bits, si on additionne $5$ ($0101$) avec $11$ ($1011$), on obtient $16$ ($\color{red}{1}\color{green}{0000}$) qui devient $0$ ($\color{green}{0000}$) puisqu&rsquo;il n&rsquo;y a pas de 5<sup>e</sup> bit. Il suffit donc d&rsquo;associer 11 à -5, et de la même façon, 8 à -8, 9 à -7, 10 à -6, 12 à -4, 13 à -3, 14 à -2, et 15 à -1.</p>
+<p>De manière générale, pour un codage sur n bits, les $2^{n-1}$ premiers entiers, tous commençants par 0, sont les entiers positifs et on associe les $2^{n-1}$ entiers suivants, commençant par 1, donc négatifs, de façon à ce qu&rsquo;il complète chaque entier positif à la puissance de 2 supérieure, $2^n$ (d&rsquo;où &ldquo;complément à 2&rdquo;).</p>
+<p>Les nombres négatifs sont donc placés au-dessus plutôt qu&rsquo;en dessous et on peut visualiser ça comme un enroulement sur un cercle des nombres positifs et négatifs.</p>
+<p><img src="/cercle2.png?width=850" alt=""></p>
 
-<div class="notices warning" ><p>L&rsquo;itération sur <code>range(n)</code> va de $0$ à $n-1$ par pas de 1.</p>
+<div class="notices info" ><p>En pratique, si on veut le mot codant -3, il suffit d&rsquo;inverser chaque bit du codage de 3 et d&rsquo;ajouter 1 :<br>
+$0011 \rightarrow 1100$<br>
+$1100+1 = 1101$<br>
+donc $-3 \rightarrow 1101$</p>
 </div>
 
-<p>On peut spécifier un point de départ et un pas différents en les passant en argument : <code>range(depart,fin,pas)</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>) :
-	<span style="color:#66d9ef">print</span>(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.&#34;</span>)
-</code></pre></div><p><code>5.6.7.8.9.</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">20</span>) :
-	<span style="color:#66d9ef">print</span>(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.&#34;</span>)
-</code></pre></div><p><code>0.20.40.60.80.</code></p>
 <p> </p>
-<h3 id="une-chaîne-de-caractères">une chaîne de caractères</h3>
-<p>Itérer sur une chaîne de caractères  décompose la chaîne caractère par caractère :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> car <span style="color:#f92672">in</span> <span style="color:#e6db74">&#39;abc😱&#39;</span> :
-	<span style="color:#66d9ef">print</span>(car<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span>)
-</code></pre></div><p><code>aa bb cc 😱😱 </code></p>
+<h4 id="dépassement-de-capacité-">Dépassement de capacité :</h4>
+<p>On remarque qu&rsquo;avec ce type de codage, un dépassement de capacité (ou <strong>overflow</strong> en anglais) ne lèvera pas d&rsquo;erreur, mais aboutira à des valeurs aberrantes.<br>
+Supposons par exemple que l&rsquo;on veuille additionner 5 et 7 sur un codage 4 bits. On obtiendra&hellip; -4 !</p>
 <p> </p>
-<h3 id="une-liste-un-tuple">une liste, un tuple</h3>
-<p>On peut de même parcourir une liste ou un tuple élément par élément.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;🙈&#39;</span>,<span style="color:#e6db74">&#39;🙊&#39;</span>,<span style="color:#e6db74">&#39;🙉&#39;</span>),(<span style="color:#e6db74">&#39;🌖&#39;</span>,<span style="color:#e6db74">&#39;🌗&#39;</span>,<span style="color:#e6db74">&#39;🌘&#39;</span>),]
-s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">for</span> tuple <span style="color:#f92672">in</span> L :
-	<span style="color:#66d9ef">for</span> element <span style="color:#f92672">in</span> tuple :
-		s <span style="color:#f92672">+=</span> element<span style="color:#f92672">*</span>i
-		i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">print</span>(s)
-</code></pre></div><p><code>🙈🙊🙊🙉🙉🙉🌖🌖🌖🌖🌗🌗🌗🌗🌗🌘🌘🌘🌘🌘🌘</code></p>
-<p> </p>
-<h3 id="un-dictionnaire">un dictionnaire</h3>
-<p>Pour pacourir uniquement les clés d&rsquo;un dictionnaire, on peut utiliser la méthode <code>keys</code> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Dico <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;pwd_1&#39;</span> : <span style="color:#e6db74">&#39;123456&#39;</span>, <span style="color:#e6db74">&#39;pwd_2&#39;</span> : <span style="color:#e6db74">&#39;qwerty&#39;</span>, <span style="color:#e6db74">&#39;pwd_3&#39;</span> : <span style="color:#e6db74">&#39;password&#39;</span>}
-<span style="color:#66d9ef">for</span> cle <span style="color:#f92672">in</span> Dico<span style="color:#f92672">.</span>keys() :
-    <span style="color:#66d9ef">print</span>(cle,<span style="color:#e6db74">&#39;-&gt;&#39;</span>,Dico[cle])
-</code></pre></div><p><code>pwd_1 -&gt; 123456</code><br>
-<code>pwd_2 -&gt; qwerty</code><br>
-<code>pwd_3 -&gt; password</code></p>
-<p>Et grâce à la méthode <code>items</code>, on peut déballer clés et valeurs associées dans un tuple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> cle,valeur <span style="color:#f92672">in</span> Dico<span style="color:#f92672">.</span>items() :
-    <span style="color:#66d9ef">print</span>(cle,<span style="color:#e6db74">&#39;-&gt;&#39;</span>,valeur)
-</code></pre></div><p><code>pwd_1 -&gt; 123456</code><br>
-<code>pwd_2 -&gt; qwerty</code><br>
-<code>pwd_3 -&gt; password</code></p>
-<p>Construisons par exemple un nouveau dictionnaire inversant clés et valeurs :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Dico <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;$&#39;</span> : <span style="color:#e6db74">&#39;dollar&#39;</span>, <span style="color:#e6db74">&#39;€&#39;</span> : <span style="color:#e6db74">&#39;euro&#39;</span>, <span style="color:#e6db74">&#39;¥&#39;</span> : <span style="color:#e6db74">&#39;yen&#39;</span>, <span style="color:#e6db74">&#39;£&#39;</span> : <span style="color:#e6db74">&#39;livre&#39;</span>}
-Dico_inv <span style="color:#f92672">=</span> {}
-<span style="color:#66d9ef">for</span> cle,valeur <span style="color:#f92672">in</span> Dico<span style="color:#f92672">.</span>items() :
-    Dico_inv[valeur] <span style="color:#f92672">=</span> cle
-<span style="color:#66d9ef">print</span>(Dico_inv)
-</code></pre></div><p><code>{'dollar': '$', 'euro': '€', 'yen': '¥', 'livre': '£'}</code></p>
-<p>Dernier exemple, modifions une à une chaque valeur d&rsquo;un dictionnaire  :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dico_notes <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Kurt&#39;</span> : <span style="color:#ae81ff">19</span>, <span style="color:#e6db74">&#39;Kris&#39;</span> : <span style="color:#ae81ff">11</span>, <span style="color:#e6db74">&#39;Dave&#39;</span> : <span style="color:#ae81ff">13</span>, <span style="color:#e6db74">&#39;Pat&#39;</span> : <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;Courtney&#39;</span> : <span style="color:#ae81ff">15</span>}
-<span style="color:#66d9ef">for</span> eleve,note <span style="color:#f92672">in</span> dico_notes<span style="color:#f92672">.</span>items() :
-    dico_notes[eleve] <span style="color:#f92672">=</span> note<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">print</span>(dico_notes)
-</code></pre></div><p><code>{'Kurt': 20, 'Kris': 12, 'Dave': 14, 'Pat': 11, 'Courtney': 16}</code>
- </p>
-<p> </p>
-<h2 id="définition-dune-fonction">Définition d&rsquo;une fonction</h2>
-<p>Une fonction est un ensemble d&rsquo;instructions auxquelles on accède par un raccourci : le nom de la fonction. Elles se comportent comme des sous-programmes à l&rsquo;intérieur du programme principal. Et comme tout programme, elles peuvent agir sur des données, les entrées, et fournir de nouvelles données, les sorties.</p>
-<p>La signature d&rsquo;une fonction résume ces points clés : son nom, les différents arguments et leurs types, les différentes sorties et leur type.
-<code>nom(arg_1:type, arg_2:type, etc) -&gt; sortie_1:type, sortie_2:type, etc</code></p>
-<p>On <strong>définit une fonction</strong> grâce au mot clé <code>def</code> en suivant la structure suivante :</p>
-<blockquote>
-<p><code>def</code> nom<code>(</code>arguments séparés par des virgules<code>)</code> <code>:</code><br>
-        &lt; <em>corps de la fonction contenant les différentes instructions</em> &gt;</p>
-</blockquote>
-<p>La définition d&rsquo;une fonction est une instruction.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addition</span>(a,b) :
-		c <span style="color:#f92672">=</span> a<span style="color:#f92672">+</span>b
-		<span style="color:#66d9ef">print</span>(c)
-</code></pre></div><p>On appelle une fonction en utilisant son nom et en affectant chaque argument dans les parenthèses qui suivent son nom.<br>
-Les instructions du corps de la fonction sont alors exécutée une par une et si des variables correspondant aux nom des arguments (on parle alors d'<em>arguments formels</em>) sont rencontrées, ce sont les valeurs utilisées lors de l&rsquo;appel (les <em>arguments effectifs</em>) qui les remplacent.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">addition(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">2</span>)
-</code></pre></div><p><code>7</code>
 
-<div class="notices note" ><p>On utilise aussi le terme &ldquo;paramètre&rdquo; pour désigner les arguments formels, c&rsquo;est-à-dire les variables qui entrent dans la définition de la fonction. Et on réserve alors le terme argument aux valeurs données à ces variables au moment de l&rsquo;appel.<br>
-Dans l&rsquo;exemple, <code>a</code> et <code>b</code> sont alors les paramètres (= arguments formels) et <code>5</code> et <code>2</code> sont les arguments (= arguments effectifs).</p>
-</div>
-</p>
-
-<div class="notices warning" ><p>Malgré ce que l&rsquo;affichage peut laisser croire, la fonction précédente ne retourne rien !<br>
-La valeur de <code>c</code> est prisonnière du corps de la fonction, elle n&rsquo;est pas accessible dans le code principal. C&rsquo;est une <strong>variable locale</strong>.<br>
-Si on veut pouvoir accéder à <code>c</code> ailleurs que dans la fonction, il faut l&rsquo;extirper en utilisant un <code>return</code>.<br>
-Il ne faut ainsi pas confondre  <code>print</code> et  <code>return</code> !<br>
-Le <code>return</code> transforme l&rsquo;appel de la fonction en expression puisqu&rsquo;une valeur est retournée.<br>
-Le <code>print</code> n&rsquo;a qu&rsquo;un <strong>effet de bord</strong>. La valeur est affichée mais inutilisable. L&rsquo;appel de la fonction n&rsquo;est alors qu&rsquo;une instruction et on nomme <em>procédure</em> une telle fonction.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/3jrY3g-CPNI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<p>Ainsi, <code>addition(5,2) + 7</code> va lever une erreur : <code>TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'</code>.<br>
-En effet, comme <code>addition</code> ne retourne rien, Python la considère de type <code>NoneType</code> et ne comprend  pas pourquoi on cherche à additionner quelque chose à rien.</p>
-<p>Arrangeons cela grâce à un <code>return</code> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addition</span>(a,b) :
-		c <span style="color:#f92672">=</span> a<span style="color:#f92672">+</span>b
-		<span style="color:#66d9ef">return</span> c
-</code></pre></div><p>Maintenant, <code>addition(5,2) + 7</code> retourne gentiment 12.</p>
-<p>Dès que l&rsquo;instruction <code>return</code> est rencontrée lors de l&rsquo;appel de la fonction le flot d&rsquo;exécution du code de la fonction est interrompu et reprend à la ligne suivant l&rsquo;appel.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">demo</span>() :
-		<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Ligne exécutée car avant le return&#34;</span>)
-		<span style="color:#66d9ef">return</span>
-		<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Ligne non exécutée car après le return&#34;</span>)
-demo()
-</code></pre></div><p><code>Ligne exécutée car avant le return</code></p>
-<p>L&rsquo;exemple précédent nous montre aussi qu&rsquo;une fonction n&rsquo;a pas nécessairement d&rsquo;argument et qu&rsquo;un <code>return</code> peut ne rien retourner (il ne sert alors qu&rsquo;à interrompre l&rsquo;exécution).</p>
-<p>Comme on l&rsquo;a vu précédemment, un <code>return</code>, à l&rsquo;instar d&rsquo;un <code>break</code>, peut donc interrompre une boucle dans le corps d&rsquo;une fonction.</p>
-<p>L&rsquo;appel d&rsquo;une fonction <em>est</em> la valeur qu&rsquo;elle retourne, qu&rsquo;il s&rsquo;agisse d&rsquo;un entier, d&rsquo;une liste, d&rsquo;un dictionnaire, etc.<br>
-Une fonction peut retourner plusieurs variables séparées par des virgules. L&rsquo;appel est alors un tuple qui peut être déballé.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">somme_moyenne</span>(liste) :
-		s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-		<span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> liste :
-				s <span style="color:#f92672">+=</span> e
-		m <span style="color:#f92672">=</span> s<span style="color:#f92672">/</span>len(liste)
-		<span style="color:#66d9ef">return</span> s,m
-L <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]
-<span style="color:#66d9ef">print</span>(type(somme_moyenne(L)))
-a,b <span style="color:#f92672">=</span> somme_moyenne(L)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;somme :&#34;</span>,a,<span style="color:#e6db74">&#34;et moyenne :&#34;</span>,b)
-<span style="color:#66d9ef">print</span>(somme_moyenne(L)[<span style="color:#ae81ff">1</span>])
-</code></pre></div><p><code>&lt;class 'tuple'&gt;</code><br>
-<code>somme : 10 et moyenne : 2.5</code><br>
-<code>2.5</code></p>
-<p>Une fonction peut aussi ne pas avoir d&rsquo;argument :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HelloWorld</span>() :
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\x4B\x49\x4C\x4C\n\x41\x4C\x4C\n\x48\x55\x4D\x41\x4E</span><span style="color:#e6db74">&#39;</span>)
-</code></pre></div>
+<p> </p>
+<p>C&rsquo;est un bug de ce type, un overflow, qui a fait exploser la fusée Ariane 5 lors de son vol inaugural (le vol 501) causant la perte de la fusée et de sa charge utile (4 satellites). Ce bug est un des plus coûteux de l&rsquo;histoire (370 millions d&rsquo;euros).<br>
+C&rsquo;est au niveau de la plateforme inertielle (ensemble des capteurs, accéléromètres et gyroscopes, permettant de guider la fusée), héritée de la fusée précédente Ariane 4, que le bug apparut. Plus précisément, c&rsquo;est le capteur d&rsquo;accélération horizontale qui fut débordé pendant sa phase de calibrage (lors des premières 40 s du vol). Codée sur 8 bits, la valeur d&rsquo;accélération maximum représentable était donc de $2^7-1=127$, ce qui était suffisant pour Ariane 4 (valeur max : 64). Mais plus puissante et avec une trajectoire de décollage différente, Ariane 5 engendre des accélérations horizontales qui peuvent être jusqu&rsquo;à 5 fois plus fortes pendant la phase de décollage (valeur max : 300). Cela aboutit à une valeur absurde que le guidage essaya de compenser&hellip; boom.<br>
+Et comble de la frustration : ce calibrage en début de vol était devenu inutile pour Ariane 5.</p>
+<p> </p>
+<p><strong>Qu&rsquo;en est-il de Python ?</strong></p>
+<p>Contrairement à la plupart des langages, Python n&rsquo;alloue pas de taille à priori aux entiers. Par conséquent, ils peuvent dépasser la taille maximale adressable par le processeur et sont donc de précision arbitraire, la seule limite étant la taille totale de la RAM.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">200</span>
+</code></pre></div><p><code>1606938044258990275541962092341162602522202993782792835301376</code></p>
+<p>Si cela facilité pas mal les opérations arithmétiques sur les grands nombres, cela complique l&rsquo;étude de la complexité, car si un entier prend plusieurs mots mémoires, la plupart de ses manipulations ne sont plus des étapes élémentaires.\</p>
+<p>D&rsquo;autre part, certain package très utilisé, et particulièrement NumPy, utilisent des entiers de précision fixée.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+a <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">63</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+a<span style="color:#f92672">.</span>dtype
+</code></pre></div><p><code>dtype('int64')</code></p>
+<p>Ajouter 1 à <code>a</code> va causer un overflow sans lever d&rsquo;erreurs :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b <span style="color:#f92672">=</span> a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+b
+</code></pre></div><p><code>-9223372036854775808</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">+</span> b
+</code></pre></div><p><code>-1</code></p>
+<p> </p>
+<h2 id="codage-des-nombres-décimaux-en-machine">Codage des nombres décimaux en machine</h2>
+<h3 id="nombres-dyadiques">Nombres dyadiques</h3>
+<p>Un nombre décimal $x$ est un nombre pouvant s&rsquo;écrire sous la forme $\frac{x}{10^n}$. Son développement décimal s&rsquo;obtient en décomposant $x$ sur les puissances de 10 positives et négatives d&rsquo;exposants allant au maximum jusqu&rsquo;à -n : $\frac{5}{8}=0,625=\frac{625}{10^3} = \frac{6}{10^1}+ \frac{2}{10^2} +  \frac{5}{10^3}$. Mais la plupart des nombres ne possède pas un développement décimal fini ($\frac{1}{3}=0,33333\cdots$ par exemple).</p>
+<p>L&rsquo;équivalent binaire des nombres décimaux correspond aux <strong>nombres dyadiques</strong>. Ainsi, $\frac{5}{8}=\frac{5}{2^3}$ est un nombre dyadique et son développement dyadique s&rsquo;écrit : $\frac{5}{8}=\frac{1\times 2^2+0\times 2^1+1\times 2^0}{8}=\frac{1}{2^1}+\frac{0}{2^2}+\frac{1}{2^3}=(0,101)_2$<br>
+Comme pour les décimaux, la plupart des nombres ne possèdent pas un développement dyadique fini, mais cela ne correspond pas aux mêmes nombres ! <br>
+C&rsquo;est le cas par exemple de $0,1$ : $\frac{1}{10} = (0,0001,1001,1001,1001\cdots)_2$.</p>
+<p>La représentation de $0,1$ sera donc nécessairement tronquée par la machine :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">0.1</span><span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>
+</code></pre></div><p><code>0.010000000000000002</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">0.1</span><span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0.01</span>
+</code></pre></div><p><code>False</code></p>
+<p>Conclusion : <strong>cela n&rsquo;a pas de sens de tester une égalité sur autre chose que des entiers.</strong></p>
+<p>Il faut se restreindre à tester des inégalités :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">abs(<span style="color:#ae81ff">0.1</span><span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">0.01</span>) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1e-10</span>
+</code></pre></div><p><code>True</code></p>
+<p> </p>
+<h3 id="nombres-en-virgule-flottante">Nombres en virgule flottante</h3>
+<p>Nous connaissons la notation scientifique qui normalise tous les nombres décimaux avec une mantisse comprise entre 1 et 9,999… et une puissance de dix restituant la grandeur du nombre.<br>
+Les nombres en virgule flottante (ou au format flottant) peuvent être vus comme l&rsquo;équivalent informatique de la notation scientifique.</p>
+<p>La notation flottante comprend trois composantes :</p>
+<ul>
+<li>le signe <strong>s</strong>,</li>
+<li>la mantisse <strong>m</strong>,</li>
+<li>l&rsquo;exposant <strong>e</strong> de la puissance de b.</li>
+</ul>
+<p>Un nombre $x$ s&rsquo;écrit donc $x=s\times m\times b^e$ où $b$ est la base.</p>
+<p>En faisant varier l&rsquo;exposant, on fait « flotter » la virgule.</p>
+<p>Le format flottant est le format privilégié pour représenter les nombres décimaux en machine (la base est alors 2 bien sûr).</p>
+<p> </p>
+<h4 id="norme-ieee-754">Norme IEEE-754</h4>
+
+<div class="notices tip" ><p>La norme elle-même n&rsquo;est pas à connaître, mais son principe permet de comprendre comment les mots machines correspondant aux flottants sont construits.</p>
+</div>
+
+<p>Cette norme est actuellement le standard pour la représentation des nombres à virgule flottante en binaire.</p>
+<p>Pour une architecture 64 bits, le signe est codé sur 1 bit, l&rsquo;exposant sur 11 et la mantisse sur 52. Le format est alors dit <strong>double précision</strong> pour le distinguer du simple précision stocké sur 32 bits.</p>
+<p><img src="/float.png?width=850" alt=""></p>
+<p>Comme le premier chiffre significatif d&rsquo;un nombre binaire est nécessairement 1, ce 1 n&rsquo;est pas inclus dans les 52 bits de la mantisse. Les 52 bits permettent donc 53 bits de précision grâce à ce <strong>bit caché</strong>. On dit alors que le flottant est <strong>normalisé</strong>.</p>
+<hr>
+<p>Exemple : comment est représenté le nombre décimal $13256,625$ ?</p>
+<p>$13256,625 = (11001111001000.101)_2 = 1,1001111001000101\times 2^{13}$<br>
+Donc l&rsquo;exposant vaut 13, et comme on l&rsquo;a dit, on omet le premier 1 dans la mantisse qui s&rsquo;écrit donc :<br>
+$1001111001000101000000000000000000000000000000000000$ (les 16 bits après le premier 1 de l&rsquo;écriture binaire de $13256,625$ suivis de 36 zéros).</p>
+<p>L&rsquo;exposant est représenté avec un <strong>décalage</strong> : on lui ajoute $2^{10}-1=1023$.<br>
+Cela permet de stocker des exposants allant de $-1022$ à $1023$ sur des valeurs toutes positives allant de $1$ à $2046$.<br>
+Dans notre cas, l&rsquo;exposant est représenté avec la valeur $13+1023=1036=10000001100$</p>
+<p>Au final, la représentation au format flottant  64 bits normalisé de $13256,625$ est :<br>
+$0\;10000001100\;1001111001000101000000000000000000000000000000000000$<br>
+Elle est exacte.</p>
+<hr>
+<p>Par contre, la représentation de $0,1$ est, elle, tronquée :<br>
+$0\;01111111011\;1001100110011001100110011001100110011001100110011010$<br>
+En décimal, ce nombre correspond à $0,100000000000000005551115123126$.</p>
+<p> </p>
+<h4 id="les-soucis-des-flottants">Les soucis des flottants</h4>
+<p>En général, les 53 bits (en incluant le bit caché) permettent 15 chiffres significatifs en décimal ($\log_{10} 2^{53} = 15,95$).<br>
+Tout calcul impliquant un nombre de chiffres plus grands sera sujet à une <strong>erreur d&rsquo;arrondi</strong>.</p>
+<p>La limite supérieure de l&rsquo;erreur d&rsquo;approximation relative causée par l&rsquo;arrondi est appelée <strong>epsilon de la machine</strong> $\varepsilon$.</p>
+<p>Pour Python :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
+eps <span style="color:#f92672">=</span> sys<span style="color:#f92672">.</span>float_info<span style="color:#f92672">.</span>epsilon
+eps
+</code></pre></div><p><code>2.220446049250313e-16</code></p>
+<p>Cette valeur est logiquement $2^{-52}$, la dernière position de la mantisse.</p>
+<p>Conséquence de ces arrondis : lors de l&rsquo;addition de deux nombres à l&rsquo;écart relatif très important, il peut y avoir <strong>absorption</strong> du petit par le grand !</p>
+
+<div class="notices info" ><p>l&rsquo;addition de flottants n&rsquo;est plus associative.</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">(<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2.</span><span style="color:#f92672">**</span><span style="color:#ae81ff">53</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">2.</span><span style="color:#f92672">**</span><span style="color:#ae81ff">53</span>
+</code></pre></div><p><code>0.0</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">53</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">53</span>)
+</code></pre></div><p><code>1</code></p>
+<p>Explication : $1+2^{53} = (1, \underbrace{000\cdots000}_\text{52 zéros}\,\color{red}{1})_2 \times 2^{53} \Rightarrow$ Le dernier <span style="color:red">1</span> se voit tronqué.</p>
+<p> </p>
+
+<div class="notices info" ><p>De plus, la multiplication de flottants n&rsquo;est en général pas distributive.</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a, b, c <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">0.2</span>
+a<span style="color:#f92672">*</span>b <span style="color:#f92672">+</span> a<span style="color:#f92672">*</span>c
+</code></pre></div><p><code>30.0</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a<span style="color:#f92672">*</span>(b<span style="color:#f92672">+</span>c)
+</code></pre></div><p><code>30.000000000000004</code></p>
+<p> </p>
+
+<div class="notices info" ><p>Beaucoup de calculs en flottants entraînent  la perte de chiffres significatifs.<br>
+Les cas les plus spectaculaires intervenant lorsqu&rsquo;on soustrait deux nombres très proches.</p>
+</div>
+
+<p>Prenons, pour simplifier, l&rsquo;exemple de flottants décimaux dont la mantisse s&rsquo;écrit sur 6 bits et représentons le calcul dont la forme exacte est :<br>
+$1,2345432 - 1,23451 = 0,0000332$<br>
+Notre système hypothétique est obligé de tronquer le premier terme $1,2345432 \rightarrow 1,23454$.<br>
+Le résultat de la soustraction donne alors :<br>
+$1,23454 - 1,23451 = 0,00003$ <br>
+On n&rsquo;a plus qu&rsquo;un seul chiffre significatif alors que le résultat exact avec ses 3 chiffres significatifs pouvait très bien être représenté par notre système à mantisse de 6 bits.</p>
+<p>On parle alors de <strong>catastrophic cancellation</strong>.</p>
+<p>Même si les 15 chiffres significatifs des flottants double précision semblent beaucoup, des opérations répétées entraînent une cascade d&rsquo;arrondis qui peuvent aboutir à des résultats dramatiques comme le montre l&rsquo;exemple du missile patriot du TP.</p>
+<p>Une autre conséquence de la manière dont les flottants sont gérés est l&rsquo;existence de valeur minimale et maximale stockable.</p>
+<p>Les calculs bayésiens, par exemple, requièrent de fréquentes multiplications entre petites probabilités. Mais en dessous d&rsquo;une certaine valeur, un soupassement de capacité ou <strong>underflow</strong> amène le programme à afficher zéro.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">P <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">101</span>) :
+    <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">6</span> <span style="color:#f92672">or</span> P<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1e-306</span>) :
+        <span style="color:#66d9ef">print</span>(P)
+    <span style="color:#66d9ef">elif</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">10</span> :
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;...&#39;</span>)
+    P <span style="color:#f92672">*=</span> <span style="color:#ae81ff">5e-4</span>
+</code></pre></div><p><code>1</code><br>
+<code>0.0005</code><br>
+<code>2.5e-07</code><br>
+<code>1.25e-10</code><br>
+<code>6.250000000000001e-14</code><br>
+<code>...</code><br>
+<code>1.0097419586828971e-307</code><br>
+<code>5.0487097934146e-311</code><br>
+<code>2.5243548965e-314</code><br>
+<code>1.2621776e-317</code><br>
+<code>6.31e-321</code><br>
+<code>5e-324</code><br>
+<code>0.0</code></p>
+<p>On voit que la précision est progressivement abaissée avec l&rsquo;affichage de nombres dits subnormaux (ce processus est appelé &ldquo;gradual underflow&rdquo;) avant l&rsquo;affichage de zéro.\</p>
+<p>Le plus petit nombre qui peut être représenté avec une précision complète est :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sys<span style="color:#f92672">.</span>float_info<span style="color:#f92672">.</span>min
+</code></pre></div><p><code>2.2250738585072014e-308</code></p>
+<p>De l&rsquo;autre côté, on a la possibilité d&rsquo;un dépassement de capacité ou <strong>overflow</strong>. Le plus grand nombre affichable est :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sys<span style="color:#f92672">.</span>float_info<span style="color:#f92672">.</span>max
+</code></pre></div><p><code>1.7976931348623157e+308</code></p>
+
 
 <footer class="footline">
 	
@@ -1078,20 +1061,6 @@ a,b <span style="color:#f92672">=</span> somme_moyenne(L)
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1102,141 +1071,6 @@ a,b <span style="color:#f92672">=</span> somme_moyenne(L)
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1402,6 +1236,158 @@ a,b <span style="color:#f92672">=</span> somme_moyenne(L)
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 

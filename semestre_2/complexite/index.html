@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Strucutres de contrôle - Cours info TSI</title>
+    <title>Complexité - Cours info TSI</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -65,7 +65,7 @@ onload='renderMathInElement(document.body);'></script>
     
 	
   </head>
-  <body class="" data-url="/python/structcontr/">
+  <body class="" data-url="/semestre_2/complexite/">
     <nav id="sidebar" class="">
 
 
@@ -126,7 +126,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/python/" title="Python" class="dd-item
-        parent
+        
         
         
         ">
@@ -215,7 +215,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/python/structcontr/" title="Strucutres de contrôle" class="dd-item active">
+      <li data-nav-id="/python/structcontr/" title="Strucutres de contrôle" class="dd-item ">
         <a href="/python/structcontr/">
         Strucutres de contrôle
         
@@ -467,7 +467,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_2/" title="Semestre 2" class="dd-item
-        
+        parent
         
         
         ">
@@ -535,7 +535,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_2/complexite/" title="Complexité" class="dd-item ">
+      <li data-nav-id="/semestre_2/complexite/" title="Complexité" class="dd-item active">
         <a href="/semestre_2/complexite/">
         Complexité
         
@@ -636,7 +636,7 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Strucutres de contrôle
+                   Complexité
                  
                   </span>
                 </div>
@@ -645,35 +645,8 @@ onload='renderMathInElement(document.body);'></script>
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#instruction-daffectation">Instruction d&rsquo;affectation</a>
-      <ul>
-        <li><a href="#définition">Définition</a></li>
-        <li><a href="#instruction-plutôt-quexpression">Instruction plutôt qu&rsquo;expression</a></li>
-        <li><a href="#réaffectation">Réaffectation</a></li>
-        <li><a href="#affectation-parallèle">Affectation parallèle</a></li>
-        <li><a href="#noms-de-variable">Noms de variable</a></li>
-      </ul>
-    </li>
-    <li><a href="#instuction-conditionnelle">Instuction conditionnelle</a>
-      <ul>
-        <li><a href="#ifelifelse"><code>if</code>,<code>elif</code>,<code>else</code></a></li>
-      </ul>
-    </li>
-    <li><a href="#boucle-while">Boucle <code>while</code></a>
-      <ul>
-        <li><a href="#break"><code>break</code></a></li>
-        <li><a href="#return"><code>return</code></a></li>
-      </ul>
-    </li>
-    <li><a href="#boucle-for">Boucle <code>for</code></a>
-      <ul>
-        <li><a href="#range"><code>range</code></a></li>
-        <li><a href="#une-chaîne-de-caractères">une chaîne de caractères</a></li>
-        <li><a href="#une-liste-un-tuple">une liste, un tuple</a></li>
-        <li><a href="#un-dictionnaire">un dictionnaire</a></li>
-      </ul>
-    </li>
-    <li><a href="#définition-dune-fonction">Définition d&rsquo;une fonction</a></li>
+    <li><a href="#complexité-en-temps">complexité en temps</a></li>
+    <li><a href="#complexité-en-espace">Complexité en espace</a></li>
   </ul>
 </nav>
     </div>
@@ -693,355 +666,269 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-<h1 id="structures-de-contrôle">Structures de contrôle</h1>
-<h2 id="instruction-daffectation">Instruction d&rsquo;affectation</h2>
-<h3 id="définition">Définition</h3>
-<p>Lorsqu&rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction <code>id()</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(<span style="color:#ae81ff">3.7</span>)
-</code></pre></div><p><code>4387417928</code></p>
-<p>Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&rsquo;est à ça que servent les variables. Une variable est liée à un objet grâce à une <strong>affectation</strong> et identifie cet objet pour les calculs suivants. Une affectation est une instruction (pas de retour).</p>
-<p>En Python, une affectation s&rsquo;opère avec le symbole <code>=</code>.</p>
+<h1 id="complexité-dun-algorithme">Complexité d&rsquo;un algorithme</h1>
+<p>Parmi les 3 questions qu&rsquo;on peut se poser naturellement devant un algorithme (termine-t-il ? est-il correct ? combien de temps met-il ?), on a laissé la dernière en plan dans le chapitre précédent.</p>
+<p>La question du temps mis par l&rsquo;algorithme est le problème de la <strong>complexité</strong> de l&rsquo;algorithme.</p>
+<p>L&rsquo;objectif premier d&rsquo;un calcul de complexité algorithmique est de pouvoir comparer l’efficacité d’algorithmes résolvant le même problème. Dans une situation donnée, cela permet donc d&rsquo;établir lequel des algorithmes disponibles est le meilleur (du point de vue temps d&rsquo;exécution).</p>
+<p> 
 
-<div class="notices note" ><p>En pseudocode, on utilise généralement <code>:=</code> ou <code>←</code> pour les affectations.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/sNJbVamAQ6A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<p>La variable est un tiroir avec une étiquette. Et comme on l&rsquo;a vu, en Python, pas besoin de choisir un tiroir correspondant au type d&rsquo;objet qu&rsquo;il va contenir, c&rsquo;est l&rsquo;interpréteur qui s&rsquo;en charge pour nous (le typage est dynamique).</p>
-<p><img src="/variable0.png?width=500px" alt=""></p>
-<p><img src="/variable1.png?width=500px" alt=""></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-b <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>
-a <span style="color:#f92672">*</span> b
-</code></pre></div><p><code>-6</code></p>
-<p>Si on veut pouvoir utiliser le résultat de <code>a * b</code> pour des calculs ultérieurs, il faut lui aussi le stocker en mémoire.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> a <span style="color:#f92672">*</span> b
-c
-</code></pre></div><p><code>-6</code></p>
-<p>On peut interroger le type d&rsquo;une variable avec la fonction <code>type()</code> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>
-type(c)
-</code></pre></div><p><code>&lt;class 'tuple'&gt;</code></p>
-<p> </p>
-<h3 id="instruction-plutôt-quexpression">Instruction plutôt qu&rsquo;expression</h3>
-<p>Le fait que l&rsquo;affectation soir une instruction plutôt qu&rsquo;une expression est un choix d&rsquo;écriture du langage (en C, l&rsquo;affectation est une expression).<br>
-D&rsquo;ailleurs, Python 3.8 a introduit l&rsquo;opérateur <code>:=</code> (dit le <em>walrus opérator</em> ou <em>opérateur de morse</em> du fait de sa ressemblance à un morse&hellip;) permettant justement une <strong>expression d&rsquo;affectation</strong> au sein d&rsquo;une expression plus large. L&rsquo;intérêt est de permettre de raccourcir l&rsquo;écriture ou d&rsquo;éviter les répétitions dans certains cas.<br>
-L&rsquo;opérateur de morse n&rsquo;est pas à connaître, mais il va nous permettre, dans les deux exemples suivants, de bien faire la différence entre une instruction et une expression.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">if</span> (n :<span style="color:#f92672">=</span> len(a)) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>:
-    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;La liste est trop grande ({n} élements alors qu&#39;on en attend 5 au plus)&#34;</span>)
-</code></pre></div><blockquote>
-<p>Montrer que sans <code>:=</code>, on aurait soit une répétition, soit une ligne en plus.</p>
-</blockquote>
-<p>Autre exemple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">while</span> (choix :<span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;Entrer q ou p : &#39;</span>)) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;q&#39;</span>:
-    <span style="color:#66d9ef">if</span> choix <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;p&#39;</span>:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Salut !&#34;</span>)
-</code></pre></div><blockquote>
-<p>Comment aurait-on dû écrire ce code sans <code>:=</code> ?</p>
-</blockquote>
-<p> </p>
-<h3 id="réaffectation">Réaffectation</h3>
-<p>Une affectation ne retourne rien mais a un effet sur la mémoire : l&rsquo;adresse de la variable est modifiée à chaque nouvelle affectation. C&rsquo;est ce qui rend possible les <strong>réaffectations</strong> à partir de la variable elle-même.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(a)
-</code></pre></div><p><code>4304751488</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><p><code>4304751520</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-id(a)
-</code></pre></div><p><code>4304751520</code></p>
-
-<div class="notices info" ><p>Ces types de <strong>réaffectation</strong> sont si fréquents qu&rsquo;il existe une notation raccourcie : <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>//=</code>, <code>%=</code>.<br>
-Ainsi, <code>a += 1</code> équivaut à <code>a = a + 1</code> et <code>b /= 5</code> équivaut à <code>b = b/5</code>.</p>
-</div>
-
-<p> </p>
-<h3 id="affectation-parallèle">Affectation parallèle</h3>
-<p>Comment faire si on veut permuter les valeurs auxquelles sont liées deux variables ? Dès qu&rsquo;on écrit <code>a = b</code>, la valeur initiale de <code>a</code> est perdue. Et si on commence par <code>b = a</code>, c&rsquo;est la valeur initiale de <code>b</code> qui est perdue. Il faudrait donc utiliser une variable temporaire et écrire : <code>tmp = a</code>, <code>a = b</code> et <code>b = tmp</code>.<br>
-Mais l&rsquo;affectation parallèle de Python va nous permettre d&rsquo;être plus élégants. Il suffit en effet d&rsquo;une petite ligne :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;haut&#39;</span>
-b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bas&#39;</span>
-a , b <span style="color:#f92672">=</span> b , a
-<span style="color:#66d9ef">print</span>(a,b)
-</code></pre></div><p><code>bas haut</code></p>
-
-<div class="notices info" ><p><strong>L&rsquo;affectation parallèle</strong> repose sur le <strong>dépaquetage (<em>unpacking</em>) de tuples</strong>.<br>
-En effet, des objets séparés par des virgules forment un tuple (pas besoin de parenthèses). Donc <code>a,b,c = 1,2,3</code> correspond au dépaquetage du tuple <code>(1,2,3)</code> sur les 3 variables <code>a</code>, <code>b</code> et <code>c</code>.</p>
-</div>
-
-<p> </p>
-<h3 id="noms-de-variable">Noms de variable</h3>
-<p>Règles sur les noms de variables :</p>
-<ul>
-<li>ils sont sensibles à la casse (minuscule ou majuscule)</li>
-<li>ils peuvent contenir n&rsquo;importe quelles lettres ou chiffres et le tiret-bas &ldquo;_&rdquo; mais ne doivent pas commencer par un chiffre.</li>
-<li>certains noms sont interdits (attention en particulier à lambda) :</li>
-</ul>
-<p><code>and</code>  <code>assert</code>  <code>break</code>  <code>class</code>  <code>continue</code>  <code>def</code>  <code>del</code>  <code>elif</code>  <code>else</code>  <code>except</code>  <code>finally</code>  <code>for</code>  <code>from</code>  <code>global</code>  <code>if</code><br>
-<code>import</code>  <code>in</code>  <code>is</code>  <code>lambda</code>  <code>nonlocal</code>  <code>not</code>  <code>or</code>  <code>pass</code>  <code>print</code>  <code>raise</code>  <code>return</code>  <code>try</code>  <code>while</code>  <code>yield</code></p>
-
-<div class="notices warning" ><p>Il est important pour la lisibilité de son code de donner les noms les plus explicites possibles aux variables. Les rapports de jury le répète tous les ans&hellip;</p>
-</div>
-
-<p>Rapport 2019 de l&rsquo;épreuve de Centrale par exemple :</p>
-<blockquote>
-<p><strong>Des noms de variables explicites aident à la compréhension du code. De trop nombreux candidats utilisent des noms de variables quelconques (a, b, c&hellip;) ce qui nuit à la compréhension du programme. La clarté du programme (en particulier le choix des noms de variables) ainsi que la présence de commentaires opportuns sont prises en compte dans l’évaluation.</strong></p>
-</blockquote>
-<p> </p>
-<h2 id="instuction-conditionnelle">Instuction conditionnelle</h2>
-<p>Les instructions conditionnelles permettent de rediriger le flot d&rsquo;exécution d&rsquo;un programme en proposant des alternatives.</p>
-<h3 id="ifelifelse"><code>if</code>,<code>elif</code>,<code>else</code></h3>
-<p>La structure <code>if ... elif ... else</code> permet d&rsquo;exécuter des instructions seulement si une condition, donnée par le résultat d&rsquo;un ou plusieurs tests logiques, est vérifiée.</p>
-<p><code>if</code> &lt;<em>expression logique 1</em>&gt; :<br>
-        &lt;<em>bloc d&rsquo;instructions 1</em>&gt;<br>
-<code>elif</code> &lt;<em>expression logique 2</em>&gt; :<br>
-        &lt;<em>bloc d&rsquo;instructions 2</em>&gt;<br>
-<strong>&hellip;</strong><br>
-<code>else</code> :<br>
-        &lt;<em>bloc d&rsquo;instructions</em>&gt;</p>
-<p>Si l'&lt;<em>expression logique 1</em>&gt; est évaluée comme vraie, le &lt;<em>bloc d&rsquo;instructions 1</em>&gt; est exécuté ; dans le cas contraire, si l'&lt;<em>expression logique 2</em>&gt; est évaluée comme vraie, le &lt;<em>bloc d&rsquo;instructions 2</em>&gt; est exécuté, et ainsi de suite ; et si aucune des expressions logiques précédentes n&rsquo;est vraie, le bloc d&rsquo;instructions faisant suite au <code>else:</code> est exécuté.</p>
-<p>Par exemple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>) :
-    <span style="color:#66d9ef">if</span> x<span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span> :
-        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est inférieur ou égal à 3&#39;</span>)
-    <span style="color:#66d9ef">elif</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span> :
-        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est plus grand que 5&#39;</span>)
-    <span style="color:#66d9ef">else</span> :
-        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;doit être 4 ou 5&#39;</span>)
-</code></pre></div><pre><code>0 est inférieur ou égal à 3
-1 est inférieur ou égal à 3
-2 est inférieur ou égal à 3
-3 est inférieur ou égal à 3
-4 doit être 4 ou 5
-5 doit être 4 ou 5
-6 est plus grand que 5
-7 est plus grand que 5
-8 est plus grand que 5
-9 est plus grand que 5
-</code></pre>
-
-<div class="notices note" ><p>Python reconnaît comme vrai n&rsquo;importe quel type de donnée (même pas besoin d&rsquo;expression logique) du moment qu&rsquo;il ne s&rsquo;agit ni de l&rsquo;entier <code>0</code>, du décimal <code>0.</code>, de la chaîne de caractères vide <code>''</code>, du tuple vide <code>()</code>, de la liste vide <code>[]</code>, ou encore de la valeur <code>None</code>.</p>
-</div>
-
-<p>Exemple :<br>
-Dans le calendrier grégorien, une année est bissextile si elle est divisible par 4 sauf si elle est aussi divisible par 100 à l&rsquo;exception des années divisibles par 400 qui sont bien bissextiles.<br>
-Le programme suivant détermine si une année est bissextile :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">année <span style="color:#f92672">=</span> <span style="color:#ae81ff">2022</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">400</span> :
-    est_bissextile <span style="color:#f92672">=</span> True
-<span style="color:#66d9ef">elif</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> :
-    est_bissextile <span style="color:#f92672">=</span> False
-<span style="color:#66d9ef">elif</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span> :
-    est_bissextile <span style="color:#f92672">=</span> True
-<span style="color:#66d9ef">else</span> :
-    est_bissextile <span style="color:#f92672">=</span> False
-s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;est une&#39;</span> <span style="color:#66d9ef">if</span> est_bissextile <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;n&#39;est pas une&#34;</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;L&#39;année&#34;</span>, année , s ,<span style="color:#e6db74">&#34;année bissextile.&#34;</span>)
-</code></pre></div><p><code>L'année 2022 n'est pas une année bissextile.</code></p>
-<p> </p>
-<p> </p>
-<h2 id="boucle-while">Boucle <code>while</code></h2>
-<p>Une boucle <code>while</code> ou &ldquo;tant que&rdquo; permet de répéter une suite d&rsquo;instructions <em>tant qu'</em> une condition est respectée.<br>
-La suite d&rsquo;instructions répétées devra être indentée et forme alors le corps de la boucle.</p>
-
-<div class="notices warning" ><p>Les boucles <code>while</code> sont dangereuses ! Rien ne dit en effet que la condition sera un jour fausse et la boucle peut donc tourner indéfiniment.<br>
-Les boucles infinis posent le problème de la terminaison d&rsquo;un programme.</p>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> :
-    i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">print</span>(i,end <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.&#39;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">La boucle est finie...&#39;</span>)
-</code></pre></div><pre><code>1.2.3.4.5.6.7.8.9.10.
-La boucle est finie...
-</code></pre>
-<p>Le compteur <code>i</code> est initialisé à <code>0</code> et comme <code>0</code> est inférieur à <code>10</code>, la boucle <code>while</code> démarre. À chaque itération, <code>i</code> est incrémenté de <code>1</code> et sa valeur affichée. Puis <code>i</code> atteint <code>10</code> et à l&rsquo;itération suivante <code>i &lt; 10</code> devient faux, la boucle s&rsquo;arrête et l&rsquo;éxécution reprend après la boucle.</p>
-<p>Un exemple plus intéressant :<br>
-implémentons l&rsquo;algorithme d&rsquo;Euclide permettant de déterminer le plus grand diviseur commun de deux entiers.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a , b <span style="color:#f92672">=</span> <span style="color:#ae81ff">1920</span> , <span style="color:#ae81ff">1080</span>
-<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;pgcd({a},{b}) = &#39;</span>,end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>)
-<span style="color:#66d9ef">while</span> b :
-    a , b <span style="color:#f92672">=</span> b, a <span style="color:#f92672">%</span> b
-<span style="color:#66d9ef">print</span>(a)
-</code></pre></div><p><code>pgcd(1920,1080) = 120</code></p>
-<p>La boucle continue jusqu&rsquo;à ce que <code>b</code> divise <code>a</code>. À chaque itération, <code>b</code> prend la valeur du reste de la division euclidienne de <code>a</code> par <code>b</code> et <code>a</code> prend l&rsquo;ancienne valeur de <code>b</code>.<br>
-<code>while b</code> est équivalent à <code>while b != 0</code> puisque la valeur <code>0</code> est évaluée comme fausse.</p>
-<p> </p>
-<h3 id="break"><code>break</code></h3>
-<p>L&rsquo;instruction <code>break</code>, placée dans le bloc d&rsquo;instructions d&rsquo;une boucle, met immédiatement fin à cette boucle lorsqu&rsquo;arrive son tour d&rsquo;être exécutée.<br>
-L&rsquo;exécution reprend à l&rsquo;instruction suivant la boucle.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">while</span> True :
-    x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> (x <span style="color:#f92672">%</span> <span style="color:#ae81ff">15</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">%</span> <span style="color:#ae81ff">25</span>) :
-        <span style="color:#66d9ef">break</span>
-<span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est divisible à la fois par 15 et 25.&#39;</span>)
-</code></pre></div><p><code>75 est divisible à la fois par 15 et 25.</code></p>
-<p>La condition du <code>while</code> est ici littéralement toujours vraie donc la seule sortie possible de la boucle passe par une exécution de l&rsquo;instruction <code>break</code>, ce qui ne peut arriver que si <code>x</code> est à la fois divisible par 15 et 25 (c&rsquo;est une pratique risquée !).</p>
-<p>De la même manière, pour trouver l&rsquo;indice de la première occurrence d&rsquo;un nombre négatif dans une liste :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">99</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">37</span>, <span style="color:#ae81ff">43</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">124</span>]
-<span style="color:#66d9ef">for</span> i, a <span style="color:#f92672">in</span> enumerate(liste) :
-    <span style="color:#66d9ef">if</span> a <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> :
-        <span style="color:#66d9ef">break</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;L&#39;élément d&#39;indice&#34;</span>,i,<span style="color:#e6db74">&#34;valant&#34;</span>,a,<span style="color:#e6db74">&#34;est le premier élément négatif.&#34;</span>)
-</code></pre></div><p><code>L'élément d'indice 5 valant -2 est le premier élément négatif.</code></p>
-
-<div class="notices note" ><p>Après la sortie de la boucle, les variables <code>i</code> et <code>a</code> gardent les valeurs qu&rsquo;elles ont au moment de l&rsquo;instruction <code>break</code>.</p>
-</div>
-
-<p> </p>
-<h3 id="return"><code>return</code></h3>
-<p>L&rsquo;instruction <code>return</code> permet elle aussi de s&rsquo;échapper d&rsquo;une boucle.</p>
-<p>En effet, l&rsquo;utilisation du <code>return</code> a pour effet de sortir du corps d&rsquo;une fonction donc à fortiori, si une boucle est utilisée dans la définition de cette fonction, le <code>return</code> permet aussi d&rsquo;en sortir.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">vol</span>(i) :
-    t <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) :
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> i<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> :
-            i <span style="color:#f92672">//=</span> <span style="color:#ae81ff">2</span>
-        <span style="color:#66d9ef">elif</span> i <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> :
-            i <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
-        <span style="color:#66d9ef">else</span> :
-            <span style="color:#66d9ef">return</span> t
-        t <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</code></pre></div><p><code>vol(27)</code> renvoie alors <code>111</code>.</p>
-<p> </p>
-<p> </p>
-<h2 id="boucle-for">Boucle <code>for</code></h2>
-<p>Une boucle <code>for</code> se différencie d&rsquo;une boucle <code>while</code> en ce que le nombre d&rsquo;itérations est connu à l&rsquo;avance.</p>
-<p>La structure d&rsquo;une telle boucle est en effet :</p>
-<p><code>for</code> &lt;<em>élément</em>&gt; <code>in</code> &lt;<em>itérable</em>&gt;  :<br>
-        &lt;<em>bloc d&rsquo;instructions</em>&gt;</p>
-<p>L&rsquo;itérable est une collection d&rsquo;éléments et le bloc d&rsquo;instructions est alors répété autant de fois que l&rsquo;itérable contient d&rsquo;éléments.</p>
-<p>Passons en revue quelques itérables.</p>
-<h3 id="range"><code>range</code></h3>
-<p><code>range</code> permet d&rsquo;itérer sur une suite arithmétique d&rsquo;entiers :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>) :
-	<span style="color:#66d9ef">print</span>(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.&#34;</span>)
-</code></pre></div><p><code>0.1.2.3.4.</code></p>
-
-<div class="notices warning" ><p>L&rsquo;itération sur <code>range(n)</code> va de $0$ à $n-1$ par pas de 1.</p>
-</div>
-
-<p>On peut spécifier un point de départ et un pas différents en les passant en argument : <code>range(depart,fin,pas)</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>) :
-	<span style="color:#66d9ef">print</span>(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.&#34;</span>)
-</code></pre></div><p><code>5.6.7.8.9.</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">20</span>) :
-	<span style="color:#66d9ef">print</span>(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.&#34;</span>)
-</code></pre></div><p><code>0.20.40.60.80.</code></p>
-<p> </p>
-<h3 id="une-chaîne-de-caractères">une chaîne de caractères</h3>
-<p>Itérer sur une chaîne de caractères  décompose la chaîne caractère par caractère :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> car <span style="color:#f92672">in</span> <span style="color:#e6db74">&#39;abc😱&#39;</span> :
-	<span style="color:#66d9ef">print</span>(car<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span>)
-</code></pre></div><p><code>aa bb cc 😱😱 </code></p>
-<p> </p>
-<h3 id="une-liste-un-tuple">une liste, un tuple</h3>
-<p>On peut de même parcourir une liste ou un tuple élément par élément.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;🙈&#39;</span>,<span style="color:#e6db74">&#39;🙊&#39;</span>,<span style="color:#e6db74">&#39;🙉&#39;</span>),(<span style="color:#e6db74">&#39;🌖&#39;</span>,<span style="color:#e6db74">&#39;🌗&#39;</span>,<span style="color:#e6db74">&#39;🌘&#39;</span>),]
-s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">for</span> tuple <span style="color:#f92672">in</span> L :
-	<span style="color:#66d9ef">for</span> element <span style="color:#f92672">in</span> tuple :
-		s <span style="color:#f92672">+=</span> element<span style="color:#f92672">*</span>i
-		i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">print</span>(s)
-</code></pre></div><p><code>🙈🙊🙊🙉🙉🙉🌖🌖🌖🌖🌗🌗🌗🌗🌗🌘🌘🌘🌘🌘🌘</code></p>
-<p> </p>
-<h3 id="un-dictionnaire">un dictionnaire</h3>
-<p>Pour pacourir uniquement les clés d&rsquo;un dictionnaire, on peut utiliser la méthode <code>keys</code> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Dico <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;pwd_1&#39;</span> : <span style="color:#e6db74">&#39;123456&#39;</span>, <span style="color:#e6db74">&#39;pwd_2&#39;</span> : <span style="color:#e6db74">&#39;qwerty&#39;</span>, <span style="color:#e6db74">&#39;pwd_3&#39;</span> : <span style="color:#e6db74">&#39;password&#39;</span>}
-<span style="color:#66d9ef">for</span> cle <span style="color:#f92672">in</span> Dico<span style="color:#f92672">.</span>keys() :
-    <span style="color:#66d9ef">print</span>(cle,<span style="color:#e6db74">&#39;-&gt;&#39;</span>,Dico[cle])
-</code></pre></div><p><code>pwd_1 -&gt; 123456</code><br>
-<code>pwd_2 -&gt; qwerty</code><br>
-<code>pwd_3 -&gt; password</code></p>
-<p>Et grâce à la méthode <code>items</code>, on peut déballer clés et valeurs associées dans un tuple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> cle,valeur <span style="color:#f92672">in</span> Dico<span style="color:#f92672">.</span>items() :
-    <span style="color:#66d9ef">print</span>(cle,<span style="color:#e6db74">&#39;-&gt;&#39;</span>,valeur)
-</code></pre></div><p><code>pwd_1 -&gt; 123456</code><br>
-<code>pwd_2 -&gt; qwerty</code><br>
-<code>pwd_3 -&gt; password</code></p>
-<p>Construisons par exemple un nouveau dictionnaire inversant clés et valeurs :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Dico <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;$&#39;</span> : <span style="color:#e6db74">&#39;dollar&#39;</span>, <span style="color:#e6db74">&#39;€&#39;</span> : <span style="color:#e6db74">&#39;euro&#39;</span>, <span style="color:#e6db74">&#39;¥&#39;</span> : <span style="color:#e6db74">&#39;yen&#39;</span>, <span style="color:#e6db74">&#39;£&#39;</span> : <span style="color:#e6db74">&#39;livre&#39;</span>}
-Dico_inv <span style="color:#f92672">=</span> {}
-<span style="color:#66d9ef">for</span> cle,valeur <span style="color:#f92672">in</span> Dico<span style="color:#f92672">.</span>items() :
-    Dico_inv[valeur] <span style="color:#f92672">=</span> cle
-<span style="color:#66d9ef">print</span>(Dico_inv)
-</code></pre></div><p><code>{'dollar': '$', 'euro': '€', 'yen': '¥', 'livre': '£'}</code></p>
-<p>Dernier exemple, modifions une à une chaque valeur d&rsquo;un dictionnaire  :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dico_notes <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Kurt&#39;</span> : <span style="color:#ae81ff">19</span>, <span style="color:#e6db74">&#39;Kris&#39;</span> : <span style="color:#ae81ff">11</span>, <span style="color:#e6db74">&#39;Dave&#39;</span> : <span style="color:#ae81ff">13</span>, <span style="color:#e6db74">&#39;Pat&#39;</span> : <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;Courtney&#39;</span> : <span style="color:#ae81ff">15</span>}
-<span style="color:#66d9ef">for</span> eleve,note <span style="color:#f92672">in</span> dico_notes<span style="color:#f92672">.</span>items() :
-    dico_notes[eleve] <span style="color:#f92672">=</span> note<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">print</span>(dico_notes)
-</code></pre></div><p><code>{'Kurt': 20, 'Kris': 12, 'Dave': 14, 'Pat': 11, 'Courtney': 16}</code>
  </p>
-<p> </p>
-<h2 id="définition-dune-fonction">Définition d&rsquo;une fonction</h2>
-<p>Une fonction est un ensemble d&rsquo;instructions auxquelles on accède par un raccourci : le nom de la fonction. Elles se comportent comme des sous-programmes à l&rsquo;intérieur du programme principal. Et comme tout programme, elles peuvent agir sur des données, les entrées, et fournir de nouvelles données, les sorties.</p>
-<p>La signature d&rsquo;une fonction résume ces points clés : son nom, les différents arguments et leurs types, les différentes sorties et leur type.
-<code>nom(arg_1:type, arg_2:type, etc) -&gt; sortie_1:type, sortie_2:type, etc</code></p>
-<p>On <strong>définit une fonction</strong> grâce au mot clé <code>def</code> en suivant la structure suivante :</p>
-<blockquote>
-<p><code>def</code> nom<code>(</code>arguments séparés par des virgules<code>)</code> <code>:</code><br>
-        &lt; <em>corps de la fonction contenant les différentes instructions</em> &gt;</p>
+<h2 id="complexité-en-temps">complexité en temps</h2>
+<p>Réaliser un calcul de complexité en temps revient à décompter le nombre d’opérations élémentaires (affectation, calcul arithmétique ou logique, comparaison…) effectuées par l’algorithme.</p>
+<p>Pour rendre ce calcul réalisable, on émettra l&rsquo;hypothèse que toutes les opérations élémentaires sont à égalité de coût. En pratique ce n&rsquo;est pas tout à fait exact, mais cette approximation est cependant raisonnable.</p>
+<p>On pourra donc estimer que <strong>le temps d&rsquo;exécution de l&rsquo;algorithme est proportionnel au nombre d’opérations élémentaires</strong>.</p>
+<p>La complexité $T(n)$ d&rsquo;un algorithme va naturellement être <strong>fonction de la taille $n$ des données passées en entrée</strong>. Cette dépendance est logique, plus ces données seront volumineuses, plus il faudra d&rsquo;opérations élémentaires pour les traiter.</p>
+<p>Souvent la complexité dépendra aussi de la donnée en elle même et pas seulement de sa taille. En particulier la façon dont sont réparties les différentes valeurs qui la constituent.</p>
+<p>Rappelons-nous par exemple l&rsquo;algorithme de recherche séquentielle d’un élément dans une liste non triée du cours &ldquo;structures de données&rdquo;. Le principe de l&rsquo;algorithme est simple, on parcourt un par un les éléments jusqu&rsquo;à trouver, ou pas, celui recherché. Ce parcours peut s’arrêter dès le début si le premier élément est &ldquo;le bon&rdquo;. Mais on peut également être amené à parcourir la liste entière si l’élément cherché est en dernière position, ou même n&rsquo;y figure pas. Le nombre d&rsquo;opérations élémentaires effectuées dépend donc non seulement de la taille de la liste, mais également de la répartition de ses valeurs.</p>
+<p>Cette remarque nous conduit à préciser un peu notre définition de la complexité en temps. En toute rigueur, on devra en effet distinguer trois formes de complexité en temps :</p>
+<hr>
+<ul>
+<li>la <strong>complexité dans le meilleur des cas</strong> : c&rsquo;est la situation la plus favorable, qui correspond par exemple à la recherche d&rsquo;un élément situé à la première postion d&rsquo;une liste, ou encore au tri d&rsquo;une liste déjà triée.</li>
+<li>la <strong>complexité dans le pire des cas</strong> : c&rsquo;est la situation la plus défavorable, qui correspond par exemple à la recherche d&rsquo;un élément dans une liste alors qu&rsquo;il n&rsquo;y figure pas, ou encore au tri par ordre croissant d&rsquo;une liste triée par ordre décroissant.</li>
+<li>la <strong>complexité en moyenne</strong> : on suppose là que les données sont réparties selon une certaine loi de probabilités.</li>
+</ul>
+<hr>
+<p>On calcule le plus souvent la complexité dans le pire des cas, car elle apporte une garantie (pas de mauvaises surprises en tablant sur le pire).</p>
+<p>Dernière chose importante à prendre en considération, si la donnée est un nombre entier, la façon de le représenter influera beaucoup sur l’appréciation de la complexité.</p>
+<p>Par exemple, si $n=2020$, on peut considérer que la taille de $n$ est :<br>
+soit la valeur de $n$ en elle-même, façon la plus naturelle de voir les choses, c.-à-d. $2020$,<br>soit le nombre de chiffres que comporte l&rsquo;écriture en binaire de $n$, c.-à-d. 11,<br>
+soit le nombre de chiffres que comporte l&rsquo;écriture en décimal de $n$, c.-à-d. 4.</p>
+<p>Vu la finalité informatique de nos algorithmes, nous devrions choisir le nombre de chiffres dans l&rsquo;écriture binaire de l&rsquo;entier, mais par souci de simplicité, on considèrera le plus souvent la valeur de l&rsquo;entier comme taille.<br>
+Néanmoins, lors de l&rsquo;étude de la complexité des algorithmes arithmétiques (test de primalité, algorithme d&rsquo;Euclide, etc.), la taille de l&rsquo;entier est le paramètre important et il faudra donc considérer la taille de l&rsquo;entrée $n$ comme étant $\log_2(n)$.</p>
+<p><em>Exemple : la fonction somme</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">somme</span>(L) :
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>    s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> L :
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>        s <span style="color:#f92672">+=</span> e
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    <span style="color:#66d9ef">return</span> s
+</code></pre></div><blockquote>
+<p>Le calcul <code>somme([1,2,3])</code> nécessite à priori 4 opérations (1 fois la ligne 2, et 3 fois la ligne 4). Toutefois, la notion d&rsquo;opération élémentaire n&rsquo;est pas précisément définie : on pourrait considérer par exemple que la ligne 4 fait non pas une, mais deux opérations élémentaires (une somme puis une affectation) et alors <code>somme([1,2,3])</code> nécessiterait 7 opérations.</p>
 </blockquote>
-<p>La définition d&rsquo;une fonction est une instruction.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addition</span>(a,b) :
-		c <span style="color:#f92672">=</span> a<span style="color:#f92672">+</span>b
-		<span style="color:#66d9ef">print</span>(c)
-</code></pre></div><p>On appelle une fonction en utilisant son nom et en affectant chaque argument dans les parenthèses qui suivent son nom.<br>
-Les instructions du corps de la fonction sont alors exécutée une par une et si des variables correspondant aux nom des arguments (on parle alors d'<em>arguments formels</em>) sont rencontrées, ce sont les valeurs utilisées lors de l&rsquo;appel (les <em>arguments effectifs</em>) qui les remplacent.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">addition(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">2</span>)
-</code></pre></div><p><code>7</code>
+<p>Cette imprécision est sans conséquence, car on estime la complexité &ldquo;à la louche&rdquo;. Pour définir formellement ce que signifie ce &ldquo;à la louche&rdquo;, nous introduisons les trois notations suivantes :</p>
+<p>Étant donné deux fonctions $\mathbb{N}\rightarrow \mathbb{R}^*_+$ $f$ et $g$ :</p>
+<ul>
+<li>$f(n)$ est un grand $\mathcal{O}$ de $g(n)$ s&rsquo;il existe une constante $k_2$ telle que pour tout $n$ assez grand $f(n)≤k_2\cdot g(n)$ ; on note $f(n) = \mathcal{O}(g(n))$. $g$ domine $f$ asymptotiquement.</li>
+<li>$f(n)$ est un grand $\Omega$ de $g(n)$ s&rsquo;il existe une constante $k_1&gt;0$ telle que pour tout $n$ assez grand $k_1\cdot g(n)≤f(n)$ ; on note $f(n) = \Omega(g(n))$.</li>
+<li>$f(n)$ est un grand $\Theta$ de $g(n)$ s&rsquo;il existe deux constantes $k_1&gt;0$ et $k_2$ telles que pour tout $n$ assez grand $k_1\cdot g(n)≤f(n)≤k_2\cdot g(n)$ ; on note $f(n) = \Theta(g(n))$. $f$ et $g$ sont asymptotiquement du même ordre de grandeur.</li>
+</ul>
+<p><img src="/compf.png" alt=""></p>
+<p>Comme on l&rsquo;a dit, la complexité dans le pire des cas est généralement la plus intéressante ; elle correspond à la première notation (majoration).<br>
+Un calcul de complexité en temps $T(n)$ va donc le plus souvent consister à chercher une fonction des données d&rsquo;entrée $g(n)$ telle que $T(n) = \mathcal{O}(g(n))$.</p>
+<p>Quelques relations utiles (valables pour toute constante $c$) :<br>
+(1) $\mathcal{O}(n+c)=\mathcal{O}(n)$<br>
+(2) $\mathcal{O}(cn)=\mathcal{O}(n)$<br>
+(3) $\mathcal{O}(n/c)=\mathcal{O}(n)$<br>
+(4) $\mathcal{O}(c)=1$<br>
+(5) $n\times\mathcal{O}(1)=\mathcal{O}(n)$</p>
+<p>Dans la plupart des calculs, $g(n)$ prend la forme d&rsquo;une des fonctions de référence suivantes : logarithme (la base n&rsquo;importe pas d&rsquo;après les relations (2) et (3)), puissance $(n^a)$ et exponentielle $(a^n).$</p>
+<p><img src="/reffct.jpeg" alt=""></p>
+<p>Les complexités algorithmiques sont exprimées comme des grands $\mathcal{O}$ ou grands $\mathcal{\Theta}$ des fonctions de référence. Cela va nous permettre de les classer.</p>
+<p>Des algorithmes appartenant à une <strong>même classe</strong> sont alors considérés comme de <strong>complexité équivalente</strong> ; ils ont la <strong>même efficacité</strong>.</p>
+<p>Le tableau suivant récapitule les complexités de référence (rangées par ordre croissant) :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$\mathcal{O}$</th>
+<th style="text-align:center">Type de complexité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\mathcal{O(1)}$</td>
+<td style="text-align:center">constant</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{O}(\ln(n))$</td>
+<td style="text-align:center">logarithmique</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{O}(n)$</td>
+<td style="text-align:center">linéaire</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{O}(n\times\ln(n))$</td>
+<td style="text-align:center">quasi-linéaire</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{O}(n^2)$</td>
+<td style="text-align:center">quadratique</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{O}(n^3)$</td>
+<td style="text-align:center">cubique</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{O}(2^n)$</td>
+<td style="text-align:center">exponentiel</td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathcal{O}(n!)$</td>
+<td style="text-align:center">factoriel</td>
+</tr>
+</tbody>
+</table>
+<p>Lors de la somme de deux complexités de types différents, la classe de plus grande complexité domine (et c&rsquo;est l&rsquo;inverse pour les grands $\Omega$). Par exemple : $\mathcal{O}(n)+\mathcal{O}(n^2)=\mathcal{O}(n^2)$.</p>
+<p><em>Ordres de grandeurs</em> : en supposant qu&rsquo;un système donné permette un milliard d&rsquo;opérations par seconde (de type constant), on obtient les valeurs de temps d&rsquo;exécution suivantes en fonction du type de complexité et de la taille des données :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">taille des données</th>
+<th style="text-align:center">$\ln n$</th>
+<th style="text-align:center">$n$</th>
+<th style="text-align:center">$n\ln n$</th>
+<th style="text-align:center">$n^2$</th>
+<th style="text-align:center">$n^3$</th>
+<th style="text-align:center">$2^n$</th>
+<th style="text-align:center">$n!$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$10^2$</td>
+<td style="text-align:center">$5$ ns</td>
+<td style="text-align:center">$100$ ns</td>
+<td style="text-align:center">$500$ ns</td>
+<td style="text-align:center">$10$ μs</td>
+<td style="text-align:center">$1$ ms</td>
+<td style="text-align:center">$4.10^{13}$ ans</td>
+<td style="text-align:center">$3.10^{141}$ ans</td>
+</tr>
+<tr>
+<td style="text-align:center">$10^3$</td>
+<td style="text-align:center">$7$ ns</td>
+<td style="text-align:center">$1$ μs</td>
+<td style="text-align:center">$7$ μs</td>
+<td style="text-align:center">$1$ ms</td>
+<td style="text-align:center">$1$ s</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">$10^4$</td>
+<td style="text-align:center">$9$ ns</td>
+<td style="text-align:center">$10$ μs</td>
+<td style="text-align:center">$90$ μs</td>
+<td style="text-align:center">$100$ ms</td>
+<td style="text-align:center">$17$ min</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">$10^5$</td>
+<td style="text-align:center">$12$ ns</td>
+<td style="text-align:center">$100$ μs</td>
+<td style="text-align:center">$1,2$ ms</td>
+<td style="text-align:center">$10$ s</td>
+<td style="text-align:center">$12$ jours</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">$10^6$</td>
+<td style="text-align:center">$14$ ns</td>
+<td style="text-align:center">$1$ ms</td>
+<td style="text-align:center">$14$ ms</td>
+<td style="text-align:center">$17$ min</td>
+<td style="text-align:center">$32$ ans</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p><em>Exemples :</em></p>
+<ul>
+<li>Le calcul de la somme des $n$ premiers entiers à l’aide d’une formule explicite (<code>n*(n+1)//2</code>) est de complexité constante.</li>
+<li>Ce même calcul réalisé de façon itérative grâce à la fonction <code>somme()</code> est de complexité linéaire. En effet, la taille de l&rsquo;entrée est $n=$ <code>len(L)</code> et la complexité est en : $$T(n)=\underbrace{\mathcal{O}(1)}_\text{ligne 2}+\underbrace{n\times \underbrace{\mathcal{O}(1)}_\text{ligne 4}}_{\text{for}}=\mathcal{O}(n)$$</li>
+<li>L&rsquo;algorithme de recherche par dichotomie (fin du cours sur les structures de données) est de complexité logarithmique puisqu&rsquo;on a déterminé que l&rsquo;algorithme nécessite au pire $\log_2 n$ passages dans la boucle et chaque instruction dans la boucle (comparaison, division euclidienne, affectations) se fait en temps constant $$T(n)=\log_2(n)\times \mathcal{O}(1) = \mathcal{O}(\ln n)$$</li>
+</ul>
+<p>Plus tordu : trouvons la complexité de la fonction <code>neufs()</code> suivante qui calcule naïvement le plus grand nombre de 9 consécutifs dans l&rsquo;écriture en base 10 de $n$.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">neufs</span>(n) :
+    L <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">while</span> n<span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> :
+        L<span style="color:#f92672">.</span>append(n<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>)
+        n <span style="color:#f92672">//=</span> <span style="color:#ae81ff">10</span>
+    M <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(len(L)) :
+        i <span style="color:#f92672">=</span> k
+        <span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;</span> len(L) <span style="color:#f92672">and</span> L[i]<span style="color:#f92672">==</span><span style="color:#ae81ff">9</span> :
+            i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+        M <span style="color:#f92672">=</span> max(M, i <span style="color:#f92672">-</span> k)
+    <span style="color:#66d9ef">return</span> M
+</code></pre></div><blockquote>
+<p>Chacune des instructions utilisées est en $\mathcal{O}(1)$ (temps constant). On utilise bien <code>max</code> qui a une complexité linéaire, mais on ne l&rsquo;utilise que sur 2 valeurs.<br>
+On passe dans le premier <code>while</code> une fois par chiffre de $n$ en base 10 (<code>n//10</code> fait perdre un chiffre à $n$), soit environ $\log_{10}(n)$ fois.<br>
+La liste <code>L</code> contient alors (à moins de 1 près) $\log_{10}(n)$ valeurs. On passe dans le <code>for</code> $\log_{10}(n)$ fois, et au pire le même nombre de fois dans le second <code>while</code>.<br>
+La complexité est donc $T(n)=\underbrace{\log_{10}(n) \times \mathcal{O}(1)}_{\text{premier while}}+\underbrace{\log_{10}(n) \times\log_{10}(n) \times\mathcal{O}(1)}_{\text{boucles imbriquées}}=\mathcal{O}(\ln ^2 n)$</p>
+</blockquote>
+<p> </p>
+<p>La complexité sert essentiellement à comparer les algorithmes.<br>
+On peut aussi tenter de confirmer expérimentalement nos conclusions en mesurant le temps mis par la machine pour faire tourner l&rsquo;algorithme. Grâce au module <code>time</code>, on va ainsi pouvoir vérifier empiriquement que l&rsquo;algorithme de recherche par dichotomie est bien meilleur que l&rsquo;algorithme de recherche naïf. On va aussi tenter d&rsquo;en savoir plus sur l&rsquo;opérateur natif <code>in</code> qui accomplit la même fonction. Pour cela, on va mesurer le temps mis par les différentes méthodes pour chercher un nombre au hasard entre 0 et <code>b</code> dans une liste des <code>b</code> premiers entiers. On moyenne ce temps en faisant $50,000$ essais avec des nombres à rechercher différents. Puis on multiplie <code>b</code> par 2 et on recommence :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> random
+<span style="color:#f92672">import</span> time
 
-<div class="notices note" ><p>On utilise aussi le terme &ldquo;paramètre&rdquo; pour désigner les arguments formels, c&rsquo;est-à-dire les variables qui entrent dans la définition de la fonction. Et on réserve alors le terme argument aux valeurs données à ces variables au moment de l&rsquo;appel.<br>
-Dans l&rsquo;exemple, <code>a</code> et <code>b</code> sont alors les paramètres (= arguments formels) et <code>5</code> et <code>2</code> sont les arguments (= arguments effectifs).</p>
+b, m <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">50000</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">|     n    | tps algo naïf | tps algo dicho |  tps &#34;in&#34;  |&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">54</span>)
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">12</span>) :
+    b <span style="color:#f92672">*=</span> <span style="color:#ae81ff">2</span>
+    T <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,b)]
+    t1 <span style="color:#f92672">=</span> t2 <span style="color:#f92672">=</span> t3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(m) :
+        x <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>,b)
+        
+        d1 <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time() <span style="color:#75715e">#time() note la valeur de l&#39;horloge (en s)</span>
+        recherche_naïve(x,T)
+        f1 <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+        
+        d2 <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+        recherche_dicho(x,T) 
+        f2 <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+        
+        d3 <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+        x <span style="color:#f92672">in</span> T 
+        f3 <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+        
+        t1 <span style="color:#f92672">+=</span> f1 <span style="color:#f92672">-</span> d1 <span style="color:#75715e">#f1-d1 = laps de temps qu&#39;a duré la recherche linéaire</span>
+        t2 <span style="color:#f92672">+=</span> f2 <span style="color:#f92672">-</span> d2 <span style="color:#75715e">#f2-d2 = laps de temps qu&#39;a duré la recherche dicho</span>
+        t3 <span style="color:#f92672">+=</span> f3 <span style="color:#f92672">-</span> d3 <span style="color:#75715e">#f3-d3 = laps de temps qu&#39;a duré la recherche avec &#34;in&#34;</span>
+    
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;| {:&gt;4d} |{:^15.2E}|{:^16.2E}|{:^12.2E}|&#39;</span><span style="color:#f92672">.</span>format(b,t1<span style="color:#f92672">/</span>m,t2<span style="color:#f92672">/</span>m,t3<span style="color:#f92672">/</span>m))
+</code></pre></div><pre><code class="language-nohighlight" data-lang="nohighlight">|   n  | tps algo naïf | tps algo dicho |  tps &quot;in&quot;  |
+------------------------------------------------------
+|    2 |   3.56E-07    |    6.81E-07    |  1.90E-07  |
+|    4 |   4.04E-07    |    7.87E-07    |  2.12E-07  |
+|    8 |   4.58E-07    |    8.58E-07    |  2.38E-07  |
+|   16 |   5.86E-07    |    9.48E-07    |  2.80E-07  |
+|   32 |   8.11E-07    |    1.06E-06    |  3.60E-07  |
+|   64 |   1.30E-06    |    1.19E-06    |  5.37E-07  |
+|  128 |   2.25E-06    |    1.33E-06    |  8.83E-07  |
+|  256 |   4.18E-06    |    1.53E-06    |  1.57E-06  |
+|  512 |   8.09E-06    |    1.87E-06    |  2.96E-06  |
+| 1024 |   1.57E-05    |    2.14E-06    |  5.70E-06  |
+| 2048 |   3.09E-05    |    2.38E-06    |  1.12E-05  |
+| 4096 |   6.13E-05    |    2.63E-06    |  2.22E-05  |
+</code></pre><p><img src="/dicholin.png" alt=""></p>
+<p>On remarque que l&rsquo;opérateur <code>in</code> semble lui-aussi de complexité linéaire. Derrière ce deux petits caractères se cache donc du code qui est loin d&rsquo;être de complexité constante. Ce n&rsquo;est pas la taille qui compte&hellip;</p>
+<p> </p>
+<h2 id="complexité-en-espace">Complexité en espace</h2>
+<p>La complexité en espace est quant à elle la <strong>taille de la mémoire nécessaire</strong> pour stocker les différentes structures de données utilisées lors de l&rsquo;exécution de l&rsquo;algorithme.</p>
+<p>On considère pour simplifier qu&rsquo;un type de base (un entier, un flottant, un caractère,&hellip;) occupe une place en mémoire constante (complexité en $\mathcal{O}(1)$).</p>
+<p><em>Exemples :</em>
+Pour la fonction <code>somme()</code>, on constate que si la liste <code>L</code> contient des entiers ou des flottants, chaque variable intermédiaire (e et s) contient un type de base, donc demande une  place en mémoire en $\mathcal{O}(1)$ et donc la complexité en mémoire au pire est en $\mathcal{O}(1)$.<br>
+Pour la fonction <code>neufs()</code>, la complexité en mémoire vient de la variable <code>L</code> (toutes les autres variables demandent $\mathcal{O}(1)$ en mémoire). Or cette variable va contenir environ $\log_{10}(n)$ éléments d’où une complexité en mémoire de $\mathcal{O}(\log_{10}(n)) = \mathcal{O}(ln(n))$.</p>
+<p> </p>
+<p>Dans la vidéo suivante, on compare plusieurs algorithmes dont la mission est de trouver un doublon dans une liste. Comment les classer ? Grâce à leurs complexités en temps et en espace.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/-73jokmqmd0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-</p>
 
-<div class="notices warning" ><p>Malgré ce que l&rsquo;affichage peut laisser croire, la fonction précédente ne retourne rien !<br>
-La valeur de <code>c</code> est prisonnière du corps de la fonction, elle n&rsquo;est pas accessible dans le code principal. C&rsquo;est une <strong>variable locale</strong>.<br>
-Si on veut pouvoir accéder à <code>c</code> ailleurs que dans la fonction, il faut l&rsquo;extirper en utilisant un <code>return</code>.<br>
-Il ne faut ainsi pas confondre  <code>print</code> et  <code>return</code> !<br>
-Le <code>return</code> transforme l&rsquo;appel de la fonction en expression puisqu&rsquo;une valeur est retournée.<br>
-Le <code>print</code> n&rsquo;a qu&rsquo;un <strong>effet de bord</strong>. La valeur est affichée mais inutilisable. L&rsquo;appel de la fonction n&rsquo;est alors qu&rsquo;une instruction et on nomme <em>procédure</em> une telle fonction.</p>
-</div>
 
-<p>Ainsi, <code>addition(5,2) + 7</code> va lever une erreur : <code>TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'</code>.<br>
-En effet, comme <code>addition</code> ne retourne rien, Python la considère de type <code>NoneType</code> et ne comprend  pas pourquoi on cherche à additionner quelque chose à rien.</p>
-<p>Arrangeons cela grâce à un <code>return</code> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addition</span>(a,b) :
-		c <span style="color:#f92672">=</span> a<span style="color:#f92672">+</span>b
-		<span style="color:#66d9ef">return</span> c
-</code></pre></div><p>Maintenant, <code>addition(5,2) + 7</code> retourne gentiment 12.</p>
-<p>Dès que l&rsquo;instruction <code>return</code> est rencontrée lors de l&rsquo;appel de la fonction le flot d&rsquo;exécution du code de la fonction est interrompu et reprend à la ligne suivant l&rsquo;appel.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">demo</span>() :
-		<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Ligne exécutée car avant le return&#34;</span>)
-		<span style="color:#66d9ef">return</span>
-		<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Ligne non exécutée car après le return&#34;</span>)
-demo()
-</code></pre></div><p><code>Ligne exécutée car avant le return</code></p>
-<p>L&rsquo;exemple précédent nous montre aussi qu&rsquo;une fonction n&rsquo;a pas nécessairement d&rsquo;argument et qu&rsquo;un <code>return</code> peut ne rien retourner (il ne sert alors qu&rsquo;à interrompre l&rsquo;exécution).</p>
-<p>Comme on l&rsquo;a vu précédemment, un <code>return</code>, à l&rsquo;instar d&rsquo;un <code>break</code>, peut donc interrompre une boucle dans le corps d&rsquo;une fonction.</p>
-<p>L&rsquo;appel d&rsquo;une fonction <em>est</em> la valeur qu&rsquo;elle retourne, qu&rsquo;il s&rsquo;agisse d&rsquo;un entier, d&rsquo;une liste, d&rsquo;un dictionnaire, etc.<br>
-Une fonction peut retourner plusieurs variables séparées par des virgules. L&rsquo;appel est alors un tuple qui peut être déballé.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">somme_moyenne</span>(liste) :
-		s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-		<span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> liste :
-				s <span style="color:#f92672">+=</span> e
-		m <span style="color:#f92672">=</span> s<span style="color:#f92672">/</span>len(liste)
-		<span style="color:#66d9ef">return</span> s,m
-L <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]
-<span style="color:#66d9ef">print</span>(type(somme_moyenne(L)))
-a,b <span style="color:#f92672">=</span> somme_moyenne(L)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;somme :&#34;</span>,a,<span style="color:#e6db74">&#34;et moyenne :&#34;</span>,b)
-<span style="color:#66d9ef">print</span>(somme_moyenne(L)[<span style="color:#ae81ff">1</span>])
-</code></pre></div><p><code>&lt;class 'tuple'&gt;</code><br>
-<code>somme : 10 et moyenne : 2.5</code><br>
-<code>2.5</code></p>
-<p>Une fonction peut aussi ne pas avoir d&rsquo;argument :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HelloWorld</span>() :
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\x4B\x49\x4C\x4C\n\x41\x4C\x4C\n\x48\x55\x4D\x41\x4E</span><span style="color:#e6db74">&#39;</span>)
-</code></pre></div>
 
 <footer class="footline">
 	
@@ -1078,20 +965,6 @@ a,b <span style="color:#f92672">=</span> somme_moyenne(L)
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1102,141 +975,6 @@ a,b <span style="color:#f92672">=</span> somme_moyenne(L)
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1386,6 +1124,158 @@ a,b <span style="color:#f92672">=</span> somme_moyenne(L)
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 

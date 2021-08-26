@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Strucutres de contrôle - Cours info TSI</title>
+    <title>Correction / Terminaison - Cours info TSI</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -65,7 +65,7 @@ onload='renderMathInElement(document.body);'></script>
     
 	
   </head>
-  <body class="" data-url="/python/structcontr/">
+  <body class="" data-url="/semestre_2/correctionterminaison/">
     <nav id="sidebar" class="">
 
 
@@ -126,7 +126,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/python/" title="Python" class="dd-item
-        parent
+        
         
         
         ">
@@ -215,7 +215,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/python/structcontr/" title="Strucutres de contrôle" class="dd-item active">
+      <li data-nav-id="/python/structcontr/" title="Strucutres de contrôle" class="dd-item ">
         <a href="/python/structcontr/">
         Strucutres de contrôle
         
@@ -467,7 +467,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_2/" title="Semestre 2" class="dd-item
-        
+        parent
         
         
         ">
@@ -514,7 +514,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_2/correctionterminaison/" title="Correction / Terminaison" class="dd-item ">
+      <li data-nav-id="/semestre_2/correctionterminaison/" title="Correction / Terminaison" class="dd-item active">
         <a href="/semestre_2/correctionterminaison/">
         Correction / Terminaison
         
@@ -636,7 +636,7 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Strucutres de contrôle
+                   Correction / Terminaison
                  
                   </span>
                 </div>
@@ -645,35 +645,8 @@ onload='renderMathInElement(document.body);'></script>
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#instruction-daffectation">Instruction d&rsquo;affectation</a>
-      <ul>
-        <li><a href="#définition">Définition</a></li>
-        <li><a href="#instruction-plutôt-quexpression">Instruction plutôt qu&rsquo;expression</a></li>
-        <li><a href="#réaffectation">Réaffectation</a></li>
-        <li><a href="#affectation-parallèle">Affectation parallèle</a></li>
-        <li><a href="#noms-de-variable">Noms de variable</a></li>
-      </ul>
-    </li>
-    <li><a href="#instuction-conditionnelle">Instuction conditionnelle</a>
-      <ul>
-        <li><a href="#ifelifelse"><code>if</code>,<code>elif</code>,<code>else</code></a></li>
-      </ul>
-    </li>
-    <li><a href="#boucle-while">Boucle <code>while</code></a>
-      <ul>
-        <li><a href="#break"><code>break</code></a></li>
-        <li><a href="#return"><code>return</code></a></li>
-      </ul>
-    </li>
-    <li><a href="#boucle-for">Boucle <code>for</code></a>
-      <ul>
-        <li><a href="#range"><code>range</code></a></li>
-        <li><a href="#une-chaîne-de-caractères">une chaîne de caractères</a></li>
-        <li><a href="#une-liste-un-tuple">une liste, un tuple</a></li>
-        <li><a href="#un-dictionnaire">un dictionnaire</a></li>
-      </ul>
-    </li>
-    <li><a href="#définition-dune-fonction">Définition d&rsquo;une fonction</a></li>
+    <li><a href="#terminaison-dun-algorithme">Terminaison d&rsquo;un algorithme</a></li>
+    <li><a href="#preuve-de-correction-dun-algorithme">Preuve de correction d’un algorithme</a></li>
   </ul>
 </nav>
     </div>
@@ -693,355 +666,104 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-<h1 id="structures-de-contrôle">Structures de contrôle</h1>
-<h2 id="instruction-daffectation">Instruction d&rsquo;affectation</h2>
-<h3 id="définition">Définition</h3>
-<p>Lorsqu&rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction <code>id()</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(<span style="color:#ae81ff">3.7</span>)
-</code></pre></div><p><code>4387417928</code></p>
-<p>Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&rsquo;est à ça que servent les variables. Une variable est liée à un objet grâce à une <strong>affectation</strong> et identifie cet objet pour les calculs suivants. Une affectation est une instruction (pas de retour).</p>
-<p>En Python, une affectation s&rsquo;opère avec le symbole <code>=</code>.</p>
-
-<div class="notices note" ><p>En pseudocode, on utilise généralement <code>:=</code> ou <code>←</code> pour les affectations.</p>
-</div>
-
-<p>La variable est un tiroir avec une étiquette. Et comme on l&rsquo;a vu, en Python, pas besoin de choisir un tiroir correspondant au type d&rsquo;objet qu&rsquo;il va contenir, c&rsquo;est l&rsquo;interpréteur qui s&rsquo;en charge pour nous (le typage est dynamique).</p>
-<p><img src="/variable0.png?width=500px" alt=""></p>
-<p><img src="/variable1.png?width=500px" alt=""></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-b <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>
-a <span style="color:#f92672">*</span> b
-</code></pre></div><p><code>-6</code></p>
-<p>Si on veut pouvoir utiliser le résultat de <code>a * b</code> pour des calculs ultérieurs, il faut lui aussi le stocker en mémoire.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> a <span style="color:#f92672">*</span> b
-c
-</code></pre></div><p><code>-6</code></p>
-<p>On peut interroger le type d&rsquo;une variable avec la fonction <code>type()</code> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>
-type(c)
-</code></pre></div><p><code>&lt;class 'tuple'&gt;</code></p>
-<p> </p>
-<h3 id="instruction-plutôt-quexpression">Instruction plutôt qu&rsquo;expression</h3>
-<p>Le fait que l&rsquo;affectation soir une instruction plutôt qu&rsquo;une expression est un choix d&rsquo;écriture du langage (en C, l&rsquo;affectation est une expression).<br>
-D&rsquo;ailleurs, Python 3.8 a introduit l&rsquo;opérateur <code>:=</code> (dit le <em>walrus opérator</em> ou <em>opérateur de morse</em> du fait de sa ressemblance à un morse&hellip;) permettant justement une <strong>expression d&rsquo;affectation</strong> au sein d&rsquo;une expression plus large. L&rsquo;intérêt est de permettre de raccourcir l&rsquo;écriture ou d&rsquo;éviter les répétitions dans certains cas.<br>
-L&rsquo;opérateur de morse n&rsquo;est pas à connaître, mais il va nous permettre, dans les deux exemples suivants, de bien faire la différence entre une instruction et une expression.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">if</span> (n :<span style="color:#f92672">=</span> len(a)) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span>:
-    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;La liste est trop grande ({n} élements alors qu&#39;on en attend 5 au plus)&#34;</span>)
-</code></pre></div><blockquote>
-<p>Montrer que sans <code>:=</code>, on aurait soit une répétition, soit une ligne en plus.</p>
+<h1 id="prouver-un-algorithme">Prouver un algorithme</h1>
+<p>Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc. <br>On peut décrire un algorithme comme étant une suite d&rsquo;actions à accomplir séquentiellement, dans un ordre fixé.</p>
+<p>Pour Gérard Berry, titulaire de la chaire Informatique et sciences numériques au Collège de France,</p>
+<blockquote>
+<p>l&rsquo;algorithmique est <strong>l&rsquo;art d&rsquo;organiser un calcul complexe en partant d&rsquo;opérations simples</strong> (un ordinateur étant un objet extraordinairement stupide mais très obéissant).</p>
 </blockquote>
-<p>Autre exemple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">while</span> (choix :<span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;Entrer q ou p : &#39;</span>)) <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;q&#39;</span>:
-    <span style="color:#66d9ef">if</span> choix <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;p&#39;</span>:
-        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Salut !&#34;</span>)
-</code></pre></div><blockquote>
-<p>Comment aurait-on dû écrire ce code sans <code>:=</code> ?</p>
-</blockquote>
-<p> </p>
-<h3 id="réaffectation">Réaffectation</h3>
-<p>Une affectation ne retourne rien mais a un effet sur la mémoire : l&rsquo;adresse de la variable est modifiée à chaque nouvelle affectation. C&rsquo;est ce qui rend possible les <strong>réaffectations</strong> à partir de la variable elle-même.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(a)
-</code></pre></div><p><code>4304751488</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">id(a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><p><code>4304751520</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-id(a)
-</code></pre></div><p><code>4304751520</code></p>
-
-<div class="notices info" ><p>Ces types de <strong>réaffectation</strong> sont si fréquents qu&rsquo;il existe une notation raccourcie : <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>//=</code>, <code>%=</code>.<br>
-Ainsi, <code>a += 1</code> équivaut à <code>a = a + 1</code> et <code>b /= 5</code> équivaut à <code>b = b/5</code>.</p>
-</div>
-
-<p> </p>
-<h3 id="affectation-parallèle">Affectation parallèle</h3>
-<p>Comment faire si on veut permuter les valeurs auxquelles sont liées deux variables ? Dès qu&rsquo;on écrit <code>a = b</code>, la valeur initiale de <code>a</code> est perdue. Et si on commence par <code>b = a</code>, c&rsquo;est la valeur initiale de <code>b</code> qui est perdue. Il faudrait donc utiliser une variable temporaire et écrire : <code>tmp = a</code>, <code>a = b</code> et <code>b = tmp</code>.<br>
-Mais l&rsquo;affectation parallèle de Python va nous permettre d&rsquo;être plus élégants. Il suffit en effet d&rsquo;une petite ligne :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;haut&#39;</span>
-b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bas&#39;</span>
-a , b <span style="color:#f92672">=</span> b , a
-<span style="color:#66d9ef">print</span>(a,b)
-</code></pre></div><p><code>bas haut</code></p>
-
-<div class="notices info" ><p><strong>L&rsquo;affectation parallèle</strong> repose sur le <strong>dépaquetage (<em>unpacking</em>) de tuples</strong>.<br>
-En effet, des objets séparés par des virgules forment un tuple (pas besoin de parenthèses). Donc <code>a,b,c = 1,2,3</code> correspond au dépaquetage du tuple <code>(1,2,3)</code> sur les 3 variables <code>a</code>, <code>b</code> et <code>c</code>.</p>
-</div>
-
-<p> </p>
-<h3 id="noms-de-variable">Noms de variable</h3>
-<p>Règles sur les noms de variables :</p>
+<p>Le mot algorithme vient de la latinisation du nom du savant arabe al-Khuwārizmī (780-850) qui a entre autres permis l&rsquo;introduction de l&rsquo;algèbre en Europe (et il est aussi à l&rsquo;origine de ce mot).</p>
+<p>Les algorithmes manipulent trois types de choses :</p>
 <ul>
-<li>ils sont sensibles à la casse (minuscule ou majuscule)</li>
-<li>ils peuvent contenir n&rsquo;importe quelles lettres ou chiffres et le tiret-bas &ldquo;_&rdquo; mais ne doivent pas commencer par un chiffre.</li>
-<li>certains noms sont interdits (attention en particulier à lambda) :</li>
+<li>des objets : bits, entiers, flottants, mots, images, etc.</li>
+<li>des structures de données (comment on organise les objets) : piles, listes, chaînes, arbres, etc.</li>
+<li>des structures de contrôle (comment on organise les opérations) : séquence, condition, boucle, etc.</li>
 </ul>
-<p><code>and</code>  <code>assert</code>  <code>break</code>  <code>class</code>  <code>continue</code>  <code>def</code>  <code>del</code>  <code>elif</code>  <code>else</code>  <code>except</code>  <code>finally</code>  <code>for</code>  <code>from</code>  <code>global</code>  <code>if</code><br>
-<code>import</code>  <code>in</code>  <code>is</code>  <code>lambda</code>  <code>nonlocal</code>  <code>not</code>  <code>or</code>  <code>pass</code>  <code>print</code>  <code>raise</code>  <code>return</code>  <code>try</code>  <code>while</code>  <code>yield</code></p>
+<p>Face à un algorithme, on peut se poser plusieurs questions :</p>
+<ul>
+<li>Est-ce qu&rsquo;il donne un résultat ou bien est-ce qu’il ne s’arrête jamais ? C&rsquo;est le problème de la <strong>terminaison</strong> d&rsquo;un algorithme.</li>
+<li>Est-ce qu&rsquo;il donne le résultat attendu ou bien est-ce qu’il calcule n’importe quoi ? C&rsquo;est le problème de la <strong>correction</strong> de l&rsquo;algorithme.</li>
+<li>Est-ce qu’il donne le résultat en un temps raisonnable ou bien est-ce qu’il faut attendre plusieurs siècles ? C&rsquo;est le problème de la <strong>complexité</strong> de l&rsquo;algorithme.</li>
+</ul>
+<p> </p>
+<h2 id="terminaison-dun-algorithme">Terminaison d&rsquo;un algorithme</h2>
+<p>Un algorithme doit se terminer en un temps fini ! On est sûr qu&rsquo;un algorithme se termine si le nombre d&rsquo;étapes est fixé. Pour les algorithmes itératifs (= non récursifs, la récursion sera étudiée en 2<sup>e</sup> année), les boucles <code>while</code> (tant que) sont la partie pouvant poser problème, car le nombre d&rsquo;étapes n&rsquo;est pas fixé à l&rsquo;avance.<br>
+Pour prouver leur terminaison, on exhibe un variant de boucle.</p>
 
-<div class="notices warning" ><p>Il est important pour la lisibilité de son code de donner les noms les plus explicites possibles aux variables. Les rapports de jury le répète tous les ans&hellip;</p>
+<div class="notices info" ><p>Un <strong>variant de boucle</strong> est un entier strictement positif avant l&rsquo;entrée dans la boucle qui décroît strictement à chaque passage dans la boucle.</p>
 </div>
 
-<p>Rapport 2019 de l&rsquo;épreuve de Centrale par exemple :</p>
-<blockquote>
-<p><strong>Des noms de variables explicites aident à la compréhension du code. De trop nombreux candidats utilisent des noms de variables quelconques (a, b, c&hellip;) ce qui nuit à la compréhension du programme. La clarté du programme (en particulier le choix des noms de variables) ainsi que la présence de commentaires opportuns sont prises en compte dans l’évaluation.</strong></p>
-</blockquote>
+<p>Trouver un variant de boucle prouve que la boucle termine, car sinon il existerait une suite décroissante d&rsquo;entiers naturels, ce qui est impossible.</p>
 <p> </p>
-<h2 id="instuction-conditionnelle">Instuction conditionnelle</h2>
-<p>Les instructions conditionnelles permettent de rediriger le flot d&rsquo;exécution d&rsquo;un programme en proposant des alternatives.</p>
-<h3 id="ifelifelse"><code>if</code>,<code>elif</code>,<code>else</code></h3>
-<p>La structure <code>if ... elif ... else</code> permet d&rsquo;exécuter des instructions seulement si une condition, donnée par le résultat d&rsquo;un ou plusieurs tests logiques, est vérifiée.</p>
-<p><code>if</code> &lt;<em>expression logique 1</em>&gt; :<br>
-        &lt;<em>bloc d&rsquo;instructions 1</em>&gt;<br>
-<code>elif</code> &lt;<em>expression logique 2</em>&gt; :<br>
-        &lt;<em>bloc d&rsquo;instructions 2</em>&gt;<br>
-<strong>&hellip;</strong><br>
-<code>else</code> :<br>
-        &lt;<em>bloc d&rsquo;instructions</em>&gt;</p>
-<p>Si l'&lt;<em>expression logique 1</em>&gt; est évaluée comme vraie, le &lt;<em>bloc d&rsquo;instructions 1</em>&gt; est exécuté ; dans le cas contraire, si l'&lt;<em>expression logique 2</em>&gt; est évaluée comme vraie, le &lt;<em>bloc d&rsquo;instructions 2</em>&gt; est exécuté, et ainsi de suite ; et si aucune des expressions logiques précédentes n&rsquo;est vraie, le bloc d&rsquo;instructions faisant suite au <code>else:</code> est exécuté.</p>
-<p>Par exemple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>) :
-    <span style="color:#66d9ef">if</span> x<span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span> :
-        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est inférieur ou égal à 3&#39;</span>)
-    <span style="color:#66d9ef">elif</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span> :
-        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est plus grand que 5&#39;</span>)
-    <span style="color:#66d9ef">else</span> :
-        <span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;doit être 4 ou 5&#39;</span>)
-</code></pre></div><pre><code>0 est inférieur ou égal à 3
-1 est inférieur ou égal à 3
-2 est inférieur ou égal à 3
-3 est inférieur ou égal à 3
-4 doit être 4 ou 5
-5 doit être 4 ou 5
-6 est plus grand que 5
-7 est plus grand que 5
-8 est plus grand que 5
-9 est plus grand que 5
-</code></pre>
-
-<div class="notices note" ><p>Python reconnaît comme vrai n&rsquo;importe quel type de donnée (même pas besoin d&rsquo;expression logique) du moment qu&rsquo;il ne s&rsquo;agit ni de l&rsquo;entier <code>0</code>, du décimal <code>0.</code>, de la chaîne de caractères vide <code>''</code>, du tuple vide <code>()</code>, de la liste vide <code>[]</code>, ou encore de la valeur <code>None</code>.</p>
-</div>
-
-<p>Exemple :<br>
-Dans le calendrier grégorien, une année est bissextile si elle est divisible par 4 sauf si elle est aussi divisible par 100 à l&rsquo;exception des années divisibles par 400 qui sont bien bissextiles.<br>
-Le programme suivant détermine si une année est bissextile :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">année <span style="color:#f92672">=</span> <span style="color:#ae81ff">2022</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">400</span> :
-    est_bissextile <span style="color:#f92672">=</span> True
-<span style="color:#66d9ef">elif</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> :
-    est_bissextile <span style="color:#f92672">=</span> False
-<span style="color:#66d9ef">elif</span> <span style="color:#f92672">not</span> année <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span> :
-    est_bissextile <span style="color:#f92672">=</span> True
-<span style="color:#66d9ef">else</span> :
-    est_bissextile <span style="color:#f92672">=</span> False
-s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;est une&#39;</span> <span style="color:#66d9ef">if</span> est_bissextile <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;n&#39;est pas une&#34;</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;L&#39;année&#34;</span>, année , s ,<span style="color:#e6db74">&#34;année bissextile.&#34;</span>)
-</code></pre></div><p><code>L'année 2022 n'est pas une année bissextile.</code></p>
-<p> </p>
-<p> </p>
-<h2 id="boucle-while">Boucle <code>while</code></h2>
-<p>Une boucle <code>while</code> ou &ldquo;tant que&rdquo; permet de répéter une suite d&rsquo;instructions <em>tant qu'</em> une condition est respectée.<br>
-La suite d&rsquo;instructions répétées devra être indentée et forme alors le corps de la boucle.</p>
-
-<div class="notices warning" ><p>Les boucles <code>while</code> sont dangereuses ! Rien ne dit en effet que la condition sera un jour fausse et la boucle peut donc tourner indéfiniment.<br>
-Les boucles infinis posent le problème de la terminaison d&rsquo;un programme.</p>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> :
-    i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">print</span>(i,end <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;.&#39;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">La boucle est finie...&#39;</span>)
-</code></pre></div><pre><code>1.2.3.4.5.6.7.8.9.10.
-La boucle est finie...
-</code></pre>
-<p>Le compteur <code>i</code> est initialisé à <code>0</code> et comme <code>0</code> est inférieur à <code>10</code>, la boucle <code>while</code> démarre. À chaque itération, <code>i</code> est incrémenté de <code>1</code> et sa valeur affichée. Puis <code>i</code> atteint <code>10</code> et à l&rsquo;itération suivante <code>i &lt; 10</code> devient faux, la boucle s&rsquo;arrête et l&rsquo;éxécution reprend après la boucle.</p>
-<p>Un exemple plus intéressant :<br>
-implémentons l&rsquo;algorithme d&rsquo;Euclide permettant de déterminer le plus grand diviseur commun de deux entiers.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a , b <span style="color:#f92672">=</span> <span style="color:#ae81ff">1920</span> , <span style="color:#ae81ff">1080</span>
-<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;pgcd({a},{b}) = &#39;</span>,end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>)
-<span style="color:#66d9ef">while</span> b :
-    a , b <span style="color:#f92672">=</span> b, a <span style="color:#f92672">%</span> b
-<span style="color:#66d9ef">print</span>(a)
-</code></pre></div><p><code>pgcd(1920,1080) = 120</code></p>
-<p>La boucle continue jusqu&rsquo;à ce que <code>b</code> divise <code>a</code>. À chaque itération, <code>b</code> prend la valeur du reste de la division euclidienne de <code>a</code> par <code>b</code> et <code>a</code> prend l&rsquo;ancienne valeur de <code>b</code>.<br>
-<code>while b</code> est équivalent à <code>while b != 0</code> puisque la valeur <code>0</code> est évaluée comme fausse.</p>
-<p> </p>
-<h3 id="break"><code>break</code></h3>
-<p>L&rsquo;instruction <code>break</code>, placée dans le bloc d&rsquo;instructions d&rsquo;une boucle, met immédiatement fin à cette boucle lorsqu&rsquo;arrive son tour d&rsquo;être exécutée.<br>
-L&rsquo;exécution reprend à l&rsquo;instruction suivant la boucle.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">while</span> True :
-    x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> (x <span style="color:#f92672">%</span> <span style="color:#ae81ff">15</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">%</span> <span style="color:#ae81ff">25</span>) :
-        <span style="color:#66d9ef">break</span>
-<span style="color:#66d9ef">print</span>(x,<span style="color:#e6db74">&#39;est divisible à la fois par 15 et 25.&#39;</span>)
-</code></pre></div><p><code>75 est divisible à la fois par 15 et 25.</code></p>
-<p>La condition du <code>while</code> est ici littéralement toujours vraie donc la seule sortie possible de la boucle passe par une exécution de l&rsquo;instruction <code>break</code>, ce qui ne peut arriver que si <code>x</code> est à la fois divisible par 15 et 25 (c&rsquo;est une pratique risquée !).</p>
-<p>De la même manière, pour trouver l&rsquo;indice de la première occurrence d&rsquo;un nombre négatif dans une liste :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">liste <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">99</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">37</span>, <span style="color:#ae81ff">43</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">124</span>]
-<span style="color:#66d9ef">for</span> i, a <span style="color:#f92672">in</span> enumerate(liste) :
-    <span style="color:#66d9ef">if</span> a <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> :
-        <span style="color:#66d9ef">break</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;L&#39;élément d&#39;indice&#34;</span>,i,<span style="color:#e6db74">&#34;valant&#34;</span>,a,<span style="color:#e6db74">&#34;est le premier élément négatif.&#34;</span>)
-</code></pre></div><p><code>L'élément d'indice 5 valant -2 est le premier élément négatif.</code></p>
-
-<div class="notices note" ><p>Après la sortie de la boucle, les variables <code>i</code> et <code>a</code> gardent les valeurs qu&rsquo;elles ont au moment de l&rsquo;instruction <code>break</code>.</p>
-</div>
-
-<p> </p>
-<h3 id="return"><code>return</code></h3>
-<p>L&rsquo;instruction <code>return</code> permet elle aussi de s&rsquo;échapper d&rsquo;une boucle.</p>
-<p>En effet, l&rsquo;utilisation du <code>return</code> a pour effet de sortir du corps d&rsquo;une fonction donc à fortiori, si une boucle est utilisée dans la définition de cette fonction, le <code>return</code> permet aussi d&rsquo;en sortir.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">vol</span>(i) :
-    t <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>) :
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> i<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> :
-            i <span style="color:#f92672">//=</span> <span style="color:#ae81ff">2</span>
-        <span style="color:#66d9ef">elif</span> i <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span> :
-            i <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+<p>Exemple : preuve de la terminaison de l'<strong>algorithme d&rsquo;exponentiation rapide</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">puissance</span>(a,n) :
+    p <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">while</span> n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> :
+        <span style="color:#66d9ef">if</span> n<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> :
+            a <span style="color:#f92672">*=</span> a
+            n <span style="color:#f92672">//=</span> <span style="color:#ae81ff">2</span>
         <span style="color:#66d9ef">else</span> :
-            <span style="color:#66d9ef">return</span> t
-        t <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</code></pre></div><p><code>vol(27)</code> renvoie alors <code>111</code>.</p>
+            p <span style="color:#f92672">*=</span> a
+            n <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">return</span> p
+</code></pre></div><p>Si on spécifie que <code>n</code> doit être un entier positif, alors <code>n</code> est un variant de boucle. En effet :</p>
+<ul>
+<li>$n$ est bien un entier strictement positif avant chaque passage dans la boucle : $n$ est initialement un entier positif (par hypothèse) et $n$ reste entier après k passages dans la boucle (par récurrence simple). De plus, la boucle s&rsquo;arrête si $n≤0$.</li>
+<li>$n$ est bien strictement décroissant : en notant $n'$ la valeur de $n$ après un passage dans la boucle, si $n$ est pair avant un passage dans la boucle, on a $\displaystyle n'=\frac{n}{2}$ et comme $n≥2$, $n'&lt;n$. Et si $n$ est impair, alors on a $n'=n-1$ et donc à nouveau $n'&lt;n$.</li>
+</ul>
 <p> </p>
+<p>On ne peut pas prouver automatiquement l&rsquo;arrêt d&rsquo;un programme. C&rsquo;est ce qu&rsquo;affirme le théorème de l&rsquo;arrêt : il n&rsquo;existe pas de programme prenant en entrée le code d&rsquo;un programme et ses arguments et qui renvoie <code>oui</code> si le programme se termine pour une certaine entrée, <code>non</code> sinon.</p>
+<p>La conjecture de syracuse (tp0) est un exemple de programme dont on ne sait pas s&rsquo;il se termine pour une entrée quelconque.</p>
 <p> </p>
-<h2 id="boucle-for">Boucle <code>for</code></h2>
-<p>Une boucle <code>for</code> se différencie d&rsquo;une boucle <code>while</code> en ce que le nombre d&rsquo;itérations est connu à l&rsquo;avance.</p>
-<p>La structure d&rsquo;une telle boucle est en effet :</p>
-<p><code>for</code> &lt;<em>élément</em>&gt; <code>in</code> &lt;<em>itérable</em>&gt;  :<br>
-        &lt;<em>bloc d&rsquo;instructions</em>&gt;</p>
-<p>L&rsquo;itérable est une collection d&rsquo;éléments et le bloc d&rsquo;instructions est alors répété autant de fois que l&rsquo;itérable contient d&rsquo;éléments.</p>
-<p>Passons en revue quelques itérables.</p>
-<h3 id="range"><code>range</code></h3>
-<p><code>range</code> permet d&rsquo;itérer sur une suite arithmétique d&rsquo;entiers :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>) :
-	<span style="color:#66d9ef">print</span>(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.&#34;</span>)
-</code></pre></div><p><code>0.1.2.3.4.</code></p>
+<h2 id="preuve-de-correction-dun-algorithme">Preuve de correction d’un algorithme</h2>
+<p>Ariane 501 a explosé à cause d&rsquo;un bug tout petit dans un programme qui ne servait à rien. <strong>Prouver la correction</strong> d&rsquo;un algorithme permet d&rsquo;éviter une telle mésaventure, mais c&rsquo;est difficile. Il faut pouvoir prouver qu’un programme s’exécute correctement dans toutes les situations. Mais correct selon quels critères ? Quelles situations sont à considérer ?<br>
+Spécifier les données acceptables et les résultats attendus et exprimer logiquement la propriété devant lier les données aux résultats (les entrées aux sorties) sont des éléments fondamentaux.</p>
+<p>Les difficultés se concentrent encore au niveau des boucles.
+Pour prouver qu&rsquo;une boucle fait bien son boulot, on utilise cette fois-ci un <strong>in</strong>variant de boucle.</p>
 
-<div class="notices warning" ><p>L&rsquo;itération sur <code>range(n)</code> va de $0$ à $n-1$ par pas de 1.</p>
+<div class="notices info" ><p>Un <strong>invariant de boucle</strong> est une propriété vraie avant le premier tour de boucle et qui se conservera pendant toute l’exécution de la boucle (donc qui restera vraie d’un tour à l’autre de la boucle), et sera toujours vraie une fois que la boucle aura fini de s’exécuter.</p>
 </div>
 
-<p>On peut spécifier un point de départ et un pas différents en les passant en argument : <code>range(depart,fin,pas)</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>) :
-	<span style="color:#66d9ef">print</span>(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.&#34;</span>)
-</code></pre></div><p><code>5.6.7.8.9.</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">20</span>) :
-	<span style="color:#66d9ef">print</span>(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.&#34;</span>)
-</code></pre></div><p><code>0.20.40.60.80.</code></p>
+<p>Une démonstration par invariant de boucle se déroule en 3 étapes analogues à une <strong>preuve par récurrence</strong> (seule la terminaison diffère) :</p>
+<ul>
+<li>
+<p>Entrée de boucle = initialisation ($\rightarrow$ initialisation) :<br>
+on démontre que juste avant de rentrer dans le premier tour de boucle l’invariant est vrai.</p>
+</li>
+<li>
+<p>Passage dans la boucle = conservation ($\rightarrow$ hérédité) :<br>
+on suppose que l’invariant est vrai au début d’un passage quelconque dans la boucle et on démontre que l’invariant reste vrai en fin de boucle.</p>
+</li>
+<li>
+<p>Sortie de boucle = terminaison ($\rightarrow$ conclusion) :<br>
+l’invariant est toujours vrai (car il était vrai à la fin du dernier tour de boucle) mais la condition de boucle est devenue fausse.</p>
+</li>
+</ul>
 <p> </p>
-<h3 id="une-chaîne-de-caractères">une chaîne de caractères</h3>
-<p>Itérer sur une chaîne de caractères  décompose la chaîne caractère par caractère :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> car <span style="color:#f92672">in</span> <span style="color:#e6db74">&#39;abc😱&#39;</span> :
-	<span style="color:#66d9ef">print</span>(car<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span>)
-</code></pre></div><p><code>aa bb cc 😱😱 </code></p>
+<p>Exemple : preuve de la correction de l'<strong>algorithme d&rsquo;Euclide</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pgcd</span>(a,b) :
+    <span style="color:#66d9ef">while</span> b <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span> :
+        a, b <span style="color:#f92672">=</span> b, a<span style="color:#f92672">%</span>b
+    <span style="color:#66d9ef">return</span> a
+</code></pre></div><p>On note $a_k$ et $b_k$ les valeurs de <code>a</code> et <code>b</code> à la fin de la k<sup>ème</sup> itération ($a_0$ et $b_0$ désignent les valeurs de <code>a</code> et <code>b</code> avant d’entrer dans la boucle).<br>
+L&rsquo;invariant de boucle est le $pgcd$ de <code>a</code> et <code>b</code>. En effet :</p>
+<ul>
+<li><em>Initialisation :</em><br>
+elle est triviale puisque $a$ et $b$ n&rsquo;ont pas encore été modifié ($pgcd(a_0,b_0)=pgcd(a,b)$).</li>
+<li><em>Conservation :</em><br>
+si $a=bq+r$, il est clair que tout diviseur commun de $a$ et $b$ est un diviseur commun de $b$ et $r$ et réciproquement. Notamment, $pgcd(a,b) = pgcd(b,r)$.<br>
+Ceci prouve que $pgcd(a_k,b_k) = pgcd(a_{k+1},b_{k+1})$. La quantité $pgcd(a_k,b_k)$ est donc bien un invariant de boucle.</li>
+<li><em>Terminaison :</em><br>
+à la fin de la dernière itération (numérotée $f$), $b_f=0$ de sorte que $pgcd(a_0,b_0)=pgcd(a_f,b_f)=pgcd(a_f,0)=a_f.$<br>
+En renvoyant $a_f$, la fonction <code>pgcd(a,b)</code> renvoie donc bien le $pgcd$ de <code>a</code> et <code>b</code>.</li>
+</ul>
 <p> </p>
-<h3 id="une-liste-un-tuple">une liste, un tuple</h3>
-<p>On peut de même parcourir une liste ou un tuple élément par élément.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L <span style="color:#f92672">=</span> [(<span style="color:#e6db74">&#39;🙈&#39;</span>,<span style="color:#e6db74">&#39;🙊&#39;</span>,<span style="color:#e6db74">&#39;🙉&#39;</span>),(<span style="color:#e6db74">&#39;🌖&#39;</span>,<span style="color:#e6db74">&#39;🌗&#39;</span>,<span style="color:#e6db74">&#39;🌘&#39;</span>),]
-s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">for</span> tuple <span style="color:#f92672">in</span> L :
-	<span style="color:#66d9ef">for</span> element <span style="color:#f92672">in</span> tuple :
-		s <span style="color:#f92672">+=</span> element<span style="color:#f92672">*</span>i
-		i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">print</span>(s)
-</code></pre></div><p><code>🙈🙊🙊🙉🙉🙉🌖🌖🌖🌖🌗🌗🌗🌗🌗🌘🌘🌘🌘🌘🌘</code></p>
-<p> </p>
-<h3 id="un-dictionnaire">un dictionnaire</h3>
-<p>Pour pacourir uniquement les clés d&rsquo;un dictionnaire, on peut utiliser la méthode <code>keys</code> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Dico <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;pwd_1&#39;</span> : <span style="color:#e6db74">&#39;123456&#39;</span>, <span style="color:#e6db74">&#39;pwd_2&#39;</span> : <span style="color:#e6db74">&#39;qwerty&#39;</span>, <span style="color:#e6db74">&#39;pwd_3&#39;</span> : <span style="color:#e6db74">&#39;password&#39;</span>}
-<span style="color:#66d9ef">for</span> cle <span style="color:#f92672">in</span> Dico<span style="color:#f92672">.</span>keys() :
-    <span style="color:#66d9ef">print</span>(cle,<span style="color:#e6db74">&#39;-&gt;&#39;</span>,Dico[cle])
-</code></pre></div><p><code>pwd_1 -&gt; 123456</code><br>
-<code>pwd_2 -&gt; qwerty</code><br>
-<code>pwd_3 -&gt; password</code></p>
-<p>Et grâce à la méthode <code>items</code>, on peut déballer clés et valeurs associées dans un tuple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> cle,valeur <span style="color:#f92672">in</span> Dico<span style="color:#f92672">.</span>items() :
-    <span style="color:#66d9ef">print</span>(cle,<span style="color:#e6db74">&#39;-&gt;&#39;</span>,valeur)
-</code></pre></div><p><code>pwd_1 -&gt; 123456</code><br>
-<code>pwd_2 -&gt; qwerty</code><br>
-<code>pwd_3 -&gt; password</code></p>
-<p>Construisons par exemple un nouveau dictionnaire inversant clés et valeurs :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Dico <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;$&#39;</span> : <span style="color:#e6db74">&#39;dollar&#39;</span>, <span style="color:#e6db74">&#39;€&#39;</span> : <span style="color:#e6db74">&#39;euro&#39;</span>, <span style="color:#e6db74">&#39;¥&#39;</span> : <span style="color:#e6db74">&#39;yen&#39;</span>, <span style="color:#e6db74">&#39;£&#39;</span> : <span style="color:#e6db74">&#39;livre&#39;</span>}
-Dico_inv <span style="color:#f92672">=</span> {}
-<span style="color:#66d9ef">for</span> cle,valeur <span style="color:#f92672">in</span> Dico<span style="color:#f92672">.</span>items() :
-    Dico_inv[valeur] <span style="color:#f92672">=</span> cle
-<span style="color:#66d9ef">print</span>(Dico_inv)
-</code></pre></div><p><code>{'dollar': '$', 'euro': '€', 'yen': '¥', 'livre': '£'}</code></p>
-<p>Dernier exemple, modifions une à une chaque valeur d&rsquo;un dictionnaire  :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dico_notes <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Kurt&#39;</span> : <span style="color:#ae81ff">19</span>, <span style="color:#e6db74">&#39;Kris&#39;</span> : <span style="color:#ae81ff">11</span>, <span style="color:#e6db74">&#39;Dave&#39;</span> : <span style="color:#ae81ff">13</span>, <span style="color:#e6db74">&#39;Pat&#39;</span> : <span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;Courtney&#39;</span> : <span style="color:#ae81ff">15</span>}
-<span style="color:#66d9ef">for</span> eleve,note <span style="color:#f92672">in</span> dico_notes<span style="color:#f92672">.</span>items() :
-    dico_notes[eleve] <span style="color:#f92672">=</span> note<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">print</span>(dico_notes)
-</code></pre></div><p><code>{'Kurt': 20, 'Kris': 12, 'Dave': 14, 'Pat': 11, 'Courtney': 16}</code>
- </p>
-<p> </p>
-<h2 id="définition-dune-fonction">Définition d&rsquo;une fonction</h2>
-<p>Une fonction est un ensemble d&rsquo;instructions auxquelles on accède par un raccourci : le nom de la fonction. Elles se comportent comme des sous-programmes à l&rsquo;intérieur du programme principal. Et comme tout programme, elles peuvent agir sur des données, les entrées, et fournir de nouvelles données, les sorties.</p>
-<p>La signature d&rsquo;une fonction résume ces points clés : son nom, les différents arguments et leurs types, les différentes sorties et leur type.
-<code>nom(arg_1:type, arg_2:type, etc) -&gt; sortie_1:type, sortie_2:type, etc</code></p>
-<p>On <strong>définit une fonction</strong> grâce au mot clé <code>def</code> en suivant la structure suivante :</p>
-<blockquote>
-<p><code>def</code> nom<code>(</code>arguments séparés par des virgules<code>)</code> <code>:</code><br>
-        &lt; <em>corps de la fonction contenant les différentes instructions</em> &gt;</p>
-</blockquote>
-<p>La définition d&rsquo;une fonction est une instruction.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addition</span>(a,b) :
-		c <span style="color:#f92672">=</span> a<span style="color:#f92672">+</span>b
-		<span style="color:#66d9ef">print</span>(c)
-</code></pre></div><p>On appelle une fonction en utilisant son nom et en affectant chaque argument dans les parenthèses qui suivent son nom.<br>
-Les instructions du corps de la fonction sont alors exécutée une par une et si des variables correspondant aux nom des arguments (on parle alors d'<em>arguments formels</em>) sont rencontrées, ce sont les valeurs utilisées lors de l&rsquo;appel (les <em>arguments effectifs</em>) qui les remplacent.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">addition(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">2</span>)
-</code></pre></div><p><code>7</code>
 
-<div class="notices note" ><p>On utilise aussi le terme &ldquo;paramètre&rdquo; pour désigner les arguments formels, c&rsquo;est-à-dire les variables qui entrent dans la définition de la fonction. Et on réserve alors le terme argument aux valeurs données à ces variables au moment de l&rsquo;appel.<br>
-Dans l&rsquo;exemple, <code>a</code> et <code>b</code> sont alors les paramètres (= arguments formels) et <code>5</code> et <code>2</code> sont les arguments (= arguments effectifs).</p>
-</div>
-</p>
-
-<div class="notices warning" ><p>Malgré ce que l&rsquo;affichage peut laisser croire, la fonction précédente ne retourne rien !<br>
-La valeur de <code>c</code> est prisonnière du corps de la fonction, elle n&rsquo;est pas accessible dans le code principal. C&rsquo;est une <strong>variable locale</strong>.<br>
-Si on veut pouvoir accéder à <code>c</code> ailleurs que dans la fonction, il faut l&rsquo;extirper en utilisant un <code>return</code>.<br>
-Il ne faut ainsi pas confondre  <code>print</code> et  <code>return</code> !<br>
-Le <code>return</code> transforme l&rsquo;appel de la fonction en expression puisqu&rsquo;une valeur est retournée.<br>
-Le <code>print</code> n&rsquo;a qu&rsquo;un <strong>effet de bord</strong>. La valeur est affichée mais inutilisable. L&rsquo;appel de la fonction n&rsquo;est alors qu&rsquo;une instruction et on nomme <em>procédure</em> une telle fonction.</p>
+<div class="notices tip" ><p>On voit donc que les préconditions / invariants / postconditions préconisés comme commentaires systématiques dans <em>les bonnes pratiques</em> sont au final les prémices de la preuve de la correction du bloc de code.<br></p>
 </div>
 
-<p>Ainsi, <code>addition(5,2) + 7</code> va lever une erreur : <code>TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'</code>.<br>
-En effet, comme <code>addition</code> ne retourne rien, Python la considère de type <code>NoneType</code> et ne comprend  pas pourquoi on cherche à additionner quelque chose à rien.</p>
-<p>Arrangeons cela grâce à un <code>return</code> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addition</span>(a,b) :
-		c <span style="color:#f92672">=</span> a<span style="color:#f92672">+</span>b
-		<span style="color:#66d9ef">return</span> c
-</code></pre></div><p>Maintenant, <code>addition(5,2) + 7</code> retourne gentiment 12.</p>
-<p>Dès que l&rsquo;instruction <code>return</code> est rencontrée lors de l&rsquo;appel de la fonction le flot d&rsquo;exécution du code de la fonction est interrompu et reprend à la ligne suivant l&rsquo;appel.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">demo</span>() :
-		<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Ligne exécutée car avant le return&#34;</span>)
-		<span style="color:#66d9ef">return</span>
-		<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Ligne non exécutée car après le return&#34;</span>)
-demo()
-</code></pre></div><p><code>Ligne exécutée car avant le return</code></p>
-<p>L&rsquo;exemple précédent nous montre aussi qu&rsquo;une fonction n&rsquo;a pas nécessairement d&rsquo;argument et qu&rsquo;un <code>return</code> peut ne rien retourner (il ne sert alors qu&rsquo;à interrompre l&rsquo;exécution).</p>
-<p>Comme on l&rsquo;a vu précédemment, un <code>return</code>, à l&rsquo;instar d&rsquo;un <code>break</code>, peut donc interrompre une boucle dans le corps d&rsquo;une fonction.</p>
-<p>L&rsquo;appel d&rsquo;une fonction <em>est</em> la valeur qu&rsquo;elle retourne, qu&rsquo;il s&rsquo;agisse d&rsquo;un entier, d&rsquo;une liste, d&rsquo;un dictionnaire, etc.<br>
-Une fonction peut retourner plusieurs variables séparées par des virgules. L&rsquo;appel est alors un tuple qui peut être déballé.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">somme_moyenne</span>(liste) :
-		s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-		<span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> liste :
-				s <span style="color:#f92672">+=</span> e
-		m <span style="color:#f92672">=</span> s<span style="color:#f92672">/</span>len(liste)
-		<span style="color:#66d9ef">return</span> s,m
-L <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]
-<span style="color:#66d9ef">print</span>(type(somme_moyenne(L)))
-a,b <span style="color:#f92672">=</span> somme_moyenne(L)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;somme :&#34;</span>,a,<span style="color:#e6db74">&#34;et moyenne :&#34;</span>,b)
-<span style="color:#66d9ef">print</span>(somme_moyenne(L)[<span style="color:#ae81ff">1</span>])
-</code></pre></div><p><code>&lt;class 'tuple'&gt;</code><br>
-<code>somme : 10 et moyenne : 2.5</code><br>
-<code>2.5</code></p>
-<p>Une fonction peut aussi ne pas avoir d&rsquo;argument :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">HelloWorld</span>() :
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\x4B\x49\x4C\x4C\n\x41\x4C\x4C\n\x48\x55\x4D\x41\x4E</span><span style="color:#e6db74">&#39;</span>)
-</code></pre></div>
+<p><em>Exercice : prouver la correction de l&rsquo;algorithme de la division euclidienne vu dans les bonnes pratiques</em>.</p>
+
 
 <footer class="footline">
 	
@@ -1078,20 +800,6 @@ a,b <span style="color:#f92672">=</span> somme_moyenne(L)
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1102,141 +810,6 @@ a,b <span style="color:#f92672">=</span> somme_moyenne(L)
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1370,6 +943,158 @@ a,b <span style="color:#f92672">=</span> somme_moyenne(L)
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 

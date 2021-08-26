@@ -24,7 +24,7 @@ Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusemen
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/semestre_1/tp0/</guid>
-      <description>TP 0 : Démarrage Cliquez sur cette invitation pour récupérer le notebook du TP. Exo 1 Combien de fois une feuille de papier d’épaisseur $e=0,1$ mm doit-elle être pliée pour atteindre la Lune ?
+      <description>TP 0 : Démarrage Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 Combien de fois une feuille de papier d’épaisseur $e=0,1$ mm doit-elle être pliée pour atteindre la Lune ?
  Écrivez dans la cellule suivante un code permettant d&amp;rsquo;obtenir la réponse. Le plus simple est d&amp;rsquo;utiliser une boucle while.
  Wolfram alpha vous donne avec précision la distance Terre-Lune.
 ### VOTRE CODE  Dans la cellule suivante, affectez à la variable nb_plis la valeur entière trouvée.</description>
@@ -36,7 +36,7 @@ Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusemen
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/semestre_1/tp1recherche/</guid>
-      <description>TP 1 : Recherche séquentielle dans un tableau unidimensionnel. Dictionnaires. Recherche d&amp;rsquo;un élément dans une liste  Écrire une fonction recherche qui prend pour argument un élément et une liste et qui retourne True si l&amp;rsquo;élément est présent et False sinon.
+      <description>TP 1 : Recherche séquentielle dans un tableau unidimensionnel. Dictionnaires. Cliquez sur cette invitation pour récupérer le repository du TP. Recherche d&amp;rsquo;un élément dans une liste  Écrire une fonction recherche qui prend pour argument un élément et une liste et qui retourne True si l&amp;rsquo;élément est présent et False sinon.
 Le corps de la fonction devra comprendre une boucle.
  def recherche(x,L) : &amp;#39;&amp;#39;&amp;#39; recherche(x: tout type, L : list) -&amp;gt; bool &amp;#39;&amp;#39;&amp;#39; ### VOTRE CODE  Dans le pire des cas (élément ne se trouvant pas dans la liste), combien de comparaisons doit-on opérer pour savoir si un élément est présent dans une liste de taille 400 ?</description>
     </item>
@@ -49,6 +49,15 @@ Le corps de la fonction devra comprendre une boucle.
       <guid>http://example.org/python/traitsgaux/</guid>
       <description>Traits généraux Introduction Shell et IDE Python est un langage de programmation interprété développé par Guido van Rossum en 1989. Langage impératif de haut-niveau doté d&amp;rsquo;une syntaxe simple, Python s&amp;rsquo;adapte à de nombreux contextes grâce à sa modularité ; une importante librairie de modules et packages permet en effet d&amp;rsquo;étendre ses capacités.
 Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;utilisateur entre une commande Python qui est interprétée immédiatement lorsque Entrée est tapée.</description>
+    </item>
+    
+    <item>
+      <title>Correction / Terminaison</title>
+      <link>http://example.org/semestre_2/correctionterminaison/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_2/correctionterminaison/</guid>
+      <description>Prouver un algorithme Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc. On peut décrire un algorithme comme étant une suite d&amp;rsquo;actions à accomplir séquentiellement, dans un ordre fixé.</description>
     </item>
     
     <item>
@@ -74,13 +83,14 @@ Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est i
     </item>
     
     <item>
-      <title>Graphes</title>
-      <link>http://example.org/semestre_2/graphes/</link>
+      <title>Complexité</title>
+      <link>http://example.org/semestre_2/complexite/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_2/graphes/</guid>
-      <description>Les graphes Quelques points et des traits pour les relier suffisent pour créer un graphe. Cette grande simplicité est pourtant à l&amp;rsquo;origine d&amp;rsquo;un foisonnement mathématiques impressionnant.
-Un peu d&amp;rsquo;histoire L&amp;rsquo;acte de naissance de la théorie des graphes date d&amp;rsquo;une petite énigme à laquelle s&amp;rsquo;attelaient sans succès les habitants de Königsberg. Comment un voyageur pouvait traverser les sept ponts sans jamais passer deux fois sur le même pont ? Euler résout le problème et fonda du même coup la théorie des graphes !</description>
+      <guid>http://example.org/semestre_2/complexite/</guid>
+      <description>Complexité d&amp;rsquo;un algorithme Parmi les 3 questions qu&amp;rsquo;on peut se poser naturellement devant un algorithme (termine-t-il ? est-il correct ? combien de temps met-il ?), on a laissé la dernière en plan dans le chapitre précédent.
+La question du temps mis par l&amp;rsquo;algorithme est le problème de la complexité de l&amp;rsquo;algorithme.
+L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique est de pouvoir comparer l’efficacité d’algorithmes résolvant le même problème. Dans une situation donnée, cela permet donc d&amp;rsquo;établir lequel des algorithmes disponibles est le meilleur (du point de vue temps d&amp;rsquo;exécution).</description>
     </item>
     
     <item>
@@ -106,6 +116,18 @@ Et donc si la structure contient n éléments, le dernier indice est n-1.</descr
     </item>
     
     <item>
+      <title>Les nombres en machine</title>
+      <link>http://example.org/semestre_2/nombre/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_2/nombre/</guid>
+      <description>Représentation des nombres Comment un nombre est-il représenté à l&amp;rsquo;intérieur d&amp;rsquo;un ordinateur ?
+L&amp;rsquo;espace pour représenter un nombre en machine est limité. Si cette limitation n&amp;rsquo;a pas trop d&amp;rsquo;impact pour les entiers (surtout en Python !) elle devient très handicapante pour représenter les réels.
+La représentation machine d&amp;rsquo;un nombre est appelée mot machine. Sa taille est généralement aujourd&amp;rsquo;hui de 64 bits.
+  Les différentes bases Une écriture en base $b$ utilise $b$ chiffres différents :</description>
+    </item>
+    
+    <item>
       <title>Strucutres de contrôle</title>
       <link>http://example.org/python/structcontr/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
@@ -126,6 +148,16 @@ Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâ
 Peut-on faire mieux ?
 Dans le cas, d&amp;rsquo;un ensemble ordonné trié, la réponse est oui. On peut même faire beaucoup mieux !
 L&amp;rsquo;idée est de regarder d&amp;rsquo;abord au milieu du paquet dans lequel on cherche. Si l&amp;rsquo;élément au milieu est plus petit (repectivement plus grand) que l&amp;rsquo;élément recherché, comme on sait que le paque t est trié, on en déduit que l&amp;rsquo;élément cherché ne peut être que dans la deuxième partie (respectivement dans la première partie) du paquet s&amp;rsquo;il est présent.</description>
+    </item>
+    
+    <item>
+      <title>Graphes</title>
+      <link>http://example.org/semestre_2/graphes/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_2/graphes/</guid>
+      <description>Les graphes Quelques points et des traits pour les relier suffisent pour créer un graphe. Cette grande simplicité est pourtant à l&amp;rsquo;origine d&amp;rsquo;un foisonnement mathématiques impressionnant.
+Un peu d&amp;rsquo;histoire L&amp;rsquo;acte de naissance de la théorie des graphes date d&amp;rsquo;une petite énigme à laquelle s&amp;rsquo;attelaient sans succès les habitants de Königsberg. Comment un voyageur pouvait traverser les sept ponts sans jamais passer deux fois sur le même pont ? Euler résout le problème et fonda du même coup la théorie des graphes !</description>
     </item>
     
     <item>

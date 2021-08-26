@@ -28,6 +28,11 @@
   </url>
   
   <url>
+    <loc>http://example.org/semestre_2/correctionterminaison/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/semestre_1/tp2imbrication/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url>
@@ -43,7 +48,7 @@
   </url>
   
   <url>
-    <loc>http://example.org/semestre_2/graphes/</loc>
+    <loc>http://example.org/semestre_2/complexite/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url>
   
@@ -63,6 +68,11 @@
   </url>
   
   <url>
+    <loc>http://example.org/semestre_2/nombre/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://example.org/python/structcontr/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url>
@@ -73,8 +83,8 @@
   </url>
   
   <url>
-    <loc>http://example.org/semestre_2/tp/</loc>
-    <lastmod>2021-03-06T14:20:50+01:00</lastmod>
+    <loc>http://example.org/semestre_2/graphes/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url>
   
   <url>
