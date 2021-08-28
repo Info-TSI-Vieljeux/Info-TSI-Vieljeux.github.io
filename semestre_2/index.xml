@@ -24,7 +24,8 @@ Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusemen
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/semestre_2/correctionterminaison/</guid>
-      <description>Prouver un algorithme Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc. On peut décrire un algorithme comme étant une suite d&amp;rsquo;actions à accomplir séquentiellement, dans un ordre fixé.</description>
+      <description>Prouver un algorithme Le mot algorithme vient de la latinisation du nom du savant arabe al-Khuwārizmī (780-850) qui a entre autres permis l&amp;rsquo;introduction de l&amp;rsquo;algèbre en Europe (et il est aussi à l&amp;rsquo;origine de ce mot).
+Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc.</description>
     </item>
     
     <item>
@@ -36,6 +37,17 @@ Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusemen
       <description>Complexité d&amp;rsquo;un algorithme Parmi les 3 questions qu&amp;rsquo;on peut se poser naturellement devant un algorithme (termine-t-il ? est-il correct ? combien de temps met-il ?), on a laissé la dernière en plan dans le chapitre précédent.
 La question du temps mis par l&amp;rsquo;algorithme est le problème de la complexité de l&amp;rsquo;algorithme.
 L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique est de pouvoir comparer l’efficacité d’algorithmes résolvant le même problème. Dans une situation donnée, cela permet donc d&amp;rsquo;établir lequel des algorithmes disponibles est le meilleur (du point de vue temps d&amp;rsquo;exécution).</description>
+    </item>
+    
+    <item>
+      <title>TP 8 : correction</title>
+      <link>http://example.org/semestre_2/tp8correc/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_2/tp8correc/</guid>
+      <description>TP 8 : correction et terminaison Cliquez sur cette invitation pour récupérer le repository du TP. Multiplication égyptienne Considérons le code suivant, qui implémente un ancien algorithme égyptien.
+a et b sont supposés être des entiers positifs.
+def multegy(a, b) : p = 0 while a &amp;gt; 0 : if a%2 == 1 : p += b b *= 2 a //= 2 return p  Qui est le variant de boucle permettant de prover que meltegy termine toujours ?</description>
     </item>
     
     <item>

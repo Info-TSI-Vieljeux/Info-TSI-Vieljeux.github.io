@@ -57,7 +57,8 @@ Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/semestre_2/correctionterminaison/</guid>
-      <description>Prouver un algorithme Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc. On peut décrire un algorithme comme étant une suite d&amp;rsquo;actions à accomplir séquentiellement, dans un ordre fixé.</description>
+      <description>Prouver un algorithme Le mot algorithme vient de la latinisation du nom du savant arabe al-Khuwārizmī (780-850) qui a entre autres permis l&amp;rsquo;introduction de l&amp;rsquo;algèbre en Europe (et il est aussi à l&amp;rsquo;origine de ce mot).
+Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc.</description>
     </item>
     
     <item>
@@ -102,6 +103,17 @@ L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique 
       <description>L&amp;rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.
 On va se placer dans un des champs les plus porteurs de la science informatique actuelle, l&amp;rsquo;analyse de données, pour constater comment l&amp;rsquo;utilisation de modules adaptés peut simplifier le travail.
 Exploration d&amp;rsquo;un jeu de données Statistiques simples import pandas as pd # bibliothèques dédiée au traitement de jeux de données import matplotlib.</description>
+    </item>
+    
+    <item>
+      <title>TP 8 : correction</title>
+      <link>http://example.org/semestre_2/tp8correc/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_2/tp8correc/</guid>
+      <description>TP 8 : correction et terminaison Cliquez sur cette invitation pour récupérer le repository du TP. Multiplication égyptienne Considérons le code suivant, qui implémente un ancien algorithme égyptien.
+a et b sont supposés être des entiers positifs.
+def multegy(a, b) : p = 0 while a &amp;gt; 0 : if a%2 == 1 : p += b b *= 2 a //= 2 return p  Qui est le variant de boucle permettant de prover que meltegy termine toujours ?</description>
     </item>
     
     <item>

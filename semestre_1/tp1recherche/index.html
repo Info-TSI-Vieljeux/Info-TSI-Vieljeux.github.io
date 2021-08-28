@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1629996737" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1629996737" rel="stylesheet">
-    <link href="/css/hybrid.css?1629996737" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1629996737" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1629996737" rel="stylesheet">
-    <link href="/css/auto-complete.css?1629996737" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1629996737" rel="stylesheet">
-    <link href="/css/theme.css?1629996737" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1629996737" rel="stylesheet">
+    <link href="/css/nucleus.css?1630116208" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1630116208" rel="stylesheet">
+    <link href="/css/hybrid.css?1630116208" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1630116208" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1630116208" rel="stylesheet">
+    <link href="/css/auto-complete.css?1630116208" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1630116208" rel="stylesheet">
+    <link href="/css/theme.css?1630116208" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1630116208" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1629996737" rel="stylesheet">
+    <link href="/css/theme-green.css?1630116208" rel="stylesheet">
     
-    <link href="/css/foo.css?1629996737" rel="stylesheet"><link href="/css/bar.css?1629996737" rel="stylesheet">
+    <link href="/css/foo.css?1630116208" rel="stylesheet"><link href="/css/bar.css?1630116208" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1629996737"></script>
+    <script src="/js/jquery-3.3.1.min.js?1630116208"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1629996737"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1629996737"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1630116208"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1630116208"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1629996737"></script>
+<script type="text/javascript" src="/js/search.js?1630116208"></script>
 
     
   </div>
@@ -556,6 +556,27 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
+      <li data-nav-id="/semestre_2/tp8correc/" title="TP 8 : correction" class="dd-item ">
+        <a href="/semestre_2/tp8correc/">
+        TP 8 : correction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/semestre_2/nombre/" title="Les nombres en machine" class="dd-item ">
         <a href="/semestre_2/nombre/">
         Les nombres en machine
@@ -689,13 +710,14 @@ Exemple : s&rsquo;il y a 2 fois l&rsquo;élément 18 dans la liste <code>L</code
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dico</span>(L) :
     <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">    dico(n:int)-&gt;dict
+</span><span style="color:#e6db74">    dico(L : list) -&gt; dict
+</span><span style="color:#e6db74">    précondition : si la longueur de L vaut n, alors L ne contient que des entiers &lt; n
 </span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
     <span style="color:#75715e">###`VOTRE CODE</span>
 </code></pre></div><p>Définissons une fonction <code>recherche_dico</code> qui vérifie si un entier est bien présent :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recherche_dico</span>(e,dic) :
     <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">    recherche_dico(e:int,dic:dict)-&gt;bool
+</span><span style="color:#e6db74">    recherche_dico(e : int, dic : dict) -&gt; bool
 </span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
     <span style="color:#66d9ef">if</span> dic[e] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span> :
         <span style="color:#66d9ef">return</span> True
@@ -767,7 +789,8 @@ Votre fonction <code>max_2</code> devra utiliser votre ancienne fonction <code>m
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">max_2</span>(L) :
     <span style="color:#e6db74">&#39;&#39;&#39;
 </span><span style="color:#e6db74">    maximum_2(L : list) -&gt; float ou int
-</span><span style="color:#e6db74">    la fonction retourne le plus grand élément strictement plus petit que le max.
+</span><span style="color:#e6db74">    précondition : L est une liste de nombres
+</span><span style="color:#e6db74">    postcondition : la fonction retourne le plus grand élément strictement plus petit que le max de la liste.
 </span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
 </code></pre></div><p>Ci-dessous est représentée l&rsquo;évolution du temps d&rsquo;exécution de la fonction native <code>max</code> ainsi que de la fonction <code>maximum</code> (si vous avez réussi à l&rsquo;implémenter) en fonction de la taille de la liste en argument.<br>
@@ -1176,6 +1199,22 @@ plt<span style="color:#f92672">.</span>legend()
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1194,19 +1233,19 @@ plt<span style="color:#f92672">.</span>legend()
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1629996737"></script>
-    <script src="/js/perfect-scrollbar.min.js?1629996737"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1629996737"></script>
-    <script src="/js/jquery.sticky.js?1629996737"></script>
-    <script src="/js/featherlight.min.js?1629996737"></script>
-    <script src="/js/highlight.pack.js?1629996737"></script>
+    <script src="/js/clipboard.min.js?1630116208"></script>
+    <script src="/js/perfect-scrollbar.min.js?1630116208"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1630116208"></script>
+    <script src="/js/jquery.sticky.js?1630116208"></script>
+    <script src="/js/featherlight.min.js?1630116208"></script>
+    <script src="/js/highlight.pack.js?1630116208"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1629996737"></script>
-    <script src="/js/learn.js?1629996737"></script>
-    <script src="/js/hugo-learn.js?1629996737"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1630116208"></script>
+    <script src="/js/learn.js?1630116208"></script>
+    <script src="/js/hugo-learn.js?1630116208"></script>
     
         
-            <script src="/mermaid/mermaid.js?1629996737"></script>
+            <script src="/mermaid/mermaid.js?1630116208"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

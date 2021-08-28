@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1629996737" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1629996737" rel="stylesheet">
-    <link href="/css/hybrid.css?1629996737" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1629996737" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1629996737" rel="stylesheet">
-    <link href="/css/auto-complete.css?1629996737" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1629996737" rel="stylesheet">
-    <link href="/css/theme.css?1629996737" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1629996737" rel="stylesheet">
+    <link href="/css/nucleus.css?1630116207" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1630116207" rel="stylesheet">
+    <link href="/css/hybrid.css?1630116207" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1630116207" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1630116207" rel="stylesheet">
+    <link href="/css/auto-complete.css?1630116207" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1630116207" rel="stylesheet">
+    <link href="/css/theme.css?1630116207" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1630116207" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1629996737" rel="stylesheet">
+    <link href="/css/theme-green.css?1630116207" rel="stylesheet">
     
-    <link href="/css/foo.css?1629996737" rel="stylesheet"><link href="/css/bar.css?1629996737" rel="stylesheet">
+    <link href="/css/foo.css?1630116207" rel="stylesheet"><link href="/css/bar.css?1630116207" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1629996737"></script>
+    <script src="/js/jquery-3.3.1.min.js?1630116207"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1629996737"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1629996737"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1630116208"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1630116208"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1629996737"></script>
+<script type="text/javascript" src="/js/search.js?1630116208"></script>
 
     
   </div>
@@ -556,6 +556,27 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
+      <li data-nav-id="/semestre_2/tp8correc/" title="TP 8 : correction" class="dd-item ">
+        <a href="/semestre_2/tp8correc/">
+        TP 8 : correction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/semestre_2/nombre/" title="Les nombres en machine" class="dd-item ">
         <a href="/semestre_2/nombre/">
         Les nombres en machine
@@ -691,8 +712,9 @@ Le plus simple est d&rsquo;utiliser une boucle <code>while</code>.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">palindrome</span>(chaine) :
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    palindrome(chaine::string)-&gt;test::bool
-</span><span style="color:#e6db74">    si chaine est un palindrome, test vaut True, et False sinon.
+</span><span style="color:#e6db74">    palindrome(chaine : string) -&gt; test : bool
+</span><span style="color:#e6db74">    précondition : chaine est une chaine de caractères
+</span><span style="color:#e6db74">    postcondition : si chaine est un palindrome, test vaut True, et False sinon.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
     <span style="color:#66d9ef">return</span> test
@@ -730,9 +752,9 @@ On considère le numéro de carte comme une suite de nombres à 1 chiffre.</p>
 <p><img src="https://cordier-info.github.io/cb.jpg" alt=""></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">verifcarte</span>(numero) :
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    verifcarte(numero::string)-&gt;bool
-</span><span style="color:#e6db74">    le numéro est une chaîne de caractères (par exemple &#39;1205 1205 1205 1205&#39;)
-</span><span style="color:#e6db74">    la fonction retourne vrai si le numéro est valide et faux sinon
+</span><span style="color:#e6db74">    verifcarte(numero : string) -&gt; bool
+</span><span style="color:#e6db74">    précondition : numéro est une chaîne de caractères (par exemple &#39;1205 1205 1205 1205&#39;)
+</span><span style="color:#e6db74">    postcondition : la fonction retourne vrai si le numéro est valide et faux sinon
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     num <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
     <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> numero :
@@ -764,8 +786,8 @@ verifcarte(num)
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tpsdevol</span>(nombre) :
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    tpsdevol(nombre::int)-&gt;T::int
-</span><span style="color:#e6db74">    nombre est un entier positif
+</span><span style="color:#e6db74">    tpsdevol(nombre : int) -&gt; T : int
+</span><span style="color:#e6db74">    précondition : nombre est un entier positif
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
     <span style="color:#66d9ef">return</span> T  
@@ -1157,6 +1179,22 @@ plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;t
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1175,19 +1213,19 @@ plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;t
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1629996737"></script>
-    <script src="/js/perfect-scrollbar.min.js?1629996737"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1629996737"></script>
-    <script src="/js/jquery.sticky.js?1629996737"></script>
-    <script src="/js/featherlight.min.js?1629996737"></script>
-    <script src="/js/highlight.pack.js?1629996737"></script>
+    <script src="/js/clipboard.min.js?1630116208"></script>
+    <script src="/js/perfect-scrollbar.min.js?1630116208"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1630116208"></script>
+    <script src="/js/jquery.sticky.js?1630116208"></script>
+    <script src="/js/featherlight.min.js?1630116208"></script>
+    <script src="/js/highlight.pack.js?1630116208"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1629996737"></script>
-    <script src="/js/learn.js?1629996737"></script>
-    <script src="/js/hugo-learn.js?1629996737"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1630116208"></script>
+    <script src="/js/learn.js?1630116208"></script>
+    <script src="/js/hugo-learn.js?1630116208"></script>
     
         
-            <script src="/mermaid/mermaid.js?1629996737"></script>
+            <script src="/mermaid/mermaid.js?1630116208"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
