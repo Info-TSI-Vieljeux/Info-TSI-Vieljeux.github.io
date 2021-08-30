@@ -67,7 +67,7 @@ Un algorithme est une méthode qui sert à résoudre un problème en un nombre f
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/semestre_1/tp2imbrication/</guid>
-      <description>Algorithmes opérant sur une structure séquentielle par boucles imbriquées Chercher un mot dans un texte  Écrire une fonction cherche_mot naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.
+      <description>Algorithmes opérant sur une structure séquentielle par boucles imbriquées Cliquez sur cette invitation pour récupérer le repository du TP. Chercher un mot dans un texte  Écrire une fonction cherche_mot naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.
 Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&amp;rsquo;est pas plus long que le texte.</description>
     </item>
     
@@ -101,8 +101,8 @@ L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique 
       
       <guid>http://example.org/semestre_1/tp3data/</guid>
       <description>L&amp;rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.
-On va se placer dans un des champs les plus porteurs de la science informatique actuelle, l&amp;rsquo;analyse de données, pour constater comment l&amp;rsquo;utilisation de modules adaptés peut simplifier le travail.
-Exploration d&amp;rsquo;un jeu de données Statistiques simples import pandas as pd # bibliothèques dédiée au traitement de jeux de données import matplotlib.</description>
+On va se placer dans un des champs les plus porteurs actuellement (et où python est très utilisé), l&amp;rsquo;analyse de données.
+Cliquez sur cette invitation pour récupérer le repository du TP. Exploration d&amp;rsquo;un jeu de données Statistiques simples import pandas as pd # bibliothèques dédiée au traitement de jeux de données import matplotlib.</description>
     </item>
     
     <item>
