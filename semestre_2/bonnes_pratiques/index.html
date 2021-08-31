@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1630343297" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1630343297" rel="stylesheet">
-    <link href="/css/hybrid.css?1630343297" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1630343297" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1630343297" rel="stylesheet">
-    <link href="/css/auto-complete.css?1630343297" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1630343297" rel="stylesheet">
-    <link href="/css/theme.css?1630343297" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1630343297" rel="stylesheet">
+    <link href="/css/nucleus.css?1630409022" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1630409022" rel="stylesheet">
+    <link href="/css/hybrid.css?1630409022" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1630409022" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1630409022" rel="stylesheet">
+    <link href="/css/auto-complete.css?1630409022" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1630409022" rel="stylesheet">
+    <link href="/css/theme.css?1630409022" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1630409022" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1630343297" rel="stylesheet">
+    <link href="/css/theme-green.css?1630409022" rel="stylesheet">
     
-    <link href="/css/foo.css?1630343297" rel="stylesheet"><link href="/css/bar.css?1630343297" rel="stylesheet">
+    <link href="/css/foo.css?1630409022" rel="stylesheet"><link href="/css/bar.css?1630409022" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1630343297"></script>
+    <script src="/js/jquery-3.3.1.min.js?1630409022"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1630343297"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1630343297"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1630409022"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1630409022"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/example.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1630343297"></script>
+<script type="text/javascript" src="/js/search.js?1630409022"></script>
 
     
   </div>
@@ -556,9 +556,9 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_2/tp8correc/" title="TP 8 : correction" class="dd-item ">
+      <li data-nav-id="/semestre_2/tp8correc/" title="TP 8 : correction et complexité" class="dd-item ">
         <a href="/semestre_2/tp8correc/">
-        TP 8 : correction
+        TP 8 : correction et complexité
         
         </a>
     </li>
@@ -580,6 +580,27 @@ onload='renderMathInElement(document.body);'></script>
       <li data-nav-id="/semestre_2/nombre/" title="Les nombres en machine" class="dd-item ">
         <a href="/semestre_2/nombre/">
         Les nombres en machine
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/semestre_2/tp9nombre/" title="TP 9 : nombres en machine" class="dd-item ">
+        <a href="/semestre_2/tp9nombre/">
+        TP 9 : nombres en machine
         
         </a>
     </li>
@@ -666,13 +687,8 @@ onload='renderMathInElement(document.body);'></script>
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#protéger-ses-blocs-dinstructions-en-commentant-son-code">Protéger ses blocs d&rsquo;instructions en commentant son code</a>
-      <ul>
-        <li><a href="#préconditions">préconditions</a></li>
-        <li><a href="#postconditions">postconditions</a></li>
-        <li><a href="#invariant">invariant</a></li>
-      </ul>
-    </li>
+    <li><a href="#commenter-son-code">Commenter son code</a></li>
+    <li><a href="#choisir-des-noms-explicites">Choisir des noms explicites</a></li>
     <li><a href="#utiliser-des-fonctions">Utiliser des fonctions</a></li>
     <li><a href="#documenter-ses-fonctions">Documenter ses fonctions</a></li>
     <li><a href="#contraindre-les-spécifications-avec-des-assertions">Contraindre les spécifications avec des assertions</a></li>
@@ -697,13 +713,16 @@ onload='renderMathInElement(document.body);'></script>
 
 
 <h1 id="les-bonnes-pratiques">Les bonnes pratiques</h1>
-<p>Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est devenu subitement complètement cryptique.</p>
+<p>Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est subitement devenu  complètement cryptique.</p>
 <p><img src="https://c.tenor.com/A7NIlRIBtNoAAAAM/brooklyn99-brooklyn-nine-nine.gif" alt=""></p>
 <p>Le temps perdu est alors énorme et vécu d&rsquo;autant plus douloureusement qu&rsquo;il était facilement évitable&hellip;</p>
 <p><img src="https://c.tenor.com/UsEL0CtIGKwAAAAC/trash-computer.gif" alt=""></p>
 <p> </p>
-<h2 id="protéger-ses-blocs-dinstructions-en-commentant-son-code">Protéger ses blocs d&rsquo;instructions en commentant son code</h2>
-<p><strong>Commenter son code</strong> via l&rsquo;utilisation de <code>#</code> est la principale protection contre de telles autotortures.</p>
+<h2 id="commenter-son-code">Commenter son code</h2>
+
+<div class="notices warning" ><p><strong>Commenter son code</strong> via l&rsquo;utilisation de <code>#</code> est la principale protection contre de telles autotortures.</p>
+</div>
+
 <p>Il ne s&rsquo;agit pas de commenter chaque ligne comme on voit parfois&hellip;</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a,b <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>	<span style="color:#75715e"># j&#39;affecte la valeur 2 à la variable a et la valeur 3 à b</span>
 c <span style="color:#f92672">=</span> a<span style="color:#f92672">+</span>b 	<span style="color:#75715e"># j&#39;affecte à c le résultat de l&#39;addition entre a et b</span>
@@ -719,13 +738,19 @@ Dans l&rsquo;idéal, on commente alors chaque bloc de code en précisant dans la
 <li><strong>postconditions</strong></li>
 <li><strong>invariant</strong></li>
 </ul>
-<h3 id="préconditions">préconditions</h3>
-<p>Ce sont les conditions que doivent vérifier impérativement les paramètres d&rsquo;entrée pour que le code fasse ce qui est attendu.</p>
-<h3 id="postconditions">postconditions</h3>
-<p>Ce sont les conditions que doivent vérifier impérativement les paramètres de sortie (après le bloc).</p>
-<p>Par exemple, si le bloc de code est sensé calculer une moyenne sur 20, la postcondition sera que la variable de sortie soit bien un flottant compris entre 0 et 20 valant la moyenne des valeurs en entrée.</p>
-<h3 id="invariant">invariant</h3>
-<p>L&rsquo;invariant est la propriété qui devra être vérifiée à chaque itération de manière à ce que la précondition aboutisse bien au final à la poscondition.</p>
+<p>
+<div class="notices def" ><p><strong>préconditions</strong> : ce sont les conditions que doivent vérifier impérativement les paramètres d&rsquo;entrée pour que le code fasse ce qui est attendu.</p>
+</div>
+
+
+<div class="notices def" ><p><strong>postconditions</strong> : ce sont les conditions que doivent vérifier impérativement les paramètres de sortie (après le bloc).</p>
+</div>
+
+Par exemple, si le bloc de code est sensé calculer une moyenne sur 20, la postcondition sera que la variable de sortie soit bien un flottant compris entre 0 et 20 valant la moyenne des valeurs en entrée.
+
+<div class="notices def" ><p><strong>invariant</strong> : propriété qui devra être vérifiée à chaque itération de manière à ce que la précondition aboutisse bien au final à la poscondition.</p>
+</div>
+</p>
 <p>Exemple d&rsquo;une division euclidienne :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># ce code permet de calculer le quotient et le reste de la division euclidienne de a par b</span>
 <span style="color:#75715e"># préconditions : a ≥ 0 et b &gt; 0</span>
@@ -740,13 +765,28 @@ q <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 <span style="color:#66d9ef">print</span>(q,r)
 <span style="color:#75715e"># postconditions : a = b*q + r, 0 ≤ r &lt; b, a et b inchangés</span>
 </code></pre></div><p> </p>
+<h2 id="choisir-des-noms-explicites">Choisir des noms explicites</h2>
+<p>Bien nommer ses variables améliore fortement la lisibilité du code.<br>
+Choisir des noms explicites qui se rapportent au rôle et/ou aux types des variables utilisées est en effet un bien meilleur guide pour le lecteur du code que des noms génériques tel <code>a</code>, <code>b</code>, <code>c</code>&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">y_0, v_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.3</span>, <span style="color:#ae81ff">7.2</span>
+g <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">9.8</span>
+t <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+dt <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e-3</span>
+y, v <span style="color:#f92672">=</span> y_0, v_0
+<span style="color:#66d9ef">while</span> y <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> :
+    v <span style="color:#f92672">+=</span> g<span style="color:#f92672">*</span>dt
+    y <span style="color:#f92672">+=</span> v<span style="color:#f92672">*</span>dt
+    t <span style="color:#f92672">+=</span> dt
+<span style="color:#66d9ef">print</span>(t)
+</code></pre></div><p>Un physicien comprend rapidement le but de ce code, mais d&rsquo;autres choix de noms l&rsquo;auraient rendu bien plus obscur.</p>
+<p> </p>
 <h2 id="utiliser-des-fonctions">Utiliser des fonctions</h2>
 <p>Autre pratique améliorant son code : l&rsquo;utilisation de fonctions.</p>
 <p>But :</p>
 <ul>
-<li>éviter de réécrire du code : on appelle la fonction contenant le code à la place (toute répétition de code est globalement à éviter, comme dans un texte littéraire) ;</li>
-<li>simplifier la lecture du code (et plus les noms des fonctions seront clairs, plus la compréhension du code sera simplifiée) ;</li>
-<li>rendre son code modulaire : les fonctions construites sont autant d&rsquo;outils ayant une mission clairement définie. Et on peut très bien utiliser des fonctions au sein d&rsquo;autres fonctions pour améliorer encore la lisibilité.</li>
+<li><strong>éviter de réécrire du code</strong> : on appelle la fonction contenant le code à la place (toute répétition de code est globalement à éviter, comme dans un texte littéraire) ;</li>
+<li><strong>simplifier la lecture du code</strong> (et plus les noms des fonctions seront clairs, plus la compréhension du code sera simplifiée) ;</li>
+<li><strong>rendre son code modulaire</strong> : les fonctions construites sont autant d&rsquo;outils ayant une mission clairement définie. Et on peut très bien utiliser des fonctions au sein d&rsquo;autres fonctions pour améliorer encore la lisibilité.</li>
 </ul>
 <p> </p>
 <h2 id="documenter-ses-fonctions">Documenter ses fonctions</h2>
@@ -766,7 +806,7 @@ q <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     moy <span style="color:#f92672">/=</span> len(notes)
     <span style="color:#66d9ef">return</span> moy
 </code></pre></div>
-<div class="notices note" ><p>On peut afficher le docstring d&rsquo;une fonction via la méthode <code>.__doc__</code>.</p>
+<div class="notices tip" ><p>On peut afficher le docstring d&rsquo;une fonction via la méthode <code>.__doc__</code>.</p>
 </div>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(moyenne<span style="color:#f92672">.</span>__doc__)
@@ -788,7 +828,10 @@ Le plan de vol différent d&rsquo;Ariane 5 provoquait des accélérations très 
 <h2 id="tester">Tester</h2>
 <p>Quand un code ne donne pas le résultat attendu, il faut partir à la recherche de l&rsquo;erreur. Pour cela, le plus simple est d&rsquo;utiliser un <strong>jeu de test</strong>.</p>
 <p>Il s&rsquo;agit tout simplement de disposer des <code>print</code> tout le long de son code pour afficher conjointement les valeurs à cette endroit du code des différentes variables et les valeurs qu&rsquo;on aimerait qu&rsquo;elles aient.</p>
-<p>Le plus efficace est d&rsquo;adopter une démarche dichotomique pour placer ces tests : début-milieu-fin dans un premier temps, puis on découpe en deux début-milieu et milieu-fin, etc.</p>
+
+<div class="notices tip" ><p>Le plus efficace est d&rsquo;adopter une démarche dichotomique pour placer ces tests : début-milieu-fin dans un premier temps, puis on découpe en deux début-milieu et milieu-fin, etc.</p>
+</div>
+
 <p>Prenons un exemple. Le programme suivant est sensé décider si la suite de caractères qu&rsquo;on a entré au clavier est un palindrome ou non :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bug</span>() :
     res <span style="color:#f92672">=</span> []
@@ -858,13 +901,23 @@ On sait maintenant que la première partie du code fait son boulot !</p>
         <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;pas palindrome&#39;</span>)
 </code></pre></div><p>S&rsquo;affiche alors : <code>tmp = ['b', '2', 'a'] res = ['b', '2', 'a']</code></p>
 <p>Aha ! <code>tmp</code> a la bonne tête, mais<code>res</code> aussi a été modifié, et ça, ce n&rsquo;était pas prévu&hellip; Le problème est donc dans les 3 lignes qui précèdent le <code>print</code>. On pourrait placer un nouveau test entre ces lignes, mais vous aurez sans doute déjà trouvé le piège dans lequel le codeur est tombé.</p>
-<p>On aurait pu être tenté de ne pas retester <code>res</code> à cette étape puisqu&rsquo;on venait de le faire au test précédent, mais comme le montre cet exemple, cela aurait été une funeste erreur (un bug dans la chasse au bug) !</p>
+
+<div class="notices tip" ><p>On aurait pu être tenté de ne pas retester <code>res</code> à cette étape puisqu&rsquo;on venait de le faire au test précédent, mais cela aurait été du coup très mal joué  (un bug dans la chasse au bug) !</p>
+</div>
+
 <p>L&rsquo;expérience la plus vexante et retorse, elle aussi vécue par beaucoup, voit le codeur présenter fièrement un programme qui répond parfaitement à ses attentes, mais qui crashe piteusement à la première utilisation d&rsquo;une autre personne&hellip;</p>
 <p><img src="https://i.pinimg.com/originals/2a/b4/f8/2ab4f866c5e7dce9cd493a94e6d7beb1.gif" alt=""></p>
 <p>Une des raisons possibles est qu&rsquo;il n&rsquo;ait pas testé son programme pour des entrées suffisamment différentes. Et si le testeur n&rsquo;a pas reçu le mémo l&rsquo;obligeant à ne tenter que les quelques entrées que le codeur a validées, il se retrouve en terrain miné !</p>
-<p>Morale : <strong>il faut tester le plus largement possible les entrées d&rsquo;un programme</strong>.</p>
-<p>Pour ne pas non plus se perdre dans une revue systématique, vous gagnerez à <strong>partitionner le domaîne des entrées</strong> en grandes classes. Une classe est telle qu&rsquo;à l&rsquo;intérieur, le programme réagisse de la même façon avec toutes les entrées. Il suffit alors de ne tester qu&rsquo;une seule valeur par classe.<br>
-Exemple : si vous fabriquez une fonction valeur absolue, plutôt que de tester des milliers de nombres, on peut se contenter de tester une valeur dans chacune des trois classes suivantes correspondantes aux différents comportements de la fonction (et donc aux différents branchements de son code) : entrées $&lt; 0$, entrées $&gt; 0$ et la frontière entrées $=0$.</p>
+
+<div class="notices warning" ><p>Morale : il faut tester le plus largement possible les entrées d&rsquo;un programme.</p>
+</div>
+
+
+<div class="notices info" ><p>Pour ne pas non plus se perdre dans une revue systématique, vous gagnerez à <strong>partitionner le domaîne des entrées</strong> en grandes classes.<br>
+Une <strong>classe</strong> est telle qu&rsquo;à l&rsquo;intérieur, le programme réagisse de la même façon avec toutes les entrées. Il suffit alors de ne tester qu&rsquo;une seule valeur par classe.</p>
+</div>
+
+<p>Exemple : si on fabrique une fonction valeur absolue, plutôt que de tester des milliers de nombres, on peut se contenter de tester une valeur dans chacune des trois classes suivantes correspondantes aux différents comportements de la fonction (et donc aux différents branchements de son code) : entrées $&lt; 0$, entrées $&gt; 0$ et la frontière entrées $=0$.</p>
 <p>En conclusion, mieux vous aurez défini l&rsquo;ensemble des entrées acceptables et bien inspecté leurs frontières, plus facilement vous pourrez guider le lecteur de votre code à l&rsquo;intérieur de ces frontières de bon fonctionnement via les préconditions. Car s&rsquo;il est évident pour votre moi du présent que votre code demande nécessairement un type de données précis et qu&rsquo;il ne viendrait à l&rsquo;idée de personne d&rsquo;utiliser autre chose, attendez seulement quelques temps que le doute vous assaille en le relisant&hellip; Et s&rsquo;il vous arrive d&rsquo;hésiter un tant soit peu, imaginez quelqu&rsquo;un d&rsquo;autre !</p>
 
 
@@ -1255,6 +1308,22 @@ Exemple : si vous fabriquez une fonction valeur absolue, plutôt que de tester d
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1273,19 +1342,19 @@ Exemple : si vous fabriquez une fonction valeur absolue, plutôt que de tester d
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1630343297"></script>
-    <script src="/js/perfect-scrollbar.min.js?1630343297"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1630343297"></script>
-    <script src="/js/jquery.sticky.js?1630343297"></script>
-    <script src="/js/featherlight.min.js?1630343297"></script>
-    <script src="/js/highlight.pack.js?1630343297"></script>
+    <script src="/js/clipboard.min.js?1630409022"></script>
+    <script src="/js/perfect-scrollbar.min.js?1630409022"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1630409022"></script>
+    <script src="/js/jquery.sticky.js?1630409022"></script>
+    <script src="/js/featherlight.min.js?1630409022"></script>
+    <script src="/js/highlight.pack.js?1630409022"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1630343297"></script>
-    <script src="/js/learn.js?1630343297"></script>
-    <script src="/js/hugo-learn.js?1630343297"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1630409022"></script>
+    <script src="/js/learn.js?1630409022"></script>
+    <script src="/js/hugo-learn.js?1630409022"></script>
     
         
-            <script src="/mermaid/mermaid.js?1630343297"></script>
+            <script src="/mermaid/mermaid.js?1630409022"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

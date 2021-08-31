@@ -13,9 +13,9 @@
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/semestre_2/bonnes_pratiques/</guid>
-      <description>Les bonnes pratiques Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&amp;rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est devenu subitement complètement cryptique.
+      <description>Les bonnes pratiques Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&amp;rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est subitement devenu complètement cryptique.
 Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusement qu&amp;rsquo;il était facilement évitable&amp;hellip;
- Protéger ses blocs d&amp;rsquo;instructions en commentant son code Commenter son code via l&amp;rsquo;utilisation de # est la principale protection contre de telles autotortures.</description>
+ Commenter son code Commenter son code via l&amp;rsquo;utilisation de # est la principale protection contre de telles autotortures.</description>
     </item>
     
     <item>
@@ -40,12 +40,12 @@ L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique 
     </item>
     
     <item>
-      <title>TP 8 : correction</title>
+      <title>TP 8 : correction et complexité</title>
       <link>http://example.org/semestre_2/tp8correc/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>http://example.org/semestre_2/tp8correc/</guid>
-      <description>TP 8 : correction et terminaison Cliquez sur cette invitation pour récupérer le repository du TP. Multiplication égyptienne Considérons le code suivant, qui implémente un ancien algorithme égyptien.
+      <description>TP 8 : correction et complexité Cliquez sur cette invitation pour récupérer le repository du TP. Multiplication égyptienne Considérons le code suivant, qui implémente un ancien algorithme égyptien.
 a et b sont supposés être des entiers positifs.
 def multegy(a, b) : p = 0 while a &amp;gt; 0 : if a%2 == 1 : p += b b *= 2 a //= 2 return p  Qui est le variant de boucle permettant de prover que meltegy termine toujours ?</description>
     </item>
@@ -60,6 +60,16 @@ def multegy(a, b) : p = 0 while a &amp;gt; 0 : if a%2 == 1 : p += b b *= 2 a //=
 L&amp;rsquo;espace pour représenter un nombre en machine est limité. Si cette limitation n&amp;rsquo;a pas trop d&amp;rsquo;impact pour les entiers (surtout en Python !) elle devient très handicapante pour représenter les réels.
 La représentation machine d&amp;rsquo;un nombre est appelée mot machine. Sa taille est généralement aujourd&amp;rsquo;hui de 64 bits.
   Les différentes bases Une écriture en base $b$ utilise $b$ chiffres différents :</description>
+    </item>
+    
+    <item>
+      <title>TP 9 : nombres en machine</title>
+      <link>http://example.org/semestre_2/tp9nombre/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>http://example.org/semestre_2/tp9nombre/</guid>
+      <description>TP9 : nombres Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 : nombres palindromiques  Déterminer grâce à un code Python le plus petit nombre supérieur ou égal à $10,000$ dont l&amp;rsquo;écriture est palindromique (se lisant pareil dans les deux sens) à la fois en base 10 et en base 2.
+ ### VOTRE CODE # Affectez votre réponse (l&amp;#39;écriture en base 10 du nombre entier trouvé) à la variable nb nb = 3  Exo 2 : missiles Patriot Une batterie de missiles Patriot détecte les missiles ennemis et les intercepte avec un contre-missile.</description>
     </item>
     
     <item>
