@@ -27,7 +27,7 @@
       <guid>http://example.org/semestre_1/tp1recherche/</guid>
       <description>TP 1 : Recherche séquentielle dans un tableau unidimensionnel. Dictionnaires. Cliquez sur cette invitation pour récupérer le repository du TP. Recherche d&amp;rsquo;un élément dans une liste  Écrire une fonction recherche qui prend pour argument un élément et une liste et qui retourne True si l&amp;rsquo;élément est présent et False sinon.
 Le corps de la fonction devra comprendre une boucle.
- def recherche(x,L) : &amp;#39;&amp;#39;&amp;#39; recherche(x: tout type, L : list) -&amp;gt; bool &amp;#39;&amp;#39;&amp;#39; ### VOTRE CODE  Dans le pire des cas (élément ne se trouvant pas dans la liste), combien de comparaisons doit-on opérer pour savoir si un élément est présent dans une liste de taille 400 ?</description>
+ def recherche(x,L) : &amp;#39;&amp;#39;&amp;#39; recherche(x : tout type, L : list) -&amp;gt; bool &amp;#39;&amp;#39;&amp;#39; ### VOTRE CODE  Dans le pire des cas (élément ne se trouvant pas dans la liste), combien de comparaisons doit-on opérer pour savoir si un élément est présent dans une liste de taille 400 ?</description>
     </item>
     
     <item>
