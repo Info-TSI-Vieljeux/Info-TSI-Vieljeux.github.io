@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Introduction on Cours info TSI</title>
-    <link>http://example.org/</link>
+    <link>https://info-tsi-vieljeux.github.io/</link>
     <description>Recent content in Introduction on Cours info TSI</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate><atom:link href="https://info-tsi-vieljeux.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Les bonnes pratiques</title>
-      <link>http://example.org/semestre_2/bonnes_pratiques/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_2/bonnes_pratiques/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_2/bonnes_pratiques/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_2/bonnes_pratiques/</guid>
       <description>Les bonnes pratiques Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&amp;rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est subitement devenu complètement cryptique.
 Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusement qu&amp;rsquo;il était facilement évitable&amp;hellip;
  Commenter son code Commenter son code via l&amp;rsquo;utilisation de # est la principale protection contre de telles autotortures.</description>
@@ -20,10 +20,10 @@ Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusemen
     
     <item>
       <title>TP 0 : Démarrage</title>
-      <link>http://example.org/semestre_1/tp0/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_1/tp0/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_1/tp0/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp0/</guid>
       <description>TP 0 : Démarrage Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 Combien de fois une feuille de papier d’épaisseur $e=0,1$ mm doit-elle être pliée pour atteindre la Lune ?
  Écrivez dans la cellule suivante un code permettant d&amp;rsquo;obtenir la réponse. Le plus simple est d&amp;rsquo;utiliser une boucle while.
  Wolfram alpha vous donne avec précision la distance Terre-Lune.
@@ -32,10 +32,10 @@ Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusemen
     
     <item>
       <title>TP 1 : recherche simple</title>
-      <link>http://example.org/semestre_1/tp1recherche/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_1/tp1recherche/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_1/tp1recherche/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp1recherche/</guid>
       <description>TP 1 : Recherche séquentielle dans un tableau unidimensionnel. Dictionnaires. Cliquez sur cette invitation pour récupérer le repository du TP. Recherche d&amp;rsquo;un élément dans une liste  Écrire une fonction recherche qui prend pour argument un élément et une liste et qui retourne True si l&amp;rsquo;élément est présent et False sinon.
 Le corps de la fonction devra comprendre une boucle.
  def recherche(x,L) : &amp;#39;&amp;#39;&amp;#39; recherche(x : tout type, L : list) -&amp;gt; bool &amp;#39;&amp;#39;&amp;#39; ### VOTRE CODE  Dans le pire des cas (élément ne se trouvant pas dans la liste), combien de comparaisons doit-on opérer pour savoir si un élément est présent dans une liste de taille 400 ?</description>
@@ -43,40 +43,40 @@ Le corps de la fonction devra comprendre une boucle.
     
     <item>
       <title>Traits généraux</title>
-      <link>http://example.org/python/traitsgaux/</link>
+      <link>https://info-tsi-vieljeux.github.io/python/traitsgaux/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/python/traitsgaux/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/python/traitsgaux/</guid>
       <description>Traits généraux Introduction Shell et IDE Python est un langage de programmation interprété développé par Guido van Rossum en 1989. Langage impératif de haut-niveau doté d&amp;rsquo;une syntaxe simple, Python s&amp;rsquo;adapte à de nombreux contextes grâce à sa modularité ; une importante librairie de modules et packages permet en effet d&amp;rsquo;étendre ses capacités.
 Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;utilisateur entre une commande Python qui est interprétée immédiatement lorsque Entrée est tapée.</description>
     </item>
     
     <item>
       <title>Correction / Terminaison</title>
-      <link>http://example.org/semestre_2/correctionterminaison/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_2/correctionterminaison/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_2/correctionterminaison/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_2/correctionterminaison/</guid>
       <description>Prouver un algorithme Le mot algorithme vient de la latinisation du nom du savant arabe al-Khuwārizmī (780-850) qui a entre autres permis l&amp;rsquo;introduction de l&amp;rsquo;algèbre en Europe (et il est aussi à l&amp;rsquo;origine de ce mot).
 Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc.</description>
     </item>
     
     <item>
       <title>TP 2 : boucles imbriquées</title>
-      <link>http://example.org/semestre_1/tp2imbrication/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_1/tp2imbrication/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_1/tp2imbrication/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp2imbrication/</guid>
       <description>Algorithmes opérant sur une structure séquentielle par boucles imbriquées Cliquez sur cette invitation pour récupérer le repository du TP. Chercher un mot dans un texte  Écrire une fonction cherche_mot naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.
 Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&amp;rsquo;est pas plus long que le texte.</description>
     </item>
     
     <item>
       <title>Types de base</title>
-      <link>http://example.org/python/typesbase/</link>
+      <link>https://info-tsi-vieljeux.github.io/python/typesbase/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/python/typesbase/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/python/typesbase/</guid>
       <description>Types de base Les types de base en python (les catégories fondamentales des objets manipulés) sont :
   Les entiers int (en anglais, entier se dit integer).
 Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est illimitée en Python.
@@ -85,10 +85,10 @@ Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est i
     
     <item>
       <title>Complexité</title>
-      <link>http://example.org/semestre_2/complexite/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_2/complexite/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_2/complexite/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_2/complexite/</guid>
       <description>Complexité d&amp;rsquo;un algorithme Parmi les 3 questions qu&amp;rsquo;on peut se poser naturellement devant un algorithme (termine-t-il ? est-il correct ? combien de temps met-il ?), on a laissé la dernière en plan dans le chapitre précédent.
 La question du temps mis par l&amp;rsquo;algorithme est le problème de la complexité de l&amp;rsquo;algorithme.
 L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique est de pouvoir comparer l’efficacité d’algorithmes résolvant le même problème. Dans une situation donnée, cela permet donc d&amp;rsquo;établir lequel des algorithmes disponibles est le meilleur (du point de vue temps d&amp;rsquo;exécution).</description>
@@ -96,10 +96,10 @@ L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique 
     
     <item>
       <title>TP 3 : utilisation de modules</title>
-      <link>http://example.org/semestre_1/tp3data/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_1/tp3data/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_1/tp3data/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp3data/</guid>
       <description>L&amp;rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.
 On va se placer dans un des champs les plus porteurs actuellement (et où python est très utilisé), l&amp;rsquo;analyse de données.
 Cliquez sur cette invitation pour récupérer le repository du TP. Exploration d&amp;rsquo;un jeu de données Statistiques simples import pandas as pd # bibliothèques dédiée au traitement de jeux de données import matplotlib.</description>
@@ -107,10 +107,10 @@ Cliquez sur cette invitation pour récupérer le repository du TP. Exploration d
     
     <item>
       <title>Types structurés</title>
-      <link>http://example.org/python/typesstruct/</link>
+      <link>https://info-tsi-vieljeux.github.io/python/typesstruct/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/python/typesstruct/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/python/typesstruct/</guid>
       <description>Types structurés Les types structurés (chaînes, tuiles, listes, dictionnaires, ensembles) sont des objets composés ; ils contiennent eux-mêmes d&amp;rsquo;autres objets.
 Certains de ces objets composites sont en plus indicés. Comme leur nom l&amp;rsquo;indique, on peut parcourir les éléments présents d&amp;rsquo;une structure indicée à l&amp;rsquo;aide d&amp;rsquo;un indice (un nombre entier étiquetant l&amp;rsquo;indice). Les structures indicés sont donc ordonnées, ce sont des séquences. L&amp;rsquo;indice commence toujours à 0.
 Et donc si la structure contient n éléments, le dernier indice est n-1.</description>
@@ -118,10 +118,10 @@ Et donc si la structure contient n éléments, le dernier indice est n-1.</descr
     
     <item>
       <title>Strucutres de contrôle</title>
-      <link>http://example.org/python/structcontr/</link>
+      <link>https://info-tsi-vieljeux.github.io/python/structcontr/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/python/structcontr/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/python/structcontr/</guid>
       <description>Structures de contrôle Instruction d&amp;rsquo;affectation Définition Lorsqu&amp;rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction id().
 id(3.7) 4387417928
 Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&amp;rsquo;est à ça que servent les variables.</description>
@@ -129,10 +129,10 @@ Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâ
     
     <item>
       <title>TP 4 : algorithmes dichotomiques</title>
-      <link>http://example.org/semestre_1/tp4dicho/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_1/tp4dicho/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_1/tp4dicho/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp4dicho/</guid>
       <description>Algorithmes dichotomiques Recherche dichotomique L&amp;rsquo;algorithme de recherche mis au point dans le tp1 compte dans le pire des cas autant d&amp;rsquo;étapes que l&amp;rsquo;ensemble scruté contient d&amp;rsquo;éléments.
 Peut-on faire mieux ?
 Dans le cas, d&amp;rsquo;un ensemble ordonné trié, la réponse est oui. On peut même faire beaucoup mieux !
@@ -141,10 +141,10 @@ L&amp;rsquo;idée est de regarder d&amp;rsquo;abord au milieu du paquet dans leq
     
     <item>
       <title>TP 8 : correction et complexité</title>
-      <link>http://example.org/semestre_2/tp8correc/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_2/tp8correc/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_2/tp8correc/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_2/tp8correc/</guid>
       <description>TP 8 : correction et complexité Cliquez sur cette invitation pour récupérer le repository du TP. Multiplication égyptienne Considérons le code suivant, qui implémente un ancien algorithme égyptien.
 a et b sont supposés être des entiers positifs.
 def multegy(a, b) : p = 0 while a &amp;gt; 0 : if a%2 == 1 : p += b b *= 2 a //= 2 return p  Qui est le variant de boucle permettant de prover que meltegy termine toujours ?</description>
@@ -152,10 +152,10 @@ def multegy(a, b) : p = 0 while a &amp;gt; 0 : if a%2 == 1 : p += b b *= 2 a //=
     
     <item>
       <title>Les nombres en machine</title>
-      <link>http://example.org/semestre_2/nombre/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_2/nombre/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_2/nombre/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_2/nombre/</guid>
       <description>Représentation des nombres Comment un nombre est-il représenté à l&amp;rsquo;intérieur d&amp;rsquo;un ordinateur ?
 L&amp;rsquo;espace pour représenter un nombre en machine est limité. Si cette limitation n&amp;rsquo;a pas trop d&amp;rsquo;impact pour les entiers (surtout en Python !) elle devient très handicapante pour représenter les réels.
 La représentation machine d&amp;rsquo;un nombre est appelée mot machine. Sa taille est généralement aujourd&amp;rsquo;hui de 64 bits.
@@ -164,20 +164,20 @@ La représentation machine d&amp;rsquo;un nombre est appelée mot machine. Sa ta
     
     <item>
       <title>TP 5 : fonctions récursives</title>
-      <link>http://example.org/semestre_1/tp5recu/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_1/tp5recu/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_1/tp5recu/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp5recu/</guid>
       <description>Fonctions récursives   import numpy as np import matplotlib.pyplot as plt from matplotlib.patches import Rectangle plt.style.use(&amp;#39;seaborn&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (10, 10) fig, ax = plt.subplots() ax.set_aspect(1) couleurs = plt.rcParams[&amp;#39;axes.prop_cycle&amp;#39;].by_key()[&amp;#39;color&amp;#39;]  Deux tris récursifs Tri insertion  Écrire la fonction insertion qui permet à l&amp;rsquo;algorithme récursif tri_insertion défini plus bas de faire son travail.
  def insertion(element,Ltriee) : &amp;#34;&amp;#34;&amp;#34; insertion(element : float ou int, Ltriee : liste ou tuple de float ou int) -&amp;gt; Lins : liste ou tuple de float ou int insertion insert &amp;#39;nombre&amp;#39; au bon endroit dans &amp;#39;Ltriee&amp;#39; et retourne cette nouvelle liste.</description>
     </item>
     
     <item>
       <title>TP 6 : algorithmes de tri</title>
-      <link>http://example.org/semestre_1/tp6tri/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_1/tp6tri/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_1/tp6tri/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp6tri/</guid>
       <description>algorithmes de tri Trier c&amp;rsquo;est partir d&amp;rsquo;une structure de données désordonnée et la remettre en ordre.
 Les tris sont omniprésents en informatique et Tim Roughgarden (auteur d&#39;Algorithms illuminated) en parle même comme de la &amp;ldquo;mère de tous les problèmes algorithmiques&amp;rdquo;.
 Plusieurs stratégies existent. On va en passer certaines en revue et essayer de trier les algorithmes de tri.
@@ -186,40 +186,40 @@ Plusieurs stratégies existent. On va en passer certaines en revue et essayer de
     
     <item>
       <title>TP 9 : nombres en machine</title>
-      <link>http://example.org/semestre_2/tp9nombre/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_2/tp9nombre/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_2/tp9nombre/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_2/tp9nombre/</guid>
       <description>TP9 : nombres Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 : nombres palindromiques  Déterminer grâce à un code Python le plus petit nombre supérieur ou égal à $10,000$ dont l&amp;rsquo;écriture est palindromique (se lisant pareil dans les deux sens) à la fois en base 10 et en base 2.
  ### VOTRE CODE # Affectez votre réponse (l&amp;#39;écriture en base 10 du nombre entier trouvé) à la variable nb nb = 3  Exo 2 : missiles Patriot Une batterie de missiles Patriot détecte les missiles ennemis et les intercepte avec un contre-missile.</description>
     </item>
     
     <item>
       <title>Graphes</title>
-      <link>http://example.org/semestre_2/graphes/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_2/graphes/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_2/graphes/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_2/graphes/</guid>
       <description>Les graphes Quelques points et des traits pour les relier suffisent pour créer un graphe. Cette grande simplicité est pourtant à l&amp;rsquo;origine d&amp;rsquo;un foisonnement mathématiques impressionnant.
 Un peu d&amp;rsquo;histoire L&amp;rsquo;acte de naissance de la théorie des graphes date d&amp;rsquo;une petite énigme à laquelle s&amp;rsquo;attelaient sans succès les habitants de Königsberg. Comment un voyageur pouvait traverser les sept ponts sans jamais passer deux fois sur le même pont ? Euler résout le problème et fonda du même coup la théorie des graphes !</description>
     </item>
     
     <item>
       <title>TP 7 : matrices de pixels et image</title>
-      <link>http://example.org/semestre_1/tp7image/</link>
+      <link>https://info-tsi-vieljeux.github.io/semestre_1/tp7image/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/semestre_1/tp7image/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp7image/</guid>
       <description>Tableau de pixels et images Importer une image PIL (python imaging library) est l&amp;rsquo;une des librairies Python permettant de manipuler des fichiers image. On va l&amp;rsquo;utiliser en association avec numpy qui est le module de choix pour jouer avec des tableaux numériques.
 from PIL import Image import urllib.request # pour récupérer une image sur le web from IPython.display import display # pour afficher dans le notebook import matplotlib.pyplot as plt import numpy as np plt.</description>
     </item>
     
     <item>
       <title>Divers</title>
-      <link>http://example.org/python/divers/</link>
+      <link>https://info-tsi-vieljeux.github.io/python/divers/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>http://example.org/python/divers/</guid>
+      <guid>https://info-tsi-vieljeux.github.io/python/divers/</guid>
       <description>Divers Commentaires Tous les langages de programmations permettent d&amp;rsquo;introduire des commentaires dans le code qui servent d&amp;rsquo;aides et de repères à celui qui lit le code, mais qui sont ignorés lors de l&amp;rsquo;exécution.
 En Python, les commentaires sont introduits par le symbole dièse (hashtag) #.
  Utilisation de print print est la première fonction native que l&amp;rsquo;on rencontre. C&amp;rsquo;est une fonction à effet de bord : elle ne retourne rien (elle est de type None), mais elle permet d&amp;rsquo;afficher une chaîne de caractères, ou le contenu d&amp;rsquo;une variable, quel que soit son type.</description>
