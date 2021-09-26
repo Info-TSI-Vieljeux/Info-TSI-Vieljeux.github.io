@@ -37,7 +37,8 @@ Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusemen
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp1recherche/</guid>
       <description>TP 1 : Recherche séquentielle dans un tableau unidimensionnel. Dictionnaires. Cliquez sur cette invitation pour récupérer le repository du TP. Recherche d&amp;rsquo;un élément dans une liste  Écrire une fonction recherche qui prend pour argument un élément et une liste et qui retourne True si l&amp;rsquo;élément est présent et False sinon.
-Le corps de la fonction devra comprendre une boucle et le mot clé in est interdit (c&amp;rsquo;est justement le but de recherche de reproduire le fonctionnement de in).</description>
+Le corps de la fonction devra comprendre une boucle.
+ Rq : le but de recherche est de reproduire le fonctionnement du mot clé in.</description>
     </item>
     
     <item>
