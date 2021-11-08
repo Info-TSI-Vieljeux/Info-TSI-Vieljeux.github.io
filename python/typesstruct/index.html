@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1636303254" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1636303254" rel="stylesheet">
-    <link href="/css/hybrid.css?1636303254" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1636303254" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1636303254" rel="stylesheet">
-    <link href="/css/auto-complete.css?1636303254" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1636303254" rel="stylesheet">
-    <link href="/css/theme.css?1636303254" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1636303254" rel="stylesheet">
+    <link href="/css/nucleus.css?1636413536" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1636413536" rel="stylesheet">
+    <link href="/css/hybrid.css?1636413536" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1636413536" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1636413536" rel="stylesheet">
+    <link href="/css/auto-complete.css?1636413536" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1636413536" rel="stylesheet">
+    <link href="/css/theme.css?1636413536" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1636413536" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1636303254" rel="stylesheet">
+    <link href="/css/theme-green.css?1636413536" rel="stylesheet">
     
-    <link href="/css/foo.css?1636303254" rel="stylesheet"><link href="/css/bar.css?1636303254" rel="stylesheet">
+    <link href="/css/foo.css?1636413536" rel="stylesheet"><link href="/css/bar.css?1636413536" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1636303254"></script>
+    <script src="/js/jquery-3.3.1.min.js?1636413536"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1636303254"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1636303254"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1636413536"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1636413536"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1636303254"></script>
+<script type="text/javascript" src="/js/search.js?1636413536"></script>
 
     
   </div>
@@ -701,10 +701,16 @@ onload='renderMathInElement(document.body);'></script>
       <ul>
         <li><a href="#création-dune-liste">Création d&rsquo;une liste</a></li>
         <li><a href="#copie-dune-liste">Copie d&rsquo;une liste</a></li>
-        <li><a href="#retirer-un-élément-avec-pop">Retirer un élément avec <code>pop</code></a></li>
+        <li><a href="#retirer-un-élément">Retirer un élément</a></li>
       </ul>
     </li>
-    <li><a href="#dictionnaires">Dictionnaires</a></li>
+    <li><a href="#dictionnaires">Dictionnaires</a>
+      <ul>
+        <li><a href="#ajouter-une-clé-à-un-dictionnaire">Ajouter une clé à un dictionnaire</a></li>
+        <li><a href="#retirer-une-clé">Retirer une clé</a></li>
+        <li><a href="#parcourir-un-dictionnaire">Parcourir un dictionnaire</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -909,7 +915,7 @@ L[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>appen
 </code></pre></div><p><code>['🍋', '🍑', ['🍈', '🍒', '🍌'], '🍏']</code><br>
 <code>'🥥'</code> ne se retrouve pas dans la copie, mais <code>🍌</code> y est bien&hellip;</p>
 <p> </p>
-<h3 id="retirer-un-élément-avec-pop">Retirer un élément avec <code>pop</code></h3>
+<h3 id="retirer-un-élément">Retirer un élément</h3>
 <p>La méthode <code>pop()</code> permet de retirer le dernier élément d&rsquo;une liste.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;🥥&#39;</span>, <span style="color:#e6db74">&#39;🍐&#39;</span>, <span style="color:#e6db74">&#39;🍋&#39;</span>, <span style="color:#e6db74">&#39;🍒&#39;</span>]
 <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{L.pop() = }&#34;</span>)
@@ -917,6 +923,26 @@ L[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>appen
 </code></pre></div><p><code>L.pop() = '🍒'</code><br>
 <code>L = ['🥥', '🍐', '🍋']</code></p>
 <p>Comme on le voit, <code>pop</code> retourne l&rsquo;élément retiré (c&rsquo;est une expression), et une fois que <code>pop</code> a été utilisé, l&rsquo;élément a disparu.</p>
+<p>Si on veut retirer un autre élément que le dernier et qu&rsquo;on connaît <strong>son indice</strong> <code>i</code>, on peut utiliser <code>pop(i)</code>, mais on peut aussi utiliser le slicing (<code>L[i:i+1]=[]</code>) ou encore le mot clé <code>del</code> (<code>del L[i]</code>).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L1 <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;🥥&#39;</span>, <span style="color:#e6db74">&#39;🍐&#39;</span>, <span style="color:#e6db74">&#39;🍋&#39;</span>, <span style="color:#e6db74">&#39;🍒&#39;</span>]
+L2 <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;🥥&#39;</span>, <span style="color:#e6db74">&#39;🍐&#39;</span>, <span style="color:#e6db74">&#39;🍋&#39;</span>, <span style="color:#e6db74">&#39;🍒&#39;</span>]
+L3 <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;🥥&#39;</span>, <span style="color:#e6db74">&#39;🍐&#39;</span>, <span style="color:#e6db74">&#39;🍋&#39;</span>, <span style="color:#e6db74">&#39;🍒&#39;</span>]
+<span style="color:#75715e"># Si on veut retirer la poire</span>
+L1<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">1</span>)
+L2[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">2</span>]<span style="color:#f92672">=</span>[]
+<span style="color:#66d9ef">del</span> L3[<span style="color:#ae81ff">1</span>]
+<span style="color:#66d9ef">print</span>(L1)
+<span style="color:#66d9ef">print</span>(L2)
+<span style="color:#66d9ef">print</span>(L3)
+</code></pre></div><p><code>['🥥', '🍋', '🍒']</code><br>
+<code>['🥥', '🍋', '🍒']</code><br>
+<code>['🥥', '🍋', '🍒']</code></p>
+<p>Et si plutôt que l&rsquo;indice de l&rsquo;élément à retirer, on veut utiliser <strong>sa valeur</strong>, on emploie la méthode <code>remove</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;🥥&#39;</span>, <span style="color:#e6db74">&#39;🍐&#39;</span>, <span style="color:#e6db74">&#39;🍋&#39;</span>, <span style="color:#e6db74">&#39;🍒&#39;</span>]
+<span style="color:#75715e"># Si on veut retirer la poire</span>
+L<span style="color:#f92672">.</span>remove(<span style="color:#e6db74">&#39;🍐&#39;</span>)
+<span style="color:#66d9ef">print</span>(L)
+</code></pre></div><p><code>['🥥', '🍋', '🍒']</code></p>
 <p> </p>
 <h2 id="dictionnaires">Dictionnaires</h2>
 <p>Un dictionnaire (type <code>dict</code>) est une collection d&rsquo;objets, comme une liste ou un tuple, mais au lieu d&rsquo;indicer les objets s&rsquo;y trouvant (appelés <strong>valeurs</strong>) par un nombre, on utilise une <strong>clé</strong>.</p>
@@ -929,22 +955,35 @@ L[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>appen
 <p>Exemple où les clés sont des prénoms et les valeurs, des notes :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">note <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Giselle&#39;</span> : <span style="color:#ae81ff">7.5</span>, <span style="color:#e6db74">&#39;Alphonse&#39;</span> : <span style="color:#ae81ff">12</span>, <span style="color:#e6db74">&#39;Dudule&#39;</span> : <span style="color:#ae81ff">7.5</span>, <span style="color:#e6db74">&#39;Berthe&#39;</span> : <span style="color:#ae81ff">16.5</span>}
 </code></pre></div><p>Chaque valeur peut être récupérée grâce à la clé comme s&rsquo;il s&rsquo;agisait d&rsquo;un indice : <code>note['Dudule']</code> donne <code>7.5</code></p>
-<p>On peut ajouter une entrée au dictionnaire de la même façon :<br>
-<code>note['Raoul'] = 14</code> transforme note en <code>{'Giselle': 7.5, 'Alphonse': 12, 'Dudule': 7.5, 'Berthe': 16.5, 'Raoul': 14}</code></p>
-<p>On peut ainsi partir d&rsquo;un dictionnaire vide <code>{}</code> et le construire étape par étape :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">coef <span style="color:#f92672">=</span> {}
+<p> </p>
+<h3 id="ajouter-une-clé-à-un-dictionnaire">Ajouter une clé à un dictionnaire</h3>
+<p>On peut ajouter une entrée au dictionnaire en écrivant simplement <code>dico[nouvelleClé]=valeur</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">note[<span style="color:#e6db74">&#39;Raoul&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span> <span style="color:#75715e"># ajoute la note de Raoul au dictionnaire note</span>
+<span style="color:#66d9ef">print</span>(note)
+</code></pre></div><p><code>{'Giselle': 7.5, 'Alphonse': 12, 'Dudule': 7.5, 'Berthe': 16.5, 'Raoul': 14}</code></p>
+<p>On peut partir d&rsquo;un dictionnaire vide <code>{}</code> et le construire ainsi étape par étape :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">coef <span style="color:#f92672">=</span> {} <span style="color:#75715e"># dictionnaire vide</span>
 coef[<span style="color:#e6db74">&#39;maths&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>
 coef[<span style="color:#e6db74">&#39;physique&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
 coef[<span style="color:#e6db74">&#39;philo&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>
 <span style="color:#66d9ef">print</span>(coef)
 </code></pre></div><p><code>{'maths': 9, 'physique': 10, 'philo': 9}</code></p>
-<p>Comme les listes, les dictionnaires sont des objets mutables. <code>note['Berthe'] = 18</code> modifie bien la note de Berthe dans le dictionnaire <code>note</code>.</p>
+<p>Comme les listes, les dictionnaires sont des objets mutables.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">note[<span style="color:#e6db74">&#39;Berthe&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span> <span style="color:#75715e"># modifie la note de Berthe dans le dictionnaire note</span>
+<span style="color:#66d9ef">print</span>(note)
+</code></pre></div><p><code>{'Giselle': 7.5, 'Alphonse': 12, 'Dudule': 7.5, 'Berthe': 18, 'Raoul': 14}</code></p>
 
 <div class="notices info" ><p><strong>Chaque clé doit être unique</strong>, mais les valeurs peuvent être identiques (comme les notes de Dudule et Giselle).</p>
 </div>
 
-<p>Tenter d&rsquo;accéder à une clé qui ne figure pas dans le dictionnaire se solde par une erreur. Pour y échapper, on peut <strong>tester la présence d&rsquo;une clé</strong> grâce à <code>in</code>.</p>
-<p>Exemple : fabriquons une liste de 12 éléments pris au hasard parmi les entiers de 1 à 10 et mettons au point une méthode pour compter les occurrences de chacun des 10 entiers :</p>
+
+<div class="notices warning" ><p>Tenter d&rsquo;accéder à une clé qui ne figure pas dans le dictionnaire se solde par une erreur.</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(note[<span style="color:#e6db74">&#39;Gourmandine&#39;</span>]) <span style="color:#75715e"># la clé Gourmandine n&#39;existe pas</span>
+</code></pre></div><p><code>KeyError: 'Gourmandine'</code></p>
+<p>Pour y échapper, on peut <strong>tester la présence d&rsquo;une clé</strong> grâce à <code>in</code>.</p>
+<p>Exemple : à partir d&rsquo;une liste de 12 éléments pris au hasard parmi les entiers de 1 à 10, fabriquons un dictionnaire qui compte les occurrences de chacun des 10 entiers :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
 L <span style="color:#f92672">=</span> []
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">12</span>) :
@@ -958,6 +997,18 @@ effectifs <span style="color:#f92672">=</span> {}
 <span style="color:#66d9ef">print</span>(effectifs)
 </code></pre></div><p><code>{5: 3, 10: 1, 9: 1, 4: 1, 8: 1, 6: 2, 1: 3}</code></p>
 <p>Sans la condition, <code>effectifs[e]+1</code> aurait levé une <code>KeyError</code> car le dictionnaire n&rsquo;a initialement aucune entrée et donc <code>effectifs[e]</code> n&rsquo;est pas défini.</p>
+<p> </p>
+<h3 id="retirer-une-clé">Retirer une clé</h3>
+<p>On peut <strong>retirer une clé</strong> d&rsquo;un dictionnaire grâce au mot clé <code>del</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">del</span> note[<span style="color:#e6db74">&#39;Alphonse&#39;</span>]
+<span style="color:#66d9ef">print</span>(note)
+</code></pre></div><p><code>{'Giselle': 7.5, 'Dudule': 7.5, 'Berthe': 18, 'Raoul': 14}</code></p>
+
+<div class="notices warning" ><p>Si on utilise <code>del</code> sur une clé inexistante, une erreur <code>KeyError</code> est là encore produite.</p>
+</div>
+
+<p> </p>
+<h3 id="parcourir-un-dictionnaire">Parcourir un dictionnaire</h3>
 <p>Les méthodes <code>keys</code> et <code>values</code> permettents de récupérer les <em>clés</em> et <em>valeurs</em> d&rsquo;un dictionnaire sous forme d&rsquo;itérables, ce qui peut s&rsquo;avérer pratique pour un tracé, par exemple.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
 clés <span style="color:#f92672">=</span> effectifs<span style="color:#f92672">.</span>keys()
@@ -1411,19 +1462,19 @@ infos[<span style="color:#e6db74">&#39;notes&#39;</span>][:] <span style="color:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1636303254"></script>
-    <script src="/js/perfect-scrollbar.min.js?1636303254"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1636303254"></script>
-    <script src="/js/jquery.sticky.js?1636303254"></script>
-    <script src="/js/featherlight.min.js?1636303254"></script>
-    <script src="/js/highlight.pack.js?1636303254"></script>
+    <script src="/js/clipboard.min.js?1636413536"></script>
+    <script src="/js/perfect-scrollbar.min.js?1636413536"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1636413536"></script>
+    <script src="/js/jquery.sticky.js?1636413536"></script>
+    <script src="/js/featherlight.min.js?1636413536"></script>
+    <script src="/js/highlight.pack.js?1636413536"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1636303254"></script>
-    <script src="/js/learn.js?1636303254"></script>
-    <script src="/js/hugo-learn.js?1636303254"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1636413536"></script>
+    <script src="/js/learn.js?1636413536"></script>
+    <script src="/js/hugo-learn.js?1636413536"></script>
     
         
-            <script src="/mermaid/mermaid.js?1636303254"></script>
+            <script src="/mermaid/mermaid.js?1636413536"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
