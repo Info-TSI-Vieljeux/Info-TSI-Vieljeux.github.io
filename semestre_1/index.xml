@@ -69,8 +69,8 @@ Imaginons que l&amp;rsquo;on cherche une carte dans un jeu trié en ordre croiss
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp5recu/</guid>
-      <description>Fonctions récursives   import numpy as np import matplotlib.pyplot as plt from matplotlib.patches import Rectangle plt.style.use(&amp;#39;seaborn&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (10, 10) fig, ax = plt.subplots() ax.set_aspect(1) couleurs = plt.rcParams[&amp;#39;axes.prop_cycle&amp;#39;].by_key()[&amp;#39;color&amp;#39;]  Deux tris récursifs Tri insertion  Écrire la fonction insertion qui permet à l&amp;rsquo;algorithme récursif tri_insertion défini plus bas de faire son travail.
- def insertion(element,Ltriee) : &amp;#34;&amp;#34;&amp;#34; insertion(element : float ou int, Ltriee : liste ou tuple de float ou int) -&amp;gt; Lins : liste ou tuple de float ou int insertion insert &amp;#39;nombre&amp;#39; au bon endroit dans &amp;#39;Ltriee&amp;#39; et retourne cette nouvelle liste.</description>
+      <description>Fonctions récursives   import numpy as np import matplotlib.pyplot as plt from matplotlib.patches import Rectangle plt.style.use(&amp;#39;seaborn&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (10, 10) fig, ax = plt.subplots() ax.set_aspect(1) couleurs = plt.rcParams[&amp;#39;axes.prop_cycle&amp;#39;].by_key()[&amp;#39;color&amp;#39;]  Deux tris récursifs Tri insertion  Écrire la fonction insertion qui insert au bon endroit un nombre dans une liste triée afin qu&amp;rsquo;elle reste triée.
+ def insertion(element,Ltriee) : &amp;#34;&amp;#34;&amp;#34; insertion(element : nombre, Ltriee : liste de nombres) -&amp;gt; Lsortie : liste de nombres insertion insert &amp;#39;nombre&amp;#39; au bon endroit dans &amp;#39;Ltriee&amp;#39; et retourne cette nouvelle liste.</description>
     </item>
     
     <item>
