@@ -168,8 +168,8 @@ La représentation machine d&amp;rsquo;un nombre est appelée mot machine. Sa ta
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp5recu/</guid>
-      <description>Fonctions récursives   import numpy as np import matplotlib.pyplot as plt from matplotlib.patches import Rectangle plt.style.use(&amp;#39;seaborn&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (10, 10) fig, ax = plt.subplots() ax.set_aspect(1) couleurs = plt.rcParams[&amp;#39;axes.prop_cycle&amp;#39;].by_key()[&amp;#39;color&amp;#39;]  Deux tris récursifs Tri insertion  Écrire la fonction insertion qui insert au bon endroit un nombre dans une liste triée afin qu&amp;rsquo;elle reste triée.
- def insertion(element,Ltriee) : &amp;#34;&amp;#34;&amp;#34; insertion(element : nombre, Ltriee : liste de nombres) -&amp;gt; Lsortie : liste de nombres insertion insert &amp;#39;nombre&amp;#39; au bon endroit dans &amp;#39;Ltriee&amp;#39; et retourne cette nouvelle liste.</description>
+      <description>Fonctions récursives   import numpy as np import matplotlib.pyplot as plt from matplotlib.patches import Rectangle plt.style.use(&amp;#39;seaborn&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (10, 10) fig, ax = plt.subplots() ax.set_aspect(1) couleurs = plt.rcParams[&amp;#39;axes.prop_cycle&amp;#39;].by_key()[&amp;#39;color&amp;#39;]  Visualisation des appels récursifs Installons un module permettant de représenter sous forme de graphe les différents appels récursifs d&amp;rsquo;une fonction.
+%%capture !pip install recursionvisualisation==0.2 On construit une fonction récursive somme(n) qui retourne la somme des n premiers entiers et on utilise un décorateur (fonction qui modifie le comportement d&amp;rsquo;autres fonctions) pour visualiser les différents appels récursifs faits par somme.</description>
     </item>
     
     <item>
