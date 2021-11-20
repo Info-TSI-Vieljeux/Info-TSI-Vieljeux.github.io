@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>TP 6 : algorithmes de tri - Cours info TSI</title>
+    <title>TP 10 : les graphes - Cours info TSI</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -65,7 +65,7 @@ onload='renderMathInElement(document.body);'></script>
     
 	
   </head>
-  <body class="" data-url="/semestre_1/tp6tri/">
+  <body class="" data-url="/semestre_2/tp10graphes/">
     <nav id="sidebar" class="">
 
 
@@ -265,7 +265,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_1/" title="Semestre 1" class="dd-item
-        parent
+        
         
         
         ">
@@ -417,7 +417,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_1/tp6tri/" title="TP 6 : algorithmes de tri" class="dd-item active">
+      <li data-nav-id="/semestre_1/tp6tri/" title="TP 6 : algorithmes de tri" class="dd-item ">
         <a href="/semestre_1/tp6tri/">
         TP 6 : algorithmes de tri
         
@@ -467,7 +467,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_2/" title="Semestre 2" class="dd-item
-        
+        parent
         
         
         ">
@@ -640,7 +640,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_2/tp10graphes/" title="TP 10 : les graphes" class="dd-item ">
+      <li data-nav-id="/semestre_2/tp10graphes/" title="TP 10 : les graphes" class="dd-item active">
         <a href="/semestre_2/tp10graphes/">
         TP 10 : les graphes
         
@@ -699,7 +699,7 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   TP 6 : algorithmes de tri
+                   TP 10 : les graphes
                  
                   </span>
                 </div>
@@ -708,25 +708,20 @@ onload='renderMathInElement(document.body);'></script>
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#tris-par-comparaison">Tris par comparaison</a>
+    <li><a href="#listes-et-matrices-dadjacence">Listes et matrices d&rsquo;adjacence</a></li>
+    <li><a href="#manipulation-dun-graphe">Manipulation d&rsquo;un graphe</a>
       <ul>
-        <li><a href="#tri-fusion">Tri fusion</a></li>
-        <li><a href="#tri-par-insertion">Tri par insertion</a></li>
-        <li><a href="#tri-par-sélection">Tri par sélection</a></li>
-        <li><a href="#tri-à-bulles">Tri à bulles</a></li>
-        <li><a href="#tri-rapide">Tri rapide</a></li>
+        <li><a href="#ajouter-un-sommet-à-un-graphe">Ajouter un sommet à un graphe</a></li>
+        <li><a href="#retirer-un-sommet-à-un-graphe">Retirer un sommet à un graphe</a></li>
       </ul>
     </li>
-    <li><a href="#tris-non-comparatifs">Tris non comparatifs</a>
+    <li><a href="#utilisation-dun-module-pour-visualiser">Utilisation d&rsquo;un module pour visualiser</a></li>
+    <li><a href="#une-application-concrète-des-graphes--larbre-couvrant-minimal">Une application concrète des graphes : l&rsquo;arbre couvrant minimal</a></li>
+    <li><a href="#lien-entre-structures-de-données-et-graphes-exemple-du-tas">Lien entre structures de données et graphes, exemple du tas</a></li>
+    <li><a href="#parcours-dun-graphe">Parcours d&rsquo;un graphe</a>
       <ul>
-        <li><a href="#tri-par-dénombrement-ou-par-comptage">Tri par dénombrement (ou par comptage)</a></li>
-      </ul>
-    </li>
-    <li><a href="#comparer-les-tris">Comparer les tris</a>
-      <ul>
-        <li><a href="#complexité-en-temps">Complexité en temps</a></li>
-        <li><a href="#complexité-en-espace--en-place-ou-non-">Complexité en espace : en place ou non ?</a></li>
-        <li><a href="#stabilité">Stabilité</a></li>
+        <li><a href="#détecteur-de-cycle">Détecteur de cycle</a></li>
+        <li><a href="#plus-court-chemin">Plus court chemin</a></li>
       </ul>
     </li>
   </ul>
@@ -748,317 +743,925 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-<h1 id="algorithmes-de-tri">algorithmes de tri</h1>
-<p><img src="http://cordier-phychi.toile-libre.org/Info/github/comptri.png" alt=""></p>
-<p>Trier c&rsquo;est partir d&rsquo;une structure de données désordonnée et la remettre en ordre.<br>
-Les tris sont omniprésents en informatique et Tim Roughgarden (auteur d'<em>Algorithms illuminated</em>) en parle même comme de la &ldquo;<em>mère de tous les problèmes algorithmiques</em>&rdquo;.<br>
-Plusieurs stratégies existent. On va en passer certaines en revue et essayer de trier les algorithmes de tri.</p>
-<p align="center">
-<iframe src="https://trinket.io/embed/glowscript/3d9576597b?outputOnly=true&start=result" width="810" height="665" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-</p>
-<h2 id="tris-par-comparaison">Tris par comparaison</h2>
-<p>La plupart des algorithmes de tri sont dits <strong>par comparaison</strong> car ils reposent sur des comparaisons deux à deux des éléments de la liste.</p>
-<p>On a déjà rencontré deux algorithmes de tri par comparaison dans le TP sur la récursivité : le tri par insertion et le tri fusion.</p>
-<h3 id="tri-fusion">Tri fusion</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fusion</span>(L1,L2) :
-    <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    fusion(L1:list,L2:list)-&gt;Lfus:list
-</span><span style="color:#e6db74">    fusion retourne une seule liste ordonnée à partir de deux sous-listes ordonnées
-</span><span style="color:#e6db74">    préconditions : L1 et L2 sont triée dans l&#39;ordre croissant
-</span><span style="color:#e6db74">    postconditions : &#39;Lfus&#39; est triée dans l&#39;ordre croissant (et len(Lfus)==len(L1)+len(L2))
-</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    <span style="color:#66d9ef">if</span> L1 <span style="color:#f92672">==</span> [] :
-        <span style="color:#66d9ef">return</span> L2
-    <span style="color:#66d9ef">if</span> L2 <span style="color:#f92672">==</span> [] :
-        <span style="color:#66d9ef">return</span> L1
-    <span style="color:#66d9ef">if</span> L1[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&lt;=</span> L2[<span style="color:#ae81ff">0</span>] : <span style="color:#75715e"># devient instable si &lt; au lieu de &lt;= !</span>
-        <span style="color:#66d9ef">return</span> [L1[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">+</span> fusion(L1[<span style="color:#ae81ff">1</span>:],L2)
-    <span style="color:#66d9ef">else</span> :
-        <span style="color:#66d9ef">return</span> [L2[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">+</span> fusion(L1,L2[<span style="color:#ae81ff">1</span>:])
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_fusion</span>(L) :
-    n <span style="color:#f92672">=</span> len(L)
-    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span> :
-        <span style="color:#66d9ef">return</span> L
-    <span style="color:#66d9ef">else</span> :
-        <span style="color:#66d9ef">return</span> fusion(tri_fusion(L[:n<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>]),tri_fusion(L[n<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>:]))
-</code></pre></div><blockquote>
-<p>Combien de comparaisons effectue l&rsquo;algorithme de tri fusion pour ordonner <code>[1,2,3,4,5,6,7,8]</code> et <code>[8,7,6,5,4,3,2,1]</code> ?</p>
-</blockquote>
-<ul>
-<li>A : 0 et 8</li>
-<li>B : 8 et 16</li>
-<li>C : 12 et 12</li>
-<li>D : 16 et 8</li>
-</ul>
-<p>Vous pouvez trouver la réponse à la main, mais vous pouvez aussi intégrer à <code>fusion</code> une variable globale <code>nb_comp</code> qui est incrémentée à chaque comparaison entre deux éléments de la liste.<br>
-Pensez à systématiquement réinitialiser <code>nb_comp</code> à 0 avant chaque appel de <code>tri_fusion</code>, car sinon la valeur continue à courir. C&rsquo;est un des dangers des variables globales.</p>
-<p> 
- </p>
-<h3 id="tri-par-insertion">Tri par insertion</h3>
-<p>On va écrire une version itérative de l&rsquo;algorithme de tri par insertion.</p>
-<p>Son principe : on compare chacun des éléments <code>i</code> de la liste donnée en argument (à partir du deuxième) à ceux qui le précèdent en remontant la liste un par un (<code>i-1</code>,<code>i-2</code>,etc.). Tant qu&rsquo;un des éléments qui précèdent est plus grand que l&rsquo;élément <code>i</code>, on les permute, jusqu&rsquo;à ce que l&rsquo;élément <code>i</code> soit à la bonne place.</p>
-<p>Construisez d&rsquo;abord une fonction <code>permute(L,i,j)</code> qui permute les éléments <code>i</code> et <code>j</code> d&rsquo;une liste <code>L</code>.<br></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">permute</span>(L,i,j) :
-    <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    permute(L:list,i:int,j:int)-&gt;list
-</span><span style="color:#e6db74">    0 &lt; i,j &lt; len(L)
-</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><p>Puis complétez la fonction <code>tri_insertion</code> en utilisant <code>permute</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_insertion</span>(L) :
-    <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    tri_insertion(L:list)-&gt;list
-</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(L)) :
-        j <span style="color:#f92672">=</span> i
-        X <span style="color:#f92672">=</span> L[i]
-        <span style="color:#66d9ef">while</span> j <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> L[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;</span> X :
-            <span style="color:#75715e">### VOTRE CODE</span>
-            j <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">return</span> L
-</code></pre></div><p>La cellule suivante permet de comparer le résultat de la fonction <code>tri_insertion</code> à la fonction native de tri <code>sorted</code> sur 1000 listes de 10 nombres tirés au hasard entre -5 et 5</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint,shuffle
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1000</span>) :
-    L_desord <span style="color:#f92672">=</span> [randint(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">5</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
-    <span style="color:#66d9ef">assert</span> tri_insertion(L_desord) <span style="color:#f92672">==</span> sorted(L_desord), f<span style="color:#e6db74">&#34;y a un problème avec {L_desord} :</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">donne {tri_insertion(L_desord)}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">au lieu de {sorted(L_desord)}&#34;</span>
-</code></pre></div><blockquote>
-<p>Combien de comparaisons effectue l&rsquo;algorithme de tri insertion pour ordonner <code>[1,2,3,4,5,6,7,8]</code> et <code>[8,7,6,5,4,3,2,1]</code> ?</p>
-</blockquote>
-<ul>
-<li>A : 7 et 28</li>
-<li>B : 0 et 7</li>
-<li>C : 28 et 28</li>
-<li>D : 5 et 35</li>
-</ul>
+<h1 id="tp10--les-graphes">TP10 : les graphes</h1>
+<p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/m2zkkfNO">cette invitation</a> pour récupérer le repository du TP. </p>
+<p><img src="http://cordier-phychi.toile-libre.org/Info/github/graphetp10.png" alt=""></p>
 <blockquote>
-<p>Combien de comparaisons demande le tri par insertion d&rsquo;une liste de 200 éléments rangés en ordre inverse ?</p>
-</blockquote>
-<p> 
- </p>
-<h3 id="tri-par-sélection">Tri par sélection</h3>
-<p>Principe :  parmi les éléments de la liste, on cherche le plus petit, et on le permute avec le premier élément. Puis on recommence avec tous les éléments restants (tous moins le premier) : on cherche le plus petit et on le permute avec le deuxième élément. On recommence jusqu&rsquo;à épuiser la liste</p>
-<p><em>fonction tri_selection(liste L)<br>
-    n ← longueur(L)<br>
-    pour i de 0 à n - 2<br>
-        min ← i<br>
-            pour j de i + 1 à n - 1<br>
-                si L[j] &lt; L[min], alors min ← j<br>
-            fin pour<br>
-        si min ≠ i, alors échanger L[i] et L[min]<br>
-    fin pour<br>
-    retourner L<br>
-fin fonction</em></p>
-<blockquote>
-<p>Traduisez le peudocode ci-dessus en python.</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_selection</span>(L) :
-    <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><blockquote>
-<p>Combien de comparaisons effectue l&rsquo;algorithme de tri par sélection pour ordonner <code>[1,2,3,4,5,6,7,8]</code> et <code>[8,7,6,5,4,3,2,1]</code> ?</p>
-</blockquote>
+<p>Le dessin ci-dessus peut se représenter par (choisir la bonne réponse) :</p>
 <ul>
-<li>A : 7 et 28</li>
-<li>B : 0 et 7</li>
-<li>C : 28 et 28</li>
-<li>D : 5 et 35</li>
+<li>a : un graphe orienté</li>
+<li>b : un graphe non orienté</li>
 </ul>
-<p>Le tri par sélection ressemble beaucoup au tri par insertion. Dans les deux, après k traversées de la liste, les k premiers éléments sont triés. Cependant la différence fondamentale entre les deux algorithmes est le sens dans lequel ces tris s&rsquo;opèrent ; le tri par insertion trie de la fin vers le début alors que le tri par sélection tri du début vers la fin. Conséquence : dans le tri par sélection, les k premiers éléments de la liste en cours de tri sont les plus petits de la liste entière alors que dans le tri par insertion, ce sont seulement les k premiers éléments d&rsquo;origine triés.</p>
-<p>Le tri par sélection doit toujours inspecter tous les éléments restant pour trouver le plus petit, tandis que le tri par insertion ne requiert qu&rsquo;une seule comparaison quand le (k+1)<sup>e</sup> élément est plus grand que le k<sup>e</sup> ; lorsque c&rsquo;est fréquent (si la liste est déjà partiellement triée), le tri par insertion est bien plus efficace. En moyenne, le tri par insertion nécessite de comparer et décaler la moitié des éléments seulement, ce qui correspond donc à la moitié des comparaisons que le tri par sélection doit faire.</p>
-<p>Dans le pire des cas pour le tri par insertion (liste triée en sens inverse), les deux tris opèrent autant d&rsquo;opérations l&rsquo;un que l&rsquo;autre, mais le tri par insertion va nécessiter plus de permutations puisqu&rsquo;il décale toujours d&rsquo;une position voisine à l&rsquo;autre. Le dernier élément d&rsquo;une liste renversée, par exemple, va devoir traverser toute la liste en échangeant sa place avec chacun des éléments qui le précèdent, alors qu&rsquo;avec le tri par sélection, il n&rsquo;y a jamais au plus qu&rsquo;une permutation par élément.</p>
-<p>En général, le tri par insertion va écrire dans la liste $O(n^2)$ fois (chaque permutation écrit dans la liste), alors que le tri par sélection va écrire seulement $O(n)$ fois. Pour cette raison, le tri par sélection peut être préférable au tri par insertion lorsque l&rsquo;écriture sur la mémoire est significativement plus coûteuse que la lecture (comme sur les EEPROM ou sur les mémoires flash). Ce point est illustré dans l&rsquo;animation interactive du début car limiter les permutations y correspond à limiter les déplacements, ce qui donne l&rsquo;illusion d&rsquo;un algorithme plus rapide.</p>
-<p> 
- </p>
-<h3 id="tri-à-bulles">Tri à bulles</h3>
-<p>Le tri à bulles est surtout à visée pédagogique, il ne sert quasiment jamais réellement. Il tire son nom du fait qu&rsquo;on pousse vers la fin de la liste, de proche en proche, des éléments de plus en plus grands, comme une bulle qui grossit en remontant à la surface.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_a_bulles</span>(L) :
-    n <span style="color:#f92672">=</span> len(L)
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
-        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n<span style="color:#f92672">-</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
-            <span style="color:#66d9ef">if</span> L[j] <span style="color:#f92672">&gt;</span> L[j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] :
-                L <span style="color:#f92672">=</span> permute(L,j,j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
-    <span style="color:#66d9ef">return</span> L
-</code></pre></div><blockquote>
-<p>Combien de comparaisons effectue l&rsquo;algorithme de tri à bulles pour ordonner <code>[1,2,3,4,5,6,7,8]</code> et <code>[8,7,6,5,4,3,2,1]</code> ?</p>
 </blockquote>
+<blockquote>
+<p>Le degré du sommet C vaut :</p>
 <ul>
-<li>A : 7 et 28</li>
-<li>B : 0 et 7</li>
-<li>C : 28 et 28</li>
-<li>D : 5 et 35</li>
+<li>a : 2</li>
+<li>b : 3</li>
+<li>c : 5</li>
 </ul>
-<blockquote>
-<p>Combien de comparaisons demande le tri à bulles d&rsquo;une liste de 200 éléments rangés en ordre inverse  ?</p>
 </blockquote>
-<p> 
- </p>
-<h3 id="tri-rapide">Tri rapide</h3>
-<p>Le tri rapide n&rsquo;est pas toujours le plus rapide&hellip; Mais il peut l&rsquo;être (surtout sur les grandes listes) !<br>
-C&rsquo;est un algorithme récursif utilisant une partition de la liste à trier.<br>
-Son avantage sur le tri fusion est d&rsquo;être un tri en place.<br>
-Désavantage : il est instable.</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/Cubuk-9gzvk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">partitionner</span>(L, g, d, pivot) :
-    permute(L,pivot,d)
-    j <span style="color:#f92672">=</span> g
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(g,d) :
-        <span style="color:#66d9ef">if</span> L[i] <span style="color:#f92672">&lt;=</span> L[d] :
-            permute(L,i,j)
-            j <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    permute(L,d,j)
-    <span style="color:#66d9ef">return</span> j
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_rapide</span>(L, g, d) :
-    <span style="color:#66d9ef">if</span> g <span style="color:#f92672">&lt;</span> d : 
-        pivot <span style="color:#f92672">=</span> randint(g,d)
-        pivot <span style="color:#f92672">=</span> partitionner(L, g, d, pivot)
-        tri_rapide(L, g, pivot<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-        tri_rapide(L, pivot<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, d)
-    <span style="color:#66d9ef">return</span> L
-</code></pre></div><p><img src="http://cordier-phychi.toile-libre.org/Info/github/fusrap.png" alt=""></p>
-<p>La figure précédente permet de supposer que la complexité dans le pire des cas du tri fusion est égale à sa complexité dans le meilleur des cas et à la complexité en moyenne du tri rapide.</p>
-<p>Grâce aux listes par compréhension, on peut écrire une version beaucoup plus courte et claire du tri rapide. Son défaut est qu&rsquo;elle nécessité la construction de nouvelles listes (le tri n&rsquo;est alors plus en place !).<br>
-On va visualiser les différents appels récursifs grâce au module introduit dans le TP précédent et pour que l&rsquo;analyse soit simple, on choisit systématiquement le premier élément de la liste comme pivot.<br>
-La vidéo suivante montre une implémentation de cette version avec des danseurs hongrois&hellip;</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/ywWBy6J5gz8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> recursionvisualisation <span style="color:#f92672">import</span> viz, CallGraph
-cg <span style="color:#f92672">=</span> CallGraph()
-<span style="color:#a6e22e">@viz</span>(cg)
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">triRapide</span>(elements) :
-    <span style="color:#66d9ef">if</span> len(elements) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span> :
-        <span style="color:#66d9ef">return</span> elements
-    <span style="color:#66d9ef">else</span> : 
-        pivot <span style="color:#f92672">=</span> elements[<span style="color:#ae81ff">0</span>]
-        plusPetit <span style="color:#f92672">=</span> triRapide([e <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> elements[<span style="color:#ae81ff">1</span>:] <span style="color:#66d9ef">if</span> e <span style="color:#f92672">&lt;=</span> pivot])
-        plusGrand <span style="color:#f92672">=</span> triRapide([e <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> elements[<span style="color:#ae81ff">1</span>:] <span style="color:#66d9ef">if</span> e <span style="color:#f92672">&gt;</span> pivot])
-        <span style="color:#66d9ef">return</span> plusPetit <span style="color:#f92672">+</span> [pivot] <span style="color:#f92672">+</span> plusGrand
-
-<span style="color:#66d9ef">print</span>(triRapide(<span style="color:#e6db74">&#34;hanniballecter&#34;</span>))
-cg<span style="color:#f92672">.</span>render()
-</code></pre></div><p><code>['a', 'a', 'b', 'c', 'e', 'e', 'h', 'i', 'l', 'l', 'n', 'n', 'r', 't']</code>
-<img src="http://cordier-phychi.toile-libre.org/Info/github/hannibal.png" alt=""></p>
-<p>Placer le pivot en premier élément a un inconvénient : <code>triRapide</code> devient très lent avec les listes déjà triées (ou quasi triées).<br></p>
 <blockquote>
-<p>Quelle sera la taille de la pile d&rsquo;exécution si on demande à <code>triRapide</code> de trier une liste de 500 éléments ?</p>
+<p>Le distance de F à C vaut :</p>
+<ul>
+<li>a : 1</li>
+<li>b : 3</li>
+<li>c : $\infty$</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>En transformant les arcs en arêtes, quel serait le diamètre du graphe ?</p>
+<ul>
+<li>a : 4</li>
+<li>b : 5</li>
+<li>c : $\infty$</li>
+</ul>
 </blockquote>
 <p> </p>
-<hr>
-<p>Les tris par comparaison n&rsquo;on que faire de la nature des éléments de la liste à trier du moment qu&rsquo;on peut les comparer entre eux. On peut ainsi trier tout aussi bien des chaînes de caractères que des flottants.<br>
-Par contre, si les éléments de la liste sont contraints d&rsquo;une façon ou d&rsquo;une autre, on peut essayer de tirer parti de la situation.</p>
-<hr>
-<p> 
- </p>
-<h2 id="tris-non-comparatifs">Tris non comparatifs</h2>
-<h3 id="tri-par-dénombrement-ou-par-comptage">Tri par dénombrement (ou par comptage)</h3>
-<p>Si la liste à trier n&rsquo;est constituée que d&rsquo;entiers positifs, on peut mettre au point un tri très rapide n&rsquo;utilisant aucune comparaison : le tri par dénombrement (counting sort).</p>
-<p>Principe : on construit un histogramme des valeurs de la liste à trier <code>L</code> dans une liste intermédiaire <code>L_eff</code>.</p>
-<ul>
-<li>Si <code>m</code> est la plus grande valeur des éléments de la liste à trier, alors la taille de <code>L_eff</code> doit valoir <code>m+1</code>. Et on initialise toutes ses valeurs à zéros. Chaque valeur <code>L[i]</code> de la liste à trier est donc aussi un indice de la liste <code>L_eff</code> !</li>
-<li>On parcourt ensuite la liste à trier et on incrémente de 1 la valeur de l&rsquo;élément <code>L_eff[L[i]]</code> de la liste intermédiaire. On obtient bien ainsi les effectifs pour chaque valeur de la liste à trier.</li>
-<li>Il suffit enfin de parcourir <code>L_eff</code> depuis le début et pour chaque élément <code>L_eff[i]</code> non nul, d&rsquo;ajouter à une nouvelle liste <code>L_sortie</code> autant de fois <code>i</code> que la valeur de <code>L[i]</code>.</li>
-<li>Plus qu&rsquo;à retourner <code>L_sortie</code>.</li>
-</ul>
-<p>Implémentez la fonction <code>tri_par_denombrement</code> telle qu&rsquo;elle est décrite ci-dessus.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_par_denombrement</span>(L,m) :
+<h2 id="listes-et-matrices-dadjacence">Listes et matrices d&rsquo;adjacence</h2>
+<blockquote>
+<p>Construire le graphe <code>G_la</code> correspondant au dessin du haut sous la forme d&rsquo;une <strong>liste d&rsquo;adjacence</strong> en utilisant un <strong>dictionnaire</strong> (sur le modèle du cours).<br>
+Les sommets devront s&rsquo;appeler <code>&quot;A&quot;</code>,<code>&quot;B&quot;</code>,<code>&quot;C&quot;</code>,<code>&quot;D&quot;</code>,<code>&quot;E&quot;</code> et <code>&quot;F&quot;</code>.</p>
+</blockquote>
+<blockquote>
+<p>Construire maintenant le graphe <code>G_ma</code> correspondant au dessin ci-dessus sous la forme d&rsquo;une <strong>matrice d&rsquo;adjacence</strong> (en suivant le modèle donné dans le cours).</p>
+</blockquote>
+<p> </p>
+<h2 id="manipulation-dun-graphe">Manipulation d&rsquo;un graphe</h2>
+<h3 id="ajouter-un-sommet-à-un-graphe">Ajouter un sommet à un graphe</h3>
+<blockquote>
+<p>Construire une fonction qui ajoute un sommet S à un graphe G orienté. Le graphe G est représenté par une liste d&rsquo;adjacence et on donne en argument de la fonction la liste des prédécesseurs et des successeurs du sommet S ($Pred(S)$ et $Succ(S)$).</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ajouteSommet</span>(G,S,pred,succ) :
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    tri_par_denombrement(L:list,m:int)-&gt;L_sortie:list
-</span><span style="color:#e6db74">    m est la valeur maximum des éléments de L 
+</span><span style="color:#e6db74">    ajouteSommet(G:dict,S:str,pred:list,succ:list)-&gt;G:dict
+</span><span style="color:#e6db74">    préconditions : G est un graphe dont certains des sommets font partie de la liste pred et certains de la liste succ.
+</span><span style="color:#e6db74">    S est le nom d&#39;un sommet n&#39;appartenenat pas à G.
+</span><span style="color:#e6db74">    G est modélisé par une liste d&#39;adjacence utilisant un dictionnaire.
+</span><span style="color:#e6db74">    pred et succ sont les listes des prédécesseurs et des successeurs de S.
+</span><span style="color:#e6db74">    postcondition : la fonction retourne le graphe mis à jour (muté) avec le sommet S ajouté.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    <span style="color:#75715e">### VOTRE CODE</span>
+    <span style="color:#75715e"># VOTRE CODE</span>
+</code></pre></div><p><img src="http://cordier-phychi.toile-libre.org/Info/github/tp10gr1.png" alt=""></p>
+<p>Le graphe de gauche est modélisé ci-dessous par une liste d&rsquo;adjacence :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Graphe <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;</span> : [<span style="color:#e6db74">&#39;E&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>],
+          <span style="color:#e6db74">&#39;B&#39;</span> : [<span style="color:#e6db74">&#39;D&#39;</span>],
+          <span style="color:#e6db74">&#39;C&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>],
+          <span style="color:#e6db74">&#39;D&#39;</span> : [<span style="color:#e6db74">&#39;C&#39;</span>,<span style="color:#e6db74">&#39;E&#39;</span>],
+          <span style="color:#e6db74">&#39;E&#39;</span> : [],
+          <span style="color:#e6db74">&#39;F&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>]}
+</code></pre></div><p>On souhaite lui ajouter le sommet <code>'G'</code>.</p>
+<blockquote>
+<p>Compléter au préalable les listes <code>Pred</code> et <code>Succ</code> contenant les prédécesseurs et les successeurs de <code>'G'</code>.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Pred <span style="color:#f92672">=</span> []
+Succ <span style="color:#f92672">=</span> []
 </code></pre></div><blockquote>
-<p>Le nombre d&rsquo;étapes de <code>tri_denombrement</code> peut s&rsquo;écrire en fonction du nombre d&rsquo;éléments <code>n</code> de la liste comme :</p>
+<p>Testez ensuite votre fonction <code>ajouteSommet</code> pour vérifier que le graphe est modifié comme souhaité.</p>
 </blockquote>
-<ul>
-<li>A : $a$</li>
-<li>B : $a\times n + b$</li>
-<li>C : $a\times n^2+b\times n + c$</li>
-<li>D : $a\times n^3+b\times n^2 + c\times n + d$</li>
-</ul>
-<p> 
- </p>
-<h2 id="comparer-les-tris">Comparer les tris</h2>
-<p>Essayons maintenant de classer ces tris suivant différents critères.<br>
-Commençons par ce qui est souvent le plus critique : leur complexité en temps. À quoi doit-on s&rsquo;attendre lorsque la taille de la liste à trier prend un facteur d&rsquo;échelle ?</p>
-<h3 id="complexité-en-temps">Complexité en temps</h3>
-<p>Le graphe suivant présente le temps mis par les différents algorithmes pour trier des listes de taille croissante.</p>
-<p><img src="http://cordier-phychi.toile-libre.org/Info/github/comptrivit1.png?width=900" alt="">
-<img src="http://cordier-phychi.toile-libre.org/Info/github/comptrivit2.png?width=900" alt=""></p>
-<p>On peut classer ces algorithmes en 3 catégories de complexité temporelle :</p>
-<ul>
-<li>les tris par insertion, sélection et à bulles sont de complexité quadratique ($O(n^2)$)</li>
-<li>les tris fusion et rapide sont quasilinéaires ($O(n\log n)$)</li>
-<li>le tri par dénombrement est linéaire ($O(n)$)</li>
-</ul>
-<p>Pour des petites listes (et lorsque des tris non comparatifs ne sont pas applicables), le tri par insertion est en moyenne plus rapide que les autres alors que pour des grandes listes, c&rsquo;est le tri rapide qui domine.</p>
-<p> 
- </p>
-<h3 id="complexité-en-espace--en-place-ou-non-">Complexité en espace : en place ou non ?</h3>
-<p>L&rsquo;algorithme a-t-il besoin d&rsquo;utiliser une liste intermédiaire pour opérer son tri ou parvient-il à écrire directement sur la liste d&rsquo;origine. Dans ce dernier cas, les tri est dit <strong>en place</strong>.</p>
+<p> </p>
+<h3 id="retirer-un-sommet-à-un-graphe">Retirer un sommet à un graphe</h3>
 <blockquote>
-<p>Dans la liste suivante, affectez à chaque variable correspondant à un algorithme de tri le caractère <code>'O'</code> si son tri se fait en place ou <code>'X'</code> sinon.</p>
+<p>On souhaite maintenant construire la fonction <code>retireSommet</code> permettant de retirer un sommet d&rsquo;un graphe.<br>
+Elle prend en argument le graphe et un sommet du graphe.<br>
+Vous utiliserez un <code>assert</code> pour vous assurer que le sommet passé en argument appartient bien augraphe.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Retirer la mauvaise réponse</span>
-triinsertion    <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;O&#39;</span> <span style="color:#e6db74">&#39;X&#39;</span>
-tiselection     <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;O&#39;</span> <span style="color:#e6db74">&#39;X&#39;</span>
-triabulles      <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;O&#39;</span> <span style="color:#e6db74">&#39;X&#39;</span>
-trifusion       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;O&#39;</span> <span style="color:#e6db74">&#39;X&#39;</span>
-trirapide       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;O&#39;</span> <span style="color:#e6db74">&#39;X&#39;</span>
-tridenombrement <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;O&#39;</span> <span style="color:#e6db74">&#39;X&#39;</span>
-</code></pre></div><p> 
- </p>
-<h3 id="stabilité">Stabilité</h3>
-<p>Un algorithme de tri est <strong>stable</strong> s&rsquo;il conserve l&rsquo;ordre relatif de départ entre deux valeurs égales.<br>
-Dans l&rsquo;animation suivante, un algorithme est stable si les deux barres noires et blanches restent toujours dans le même ordre après et avant le tri.</p>
-<p align="center">
-<iframe src="https://trinket.io/embed/glowscript/cbf31d3200?outputOnly=true&start=result" width="800" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-</p>
-<p>On compte le nombre de fois que les caractères &lsquo;r&rsquo;, &lsquo;c&rsquo;, &lsquo;q&rsquo; et &lsquo;p&rsquo; apparaissent dans cette phrase :</p>
-<ul>
-<li>&lsquo;r&rsquo; : 6</li>
-<li>&lsquo;c&rsquo; : 5</li>
-<li>&lsquo;q&rsquo; : 2</li>
-<li>&lsquo;p&rsquo; : 5</li>
-</ul>
-<p>On crée à partir de ces données le tuple <code>(('r',6),('c',5),('q',2),('p',5))</code>.<br>
-Si on trie ce tuple selon le premier élément de chacune des paires qu&rsquo;il contient (tri alphabétique), tous les tris donnent le même résultat :<br>
-<code>(('c',5),('p',5),('q',2),('r',6))</code><br>
-Mais si maintenant, on part de ce tuple trié et qu&rsquo;on le trie en fonction des effectifs, les algorithmes ne sont pas tous d&rsquo;accords !</p>
-<p>Pour vous en convaincre triez à la main <code>(('c',5),('p',5),('q',2),('r',6))</code> en suivant l&rsquo;algorithme du tri à bulle, puis en suivant l&rsquo;algorithme de tri insertion.<br>
-Notez ci-dessous les tuples obtenus.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># tuple obtenu avec le tri à bulle (modifiez le tuple pour qu&#39;il corresponde à ce que vous avez trouvé)</span>
-T1 <span style="color:#f92672">=</span> ((<span style="color:#e6db74">&#39;c&#39;</span>,<span style="color:#ae81ff">5</span>),(<span style="color:#e6db74">&#39;p&#39;</span>,<span style="color:#ae81ff">5</span>),(<span style="color:#e6db74">&#39;q&#39;</span>,<span style="color:#ae81ff">2</span>),(<span style="color:#e6db74">&#39;r&#39;</span>,<span style="color:#ae81ff">6</span>))
-<span style="color:#75715e"># tuple obtenu avec le tri insertion (modifiez le tuple pour qu&#39;il corresponde à ce que vous avez trouvé)</span>
-T2 <span style="color:#f92672">=</span> ((<span style="color:#e6db74">&#39;c&#39;</span>,<span style="color:#ae81ff">5</span>),(<span style="color:#e6db74">&#39;p&#39;</span>,<span style="color:#ae81ff">5</span>),(<span style="color:#e6db74">&#39;q&#39;</span>,<span style="color:#ae81ff">2</span>),(<span style="color:#e6db74">&#39;r&#39;</span>,<span style="color:#ae81ff">6</span>))
-</code></pre></div><p>On dit alors que le tri insertion n&rsquo;est pas stable car il ne conserve pas nécessairement l&rsquo;ordre de deux éléments égaux.<br></p>
-<ul>
-<li>tris instables : le tri sélection et le tri rapide.<br></li>
-<li>tris stables : le tri insertion, le tri à bulle et le tri fusion</li>
-</ul>
-<p>Un tri instable peut sans trop de peine être rendu stable, il suffit de garder la trace de l&rsquo;ordre initial pour les éléments égaux, mais cela a un coût !<br>
-L&rsquo;instabilité du tri par sélection peut être éliminée en utilisant une fonction intermédiaire <code>minimum</code> cherchant le plus petit des éléments restant à trier et en inserrant successivement les éléments trouvés en partant du début de la liste (attention à rester en place = pas de liste intermédiaire).</p>
-<blockquote>
-<p>Donnez le code de <code>minimum</code> et <code>tri_selection_stable</code> (avec une contrainte supplémentaire : le code de <code>tri_selection_stable</code> ne devra pas dépasser 3 lignes).</p>
-</blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">minimum</span>(L) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">retireSommet</span>(G,S) :
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    renvoie le plus petit élément de la liste
+</span><span style="color:#e6db74">    retireSommet(G:dict,S:str)-&gt;G:dict
+</span><span style="color:#e6db74">    préconditions : G est un graphe et S est un de ses sommets.
+</span><span style="color:#e6db74">    G est modélisé par une liste d&#39;adjacence utilisant un dictionnaire
+</span><span style="color:#e6db74">    postcondition : la fonction retourne le graphe mis à jour (muté) avec le sommet S en moins
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    <span style="color:#75715e">### VOTRE CODE</span>
+    <span style="color:#75715e"># VOTRE CODE</span>
+</code></pre></div><p>Reprenons le graphe précédent avant l&rsquo;ajout du sommet <code>'G'</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Graphe <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;</span> : [<span style="color:#e6db74">&#39;E&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>],
+          <span style="color:#e6db74">&#39;C&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>],
+          <span style="color:#e6db74">&#39;D&#39;</span> : [<span style="color:#e6db74">&#39;C&#39;</span>,<span style="color:#e6db74">&#39;E&#39;</span>],
+          <span style="color:#e6db74">&#39;E&#39;</span> : [],
+          <span style="color:#e6db74">&#39;F&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>]}
+</code></pre></div><blockquote>
+<p>Testez ensuite votre fonction <code>retireSommet</code> pour vérifier que le graphe est modifié comme souhaité.</p>
+</blockquote>
+<p> </p>
+<h2 id="utilisation-dun-module-pour-visualiser">Utilisation d&rsquo;un module pour visualiser</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pygraphviz <span style="color:#f92672">as</span> pgv
+<span style="color:#f92672">import</span> networkx <span style="color:#f92672">as</span> nx
+<span style="color:#f92672">from</span> IPython.display <span style="color:#f92672">import</span> Image
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+</code></pre></div><p>Construisons la matrice d&rsquo;adjacence d&rsquo;un graphe non-orienté, simple et complet.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">matrice <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>],
+           [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>],
+           [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>],
+           [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>],
+           [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>],
+           [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>],
+           [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>],
+           [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>],
+           [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>],
+           [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>]]
+</code></pre></div><blockquote>
+<p>Construisez à votre tour une matrice <code>M</code> semblable à la précédente en tirant chaque élément au hasard parmi la liste <code>[1,2,3]</code> grâce à la fonction <code>choice</code> du module <code>random</code> (<code>choice(L)</code> retourne un des éléments de <code>L</code> choisi au hasard).<br>
+Cette matrice devra n&rsquo;avoir que des 0 dans sa diagonale et être symétrique.<br>
+Attention: le nom de la matrice doit être <code>M</code>.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> choice
 
-<span style="color:#75715e"># le code de tri_selection_stable ne devra pas dépasser 3 lignes pour être considéré comme juste.</span>
-    
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_selection_stable</span>(L) :
-    <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><p><img src="https://imgs.xkcd.com/comics/ineffective_sorts.png" alt=""></p>
+n <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e"># nombre de sommets</span>
+
+<span style="color:#75715e"># VOTRE CODE</span>
+</code></pre></div><p>Si vous avez réussi à construire <code>M</code> vous pourrez utilisez votre matrice par la suite.</p>
+<p>On transforme ensuite la matrice en dataframe <code>pandas</code> qui sera reconnue par le module <code>networkx</code> et on lui ajoute des lettres en en-tête de ligne et de colonne pour nommer les sommets.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">abc <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+labels <span style="color:#f92672">=</span> list(abc[:n])
+M_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(matrice, index<span style="color:#f92672">=</span>labels, columns<span style="color:#f92672">=</span>labels)
+<span style="color:#66d9ef">print</span>(M_df)
+</code></pre></div><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">C</th>
+<th style="text-align:center">D</th>
+<th style="text-align:center">E</th>
+<th style="text-align:center">F</th>
+<th style="text-align:center">G</th>
+<th style="text-align:center">H</th>
+<th style="text-align:center">I</th>
+<th style="text-align:center">J</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>A</strong></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>B</strong></td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>C</strong></td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>D</strong></td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>E</strong></td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>F</strong></td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>G</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>H</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>I</strong></td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>J</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">G_complet <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>from_pandas_adjacency(M_df) <span style="color:#75715e"># obtention du graphe networkx à partir de la dataframe</span>
+
+weights <span style="color:#f92672">=</span> [G_complet[u][v][<span style="color:#e6db74">&#39;weight&#39;</span>]<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span> <span style="color:#66d9ef">for</span> u,v <span style="color:#f92672">in</span> G_complet<span style="color:#f92672">.</span>edges()] <span style="color:#75715e"># liste des poids (*3)</span>
+
+<span style="color:#75715e"># Tracé</span>
+options <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;font_size&#34;</span>: <span style="color:#ae81ff">20</span>,
+           <span style="color:#e6db74">&#34;font_weight&#34;</span>:<span style="color:#e6db74">&#34;bold&#34;</span>,
+           <span style="color:#e6db74">&#34;node_size&#34;</span>: <span style="color:#ae81ff">1000</span>,
+           <span style="color:#e6db74">&#34;node_color&#34;</span>: <span style="color:#e6db74">&#34;#34A5DA&#34;</span>,
+           <span style="color:#e6db74">&#34;edge_color&#34;</span>: weights,  <span style="color:#75715e"># couleur en fonction des poids</span>
+           <span style="color:#e6db74">&#34;width&#34;</span>: weights,       <span style="color:#75715e"># épaisseur des arêtes en fonction des poids</span>
+           <span style="color:#e6db74">&#34;edge_cmap&#34;</span>: plt<span style="color:#f92672">.</span>cm<span style="color:#f92672">.</span>Set3,
+           <span style="color:#e6db74">&#34;with_labels&#34;</span>: True,
+           <span style="color:#e6db74">&#34;font_color&#34;</span>: <span style="color:#e6db74">&#34;white&#34;</span>,
+           <span style="color:#e6db74">&#34;linewidths&#34;</span>: <span style="color:#ae81ff">5</span>,
+          }
+
+pos <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>shell_layout(G_complet)
+fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">12</span>))
+nx<span style="color:#f92672">.</span>draw(G_complet,pos<span style="color:#f92672">=</span>pos,<span style="color:#f92672">**</span>options)
+labels <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>get_edge_attributes(G_complet,<span style="color:#e6db74">&#39;weight&#39;</span>)
+nx<span style="color:#f92672">.</span>draw_networkx_edge_labels(G_complet, pos<span style="color:#f92672">=</span>pos,edge_labels<span style="color:#f92672">=</span>labels)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/graphecomplet.png" alt=""></p>
+<blockquote>
+<p>Transformez la matrice <code>matrice</code> en une liste d&rsquo;adjacence <code>G_la</code> n&rsquo;utilisant que des dictionnaires.<br>
+<code>G_la</code> devra ressembler à :</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+{<span style="color:#e6db74">&#39;A&#39;</span> : {<span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#ae81ff">1</span>},
+ <span style="color:#e6db74">&#39;B&#39;</span> : {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#ae81ff">1</span>},
+ <span style="color:#e6db74">&#39;C&#39;</span> : {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#ae81ff">2</span>},
+ <span style="color:#e6db74">&#39;D&#39;</span> : {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#ae81ff">2</span>},
+ <span style="color:#e6db74">&#39;E&#39;</span> : {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#ae81ff">1</span>},
+ <span style="color:#e6db74">&#39;F&#39;</span> : {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#ae81ff">3</span>},
+ <span style="color:#e6db74">&#39;G&#39;</span> : {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#ae81ff">2</span>},
+ <span style="color:#e6db74">&#39;H&#39;</span> : {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#ae81ff">2</span>},
+ <span style="color:#e6db74">&#39;I&#39;</span> : {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#ae81ff">1</span>},
+ <span style="color:#e6db74">&#39;J&#39;</span> : {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#ae81ff">1</span>}}
+</code></pre></div><p> </p>
+<h2 id="une-application-concrète-des-graphes--larbre-couvrant-minimal">Une application concrète des graphes : l&rsquo;arbre couvrant minimal</h2>
+<p>Supposons que chaque sommet du graphe précédent représente les nœuds d&rsquo;un réseau que l&rsquo;on souhait relier à moindre coût. Ces sommets peuvent être des villes que l&rsquo;on veut relier électriquement, des champs à irriguer, des serveurs à relier, etc. Les différents poids des arêtes matérialisent la difficulté ou le coût de la liaison entre les deux sommets.<br>
+Comment trouver facilement le moyen de relier tout le monde en minimisant les coûts ? Il faut trouver un <strong>arbre couvrant minimal</strong> du graphe.</p>
+<p>Un <strong>arbre couvrant</strong> est un arbre (graphe sans cycle) qui rejoint tous les sommets d&rsquo;un <strong>graphe connexe</strong>.<br>
+L&rsquo;arbre couvrant minimal est l&rsquo;arbre couvrant dont la somme des poids des arêtes est minimale.</p>
+<p>Chercher une solution par force brute devient rapidement impossible quand le nombre de sommets du graphe augmente. La formule de Cayley nous dit qu&rsquo;il y aura $n^{n-2}$ arbres couvrants d&rsquo;un graphe complet connexe comportant n sommets (avec seulement 100 sommets, cela fait plus de possibilités que le nombre d&rsquo;atomes dans l&rsquo;univers).</p>
+<blockquote>
+<p>Quelle serait donc le type de complexité d&rsquo;une exploration par force brute de tous les arbres couvrants ?</p>
+<ul>
+<li>a : logarithmique en n</li>
+<li>b : polynomiale en n</li>
+<li>c : exponentielle en n</li>
+</ul>
+</blockquote>
+<p>Grâce à l'<strong>algorithme de Prim</strong>, on peut trouver l&rsquo;arbre couvrant minimal d&rsquo;un graphe connexe pondéré en temps raisonable !<br></p>
+<p>Mais commençons d&rsquo;abord par construire une fonction qui vérifie si un graphe est connexe ou non.<br>
+Pour cela, on va utiliser l'<strong>algorithme de parcours en profondeur</strong> (Deep-First Search) sur le graphe à tester en partant d&rsquo;un sommet quelconque et vérifier que tous les sommets sont visités.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parcours_profondeur</span>(G,depart):
+    pile <span style="color:#f92672">=</span> deque()
+    pile<span style="color:#f92672">.</span>append(depart)
+    Sommets <span style="color:#f92672">=</span> []
+    Vus <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">while</span> pile :
+        sommet <span style="color:#f92672">=</span> pile<span style="color:#f92672">.</span>pop()
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus :
+            pile <span style="color:#f92672">+=</span> G[sommet]
+            Vus<span style="color:#f92672">.</span>append(sommet)
+            Sommets<span style="color:#f92672">.</span>append(sommet)
+    <span style="color:#66d9ef">return</span> Sommets
+</code></pre></div><blockquote>
+<p>Construisez la fonction <code>verifConnexe</code> qui vérifie si un graphe est connexe ou non.<br>
+Vous utiliserez la fonction <code>parcours_profondeur</code> dans votre code.<br>
+Vous pourrez ensuite tester ci-dessous si votre fonction fait le travail sur les deux listes d&rsquo;adjacence <code>G_la</code> et <code>Gt_la</code>.<br>
+Dans le premier cas, le graphe est évidemment connexe, et on a construit le deuxième pour qu&rsquo;il ne le soit pas.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">verifConnexe</span>(G):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    verifConnexe(G : dict) -&gt; bool
+</span><span style="color:#e6db74">    précondition : G est un graphe sous la forme d&#39;une liste d&#39;adjacence représentée par un dictionnaire comme ci-dessus
+</span><span style="color:#e6db74">    postcondition : la fonction retourne True si le graphe est connexe, False sinon
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#75715e"># VOTRE CODE</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Construction d&#39;un graphe G_nc non connexe</span>
+G_nc <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>Graph()
+G_nc<span style="color:#f92672">.</span>add_nodes_from([i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>)])
+color_map <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span> <span style="color:#66d9ef">if</span> node <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">4</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;green&#39;</span> <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> G_nc]
+G_nc<span style="color:#f92672">.</span>add_edges_from([(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>),(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">4</span>),(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span>),(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">7</span>),(<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>),(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>),(<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>)])
+posi <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>kamada_kawai_layout(G_nc)
+options <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;node_size&#34;</span>: <span style="color:#ae81ff">200</span>,
+           <span style="color:#e6db74">&#34;node_color&#34;</span>: color_map,
+           <span style="color:#e6db74">&#34;edge_color&#34;</span>: color_map,
+           <span style="color:#e6db74">&#34;linewidths&#34;</span>: <span style="color:#ae81ff">1</span>,
+           <span style="color:#e6db74">&#34;width&#34;</span>: <span style="color:#ae81ff">1</span>,
+           <span style="color:#e6db74">&#34;with_labels&#34;</span>: False,
+          }
+G_nc_la <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>to_dict_of_dicts(G_nc)
+nx<span style="color:#f92672">.</span>draw(G_nc,posi,<span style="color:#f92672">**</span>options)
+</code></pre></div><p><img src="/nonconnexe.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;G_la est connexe :&#39;</span>,verifConnexe(G_la))
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;G_nc_la est connexe :&#39;</span>,verifConnexe(G_nc_la))
+</code></pre></div><p><code>True</code><br>
+<code>False</code></p>
+<p>Implémentons maintenant une version lente (quadratique) de l'<strong>algorithme de Prim</strong>.</p>
+<p>Comme Dijkstra, Prim est un <strong>algorithme glouton</strong>. À chaque itération, il se jette sur l&rsquo;arête de poids le plus faible permettant de traverser la frontière entre l&rsquo;ensemble des sommets déjà inspectés et l&rsquo;ensemble des autres. Une fois l&rsquo;arête choisie, on ajoute le sommet non inspecté qu&rsquo;elle relie à l&rsquo;ensemble des sommets inspectés.</p>
+<blockquote>
+<p>Intégrez à l&rsquo;algorithme ci-dessous une assertion testant si le graphe donné en argumant est bien connexe et ajoutez une variable <code>cout</code> à l&rsquo;algorithme qui enregistre le coût de l&rsquo;arbre final retourné et qui devra elle aussi être retournée.<br>
+La sortie doit donc devenir :
+<code>return A, cout</code></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Prim</span>(G) :
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Prim(G : dict) -&gt; A : liste de tuples , cout : nombre
+</span><span style="color:#e6db74">    G est donné sous la forme d&#39;une liste d&#39;adjacence implémenté par un dictionnaire
+</span><span style="color:#e6db74">    A est une liste d&#39;arêtes représentées par un tuple (A,B) où A et B sont les deux sommets délimitant l&#39;arête
+</span><span style="color:#e6db74">    cout est le coût de l&#39;arbre A (somme des pondération des arêtes constituant A)
+</span><span style="color:#e6db74">    postcondition : A doit être un arbre couvrant minimal
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    inf <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
+    NX <span style="color:#f92672">=</span> list(G<span style="color:#f92672">.</span>keys())
+    S0 <span style="color:#f92672">=</span> NX[<span style="color:#ae81ff">0</span>] <span style="color:#75715e"># un dictionnaire n&#39;est pas ordonné donc pas indiçable d&#39;où list()</span>
+    X <span style="color:#f92672">=</span> [S0]
+    NX<span style="color:#f92672">.</span>remove(S0)
+    A <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">while</span> NX <span style="color:#f92672">!=</span> [] :
+        <span style="color:#75715e"># invariant : A est l&#39;arbre couvrant minimal de X</span>
+        Min <span style="color:#f92672">=</span> inf
+        <span style="color:#66d9ef">for</span> S1 <span style="color:#f92672">in</span> X :
+            <span style="color:#66d9ef">for</span> S2 <span style="color:#f92672">in</span> NX :
+                <span style="color:#66d9ef">if</span> G[S1]<span style="color:#f92672">.</span>get(S2,inf) <span style="color:#f92672">&lt;</span> Min : <span style="color:#75715e"># get(clé,v0) renvoie la valeur de la clé si la clé existe et renvoie la valeur v0 sinon (permet d&#39;éviter les erreurs si clé non présente)</span>
+                    Min <span style="color:#f92672">=</span> G[S1][S2] <span style="color:#75715e"># là, on sait que S2 est bien un voisin de S1</span>
+                    Fmin <span style="color:#f92672">=</span> S2
+                    Dmin <span style="color:#f92672">=</span> S1
+        X<span style="color:#f92672">.</span>append(Fmin)
+        NX<span style="color:#f92672">.</span>remove(Fmin)
+        A<span style="color:#f92672">.</span>append((Dmin,Fmin))
+    <span style="color:#66d9ef">return</span> A
+</code></pre></div><p>Traçons maintenant l&rsquo;arbre couvrant minimal trouvé par Prim.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">A <span style="color:#f92672">=</span> Prim_corr(G_la)
+H <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>Graph()
+<span style="color:#66d9ef">for</span> S <span style="color:#f92672">in</span> abc[:n] :
+    H<span style="color:#f92672">.</span>add_node(S)
+<span style="color:#66d9ef">for</span> S1,S2 <span style="color:#f92672">in</span> A[<span style="color:#ae81ff">0</span>] :
+    H<span style="color:#f92672">.</span>add_edge(S1,S2,weight<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+F <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>compose(G_complet,H)
+
+weights <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span> <span style="color:#66d9ef">if</span> F[u][v][<span style="color:#e6db74">&#39;weight&#39;</span>]<span style="color:#f92672">==</span><span style="color:#ae81ff">10</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> u,v <span style="color:#f92672">in</span> F<span style="color:#f92672">.</span>edges()]
+
+options <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;font_size&#34;</span>: <span style="color:#ae81ff">20</span>,
+           <span style="color:#e6db74">&#34;font_weight&#34;</span>:<span style="color:#e6db74">&#34;bold&#34;</span>,
+           <span style="color:#e6db74">&#34;node_size&#34;</span>: <span style="color:#ae81ff">1000</span>,
+           <span style="color:#e6db74">&#34;node_color&#34;</span>: <span style="color:#e6db74">&#34;#34A5DA&#34;</span>,
+           <span style="color:#e6db74">&#34;edge_color&#34;</span>: weights,
+           <span style="color:#e6db74">&#34;width&#34;</span>: weights,
+           <span style="color:#e6db74">&#34;edge_cmap&#34;</span>: plt<span style="color:#f92672">.</span>cm<span style="color:#f92672">.</span>bwr,
+           <span style="color:#e6db74">&#34;with_labels&#34;</span>: True,
+           <span style="color:#e6db74">&#34;font_color&#34;</span>: <span style="color:#e6db74">&#34;white&#34;</span>,
+           <span style="color:#e6db74">&#34;linewidths&#34;</span>: <span style="color:#ae81ff">1</span>,
+          }
+
+fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">12</span>))
+nx<span style="color:#f92672">.</span>draw(F,pos<span style="color:#f92672">=</span>pos,<span style="color:#f92672">**</span>options)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p><img src="/prim.png" alt=""></p>
+<p>Et voilà ! En deux coups de cuillère à pot, on a trouvé un arbre couvrant minimal sans s&rsquo;infliger l&rsquo;inspection systématique des $10^8$ arbres couvrants possibles&hellip;</p>
+<p> </p>
+<h2 id="lien-entre-structures-de-données-et-graphes-exemple-du-tas">Lien entre structures de données et graphes, exemple du tas</h2>
+<p>Le <strong>tas</strong> (ou <strong>file de priorité</strong>) est une structure de données permettant d&rsquo;obtenir rapidement le plus petit élément d&rsquo;un ensemble. On peut se représenter un tas par un arbre binaire presque complet ordonné.<br></p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/JRzTS8zPwSE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>Pour implémenter un tas, on retranscrit l&rsquo;arbre binaire sous la forme d&rsquo;une liste.</p>
+<blockquote>
+<p>En vous aidant de la vidéo ci-dessus, choisir parmi les listes suivantes celle qui peut représenter un tas :</p>
+</blockquote>
+<ul>
+<li>a : <code>[3,5,8,5,13,11,9,6,12,15,18,11,12]</code></li>
+<li>b : <code>[3,5,8,5,13,7,9,6,12,15,18,11,12,10]</code></li>
+<li>c : <code>[3,5,8,5,13,11,9,6,12,15,18,11,11,10,12]</code></li>
+</ul>
+<blockquote>
+<p>Construire une fonction <code>plusPetitEnfant</code> qui retourne la position du petit enfant d&rsquo;un élément dans le tas.<br>
+La fonction prend en argument le tas représenté sous la forme d&rsquo;une liste et la position du parent.<br>
+La fonction retourne la valeur de la position du plus petit enfant.<br>
+Si l&rsquo;élément n&rsquo;a pas d&rsquo;enfant, la fonction retourne <code>None</code>.<br>
+<strong>Attention :</strong> les positions dans le tas vont de 1 à n (et non de 0 à n-1) où n est le nombre d&rsquo;éléments dans le tas</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plusPetitEnfant</span>(tas,position) :
+    <span style="color:#e6db74">&#34;&#34;&#34; 
+</span><span style="color:#e6db74">    plusPetitEnfant(tas : list, position : int) -&gt; int ou Nonetype
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#75715e"># VOTRE CODE</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Tas <span style="color:#f92672">=</span> [<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">10</span>]
+enfants(Tas,<span style="color:#ae81ff">2</span>)
+</code></pre></div><blockquote>
+<p>Construire les fonctions <code>insert</code> et <code>extractMin</code> (pour cette dernière, pensez à utiliser <code>plusPetitEnfant</code>).<br>
+On se restreindra aux entiers pour les objets des tas.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">insert</span>(tas,x) :
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    insert(tas : list , x : int) -&gt; Nonetype
+</span><span style="color:#e6db74">    la fonction doit ajouter un élément au tas de manière à ce qu&#39;il reste un arbre binaire presque complet
+</span><span style="color:#e6db74">    tout en respectant l&#39;invariant : les valeurs des parents doivent être inférieures à celles des enfants.
+</span><span style="color:#e6db74">    la fonction ne retourne rien.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#75715e"># VOTRE CODE</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extractMin</span>(tas) :
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    extractMin(tas : list) -&gt; Min : int 
+</span><span style="color:#e6db74">    la fonction doit retirer la racine du tas 
+</span><span style="color:#e6db74">    tout en respectant l&#39;invariant : les valeurs des parents doivent être inférieures à celles des enfants.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#75715e"># VOTRE CODE</span>
+</code></pre></div><p>Construisons maintenant un tri par tas et montrons qu&rsquo;il explose le tri par sélection dont il est issu.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">triParSelection</span>(liste) :
+    n <span style="color:#f92672">=</span> len(liste)
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) :
+        min <span style="color:#f92672">=</span> i
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,n) :
+            <span style="color:#66d9ef">if</span> liste[j]<span style="color:#f92672">&lt;</span>liste[min] :
+                min <span style="color:#f92672">=</span> j
+        <span style="color:#66d9ef">if</span> min <span style="color:#f92672">!=</span> i :
+            liste[i], liste[min] <span style="color:#f92672">=</span> liste[min], liste[i]
+    <span style="color:#66d9ef">return</span> L
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">triParTas</span>(liste) :
+    T <span style="color:#f92672">=</span> []
+    Ltrie <span style="color:#f92672">=</span> []
+    n <span style="color:#f92672">=</span> len(liste)
+    <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> liste :
+        insert(T,e)
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n) :
+        Ltrie<span style="color:#f92672">.</span>append(extractMin(T))
+    <span style="color:#66d9ef">return</span> Ltrie
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L <span style="color:#f92672">=</span> [<span style="color:#f92672">-</span><span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">95</span>,<span style="color:#ae81ff">4</span>]
+<span style="color:#66d9ef">print</span>(triParSelection(L))
+<span style="color:#66d9ef">print</span>(triParTas(L))
+</code></pre></div><p><code>[-13, 1, 4, 5, 12, 95]</code><br>
+<code>[-13, 1, 4, 5, 12, 95]</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> time <span style="color:#f92672">import</span> time
+<span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;ggplot&#39;</span>)
+plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;figure.figsize&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">5</span>)
+
+I, T_trisel, T_tritas <span style="color:#f92672">=</span> [], [], []
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">1000</span>,<span style="color:#ae81ff">1</span>) :
+    L <span style="color:#f92672">=</span> []
+    L <span style="color:#f92672">=</span> [randint(<span style="color:#ae81ff">0</span>,i) <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(i)]
+    start1 <span style="color:#f92672">=</span> time()
+    triParSelection(L)
+    stop1 <span style="color:#f92672">=</span> time()
+    T_trisel<span style="color:#f92672">.</span>append(stop1<span style="color:#f92672">-</span>start1)
+    start2 <span style="color:#f92672">=</span> time()
+    triParTas(L)
+    stop2 <span style="color:#f92672">=</span> time()
+    T_tritas<span style="color:#f92672">.</span>append(stop2<span style="color:#f92672">-</span>start2)
+    I<span style="color:#f92672">.</span>append(i)
+
+plt<span style="color:#f92672">.</span>plot(I,T_trisel,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tri par sélection&#34;</span>)
+plt<span style="color:#f92672">.</span>plot(I,T_tritas,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tri par tas&#34;</span>)
+
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;taille de la liste&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;temps d&#39;exécution (s)&#34;</span>)
+plt<span style="color:#f92672">.</span>legend()
+</code></pre></div><p><img src="/comptas.png" alt=""></p>
+<p>Les graphes nous ont donc ici permis de mettre au point une structure de données capable d&rsquo;upgrader tout algorithme nécessitant une détermination répétée d&rsquo;un plus petit (ou grand) élément dans un ensemble.</p>
+<p> </p>
+<h2 id="parcours-dun-graphe">Parcours d&rsquo;un graphe</h2>
+<h3 id="détecteur-de-cycle">Détecteur de cycle</h3>
+<p>Les graphes orientés sont générallement utilisés pour représenter un ensemble de dépendances (l&rsquo;ensemble des prérequis d&rsquo;un cours, l&rsquo;ensemble des installations nécessaires au fonctionnement d&rsquo;un programme, etc&hellip;).</p>
+<p>Et la présence de cycles dans de tels graphes est synonyme de bloquage (exemple : pour faire la première tâche, vous attendez la seconde, et pour faire la seconde, vous attendez la première&hellip;). Quelle que soit l&rsquo;application, détecter les cycles est donc primordial pour éviter de se retrouver dans ce type de situation.</p>
+<p>Une idée pour détecter un cycle est d&rsquo;utiliser à nouveau le <strong>parcours en profondeur</strong>. Si on tombe sur un sommet déjà exploré au cours de la progression dans une branche, alors on a affaire à un cycle.</p>
+<p>Point important : on suppose ici que les graphes donnés en argument à la fonction sont non orientés.</p>
+<p>Le problème que pose ce type de graphe pour la recherche de cycle est la présence systématique du sommet considéré dans la liste de ses voisins (si &lsquo;A&rsquo; est le voisin de &lsquo;B&rsquo; alors &lsquo;B&rsquo; est le voisin de &lsquo;A&rsquo;) puisqu&rsquo;un graphe non-orienté permet les aller-retour.<br>
+En retirant systématiquement de la liste des voisins d&rsquo;un sommet les sommets dont lui-même est le voisin, on peut s&rsquo;assurer de la présence d&rsquo;un cycle si le parcours en profondeur rencontre un sommet présent dans <code>Vus</code>.<br>
+Au final, on oriente le graphe non-orienté pour éviter d&rsquo;être piégé par un aller-retour entre deux voisins&hellip; Et on l&rsquo;oriente de façon à s&rsquo;éloiner du sommet choisi comme point de départ.</p>
+<p>Exemple : on transforme <code>{'A' : ['B'], 'B' : ['A','C'], 'C' : ['B']}</code> en <code>{'A' : ['B'], 'B' : ['C'], 'C' : []}</code>.
+<img src="http://cordier-phychi.toile-libre.org/Info/github/detcycle1.png?width=1000px" alt="">
+Et pour <code>{'A' : ['B','C','D'], 'B' : ['A','C'], 'C' : ['A','B','D'], 'D' : ['A','C']}</code>, il y a trois possibilités suivant qu&rsquo;après &lsquo;A&rsquo;, on continue avec &lsquo;B&rsquo;, &lsquo;C&rsquo; ou &lsquo;D&rsquo;.
+<img src="http://cordier-phychi.toile-libre.org/Info/github/detcycle2.png" alt=""></p>
+<blockquote>
+<p>Ajoutez donc à la fonction un bout de code qui transforme <code>G</code> en l&rsquo;orientant.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">detecteCycles</span>(G,depart):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    detecteCycles(G : dict , depart) -&gt; bool
+</span><span style="color:#e6db74">    depart est une des clés de G
+</span><span style="color:#e6db74">    detecteCycles doit retourner True si un cycle est rencontré
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    pile <span style="color:#f92672">=</span> deque()
+    pile<span style="color:#f92672">.</span>append(depart)
+    Sommets <span style="color:#f92672">=</span> []
+    Vus <span style="color:#f92672">=</span> []
+    <span style="color:#75715e"># on transforme G en un graphe orienté</span>
+    <span style="color:#75715e"># VOTRE CODE</span>
+    <span style="color:#66d9ef">while</span> pile :
+        sommet <span style="color:#f92672">=</span> pile<span style="color:#f92672">.</span>pop()
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus :
+            Voisins <span style="color:#f92672">=</span> G[sommet]<span style="color:#f92672">.</span>copy()
+            pile <span style="color:#f92672">+=</span> Voisins
+            Vus<span style="color:#f92672">.</span>append(sommet)
+            Sommets<span style="color:#f92672">.</span>append(sommet)
+        <span style="color:#66d9ef">else</span> : 
+            <span style="color:#66d9ef">return</span> True
+    <span style="color:#66d9ef">return</span> False
+</code></pre></div><blockquote>
+<p>Testez votre fonction sur les trois graphes suivants :</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">G1 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>],
+      <span style="color:#e6db74">&#39;B&#39;</span> : [<span style="color:#e6db74">&#39;A&#39;</span>,<span style="color:#e6db74">&#39;C&#39;</span>],
+      <span style="color:#e6db74">&#39;C&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>,<span style="color:#e6db74">&#39;E&#39;</span>],
+      <span style="color:#e6db74">&#39;D&#39;</span> : [<span style="color:#e6db74">&#39;C&#39;</span>,<span style="color:#e6db74">&#39;E&#39;</span>],
+      <span style="color:#e6db74">&#39;E&#39;</span> : [<span style="color:#e6db74">&#39;C&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>]}
+G2 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;E&#39;</span>],
+      <span style="color:#e6db74">&#39;B&#39;</span> : [<span style="color:#e6db74">&#39;A&#39;</span>,<span style="color:#e6db74">&#39;C&#39;</span>],
+      <span style="color:#e6db74">&#39;C&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>],
+      <span style="color:#e6db74">&#39;D&#39;</span> : [<span style="color:#e6db74">&#39;C&#39;</span>,<span style="color:#e6db74">&#39;E&#39;</span>],
+      <span style="color:#e6db74">&#39;E&#39;</span> : [<span style="color:#e6db74">&#39;A&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>]}
+G3 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;E&#39;</span>],
+      <span style="color:#e6db74">&#39;B&#39;</span> : [<span style="color:#e6db74">&#39;A&#39;</span>,<span style="color:#e6db74">&#39;C&#39;</span>],
+      <span style="color:#e6db74">&#39;C&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>],
+      <span style="color:#e6db74">&#39;D&#39;</span> : [<span style="color:#e6db74">&#39;C&#39;</span>],
+      <span style="color:#e6db74">&#39;E&#39;</span> : [<span style="color:#e6db74">&#39;A&#39;</span>]}
+</code></pre></div><p> </p>
+<h3 id="plus-court-chemin">Plus court chemin</h3>
+<p>Une autre application ultra importante des graphes : trouver le plus vite possible le plus court chemin entre deux points.<br></p>
+<p>On peut presque toujours modéliser un déplacement comme un chemin sur un graphe (ou plutôt une chaîne dans le cas présent car nos graphes ne seront pas orientés).</p>
+<p>Représentons par exemple la carte d&rsquo;un petit jeu vidéo sous forme de graphe.<br>
+Pour cela, on transforme chaque lieu possible en un sommet et chaque transition possible d&rsquo;un point à un autre comme une arête.</p>
+<p><img src="http://cordier-phychi.toile-libre.org/Info/github/grillgraphe.png?width=1000px" alt=""></p>
+<p>Créons une petite carte de 20 cases sur 20 avec des déplacements possibles horizontaux, verticaux mais aussi diagonaux d&rsquo;une case à une cas voisine.<br>
+Tous les arcs reçoivent d&rsquo;abord le même poids de 1.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">carte <span style="color:#f92672">=</span> {}
+imax <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+jmax <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(imax) :
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(jmax) :
+        poids_voisins <span style="color:#f92672">=</span> {}
+        <span style="color:#66d9ef">if</span> i <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> :
+            poids_voisins[(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,j)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> j <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> :
+            poids_voisins[(i,j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> i <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> j <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> :
+            poids_voisins[(i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> i <span style="color:#f92672">&lt;</span> imax<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> :
+            poids_voisins[(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> j <span style="color:#f92672">&lt;</span> jmax<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> :
+            poids_voisins[(i,j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">if</span> i <span style="color:#f92672">&lt;</span> imax<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> j <span style="color:#f92672">&lt;</span> jmax<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> :
+            poids_voisins[(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+        carte[(i,j)] <span style="color:#f92672">=</span> poids_voisins
+</code></pre></div><p>Compliquons notre carte en y rajoutant différents environnements : des mérécages où il est difficile de se mouvoir et des murs infranchissables.<br>
+Pour modéliser les mérécages on va modifier les pondérations : on augmente le poids des arêtes amenant à des sommets s&rsquo;y trouvant. Et pour les murs, on va retirer du graphe les sommets s&rsquo;y trouvant.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># marécages</span>
+limites_marecages <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">19</span>),(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">12</span>)) <span style="color:#75715e"># s&#39;étendent de 5 à 19 en largeur, et de 5 à 12 en hauteur</span>
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> carte<span style="color:#f92672">.</span>keys() :
+    <span style="color:#66d9ef">for</span> voisin <span style="color:#f92672">in</span> carte[sommet]<span style="color:#f92672">.</span>keys() :
+        i,j <span style="color:#f92672">=</span> voisin
+        <span style="color:#66d9ef">if</span> limites_marecages[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">&lt;=</span>i<span style="color:#f92672">&lt;=</span>limites_marecages[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">and</span> limites_marecages[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">&lt;=</span>j<span style="color:#f92672">&lt;=</span>limites_marecages[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] :
+            carte[sommet][voisin] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+
+<span style="color:#75715e"># murs (on retire les sommets concernés (y compris des voisins))</span>
+limites_murs <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">11</span>),(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">11</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">11</span>),(<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">12</span>),(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">12</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">12</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">13</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">14</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">16</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">17</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">17</span>))
+<span style="color:#75715e"># chaque couple (a,b) correspond aux coordonnées d&#39;une case de mur</span>
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> carte<span style="color:#f92672">.</span>copy()<span style="color:#f92672">.</span>keys() :
+    <span style="color:#66d9ef">for</span> voisin <span style="color:#f92672">in</span> carte[sommet]<span style="color:#f92672">.</span>copy()<span style="color:#f92672">.</span>keys() :
+        i,j <span style="color:#f92672">=</span> voisin
+        <span style="color:#66d9ef">if</span> (i,j) <span style="color:#f92672">in</span> limites_murs :
+            <span style="color:#66d9ef">del</span> carte[sommet][voisin]
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> carte<span style="color:#f92672">.</span>copy()<span style="color:#f92672">.</span>keys() :
+    i,j <span style="color:#f92672">=</span> sommet
+    <span style="color:#66d9ef">if</span> (i,j) <span style="color:#f92672">in</span> limites_murs :
+        <span style="color:#66d9ef">del</span> carte[sommet]
+</code></pre></div><p>Définissons les sommets de départ et d&rsquo;arrivée.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">depart <span style="color:#f92672">=</span> (<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)
+arrivee <span style="color:#f92672">=</span> (<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">16</span>)
+</code></pre></div><p>Et construsions enfin une fonction permettant de tracer la carte en faisant apparaître les marécages, les murs et les points de départ et d&rsquo;arrivée.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">from</span> matplotlib.patches <span style="color:#f92672">import</span> Rectangle
+plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;seaborn&#39;</span>)
+fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>))
+
+coul_bords <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">110</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">118</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
+coul_marec <span style="color:#f92672">=</span> (<span style="color:#ae81ff">155</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">207</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">255</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
+coul_prairie <span style="color:#f92672">=</span> (<span style="color:#ae81ff">214</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">232</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">147</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
+coul_murs <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0.3</span>,<span style="color:#ae81ff">0.3</span>,<span style="color:#ae81ff">0.3</span>)
+coul_depart <span style="color:#f92672">=</span> (<span style="color:#ae81ff">39</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">187</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">40</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
+coul_arrivee <span style="color:#f92672">=</span> (<span style="color:#ae81ff">255</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">25</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
+coul_chemin <span style="color:#f92672">=</span> (<span style="color:#ae81ff">255</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">209</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">247</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">trace_terrain</span>(dim,dep,arr,marec,murs) :
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(dim[<span style="color:#ae81ff">0</span>]) :
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(dim[<span style="color:#ae81ff">1</span>]) :
+            ax<span style="color:#f92672">.</span>add_patch(Rectangle((i, j), <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
+                         edgecolor <span style="color:#f92672">=</span> coul_bords,
+                         facecolor <span style="color:#f92672">=</span> coul_prairie,
+                         fill<span style="color:#f92672">=</span>True,
+                         lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(marec[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>],marec[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(marec[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>],marec[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
+            ax<span style="color:#f92672">.</span>add_patch(Rectangle((i, j), <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
+                         edgecolor <span style="color:#f92672">=</span> coul_bords,
+                         facecolor <span style="color:#f92672">=</span> coul_marec,
+                         fill<span style="color:#f92672">=</span>True,
+                         lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+    <span style="color:#66d9ef">for</span> coord <span style="color:#f92672">in</span> murs :
+        ax<span style="color:#f92672">.</span>add_patch(Rectangle((coord[<span style="color:#ae81ff">0</span>], coord[<span style="color:#ae81ff">1</span>]), <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
+                     edgecolor <span style="color:#f92672">=</span> coul_bords,
+                     facecolor <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0.3</span>,<span style="color:#ae81ff">0.3</span>,<span style="color:#ae81ff">0.3</span>),
+                     fill<span style="color:#f92672">=</span>True,
+                     lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+    ax<span style="color:#f92672">.</span>add_patch(Rectangle(dep, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
+                 edgecolor <span style="color:#f92672">=</span> coul_bords,
+                 facecolor <span style="color:#f92672">=</span> coul_depart,
+                 fill<span style="color:#f92672">=</span>True,
+                 lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+    ax<span style="color:#f92672">.</span>add_patch(Rectangle(arr, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
+                 edgecolor <span style="color:#f92672">=</span> coul_bords,
+                 facecolor <span style="color:#f92672">=</span> coul_arrivee,
+                 fill<span style="color:#f92672">=</span>True,
+                 lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+    ax<span style="color:#f92672">.</span>autoscale_view()
+
+trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
+</code></pre></div><p><img src="/cartevierge.png" alt=""></p>
+<h4 id="recherche-en-largeur">Recherche en largeur</h4>
+<p>Utilisons l'<strong>algorithme de recherche en largeur</strong> (Breadth-First Search ou BFS) vu en cours pour tenter de trouver la plus petite chaîne de sommets reliant le départ à l&rsquo;arrivée.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recherche_largeur</span>(G,depart,arrivee):
+    file <span style="color:#f92672">=</span> [(depart,[depart])]    
+    Vus <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">while</span> file :
+        sommet,chemin <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>)
+        <span style="color:#66d9ef">if</span> sommet <span style="color:#f92672">==</span> arrivee :
+            <span style="color:#66d9ef">return</span> chemin,Vus
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus :
+            <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G[sommet] :
+                nv_chemin <span style="color:#f92672">=</span> chemin<span style="color:#f92672">+</span>[s]
+                file<span style="color:#f92672">.</span>append((s,nv_chemin))
+            Vus<span style="color:#f92672">.</span>append(sommet) 
+    <span style="color:#66d9ef">return</span> False 
+</code></pre></div><p>Chaîne obtenue :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">recherche_largeur(carte,depart,arrivee)[<span style="color:#ae81ff">0</span>]
+</code></pre></div><p><code>[(2, 2),(3, 2),(4, 2),(5, 2),(6, 2),(7, 2),(8, 2),(9, 2),(10, 3),(11, 4),(12, 5),(13, 6),(14, 7),</code><br>
+<code>(15, 8),(16, 9),(17, 10),(18, 11),(18, 12),(18, 13),(17, 13),(17, 14),(17, 15),(17, 16)]</code></p>
+<p>Traçons la chaîne en rose sur la carte :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> recherche_largeur(carte,depart,arrivee)[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] :
+    ax<span style="color:#f92672">.</span>add_patch(Rectangle(sommet,<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,edgecolor<span style="color:#f92672">=</span>coul_bords,facecolor<span style="color:#f92672">=</span>coul_chemin,fill<span style="color:#f92672">=</span>True,lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+fig
+</code></pre></div><p><img src="/cheminbfs.png" alt=""></p>
+<p>On constate donc que la recherche en largeur trouve un chemin très court qui évite bien le mur.<br></p>
+<p>Visualisons aussi (en les blanchissant) l&rsquo;ensemble des sommets inspectés par l&rsquo;algorithme pour trouver son chemin.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> recherche_largeur(carte,depart,arrivee)[<span style="color:#ae81ff">1</span>] :
+    ax<span style="color:#f92672">.</span>add_patch(Rectangle(sommet,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,edgecolor<span style="color:#f92672">=</span>coul_bords,facecolor<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0.8</span>),fill<span style="color:#f92672">=</span>True,lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+fig
+</code></pre></div><p><img src="/visitebfs.png" alt=""></p>
+<p>Quasiment toute la carte a été inspectée&hellip;</p>
+<blockquote>
+<p>Répondez aux trois questions suivantes :</p>
+<ul>
+<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
+<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations?</li>
+<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
+</ul>
+</blockquote>
+<p> </p>
+<h4 id="dijkstra">Dijkstra</h4>
+<p>Passons de la recherche en largeur à l&rsquo;algorithme de Dijkstra. On utilise l&rsquo;implémentation du cours avec des tas (file de priorité) fournis par le module <code>heapq</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> heapq
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Dijkstra</span>(G, depart, arrivee):
+    Scores <span style="color:#f92672">=</span> {sommet: float(<span style="color:#e6db74">&#39;inf&#39;</span>) <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> G}
+    Preds <span style="color:#f92672">=</span> {sommet : None <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> G}
+    Scores[depart] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    Vus <span style="color:#f92672">=</span> []
+    tas <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">0</span>, depart)]
+    <span style="color:#66d9ef">while</span> tas :
+        score_actuel, sommet_actuel <span style="color:#f92672">=</span> heapq<span style="color:#f92672">.</span>heappop(tas)
+        <span style="color:#66d9ef">if</span> sommet_actuel <span style="color:#f92672">==</span> arrivee :
+            <span style="color:#66d9ef">return</span> Preds,Scores,Vus
+        <span style="color:#66d9ef">if</span> score_actuel <span style="color:#f92672">&lt;=</span> Scores[sommet_actuel]:          
+            score_voisin <span style="color:#f92672">=</span> G[sommet_actuel]
+            <span style="color:#66d9ef">for</span> voisin <span style="color:#f92672">in</span> score_voisin<span style="color:#f92672">.</span>keys():
+                <span style="color:#66d9ef">if</span> voisin <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> Vus :
+                    Vus<span style="color:#f92672">.</span>append(voisin)
+                score <span style="color:#f92672">=</span> score_actuel <span style="color:#f92672">+</span> score_voisin[voisin]
+                <span style="color:#66d9ef">if</span> score <span style="color:#f92672">&lt;</span> Scores[voisin]:
+                    Scores[voisin] <span style="color:#f92672">=</span> score
+                    Preds[voisin] <span style="color:#f92672">=</span> sommet_actuel
+                    heapq<span style="color:#f92672">.</span>heappush(tas, (score, voisin))
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Preds <span style="color:#f92672">=</span> Dijkstra(carte,depart,arrivee)[<span style="color:#ae81ff">0</span>]
+</code></pre></div><blockquote>
+<p>Définissez une fonction qui reconstitue la plus petite chaîne à partir de la liste des prédécesseurs fournie par Dijkstra.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reconstruction_chaine</span>(predecesseurs,depart,arrivee) :
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    reconstruction_chemin(predecesseur : dict , depart : tuple , arrivee : tuple) -&gt; chemin : liste de tuples
+</span><span style="color:#e6db74">    predecesseur est un dictionnaire qui pour chaque clé sous forme de tuple (x,y) (un des sommets) donne son prédécesseur là aussi sous forme de tuple (x&#39;,y&#39;).
+</span><span style="color:#e6db74">    la liste retournée, chaine, doit contenir la liste des sommets (chaque sommet est un tuple (x,y)) allant du depart à l&#39;arrivee.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    chaine <span style="color:#f92672">=</span> [depart]
+    s <span style="color:#f92672">=</span> arrivee
+    <span style="color:#75715e"># VOTRE CODE</span>
+    <span style="color:#66d9ef">return</span> chaine
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chaine_Dijk <span style="color:#f92672">=</span> reconstruction_chaine(Preds,depart,arrivee)
+</code></pre></div><p>Vérifiez que votre chaine vaut est bien la même que celle ci-dessus :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chaine_Dijk <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>),(<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">16</span>),(<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">17</span>),(<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">19</span>),(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">19</span>),(<span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">19</span>),(<span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">19</span>),(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">19</span>),(<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">19</span>),(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">17</span>),(<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">16</span>),(<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">15</span>),(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">14</span>),(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">13</span>),(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">12</span>),(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">11</span>),(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">10</span>),(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">9</span>),(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">8</span>),(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">7</span>),(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>),(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>),(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>),(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>),(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)]
+</code></pre></div><p>Traçons la chaîne obtenue.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> chaine_Dijk[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] :
+    ax<span style="color:#f92672">.</span>add_patch(Rectangle(sommet,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,edgecolor<span style="color:#f92672">=</span>coul_bords,facecolor<span style="color:#f92672">=</span>coul_chemin,fill<span style="color:#f92672">=</span>True,lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+fig
+</code></pre></div><p><img src="/chemindijk.png" alt=""></p>
+<p>On constate que le chemin trouvé par Dijkstra prend maintenant soin de contourner le marécage.<br></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> Dijkstra(carte,depart,arrivee)[<span style="color:#ae81ff">2</span>] :
+    ax<span style="color:#f92672">.</span>add_patch(Rectangle(sommet,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,edgecolor<span style="color:#f92672">=</span>coul_bords,facecolor<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0.8</span>),fill<span style="color:#f92672">=</span>True,lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+fig
+</code></pre></div><p><img src="/visitedijk.png" alt=""></p>
+<p>À nouveau, une grande partie de la carte est inspectée.</p>
+<blockquote>
+<p>Répondez aux trois questions suivantes :</p>
+<ul>
+<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
+<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations?</li>
+<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
+</ul>
+</blockquote>
+<p> </p>
+<h4 id="ajout-dune-heuristique">Ajout d&rsquo;une heuristique</h4>
+<p>Pour améliorer la vitesse des algorithmes précédents, on va leur ajouter une <strong>heuristique</strong>. Une heuristique est une petite recette, une règle simple, que l&rsquo;algorithme va suivre pour s&rsquo;économiser des étapes.</p>
+<p>Le point noir des algorithmes précédents est qu&rsquo;ils semblent contraints de parcourir quasiment toute la carte avant d&rsquo;être sûr d&rsquo;avoir trouvé le bon chemin.<br>
+On va les aider en les guidant vers l&rsquo;arrivée.</p>
+<p>L&rsquo;heuristique va donc consister à guider le choix du prochain sommet de manière à ce qu&rsquo;il diminue la distance jusqu&rsquo;à l&rsquo;arrivée. On le dirrige en quelque sorte ves sa destination&hellip;</p>
+<p>Implémentons donc une fonction distance qui donne la distance entre deux sommets A et B.<br>
+Mais quelle distance ? Plusieurs définition non équivalentes sont pssibles : distance euclidienne, distance de Manhattan&hellip;<br>
+Ici, on va utiliser la distance de Tchebychev qui correspond à la distance sur un échiquier où les mouvements en diagonale coûte 1.</p>
+<img width="400px" src="http://cordier-phychi.toile-libre.org/Info/github/tchebychev.png?width=300px">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">distance</span>(A,B) : 
+    x_A,y_A <span style="color:#f92672">=</span> A
+    x_B,y_B <span style="color:#f92672">=</span> B
+    X <span style="color:#f92672">=</span> abs(x_B<span style="color:#f92672">-</span>x_A)
+    Y <span style="color:#f92672">=</span> abs(y_B<span style="color:#f92672">-</span>y_A)
+    <span style="color:#66d9ef">return</span> max(X,Y)
+</code></pre></div><p>Implémentons maintenant une variante de la recherche en largeur qui intègre l&rsquo;heuristique grâce à un tas :
+pour chaque nouveau voisin inspecté, on calcule sa distance à l&rsquo;arrivée puis on l&rsquo;ajoute à un tas avec cette distance comme clé de classement.<br>
+On s&rsquo;assure ainsi à chaque itération de retirer du tas le sommet rapprochant le plus de la destination finale.<br>
+Il s&rsquo;agit à nouveau d&rsquo;un <strong>algorithme glouton</strong>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> heapq
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bfs_glouton</span>(G,depart,arrivee) :
+    tas <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">0</span>, depart)]
+    Vus <span style="color:#f92672">=</span> []
+    Preds <span style="color:#f92672">=</span> dict()
+    Preds[depart] <span style="color:#f92672">=</span> None
+    <span style="color:#66d9ef">while</span> tas :
+        dist_actuelle, sommet_actuel <span style="color:#f92672">=</span> heapq<span style="color:#f92672">.</span>heappop(tas) <span style="color:#75715e"># on retire le sommet le plus proche de l&#39;arrivée</span>
+        <span style="color:#66d9ef">if</span> sommet_actuel <span style="color:#f92672">==</span> arrivee :
+            <span style="color:#66d9ef">return</span> Preds,Vus
+        <span style="color:#66d9ef">for</span> voisin <span style="color:#f92672">in</span> G[sommet_actuel]:
+            <span style="color:#66d9ef">if</span> voisin <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> Vus :
+                Vus<span style="color:#f92672">.</span>append(voisin)
+            <span style="color:#66d9ef">if</span> voisin <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> Preds:
+                dist <span style="color:#f92672">=</span> distance(arrivee, voisin)
+                heapq<span style="color:#f92672">.</span>heappush(tas, (dist, voisin)) <span style="color:#75715e"># on place dans le tas le voisin affublé de sa distance</span>
+                Preds[voisin] <span style="color:#f92672">=</span> sommet_actuel
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bfs_glouton(carte,depart,arrivee)
+chaine_glouton <span style="color:#f92672">=</span> reconstruction_chaine(bfs_glouton(carte,depart,arrivee)[<span style="color:#ae81ff">0</span>],depart,arrivee)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> chaine_glouton[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] :
+    ax<span style="color:#f92672">.</span>add_patch(Rectangle(sommet,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,edgecolor<span style="color:#f92672">=</span>coul_bords,facecolor<span style="color:#f92672">=</span>coul_chemin,fill<span style="color:#f92672">=</span>True,lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+fig
+</code></pre></div><p><img src="/cheminbfsglout.png" alt=""></p>
+<p>On voit que le chemin se dirige tout de suite vers l&rsquo;arrivée, jusqu&rsquo;à rencontrer un mur&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> bfs_glouton(carte,depart,arrivee)[<span style="color:#ae81ff">1</span>] :
+    ax<span style="color:#f92672">.</span>add_patch(Rectangle(sommet,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,edgecolor<span style="color:#f92672">=</span>coul_bords,facecolor<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0.8</span>),fill<span style="color:#f92672">=</span>True,lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+fig
+</code></pre></div><p><img src="/visitebfsglout.png" alt=""></p>
+<p>Le nombre de sommets inspectés a spectaculairement diminué !</p>
+<blockquote>
+<p>Répondez aux trois questions suivantes :</p>
+<ul>
+<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
+<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations?</li>
+<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
+</ul>
+</blockquote>
+<p> </p>
+<h4 id="a">A*</h4>
+<p>Appliquons maintenant l&rsquo;heuristique à l&rsquo;algorithme de Dijkstra. On obtient l'<strong>algorithme A</strong>* (A étoile ou A star).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Astar</span>(G, depart, arrivee):
+    Scores <span style="color:#f92672">=</span> {sommet: float(<span style="color:#e6db74">&#39;inf&#39;</span>) <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> G}
+    Preds <span style="color:#f92672">=</span> {sommet : None <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> G}
+    Scores[depart] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    Vus <span style="color:#f92672">=</span> []
+    tas <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, depart)]
+    <span style="color:#66d9ef">while</span> tas :
+        _, score_actuel, sommet_actuel <span style="color:#f92672">=</span> heapq<span style="color:#f92672">.</span>heappop(tas) <span style="color:#75715e"># on utilise par convention &#39;_&#39; pour déballer un élément d&#39;un tuple dont on ne fera pas usage.</span>
+        <span style="color:#66d9ef">if</span> sommet_actuel <span style="color:#f92672">==</span> arrivee :
+            <span style="color:#66d9ef">return</span> Preds,Scores,Vus
+        <span style="color:#66d9ef">if</span> score_actuel <span style="color:#f92672">&lt;=</span> Scores[sommet_actuel]:          
+            score_voisin <span style="color:#f92672">=</span> G[sommet_actuel]
+            <span style="color:#66d9ef">for</span> voisin <span style="color:#f92672">in</span> score_voisin<span style="color:#f92672">.</span>keys():
+                <span style="color:#66d9ef">if</span> voisin <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> Vus :
+                    Vus<span style="color:#f92672">.</span>append(voisin)
+                score <span style="color:#f92672">=</span> score_actuel <span style="color:#f92672">+</span> score_voisin[voisin]
+                <span style="color:#66d9ef">if</span> score <span style="color:#f92672">&lt;</span> Scores[voisin]:
+                    Scores[voisin] <span style="color:#f92672">=</span> score
+                    Preds[voisin] <span style="color:#f92672">=</span> sommet_actuel
+                    heuristique <span style="color:#f92672">=</span> score <span style="color:#f92672">+</span> distance(voisin,arrivee)
+                    heapq<span style="color:#f92672">.</span>heappush(tas, (heuristique, score, voisin))
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chaine_Astar <span style="color:#f92672">=</span> reconstruction_chaine(Astar(carte,depart,arrivee)[<span style="color:#ae81ff">0</span>],depart,arrivee)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> chaine_Astar[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] :
+    ax<span style="color:#f92672">.</span>add_patch(Rectangle(sommet,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,edgecolor<span style="color:#f92672">=</span>coul_bords,facecolor<span style="color:#f92672">=</span>coul_chemin,fill<span style="color:#f92672">=</span>True,lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+fig
+</code></pre></div><p><img src="/cheminastar.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> Astar(carte,depart,arrivee)[<span style="color:#ae81ff">2</span>] :
+    ax<span style="color:#f92672">.</span>add_patch(Rectangle(sommet,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,edgecolor<span style="color:#f92672">=</span>coul_bords,facecolor<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0.8</span>),fill<span style="color:#f92672">=</span>True,lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+fig
+</code></pre></div><p><img src="/visiteastar.png" alt=""></p>
+<blockquote>
+<p>Répondez aux trois questions suivantes :</p>
+<ul>
+<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
+<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations?</li>
+<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
+</ul>
+</blockquote>
 
 
 <footer class="footline">
@@ -1195,158 +1798,6 @@ L&rsquo;instabilité du tri par sélection peut être éliminée en utilisant un
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -1471,6 +1922,155 @@ L&rsquo;instabilité du tri par sélection peut être éliminée en utilisant un
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 

@@ -82,5 +82,16 @@ La représentation machine d&amp;rsquo;un nombre est appelée mot machine. Sa ta
 Un peu d&amp;rsquo;histoire L&amp;rsquo;acte de naissance de la théorie des graphes date d&amp;rsquo;une petite énigme à laquelle s&amp;rsquo;attelaient sans succès les habitants de Königsberg. Comment un voyageur pouvait traverser les sept ponts sans jamais passer deux fois sur le même pont ? Euler résout le problème et fonda du même coup la théorie des graphes !</description>
     </item>
     
+    <item>
+      <title>TP 10 : les graphes</title>
+      <link>https://info-tsi-vieljeux.github.io/semestre_2/tp10graphes/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/semestre_2/tp10graphes/</guid>
+      <description>TP10 : les graphes Cliquez sur cette invitation pour récupérer le repository du TP.  Le dessin ci-dessus peut se représenter par (choisir la bonne réponse) :
+ a : un graphe orienté b : un graphe non orienté    Le degré du sommet C vaut :
+ a : 2 b : 3 c : 5    Le distance de F à C vaut :</description>
+    </item>
+    
   </channel>
 </rss>
