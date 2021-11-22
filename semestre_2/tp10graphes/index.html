@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1637540275" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1637540275" rel="stylesheet">
-    <link href="/css/hybrid.css?1637540275" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1637540275" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1637540275" rel="stylesheet">
-    <link href="/css/auto-complete.css?1637540275" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1637540275" rel="stylesheet">
-    <link href="/css/theme.css?1637540275" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1637540275" rel="stylesheet">
+    <link href="/css/nucleus.css?1637548594" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1637548594" rel="stylesheet">
+    <link href="/css/hybrid.css?1637548594" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1637548594" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1637548594" rel="stylesheet">
+    <link href="/css/auto-complete.css?1637548594" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1637548594" rel="stylesheet">
+    <link href="/css/theme.css?1637548594" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1637548594" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1637540275" rel="stylesheet">
+    <link href="/css/theme-green.css?1637548594" rel="stylesheet">
     
-    <link href="/css/foo.css?1637540275" rel="stylesheet"><link href="/css/bar.css?1637540275" rel="stylesheet">
+    <link href="/css/foo.css?1637548594" rel="stylesheet"><link href="/css/bar.css?1637548594" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1637540275"></script>
+    <script src="/js/jquery-3.3.1.min.js?1637548594"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1637540275"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1637540275"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1637548594"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1637548594"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1637540275"></script>
+<script type="text/javascript" src="/js/search.js?1637548594"></script>
 
     
   </div>
@@ -1209,8 +1209,8 @@ plt<span style="color:#f92672">.</span>show()
 </ul>
 <blockquote>
 <p>Construire une fonction <code>plusPetitEnfant</code> qui retourne la position du petit enfant d&rsquo;un élément dans le tas.<br>
-La fonction prend en argument le tas représenté sous la forme d&rsquo;une liste et la position du parent.<br>
-La fonction retourne la valeur de la position du plus petit enfant.<br>
+La fonction prend en argument le tas (représenté sous la forme d&rsquo;une liste) et la position du parent.<br>
+La fonction retourne la position du plus petit enfant.<br>
 Si l&rsquo;élément n&rsquo;a pas d&rsquo;enfant, la fonction retourne <code>None</code>.<br>
 <strong>Attention :</strong> les positions dans le tas vont de 1 à n (et non de 0 à n-1) où n est le nombre d&rsquo;éléments dans le tas</p>
 </blockquote>
@@ -1223,7 +1223,7 @@ Si l&rsquo;élément n&rsquo;a pas d&rsquo;enfant, la fonction retourne <code>No
 enfants(Tas,<span style="color:#ae81ff">2</span>)
 </code></pre></div><blockquote>
 <p>Construire les fonctions <code>insert</code> et <code>extractMin</code> (pour cette dernière, pensez à utiliser <code>plusPetitEnfant</code>).<br>
-On se restreindra aux entiers pour les objets des tas.</p>
+On supposera que le tas ne contient que des entiers.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">insert</span>(tas,x) :
     <span style="color:#e6db74">&#34;&#34;&#34;
@@ -1240,7 +1240,7 @@ On se restreindra aux entiers pour les objets des tas.</p>
 </span><span style="color:#e6db74">    tout en respectant l&#39;invariant : les valeurs des parents doivent être inférieures à celles des enfants.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e"># VOTRE CODE</span>
-</code></pre></div><p>Construisons maintenant un tri par tas et montrons qu&rsquo;il explose le tri par sélection dont il est issu.</p>
+</code></pre></div><p>Construisons maintenant un tri par tas et montrons qu&rsquo;il est bien plus rapide que le tri par sélection dont il est issu.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">triParSelection</span>(liste) :
     n <span style="color:#f92672">=</span> len(liste)
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) :
@@ -2100,19 +2100,19 @@ fig
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1637540275"></script>
-    <script src="/js/perfect-scrollbar.min.js?1637540275"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1637540275"></script>
-    <script src="/js/jquery.sticky.js?1637540275"></script>
-    <script src="/js/featherlight.min.js?1637540275"></script>
-    <script src="/js/highlight.pack.js?1637540275"></script>
+    <script src="/js/clipboard.min.js?1637548594"></script>
+    <script src="/js/perfect-scrollbar.min.js?1637548594"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1637548594"></script>
+    <script src="/js/jquery.sticky.js?1637548594"></script>
+    <script src="/js/featherlight.min.js?1637548594"></script>
+    <script src="/js/highlight.pack.js?1637548594"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1637540275"></script>
-    <script src="/js/learn.js?1637540275"></script>
-    <script src="/js/hugo-learn.js?1637540275"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1637548594"></script>
+    <script src="/js/learn.js?1637548594"></script>
+    <script src="/js/hugo-learn.js?1637548594"></script>
     
         
-            <script src="/mermaid/mermaid.js?1637540275"></script>
+            <script src="/mermaid/mermaid.js?1637548594"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
