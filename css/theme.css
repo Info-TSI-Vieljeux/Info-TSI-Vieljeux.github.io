@@ -1162,3 +1162,8 @@ pre .copy-to-clipboard:hover {
 option {
     color: initial;
 }
+
+.video-shortcode {
+  max-width: 100%;
+  height: auto;
+}
