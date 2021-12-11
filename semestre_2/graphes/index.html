@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1639227495" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1639227495" rel="stylesheet">
-    <link href="/css/hybrid.css?1639227495" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1639227495" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1639227495" rel="stylesheet">
-    <link href="/css/auto-complete.css?1639227495" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1639227495" rel="stylesheet">
-    <link href="/css/theme.css?1639227495" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1639227495" rel="stylesheet">
+    <link href="/css/nucleus.css?1639266907" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1639266907" rel="stylesheet">
+    <link href="/css/hybrid.css?1639266907" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1639266907" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1639266907" rel="stylesheet">
+    <link href="/css/auto-complete.css?1639266907" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1639266907" rel="stylesheet">
+    <link href="/css/theme.css?1639266907" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1639266907" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1639227495" rel="stylesheet">
+    <link href="/css/theme-green.css?1639266907" rel="stylesheet">
     
-    <link href="/css/foo.css?1639227495" rel="stylesheet"><link href="/css/bar.css?1639227495" rel="stylesheet">
+    <link href="/css/foo.css?1639266907" rel="stylesheet"><link href="/css/bar.css?1639266907" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1639227495"></script>
+    <script src="/js/jquery-3.3.1.min.js?1639266907"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1639227495"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1639227495"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1639266907"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1639266907"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1639227495"></script>
+<script type="text/javascript" src="/js/search.js?1639266907"></script>
 
     
   </div>
@@ -1128,13 +1128,13 @@ Cela revient à inspecter le graphe par couche concentrique de plus en plus élo
 <p><img src="/gifbreadth.gif?width=700" alt=""></p>
 <p>Pour implémenter un tel algorithme, la structure de données adaptée est la <strong>file</strong>.</p>
 <p>
-<div class="notices note" ><p>Les files (queues en anglais) sont des structures dynamiques (les éléments sont enfilés ou défilés) qui, à l&rsquo;instar d&rsquo;une file d&rsquo;attente à une caisse, c&rsquo;est  le premier arrivé qui est le premier retiré (FIFO pour &ldquo;first in first out&rdquo;). Les files sont utilisées par exemple lorsqu&rsquo;il y a une possibilité d&rsquo;encombrement (pour une imprimante partagée par exemple).</p>
+<div class="notices note" ><p>Les files (queues en anglais) sont des structures dynamiques (les éléments sont enfilés ou défilés) où, à l&rsquo;instar d&rsquo;une file d&rsquo;attente à une caisse, c&rsquo;est le premier arrivé qui est le premier retiré (FIFO pour &ldquo;first in first out&rdquo;). Les files sont utilisées par exemple lorsqu&rsquo;il y a une possibilité d&rsquo;encombrement (pour une imprimante partagée par exemple).</p>
 </div>
 
 <img src="/queue.png?width=600" alt=""></p>
-<p>L&rsquo;idée est de placer chaque nouveau successeur au bout d&rsquo;une file (enfiler), puis de retirer un à un (défiler) les premiers arrivés (donc les plus proches) lorsqu&rsquo;ils sont à leur tour inspectés.</p>
-<p>Pour l&rsquo;implémentation des files, on pourrait utiliser des listes python en ajoutant toujours les éléments à la fin et les retirant au début, mais ce n&rsquo;est pas très efficace. En effet, l&rsquo;ajout d&rsquo;un élément en début de liste à un coût linéaire (proportionnel à la taille de la liste). On pourrait pourtant tirer partie de la structure particulièrement simple des files où seule deux positions (première et dernière) nous intéressent.<br>
-Mais comme souvent en python, un module dédié, ici <code>collecions.deque</code>, peut nous venir en aide. Il implément efficacement les files en permettant un enfilage et un défilage en temps constant.</p>
+<p>L&rsquo;idée est de placer chaque nouveau successeur au bout d&rsquo;une file (enfiler), puis de retirer un à un (défiler) les premiers arrivés (donc les plus proches du sommet de départ) lorsqu&rsquo;ils sont à leur tour inspectés.</p>
+<p>Pour l&rsquo;implémentation des files, on pourrait utiliser des listes python en ajoutant toujours les éléments à la fin et les retirant au début, mais ce n&rsquo;est pas très efficace. En effet, l&rsquo;ajout d&rsquo;un élément en début de liste à un coût linéaire (proportionnel à la taille de la liste). On aimerant pourtant tirer partie de la structure particulièrement simple des files où seule deux positions (première et dernière) nous intéressent&hellip;<br>
+Comme souvent en python, un module dédié, ici <code>collecions.deque</code>, va nous venir en aide. Il implément efficacement les files en permettant un enfilage et un défilage en temps constant.</p>
 <p><img src="/breadth.png?width=700" alt=""></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">G <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Bob&#34;</span> : [<span style="color:#e6db74">&#34;Alice&#34;</span>,<span style="color:#e6db74">&#34;Dave&#34;</span>,<span style="color:#e6db74">&#34;Charlie&#34;</span>],
      <span style="color:#e6db74">&#34;Alice&#34;</span> : [<span style="color:#e6db74">&#34;Elisa&#34;</span>],
@@ -1154,7 +1154,7 @@ Mais comme souvent en python, un module dédié, ici <code>collecions.deque</cod
     file<span style="color:#f92672">.</span>append(depart)
     Sommets <span style="color:#f92672">=</span> []
     Vus <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">while</span> file :
+    <span style="color:#66d9ef">while</span> file : <span style="color:#75715e"># tant que la file n&#39;est pas vide</span>
         sommet <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>popleft() <span style="color:#75715e"># méthode de la classe deque permettant de défiler (équivaut à pop(0) sur une liste)</span>
         <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus :
             file <span style="color:#f92672">+=</span> G[sommet]
@@ -1179,11 +1179,11 @@ Mais comme souvent en python, un module dédié, ici <code>collecions.deque</cod
 <p> 
  </p>
 <h3 id="algorithme-de-parcours-en-profondeur">Algorithme de parcours en profondeur</h3>
-<p>Cette fois-ci, on explore jusqu&rsquo;au bout chaque chaîne de successeurs du nœud source avant de passer à la suivante.</p>
+<p>L&rsquo;idée maintenant est d&rsquo;explorer jusqu&rsquo;au bout chaque chaîne de successeurs du nœud source avant de passer à la suivante.</p>
 <p><img src="/gifdepth.gif?width=700" alt=""></p>
-<p>Cette fois-ci, la structure de données dynamique adaptée est la <strong>pile</strong>.</p>
+<p>La structure de données dynamique adaptée est cette fois-ci la <strong>pile</strong>.</p>
 <p>
-<div class="notices note" ><p>Les piles (stacks en anglais) sont des structures dynamiques (des éléments sont ajoutés = empilés, ou retirés = dépilés) ayant la propriété que l’élément extrait est celui qui y a été introduit le plus récemment (&ldquo;dernier entré, premier sortie&rdquo; ou LIFO &ldquo;last in first out&rdquo; en anglais). C&rsquo;est l&rsquo;équivalent informatique d&rsquo;une pile d&rsquo;assiettes. Cette structure est par exemple utilisée dans la fonction &ldquo;annuler&rdquo; (CTR-Z) d&rsquo;un logiciel ou encore dans le traitement des fonctions récursives (les piles seront étudiées plus en détail en seconde année).</p>
+<div class="notices note" ><p>Les piles (stacks en anglais) sont des structures dynamiques (des éléments sont ajoutés = empilés, ou retirés = dépilés) ayant la propriété que l’élément extrait est celui qui y a été introduit le plus récemment (&ldquo;dernier entré, premier sortie&rdquo; ou LIFO &ldquo;last in first out&rdquo; en anglais). C&rsquo;est l&rsquo;équivalent informatique d&rsquo;une pile d&rsquo;assiettes. Cette structure est par exemple utilisée dans la fonction &ldquo;annuler&rdquo; (CTR-Z) d&rsquo;un logiciel ou encore dans le traitement des fonctions récursives.</p>
 </div>
 
 <img src="/piles.png?width=550" alt=""></p>
@@ -1202,13 +1202,13 @@ Mais comme souvent en python, un module dédié, ici <code>collecions.deque</cod
 </code></pre></div><p><code>parcours_largeur(G,&quot;Bob&quot;)</code> renvoie
 <code>['Bob', 'Charlie', 'Hector', 'Elisa', 'Dave', 'Gus', 'Farid', 'Alice']</code>.</p>
 <p>On remarque que les deux algorithmes ne diffèrent que par la structure de données utilisée, mais loin d&rsquo;être anodin, ce passage de la file à la pile change complètement le principe du parcours !<br>
-Cela illustre bien que la conception d&rsquo;un algorithme est très dépendantes des structures de données utilisées.</p>
+Cela illustre bien que la conception d&rsquo;un algorithme est en grande part guidée par la structure de données envisagée.</p>
 
-<div class="notices info" ><p>Une <strong>structure de donnée</strong> est une façon d&rsquo;organiser les données de telle sorte que certaines opérations sur ces données soient très rapides. Une structure de donnée est donc spécialisée dans ces quelques opérations.<br>
-Lors de la conception, d&rsquo;un algorithme, l&rsquo;identification des différentes opérations à effectuer va guider le choix de la structure de donnée adaptée.<br>
-Par exemple, l&rsquo;algorithme de recherche en largeur doit gérer un ensemble où le premier élément ajouter doit toujours être le premier retiré (logique <em>FIFO</em>) $\rightarrow$ utilisation d&rsquo;une file qui gère l&rsquo;ajout d&rsquo;un élément à la fin d&rsquo;une file d&rsquo;attente et l&rsquo;extraction au début en temps constant (elle est optimisé pour ça, mais en contrepartie, elle ne sait faire que ça).<br>
+<div class="notices info" ><p>Une <strong>structure de donnée</strong> est une façon d&rsquo;organiser les données de telle sorte que certaines opérations sur ces données soient très rapides. Une structure de données est donc spécialisée dans ces quelques opérations.<br>
+Lors de la conception d&rsquo;un algorithme, l&rsquo;identification des différentes opérations à effectuer va guider le choix de la structure de données adaptée.<br>
+Par exemple, l&rsquo;algorithme de recherche en largeur doit gérer un ensemble où le premier élément ajouté doit toujours être le premier retiré (logique <em>FIFO</em>) $\rightarrow$ utilisation d&rsquo;une file qui gère l&rsquo;ajout d&rsquo;un élément à la fin d&rsquo;une file d&rsquo;attente et l&rsquo;extraction au début en temps constant (elle est optimisée pour ça, mais en contrepartie, elle ne sait faire que ça).<br>
 L&rsquo;algorithme de recherche en profondeur suit lui la logique <em>LIFO</em> $\rightarrow$ utilisation d&rsquo;une pile.<br>
-Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à chaque itération d&rsquo;ajouter un élément à un ensemble et d&rsquo;en retirer le plus petit élément $\rightarrow$ ce sont les deux opérations dont le <strong>tas</strong> s&rsquo;est fait le spécialiste (le tas est un arbre binaire presque complet ordonné). Un <strong>tas</strong> spécialisé dans ces deux opérations s&rsquo;appelle est aussi appelé <strong>file de priorité</strong>. Dans quels autres algorithmes pourrait avantageusement être utilisé un tas ?</p>
+Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à chaque itération d&rsquo;ajouter un élément à un ensemble et d&rsquo;en retirer le plus petit élément $\rightarrow$ ce sont les deux opérations dont le <strong>tas</strong> s&rsquo;est fait le spécialiste (le tas est un arbre binaire presque complet ordonné). Un <strong>tas</strong> spécialisé dans ces deux opérations est aussi appelé <strong>file de priorité</strong>. Dans quels autres algorithmes le tas pourrait-il être utilisé avantageusement ?</p>
 </div>
 
 <p>Nous n&rsquo;avions pas réellement besoin de la classe <code>deque</code> pour implémenter efficacement la pile. En effet, si insérer un élément au début d&rsquo;une liste python de taille $n$ a bien un coût linéaire ($O(n)$) et ralentit donc l&rsquo;exécution par rapport à l&rsquo;utilisation d&rsquo;une file, retirer un élément à la fin (via <code>pop</code>) se fait en temps constant ($O(1)$).</p>
@@ -1828,19 +1828,19 @@ Conséquence : si on remplace la fonction <code>sommet_suivant</code> par un tas
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1639227495"></script>
-    <script src="/js/perfect-scrollbar.min.js?1639227495"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1639227495"></script>
-    <script src="/js/jquery.sticky.js?1639227495"></script>
-    <script src="/js/featherlight.min.js?1639227495"></script>
-    <script src="/js/highlight.pack.js?1639227495"></script>
+    <script src="/js/clipboard.min.js?1639266907"></script>
+    <script src="/js/perfect-scrollbar.min.js?1639266907"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1639266907"></script>
+    <script src="/js/jquery.sticky.js?1639266907"></script>
+    <script src="/js/featherlight.min.js?1639266907"></script>
+    <script src="/js/highlight.pack.js?1639266907"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1639227495"></script>
-    <script src="/js/learn.js?1639227495"></script>
-    <script src="/js/hugo-learn.js?1639227495"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1639266907"></script>
+    <script src="/js/learn.js?1639266907"></script>
+    <script src="/js/hugo-learn.js?1639266907"></script>
     
         
-            <script src="/mermaid/mermaid.js?1639227495"></script>
+            <script src="/mermaid/mermaid.js?1639266907"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
