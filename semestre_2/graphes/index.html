@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1639266907" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1639266907" rel="stylesheet">
-    <link href="/css/hybrid.css?1639266907" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1639266907" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1639266907" rel="stylesheet">
-    <link href="/css/auto-complete.css?1639266907" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1639266907" rel="stylesheet">
-    <link href="/css/theme.css?1639266907" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1639266907" rel="stylesheet">
+    <link href="/css/nucleus.css?1639267540" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1639267540" rel="stylesheet">
+    <link href="/css/hybrid.css?1639267540" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1639267540" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1639267540" rel="stylesheet">
+    <link href="/css/auto-complete.css?1639267540" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1639267540" rel="stylesheet">
+    <link href="/css/theme.css?1639267540" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1639267540" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1639266907" rel="stylesheet">
+    <link href="/css/theme-green.css?1639267540" rel="stylesheet">
     
-    <link href="/css/foo.css?1639266907" rel="stylesheet"><link href="/css/bar.css?1639266907" rel="stylesheet">
+    <link href="/css/foo.css?1639267540" rel="stylesheet"><link href="/css/bar.css?1639267540" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1639266907"></script>
+    <script src="/js/jquery-3.3.1.min.js?1639267540"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1639266907"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1639266907"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1639267540"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1639267540"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1639266907"></script>
+<script type="text/javascript" src="/js/search.js?1639267540"></script>
 
     
   </div>
@@ -1216,10 +1216,10 @@ Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à
  </p>
 <p><strong>Exemples d&rsquo;applications du parcours en profondeur :</strong></p>
 <ul>
-<li>utilisé pour trouver un chemin entre deux sommets,</li>
+<li>trouver un chemin entre deux sommets,</li>
 <li>détection de cycles dans un graphe,</li>
 <li>utilisé dans le tri topologique,</li>
-<li>utilisé pour trouver la sortie d&rsquo;un labyrinthe.</li>
+<li>trouver la sortie d&rsquo;un labyrinthe.</li>
 </ul>
 <p> 
  </p>
@@ -1227,10 +1227,10 @@ Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à
 <p>Dans de nombreuses situations, les arêtes d&rsquo;un graphe ne sont pas toutes équivalentes. On ajoute alors l&rsquo;information du &ldquo;coût&rdquo; que cela représente d&rsquo;emprunter telle ou telle arête. On appelle <strong>poids</strong> ces valeurs ajoutées aux arêtes/arcs.</p>
 <p>Par exemple, pour modéliser un réseau ferroviaire, on peut attribuer à chaque arête modélisant les jonctions entre deux gares la distance correspondante. Et pour un réseau de communication, le poids d&rsquo;une arête correspondra plutôt au temps nécessaire pour transférer un message de taille élémentaire.</p>
 <p>On obtient alors un <strong>graphe pondéré</strong>.</p>
-<p>On utilise aussi souvent des graphes pondérés, plus particulièrement des <strong>arbres de probabilité</strong> (où chaque branche est affublée d&rsquo;une probabilité) pour calculer des probabilités conditionnelles.</p>
+<p>On utilise par exemple des graphes pondérés, plus particulièrement des <strong>arbres de probabilité</strong> (où chaque branche est affublée d&rsquo;une probabilité) pour calculer des probabilités conditionnelles.</p>
 <p>Exemple :
 <img src="/arbreproba.png?width=400" alt=""></p>
-<p>Très souvent (particulièrement pour les réseaux de communication), l&rsquo;information ajoutée au graphe un temps ou une distance et se pose alors le problème de l&rsquo;optimisation d&rsquo;un trajet entre deux sommets.</p>
+<p>Très souvent (particulièrement pour les réseaux de communication), l&rsquo;information ajoutée au graphe est un temps ou une distance et se pose alors le problème de l&rsquo;optimisation d&rsquo;un trajet entre deux sommets.</p>
 
 <div class="notices def" ><p>Le <strong>poids d&rsquo;un chemin</strong> est la somme des poids des arcs empruntés.</p>
 </div>
@@ -1246,7 +1246,7 @@ Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à
 <div class="notices tip" ><p>Pas au programme de TSI mais plus prudent d&rsquo;en avoir entendu parler pour l&rsquo;épreuve de Centrale qui jusqu&rsquo;à maintenant était commune aux autres sections.</p>
 </div>
 
-<p>Si le graphe considéré n&rsquo;est pas pondéré,  l&rsquo;algorithme de parcours en largeur, moyennant quelques adaptations, est tout à fait capable de faire le travail.</p>
+<p>Si le graphe considéré n&rsquo;est pas pondéré, l&rsquo;algorithme de parcours en largeur, moyennant quelques adaptations, est tout à fait capable de faire le travail.</p>
 <h3 id="algorithme-de-parcours-en-largeur-1">Algorithme de parcours en largeur</h3>
 <p>Comme l&rsquo;algorithme de parcours en largeur examine le graphe en couches concentriques depuis le sommet de départ, lorsqu&rsquo;il parvient au sommet cible, on est sûr que le nombre d&rsquo;arcs est minimal.</p>
 <p>Il suffit alors de joindre à la liste des sommets examinés, la liste des chemins permettant de parvenir à chacun de ces sommets (en incrémentant à chaque tour chacun des chemins du sommet correspondant de la nouvelle couche).</p>
@@ -1275,7 +1275,7 @@ Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à
 </code></pre></div><p><img src="/parcours.png?width=900" alt=""></p>
 <p><code>recherche_largeur(G,&quot;Minimes&quot;,&quot;Stade&quot;)</code> retourne bien le chemin comportant le moins d&rsquo;arêtes :  <code>['Minimes', 'Hôpital', 'Verdun', 'Stade']</code>.</p>
 
-<div class="notices warning" ><p>Mais si on ajoute des poids, l&rsquo;algorithme de recherche en largeur devient inefficace puisqu&rsquo;il se borne à donner la même réponse (les pondérations sont nul part prises en compte !).</p>
+<div class="notices warning" ><p>Mais si on ajoute des poids, l&rsquo;algorithme de recherche en largeur devient inefficace puisqu&rsquo;il se borne à donner la même réponse (les pondérations sont nulle part prises en compte !).</p>
 </div>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">G_pond <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Minimes&#34;</span> : {<span style="color:#e6db74">&#34;Tasdon&#34;</span>:<span style="color:#ae81ff">5</span>,<span style="color:#e6db74">&#34;Hôpital&#34;</span>:<span style="color:#ae81ff">4</span>},
@@ -1350,8 +1350,8 @@ Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à
 <div class="notices info" ><p>La complexité de cette implémentation de l&rsquo;algorithme de Dijkstra est en $O(|S|^2)$ où comme vu plus haut, $|S|$ est le nombre de sommets du graphe.</p>
 </div>
 
-<p>En effet, chaque sommet est inspecté pour être scoré et lors de chaque inspection (= chaque itération), on inspecte l&rsquo;ensemble des successeurs de ce sommet (et dans le pire des cas, le sommet a $|S|-1$ successeurs).</p>
-<p>Comme évoqué dans une notice précédente, on peut améliorer la complexité en utilisant une structure de donnée adaptée au problème : le <strong>tas</strong>.<br>
+<p>En effet, chaque sommet est inspecté pour être scoré et lors de chaque inspection (= chaque itération), on passe en revue l&rsquo;ensemble des successeurs de ce sommet (et dans le pire des cas, le sommet a $|S|-1$ successeurs).</p>
+<p>Comme évoqué dans une notice précédente, on peut améliorer la complexité en utilisant une structure de données adaptée au problème : le <strong>tas</strong>.<br>
 L&rsquo;idée est d&rsquo;améliorer le choix du prochain sommet inspecté, celui au plus bas score parmi les sommets pas encore validés. En effet, réinspecter systématiquement toute la liste des sommets restants ne semble pas optimal. C&rsquo;est sur ce point que le tas vient à la rescousse :<br>
 le tas est une structure de données de type arbre qui permet de retrouver directement l&rsquo;élément que l&rsquo;on veut traiter en priorité. Le tas garde en permanence le sommet de plus bas score en son sommet avec un coût logarithmique.<br>
 Conséquence : si on remplace la fonction <code>sommet_suivant</code> par un tas et ses opérations dédiées d&rsquo;ajout et d&rsquo;extraction, on passe d&rsquo;une complexité linéaire à une complexité logarithmique pour cette opération.</p>
@@ -1828,19 +1828,19 @@ Conséquence : si on remplace la fonction <code>sommet_suivant</code> par un tas
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1639266907"></script>
-    <script src="/js/perfect-scrollbar.min.js?1639266907"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1639266907"></script>
-    <script src="/js/jquery.sticky.js?1639266907"></script>
-    <script src="/js/featherlight.min.js?1639266907"></script>
-    <script src="/js/highlight.pack.js?1639266907"></script>
+    <script src="/js/clipboard.min.js?1639267541"></script>
+    <script src="/js/perfect-scrollbar.min.js?1639267541"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1639267541"></script>
+    <script src="/js/jquery.sticky.js?1639267541"></script>
+    <script src="/js/featherlight.min.js?1639267541"></script>
+    <script src="/js/highlight.pack.js?1639267541"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1639266907"></script>
-    <script src="/js/learn.js?1639266907"></script>
-    <script src="/js/hugo-learn.js?1639266907"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1639267541"></script>
+    <script src="/js/learn.js?1639267541"></script>
+    <script src="/js/hugo-learn.js?1639267541"></script>
     
         
-            <script src="/mermaid/mermaid.js?1639266907"></script>
+            <script src="/mermaid/mermaid.js?1639267541"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
