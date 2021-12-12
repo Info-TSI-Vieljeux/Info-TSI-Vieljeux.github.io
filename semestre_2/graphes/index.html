@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1639267540" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1639267540" rel="stylesheet">
-    <link href="/css/hybrid.css?1639267540" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1639267540" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1639267540" rel="stylesheet">
-    <link href="/css/auto-complete.css?1639267540" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1639267540" rel="stylesheet">
-    <link href="/css/theme.css?1639267540" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1639267540" rel="stylesheet">
+    <link href="/css/nucleus.css?1639273122" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1639273122" rel="stylesheet">
+    <link href="/css/hybrid.css?1639273122" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1639273122" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1639273122" rel="stylesheet">
+    <link href="/css/auto-complete.css?1639273122" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1639273122" rel="stylesheet">
+    <link href="/css/theme.css?1639273122" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1639273122" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1639267540" rel="stylesheet">
+    <link href="/css/theme-green.css?1639273122" rel="stylesheet">
     
-    <link href="/css/foo.css?1639267540" rel="stylesheet"><link href="/css/bar.css?1639267540" rel="stylesheet">
+    <link href="/css/foo.css?1639273122" rel="stylesheet"><link href="/css/bar.css?1639273122" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1639267540"></script>
+    <script src="/js/jquery-3.3.1.min.js?1639273122"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1639267540"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1639267540"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1639273122"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1639273122"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1639267540"></script>
+<script type="text/javascript" src="/js/search.js?1639273122"></script>
 
     
   </div>
@@ -1147,20 +1147,18 @@ Comme souvent en python, un module dédié, ici <code>collecions.deque</code>, v
      }
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
 
-<span style="color:#75715e"># préconditions: graphe G(S,A) représenté par une liste d&#39;adjacence par un dictionnaire et un sommet s de S</span>
-<span style="color:#75715e"># postconditions : un sommet est accessible depuis s si et seulement si il est marqué comme &#34;vu&#34; (dans la liste vus).</span>
+<span style="color:#75715e"># préconditions: on a besoin d&#39;un graphe G(S,A) représenté par une liste d&#39;adjacence implémentée par un dictionnaire et d&#39;un sommet s de S</span>
+<span style="color:#75715e"># postconditions : un sommet est accessible depuis s si et seulement si il est marqué comme &#34;vu&#34; (dans la liste Vus)</span>
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parcours_largeur</span>(G,depart):
     file <span style="color:#f92672">=</span> deque()
     file<span style="color:#f92672">.</span>append(depart)
-    Sommets <span style="color:#f92672">=</span> []
     Vus <span style="color:#f92672">=</span> []
     <span style="color:#66d9ef">while</span> file : <span style="color:#75715e"># tant que la file n&#39;est pas vide</span>
         sommet <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>popleft() <span style="color:#75715e"># méthode de la classe deque permettant de défiler (équivaut à pop(0) sur une liste)</span>
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus :
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus : <span style="color:#75715e"># évite ici d&#39;avoir 2 Elisa, mais ça peut être bien pire</span>
             file <span style="color:#f92672">+=</span> G[sommet]
-            Vus<span style="color:#f92672">.</span>append(sommet) <span style="color:#75715e"># on marque les sommets vus (évite ici d&#39;avoir 2 Elisa, mais ça peut être bien pire)</span>
-            Sommets<span style="color:#f92672">.</span>append(sommet)
-    <span style="color:#66d9ef">return</span> Sommets
+            Vus<span style="color:#f92672">.</span>append(sommet) 
+    <span style="color:#66d9ef">return</span> Vus
 </code></pre></div><p><code>parcours_largeur(G,&quot;Bob&quot;)</code> renvoie
 <code>['Bob', 'Alice', 'Dave', 'Charlie', 'Elisa', 'Farid', 'Gus', 'Hector']</code>.
 
@@ -1190,19 +1188,17 @@ Comme souvent en python, un module dédié, ici <code>collecions.deque</code>, v
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parcours_profondeur</span>(G,depart):
     pile <span style="color:#f92672">=</span> deque()
     pile<span style="color:#f92672">.</span>append(depart)
-    Sommets <span style="color:#f92672">=</span> []
     Vus <span style="color:#f92672">=</span> []
     <span style="color:#66d9ef">while</span> pile :
         sommet <span style="color:#f92672">=</span> pile<span style="color:#f92672">.</span>pop()
         <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus :
             pile <span style="color:#f92672">+=</span> G[sommet]
             Vus<span style="color:#f92672">.</span>append(sommet)
-            Sommets<span style="color:#f92672">.</span>append(sommet)
-    <span style="color:#66d9ef">return</span> Sommets
-</code></pre></div><p><code>parcours_largeur(G,&quot;Bob&quot;)</code> renvoie
+    <span style="color:#66d9ef">return</span> Vus
+</code></pre></div><p><code>parcours_profondeur(G,&quot;Bob&quot;)</code> renvoie
 <code>['Bob', 'Charlie', 'Hector', 'Elisa', 'Dave', 'Gus', 'Farid', 'Alice']</code>.</p>
 <p>On remarque que les deux algorithmes ne diffèrent que par la structure de données utilisée, mais loin d&rsquo;être anodin, ce passage de la file à la pile change complètement le principe du parcours !<br>
-Cela illustre bien que la conception d&rsquo;un algorithme est en grande part guidée par la structure de données envisagée.</p>
+Cela illustre bien que la conception d&rsquo;un algorithme est intimement liée aux structures de données envisagées.</p>
 
 <div class="notices info" ><p>Une <strong>structure de donnée</strong> est une façon d&rsquo;organiser les données de telle sorte que certaines opérations sur ces données soient très rapides. Une structure de données est donc spécialisée dans ces quelques opérations.<br>
 Lors de la conception d&rsquo;un algorithme, l&rsquo;identification des différentes opérations à effectuer va guider le choix de la structure de données adaptée.<br>
@@ -1828,19 +1824,19 @@ Conséquence : si on remplace la fonction <code>sommet_suivant</code> par un tas
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1639267541"></script>
-    <script src="/js/perfect-scrollbar.min.js?1639267541"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1639267541"></script>
-    <script src="/js/jquery.sticky.js?1639267541"></script>
-    <script src="/js/featherlight.min.js?1639267541"></script>
-    <script src="/js/highlight.pack.js?1639267541"></script>
+    <script src="/js/clipboard.min.js?1639273122"></script>
+    <script src="/js/perfect-scrollbar.min.js?1639273122"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1639273122"></script>
+    <script src="/js/jquery.sticky.js?1639273122"></script>
+    <script src="/js/featherlight.min.js?1639273122"></script>
+    <script src="/js/highlight.pack.js?1639273122"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1639267541"></script>
-    <script src="/js/learn.js?1639267541"></script>
-    <script src="/js/hugo-learn.js?1639267541"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1639273122"></script>
+    <script src="/js/learn.js?1639273122"></script>
+    <script src="/js/hugo-learn.js?1639273122"></script>
     
         
-            <script src="/mermaid/mermaid.js?1639267541"></script>
+            <script src="/mermaid/mermaid.js?1639273122"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
