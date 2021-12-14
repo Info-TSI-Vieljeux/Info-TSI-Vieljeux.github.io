@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1639273122" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1639273122" rel="stylesheet">
-    <link href="/css/hybrid.css?1639273122" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1639273122" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1639273122" rel="stylesheet">
-    <link href="/css/auto-complete.css?1639273122" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1639273122" rel="stylesheet">
-    <link href="/css/theme.css?1639273122" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1639273122" rel="stylesheet">
+    <link href="/css/nucleus.css?1639441891" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1639441891" rel="stylesheet">
+    <link href="/css/hybrid.css?1639441891" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1639441891" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1639441891" rel="stylesheet">
+    <link href="/css/auto-complete.css?1639441891" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1639441891" rel="stylesheet">
+    <link href="/css/theme.css?1639441891" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1639441891" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1639273122" rel="stylesheet">
+    <link href="/css/theme-green.css?1639441891" rel="stylesheet">
     
-    <link href="/css/foo.css?1639273122" rel="stylesheet"><link href="/css/bar.css?1639273122" rel="stylesheet">
+    <link href="/css/foo.css?1639441891" rel="stylesheet"><link href="/css/bar.css?1639441891" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1639273122"></script>
+    <script src="/js/jquery-3.3.1.min.js?1639441891"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1639273122"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1639273122"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1639441891"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1639441891"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1639273122"></script>
+<script type="text/javascript" src="/js/search.js?1639441891"></script>
 
     
   </div>
@@ -1047,7 +1047,7 @@ nx<span style="color:#f92672">.</span>draw(G_complet,pos<span style="color:#f926
 labels <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>get_edge_attributes(G_complet,<span style="color:#e6db74">&#39;weight&#39;</span>)
 nx<span style="color:#f92672">.</span>draw_networkx_edge_labels(G_complet, pos<span style="color:#f92672">=</span>pos,edge_labels<span style="color:#f92672">=</span>labels)
 plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/graphecomplet.png" alt=""></p>
+</code></pre></div><p><img src="/graphecomplet.png?width=900px" alt=""></p>
 <blockquote>
 <p>Transformez la matrice <code>matrice</code> en une liste d&rsquo;adjacence <code>G_la</code> n&rsquo;utilisant que des dictionnaires.<br>
 <code>G_la</code> devra ressembler à :</p>
@@ -1160,7 +1160,7 @@ La sortie doit donc devenir :
         A<span style="color:#f92672">.</span>append((Dmin,Fmin))
     <span style="color:#66d9ef">return</span> A
 </code></pre></div><p>Traçons maintenant l&rsquo;arbre couvrant minimal trouvé par Prim.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">A <span style="color:#f92672">=</span> Prim_corr(G_la)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">A <span style="color:#f92672">=</span> Prim(G_la)
 H <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>Graph()
 <span style="color:#66d9ef">for</span> S <span style="color:#f92672">in</span> abc[:n] :
     H<span style="color:#f92672">.</span>add_node(S)
@@ -1185,7 +1185,9 @@ options <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;f
 fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">12</span>))
 nx<span style="color:#f92672">.</span>draw(F,pos<span style="color:#f92672">=</span>pos,<span style="color:#f92672">**</span>options)
 plt<span style="color:#f92672">.</span>show()
-</code></pre></div><p><img src="/prim.png" alt=""></p>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Coût de l&#39;arbre : {cout}&#34;</span>)
+</code></pre></div><p><img src="/prim.png?width=900px" alt="">
+<code>Coût de l'arbre : 15</code></p>
 <p>Et voilà ! En deux coups de cuillère à pot, on a trouvé un arbre couvrant minimal sans s&rsquo;infliger l&rsquo;inspection systématique des $10^8$ arbres couvrants possibles&hellip;</p>
 <p> </p>
 <h2 id="lien-entre-structures-de-données-et-graphes-exemple-du-tas">Lien entre structures de données et graphes, exemple du tas</h2>
@@ -2092,19 +2094,19 @@ fig
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1639273122"></script>
-    <script src="/js/perfect-scrollbar.min.js?1639273122"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1639273122"></script>
-    <script src="/js/jquery.sticky.js?1639273122"></script>
-    <script src="/js/featherlight.min.js?1639273122"></script>
-    <script src="/js/highlight.pack.js?1639273122"></script>
+    <script src="/js/clipboard.min.js?1639441891"></script>
+    <script src="/js/perfect-scrollbar.min.js?1639441891"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1639441891"></script>
+    <script src="/js/jquery.sticky.js?1639441891"></script>
+    <script src="/js/featherlight.min.js?1639441891"></script>
+    <script src="/js/highlight.pack.js?1639441891"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1639273122"></script>
-    <script src="/js/learn.js?1639273122"></script>
-    <script src="/js/hugo-learn.js?1639273122"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1639441891"></script>
+    <script src="/js/learn.js?1639441891"></script>
+    <script src="/js/hugo-learn.js?1639441891"></script>
     
         
-            <script src="/mermaid/mermaid.js?1639273122"></script>
+            <script src="/mermaid/mermaid.js?1639441891"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
