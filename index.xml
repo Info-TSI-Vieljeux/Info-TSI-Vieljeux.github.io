@@ -178,7 +178,7 @@ La représentation machine d&amp;rsquo;un nombre est appelée mot machine. Sa ta
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp6tri/</guid>
-      <description>algorithmes de tri Trier c&amp;rsquo;est partir d&amp;rsquo;une structure de données désordonnée et la remettre en ordre.
+      <description>Algorithmes de tri Cliquez sur cette invitation pour récupérer le repository du TP. Trier c&amp;rsquo;est partir d&amp;rsquo;une structure de données désordonnée et la remettre en ordre.
 Les tris sont omniprésents en informatique et Tim Roughgarden (auteur d&#39;Algorithms illuminated) en parle même comme de la &amp;ldquo;mère de tous les problèmes algorithmiques&amp;rdquo;.
 Plusieurs stratégies existent. On va en passer certaines en revue et essayer de trier les algorithmes de tri.
  Tris par comparaison La plupart des algorithmes de tri sont dits par comparaison car ils reposent sur des comparaisons deux à deux des éléments de la liste.</description>
