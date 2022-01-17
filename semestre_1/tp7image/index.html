@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1641837567" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1641837567" rel="stylesheet">
-    <link href="/css/hybrid.css?1641837567" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1641837567" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1641837567" rel="stylesheet">
-    <link href="/css/auto-complete.css?1641837567" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1641837567" rel="stylesheet">
-    <link href="/css/theme.css?1641837567" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1641837567" rel="stylesheet">
+    <link href="/css/nucleus.css?1642401054" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1642401054" rel="stylesheet">
+    <link href="/css/hybrid.css?1642401054" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1642401054" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1642401054" rel="stylesheet">
+    <link href="/css/auto-complete.css?1642401054" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1642401054" rel="stylesheet">
+    <link href="/css/theme.css?1642401054" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1642401054" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1641837567" rel="stylesheet">
+    <link href="/css/theme-green.css?1642401054" rel="stylesheet">
     
-    <link href="/css/foo.css?1641837567" rel="stylesheet"><link href="/css/bar.css?1641837567" rel="stylesheet">
+    <link href="/css/foo.css?1642401054" rel="stylesheet"><link href="/css/bar.css?1642401054" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1641837567"></script>
+    <script src="/js/jquery-3.3.1.min.js?1642401054"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1641837567"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1641837567"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1642401054"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1642401054"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1641837567"></script>
+<script type="text/javascript" src="/js/search.js?1642401054"></script>
 
     
   </div>
@@ -740,6 +740,21 @@ onload='renderMathInElement(document.body);'></script>
 <h1 id="tableau-de-pixels-et-images">Tableau de pixels et images</h1>
 <h2 id="importer-une-image">Importer une image</h2>
 <p>PIL (python imaging library) est l&rsquo;une des librairies Python permettant de manipuler des fichiers image. On va l&rsquo;utiliser en association avec numpy qui est le module de choix pour jouer avec des tableaux numériques.</p>
+
+<div class="notices info" ><p><strong>Listes</strong> et <strong>tableaux</strong> (array en anglais) :<br>
+Les deux structures permettent l&rsquo;indexation, le découpage et l&rsquo;itération sur les éléments.<br>
+Les tableaux n&rsquo;existent pas nativement en python, on les utilise en important le package <strong>NumPy</strong>.<br>
+Les tableaux sont moins souples que les listes. Il faut par exemple les déclarer en amont.<br>
+L&rsquo;avantage des tableaux est qu&rsquo;ils sont plus optimisés pour traiter des quantités de données importantes et pour réaliser des opérations mathématiques lorsque ces données sont numériques (multiplication d&rsquo;un tableau de nombre par un scalaire, produit matriciel entre deux tableaux, etc.).<br>
+Exemple : <br>
+<code>tableau = np.array([3, 6, 9, 12]</code><br>
+<code>division = tableau/3</code><br>
+<code>print(division)</code><br>
+<code>print(type(division)</code><br>
+$\rightarrow$ <code>[1. 2. 3. 4.]</code><br>
+$\rightarrow$ <code>&lt;class 'numpy.ndarray'&gt;</code></p>
+</div>
+
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
 <span style="color:#f92672">import</span> urllib.request <span style="color:#75715e"># pour récupérer une image sur le web</span>
 <span style="color:#f92672">from</span> IPython.display <span style="color:#f92672">import</span> display <span style="color:#75715e"># pour afficher dans le notebook</span>
@@ -753,7 +768,10 @@ girafe <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</
 display(girafe) <span style="color:#75715e"># affichage</span>
 </code></pre></div><p><img src="/girafe1.png" alt=""></p>
 <p>On a récupéré les données de l&rsquo;image dans un tableau à trois dimensions numpy.</p>
-<p>Les deux premières dimensions correspondent aux coordonnées spatiales du pixel et l&rsquo;indexation d&rsquo;un tableau numpy autorise l&rsquo;utilisation de virgules pour imiter les coordonnées mathématiques (mais les x et les y sont inversés car il s&rsquo;agit de matrices et on commence toujours par indexer les lignes avant les colonnes). Le pixel ayant la coordonnée cartésienne $(x,y)$ avec une origine $(0,0)$ en haut à gauche va donc correspondre à l&rsquo;élément <code>image[y,x]</code> (on peut aussi, comme avec les listes python, obtenir l&rsquo;élément via <code>image[y][x]</code>).</p>
+<p>On a récupéré les données de l&rsquo;image dans un tableau à trois dimensions numpy.</p>
+<p>Les deux premières dimensions correspondent aux coordonnées spatiales du pixel.<br>
+L&rsquo;indexation d&rsquo;un tableau numpy autorise l&rsquo;utilisation de virgules pour imiter les coordonnées mathématiques (mais les x et les y sont inversés car il s&rsquo;agit de matrice et on commence toujours par indexer les lignes avant les colonnes). Le pixel ayant la coordonnée cartésienne $(x,y)$ avec une origine $(0,0)$ en haut à gauche va donc correspondre à l&rsquo;élément <code>image[y,x]</code> (on peut aussi, comme avec les listes python, obtenir l&rsquo;élément via <code>image[y][x]</code>).</p>
+<p>Et à chacun de ses pixels correspond un tableau de 3 entiers compris entre 0 et 255 codant la couleur du pixel (codage rgb, un nombre pour l&rsquo;intensité du rouge, un pour l&rsquo;intensité du vert et le dernier pour le bleu). C&rsquo;est la 3<sup>e</sup> dimension du tableau.</p>
 <p>Et à chacun de ses pixels correspond un tableau de 3 entiers compris entre 0 et 255 codant la couleur du pixel (codage rgb, un nombre pour l&rsquo;intensité du rouge, un pour l&rsquo;intensité du vert et le dernier pour le bleu). C&rsquo;est la 3<sup>e</sup> dimension du tableau.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(image_girafe<span style="color:#f92672">.</span>shape)
 </code></pre></div><p><code>(1263, 843, 3)</code></p>
@@ -783,25 +801,28 @@ display(affichage)
 </code></pre></div><p><img src="/couleurs1.png" alt="png"></p>
 <p>On voit qu&rsquo;il manque à l&rsquo;image les zones de superposition.</p>
 <blockquote>
-<p>Modifier l&rsquo;image <code>synthese</code> pour reproduire la figure suivante.</p>
+<p>Modifier le tableau <code>synthese</code> pour reproduire la figure suivante.</p>
 </blockquote>
 <p><img src="/couleurs2.png" alt="png"></p>
 <p>Faisons notre propre expérience physique de synthèse additive en codant des zones où les pixels alternent 2 couleurs primaires :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">largeur <span style="color:#f92672">=</span> <span style="color:#ae81ff">900</span>
 hauteur <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>
 synth_phy <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros([hauteur, largeur, <span style="color:#ae81ff">3</span>], dtype<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>uint8)
+<span style="color:#75715e"># On alterne les pixels rouges et verts dans cette partie du tableau</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(hauteur) :
     <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(largeur<span style="color:#f92672">//</span><span style="color:#ae81ff">3</span>) :
         <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">+</span>j)<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> :
             synth_phy[i,j] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>]
         <span style="color:#66d9ef">else</span> : 
             synth_phy[i,j] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">0</span>]
+<span style="color:#75715e"># On alterne les pixels verts et bleus dans cette partie du tableau</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(hauteur) :
     <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(largeur<span style="color:#f92672">//</span><span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>largeur<span style="color:#f92672">//</span><span style="color:#ae81ff">3</span>) :
         <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">+</span>j)<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> :
             synth_phy[i,j] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">255</span>]
         <span style="color:#66d9ef">else</span> : 
             synth_phy[i,j] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">0</span>]
+<span style="color:#75715e"># On alterne les pixels rouges et bleus dans cette partie du tableau</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(hauteur) :
     <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>largeur<span style="color:#f92672">//</span><span style="color:#ae81ff">3</span>,largeur) :
         <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">+</span>j)<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> :
@@ -839,7 +860,7 @@ display
 <blockquote>
 <p>Combien de couleurs sont alors représentables par ce système ?</p>
 </blockquote>
-<p>Fabriquons une image contenant toutes ces couleurs.</p>
+<p>Fabriquons une image contenant toutes ces couleurs !</p>
 <p>L&rsquo;idée est de fabriquer d&rsquo;abord une image $256\times 256$ contenant toutes les nuances possibles de vert et rouge, de l&rsquo;agrandir d&rsquo;un facteur 16 de manière à qu&rsquo;une combinaison rouge/vert unique corresponde à un gros pixel de $16\times16$. Et on additionne à chacun de ces gros pixels une image $16\times16$ bleu contenant les 256 teintes de bleu disposées en spirale.</p>
 <p><img src="http://cordier-phychi.toile-libre.org/Info/github/rougevertetspir.png" alt=""></p>
 <p>L&rsquo;image rouge/verte est assez simple à coder (l&rsquo;exécution met un peu de temps) :</p>
@@ -853,14 +874,31 @@ plt<span style="color:#f92672">.</span>imshow(rougevert)
 <p>Fabriquer la spirale bleue est plus dur&hellip;<br>
 L&rsquo;image doit faire $16\times16$ et contenir toutes les nuances de bleu. On commence en haut à gauche (x=0 et y=0) par du noir (0,0,0), et on progresse dans le sens des aiguilles d&rsquo;une montre en ajoutant 1 à l&rsquo;intensité du bleu à chaque pixel successif de la spirale pour finir au centre (en position x=7, y=8 pour être précis) par un pixel 100% bleu (0,0,255).</p>
 <blockquote>
-<p>Construisez la spirale bleue (du moins la matrice qui sera représentée par la spirale bleue).</p>
+<p>Il reste une ligne à compléter dans le code suivant construisant le tableau permettant de représenter la spirale bleue. À vous de jouer&hellip;</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># vous appellerez votre image &#34;bleu&#34;</span>
-L2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
 bleu <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros([L2, L2, <span style="color:#ae81ff">3</span>], dtype<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>uint8)
-<span style="color:#75715e">### VOTRE CODE</span>
+liste1 <span style="color:#f92672">=</span> [L2]
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,L2) :
+    liste1 <span style="color:#f92672">+=</span> [L2<span style="color:#f92672">-</span>i]<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>
+<span style="color:#75715e"># liste1 = [16, 15, 15, 14, 14, 13, 13, 12, 12, 11, 11, 10, 10, 9, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1]</span>
+liste2 <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>]
+s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> liste1 :
+    s <span style="color:#f92672">+=</span> e
+    liste2 <span style="color:#f92672">+=</span> [s]
+<span style="color:#75715e"># liste2 = [0, 16, 31, 46, 60, 74, 87, 100, ..., 252, 254, 255, 256]</span>
+k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,len(liste2),<span style="color:#ae81ff">4</span>) :
+    bleu[k,k:L2<span style="color:#f92672">-</span>k,<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(liste2[i],liste2[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>])
+    <span style="color:#75715e"># bleu[i,j,2] indexe la couleur bleue</span>
+    <span style="color:#75715e"># np.arange(a,b) fournit un tableau des entiers consécutifs de a (inclus) à b (exclu)</span>
+    bleu[<span style="color:#f92672">...</span>,<span style="color:#f92672">...</span>,<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(<span style="color:#f92672">...</span>,<span style="color:#f92672">...</span>)
+    bleu[L2<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>k,k:L2<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>k,<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(liste2[i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>],liste2[i<span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>])[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">!=</span> <span style="color:#ae81ff">28</span> :
+        bleu[k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:L2<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>k,k,<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(liste2[i<span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>],liste2[i<span style="color:#f92672">+</span><span style="color:#ae81ff">4</span>])[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+    k <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 plt<span style="color:#f92672">.</span>imshow(bleu)
-<span style="color:#75715e"># cette commande devra afficher une image similaire à celle de l&#39;énoncé !</span>
 </code></pre></div><p><img src="/couleurs5.png" alt="png"></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">longueur <span style="color:#f92672">=</span> <span style="color:#ae81ff">4096</span>
 rougevertbleu <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros([longueur, longueur, <span style="color:#ae81ff">3</span>], dtype<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>uint8)
@@ -873,11 +911,11 @@ display(rougevertbleu)
 <p>Les premières consoles de jeu avaient des graphismes de 6 bits (de profondeur). Plutôt que 256 possibilités pour chaque sous-pixel, on en était réduit à seulement 4 choix (2 bits).</p>
 <p><img src="https://d3isma7snj3lcx.cloudfront.net/optim/images/gallery/26/26635/super-mario-bros-nes-155dee7e__930_250__86-619-1680-1050.jpg" alt=""></p>
 <blockquote>
-<p>Définissez une fonction permettant de convertir l&rsquo;image de la giraffe en 6 bits.</p>
+<p>Définissez une fonction permettant de convertir l&rsquo;image de la girafe en 6 bits.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sixbit</span>(image) :
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    prend en argument un tableau numpy à 3 dimensions () obtenu comme plus haut via np.array(Image.open(&#39;nom&#39;))
+</span><span style="color:#e6db74">    prend en argument un tableau numpy à 3 dimensions permettant de représenter une image couleur 24 bits
 </span><span style="color:#e6db74">    et renvoie un nouveau tableau de mêmes dimensions correspondant à une conversion en 6 bits de l&#39;image (chacune des 3 couleurs doit maintant n&#39;avoir que 4 valeurs d&#39;intensité possibles uniformément réparties).
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
@@ -890,17 +928,19 @@ display(girafe)
 image_inv <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>fromarray(image_inv)
 display(image_inv)
 </code></pre></div><p><img src="/girafeinv.png" alt="png"></p>
-<p>Construire une fonction <code>NB</code> qui retourne une version &ldquo;niveau de gris&rdquo; de l&rsquo;image donnée en argument.</p>
+<blockquote>
+<p>Complétez la fonction <code>NB</code> qui retourne une version &ldquo;niveau de gris&rdquo; de l&rsquo;image donnée en argument.</p>
+</blockquote>
 <p>Principe de la manœuvre : $(r,g,b)\rightarrow (\frac{r+g+b}{3},\frac{r+g+b}{3},\frac{r+g+b}{3})$</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">NB</span>(image) :
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    prend en argument un tableau numpy à 3 dimensions () obtenu comme plus haut via np.array(Image.open(&#39;nom&#39;))
+</span><span style="color:#e6db74">    prend en argument un tableau numpy à 3 dimensions (hauteur,largeur,3) représentant une image
 </span><span style="color:#e6db74">    et renvoie un nouveau tableau correspondant à une conversion en niveau de gris de l&#39;image.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    hauteur, largeur, _ <span style="color:#f92672">=</span> image<span style="color:#f92672">.</span>shape
+    image_NB <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros([hauteur, largeur, <span style="color:#ae81ff">3</span>], dtype<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>uint8)
     <span style="color:#75715e">### VOTRE CODE</span>
-    
-giraffe_NB <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>fromarray(NB(image_girafe))
-display(giraffe_NB)
+    <span style="color:#66d9ef">return</span> image_NB
 </code></pre></div><p><img src="/girafenb.png" alt="png"></p>
 <p> 
  </p>
@@ -912,9 +952,9 @@ Faites en sorte que <code>recadrage(image_girafe,(30,50),500,600)</code> recadre
 <p><img src="http://cordier-phychi.toile-libre.org/Info/github/recadrage.png?width=800" alt=""></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recadrage</span>(image,xy_coin,l_cadre,h_cadre) :
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    prend en argument un tableau numpy à 3 dimensions (hauteur,largeur,3) obtenu comme plus haut via np.array(Image.open(&#39;nom&#39;))
+</span><span style="color:#e6db74">    prend en argument un tableau numpy à 3 dimensions (hauteur,largeur,3) représentant une image
 </span><span style="color:#e6db74">    et renvoie un nouveau tableau à 3 dimensions (h_cadre,l_cadre,3).
-</span><span style="color:#e6db74">    L&#39;argument xy_coin est un tuple (x,y) où x et y sont des entiers correspondants aux coordonnées du coin supérieur gauche du nouveau cadre.
+</span><span style="color:#e6db74">    xy_coin est un tuple (x,y) où x et y sont des entiers correspondants aux coordonnées du coin supérieur gauche du nouveau cadre.
 </span><span style="color:#e6db74">    l_cadre et h_cadre étant des nombres de pixels, ils doivent être entiers.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
@@ -922,20 +962,24 @@ Faites en sorte que <code>recadrage(image_girafe,(30,50),500,600)</code> recadre
 affichage <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>fromarray(recadrage(image_girafe,(<span style="color:#ae81ff">30</span>,<span style="color:#ae81ff">50</span>),<span style="color:#ae81ff">500</span>,<span style="color:#ae81ff">600</span>))
 display(affichage)
 </code></pre></div><blockquote>
-<p>Construisez ensuite une fonction <code>rotation</code> qui tourne l&rsquo;image de 90° vers la gauche en modifiant la disposition des pixels.</p>
+<p>Complétez ensuite une fonction <code>rotation</code> qui tourne l&rsquo;image de 90° vers la gauche en modifiant la disposition des pixels.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rotation</span>(image) :
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    prend en argument un tableau numpy à 3 dimensions (hauteur,largeur,3) obtenu comme plus haut via np.array(Image.open(&#39;nom&#39;))
+</span><span style="color:#e6db74">    prend en argument un tableau numpy à 3 dimensions (hauteur,largeur,3) représentant une image
 </span><span style="color:#e6db74">    et renvoie un nouveau tableau correspondant à l&#39;image tournée de 90° vers la gauche.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    hauteur, largeur, _ <span style="color:#f92672">=</span> image<span style="color:#f92672">.</span>shape
+    image_tourne <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros([largeur, hauteur, <span style="color:#ae81ff">3</span>], dtype<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>uint8)
     <span style="color:#75715e">### VOTRE CODE</span>
+    <span style="color:#66d9ef">return</span> image_tourne
     
 affichage <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>fromarray(rotation(image_girafe))
 display(affichage)
 </code></pre></div><p><img src="/girafe90.png" alt=""></p>
 <p>On peut aussi s&rsquo;amuser avec les symétries :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">image_sym <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>copy(image_girafe)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hauteur, largeur, _ <span style="color:#f92672">=</span> image_girafe<span style="color:#f92672">.</span>shape
+image_sym <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>copy(image_girafe)
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(min(hauteur,largeur)) :
     <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(min(hauteur,largeur)) :
         image_sym[i][j]<span style="color:#f92672">=</span>image_sym[j][i]
@@ -1587,19 +1631,19 @@ Ci-dessous, un échec faisant tomber la pluie sur La Rochelle&hellip;
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1641837567"></script>
-    <script src="/js/perfect-scrollbar.min.js?1641837567"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1641837567"></script>
-    <script src="/js/jquery.sticky.js?1641837567"></script>
-    <script src="/js/featherlight.min.js?1641837567"></script>
-    <script src="/js/highlight.pack.js?1641837567"></script>
+    <script src="/js/clipboard.min.js?1642401054"></script>
+    <script src="/js/perfect-scrollbar.min.js?1642401054"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1642401054"></script>
+    <script src="/js/jquery.sticky.js?1642401054"></script>
+    <script src="/js/featherlight.min.js?1642401054"></script>
+    <script src="/js/highlight.pack.js?1642401054"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1641837567"></script>
-    <script src="/js/learn.js?1641837567"></script>
-    <script src="/js/hugo-learn.js?1641837567"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1642401054"></script>
+    <script src="/js/learn.js?1642401054"></script>
+    <script src="/js/hugo-learn.js?1642401054"></script>
     
         
-            <script src="/mermaid/mermaid.js?1641837567"></script>
+            <script src="/mermaid/mermaid.js?1642401054"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
