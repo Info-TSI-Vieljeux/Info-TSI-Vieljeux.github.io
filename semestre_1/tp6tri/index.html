@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1642401054" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1642401054" rel="stylesheet">
-    <link href="/css/hybrid.css?1642401054" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1642401054" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1642401054" rel="stylesheet">
-    <link href="/css/auto-complete.css?1642401054" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1642401054" rel="stylesheet">
-    <link href="/css/theme.css?1642401054" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1642401054" rel="stylesheet">
+    <link href="/css/nucleus.css?1642544449" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1642544449" rel="stylesheet">
+    <link href="/css/hybrid.css?1642544449" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1642544449" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1642544449" rel="stylesheet">
+    <link href="/css/auto-complete.css?1642544449" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1642544449" rel="stylesheet">
+    <link href="/css/theme.css?1642544449" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1642544449" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1642401054" rel="stylesheet">
+    <link href="/css/theme-green.css?1642544449" rel="stylesheet">
     
-    <link href="/css/foo.css?1642401054" rel="stylesheet"><link href="/css/bar.css?1642401054" rel="stylesheet">
+    <link href="/css/foo.css?1642544449" rel="stylesheet"><link href="/css/bar.css?1642544449" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1642401054"></script>
+    <script src="/js/jquery-3.3.1.min.js?1642544449"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1642401054"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1642401054"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1642544449"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1642544449"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1642401054"></script>
+<script type="text/javascript" src="/js/search.js?1642544449"></script>
 
     
   </div>
@@ -903,33 +903,36 @@ Désavantage : il est instable.</p>
   <iframe src="https://www.youtube.com/embed/Cubuk-9gzvk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">partitionner</span>(L, g, d, pivot) :
-    permute(L,pivot,d)
-    j <span style="color:#f92672">=</span> g
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(g,d) :
-        <span style="color:#66d9ef">if</span> L[i] <span style="color:#f92672">&lt;=</span> L[d] :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">partition</span>(L, g, d) :
+    p <span style="color:#f92672">=</span> L[g]
+    i <span style="color:#f92672">=</span> g<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(g<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,d<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
+        <span style="color:#66d9ef">if</span> L[j] <span style="color:#f92672">&lt;</span> p :
             permute(L,i,j)
-            j <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    permute(L,d,j)
-    <span style="color:#66d9ef">return</span> j
+            i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+    permute(L,g,i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">return</span> i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_rapide</span>(L, g, d) :
     <span style="color:#66d9ef">if</span> g <span style="color:#f92672">&lt;</span> d : 
         pivot <span style="color:#f92672">=</span> randint(g,d)
-        pivot <span style="color:#f92672">=</span> partitionner(L, g, d, pivot)
+        permute(L,pivot,g)
+        pivot <span style="color:#f92672">=</span> partition(L, g, d)
         tri_rapide(L, g, pivot<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
         tri_rapide(L, pivot<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, d)
     <span style="color:#66d9ef">return</span> L
 </code></pre></div><p><img src="http://cordier-phychi.toile-libre.org/Info/github/fusrap.png" alt=""></p>
 <p>La figure précédente permet de supposer que la complexité dans le pire des cas du tri fusion est égale à sa complexité dans le meilleur des cas et à la complexité en moyenne du tri rapide.</p>
-<p>Grâce aux listes par compréhension, on peut écrire une version beaucoup plus courte et claire du tri rapide. Son défaut est qu&rsquo;elle nécessite la construction de nouvelles listes (le tri n&rsquo;est alors plus en place !).<br>
-On va visualiser les différents appels récursifs grâce au module introduit dans le TP précédent et pour que l&rsquo;analyse soit simple, on choisit systématiquement le premier élément de la liste comme pivot.<br>
-La vidéo suivante montre une implémentation de cette version avec des danseurs hongrois&hellip;</p>
+<p>Sur la vidéo qui suit, des danseurs hongrois exécutent une implémentation classique du tri rapide utilisant systématiquement le premier élément comme pivot (et non un élément tiré au hasard) et où la partition marche un peu différemment : le chapeau rouge (élément comparé au pivot) est donné au voisin le plus proche du pivot et quand le pivot récupère le chapeau rouge, il est à la bonne place.</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/ywWBy6J5gz8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
+<p>En levant la contrainte d&rsquo;un tri en place, on escamote lâchement la réelle difficulté et on peut maintenant s&rsquo;affranchir de la fonction de partition, ce qui permet un code bien plus court et clair.<br>
+On va visualiser les différents appels récursifs d&rsquo;un tel code grâce au module introduit dans le TP précédent.<br></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> recursionvisualisation <span style="color:#f92672">import</span> viz, CallGraph
 cg <span style="color:#f92672">=</span> CallGraph()
 <span style="color:#a6e22e">@viz</span>(cg)
@@ -1505,19 +1508,19 @@ Mais l&rsquo;algorithme n&rsquo;est alors plus en place ! On a troqué l&rsquo;i
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1642401054"></script>
-    <script src="/js/perfect-scrollbar.min.js?1642401054"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1642401054"></script>
-    <script src="/js/jquery.sticky.js?1642401054"></script>
-    <script src="/js/featherlight.min.js?1642401054"></script>
-    <script src="/js/highlight.pack.js?1642401054"></script>
+    <script src="/js/clipboard.min.js?1642544449"></script>
+    <script src="/js/perfect-scrollbar.min.js?1642544449"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1642544449"></script>
+    <script src="/js/jquery.sticky.js?1642544449"></script>
+    <script src="/js/featherlight.min.js?1642544449"></script>
+    <script src="/js/highlight.pack.js?1642544449"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1642401054"></script>
-    <script src="/js/learn.js?1642401054"></script>
-    <script src="/js/hugo-learn.js?1642401054"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1642544449"></script>
+    <script src="/js/learn.js?1642544449"></script>
+    <script src="/js/hugo-learn.js?1642544449"></script>
     
         
-            <script src="/mermaid/mermaid.js?1642401054"></script>
+            <script src="/mermaid/mermaid.js?1642544449"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
