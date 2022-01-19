@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1642624449" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1642624449" rel="stylesheet">
-    <link href="/css/hybrid.css?1642624449" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1642624449" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1642624449" rel="stylesheet">
-    <link href="/css/auto-complete.css?1642624449" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1642624449" rel="stylesheet">
-    <link href="/css/theme.css?1642624449" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1642624449" rel="stylesheet">
+    <link href="/css/nucleus.css?1642627961" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1642627961" rel="stylesheet">
+    <link href="/css/hybrid.css?1642627961" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1642627961" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1642627961" rel="stylesheet">
+    <link href="/css/auto-complete.css?1642627961" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1642627961" rel="stylesheet">
+    <link href="/css/theme.css?1642627961" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1642627961" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1642624449" rel="stylesheet">
+    <link href="/css/theme-green.css?1642627961" rel="stylesheet">
     
-    <link href="/css/foo.css?1642624449" rel="stylesheet"><link href="/css/bar.css?1642624449" rel="stylesheet">
+    <link href="/css/foo.css?1642627961" rel="stylesheet"><link href="/css/bar.css?1642627961" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1642624449"></script>
+    <script src="/js/jquery-3.3.1.min.js?1642627961"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1642624449"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1642624449"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1642627961"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1642627961"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1642624449"></script>
+<script type="text/javascript" src="/js/search.js?1642627961"></script>
 
     
   </div>
@@ -846,7 +846,7 @@ y, v <span style="color:#f92672">=</span> y_0, v_0
 <h2 id="contraindre-les-spécifications-avec-des-assertions">Contraindre les spécifications avec des assertions</h2>
 <p>En sus de noter les préconditions dans les commentaires, on peut aussi tenter de s&rsquo;assurer qu&rsquo;elles sont bien vérifiées.
 Qui vous assure en effet que votre fonction, par ailleurs parfaitement sage lorsque les entrées respectent les préconditions ne devienne pas folle dans certains cas loufoques ? C&rsquo;est bien vous qui serez blamé lorsque l&rsquo;entrée farfelue causera une catastrophe&hellip;</p>
-<p>L&rsquo;explosion du vol 501 d&rsquo;Ariane est à cet égard un exemple édifiant. Un même programme ayant parfaitement accompli son œuvre de nombreuses années pour Ariane 4 a été réutilisé en toute sérénité dans le nouveau modèle. Mais voilà&hellip;
+<p><a href="https://hownot2code.com/2016/09/02/a-space-error-370-million-for-an-integer-overflow/">L&rsquo;explosion du vol 501 d&rsquo;Ariane</a> est à cet égard un exemple édifiant. Un même programme ayant parfaitement accompli son œuvre de nombreuses années pour Ariane 4 a été réutilisé en toute sérénité dans le nouveau modèle. Mais voilà&hellip;
 <img src="/vol501.jpg?width=400" alt="">
 Le plan de vol différent d&rsquo;Ariane 5 provoquait des accélérations très supérieures à celles enregistrées sur Ariane 4 jusqu&rsquo;à déborder la capacité alors allouée au codage de ces mesures dans la station inertielle. La valeur élevée non prévue a planté le programme car elle a d&rsquo;abord été répercutée sans lever d&rsquo;erreur et du coup mal interprétée par les dispositifs de correction de trajectoire. Une petite assertion bien placée aurait peut-être pu économiser 1 milliard d&rsquo;euros&hellip;</p>
 <p>Exemple (aux répercutions moins coûteuses) : pour s&rsquo;assurer que le notes passées en argument sont bien des nombres entre 0 et 20, on peut écrire dans le corps de la fonction :</p>
@@ -933,7 +933,7 @@ On sait maintenant que la première partie du code fait son boulot !</p>
 <div class="notices tip" ><p>On aurait pu être tenté de ne pas retester <code>res</code> à cette étape puisqu&rsquo;on venait de le faire au test précédent, mais cela aurait été du coup très mal joué  (un bug dans la chasse au bug) !</p>
 </div>
 
-<p>Attention, comme le dit très bien Dijkstra : <em>&ldquo;Tester décèle la présence de bugs, pas leur absence.&quot;</em><br>
+<p>Attention, comme le dit le grand Dijkstra : <em>&ldquo;Tester décèle la présence de bugs, pas leur absence.&quot;</em><br>
 Aucun test ne pourra montrer que votre programme ne contient aucun bug&hellip;</p>
 <p>Une des expériences les plus vexantes et retorses, elle aussi vécue par beaucoup, voit le codeur présenter fièrement un programme qui répond parfaitement à ses attentes, mais qui crashe piteusement à la première utilisation d&rsquo;une autre personne&hellip;</p>
 <p><img src="https://i.pinimg.com/originals/2a/b4/f8/2ab4f866c5e7dce9cd493a94e6d7beb1.gif" alt=""></p>
@@ -1388,19 +1388,19 @@ Une <strong>classe</strong> est telle qu&rsquo;à l&rsquo;intérieur, le program
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1642624449"></script>
-    <script src="/js/perfect-scrollbar.min.js?1642624449"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1642624449"></script>
-    <script src="/js/jquery.sticky.js?1642624449"></script>
-    <script src="/js/featherlight.min.js?1642624449"></script>
-    <script src="/js/highlight.pack.js?1642624449"></script>
+    <script src="/js/clipboard.min.js?1642627961"></script>
+    <script src="/js/perfect-scrollbar.min.js?1642627961"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1642627961"></script>
+    <script src="/js/jquery.sticky.js?1642627961"></script>
+    <script src="/js/featherlight.min.js?1642627961"></script>
+    <script src="/js/highlight.pack.js?1642627961"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1642624449"></script>
-    <script src="/js/learn.js?1642624449"></script>
-    <script src="/js/hugo-learn.js?1642624449"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1642627961"></script>
+    <script src="/js/learn.js?1642627961"></script>
+    <script src="/js/hugo-learn.js?1642627961"></script>
     
         
-            <script src="/mermaid/mermaid.js?1642624449"></script>
+            <script src="/mermaid/mermaid.js?1642627961"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
