@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1646251373" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1646251373" rel="stylesheet">
-    <link href="/css/hybrid.css?1646251373" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1646251373" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1646251373" rel="stylesheet">
-    <link href="/css/auto-complete.css?1646251373" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1646251373" rel="stylesheet">
-    <link href="/css/theme.css?1646251373" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1646251373" rel="stylesheet">
+    <link href="/css/nucleus.css?1646494590" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1646494590" rel="stylesheet">
+    <link href="/css/hybrid.css?1646494590" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1646494590" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1646494590" rel="stylesheet">
+    <link href="/css/auto-complete.css?1646494590" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1646494590" rel="stylesheet">
+    <link href="/css/theme.css?1646494590" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1646494590" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1646251373" rel="stylesheet">
+    <link href="/css/theme-green.css?1646494590" rel="stylesheet">
     
-    <link href="/css/foo.css?1646251373" rel="stylesheet"><link href="/css/bar.css?1646251373" rel="stylesheet">
+    <link href="/css/foo.css?1646494590" rel="stylesheet"><link href="/css/bar.css?1646494590" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1646251373"></script>
+    <script src="/js/jquery-3.3.1.min.js?1646494590"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1646251373"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1646251373"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1646494590"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1646494590"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1646251373"></script>
+<script type="text/javascript" src="/js/search.js?1646494590"></script>
 
     
   </div>
@@ -776,7 +776,7 @@ onload='renderMathInElement(document.body);'></script>
 <ul>
 <li>Algorithme classique :</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convbvers10</span>(a,b) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convbvers10</span>(a: str,b: int) <span style="color:#f92672">-&gt;</span> int:
     <span style="color:#e6db74">&#34;&#34;&#34;
 </span><span style="color:#e6db74">    Convertit a de la base b à la base 10
 </span><span style="color:#e6db74">    le nombre à convertir a doit être passé en argument 
@@ -799,7 +799,7 @@ onload='renderMathInElement(document.body);'></script>
 </ul>
 <p>$a = ((((a_nb+a_{n-1})b+a_{n-2})b+\cdots)b+a_1)b+a_0$</p>
 <p>Implémentée en Python, cela donne :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convbvers10_Horner</span>(a,b) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">convbvers10_Horner</span>(a: str,b: int) <span style="color:#f92672">-&gt;</span> int:
     <span style="color:#e6db74">&#34;&#34;&#34;
 </span><span style="color:#e6db74">    Convertit a de la base b à la base 10 en utilisant la méthode de Horner
 </span><span style="color:#e6db74">    le nombre à convertir a doit être passé en argument 
@@ -967,6 +967,18 @@ b
 </code></pre></div><p><code>-9223372036854775808</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">+</span> b
 </code></pre></div><p><code>-1</code></p>
+<p> </p>
+<p><strong>Exemple :</strong></p>
+<p>C&rsquo;est bien en utilisant Numpy qu&rsquo;on a été confronté au TP7 au problème du dépassement de capacité. Chaque couleur d&rsquo;une image étant codée sur un octet dans un tableau Numpy, certaines opérations pouvaient provoquer un dépassement et donner des résultats bizarres.</p>
+<p><img src="/ratages.png" alt=""></p>
+<p>Revenons sur la conversion d&rsquo;une image couleur avec une profondeur de 24 bits (un octet par couleur) en une image 6 bits (2 bits pour chaque couleur).</p>
+<p><img src="/conv6bit_1.png" alt=""></p>
+<p>Avec cette méthode, on a bien une image de 6 bits de profondeur mais elle paraît assombrie par rapport à l&rsquo;originale.</p>
+<p>L&rsquo;idée est alors de décaler toutes les valeurs de $2^5$, mais cela provoque un dépassement de capacité !</p>
+<p><img src="/conv6bit_2.png" alt=""></p>
+<p>Pour corriger cela, on peut convertir le tableau en 16 bits avant de lui ajouter $2^5$ puis le reconvertir à la fin en 8 bits :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">imageconvertie <span style="color:#f92672">=</span> (imageoriginale<span style="color:#f92672">.</span>astype(np<span style="color:#f92672">.</span>uint16) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">6</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">6</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">.</span>astype(np<span style="color:#f92672">.</span>uint8)
+</code></pre></div><p><img src="/6bitgood.png" alt=""></p>
 <p> </p>
 <h2 id="codage-des-nombres-décimaux-en-machine">Codage des nombres décimaux en machine</h2>
 <h3 id="nombres-dyadiques">Nombres dyadiques</h3>
@@ -1542,19 +1554,19 @@ On n&rsquo;a plus qu&rsquo;un seul chiffre significatif alors que le résultat e
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1646251374"></script>
-    <script src="/js/perfect-scrollbar.min.js?1646251374"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1646251374"></script>
-    <script src="/js/jquery.sticky.js?1646251374"></script>
-    <script src="/js/featherlight.min.js?1646251374"></script>
-    <script src="/js/highlight.pack.js?1646251374"></script>
+    <script src="/js/clipboard.min.js?1646494590"></script>
+    <script src="/js/perfect-scrollbar.min.js?1646494590"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1646494590"></script>
+    <script src="/js/jquery.sticky.js?1646494590"></script>
+    <script src="/js/featherlight.min.js?1646494590"></script>
+    <script src="/js/highlight.pack.js?1646494590"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1646251374"></script>
-    <script src="/js/learn.js?1646251374"></script>
-    <script src="/js/hugo-learn.js?1646251374"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1646494590"></script>
+    <script src="/js/learn.js?1646494590"></script>
+    <script src="/js/hugo-learn.js?1646494590"></script>
     
         
-            <script src="/mermaid/mermaid.js?1646251374"></script>
+            <script src="/mermaid/mermaid.js?1646494590"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
