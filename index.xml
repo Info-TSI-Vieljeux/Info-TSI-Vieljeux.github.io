@@ -147,7 +147,7 @@ Imaginons que l&amp;rsquo;on cherche une carte dans un jeu trié en ordre croiss
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/tp8correc/</guid>
       <description>TP 8 : correction et complexité Cliquez sur cette invitation pour récupérer le repository du TP. Multiplication égyptienne Considérons le code suivant, qui implémente un ancien algorithme égyptien.
 a et b sont supposés être des entiers positifs.
-def multegy(a, b) : p = 0 while a &amp;gt; 0 : if a%2 == 1 : p += b b *= 2 a //= 2 return p  Qui est le variant de boucle permettant de prover que meltegy termine toujours ?</description>
+def multegy(a, b) : p = 0 while a &amp;gt; 0 : if a%2 == 1 : p += b b *= 2 a //= 2 return p  Qui est le variant de boucle permettant de prouver que multegy termine toujours ?</description>
     </item>
     
     <item>
