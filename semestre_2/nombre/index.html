@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1647215090" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1647215090" rel="stylesheet">
-    <link href="/css/hybrid.css?1647215090" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1647215090" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1647215090" rel="stylesheet">
-    <link href="/css/auto-complete.css?1647215090" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1647215090" rel="stylesheet">
-    <link href="/css/theme.css?1647215090" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1647215090" rel="stylesheet">
+    <link href="/css/nucleus.css?1647216682" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1647216682" rel="stylesheet">
+    <link href="/css/hybrid.css?1647216682" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1647216682" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1647216682" rel="stylesheet">
+    <link href="/css/auto-complete.css?1647216682" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1647216682" rel="stylesheet">
+    <link href="/css/theme.css?1647216682" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1647216682" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1647215090" rel="stylesheet">
+    <link href="/css/theme-green.css?1647216682" rel="stylesheet">
     
-    <link href="/css/foo.css?1647215090" rel="stylesheet"><link href="/css/bar.css?1647215090" rel="stylesheet">
+    <link href="/css/foo.css?1647216682" rel="stylesheet"><link href="/css/bar.css?1647216682" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1647215090"></script>
+    <script src="/js/jquery-3.3.1.min.js?1647216682"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1647215090"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1647215090"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1647216682"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1647216682"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1647215090"></script>
+<script type="text/javascript" src="/js/search.js?1647216682"></script>
 
     
   </div>
@@ -992,8 +992,12 @@ C&rsquo;est le cas par exemple de $0,1$ : $\frac{1}{10} = (0,0001\,1001\,1001\,1
 </code></pre></div><p><code>0.010000000000000002</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">0.1</span><span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0.01</span>
 </code></pre></div><p><code>False</code></p>
-<p>Conclusion : <strong>cela n&rsquo;a pas de sens de tester une égalité sur autre chose que des entiers.</strong></p>
-<p>Il faut se restreindre à tester des inégalités :</p>
+
+<div class="notices info" ><p>Conclusion : il faut <strong>réserver les tests d&rsquo;égalité aux entiers</strong> ! Pour les flottants, il faut se restreindre à tester des inégalités.</p>
+</div>
+
+<p>Au lieu de vérifier l&rsquo;égalité entre deux flottants, on se borne donc à vérifier qu&rsquo;ils sont <strong>suffisamment proches</strong> en se fixant un écart minimal faible ($\varepsilon = 10^{-10}$ par exemple).</p>
+<p>Exemple :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">abs(<span style="color:#ae81ff">0.1</span><span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">0.01</span>) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1e-10</span>
 </code></pre></div><p><code>True</code></p>
 <p> </p>
@@ -1583,19 +1587,19 @@ On n&rsquo;a plus qu&rsquo;un seul chiffre significatif alors que le résultat e
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1647215090"></script>
-    <script src="/js/perfect-scrollbar.min.js?1647215090"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1647215090"></script>
-    <script src="/js/jquery.sticky.js?1647215090"></script>
-    <script src="/js/featherlight.min.js?1647215090"></script>
-    <script src="/js/highlight.pack.js?1647215090"></script>
+    <script src="/js/clipboard.min.js?1647216682"></script>
+    <script src="/js/perfect-scrollbar.min.js?1647216682"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1647216682"></script>
+    <script src="/js/jquery.sticky.js?1647216682"></script>
+    <script src="/js/featherlight.min.js?1647216682"></script>
+    <script src="/js/highlight.pack.js?1647216682"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1647215090"></script>
-    <script src="/js/learn.js?1647215090"></script>
-    <script src="/js/hugo-learn.js?1647215090"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1647216682"></script>
+    <script src="/js/learn.js?1647216682"></script>
+    <script src="/js/hugo-learn.js?1647216682"></script>
     
         
-            <script src="/mermaid/mermaid.js?1647215090"></script>
+            <script src="/mermaid/mermaid.js?1647216682"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
