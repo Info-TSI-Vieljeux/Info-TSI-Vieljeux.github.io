@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1651414451" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1651414451" rel="stylesheet">
-    <link href="/css/hybrid.css?1651414451" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1651414451" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1651414451" rel="stylesheet">
-    <link href="/css/auto-complete.css?1651414451" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1651414451" rel="stylesheet">
-    <link href="/css/theme.css?1651414451" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1651414451" rel="stylesheet">
+    <link href="/css/nucleus.css?1651419582" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651419582" rel="stylesheet">
+    <link href="/css/hybrid.css?1651419582" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651419582" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651419582" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651419582" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651419582" rel="stylesheet">
+    <link href="/css/theme.css?1651419582" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651419582" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1651414451" rel="stylesheet">
+    <link href="/css/theme-green.css?1651419582" rel="stylesheet">
     
-    <link href="/css/foo.css?1651414451" rel="stylesheet"><link href="/css/bar.css?1651414451" rel="stylesheet">
+    <link href="/css/foo.css?1651419582" rel="stylesheet"><link href="/css/bar.css?1651419582" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1651414451"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651419582"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1651414451"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1651414451"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651419582"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651419582"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1651414451"></script>
+<script type="text/javascript" src="/js/search.js?1651419582"></script>
 
     
   </div>
@@ -744,7 +744,7 @@ onload='renderMathInElement(document.body);'></script>
 
 
 <h1 id="tp10--les-graphes">TP10 : les graphes</h1>
-<p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/m2zkkfNO">cette invitation</a> pour récupérer le repository du TP. </p>
+<p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/s3mibvcO">cette invitation</a> pour récupérer le repository du TP. </p>
 <p><img src="http://cordier-phychi.toile-libre.org/Info/github/graphetp10.png" alt=""></p>
 <blockquote>
 <p>Le dessin ci-dessus peut se représenter par (choisir la bonne réponse) :</p>
@@ -1289,7 +1289,8 @@ plt<span style="color:#f92672">.</span>legend()
 <h2 id="parcours-dun-graphe">Parcours d&rsquo;un graphe</h2>
 <h3 id="détecteur-de-cycle">Détecteur de cycle</h3>
 <p>Les graphes orientés sont générallement utilisés pour représenter un ensemble de dépendances (l&rsquo;ensemble des prérequis d&rsquo;un cours, l&rsquo;ensemble des installations nécessaires au fonctionnement d&rsquo;un programme, etc&hellip;).</p>
-<p>Et la présence de cycles dans de tels graphes est synonyme de bloquage (exemple : pour faire la première tâche, vous attendez la seconde, et pour faire la seconde, vous attendez la première&hellip;). Quelle que soit l&rsquo;application, détecter les cycles est donc primordial pour éviter de se retrouver dans ce type de situation.</p>
+<p>Et la présence de cycles dans de tels graphes est synonyme de bloquage (exemple : pour faire la première tâche, vous attendez la seconde, et pour faire la seconde, vous attendez la première&hellip;).</p>
+<p>Quelle que soit l&rsquo;application, détecter les cycles est donc primordial pour éviter de se retrouver dans ce type de situation.</p>
 <p>Une idée pour détecter un cycle est d&rsquo;utiliser à nouveau le <strong>parcours en profondeur</strong> : si on tombe sur un sommet déjà exploré au cours de la progression dans une branche, alors on a affaire à un cycle.</p>
 <p>Point important : on suppose ici que les graphes donnés en argument à la fonction sont non orientés.</p>
 <p>Le problème que pose ce type de graphe pour la recherche de cycle est la présence systématique du sommet considéré dans la liste de ses voisins (si &lsquo;A&rsquo; est le voisin de &lsquo;B&rsquo; alors &lsquo;B&rsquo; est le voisin de &lsquo;A&rsquo;) puisqu&rsquo;un graphe non-orienté permet les aller-retour.<br>On oriente alors dans un premier temps le graphe non orienté donné en argument en retirant systématiquement de la liste des voisins d&rsquo;un sommet les sommets dont lui-même est le voisin. On ne sera ainsi plus piégé par un aller-retour entre deux voisins. On peut s&rsquo;assurer ensuite de la présence d&rsquo;un cycle si le parcours en profondeur rencontre un sommet présent dans <code>Vus</code>.<br></p>
@@ -1366,8 +1367,7 @@ jmax <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
         <span style="color:#66d9ef">if</span> i <span style="color:#f92672">&lt;</span> imax<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> j <span style="color:#f92672">&lt;</span> jmax<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> :
             poids_voisins[(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
         carte[(i,j)] <span style="color:#f92672">=</span> poids_voisins
-</code></pre></div><p>Compliquons notre carte en y rajoutant différents environnements : des mérécages où il est difficile de se mouvoir et des murs infranchissables.<br>
-Pour modéliser les mérécages on va modifier les pondérations : on augmente le poids des arêtes amenant à des sommets s&rsquo;y trouvant. Et pour les murs, on va retirer du graphe les sommets s&rsquo;y trouvant.</p>
+</code></pre></div><p>Compliquons notre carte en y rajoutant différents environnements : des mérécages où il est difficile de se mouvoir et des murs infranchissables.<br>Pour modéliser les mérécages on va modifier les pondérations : on augmente le poids des arêtes amenant à des sommets s&rsquo;y trouvant. Et pour les murs, on va retirer du graphe les sommets correspondant.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># marécages</span>
 limites_marecages <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">19</span>),(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">12</span>)) <span style="color:#75715e"># s&#39;étendent de 5 à 19 en largeur, et de 5 à 12 en hauteur</span>
 <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> carte<span style="color:#f92672">.</span>keys() :
@@ -1476,9 +1476,9 @@ fig
 <blockquote>
 <p>Répondez aux trois questions suivantes :</p>
 <ul>
-<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
-<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations?</li>
-<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
+<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
+<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations ?</li>
+<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
 </ul>
 </blockquote>
 <p> </p>
@@ -1539,9 +1539,9 @@ fig
 <blockquote>
 <p>Répondez aux trois questions suivantes :</p>
 <ul>
-<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
-<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations?</li>
-<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
+<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
+<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations ?</li>
+<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
 </ul>
 </blockquote>
 <p> </p>
@@ -1599,9 +1599,9 @@ fig
 <blockquote>
 <p>Répondez aux trois questions suivantes :</p>
 <ul>
-<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
-<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations?</li>
-<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
+<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
+<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations ?</li>
+<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
 </ul>
 </blockquote>
 <p> </p>
@@ -1642,9 +1642,9 @@ fig
 <blockquote>
 <p>Répondez aux trois questions suivantes :</p>
 <ul>
-<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
-<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations?</li>
-<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
+<li>le chemin trouvé est-il le plus court possible indépendemment des pondérations ?</li>
+<li>le chemin trouvé est-il le plus court possible si on prend en compte les pondérations ?</li>
+<li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
 </ul>
 </blockquote>
 
@@ -2086,19 +2086,19 @@ fig
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1651414451"></script>
-    <script src="/js/perfect-scrollbar.min.js?1651414451"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1651414451"></script>
-    <script src="/js/jquery.sticky.js?1651414451"></script>
-    <script src="/js/featherlight.min.js?1651414451"></script>
-    <script src="/js/highlight.pack.js?1651414451"></script>
+    <script src="/js/clipboard.min.js?1651419582"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651419582"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651419582"></script>
+    <script src="/js/jquery.sticky.js?1651419582"></script>
+    <script src="/js/featherlight.min.js?1651419582"></script>
+    <script src="/js/highlight.pack.js?1651419582"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1651414451"></script>
-    <script src="/js/learn.js?1651414451"></script>
-    <script src="/js/hugo-learn.js?1651414451"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651419582"></script>
+    <script src="/js/learn.js?1651419582"></script>
+    <script src="/js/hugo-learn.js?1651419582"></script>
     
         
-            <script src="/mermaid/mermaid.js?1651414451"></script>
+            <script src="/mermaid/mermaid.js?1651419582"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
