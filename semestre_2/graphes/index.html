@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1651419582" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1651419582" rel="stylesheet">
-    <link href="/css/hybrid.css?1651419582" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1651419582" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1651419582" rel="stylesheet">
-    <link href="/css/auto-complete.css?1651419582" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1651419582" rel="stylesheet">
-    <link href="/css/theme.css?1651419582" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1651419582" rel="stylesheet">
+    <link href="/css/nucleus.css?1651594010" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1651594010" rel="stylesheet">
+    <link href="/css/hybrid.css?1651594010" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1651594010" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1651594010" rel="stylesheet">
+    <link href="/css/auto-complete.css?1651594010" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1651594010" rel="stylesheet">
+    <link href="/css/theme.css?1651594010" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1651594010" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1651419582" rel="stylesheet">
+    <link href="/css/theme-green.css?1651594010" rel="stylesheet">
     
-    <link href="/css/foo.css?1651419582" rel="stylesheet"><link href="/css/bar.css?1651419582" rel="stylesheet">
+    <link href="/css/foo.css?1651594010" rel="stylesheet"><link href="/css/bar.css?1651594010" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1651419582"></script>
+    <script src="/js/jquery-3.3.1.min.js?1651594010"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1651419582"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1651419582"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1651594010"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1651594010"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1651419582"></script>
+<script type="text/javascript" src="/js/search.js?1651594010"></script>
 
     
   </div>
@@ -1021,7 +1021,9 @@ $$</p>
 <div class="notices def" ><p>Le <strong>diamètre</strong> d&rsquo;un graphe est la plus grande distance entre deux sommets.</p>
 </div>
 
-<p>Exemple : dans le graphe orienté ci-dessus $d(2,3)=3$, et $d(3,6)=\infty$ (le sommet $6$ n&rsquo;est pas accessible depuis le sommet $3$). Le diamètre du graphe vaut, lui, 4 (il s&rsquo;agit de $d(6,5)$).</p>
+<p>Exemple : dans le graphe orienté ci-dessus $d(2,3)=2$, $d(3,2)=1$$, d(6,1)=3$ et $d(3,6)=\infty$.</p>
+<p><img src="/taureau.png?width=300" alt=""></p>
+<p>Dans ce graphe taureau, le diamètre vaut 3 (distance entre les deux cornes).</p>
 <p> 
  </p>
 <h3 id="connexité">Connexité</h3>
@@ -1052,12 +1054,12 @@ T <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>:[<s
 T <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>],[],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]]
 </code></pre></div><p>L&rsquo;avantage du dictionnaire est qu&rsquo;il n&rsquo;impose pas d&rsquo;avoir une correspondance entre le numéro du sommet et la position dans la liste d&rsquo;adjacence (dans le cas de listes imbriquées <code>T[0]</code> sera toujours la liste correspondant au premier sommet, <code>T[1]</code>, celle du deuxième, etc.).</p>
 <p><strong>Taille mémoire nécessaire</strong>: si le graphe G est orienté, la somme des longueurs des listes d&rsquo;adjacence est égale au nombre d&rsquo;arcs de A, puisque l&rsquo;existence d&rsquo;un arc $(s_i,s_j)$ se traduit par la présence de $s_j$ dans la liste d&rsquo;adjacence de $T[s_i]$.<br>
-En revanche, si le graphe n&rsquo;est pas orienté, la somme des longueurs de toutes les listes d&rsquo;adjacence est égale à deux fois le nombre d&rsquo;arêtes du graphe, puisque si ${s_i,s_j}$ est une arête, alors $s_i$ appartient à la liste d&rsquo;adjacence de $T[s_j]$, et vice versa.</p>
+En revanche, si le graphe n&rsquo;est pas orienté, la somme des longueurs de toutes les listes d&rsquo;adjacence est égale à deux fois le nombre d&rsquo;arêtes du graphe, puisque si $\{s_i,s_j\}$ est une arête, alors $s_i$ appartient à la liste d&rsquo;adjacence de $T[s_j]$, et vice versa.</p>
 
 <div class="notices info" ><p>Par conséquent, la liste d&rsquo;adjacence d&rsquo;un graphe ayant $n$ sommets et $m$ arcs ou arêtes nécessite de l&rsquo;ordre de $O(n + m)$ emplacements mémoire.</p>
 </div>
 
-<p><strong>Opérations sur les listes d&rsquo;adjacence</strong> : pour tester l&rsquo;existence d&rsquo;un arc $(s_i, s_j)$ ou d&rsquo;une arête ${s_i, s_j }$, on doit parcourir la liste d&rsquo;adjacence de $T[s_i]$ jusqu&rsquo;à trouver $s_j$.<br>
+<p><strong>Opérations sur les listes d&rsquo;adjacence</strong> : pour tester l&rsquo;existence d&rsquo;un arc $(s_i, s_j)$ ou d&rsquo;une arête $\{s_i, s_j \}$, on doit parcourir la liste d&rsquo;adjacence de $T[s_i]$ jusqu&rsquo;à trouver $s_j$.<br>
 En revanche, le calcul du degré d&rsquo;un sommet, ou l&rsquo;accès à tous les successeurs d&rsquo;un sommet, est très efficace : il suffit de parcourir la liste d&rsquo;adjacence associée au sommet.
 
 <div class="notices info" ><p>D&rsquo;une façon plus générale, le parcours de l&rsquo;ensemble des arcs/arêtes nécessite le parcours de toutes les listes d&rsquo;adjacence, et prendra un temps de l&rsquo;ordre de $p$, où $p$ est le nombre d&rsquo;arcs/arêtes.</p>
@@ -1824,19 +1826,19 @@ Conséquence : si on remplace la fonction <code>sommet_suivant</code> par un tas
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1651419582"></script>
-    <script src="/js/perfect-scrollbar.min.js?1651419582"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1651419582"></script>
-    <script src="/js/jquery.sticky.js?1651419582"></script>
-    <script src="/js/featherlight.min.js?1651419582"></script>
-    <script src="/js/highlight.pack.js?1651419582"></script>
+    <script src="/js/clipboard.min.js?1651594010"></script>
+    <script src="/js/perfect-scrollbar.min.js?1651594010"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1651594010"></script>
+    <script src="/js/jquery.sticky.js?1651594010"></script>
+    <script src="/js/featherlight.min.js?1651594010"></script>
+    <script src="/js/highlight.pack.js?1651594010"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1651419582"></script>
-    <script src="/js/learn.js?1651419582"></script>
-    <script src="/js/hugo-learn.js?1651419582"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1651594010"></script>
+    <script src="/js/learn.js?1651594010"></script>
+    <script src="/js/hugo-learn.js?1651594010"></script>
     
         
-            <script src="/mermaid/mermaid.js?1651419582"></script>
+            <script src="/mermaid/mermaid.js?1651594010"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
