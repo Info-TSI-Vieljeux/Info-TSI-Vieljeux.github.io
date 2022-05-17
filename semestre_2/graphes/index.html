@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1652215485" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1652215485" rel="stylesheet">
-    <link href="/css/hybrid.css?1652215485" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1652215485" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1652215485" rel="stylesheet">
-    <link href="/css/auto-complete.css?1652215485" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1652215485" rel="stylesheet">
-    <link href="/css/theme.css?1652215485" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1652215485" rel="stylesheet">
+    <link href="/css/nucleus.css?1652800905" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1652800905" rel="stylesheet">
+    <link href="/css/hybrid.css?1652800905" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1652800905" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1652800905" rel="stylesheet">
+    <link href="/css/auto-complete.css?1652800905" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1652800905" rel="stylesheet">
+    <link href="/css/theme.css?1652800905" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1652800905" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1652215485" rel="stylesheet">
+    <link href="/css/theme-green.css?1652800905" rel="stylesheet">
     
-    <link href="/css/foo.css?1652215485" rel="stylesheet"><link href="/css/bar.css?1652215485" rel="stylesheet">
+    <link href="/css/foo.css?1652800905" rel="stylesheet"><link href="/css/bar.css?1652800905" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1652215485"></script>
+    <script src="/js/jquery-3.3.1.min.js?1652800905"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1652215485"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1652215485"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1652800905"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1652800905"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1652215485"></script>
+<script type="text/javascript" src="/js/search.js?1652800905"></script>
 
     
   </div>
@@ -727,14 +727,14 @@ onload='renderMathInElement(document.body);'></script>
     </li>
     <li><a href="#parcours-dun-graphe">Parcours d&rsquo;un graphe</a>
       <ul>
-        <li><a href="#algorithme-de-parcours-en-largeur">Algorithme de parcours en largeur</a></li>
-        <li><a href="#algorithme-de-parcours-en-profondeur">Algorithme de parcours en profondeur</a></li>
+        <li><a href="#algorithme-de-parcours-en-largeur-bfs">Algorithme de parcours en largeur (BFS)</a></li>
+        <li><a href="#algorithme-de-parcours-en-profondeur-dfs">Algorithme de parcours en profondeur (DFS)</a></li>
       </ul>
     </li>
     <li><a href="#graphes-pondérés">Graphes pondérés</a></li>
     <li><a href="#problème-du-plus-court-chemin">Problème du plus court chemin</a>
       <ul>
-        <li><a href="#algorithme-de-parcours-en-largeur-1">Algorithme de parcours en largeur</a></li>
+        <li><a href="#algorithme-de-parcours-en-largeur">Algorithme de parcours en largeur</a></li>
         <li><a href="#algorithme-de-dijkstra">Algorithme de Dijkstra</a></li>
       </ul>
     </li>
@@ -1124,8 +1124,8 @@ M4 <span style="color:#f92672">=</span> matrix_power(M,<span style="color:#ae81f
  </p>
 <h2 id="parcours-dun-graphe">Parcours d&rsquo;un graphe</h2>
 <p>Pour déterminer si un sommet est accessible depuis un autre sommet, il faut pouvoir parcourir méthodiquement l&rsquo;ensemble du graphe.</p>
-<h3 id="algorithme-de-parcours-en-largeur">Algorithme de parcours en largeur</h3>
-<p>Une première méthode, l&rsquo;algorithme de parcours en largeur (ou breadth-first algorithm), consiste à partir d&rsquo;un nœud, d&rsquo;explorer tous ses successeurs, puis les successeurs de chacun de ses successeurs, etc., jusqu&rsquo;à ce qu&rsquo;il n&rsquo;y ait plus de sommets.<br>
+<h3 id="algorithme-de-parcours-en-largeur-bfs">Algorithme de parcours en largeur (BFS)</h3>
+<p>Une première méthode, l&rsquo;algorithme de parcours en largeur (breadth-first BFS), consiste à partir d&rsquo;un nœud, d&rsquo;explorer tous ses successeurs, puis les successeurs de chacun de ses successeurs, etc., jusqu&rsquo;à ce qu&rsquo;il n&rsquo;y ait plus de sommets.<br>
 Cela revient à inspecter le graphe par couche concentrique de plus en plus éloignées du nœud source.</p>
 <p><img src="/gifbreadth.gif?width=700" alt=""></p>
 <p>Pour implémenter un tel algorithme, la structure de données adaptée est la <strong>file</strong>.</p>
@@ -1178,8 +1178,8 @@ Comme souvent en python, un module dédié, ici <code>collecions.deque</code>, v
 </ul>
 <p> 
  </p>
-<h3 id="algorithme-de-parcours-en-profondeur">Algorithme de parcours en profondeur</h3>
-<p>L&rsquo;idée maintenant est d&rsquo;explorer jusqu&rsquo;au bout chaque chaîne de successeurs du nœud source avant de passer à la suivante.</p>
+<h3 id="algorithme-de-parcours-en-profondeur-dfs">Algorithme de parcours en profondeur (DFS)</h3>
+<p>L&rsquo;idée de l&rsquo;algorithme de parcours en profondeur (depth-first search DFS) est d&rsquo;explorer jusqu&rsquo;au bout chaque chaîne de successeurs du nœud source avant de passer à la suivante.<br>On n&rsquo;explore alors plus par couches concentriques mais par branches.</p>
 <p><img src="/gifdepth.gif?width=700" alt=""></p>
 <p>La structure de données dynamique adaptée est cette fois-ci la <strong>pile</strong>.</p>
 <p>
@@ -1210,6 +1210,12 @@ Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à
 </div>
 
 <p>Nous n&rsquo;avions pas réellement besoin de la classe <code>deque</code> pour implémenter efficacement la pile. En effet, si insérer un élément au début d&rsquo;une liste python de taille $n$ a bien un coût linéaire ($O(n)$) et ralentit donc l&rsquo;exécution par rapport à l&rsquo;utilisation d&rsquo;une file, retirer un élément à la fin (via <code>pop</code>) se fait en temps constant ($O(1)$).</p>
+
+<div class="notices tip" ><p>En pratique, on a utilisé dans les deux codes exactement le même objet, présent dans le module standard <code>collections</code> : <code>deque()</code>.<br>
+<code>deque()</code> (qui se prononce comme deck) est une file d&rsquo;attente à double extrémité (double-ended queue). Elle permet d&rsquo;ajouter et retirer efficacement (en temps constant) des éléments aux deux extrémités. On peut donc bien à la fois s&rsquo;en servir comme une file ou comme une pile.<br>
+On peut aussi utiliser <code>deque()</code> comme une liste, mais l&rsquo;accès d&rsquo;un élément via son indice est alors inefficace (il ne se fait pas en temps constant comme dans une vraie liste). C&rsquo;est la contrepartie de l&rsquo;optimisation des opérations sur les extrémités&hellip;.</p>
+</div>
+
 <p> 
  </p>
 <p><strong>Exemples d&rsquo;applications du parcours en profondeur :</strong></p>
@@ -1245,7 +1251,7 @@ Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à
 </div>
 
 <p>Si le graphe considéré n&rsquo;est pas pondéré, l&rsquo;algorithme de parcours en largeur, moyennant quelques adaptations, est tout à fait capable de faire le travail.</p>
-<h3 id="algorithme-de-parcours-en-largeur-1">Algorithme de parcours en largeur</h3>
+<h3 id="algorithme-de-parcours-en-largeur">Algorithme de parcours en largeur</h3>
 <p>Comme l&rsquo;algorithme de parcours en largeur examine le graphe en couches concentriques depuis le sommet de départ, lorsqu&rsquo;il parvient au sommet cible, on est sûr que le nombre d&rsquo;arcs est minimal.</p>
 <p>Il suffit alors de joindre à la liste des sommets examinés, la liste des chemins permettant de parvenir à chacun de ces sommets (en incrémentant à chaque tour chacun des chemins du sommet correspondant de la nouvelle couche).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recherche_largeur</span>(G,depart,arrivee):
@@ -1826,19 +1832,19 @@ Conséquence : si on remplace la fonction <code>sommet_suivant</code> par un tas
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1652215485"></script>
-    <script src="/js/perfect-scrollbar.min.js?1652215485"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1652215485"></script>
-    <script src="/js/jquery.sticky.js?1652215485"></script>
-    <script src="/js/featherlight.min.js?1652215485"></script>
-    <script src="/js/highlight.pack.js?1652215485"></script>
+    <script src="/js/clipboard.min.js?1652800905"></script>
+    <script src="/js/perfect-scrollbar.min.js?1652800905"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1652800905"></script>
+    <script src="/js/jquery.sticky.js?1652800905"></script>
+    <script src="/js/featherlight.min.js?1652800905"></script>
+    <script src="/js/highlight.pack.js?1652800905"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1652215485"></script>
-    <script src="/js/learn.js?1652215485"></script>
-    <script src="/js/hugo-learn.js?1652215485"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1652800905"></script>
+    <script src="/js/learn.js?1652800905"></script>
+    <script src="/js/hugo-learn.js?1652800905"></script>
     
         
-            <script src="/mermaid/mermaid.js?1652215485"></script>
+            <script src="/mermaid/mermaid.js?1652800905"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
