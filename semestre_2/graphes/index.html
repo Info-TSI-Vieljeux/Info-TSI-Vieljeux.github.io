@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1654248657" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1654248657" rel="stylesheet">
-    <link href="/css/hybrid.css?1654248657" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1654248657" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1654248657" rel="stylesheet">
-    <link href="/css/auto-complete.css?1654248657" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1654248657" rel="stylesheet">
-    <link href="/css/theme.css?1654248657" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1654248657" rel="stylesheet">
+    <link href="/css/nucleus.css?1654359948" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1654359948" rel="stylesheet">
+    <link href="/css/hybrid.css?1654359948" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1654359948" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1654359948" rel="stylesheet">
+    <link href="/css/auto-complete.css?1654359948" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1654359948" rel="stylesheet">
+    <link href="/css/theme.css?1654359948" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1654359948" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1654248657" rel="stylesheet">
+    <link href="/css/theme-green.css?1654359948" rel="stylesheet">
     
-    <link href="/css/foo.css?1654248657" rel="stylesheet"><link href="/css/bar.css?1654248657" rel="stylesheet">
+    <link href="/css/foo.css?1654359948" rel="stylesheet"><link href="/css/bar.css?1654359948" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1654248657"></script>
+    <script src="/js/jquery-3.3.1.min.js?1654359948"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1654248657"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1654248657"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1654359948"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1654359948"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1654248657"></script>
+<script type="text/javascript" src="/js/search.js?1654359948"></script>
 
     
   </div>
@@ -730,6 +730,7 @@ onload='renderMathInElement(document.body);'></script>
       <ul>
         <li><a href="#algorithme-de-parcours-en-largeur-bfs">Algorithme de parcours en largeur (BFS)</a></li>
         <li><a href="#algorithme-de-parcours-en-profondeur-dfs">Algorithme de parcours en profondeur (DFS)</a></li>
+        <li><a href="#structures-de-données">Structures de données</a></li>
       </ul>
     </li>
     <li><a href="#graphes-pondérés">Graphes pondérés</a></li>
@@ -1237,25 +1238,7 @@ Comme souvent en python, un module dédié, ici <code>collecions.deque</code>, v
     <span style="color:#66d9ef">return</span> Vus
 </code></pre></div><p><code>parcours_profondeur(G,&quot;Bob&quot;)</code> renvoie
 <code>['Bob', 'Charlie', 'Hector', 'Elisa', 'Dave', 'Gus', 'Farid', 'Alice']</code>.</p>
-<p>On remarque que les deux algorithmes ne diffèrent que par la structure de données utilisée, mais loin d&rsquo;être anodin, ce passage de la file à la pile change complètement le principe du parcours !<br>
-Cela illustre bien que la conception d&rsquo;un algorithme est intimement liée aux structures de données envisagées.</p>
-
-<div class="notices info" ><p>Une <strong>structure de donnée</strong> est une façon d&rsquo;organiser les données de telle sorte que certaines opérations sur ces données soient très rapides. Une structure de données est donc spécialisée dans ces quelques opérations.<br>
-Lors de la conception d&rsquo;un algorithme, l&rsquo;identification des différentes opérations à effectuer va guider le choix de la structure de données adaptée.<br>
-Par exemple, l&rsquo;algorithme de recherche en largeur doit gérer un ensemble où le premier élément ajouté doit toujours être le premier retiré (logique <em>FIFO</em>) $\rightarrow$ utilisation d&rsquo;une file qui gère l&rsquo;ajout d&rsquo;un élément à la fin d&rsquo;une file d&rsquo;attente et l&rsquo;extraction au début en temps constant (elle est optimisée pour ça, mais en contrepartie, elle ne sait faire que ça).<br>
-L&rsquo;algorithme de recherche en profondeur suit lui la logique <em>LIFO</em> $\rightarrow$ utilisation d&rsquo;une pile.<br>
-Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à chaque itération d&rsquo;ajouter un élément à un ensemble et d&rsquo;en retirer le plus petit élément $\rightarrow$ ce sont les deux opérations dont le <strong>tas</strong> s&rsquo;est fait le spécialiste (le tas est un arbre binaire presque complet ordonné). Un <strong>tas</strong> spécialisé dans ces deux opérations est aussi appelé <strong>file de priorité</strong>. Dans quels autres algorithmes le tas pourrait-il être utilisé avantageusement ?</p>
-</div>
-
-<p>Nous n&rsquo;avions pas réellement besoin de la classe <code>deque</code> pour implémenter efficacement la pile. En effet, si insérer un élément au début d&rsquo;une liste python de taille $n$ a bien un coût linéaire ($O(n)$) et ralentit donc l&rsquo;exécution par rapport à l&rsquo;utilisation d&rsquo;une file, retirer un élément à la fin (via <code>pop</code>) se fait en temps constant ($O(1)$).</p>
-
-<div class="notices tip" ><p>En pratique, on a utilisé dans les deux codes exactement le même objet, présent dans le module standard <code>collections</code> : <code>deque()</code>.<br>
-<code>deque()</code> (qui se prononce comme deck) est une file d&rsquo;attente à double extrémité (double-ended queue). Elle permet d&rsquo;ajouter et retirer efficacement (en temps constant) des éléments aux deux extrémités. On peut donc bien à la fois s&rsquo;en servir comme une file ou comme une pile.<br>
-On peut aussi utiliser <code>deque()</code> comme une liste, mais l&rsquo;accès d&rsquo;un élément via son indice est alors inefficace (il ne se fait pas en temps constant comme dans une vraie liste). C&rsquo;est la contrepartie de l&rsquo;optimisation des opérations sur les extrémités&hellip;.</p>
-</div>
-
-<p> 
- </p>
+<p> </p>
 <p><strong>Exemples d&rsquo;applications du parcours en profondeur :</strong></p>
 <ul>
 <li>trouver un chemin entre deux sommets,</li>
@@ -1263,6 +1246,30 @@ On peut aussi utiliser <code>deque()</code> comme une liste, mais l&rsquo;accès
 <li>utilisé dans le tri topologique,</li>
 <li>trouver la sortie d&rsquo;un labyrinthe.</li>
 </ul>
+<p> </p>
+<h3 id="structures-de-données">Structures de données</h3>
+<p>On remarque que les deux algorithmes de parcours d&rsquo;un graphe (BFS et DFS) ne diffèrent que par la structure de données utilisée. Et loin d&rsquo;être anodin, ce passage de la file à la pile change complètement le principe du parcours !<br>
+Cela illustre bien que la conception d&rsquo;un algorithme est intimement liée aux structures de données envisagées.</p>
+
+<div class="notices info" ><p>Une <strong>structure de donnée</strong> est une façon d&rsquo;organiser les données de telle sorte que certaines <strong>opérations</strong> sur ces données (les primitives) soient très rapides. Une structure de données est donc spécialisée dans ces quelques opérations.<br>
+Lors de la conception d&rsquo;un algorithme, l&rsquo;identification des différentes opérations à effectuer va guider le choix de la structure de données adaptée.<br>
+Par exemple, l&rsquo;algorithme de recherche en largeur doit gérer un ensemble où le premier élément ajouté doit toujours être le premier retiré (logique <em>FIFO</em>) $\rightarrow$ utilisation d&rsquo;une file qui gère l&rsquo;ajout d&rsquo;un élément à la fin d&rsquo;une file d&rsquo;attente et l&rsquo;extraction au début en temps constant (elle est optimisée pour ça, mais en contrepartie, elle ne sait faire que ça).<br>
+L&rsquo;algorithme de recherche en profondeur suit lui la logique <em>LIFO</em> $\rightarrow$ utilisation d&rsquo;une pile.<br>
+Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à chaque itération d&rsquo;ajouter un élément à un ensemble et d&rsquo;en retirer le plus petit élément $\rightarrow$ la <strong>file de priorité</strong> est la structure spécialisée dans ses opérations (dans quels autres algorithmes le tas pourrait-il être utilisé avantageusement ?).</p>
+</div>
+
+<p>Nous n&rsquo;avions pas réellement besoin de la classe <code>deque</code> pour implémenter efficacement la pile. En effet, si insérer un élément au début d&rsquo;une liste python de taille $n$ a bien un coût linéaire ($O(n)$) et ralentit donc l&rsquo;exécution par rapport à l&rsquo;utilisation d&rsquo;une file, retirer un élément à la fin (via <code>pop</code>) se fait en temps constant ($O(1)$).</p>
+
+<div class="notices tip" ><p>En pratique, on a utilisé dans les deux codes exactement le même objet, présent dans le module standard <code>collections</code> : <code>deque()</code>.<br><code>deque()</code> (qui se prononce comme deck) est l&rsquo;implémentation d&rsquo;une <strong>file d&rsquo;attente à double extrémité</strong> (double-ended queue). Elle permet d&rsquo;ajouter et retirer efficacement (en temps constant) des éléments aux deux extrémités. On peut donc bien à la fois s&rsquo;en servir comme une file ou comme une pile.<br>On peut aussi utiliser <code>deque()</code> comme une liste python normale, mais l&rsquo;accès d&rsquo;un élément via son indice est alors inefficace (il ne se fait pas en temps constant). C&rsquo;est la contrepartie de l&rsquo;optimisation des opérations sur les extrémités&hellip;<br>Pour optimiser l&rsquo;ajout et l&rsquo;enlèvement aux extrémités, l&rsquo;objet <code>deque()</code> utilise une liste doublement chaînée (chaque élément est stocké en mémoire avec deux pointeurs : un vers l&rsquo;élément précédent et un vers le suivant).</p>
+</div>
+
+
+<div class="notices info" ><p>La dernière note permet de pointer la distinction
+entre une structure de données abstraite (ou plutôt <strong>type de données abstrait</strong> TDA) et son implémentation :<br>Une liste doublement chaînée peut implémenter à la fois le TDA file ou pile.<br>Un <strong>tas</strong> (arbre binaire presque complet ordonné) permet d&rsquo;implémenter le TDA file de priorité.</p>
+</div>
+
+<p> 
+ </p>
 <p> 
  </p>
 <h2 id="graphes-pondérés">Graphes pondérés</h2>
@@ -1335,9 +1342,16 @@ On peut aussi utiliser <code>deque()</code> comme une liste, mais l&rsquo;accès
 <p> 
  </p>
 <h3 id="algorithme-de-dijkstra">Algorithme de Dijkstra</h3>
+<p>L&rsquo;algorithme de Dijkstra va permettre de dépasser les limites du parcours en largeur grâce à un registre <code>Scores</code> attribuant une valeur à chaque sommet (au départ, tous les scores sont fixés à l&rsquo;infini sauf celui du sommet de départ, fixé à zéro).<br>La principale différence avec le parcours en largeur réside dans la sélection du prochain sommet ajouté à <code>Vus</code> ; il s&rsquo;agit maintenant de celui ayant le plus petit score parmi les sommets non déjà inspectés.</p>
+
+<div class="notices info" ><p>On appelle <strong>algorithme glouton</strong> un algorithme dont la logique consiste à choisir à chaque itération un objet de valeur maximale ou minimale.<br>Dijkstra est donc un exemple d&rsquo;algorithme glouton.</p>
+</div>
+
+<p>À chaque sommet ajouté $s$, on met à jour les scores de chaque successeur $s_+$ en gardant la valeur minimale entre le score qu&rsquo;il avait précédemment et la somme entre le score de $s$ et le poids de l&rsquo;arc $(s,s_+)$ (c&rsquo;est l&rsquo;étape de relaxation des arêtes).<br></p>
+<p>Et si on garde à chaque mise-à-jour du score la trace du nouveau prédécesseur, on obtient un algorithme capable de fournir les distances et les plus courts chemin entre le sommets de départ et tous les autres.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># préconditions : un graphe orienté ￼pondéré G(S,A) avec des poids positifs pour chaque arc représenté par une liste d’adjacence grâce à un dictionnaire, un sommet s_0 de S</span>
 
-<span style="color:#75715e"># postcondition : pour chaque sommet ￼s_i de S la distance trouvée correspond bien au chemin le plus court entre s_0 et s_i (d(s_0,s_i))</span>
+<span style="color:#75715e"># postcondition : pour chaque sommet ￼s_i de S le score trouvé correspond bien à la distance entre s_0 et s_i (d(s_0,s_i))</span>
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sommet_suivant</span>(scores,vus) :
     <span style="color:#e6db74">&#34;&#34;&#34;
@@ -1393,8 +1407,8 @@ On peut aussi utiliser <code>deque()</code> comme une liste, mais l&rsquo;accès
 </div>
 
 <p>En effet, chaque sommet est inspecté pour être scoré et lors de chaque inspection (= chaque itération), on passe en revue l&rsquo;ensemble des successeurs de ce sommet (et dans le pire des cas, le sommet a $|S|-1$ successeurs).</p>
-<p>Comme évoqué dans une notice précédente, on peut améliorer la complexité en utilisant une structure de données adaptée au problème : le <strong>tas</strong>.<br>
-L&rsquo;idée est d&rsquo;améliorer le choix du prochain sommet inspecté, celui au plus bas score parmi les sommets pas encore validés. En effet, réinspecter systématiquement toute la liste des sommets restants ne semble pas optimal. C&rsquo;est sur ce point que le tas vient à la rescousse :<br>
+<p>Comme <a href="#structures-de-donn%C3%A9es">évoqué plus haut</a>, on peut améliorer la complexité en utilisant une structure de données adaptée au problème : la <strong>file de priorité</strong> implémentée par un tas.<br>
+L&rsquo;idée est d&rsquo;optimiser le choix du prochain sommet inspecté, celui au plus bas score parmi les sommets pas encore validés. En effet, réinspecter systématiquement toute la liste des sommets restants (c&rsquo;est ce que fait la fonction <code>sommet_suivant</code>) gaspille de l&rsquo;information. C&rsquo;est sur ce point que le tas vient à la rescousse :<br>
 le tas est une structure de données de type arbre qui permet de retrouver directement l&rsquo;élément que l&rsquo;on veut traiter en priorité. Le tas garde en permanence le sommet de plus bas score en son sommet avec un coût logarithmique.<br>
 Conséquence : si on remplace la fonction <code>sommet_suivant</code> par un tas et ses opérations dédiées d&rsquo;ajout et d&rsquo;extraction, on passe d&rsquo;une complexité linéaire à une complexité logarithmique pour cette opération.</p>
 
@@ -1870,19 +1884,19 @@ Conséquence : si on remplace la fonction <code>sommet_suivant</code> par un tas
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1654248657"></script>
-    <script src="/js/perfect-scrollbar.min.js?1654248657"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1654248657"></script>
-    <script src="/js/jquery.sticky.js?1654248657"></script>
-    <script src="/js/featherlight.min.js?1654248657"></script>
-    <script src="/js/highlight.pack.js?1654248657"></script>
+    <script src="/js/clipboard.min.js?1654359949"></script>
+    <script src="/js/perfect-scrollbar.min.js?1654359949"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1654359949"></script>
+    <script src="/js/jquery.sticky.js?1654359949"></script>
+    <script src="/js/featherlight.min.js?1654359949"></script>
+    <script src="/js/highlight.pack.js?1654359949"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1654248657"></script>
-    <script src="/js/learn.js?1654248657"></script>
-    <script src="/js/hugo-learn.js?1654248657"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1654359949"></script>
+    <script src="/js/learn.js?1654359949"></script>
+    <script src="/js/hugo-learn.js?1654359949"></script>
     
         
-            <script src="/mermaid/mermaid.js?1654248657"></script>
+            <script src="/mermaid/mermaid.js?1654359949"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
