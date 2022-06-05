@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1654359948" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1654359948" rel="stylesheet">
-    <link href="/css/hybrid.css?1654359948" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1654359948" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1654359948" rel="stylesheet">
-    <link href="/css/auto-complete.css?1654359948" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1654359948" rel="stylesheet">
-    <link href="/css/theme.css?1654359948" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1654359948" rel="stylesheet">
+    <link href="/css/nucleus.css?1654441739" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1654441739" rel="stylesheet">
+    <link href="/css/hybrid.css?1654441739" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1654441739" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1654441739" rel="stylesheet">
+    <link href="/css/auto-complete.css?1654441739" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1654441739" rel="stylesheet">
+    <link href="/css/theme.css?1654441739" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1654441739" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1654359948" rel="stylesheet">
+    <link href="/css/theme-green.css?1654441739" rel="stylesheet">
     
-    <link href="/css/foo.css?1654359948" rel="stylesheet"><link href="/css/bar.css?1654359948" rel="stylesheet">
+    <link href="/css/foo.css?1654441739" rel="stylesheet"><link href="/css/bar.css?1654441739" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1654359948"></script>
+    <script src="/js/jquery-3.3.1.min.js?1654441739"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1654359948"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1654359948"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1654441739"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1654441739"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1654359948"></script>
+<script type="text/javascript" src="/js/search.js?1654441739"></script>
 
     
   </div>
@@ -1255,7 +1255,7 @@ Cela illustre bien que la conception d&rsquo;un algorithme est intimement liée 
 Lors de la conception d&rsquo;un algorithme, l&rsquo;identification des différentes opérations à effectuer va guider le choix de la structure de données adaptée.<br>
 Par exemple, l&rsquo;algorithme de recherche en largeur doit gérer un ensemble où le premier élément ajouté doit toujours être le premier retiré (logique <em>FIFO</em>) $\rightarrow$ utilisation d&rsquo;une file qui gère l&rsquo;ajout d&rsquo;un élément à la fin d&rsquo;une file d&rsquo;attente et l&rsquo;extraction au début en temps constant (elle est optimisée pour ça, mais en contrepartie, elle ne sait faire que ça).<br>
 L&rsquo;algorithme de recherche en profondeur suit lui la logique <em>LIFO</em> $\rightarrow$ utilisation d&rsquo;une pile.<br>
-Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à chaque itération d&rsquo;ajouter un élément à un ensemble et d&rsquo;en retirer le plus petit élément $\rightarrow$ la <strong>file de priorité</strong> est la structure spécialisée dans ses opérations (dans quels autres algorithmes le tas pourrait-il être utilisé avantageusement ?).</p>
+Dernier exemple : l&rsquo;algorithme de Dijkstra (décrit plus loin) a besoin à chaque itération d&rsquo;ajouter un élément à un ensemble et d&rsquo;en retirer le plus petit élément $\rightarrow$ la <strong>file de priorité</strong> est la structure spécialisée dans ses opérations (dans quels autres algorithmes le tas pourrait-il être utilisé avantageusement ?).</p>
 </div>
 
 <p>Nous n&rsquo;avions pas réellement besoin de la classe <code>deque</code> pour implémenter efficacement la pile. En effet, si insérer un élément au début d&rsquo;une liste python de taille $n$ a bien un coût linéaire ($O(n)$) et ralentit donc l&rsquo;exécution par rapport à l&rsquo;utilisation d&rsquo;une file, retirer un élément à la fin (via <code>pop</code>) se fait en temps constant ($O(1)$).</p>
@@ -1342,13 +1342,27 @@ entre une structure de données abstraite (ou plutôt <strong>type de données a
 <p> 
  </p>
 <h3 id="algorithme-de-dijkstra">Algorithme de Dijkstra</h3>
-<p>L&rsquo;algorithme de Dijkstra va permettre de dépasser les limites du parcours en largeur grâce à un registre <code>Scores</code> attribuant une valeur à chaque sommet (au départ, tous les scores sont fixés à l&rsquo;infini sauf celui du sommet de départ, fixé à zéro).<br>La principale différence avec le parcours en largeur réside dans la sélection du prochain sommet ajouté à <code>Vus</code> ; il s&rsquo;agit maintenant de celui ayant le plus petit score parmi les sommets non déjà inspectés.</p>
 
-<div class="notices info" ><p>On appelle <strong>algorithme glouton</strong> un algorithme dont la logique consiste à choisir à chaque itération un objet de valeur maximale ou minimale.<br>Dijkstra est donc un exemple d&rsquo;algorithme glouton.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/oFrf_65Oyz4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<p>À chaque sommet ajouté $s$, on met à jour les scores de chaque successeur $s_+$ en gardant la valeur minimale entre le score qu&rsquo;il avait précédemment et la somme entre le score de $s$ et le poids de l&rsquo;arc $(s,s_+)$ (c&rsquo;est l&rsquo;étape de relaxation des arêtes).<br></p>
-<p>Et si on garde à chaque mise-à-jour du score la trace du nouveau prédécesseur, on obtient un algorithme capable de fournir les distances et les plus courts chemin entre le sommets de départ et tous les autres.</p>
+<p>L&rsquo;algorithme de Dijkstra va permettre de dépasser les limites du parcours en largeur grâce à un <strong>score</strong> attribué à chaque sommet (au départ, tous les scores sont fixés à l&rsquo;infini sauf celui du sommet de départ, fixé à zéro). En sortie de l&rsquo;algorithme, chaque score vaudra la distance entre le sommet et le sommet de départ.</p>
+<p>Comme avec les parcours en largeur et en profondeur, la distinction principale réside dans la sélection du prochain sommet ajouté à <code>Vus</code> ; il s&rsquo;agit maintenant de celui ayant le plus petit score parmi les sommets non déjà inspectés.</p>
+
+<div class="notices def" ><p>On appelle <strong>algorithme glouton</strong> un algorithme dont la logique consiste à choisir à chaque itération un objet de valeur maximale ou minimale.<br>Dijkstra est donc un exemple d&rsquo;algorithme glouton.</p>
+</div>
+
+<p>À chaque sommet ajouté $s$, on met à jour les scores de chaque successeur $s_+$ en gardant la valeur minimale entre le score qu&rsquo;il avait précédemment et la somme entre le score de $s$ et le poids de l&rsquo;arc $(s,s_+)$ (c&rsquo;est l&rsquo;étape de relaxation des arêtes) : $\text{score}(s_+)=\min\left(\text{score}(s_+),\text{score}(s)+p((s,s_+))\right)$</p>
+
+<div class="notices info" ><p>Idée clé de l&rsquo;algo : si un chemin entre deux sommets est le plus court alors tout chemin intermédiaire entre des sommets présents sur le chemin principal est aussi le plus court entre ces sommets. Cela permet de construire le chemin le plus court de proche en proche.</p>
+</div>
+
+
+<div class="notices warning" ><p>Ce n&rsquo;est plus vrai s&rsquo;il y a une arête négative : un chemin plus court n&rsquo;aurait plus à être composé de tronçons les plus courts entre les sommets intermédiaires.<br>Dit autrement, la correction partielle de l&rsquo;algorithme de Dijkstra suppose que <strong>tous les poids des arêtes du graphe sont positifs</strong>.</p>
+</div>
+
+<p>Et en gardant à chaque mise-à-jour du score la trace du nouveau prédécesseur, on obtient un algorithme capable de fournir les distances et les plus courts chemin entre le sommet de départ et tous les autres.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># préconditions : un graphe orienté ￼pondéré G(S,A) avec des poids positifs pour chaque arc représenté par une liste d’adjacence grâce à un dictionnaire, un sommet s_0 de S</span>
 
 <span style="color:#75715e"># postcondition : pour chaque sommet ￼s_i de S le score trouvé correspond bien à la distance entre s_0 et s_i (d(s_0,s_i))</span>
@@ -1397,12 +1411,6 @@ entre une structure de données abstraite (ou plutôt <strong>type de données a
 {<span style="color:#e6db74">&#39;Minimes&#39;</span>: None, <span style="color:#e6db74">&#39;Hôpital&#39;</span>: <span style="color:#e6db74">&#39;Minimes&#39;</span>, <span style="color:#e6db74">&#39;Verdun&#39;</span>: <span style="color:#e6db74">&#39;Cognehors&#39;</span>, <span style="color:#e6db74">&#39;Tasdon&#39;</span>: <span style="color:#e6db74">&#39;Minimes&#39;</span>, <span style="color:#e6db74">&#39;Cognehors&#39;</span>: <span style="color:#e6db74">&#39;Tasdon&#39;</span>, <span style="color:#e6db74">&#39;Lafond&#39;</span>: <span style="color:#e6db74">&#39;Tasdon&#39;</span>, <span style="color:#e6db74">&#39;Mireuil&#39;</span>: <span style="color:#e6db74">&#39;Lafond&#39;</span>, <span style="color:#e6db74">&#39;Stade&#39;</span>: <span style="color:#e6db74">&#39;Mireuil&#39;</span>}
 {<span style="color:#e6db74">&#39;Minimes&#39;</span>: <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;Hôpital&#39;</span>: <span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;Verdun&#39;</span>: <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;Tasdon&#39;</span>: <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;Cognehors&#39;</span>: <span style="color:#ae81ff">12</span>, <span style="color:#e6db74">&#39;Lafond&#39;</span>: <span style="color:#ae81ff">12</span>, <span style="color:#e6db74">&#39;Mireuil&#39;</span>: <span style="color:#ae81ff">17</span>, <span style="color:#e6db74">&#39;Stade&#39;</span>: <span style="color:#ae81ff">20</span>}
 </code></pre></div>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/oFrf_65Oyz4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<p> </p>
-
 <div class="notices info" ><p>La complexité de cette implémentation de l&rsquo;algorithme de Dijkstra est en $O(|S|^2)$ où comme vu plus haut, $|S|$ est le nombre de sommets du graphe.</p>
 </div>
 
@@ -1884,19 +1892,19 @@ Conséquence : si on remplace la fonction <code>sommet_suivant</code> par un tas
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1654359949"></script>
-    <script src="/js/perfect-scrollbar.min.js?1654359949"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1654359949"></script>
-    <script src="/js/jquery.sticky.js?1654359949"></script>
-    <script src="/js/featherlight.min.js?1654359949"></script>
-    <script src="/js/highlight.pack.js?1654359949"></script>
+    <script src="/js/clipboard.min.js?1654441739"></script>
+    <script src="/js/perfect-scrollbar.min.js?1654441739"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1654441739"></script>
+    <script src="/js/jquery.sticky.js?1654441739"></script>
+    <script src="/js/featherlight.min.js?1654441739"></script>
+    <script src="/js/highlight.pack.js?1654441739"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1654359949"></script>
-    <script src="/js/learn.js?1654359949"></script>
-    <script src="/js/hugo-learn.js?1654359949"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1654441739"></script>
+    <script src="/js/learn.js?1654441739"></script>
+    <script src="/js/hugo-learn.js?1654441739"></script>
     
         
-            <script src="/mermaid/mermaid.js?1654359949"></script>
+            <script src="/mermaid/mermaid.js?1654441739"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
