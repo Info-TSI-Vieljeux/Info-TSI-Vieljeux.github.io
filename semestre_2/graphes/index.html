@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1654517051" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1654517051" rel="stylesheet">
-    <link href="/css/hybrid.css?1654517051" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1654517051" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1654517051" rel="stylesheet">
-    <link href="/css/auto-complete.css?1654517051" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1654517051" rel="stylesheet">
-    <link href="/css/theme.css?1654517051" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1654517051" rel="stylesheet">
+    <link href="/css/nucleus.css?1654546556" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1654546556" rel="stylesheet">
+    <link href="/css/hybrid.css?1654546556" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1654546556" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1654546556" rel="stylesheet">
+    <link href="/css/auto-complete.css?1654546556" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1654546556" rel="stylesheet">
+    <link href="/css/theme.css?1654546556" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1654546556" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1654517051" rel="stylesheet">
+    <link href="/css/theme-green.css?1654546556" rel="stylesheet">
     
-    <link href="/css/foo.css?1654517051" rel="stylesheet"><link href="/css/bar.css?1654517051" rel="stylesheet">
+    <link href="/css/foo.css?1654546556" rel="stylesheet"><link href="/css/bar.css?1654546556" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1654517051"></script>
+    <script src="/js/jquery-3.3.1.min.js?1654546556"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1654517051"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1654517051"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1654546556"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1654546556"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1654517051"></script>
+<script type="text/javascript" src="/js/search.js?1654546556"></script>
 
     
   </div>
@@ -1426,7 +1426,9 @@ $$\sum_{u\in S}\left(T(\text{obtenir le sommet min et le retirer})+\left(\sum_{v
 L&rsquo;idée est d&rsquo;optimiser le choix du prochain sommet inspecté, celui au plus bas score parmi les sommets pas encore validés. En effet, réinspecter systématiquement toute la liste des sommets restants (c&rsquo;est ce que fait la fonction <code>sommet_suivant</code>) gaspille de l&rsquo;information. C&rsquo;est sur ce point que le tas vient à la rescousse :<br>
 le tas est une structure de données de type arbre qui permet de retrouver directement l&rsquo;élément que l&rsquo;on veut traiter en priorité. Le tas garde en permanence le sommet de plus bas score en son sommet avec un coût logarithmique.</p>
 <p>Conséquence : si on remplace la fonction <code>sommet_suivant</code> par un tas et ses opérations dédiées d&rsquo;ajout et d&rsquo;extraction, on passe d&rsquo;une complexité linéaire à une complexité logarithmique pour cette opération.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Dijkstra_tas</span>(G, depart):
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> heapq <span style="color:#75715e"># module implémentant un tas (heap en anglais)</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Dijkstra_tas</span>(G, depart):
     Scores <span style="color:#f92672">=</span> {sommet: float(<span style="color:#e6db74">&#39;infinity&#39;</span>) <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> G}
     Preds <span style="color:#f92672">=</span> {sommet : None <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> G}
     Scores[depart] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
@@ -1908,19 +1910,19 @@ $$\sum_{O(m)}T(\text{retirer la racine du tas})+\sum_{u \in S}\left(\sum_{v\in S
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1654517051"></script>
-    <script src="/js/perfect-scrollbar.min.js?1654517051"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1654517051"></script>
-    <script src="/js/jquery.sticky.js?1654517051"></script>
-    <script src="/js/featherlight.min.js?1654517051"></script>
-    <script src="/js/highlight.pack.js?1654517051"></script>
+    <script src="/js/clipboard.min.js?1654546556"></script>
+    <script src="/js/perfect-scrollbar.min.js?1654546556"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1654546556"></script>
+    <script src="/js/jquery.sticky.js?1654546556"></script>
+    <script src="/js/featherlight.min.js?1654546556"></script>
+    <script src="/js/highlight.pack.js?1654546556"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1654517051"></script>
-    <script src="/js/learn.js?1654517051"></script>
-    <script src="/js/hugo-learn.js?1654517051"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1654546556"></script>
+    <script src="/js/learn.js?1654546556"></script>
+    <script src="/js/hugo-learn.js?1654546556"></script>
     
         
-            <script src="/mermaid/mermaid.js?1654517051"></script>
+            <script src="/mermaid/mermaid.js?1654546556"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
