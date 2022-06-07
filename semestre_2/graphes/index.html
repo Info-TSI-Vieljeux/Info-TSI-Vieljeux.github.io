@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1654546556" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1654546556" rel="stylesheet">
-    <link href="/css/hybrid.css?1654546556" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1654546556" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1654546556" rel="stylesheet">
-    <link href="/css/auto-complete.css?1654546556" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1654546556" rel="stylesheet">
-    <link href="/css/theme.css?1654546556" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1654546556" rel="stylesheet">
+    <link href="/css/nucleus.css?1654574977" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1654574977" rel="stylesheet">
+    <link href="/css/hybrid.css?1654574977" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1654574977" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1654574977" rel="stylesheet">
+    <link href="/css/auto-complete.css?1654574977" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1654574977" rel="stylesheet">
+    <link href="/css/theme.css?1654574977" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1654574977" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1654546556" rel="stylesheet">
+    <link href="/css/theme-green.css?1654574977" rel="stylesheet">
     
-    <link href="/css/foo.css?1654546556" rel="stylesheet"><link href="/css/bar.css?1654546556" rel="stylesheet">
+    <link href="/css/foo.css?1654574977" rel="stylesheet"><link href="/css/bar.css?1654574977" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1654546556"></script>
+    <script src="/js/jquery-3.3.1.min.js?1654574977"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1654546556"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1654546556"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1654574977"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1654574977"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1654546556"></script>
+<script type="text/javascript" src="/js/search.js?1654574977"></script>
 
     
   </div>
@@ -1193,20 +1193,21 @@ Comme souvent en python, un module dédié, ici <code>collecions.deque</code>, v
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parcours_largeur</span>(G,depart):
     file <span style="color:#f92672">=</span> deque()
     file<span style="color:#f92672">.</span>append(depart)
-    Vus <span style="color:#f92672">=</span> []
+    Vus <span style="color:#f92672">=</span> {s : False <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G}
+    Sommets <span style="color:#f92672">=</span> []
     <span style="color:#66d9ef">while</span> file : <span style="color:#75715e"># tant que la file n&#39;est pas vide</span>
         sommet <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>popleft() <span style="color:#75715e"># méthode de la classe deque permettant de défiler (équivaut à pop(0) sur une liste)</span>
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus : <span style="color:#75715e"># évite ici d&#39;avoir 2 Elisa, mais ça peut être bien pire</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> Vus[sommet] : <span style="color:#75715e"># évite ici d&#39;avoir 2 Elisa, mais ça peut être bien pire</span>
             file <span style="color:#f92672">+=</span> G[sommet]
-            Vus<span style="color:#f92672">.</span>append(sommet) 
-    <span style="color:#66d9ef">return</span> Vus
+            Vus[sommet] <span style="color:#f92672">=</span> True
+            Sommets<span style="color:#f92672">.</span>append(sommet) 
+    <span style="color:#66d9ef">return</span> Sommets
 </code></pre></div><p><code>parcours_largeur(G,&quot;Bob&quot;)</code> renvoie
 <code>['Bob', 'Alice', 'Dave', 'Charlie', 'Elisa', 'Farid', 'Gus', 'Hector']</code>.
 
-<div class="notices warning" ><p>Si on ne marque pas les sommets vus (ici grâce à la liste <code>vus</code>), on  se retrouve avec une boucle infinie dès qu&rsquo;il y a un circuit ou un cycle (le simple graphe 🦉⇆🐘 par exemple).</p>
+<div class="notices warning" ><p>Si on ne marque pas les sommets vus (ici grâce au dictionnaire <code>Vus</code>), on  se retrouve avec une boucle infinie dès qu&rsquo;il y a un circuit ou un cycle (le simple graphe 🦉⇆🐘 par exemple).</p>
 </div>
 </p>
-<p>Que vaut la complexité temporelle de l&rsquo;algorithme ? Que devient-elle sans l&rsquo;utilisation de la classe <code>deque</code> fournissant une vraie file ?</p>
 <p> 
  </p>
 <p><strong>Exemples d&rsquo;applications du parcours en largeur :</strong></p>
@@ -1229,13 +1230,15 @@ Comme souvent en python, un module dédié, ici <code>collecions.deque</code>, v
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parcours_profondeur</span>(G,depart):
     pile <span style="color:#f92672">=</span> deque()
     pile<span style="color:#f92672">.</span>append(depart)
-    Vus <span style="color:#f92672">=</span> []
+    Vus <span style="color:#f92672">=</span> {s : False <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G}
+    Sommets <span style="color:#f92672">=</span> []
     <span style="color:#66d9ef">while</span> pile :
         sommet <span style="color:#f92672">=</span> pile<span style="color:#f92672">.</span>pop()
         <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus :
             pile <span style="color:#f92672">+=</span> G[sommet]
-            Vus<span style="color:#f92672">.</span>append(sommet)
-    <span style="color:#66d9ef">return</span> Vus
+            Vus[sommet] <span style="color:#f92672">=</span> True
+            Sommets<span style="color:#f92672">.</span>append(sommet) 
+    <span style="color:#66d9ef">return</span> Sommets
 </code></pre></div><p><code>parcours_profondeur(G,&quot;Bob&quot;)</code> renvoie
 <code>['Bob', 'Charlie', 'Hector', 'Elisa', 'Dave', 'Gus', 'Farid', 'Alice']</code>.</p>
 <p> </p>
@@ -1246,6 +1249,13 @@ Comme souvent en python, un module dédié, ici <code>collecions.deque</code>, v
 <li>utilisé dans le tri topologique,</li>
 <li>trouver la sortie d&rsquo;un labyrinthe.</li>
 </ul>
+
+<div class="notices info" ><p>La complexité des deux algorithmes est en $O(n+m)$ où $n =|S|$ et $m = |A|$.<br>
+En effet, la pile ou la file voit passer tous les successeurs ou adjoints de chaque sommet, ce qui correspond aux m arcs pour les successeurs et 2m pour les arêtes qui sont parcourues dans les deux sens. Comme chaque ajout et enlèvement de sommet se fait en $O(1)$, l&rsquo;enfilement et défilement complet ainsi que l&rsquo;empilement et dépilement complet sont en $O(m)$.<br>
+En plus de ces opérations, on modifie <code>Vus</code> et on construit <code>Sommets</code>, ce qui représente $O(n)$ nouvelles opérations.</p>
+</div>
+
+<p>Que deviendrait la complexité sans l&rsquo;utilisation de la classe <code>deque</code> fournissant une vraie file/pile ?</p>
 <p> </p>
 <h3 id="structures-de-données">Structures de données</h3>
 <p>On remarque que les deux algorithmes de parcours d&rsquo;un graphe (BFS et DFS) ne diffèrent que par la structure de données utilisée. Et loin d&rsquo;être anodin, ce passage de la file à la pile change complètement le principe du parcours !<br>
@@ -1301,16 +1311,16 @@ entre une structure de données abstraite (ou plutôt <strong>type de données a
 <p>Il suffit alors de joindre à la liste des sommets examinés, la liste des chemins permettant de parvenir à chacun de ces sommets (en incrémentant à chaque tour chacun des chemins du sommet correspondant de la nouvelle couche).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recherche_largeur</span>(G,depart,arrivee):
     file <span style="color:#f92672">=</span> [(depart,[depart])] <span style="color:#75715e"># on remplace la file des sommets par une file de tuples (sommet,chemin)</span>
-    Vus <span style="color:#f92672">=</span> []
+    Vus <span style="color:#f92672">=</span> {s : False <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G}
     <span style="color:#66d9ef">while</span> file :
         sommet,chemin <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>) <span style="color:#75715e"># pop(0) fait la même chose que le popleft des deque</span>
         <span style="color:#66d9ef">if</span> sommet <span style="color:#f92672">==</span> arrivee :
             <span style="color:#66d9ef">return</span> chemin <span style="color:#75715e"># si l&#39;arrivée est atteinte, on retourne le chemin correspondant</span>
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus :
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> Vus[sommet] :
             <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G[sommet] :
                 nv_chemin <span style="color:#f92672">=</span> chemin<span style="color:#f92672">+</span>[s]
                 file<span style="color:#f92672">.</span>append((s,nv_chemin))
-            Vus<span style="color:#f92672">.</span>append(sommet) 
+            Vus[sommet] <span style="color:#f92672">=</span> True 
     <span style="color:#66d9ef">return</span> False <span style="color:#75715e"># si l&#39;arrivée n&#39;est pas atteinte, on renvoie Faux</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">G <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Minimes&#34;</span> : {<span style="color:#e6db74">&#34;Tasdon&#34;</span>,<span style="color:#e6db74">&#34;Hôpital&#34;</span>},
      <span style="color:#e6db74">&#34;Hôpital&#34;</span> : {<span style="color:#e6db74">&#34;Verdun&#34;</span>},
@@ -1451,7 +1461,7 @@ le tas est une structure de données de type arbre qui permet de retrouver direc
                     <span style="color:#75715e"># le même sommet peut être ajouté plusieurs fois avec des scores différents</span>
     <span style="color:#66d9ef">return</span> Preds,Scores
 </code></pre></div>
-<div class="notices info" ><p>Grâce au tas, la complexité de Dijkstra est maintenant en $O(m\log n)$ où  $n =|S|$ et $m = |A|$.</p>
+<div class="notices info" ><p>Grâce au tas, la complexité de Dijkstra est maintenant en $O(m\log n)$ où $n =|S|$ et $m = |A|$.</p>
 </div>
 
 <p>En effet, le tas contient $O(m)$ éléments (les voisins mis-à-jour), donc les opérations <code>heappop</code> et <code>heappush</code> sont en $O(\log m)=O(\log n)$.<br></p>
@@ -1910,19 +1920,19 @@ $$\sum_{O(m)}T(\text{retirer la racine du tas})+\sum_{u \in S}\left(\sum_{v\in S
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1654546556"></script>
-    <script src="/js/perfect-scrollbar.min.js?1654546556"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1654546556"></script>
-    <script src="/js/jquery.sticky.js?1654546556"></script>
-    <script src="/js/featherlight.min.js?1654546556"></script>
-    <script src="/js/highlight.pack.js?1654546556"></script>
+    <script src="/js/clipboard.min.js?1654574977"></script>
+    <script src="/js/perfect-scrollbar.min.js?1654574977"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1654574977"></script>
+    <script src="/js/jquery.sticky.js?1654574977"></script>
+    <script src="/js/featherlight.min.js?1654574977"></script>
+    <script src="/js/highlight.pack.js?1654574977"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1654546556"></script>
-    <script src="/js/learn.js?1654546556"></script>
-    <script src="/js/hugo-learn.js?1654546556"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1654574977"></script>
+    <script src="/js/learn.js?1654574977"></script>
+    <script src="/js/hugo-learn.js?1654574977"></script>
     
         
-            <script src="/mermaid/mermaid.js?1654546556"></script>
+            <script src="/mermaid/mermaid.js?1654574977"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
