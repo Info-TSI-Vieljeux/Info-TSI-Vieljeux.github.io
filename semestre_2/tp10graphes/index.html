@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1655945597" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1655945597" rel="stylesheet">
-    <link href="/css/hybrid.css?1655945597" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1655945597" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1655945597" rel="stylesheet">
-    <link href="/css/auto-complete.css?1655945597" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1655945597" rel="stylesheet">
-    <link href="/css/theme.css?1655945597" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1655945597" rel="stylesheet">
+    <link href="/css/nucleus.css?1656104372" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1656104372" rel="stylesheet">
+    <link href="/css/hybrid.css?1656104372" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1656104372" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1656104372" rel="stylesheet">
+    <link href="/css/auto-complete.css?1656104372" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1656104372" rel="stylesheet">
+    <link href="/css/theme.css?1656104372" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1656104372" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1655945597" rel="stylesheet">
+    <link href="/css/theme-green.css?1656104372" rel="stylesheet">
     
-    <link href="/css/foo.css?1655945597" rel="stylesheet"><link href="/css/bar.css?1655945597" rel="stylesheet">
+    <link href="/css/foo.css?1656104372" rel="stylesheet"><link href="/css/bar.css?1656104372" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1655945597"></script>
+    <script src="/js/jquery-3.3.1.min.js?1656104372"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1655945597"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1655945597"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1656104372"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1656104372"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1655945597"></script>
+<script type="text/javascript" src="/js/search.js?1656104372"></script>
 
     
   </div>
@@ -1368,16 +1368,31 @@ jmax <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
             poids_voisins[(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
         carte[(i,j)] <span style="color:#f92672">=</span> poids_voisins
 </code></pre></div><p>Compliquons notre carte en y rajoutant différents environnements : des mérécages où il est difficile de se mouvoir et des murs infranchissables.<br>Pour modéliser les mérécages on va modifier les pondérations : on augmente le poids des arêtes amenant à des sommets s&rsquo;y trouvant. Et pour les murs, on va retirer du graphe les sommets correspondant.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># marécages</span>
-limites_marecages <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">19</span>),(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">12</span>)) <span style="color:#75715e"># s&#39;étendent de 5 à 19 en largeur, et de 5 à 12 en hauteur</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dessin <span style="color:#f92672">=</span> {s : <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> carte<span style="color:#f92672">.</span>keys()} <span style="color:#75715e"># dictionnaire servant au tracé</span>
+
+<span style="color:#75715e"># marécages composés de deux rectangles en L</span>
+limites_marecages_1 <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">11</span>),(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">12</span>)) <span style="color:#75715e"># le 1er rectangle s&#39;étend de 5 à 19 en largeur, et de 5 à 12 en hauteur</span>
 <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> carte<span style="color:#f92672">.</span>keys() :
     <span style="color:#66d9ef">for</span> voisin <span style="color:#f92672">in</span> carte[sommet]<span style="color:#f92672">.</span>keys() :
         i,j <span style="color:#f92672">=</span> voisin
-        <span style="color:#66d9ef">if</span> limites_marecages[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">&lt;=</span>i<span style="color:#f92672">&lt;=</span>limites_marecages[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">and</span> limites_marecages[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">&lt;=</span>j<span style="color:#f92672">&lt;=</span>limites_marecages[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] :
+        <span style="color:#66d9ef">if</span> limites_marecages_1[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">&lt;=</span>i<span style="color:#f92672">&lt;=</span>limites_marecages_1[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">and</span> limites_marecages_1[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">&lt;=</span>j<span style="color:#f92672">&lt;=</span>limites_marecages_1[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] :
             carte[sommet][voisin] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+limites_marecages_2 <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">20</span>),(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>)) <span style="color:#75715e"># 2eme rectangle</span>
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> carte<span style="color:#f92672">.</span>keys() :
+    <span style="color:#66d9ef">for</span> voisin <span style="color:#f92672">in</span> carte[sommet]<span style="color:#f92672">.</span>keys() :
+        i,j <span style="color:#f92672">=</span> voisin
+        <span style="color:#66d9ef">if</span> limites_marecages_2[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">&lt;=</span>i<span style="color:#f92672">&lt;=</span>limites_marecages_2[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">and</span> limites_marecages_2[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">&lt;=</span>j<span style="color:#f92672">&lt;=</span>limites_marecages_2[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] :
+            carte[sommet][voisin] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+<span style="color:#75715e"># pour reconnaître les sommets dans le marécage lors du dessin</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(limites_marecages_1[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>],limites_marecages_1[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(limites_marecages_1[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>],limites_marecages_1[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
+        dessin[(i,j)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(limites_marecages_2[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>],limites_marecages_2[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(limites_marecages_2[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>],limites_marecages_2[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
+        dessin[(i,j)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
 
 <span style="color:#75715e"># murs (on retire les sommets concernés (y compris des voisins))</span>
-limites_murs <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">11</span>),(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">11</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">11</span>),(<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">12</span>),(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">12</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">12</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">13</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">14</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">16</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">17</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">17</span>))
+limites_murs <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">16</span>),(<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">11</span>),(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">11</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">11</span>),(<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">12</span>),(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">12</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">12</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">13</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">14</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">16</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">17</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">18</span>),(<span style="color:#ae81ff">11</span>,<span style="color:#ae81ff">17</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">10</span>),(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">10</span>),(<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">10</span>),(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">9</span>),(<span style="color:#ae81ff">16</span>,<span style="color:#ae81ff">9</span>),(<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">9</span>))
 <span style="color:#75715e"># chaque couple (a,b) correspond aux coordonnées d&#39;une case de mur</span>
 <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> carte<span style="color:#f92672">.</span>copy()<span style="color:#f92672">.</span>keys() :
     <span style="color:#66d9ef">for</span> voisin <span style="color:#f92672">in</span> carte[sommet]<span style="color:#f92672">.</span>copy()<span style="color:#f92672">.</span>keys() :
@@ -1390,42 +1405,41 @@ limites_murs <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">
         <span style="color:#66d9ef">del</span> carte[sommet]
 </code></pre></div><p>Définissons les sommets de départ et d&rsquo;arrivée.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">depart <span style="color:#f92672">=</span> (<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)
-arrivee <span style="color:#f92672">=</span> (<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">16</span>)
+arrivee <span style="color:#f92672">=</span> (<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">15</span>)
 </code></pre></div><p>Et construsions enfin une fonction permettant de tracer la carte en faisant apparaître les marécages, les murs et les points de départ et d&rsquo;arrivée.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
 <span style="color:#f92672">from</span> matplotlib.patches <span style="color:#f92672">import</span> Rectangle
 plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;seaborn&#39;</span>)
 fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>))
 
-coul_bords <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">110</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">118</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
-coul_marec <span style="color:#f92672">=</span> (<span style="color:#ae81ff">155</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">207</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">255</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
-coul_prairie <span style="color:#f92672">=</span> (<span style="color:#ae81ff">214</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">232</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">147</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
-coul_murs <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0.3</span>,<span style="color:#ae81ff">0.3</span>,<span style="color:#ae81ff">0.3</span>)
-coul_depart <span style="color:#f92672">=</span> (<span style="color:#ae81ff">39</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">187</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">40</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
-coul_arrivee <span style="color:#f92672">=</span> (<span style="color:#ae81ff">255</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">25</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
-coul_chemin <span style="color:#f92672">=</span> (<span style="color:#ae81ff">255</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">209</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">247</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">trace_terrain</span>(dim,dep,arr,marec,murs) :
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">trace_terrain</span>(dim,dep,arr) :
+    coul_bords <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">110</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">118</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
+    coul_marec <span style="color:#f92672">=</span> (<span style="color:#ae81ff">155</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">207</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">255</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
+    coul_prairie <span style="color:#f92672">=</span> (<span style="color:#ae81ff">214</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">232</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">147</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
+    coul_murs <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0.3</span>,<span style="color:#ae81ff">0.3</span>,<span style="color:#ae81ff">0.3</span>)
+    coul_depart <span style="color:#f92672">=</span> (<span style="color:#ae81ff">39</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">187</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">40</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
+    coul_arrivee <span style="color:#f92672">=</span> (<span style="color:#ae81ff">255</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">25</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
+    coul_chemin <span style="color:#f92672">=</span> (<span style="color:#ae81ff">255</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">209</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">247</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>)
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(dim[<span style="color:#ae81ff">0</span>]) :
         <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(dim[<span style="color:#ae81ff">1</span>]) :
-            ax<span style="color:#f92672">.</span>add_patch(Rectangle((i, j), <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
-                         edgecolor <span style="color:#f92672">=</span> coul_bords,
-                         facecolor <span style="color:#f92672">=</span> coul_prairie,
-                         fill<span style="color:#f92672">=</span>True,
-                         lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(marec[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>],marec[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
-        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(marec[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>],marec[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
-            ax<span style="color:#f92672">.</span>add_patch(Rectangle((i, j), <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
-                         edgecolor <span style="color:#f92672">=</span> coul_bords,
-                         facecolor <span style="color:#f92672">=</span> coul_marec,
-                         fill<span style="color:#f92672">=</span>True,
-                         lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
-    <span style="color:#66d9ef">for</span> coord <span style="color:#f92672">in</span> murs :
-        ax<span style="color:#f92672">.</span>add_patch(Rectangle((coord[<span style="color:#ae81ff">0</span>], coord[<span style="color:#ae81ff">1</span>]), <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
-                     edgecolor <span style="color:#f92672">=</span> coul_bords,
-                     facecolor <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0.3</span>,<span style="color:#ae81ff">0.3</span>,<span style="color:#ae81ff">0.3</span>),
-                     fill<span style="color:#f92672">=</span>True,
-                     lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+            <span style="color:#66d9ef">if</span> (i,j) <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> carte :
+                ax<span style="color:#f92672">.</span>add_patch(Rectangle((i,j), <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
+                                       edgecolor <span style="color:#f92672">=</span> coul_bords,
+                                       facecolor <span style="color:#f92672">=</span> coul_murs,
+                                       fill<span style="color:#f92672">=</span>True,
+                                       lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+            <span style="color:#66d9ef">elif</span> dessin[(i,j)] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> :
+                ax<span style="color:#f92672">.</span>add_patch(Rectangle((i, j), <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
+                                       edgecolor <span style="color:#f92672">=</span> coul_bords,
+                                       facecolor <span style="color:#f92672">=</span> coul_prairie,
+                                       fill<span style="color:#f92672">=</span>True,
+                                       lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
+            <span style="color:#66d9ef">else</span> :
+                ax<span style="color:#f92672">.</span>add_patch(Rectangle((i, j), <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
+                                       edgecolor <span style="color:#f92672">=</span> coul_bords,
+                                       facecolor <span style="color:#f92672">=</span> coul_marec,
+                                       fill<span style="color:#f92672">=</span>True,
+                                       lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
     ax<span style="color:#f92672">.</span>add_patch(Rectangle(dep, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>,
                  edgecolor <span style="color:#f92672">=</span> coul_bords,
                  facecolor <span style="color:#f92672">=</span> coul_depart,
@@ -1438,7 +1452,7 @@ coul_chemin <span style="color:#f92672">=</span> (<span style="color:#ae81ff">25
                  lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
     ax<span style="color:#f92672">.</span>autoscale_view()
 
-trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
+trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee)
 </code></pre></div><p><img src="/cartevierge.png" alt=""></p>
 <h4 id="recherche-en-largeur">Recherche en largeur</h4>
 <p>Utilisons l'<strong>algorithme de recherche en largeur</strong> (Breadth-First Search ou BFS) vu en cours pour tenter de trouver la plus petite chaîne de sommets reliant le départ à l&rsquo;arrivée.</p>
@@ -1457,8 +1471,8 @@ trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff"
     <span style="color:#66d9ef">return</span> False 
 </code></pre></div><p>Chaîne obtenue :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">recherche_largeur(carte,depart,arrivee)[<span style="color:#ae81ff">0</span>]
-</code></pre></div><p><code>[(2, 2),(3, 2),(4, 2),(5, 2),(6, 2),(7, 2),(8, 2),(9, 2),(10, 3),(11, 4),(12, 5),(13, 6),(14, 7),</code><br>
-<code>(15, 8),(16, 9),(17, 10),(18, 11),(18, 12),(18, 13),(17, 13),(17, 14),(17, 15),(17, 16)]</code></p>
+</code></pre></div><p><code>[(2, 2), (3, 2), (4, 2), (5, 2), (6, 2), (7, 2), (8, 2), (9, 2), (10, 2), (11, 2), (12, 3), (13, 4), (14, 5),</code><br>
+<code>(15, 6), (16, 7), (17, 8), (18, 9), (18, 10), (18, 11), (18, 12), (17, 13), (16, 14), (17, 15)]</code></p>
 <p>Traçons la chaîne en rose sur la carte :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
 <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> recherche_largeur(carte,depart,arrivee)[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] :
@@ -1522,7 +1536,7 @@ fig
     <span style="color:#66d9ef">return</span> chaine
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chaine_Dijk <span style="color:#f92672">=</span> reconstruction_chaine(Preds,depart,arrivee)
 </code></pre></div><p>Vérifiez que votre chaîne est bien la même que celle ci-dessous :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chaine_Dijk <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">7</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">8</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">9</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">10</span>), (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">11</span>), (<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">12</span>), (<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">13</span>), (<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">14</span>), (<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">15</span>), (<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">16</span>), (<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">17</span>), (<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">18</span>), (<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">18</span>), (<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">17</span>), (<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">16</span>), (<span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">16</span>)]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chaine_Dijk <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">6</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">7</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">10</span>), (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">11</span>), (<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">12</span>), (<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">13</span>), (<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">14</span>), (<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">15</span>), (<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">16</span>), (<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">17</span>), (<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">18</span>), (<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">18</span>), (<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">17</span>), (<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">16</span>), (<span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">15</span>)]
 </code></pre></div><p>Traçons la chaîne obtenue.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee,limites_marecages,limites_murs)
 <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> chaine_Dijk[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] :
@@ -2086,19 +2100,19 @@ fig
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1655945597"></script>
-    <script src="/js/perfect-scrollbar.min.js?1655945597"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1655945597"></script>
-    <script src="/js/jquery.sticky.js?1655945597"></script>
-    <script src="/js/featherlight.min.js?1655945597"></script>
-    <script src="/js/highlight.pack.js?1655945597"></script>
+    <script src="/js/clipboard.min.js?1656104372"></script>
+    <script src="/js/perfect-scrollbar.min.js?1656104372"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1656104372"></script>
+    <script src="/js/jquery.sticky.js?1656104372"></script>
+    <script src="/js/featherlight.min.js?1656104372"></script>
+    <script src="/js/highlight.pack.js?1656104372"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1655945597"></script>
-    <script src="/js/learn.js?1655945597"></script>
-    <script src="/js/hugo-learn.js?1655945597"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1656104372"></script>
+    <script src="/js/learn.js?1656104372"></script>
+    <script src="/js/hugo-learn.js?1656104372"></script>
     
         
-            <script src="/mermaid/mermaid.js?1655945597"></script>
+            <script src="/mermaid/mermaid.js?1656104372"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
