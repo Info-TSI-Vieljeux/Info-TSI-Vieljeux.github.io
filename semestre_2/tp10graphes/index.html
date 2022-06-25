@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1656179567" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1656179567" rel="stylesheet">
-    <link href="/css/hybrid.css?1656179567" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1656179567" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1656179567" rel="stylesheet">
-    <link href="/css/auto-complete.css?1656179567" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1656179567" rel="stylesheet">
-    <link href="/css/theme.css?1656179567" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1656179567" rel="stylesheet">
+    <link href="/css/nucleus.css?1656186181" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1656186181" rel="stylesheet">
+    <link href="/css/hybrid.css?1656186181" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1656186181" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1656186181" rel="stylesheet">
+    <link href="/css/auto-complete.css?1656186181" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1656186181" rel="stylesheet">
+    <link href="/css/theme.css?1656186181" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1656186181" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1656179567" rel="stylesheet">
+    <link href="/css/theme-green.css?1656186181" rel="stylesheet">
     
-    <link href="/css/foo.css?1656179567" rel="stylesheet"><link href="/css/bar.css?1656179567" rel="stylesheet">
+    <link href="/css/foo.css?1656186181" rel="stylesheet"><link href="/css/bar.css?1656186181" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1656179567"></script>
+    <script src="/js/jquery-3.3.1.min.js?1656186181"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1656179567"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1656179567"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1656186181"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1656186181"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1656179567"></script>
+<script type="text/javascript" src="/js/search.js?1656186181"></script>
 
     
   </div>
@@ -1346,7 +1346,7 @@ G3 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;
 <p>Représentons par exemple la carte d&rsquo;un petit jeu vidéo sous forme de graphe.<br>
 Pour cela, on transforme chaque lieu possible en un sommet et chaque transition possible d&rsquo;un point à un autre comme une arête.</p>
 <p><img src="/grillgraphe.png?width=1000px" alt=""></p>
-<p>Créons une petite carte de 20 cases sur 20 avec des déplacements possibles horizontaux, verticaux mais aussi diagonaux d&rsquo;une case à une cas voisine.<br>
+<p>Créons une petite carte de 20 cases sur 20 avec des déplacements possibles horizontaux, verticaux mais aussi diagonaux d&rsquo;une case à une case voisine.<br>
 Tous les arcs reçoivent d&rsquo;abord le même poids de 1.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">carte <span style="color:#f92672">=</span> {}
 imax <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
@@ -1371,7 +1371,7 @@ jmax <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
         <span style="color:#66d9ef">if</span> i <span style="color:#f92672">&lt;</span> imax<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> j <span style="color:#f92672">&lt;</span> jmax<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> :
             poids_voisins[(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
         carte[(i,j)] <span style="color:#f92672">=</span> poids_voisins
-</code></pre></div><p>Compliquons notre carte en y rajoutant différents environnements : des mérécages où il est difficile de se mouvoir et des murs infranchissables.<br>Pour modéliser les mérécages on va modifier les pondérations : on augmente le poids des arêtes amenant à des sommets s&rsquo;y trouvant. Et pour les murs, on va retirer du graphe les sommets correspondant.</p>
+</code></pre></div><p>Compliquons notre carte en y rajoutant différents environnements : des marécages où il est difficile de se mouvoir et des murs infranchissables.<br>Pour modéliser les marécages on va modifier les pondérations : on augmente le poids des arêtes amenant à des sommets s&rsquo;y trouvant. Et pour les murs, on va retirer du graphe les sommets correspondant.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dessin <span style="color:#f92672">=</span> {s : <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> carte<span style="color:#f92672">.</span>keys()} <span style="color:#75715e"># dictionnaire aidant pour le tracé</span>
 
 <span style="color:#75715e"># marécages composés de deux rectangles en L</span>
@@ -2103,19 +2103,19 @@ fig
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1656179567"></script>
-    <script src="/js/perfect-scrollbar.min.js?1656179567"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1656179567"></script>
-    <script src="/js/jquery.sticky.js?1656179567"></script>
-    <script src="/js/featherlight.min.js?1656179567"></script>
-    <script src="/js/highlight.pack.js?1656179567"></script>
+    <script src="/js/clipboard.min.js?1656186181"></script>
+    <script src="/js/perfect-scrollbar.min.js?1656186181"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1656186181"></script>
+    <script src="/js/jquery.sticky.js?1656186181"></script>
+    <script src="/js/featherlight.min.js?1656186181"></script>
+    <script src="/js/highlight.pack.js?1656186181"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1656179567"></script>
-    <script src="/js/learn.js?1656179567"></script>
-    <script src="/js/hugo-learn.js?1656179567"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1656186181"></script>
+    <script src="/js/learn.js?1656186181"></script>
+    <script src="/js/hugo-learn.js?1656186181"></script>
     
         
-            <script src="/mermaid/mermaid.js?1656179567"></script>
+            <script src="/mermaid/mermaid.js?1656186181"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
