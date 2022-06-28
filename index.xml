@@ -227,6 +227,17 @@ Les deux structures permettent l&amp;rsquo;indexation, le découpage et l&amp;rs
     </item>
     
     <item>
+      <title>Algorithmique numérique</title>
+      <link>https://info-tsi-vieljeux.github.io/semestre_3/numerique/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/semestre_3/numerique/</guid>
+      <description>Algorithmique numérique L&amp;rsquo;informatique n&amp;rsquo;aime pas les flottants mais les physiciens et les mathématiciens désireux de simulations ou de résolution d&amp;rsquo;équations font difficilement sans&amp;hellip; Il faut alors optimiser les algorithmes pour qu&amp;rsquo;ils évitent le mieux possible les pièges tendus par le codage fatalement imparfait des nombres réels en machine (pensez à revoir le chapitre en question pour vous rafraîchir la mémoire).
+Pivot de Gauss Deux problèmes liés aux flottants :
+ la vérification de la non nullité du pivot le choix du pivot  Comment vérifier qu&amp;rsquo;un pivot potentiel est nul ?</description>
+    </item>
+    
+    <item>
       <title>Divers</title>
       <link>https://info-tsi-vieljeux.github.io/python/divers/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>

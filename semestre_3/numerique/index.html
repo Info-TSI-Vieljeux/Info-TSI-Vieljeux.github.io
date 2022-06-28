@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Traits généraux - Cours info TSI</title>
+    <title>Algorithmique numérique - Cours info TSI</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1656418042" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1656418042" rel="stylesheet">
-    <link href="/css/hybrid.css?1656418042" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1656418042" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1656418042" rel="stylesheet">
-    <link href="/css/auto-complete.css?1656418042" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1656418042" rel="stylesheet">
-    <link href="/css/theme.css?1656418042" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1656418042" rel="stylesheet">
+    <link href="/css/nucleus.css?1656418043" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1656418043" rel="stylesheet">
+    <link href="/css/hybrid.css?1656418043" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1656418043" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1656418043" rel="stylesheet">
+    <link href="/css/auto-complete.css?1656418043" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1656418043" rel="stylesheet">
+    <link href="/css/theme.css?1656418043" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1656418043" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1656418042" rel="stylesheet">
+    <link href="/css/theme-green.css?1656418043" rel="stylesheet">
     
-    <link href="/css/foo.css?1656418042" rel="stylesheet"><link href="/css/bar.css?1656418042" rel="stylesheet">
+    <link href="/css/foo.css?1656418043" rel="stylesheet"><link href="/css/bar.css?1656418043" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1656418042"></script>
+    <script src="/js/jquery-3.3.1.min.js?1656418043"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -65,7 +65,7 @@ onload='renderMathInElement(document.body);'></script>
     
 	
   </head>
-  <body class="" data-url="/python/traitsgaux/">
+  <body class="" data-url="/semestre_3/numerique/">
     <nav id="sidebar" class="">
 
 
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1656418042"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1656418042"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1656418043"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1656418043"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1656418042"></script>
+<script type="text/javascript" src="/js/search.js?1656418043"></script>
 
     
   </div>
@@ -126,7 +126,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/python/" title="Python" class="dd-item
-        parent
+        
         
         
         ">
@@ -152,7 +152,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/python/traitsgaux/" title="Traits généraux" class="dd-item active">
+      <li data-nav-id="/python/traitsgaux/" title="Traits généraux" class="dd-item ">
         <a href="/python/traitsgaux/">
         Traits généraux
         
@@ -669,7 +669,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_3/" title="Semestre 3" class="dd-item
-        
+        parent
         
         
         ">
@@ -695,7 +695,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_3/numerique/" title="Algorithmique numérique" class="dd-item ">
+      <li data-nav-id="/semestre_3/numerique/" title="Algorithmique numérique" class="dd-item active">
         <a href="/semestre_3/numerique/">
         Algorithmique numérique
         
@@ -754,7 +754,7 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Traits généraux
+                   Algorithmique numérique
                  
                   </span>
                 </div>
@@ -763,16 +763,12 @@ onload='renderMathInElement(document.body);'></script>
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a>
+    <li><a href="#pivot-de-gauss">Pivot de Gauss</a>
       <ul>
-        <li><a href="#shell-et-ide">Shell et IDE</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#comment-vérifier-quun-pivot-potentiel-est-nul-">Comment vérifier qu&rsquo;un pivot potentiel est nul ?</a></li>
+        <li><a href="#comment-choisir-le-plus-efficacement-le-pivot-">Comment choisir le plus efficacement le pivot ?</a></li>
       </ul>
     </li>
-    <li><a href="#typage-dynamique">Typage dynamique</a></li>
-    <li><a href="#principe-dindentation">Principe d&rsquo;indentation</a></li>
-    <li><a href="#portée-lexicale">Portée lexicale</a></li>
-    <li><a href="#appel-de-fonction-par-valeur">Appel de fonction par valeur</a></li>
   </ul>
 </nav>
     </div>
@@ -792,123 +788,18 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-<h1 id="traits-généraux">Traits généraux</h1>
-<h2 id="introduction">Introduction</h2>
-<h3 id="shell-et-ide">Shell et IDE</h3>
-<p>Python est un langage de programmation interprété développé par Guido van Rossum en 1989. Langage impératif de haut-niveau doté d&rsquo;une syntaxe simple, Python s&rsquo;adapte à de nombreux contextes grâce à sa modularité ; une importante librairie de modules et packages permet en effet d&rsquo;étendre ses capacités.</p>
-<p>Python possède son propre shell (interface en ligne de commande) : l&rsquo;utilisateur entre une commande Python qui est interprétée immédiatement lorsque <code>Entrée</code> est tapée.<br>
-Au lancement, le shell Python, poli, se présente :</p>
-<p><img src="/shell0.png?height=80px" alt=""></p>
-<p>Les 3 chevrons sont l&rsquo;invite (ou prompt) où les commandes seront écrites.<br>
-IPython, un shell plus évolué, utilise <code>[1]</code> comme invite (où le chiffre dans les crochets s&rsquo;incrémente à chaque commande).<br>
-Pour sortir du shell classique, il faut taper <code>exit()</code>, et <code>exit</code> ou <code>quit</code> pour sortie du shell IPython.</p>
-<p>On peut tout à fait exécuter des commandes Python une à une dans le shell.<br>
-Une commande qui renvoie un résultat est appelée <strong>expression</strong>, alors qu&rsquo;une commande qui ne renvoie rien est une <strong>instruction</strong>.<br>
-Toute fonction est une expression, mais certaines ont en plus un <strong>effet</strong>  sur l&rsquo;environnement comme <code>print()</code> qui permet d&rsquo;afficher une chaîne de caractères dans le shell ou dans un fichier (elle retourne aussi la valeur <code>None</code> qui est omise dans ce cas par le shell).
-<img src="/shell.png?height=95px" alt="">
-
-<div class="notices note" ><p>Par une mauvaise traduction de l&rsquo;anglais <em>side effect</em>, les fonctions qui modifient un état en dehors de leur environnement local comme une modification de la mémoire (écriture d&rsquo;un fichier) ou une modification d&rsquo;un périphérique (affichage sur l&rsquo;écran par exemple) sont dites à <strong>effet de bord</strong>.</p>
-</div>
-</p>
-<p>Pour les projets plus complexes nécessitant d&rsquo;enchaîner les instructions, on écrit l&rsquo;ensemble de ces commandes (le programme) dans un éditeur de texte et on enregistre le fichier avec une extension <code>.py</code>.<br>
-On demande alors à l&rsquo;interprète Python d&rsquo;exécuter l&rsquo;ensemble du script en utilisant la commande <code>python nom_du_fichier.py</code> dans le shell de l&rsquo;OS. Les différents retours dans le shell ne sont alors plus affichés, seuls les effets ont un&hellip; effet.</p>
-<p>Le plus simple pour coder est d&rsquo;utiliser un environnement de travail (<strong>IDE</strong> pour &ldquo;integrated development environment&rdquo;) qui combine un éditeur de code et un shell Python permettant d&rsquo;exécuter le script entier ou une partie directement via l&rsquo;interface.<br></p>
-<p><img src="/pyzo.png" alt=""></p>
-<h3 id="installation">Installation</h3>
-<p>L&rsquo;installation d'<a href="https://www.anaconda.com/products/individual">Anaconda</a> rend disponible les principales bibliothèques scientifiques Python ainsi que le preformant IDE <strong>Spyder</strong> ou encore <strong>Jupyterlab</strong> (très intéressant pour les présentations de projets car associant dans une même interface texte et code pour former un <em>notebook</em>).<br></p>
-<hr>
-<p> </p>
-<p>Passons maintenant en revue quelques caractéristiques du langage Python.<br></p>
-<h2 id="typage-dynamique">Typage dynamique</h2>
-<p>Contrairement à des langages à typage statique comme le C, <strong>le type de la variable n&rsquo;a pas besoin d&rsquo;être déclarée en Python</strong>. On parle alors de <strong>typage dynamique</strong>.<br>
-L&rsquo;interprète Python détermine par lui-même le type en fonction de l&rsquo;objet affecté à la variable.</p>
-<p><img src="/shell2.png?height=115px" alt=""></p>
-<p> </p>
-<h2 id="principe-dindentation">Principe d&rsquo;indentation</h2>
-<p>Beaucoup de langage de programmation (C++, Java par exemple) utilisent des accolades <code>{}</code> pour définir un <strong>bloc de code</strong> (boucles,fonctions, instructions conditionnelles). Python utilise l'<strong>indentation</strong> (<a href="https://www.youtube.com/watch?v=SsoOG6ZeyUI&amp;t=2s">décalage d&rsquo;un nombre constant d&rsquo;espaces blancs, généralement 4, ou une tabulation</a>).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>) :
-    mot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-    <span style="color:#66d9ef">for</span> lettre <span style="color:#f92672">in</span> (<span style="color:#e6db74">&#39;a&#39;</span>,<span style="color:#e6db74">&#39;b&#39;</span>,<span style="color:#e6db74">&#39;c&#39;</span>) :
-        mot <span style="color:#f92672">+=</span> lettre<span style="color:#f92672">*</span>i
-    <span style="color:#66d9ef">print</span>(mot)
-</code></pre></div><blockquote>
-<p>Qu&rsquo;est-ce qui s&rsquo;affiche ?</p>
-</blockquote>
-<p> </p>
-<h2 id="portée-lexicale">Portée lexicale</h2>
-<p>Les variables définies à l&rsquo;intérieur d&rsquo;une fonction ont une <strong>portée locale</strong>. Elles ne sont pas reconnues dans le code principal (en dehors du bloc de la fonction).<br>
-À l&rsquo;inverse, les variables affectées dans le programme principal peuvent être utilisées partout (y compris dans la fonction) et sont dites <strong>globales</strong>.</p>
-<p>Exemple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>() :
-    a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;locale&#39;</span>
-    <span style="color:#66d9ef">print</span>(a)
-    <span style="color:#66d9ef">print</span>(b)
-b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;globale&#39;</span>
-foo()
-</code></pre></div><p><code>locale</code><br>
-<code>globale</code></p>
-<p>Comme <code>b</code> n&rsquo;est pas définie dans la bloc de la fonction, Python va la chercher dans le champ global. Mais il faut que <code>b</code> soit affectée avant l&rsquo;appel de la fonction.</p>
-<p>Que se passe-t-il si une fonction définit une variable locale avec le même nom qu&rsquo;une variable globale ?<br>
-Le champ local est scruté en premier.</p>
-<p>Exemple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>() :
-    a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;locale&#39;</span>
-    <span style="color:#66d9ef">print</span>(a)
-a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;globale&#39;</span>
-foo()
-<span style="color:#66d9ef">print</span>(a)
-</code></pre></div><p><code>locale</code><br>
-<code>globale</code></p>
-<p>Notons bien que la variable locale <code>a</code> n&rsquo;existe que dans le bloc de définition, qu&rsquo;elle ait ou non le même nom qu&rsquo;une variable globale ne change rien.
-Elle disparait quand l&rsquo;interprète sort de la fonction et n&rsquo;écrase donc pas la variable globale <code>a</code>.</p>
-
-<div class="notices info" ><p>Dans l&rsquo;ordre, Python regarde d&rsquo;abord le champ <em>local</em>, puis <em>non local</em> (le champ englobant la fonction intérieure dans le cas de fonctions imbriquées),
-puis <em>global</em>, puis <em>built-in</em> (les fonctions natives qu&rsquo;il convient donc de ne pas redéfinir).</p>
-</div>
-
-<p>Une fonction ne peut pas modifier une variable globale sans préciser qu&rsquo;elle le souhaite.</p>
-<p>Exemple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fct1</span>() :
-    <span style="color:#66d9ef">print</span>(x)
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fct2</span>() :
-    x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">print</span>(x)
-</code></pre></div><blockquote>
-<p>Que se passe-t-il lorsqu&rsquo;on appelle <code>fct1()</code> ? Et <code>fct2()</code> ?</p>
-</blockquote>
-<p>Pour régler le problème, il faut utiliser le mot clé <code>global</code> qui permet de réaffecter la variable globale à l&rsquo;intérieur de la fonction.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fct2</span>() :
-    <span style="color:#66d9ef">global</span> x
-    x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">print</span>(x)
-</code></pre></div><p>L&rsquo;appel de <code>fct2()</code> se fait maintenant sans heurt et <code>3</code> s&rsquo;affiche.</p>
-
-<div class="notices warning" ><p>Ce type de réaffectation est néanmoins à éviter, car il amène pas mal de confusion. C&rsquo;est souvent plus logique de passer <code>x</code> en argument de la fonction.</p>
-</div>
-
-<p> </p>
-<h2 id="appel-de-fonction-par-valeur">Appel de fonction par valeur</h2>
-<p>Lors de l&rsquo;appel d&rsquo;une fonction, les arguments sont copiés et la fonction travaille alors uniquement sur cette copie.<br>
-La copie disparaît lors du retour au programme principal.<br>
-Si la fonction modifie la valeur d&rsquo;un de ses arguments, seule la copie sera modifiée, pas la variable du programme principal.<br>
-On dit que les arguments d&rsquo;une fonction sont transmis <strong>par valeurs</strong> (par contraste avec la transmission par référence ou adresse comme dans le langage Java où une modification de l&rsquo;argument dans la fonction se répercute dans le programme principal).</p>
-<p>Exemple :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(a) :
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;valeur de &#39;a&#39; au début de la fonction :&#34;</span>,a)
-    a <span style="color:#f92672">=</span> a<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;valeur de &#39;a&#39; à la fin de la fonction :&#34;</span>,a)
-
-a <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;valeur de &#39;a&#39; dans le programme principal avant l&#39;appel de la fonction :&#34;</span>,a)
-foo(a)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;valeur de &#39;a&#39; dans le programme principal après l&#39;appel de la fonction :&#34;</span>,a)
-</code></pre></div><p><code>valeur de 'a' dans le programme principal avant l'appel de la fonction : ...</code><br>
-<code>valeur de 'a' au début de la fonction : ...</code><br>
-<code>valeur de 'a' à la fin de la fonction : ...</code><br>
-<code>valeur de 'a' dans le programme principal après l'appel de la fonction : ...</code></p>
-<p>Notons toutefois que si l&rsquo;argument est une liste, c&rsquo;est sa référence qui est cette fois transmise&hellip; Toute modification de la liste dans la fonction se répercute à l&rsquo;extérieur. La fonction a alors un effet de bord. C&rsquo;est dû au statut mutable des listes dans Python. Et cela sera donc la même chose avec les dictionnaires, autre objet mutable.</p>
+<h1 id="algorithmique-numérique">Algorithmique numérique</h1>
+<p>L&rsquo;informatique n&rsquo;aime pas les flottants mais les physiciens et les mathématiciens désireux de simulations ou de résolution d&rsquo;équations font difficilement sans&hellip;
+Il faut alors optimiser les algorithmes pour qu&rsquo;ils évitent le mieux possible les pièges tendus par le codage fatalement imparfait des nombres réels en machine (pensez à revoir <a href="/semestre_2/nombre/#codage-des-nombres-r%C3%A9els-en-machine">le chapitre en question</a> pour vous rafraîchir la mémoire).</p>
+<h2 id="pivot-de-gauss">Pivot de Gauss</h2>
+<p><img src="/pseudo_gauss.pdf?width=700px" alt=""></p>
+<p>Deux problèmes liés aux flottants :</p>
+<ul>
+<li>la vérification de la non nullité du pivot</li>
+<li>le choix du pivot</li>
+</ul>
+<h3 id="comment-vérifier-quun-pivot-potentiel-est-nul-">Comment vérifier qu&rsquo;un pivot potentiel est nul ?</h3>
+<h3 id="comment-choisir-le-plus-efficacement-le-pivot-">Comment choisir le plus efficacement le pivot ?</h3>
 
 
 <footer class="footline">
@@ -946,37 +837,6 @@ foo(a)
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -987,121 +847,6 @@ foo(a)
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1347,6 +1092,152 @@ foo(a)
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1377,19 +1268,19 @@ foo(a)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1656418042"></script>
-    <script src="/js/perfect-scrollbar.min.js?1656418042"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1656418042"></script>
-    <script src="/js/jquery.sticky.js?1656418042"></script>
-    <script src="/js/featherlight.min.js?1656418042"></script>
-    <script src="/js/highlight.pack.js?1656418042"></script>
+    <script src="/js/clipboard.min.js?1656418043"></script>
+    <script src="/js/perfect-scrollbar.min.js?1656418043"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1656418043"></script>
+    <script src="/js/jquery.sticky.js?1656418043"></script>
+    <script src="/js/featherlight.min.js?1656418043"></script>
+    <script src="/js/highlight.pack.js?1656418043"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1656418042"></script>
-    <script src="/js/learn.js?1656418042"></script>
-    <script src="/js/hugo-learn.js?1656418042"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1656418043"></script>
+    <script src="/js/learn.js?1656418043"></script>
+    <script src="/js/hugo-learn.js?1656418043"></script>
     
         
-            <script src="/mermaid/mermaid.js?1656418042"></script>
+            <script src="/mermaid/mermaid.js?1656418043"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

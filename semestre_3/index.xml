@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Semestre 3 on Cours info TSI</title>
+    <link>https://info-tsi-vieljeux.github.io/semestre_3/</link>
+    <description>Recent content in Semestre 3 on Cours info TSI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate><atom:link href="https://info-tsi-vieljeux.github.io/semestre_3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algorithmique numérique</title>
+      <link>https://info-tsi-vieljeux.github.io/semestre_3/numerique/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/semestre_3/numerique/</guid>
+      <description>Algorithmique numérique L&amp;rsquo;informatique n&amp;rsquo;aime pas les flottants mais les physiciens et les mathématiciens désireux de simulations ou de résolution d&amp;rsquo;équations font difficilement sans&amp;hellip; Il faut alors optimiser les algorithmes pour qu&amp;rsquo;ils évitent le mieux possible les pièges tendus par le codage fatalement imparfait des nombres réels en machine (pensez à revoir le chapitre en question pour vous rafraîchir la mémoire).
+Pivot de Gauss Deux problèmes liés aux flottants :
+ la vérification de la non nullité du pivot le choix du pivot  Comment vérifier qu&amp;rsquo;un pivot potentiel est nul ?</description>
+    </item>
+    
+  </channel>
+</rss>
