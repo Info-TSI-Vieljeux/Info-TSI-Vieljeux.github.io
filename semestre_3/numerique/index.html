@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1657367364" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1657367364" rel="stylesheet">
-    <link href="/css/hybrid.css?1657367364" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1657367364" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1657367364" rel="stylesheet">
-    <link href="/css/auto-complete.css?1657367364" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1657367364" rel="stylesheet">
-    <link href="/css/theme.css?1657367364" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1657367364" rel="stylesheet">
+    <link href="/css/nucleus.css?1657368063" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1657368063" rel="stylesheet">
+    <link href="/css/hybrid.css?1657368063" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1657368063" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1657368063" rel="stylesheet">
+    <link href="/css/auto-complete.css?1657368063" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1657368063" rel="stylesheet">
+    <link href="/css/theme.css?1657368063" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1657368063" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1657367364" rel="stylesheet">
+    <link href="/css/theme-green.css?1657368063" rel="stylesheet">
     
-    <link href="/css/foo.css?1657367364" rel="stylesheet"><link href="/css/bar.css?1657367364" rel="stylesheet">
+    <link href="/css/foo.css?1657368063" rel="stylesheet"><link href="/css/bar.css?1657368063" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1657367364"></script>
+    <script src="/js/jquery-3.3.1.min.js?1657368063"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1657367364"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1657367364"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1657368063"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1657368063"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1657367364"></script>
+<script type="text/javascript" src="/js/search.js?1657368063"></script>
 
     
   </div>
@@ -802,10 +802,7 @@ onload='renderMathInElement(document.body);'></script>
     <li><a href="#méthode-deuler">Méthode d&rsquo;Euler</a>
       <ul>
         <li><a href="#méthode-deuler-explicite">Méthode d&rsquo;Euler explicite</a></li>
-        <li><a href="#erreur-de-troncature-locale">Erreur de troncature locale</a></li>
-        <li><a href="#erreur-de-troncature-globale">Erreur de troncature globale</a></li>
-        <li><a href="#erreur-darrondi">Erreur d&rsquo;arrondi</a></li>
-        <li><a href="#stabilité-numérique">Stabilité numérique</a></li>
+        <li><a href="#limites">Limites</a></li>
         <li><a href="#méthode-deuler-implicite">Méthode d&rsquo;Euler implicite</a></li>
         <li><a href="#méthode-deuler-semi-implicite">Méthode d&rsquo;Euler semi-implicite</a></li>
         <li><a href="#méthodes-dordre-supérieure">Méthodes d&rsquo;ordre supérieure</a></li>
@@ -993,7 +990,8 @@ $$
 $$</p>
 </blockquote>
 <br>
-<h3 id="erreur-de-troncature-locale">Erreur de troncature locale</h3>
+<h3 id="limites">Limites</h3>
+<h4 id="erreur-de-troncature-locale">Erreur de troncature locale</h4>
 <p>L&rsquo;erreur de troncature locale de la méthode d&rsquo;Euler est la petite erreur faite à chaque étape. C&rsquo;est la différence entre la solution numérique après une étape, $y_1$, et la solution exacte à l&rsquo;instant $t_1=t_0+h$.</p>
 <p>La solution numérique est donnée par :
 $$y_1 = y_0+hf(t,y_0)$$
@@ -1003,7 +1001,7 @@ L&rsquo;erreur vaut la différence :
 $$y(t_1)-y_1=\frac{1}{2}h^2y''(t)+O(h^3)$$
 Cela montre que pour un petit $h$, l&rsquo;erreur de troncature locale est approximativement proportionnelle à $h^2$.</p>
 <br>
-<h3 id="erreur-de-troncature-globale">Erreur de troncature globale</h3>
+<h4 id="erreur-de-troncature-globale">Erreur de troncature globale</h4>
 <p>L&rsquo;erreur de troncature globale est l&rsquo;erreur faite à un instant fixe $t$, après tous les pas qu&rsquo;il a fallu pour arriver à $t$ à partir de $t_0$.<br>
 L&rsquo;erreur de troncature globale correspond ainsi à l&rsquo;accumulation des erreurs de troncature locale.</p>
 <p>Étant donné que le nombre d&rsquo;étapes est donné par $\frac{t-t_0}{h}$ ce qui le rend proportionnel à $1/h$ et que l&rsquo;erreur locale est approximativement proportionnelle à $h^2$, on se retrouve avec une erreur globale proportionnelle à $h$.</p>
@@ -1012,7 +1010,7 @@ L&rsquo;erreur de troncature globale correspond ainsi à l&rsquo;accumulation de
 </div>
 
 <p><img src="/erreurtronca.png?width=800px" alt=""></p>
-<h3 id="erreur-darrondi">Erreur d&rsquo;arrondi</h3>
+<h4 id="erreur-darrondi">Erreur d&rsquo;arrondi</h4>
 <p>On pourrait se dire &ldquo;qu&rsquo;à cela ne tienne ! Suffit de prendre un pas rikiki&hellip;&rdquo; Mais un nouveau problème se pose allors : les erreurs d&rsquo;arrondis.<br>
 Du fait des limites du codage des nombres réels en machine, chaque calcul à partir d&rsquo;un flottant est entâché d&rsquo;une erreur due à l&rsquo;arrondi. On exprime généralement cette erreur en fonction de l&rsquo;epsilon machine $\varepsilon$.</p>
 
@@ -1028,7 +1026,7 @@ En python, comme la mantisse d&rsquo;un flottant correspond à 53 bits, l&rsquo;
 Finalement, l&rsquo;erreur d&rsquo;arrondi globale est proportionnelle à $\frac{\varepsilon}{\sqrt{h}}$ et donc diverge lorsque $h$ tend vers 0 !</p>
 <p>Réduire l&rsquo;erreur de troncature se fait donc au détriment de l&rsquo;erreur d&rsquo;arrondi. Néanmoins, on peut se prémunir en bonne part des erreurs d&rsquo;arrondi grâce à une sommation compensée (algorithme de Kahan).</p>
 <br>
-<h3 id="stabilité-numérique">Stabilité numérique</h3>
+<h4 id="stabilité-numérique">Stabilité numérique</h4>
 <p align="center"><iframe src="https://trinket.io/embed/glowscript/45100c7d66?start=result" width="800" height="500" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></p>
 
 <p>Comme le montre l&rsquo;exemple précédent d&rsquo;un oscillateur harmonique amorti, la  méthode d&rsquo;Euler explicite peut être numériquement instable, la solution numérique s&rsquo;écartant de plus en plus de la solution exacte.</p>
@@ -1580,19 +1578,19 @@ Résoudre numériquement l&rsquo;équation différentielle revient donc à inté
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1657367364"></script>
-    <script src="/js/perfect-scrollbar.min.js?1657367364"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1657367364"></script>
-    <script src="/js/jquery.sticky.js?1657367364"></script>
-    <script src="/js/featherlight.min.js?1657367364"></script>
-    <script src="/js/highlight.pack.js?1657367364"></script>
+    <script src="/js/clipboard.min.js?1657368063"></script>
+    <script src="/js/perfect-scrollbar.min.js?1657368063"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1657368063"></script>
+    <script src="/js/jquery.sticky.js?1657368063"></script>
+    <script src="/js/featherlight.min.js?1657368063"></script>
+    <script src="/js/highlight.pack.js?1657368063"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1657367364"></script>
-    <script src="/js/learn.js?1657367364"></script>
-    <script src="/js/hugo-learn.js?1657367364"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1657368063"></script>
+    <script src="/js/learn.js?1657368063"></script>
+    <script src="/js/hugo-learn.js?1657368063"></script>
     
         
-            <script src="/mermaid/mermaid.js?1657367364"></script>
+            <script src="/mermaid/mermaid.js?1657368063"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
