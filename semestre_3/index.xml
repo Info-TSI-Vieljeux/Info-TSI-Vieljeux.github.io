@@ -18,5 +18,14 @@ Pivot de Gauss Deux problèmes liés aux flottants :
  la vérification de la non nullité du pivot le choix du pivot  Comment vérifier qu&amp;rsquo;un pivot potentiel est nul ?</description>
     </item>
     
+    <item>
+      <title>TP 11 : algorithmique numérique</title>
+      <link>https://info-tsi-vieljeux.github.io/semestre_3/tp11/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp11/</guid>
+      <description>TP 11 : algorithmique numérique Cliquez sur cette invitation pour récupérer le repository du TP. Pivot de Gauss def Gauss(M,recherchePivot) : &amp;#34;&amp;#34;&amp;#34; préconditions : M une liste de listes (matrice) contenant des nombres. recherchePivot est une fonction ayant pour paramètres la matrice et deux indices et renvoyant l&amp;#39;indice du prochain pivot. postcondition : M est muté sous la forme d&amp;#39;une matrice échelonnée réduite. La fonction ne retourne rien (elle a juste un effet de bord).</description>
+    </item>
+    
   </channel>
 </rss>
