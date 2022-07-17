@@ -26,7 +26,8 @@ Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;
       <description>Types de base Les types de base en python (les catégories fondamentales des objets manipulés) sont :
   Les entiers int (en anglais, entier se dit integer).
 Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est illimitée en Python.
-   Les flottants float. Ce sont des approximations de nombres réels. La méthode d&amp;rsquo;écriture en machine de ces nombres, équivalente à une écriture scientifique pour nombre binaire, explique leur nom : ce sont des nombres à virgule flottante.</description>
+
+  Les flottants float. Ce sont des approximations de nombres réels. La méthode d&amp;rsquo;écriture en machine de ces nombres, équivalente à une écriture scientifique pour nombre binaire, explique leur nom : ce sont des nombres à virgule flottante.</description>
     </item>
     
     <item>

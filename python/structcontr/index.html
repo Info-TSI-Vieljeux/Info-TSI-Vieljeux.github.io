@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1657489368" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1657489368" rel="stylesheet">
-    <link href="/css/hybrid.css?1657489368" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1657489368" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1657489368" rel="stylesheet">
-    <link href="/css/auto-complete.css?1657489368" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1657489368" rel="stylesheet">
-    <link href="/css/theme.css?1657489368" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1657489368" rel="stylesheet">
+    <link href="/css/nucleus.css?1658072736" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1658072736" rel="stylesheet">
+    <link href="/css/hybrid.css?1658072736" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1658072736" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1658072736" rel="stylesheet">
+    <link href="/css/auto-complete.css?1658072736" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1658072736" rel="stylesheet">
+    <link href="/css/theme.css?1658072736" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1658072736" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1657489368" rel="stylesheet">
+    <link href="/css/theme-green.css?1658072736" rel="stylesheet">
     
-    <link href="/css/foo.css?1657489368" rel="stylesheet"><link href="/css/bar.css?1657489368" rel="stylesheet">
+    <link href="/css/foo.css?1658072736" rel="stylesheet"><link href="/css/bar.css?1658072736" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1657489368"></script>
+    <script src="/js/jquery-3.3.1.min.js?1658072736"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1657489368"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1657489368"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1658072736"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1658072736"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1657489368"></script>
+<script type="text/javascript" src="/js/search.js?1658072736"></script>
 
     
   </div>
@@ -752,6 +752,48 @@ onload='renderMathInElement(document.body);'></script>
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/semestre_3/tp12/" title="TP 12 : bases de données" class="dd-item ">
+        <a href="/semestre_3/tp12/">
+        TP 12 : bases de données
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/semestre_3/basededonne%CC%81es/" title="Bases de données" class="dd-item ">
+        <a href="/semestre_3/basededonne%CC%81es/">
+        Bases de données
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
       
@@ -866,8 +908,8 @@ onload='renderMathInElement(document.body);'></script>
 <p>En Python, une affectation s&rsquo;opère avec le symbole <code>=</code>.</p>
 
 <div class="notices note" ><p>En pseudocode, on utilise généralement <code>:=</code> ou <code>←</code> pour les affectations.</p>
-</div>
 
+</div>
 <p>La variable est un tiroir avec une étiquette. Et comme on l&rsquo;a vu, en Python, pas besoin de choisir un tiroir correspondant au type d&rsquo;objet qu&rsquo;il va contenir, c&rsquo;est l&rsquo;interpréteur qui s&rsquo;en charge pour nous (le typage est dynamique).</p>
 <p><img src="/variable0.png?width=500px" alt=""></p>
 <p><img src="/variable1.png?width=500px" alt=""></p>
@@ -913,8 +955,8 @@ id(a)
 
 <div class="notices info" ><p>Ces types de <strong>réaffectation</strong> sont si fréquents qu&rsquo;il existe une notation raccourcie : <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>//=</code>, <code>%=</code>.<br>
 Ainsi, <code>a += 1</code> équivaut à <code>a = a + 1</code> et <code>b /= 5</code> équivaut à <code>b = b/5</code>.</p>
-</div>
 
+</div>
 <p> </p>
 <h3 id="affectation-parallèle">Affectation parallèle</h3>
 <p>Comment faire si on veut permuter les valeurs auxquelles sont liées deux variables ? Dès qu&rsquo;on écrit <code>a = b</code>, la valeur initiale de <code>a</code> est perdue. Et si on commence par <code>b = a</code>, c&rsquo;est la valeur initiale de <code>b</code> qui est perdue. Il faudrait donc utiliser une variable temporaire et écrire : <code>tmp = a</code>, <code>a = b</code> et <code>b = tmp</code>.<br>
@@ -927,8 +969,8 @@ a , b <span style="color:#f92672">=</span> b , a
 
 <div class="notices info" ><p><strong>L&rsquo;affectation parallèle</strong> repose sur le <strong>dépaquetage (<em>unpacking</em>) de tuples</strong>.<br>
 En effet, des objets séparés par des virgules forment un tuple (pas besoin de parenthèses). Donc <code>a,b,c = 1,2,3</code> correspond au dépaquetage du tuple <code>(1,2,3)</code> sur les 3 variables <code>a</code>, <code>b</code> et <code>c</code>.</p>
-</div>
 
+</div>
 <p> </p>
 <h3 id="noms-de-variable">Noms de variable</h3>
 <p>Règles sur les noms de variables :</p>
@@ -941,8 +983,8 @@ En effet, des objets séparés par des virgules forment un tuple (pas besoin de 
 <code>import</code>  <code>in</code>  <code>is</code>  <code>lambda</code>  <code>nonlocal</code>  <code>not</code>  <code>or</code>  <code>pass</code>  <code>print</code>  <code>raise</code>  <code>return</code>  <code>try</code>  <code>while</code>  <code>yield</code></p>
 
 <div class="notices warning" ><p>Il est important pour la lisibilité de son code de donner les noms les plus explicites possibles aux variables. Les rapports de jury le répète tous les ans&hellip;</p>
-</div>
 
+</div>
 <p>Rapport 2019 de l&rsquo;épreuve de Centrale par exemple :</p>
 <blockquote>
 <p><strong>Des noms de variables explicites aident à la compréhension du code. De trop nombreux candidats utilisent des noms de variables quelconques (a, b, c&hellip;) ce qui nuit à la compréhension du programme. La clarté du programme (en particulier le choix des noms de variables) ainsi que la présence de commentaires opportuns sont prises en compte dans l’évaluation.</strong></p>
@@ -981,8 +1023,8 @@ En effet, des objets séparés par des virgules forment un tuple (pas besoin de 
 </code></pre>
 
 <div class="notices note" ><p>Python reconnaît comme vrai n&rsquo;importe quel type de donnée (même pas besoin d&rsquo;expression logique) du moment qu&rsquo;il ne s&rsquo;agit ni de l&rsquo;entier <code>0</code>, du décimal <code>0.</code>, de la chaîne de caractères vide <code>''</code>, du tuple vide <code>()</code>, de la liste vide <code>[]</code>, ou encore de la valeur <code>None</code>.</p>
-</div>
 
+</div>
 <p>Exemple :<br>
 Dans le calendrier grégorien, une année est bissextile si elle est divisible par 4 sauf si elle est aussi divisible par 100 à l&rsquo;exception des années divisibles par 400 qui sont bien bissextiles.<br>
 Le programme suivant détermine si une année est bissextile :</p>
@@ -1006,8 +1048,8 @@ La suite d&rsquo;instructions répétées devra être indentée et forme alors l
 
 <div class="notices warning" ><p>Les boucles <code>while</code> sont dangereuses ! Rien ne dit en effet que la condition sera un jour fausse et la boucle peut donc tourner indéfiniment.<br>
 Les boucles infinis posent le problème de la terminaison d&rsquo;un programme.</p>
-</div>
 
+</div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 <span style="color:#66d9ef">while</span> i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span> :
     i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
@@ -1048,8 +1090,8 @@ L&rsquo;exécution reprend à l&rsquo;instruction suivant la boucle.</p>
 </code></pre></div><p><code>L'élément d'indice 5 valant -2 est le premier élément négatif.</code></p>
 
 <div class="notices note" ><p>Après la sortie de la boucle, les variables <code>i</code> et <code>a</code> gardent les valeurs qu&rsquo;elles ont au moment de l&rsquo;instruction <code>break</code>.</p>
-</div>
 
+</div>
 <p> </p>
 <h3 id="return"><code>return</code></h3>
 <p>L&rsquo;instruction <code>return</code> permet elle aussi de s&rsquo;échapper d&rsquo;une boucle.</p>
@@ -1081,8 +1123,8 @@ L&rsquo;exécution reprend à l&rsquo;instruction suivant la boucle.</p>
 </code></pre></div><p><code>0.1.2.3.4.</code></p>
 
 <div class="notices warning" ><p>L&rsquo;itération sur <code>range(n)</code> va de $0$ à $n-1$ par pas de 1.</p>
-</div>
 
+</div>
 <p>On peut spécifier un point de départ et un pas différents en les passant en argument : <code>range(depart,fin,pas)</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">10</span>) :
 	<span style="color:#66d9ef">print</span>(i,end<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.&#34;</span>)
@@ -1158,8 +1200,8 @@ Les instructions du corps de la fonction sont alors exécutée une par une et si
 
 <div class="notices note" ><p>On utilise aussi le terme &ldquo;paramètre&rdquo; pour désigner les arguments formels, c&rsquo;est-à-dire les variables qui entrent dans la définition de la fonction. Et on réserve alors le terme argument aux valeurs données à ces variables au moment de l&rsquo;appel.<br>
 Dans l&rsquo;exemple, <code>a</code> et <code>b</code> sont alors les paramètres (= arguments formels) et <code>5</code> et <code>2</code> sont les arguments (= arguments effectifs).</p>
-</div>
-</p>
+
+</div></p>
 
 <div class="notices warning" ><p>Malgré ce que l&rsquo;affichage peut laisser croire, la fonction précédente ne retourne rien !<br>
 La valeur de <code>c</code> est prisonnière du corps de la fonction, elle n&rsquo;est pas accessible dans le code principal. C&rsquo;est une <strong>variable locale</strong>.<br>
@@ -1167,8 +1209,8 @@ Si on veut pouvoir accéder à <code>c</code> ailleurs que dans la fonction, il 
 Il ne faut ainsi pas confondre  <code>print</code> et  <code>return</code> !<br>
 Le <code>return</code> transforme l&rsquo;appel de la fonction en expression puisqu&rsquo;une valeur est retournée.<br>
 Le <code>print</code> n&rsquo;a qu&rsquo;un <strong>effet de bord</strong>. La valeur est affichée mais inutilisable. L&rsquo;appel de la fonction n&rsquo;est alors qu&rsquo;une instruction et on nomme <em>procédure</em> une telle fonction.</p>
-</div>
 
+</div>
 <p>Ainsi, <code>addition(5,2) + 7</code> va lever une erreur : <code>TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'</code>.<br>
 En effet, comme <code>addition</code> ne retourne rien, Python la considère de type <code>NoneType</code> et ne comprend  pas pourquoi on cherche à additionner quelque chose à rien.</p>
 <p>Arrangeons cela grâce à un <code>return</code> :</p>
@@ -1689,6 +1731,38 @@ a,b <span style="color:#f92672">=</span> somme_moyenne(L)
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1707,19 +1781,19 @@ a,b <span style="color:#f92672">=</span> somme_moyenne(L)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1657489369"></script>
-    <script src="/js/perfect-scrollbar.min.js?1657489369"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1657489369"></script>
-    <script src="/js/jquery.sticky.js?1657489369"></script>
-    <script src="/js/featherlight.min.js?1657489369"></script>
-    <script src="/js/highlight.pack.js?1657489369"></script>
+    <script src="/js/clipboard.min.js?1658072736"></script>
+    <script src="/js/perfect-scrollbar.min.js?1658072736"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1658072736"></script>
+    <script src="/js/jquery.sticky.js?1658072736"></script>
+    <script src="/js/featherlight.min.js?1658072736"></script>
+    <script src="/js/highlight.pack.js?1658072736"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1657489369"></script>
-    <script src="/js/learn.js?1657489369"></script>
-    <script src="/js/hugo-learn.js?1657489369"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1658072736"></script>
+    <script src="/js/learn.js?1658072736"></script>
+    <script src="/js/hugo-learn.js?1658072736"></script>
     
         
-            <script src="/mermaid/mermaid.js?1657489369"></script>
+            <script src="/mermaid/mermaid.js?1658072736"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

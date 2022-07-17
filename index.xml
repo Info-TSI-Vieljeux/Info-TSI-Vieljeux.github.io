@@ -80,7 +80,8 @@ Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont 
       <description>Types de base Les types de base en python (les catégories fondamentales des objets manipulés) sont :
   Les entiers int (en anglais, entier se dit integer).
 Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est illimitée en Python.
-   Les flottants float. Ce sont des approximations de nombres réels. La méthode d&amp;rsquo;écriture en machine de ces nombres, équivalente à une écriture scientifique pour nombre binaire, explique leur nom : ce sont des nombres à virgule flottante.</description>
+
+  Les flottants float. Ce sont des approximations de nombres réels. La méthode d&amp;rsquo;écriture en machine de ces nombres, équivalente à une écriture scientifique pour nombre binaire, explique leur nom : ce sont des nombres à virgule flottante.</description>
     </item>
     
     <item>
@@ -244,6 +245,25 @@ Pivot de Gauss Deux problèmes liés aux flottants :
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp11/</guid>
       <description>TP 11 : algorithmique numérique Cliquez sur cette invitation pour récupérer le repository du TP. Pivot de Gauss def Gauss(M,recherchePivot) : &amp;#34;&amp;#34;&amp;#34; préconditions : M une liste de listes (matrice) contenant des nombres. recherchePivot est une fonction ayant pour paramètres la matrice et deux indices et renvoyant l&amp;#39;indice du prochain pivot. postcondition : M est mutéz sous la forme d&amp;#39;une matrice échelonnée réduite. La fonction ne retourne rien (elle a juste un effet de bord).</description>
+    </item>
+    
+    <item>
+      <title>TP 12 : bases de données</title>
+      <link>https://info-tsi-vieljeux.github.io/semestre_3/tp12/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp12/</guid>
+      <description>TP 12 : bases de données Cliquez sur cette invitation pour récupérer le repository du TP. </description>
+    </item>
+    
+    <item>
+      <title>Bases de données</title>
+      <link>https://info-tsi-vieljeux.github.io/semestre_3/basededonne%CC%81es/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/semestre_3/basededonne%CC%81es/</guid>
+      <description>Bases de données Les bases de données (database en anglais) sont une forme d&amp;rsquo;organisation des données. Elles permettent de centraliser différentes données en évitant les duplications inutiles et en garantissant un accès contrôlé évitant les corruptions. Une base de données peut gérer des données organisées suivant différents modèles : navigationnel, hierarchique, relationnel, post-relationnel&amp;hellip; C&amp;rsquo;est le modèle relationnel, le plus utilisé, qui va nous intéresser ici.
+Dans un modèle relationnel, les données sont organisées dans des tables (des tableaux à deux dimensions) ayant des relations entre elles via des clés étrangères.</description>
     </item>
     
     <item>
