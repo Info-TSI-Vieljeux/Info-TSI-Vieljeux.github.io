@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>TP 8 : correction et complexité - Cours info TSI</title>
+    <title>Bases de données - Cours info TSI</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -65,7 +65,7 @@ onload='renderMathInElement(document.body);'></script>
     
 	
   </head>
-  <body class="" data-url="/semestre_2/tp8correc/">
+  <body class="" data-url="/semestre_3/basededonnes/">
     <nav id="sidebar" class="">
 
 
@@ -467,7 +467,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_2/" title="Semestre 2" class="dd-item
-        parent
+        
         
         
         ">
@@ -556,7 +556,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_2/tp8correc/" title="TP 8 : correction et complexité" class="dd-item active">
+      <li data-nav-id="/semestre_2/tp8correc/" title="TP 8 : correction et complexité" class="dd-item ">
         <a href="/semestre_2/tp8correc/">
         TP 8 : correction et complexité
         
@@ -693,7 +693,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_3/" title="Semestre 3" class="dd-item
-        
+        parent
         
         
         ">
@@ -761,7 +761,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_3/basededonnes/" title="Bases de données" class="dd-item ">
+      <li data-nav-id="/semestre_3/basededonnes/" title="Bases de données" class="dd-item active">
         <a href="/semestre_3/basededonnes/">
         Bases de données
         
@@ -841,7 +841,7 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   TP 8 : correction et complexité
+                   Bases de données
                  
                   </span>
                 </div>
@@ -850,8 +850,27 @@ onload='renderMathInElement(document.body);'></script>
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#multiplication-égyptienne">Multiplication égyptienne</a></li>
-    <li><a href="#deux-fonctions-de-recherche">Deux fonctions de recherche</a></li>
+    <li><a href="#tables">Tables</a>
+      <ul>
+        <li><a href="#clés">Clés</a></li>
+        <li><a href="#représentation-graphique">Représentation graphique</a></li>
+      </ul>
+    </li>
+    <li><a href="#opérations-sur-les-données">Opérations sur les données</a>
+      <ul>
+        <li><a href="#opérations-ensemblistes">Opérations ensemblistes</a></li>
+        <li><a href="#opérations-relationnelles">Opérations relationnelles</a></li>
+      </ul>
+    </li>
+    <li><a href="#sql">SQL</a>
+      <ul>
+        <li><a href="#select">SELECT</a></li>
+        <li><a href="#agrégation">Agrégation</a></li>
+        <li><a href="#opérateurs-ensemblistes">Opérateurs ensemblistes</a></li>
+        <li><a href="#requêtes-imbriquées">Requêtes imbriquées</a></li>
+        <li><a href="#jointures">Jointures</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -871,132 +890,492 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-<h1 id="tp-8--correction-et-complexité">TP 8 : correction et complexité</h1>
-<p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/U71v16BO">cette invitation</a> pour récupérer le repository du TP. </p>
-<h2 id="multiplication-égyptienne">Multiplication égyptienne</h2>
-<p>Considérons le code suivant, qui implémente un ancien algorithme égyptien.<br>
-<code>a</code> et <code>b</code> sont supposés être des entiers positifs.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">multegy</span>(a, b) :
-    p <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">while</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> :
-        <span style="color:#66d9ef">if</span> a<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> :
-            p <span style="color:#f92672">+=</span> b
-        b <span style="color:#f92672">*=</span> <span style="color:#ae81ff">2</span>
-        a <span style="color:#f92672">//=</span> <span style="color:#ae81ff">2</span>
-    <span style="color:#66d9ef">return</span> p
-</code></pre></div><blockquote>
-<p>Qui est le <strong>variant de boucle</strong> permettant de prouver que <code>multegy</code> termine toujours ?</p>
-<ul>
-<li>a : a</li>
-<li>b : b</li>
-<li>c : p</li>
-<li>d : autre réponse</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>Détaillez l&rsquo;éxécution de <code>multegy(23,5)</code> en affectant à <code>a_i</code>, <code>b_i</code>, <code>c_i</code>, les valeurs rencontrées à chaque itération.</p>
-</blockquote>
-<p>Construisons la preuve de l&rsquo;algorithme :<br></p>
-<p>on va montrer que $a\times b + p$ est un <strong>invariant de boucle</strong> et l&rsquo;utiliser pour prouver que l&rsquo;algorithme retourne bien le produit entre $a$ et $b$.<br></p>
-<p>Notons $a_k$, $b_k$, $p_k$, les valeurs de $a$, $b$ et $p$ après la k<sup>e</sup> itération et supposons $a_k\times b_k + p_k = cste$.</p>
-<ul>
-<li>initialisation : pour $k=0$, $a_0=a$, $b_0=b$ et $p_0=0$. D&rsquo;où $a_0\times b_0+p_0=a\times b$</li>
-<li>conservation : à la boucle $k+1$, deux cas se présentent :
-<ul>
-<li>si $a$ est impair : $a_{k+1} = X$, $b_{k+1} = Y$ et $p_{k+1}= Z$.<br>
-D&rsquo;où $a_{k+1}\times b_{k+1} + p_{k+1} =  a_k\times b_k - b_k +p_k+ b_k = a_k\times b_k+p_k$</li>
-<li>si $a$ est pair : $a_{k+1} = \frac{a_k}{2}$, $b_{k+1} = b_k\times 2$ et $p_{k+1}=p_k$.<br>
-D&rsquo;où $a_{k+1}\times b_{k+1} + p_{k+1} =  a_k\times b_k + p_k$<br>
-Par conséquent, $a_k\times b_k + p_k$ est bien un invariant pour tout $k$.</li>
-</ul>
-</li>
-<li>terminaison : en sortie de boucle (itération $f$), $a_f = 0$, donc $a_f\times b_f+p_f = p_f$. Or comme l&rsquo;invariant est&hellip; invariant, il garde toujours la valeur qu&rsquo;il possède en entrée (pour $k=0$) : d&rsquo;où $p_f = a\times b$. Et comme la fonction retourne $p_f$, cqfd.</li>
-</ul>
-<blockquote>
-<p>Que vallent X,Y et Z ?</p>
-<ul>
-<li>a : $a_k$, $b_k$, $p_k+b_k$</li>
-<li>b : $\frac{a_k-1}{2}$, $b_k\times 2$, $p_k+b_k$</li>
-<li>c : $\frac{a_k+1}{2}$, $b_k\times 2$, $p_k$</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>Quelle est la complexité de <code>multegy</code> (en supposant chacun des calculs comme élémentaire) ?</p>
-<ul>
-<li>a : $O(a)$</li>
-<li>b : $O(a\times b)$</li>
-<li>c : $O(a\log b)$</li>
-<li>d : $O(\log a)$</li>
-<li>e : $O(b)$</li>
-</ul>
-</blockquote>
-<p> </p>
-<h2 id="deux-fonctions-de-recherche">Deux fonctions de recherche</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche</span>(s, m) :  
-    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(len(s) <span style="color:#f92672">-</span> len(m) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) :  
-        b <span style="color:#f92672">=</span> True  
-        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(m)) :  
-            <span style="color:#66d9ef">if</span> s[k <span style="color:#f92672">+</span> i] <span style="color:#f92672">!=</span> m[i] :  
-                b <span style="color:#f92672">=</span> False  
-        <span style="color:#66d9ef">if</span> b :  
-            <span style="color:#66d9ef">return</span> True  
-    <span style="color:#66d9ef">return</span> False 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche2</span>(s, m) :  
-    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(len(s) <span style="color:#f92672">-</span> len(m) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) :  
-        <span style="color:#66d9ef">if</span> s[k:k <span style="color:#f92672">+</span> len(m)] <span style="color:#f92672">==</span> m :  
-            <span style="color:#66d9ef">return</span> True  
-    <span style="color:#66d9ef">return</span> False 
-</code></pre></div><blockquote>
-<p>Quelle est la complexité de la fonction cherche ? Et celle de cherche2 ?<br>
-Appelons <code>len(s)</code> n et <code>len(m)</code> p.</p>
-<ul>
-<li>a : les deux en $O(n\times p)$</li>
-<li>b : <code>cherche</code> en $O(n\times p)$ et <code>cherche2</code> en en $O(n)$</li>
-<li>c : une autre réponse</li>
-</ul>
-</blockquote>
-<p>Exécuter le code suivant peut vous aider à confirmer votre réponse.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
-<span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
+<h1 id="bases-de-données">Bases de données</h1>
+<p>Les bases de données (database en anglais) sont une forme d&rsquo;organisation des données. Elles permettent de centraliser différentes données en évitant les duplications inutiles et en garantissant un accès contrôlé évitant les corruptions.
+<img src="/base.png?width=150px" alt="">
+Une base de données peut gérer des données organisées suivant différents modèles : navigationnel, hierarchique, relationnel, post-relationnel&hellip; C&rsquo;est le modèle relationnel, le plus utilisé, qui va nous intéresser ici.</p>
+<p>Dans un <strong>modèle relationnel</strong>, les données sont organisées dans des <strong>tables</strong> (des tableaux à deux dimensions) ayant des <strong>relations</strong> entre elles via des <strong>clés étrangères</strong>.</p>
+<p><img src="/tables.png?width=600px" alt=""></p>
+<style>
+#allo p:first-child:after {
+    content: 'Base, table et SGBD';
+}
+</style>
 
-abc <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">motdenlettres</span>(n) : 
-    mot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n) :
-        mot <span style="color:#f92672">+=</span> abc[randint(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">25</span>)]
-    <span style="color:#66d9ef">return</span> mot
+<div class="notices def"  id="allo"  ><p>Une base de données contient généralement plusieurs tables (comme un classeur contenant plusieurs feuilles).<br>
+Un serveur héberge généralement plusieurs bases (comme une armoire contenant plusieurs classeurs).<br>
+Un logiciel permettant d&rsquo;interagir avec les bases et les tablesest un système de gestion de bases de données (SGBD et DBMS en anglais). MySQL et SQLite sont des exemples de SGBD gratuits.<br>
+On interagit avec un SGBD par l&rsquo;intermédiaire de lignes de commandes. On peut aussi utiliser une surcouche graphique (<a href="https://sqlitestudio.pl">SQLiteStudio</a> par exemple).</p>
 
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;|    n    |    p   | cherche2 |&#39;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>)
-<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>) :
-    n <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>j
-    s <span style="color:#f92672">=</span> motdenlettres(n)
-    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>) :
-        p <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>k
-        m <span style="color:#f92672">=</span> motdenlettres(p)
-        
-        d <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-        cherche2(s,m)
-        f <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-        t <span style="color:#f92672">=</span> f <span style="color:#f92672">-</span> d
-        
-        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;|{n:^9d}|{p:^8d}|{t:^10.2E}|&#39;</span>)
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>)
-</code></pre></div><blockquote>
-<p>Quelle est la complexité au meilleur de la fonction cherche ?</p>
+</div>
+<br>
+<h2 id="tables">Tables</h2>
+<p>Les tables (ou relations) sont des tableaux à deux dimensions.</p>
 <ul>
-<li>a : $O(n)$</li>
-<li>b : $O(p)$</li>
-<li>c : $O(1)$</li>
+<li>Les <strong>colonnes</strong> sont appelées <strong>attributs</strong>. Elles sont caractérisées par un nom et un domaine dans lequel elle prend ses valeurs.</li>
+<li>Les <strong>lignes</strong> sont appelées <strong>enregistrements</strong>. Un enregistrement prend une valeur pour chaque attribut de la table. Synonymes : <strong>tuple</strong> ou n-uplet.</li>
+<li>Et chaque case est un <strong>champ</strong>.</li>
 </ul>
+<style>
+#cle p:first-child:after {
+    content: 'Exemple de domaines';
+}
+</style>
+
+<div class="notices tip"  id="domaine"  ><p>Entiers (<code>INTEGER</code> ou <code>INT</code>), chaînes de caractères de taille fixe (<code>CHAR(X)</code>), chaîne de caractères de taille maximale fixée (<code>VARCHAR(X)</code>), chaîne de caractères de taille libre (<code>TEXT</code>).</p>
+
+</div>
+<br>
+<h3 id="clés">Clés</h3>
+<style>
+#cle p:first-child:after {
+    content: 'Clé';
+}
+</style>
+
+<div class="notices def"  id="cle"  ><p>Une <strong>clé</strong> est un groupe d&rsquo;attributs (colonnes) minimum qui permet d&rsquo;identifier de façon univoque un enregistrement (un tuple) dans la table.</p>
+
+</div>
+
+<div class="notices info" ><p><strong>Toute table doit comporter au moins une clé</strong>, ce qui implique qu&rsquo;elle ne peut contenir deux enregistrements identiques.</p>
+
+</div>
+<style>
+#prim p:first-child:after {
+    content: 'Clé primaire et clés candidates';
+}
+</style>
+
+<div class="notices def"  id="prim"  ><p>Si plusieurs clés existent dans une relation, on en choisit une parmi celles-ci. Cette clé est appelée <strong>clé primaire</strong>.<br>
+La clé primaire est généralement choisie de façon à ce qu&rsquo;elle soit la plus simple, c&rsquo;est à dire portant sur le moins d&rsquo;attributs et sur les attributs de domaine les plus basiques (entiers ou chaînes courtes typiquement).<br>
+On appelle <strong>clés candidates</strong> l&rsquo;ensemble des clés d&rsquo;une relation qui n&rsquo;ont pas été choisies comme clé primaire (elles étaient candidates à cette fonction).</p>
+
+</div>
+<p><img src="/tableclient.png?width=400px" alt=""></p>
+<p>Rq : il y a plusieurs autres clés candidates&hellip;</p>
+<p>S&rsquo;il est impossible de trouver une clé primaire, ou que les clés candidates sont trop complexes, on peut faire appel à une <strong>clé artificielle</strong> (qui s&rsquo;oppose à <em>clé naturelle</em>). Une clé artificielle est un attribut supplémentaire ajouté à la table, qui n&rsquo;est lié à aucune signification, et qui sert uniquement à identifier de façon unique les enregistrements et/ou à simplifier les références de clés étrangères.<br>
+C&rsquo;est généralement ce qui a été fait lorsque les valeurs d&rsquo;un attribut correspondent au numéro de la ligne (index).</p>
+<style>
+#etran p:first-child:after {
+    content: 'Clé étrangère';
+}
+</style>
+
+<div class="notices def"  id="etran"  ><p>Une <strong>clé étrangère</strong> est un attribut ou un groupe d&rsquo;attributs d&rsquo;une table A apparaissant comme clé primaire dans une table B. Elle matérialise une référence entre les enregistrements de A et et de B.<br>
+Une clé étrangère d&rsquo;un enregistrement référence une clé primaire d&rsquo;un autre enregistrement.</p>
+
+</div>
+<p><img src="/cleetr.png?width=700px" alt=""></p>
+
+<div class="notices warning" ><p><strong>Seule une clé primaire peut être référencée par une clé étrangère</strong>, c&rsquo;est même le seule fonction de la clé primaire : être la clé qui peut être référencée par les clés étrangères.</p>
+
+</div>
+<br>
+<h3 id="représentation-graphique">Représentation graphique</h3>
+<p>On peut représenter les relations entre tables grâce à des diagrammes sagitaux comme dans l&rsquo;exemple ci-dessous.<br>
+Les clés primaires sont représentées en rouge et les clés étrangères en vert.
+<img src="/modelephysique.png?width=800px" alt=""></p>
+<br>
+<h2 id="opérations-sur-les-données">Opérations sur les données</h2>
+<p>Dans une base de données relationnelle, on extrait et on traite les données en utilisant un jeu d&rsquo;opérations mathématiques. Il y a huit opérations principales, que l&rsquo;on peut répartir en opérations ensemblistes et opérations relationnelles.</p>
+<h3 id="opérations-ensemblistes">Opérations ensemblistes</h3>
+<p><img src="/tablopdep.png?width=400px" alt=""></p>
+<h4 id="union-">Union :</h4>
+<p><img src="/opunion.png?width=500px" alt=""></p>
+<h4 id="intersection-">Intersection :</h4>
+<p><img src="/opinter.png?width=500px" alt=""></p>
+<h4 id="différence-">Différence :</h4>
+<p><img src="/opdiff.png?width=500px" alt=""></p>
+<h4 id="produit-cartésien-">Produit cartésien :</h4>
+<p><img src="/oppdtcar.png?width=500px" alt="">
+Le nombre de lignes de la table résultat vaut le produit des nombres de lignes de chacune des tables.</p>
+<h4 id="division-">Division :</h4>
+<p>C&rsquo;est l&rsquo;opération inverse du produit cartésien. Pour trouver le quotient de la division de la table 1 par la table 2, on cherche avec quoi il faudrait faire le produit de la table 2 pour obtenir les lignes de la table 1 contenant les champs de la table 2.
+<img src="/opdiv.png?width=500px" alt=""></p>
+<h3 id="opérations-relationnelles">Opérations relationnelles</h3>
+<h4 id="projection-">Projection :</h4>
+<p>La <strong>projection</strong> extrait une ou plusieurs colonnes (attributs) d&rsquo;une table.
+<img src="/opproj.png?width=400px" alt=""></p>
+<h4 id="restriction-">Restriction :</h4>
+<p>La <strong>restriction</strong> (aussi appelée <strong>sélection</strong>) extrait une ou plusieurs lignes (enregistrements) d&rsquo;une table.
+<img src="/opsel.png?width=550px" alt=""></p>
+<h4 id="jointure-interne-">Jointure interne :</h4>
+<p>Une jointure interne permet de combiner deux tables en se servant d&rsquo;une colonne dans chaque table ayant des valeurs en commun. On suture alors sur ces valeurs communes et on laisse tomber les lignes n&rsquo;ayant pas de correspondance d&rsquo;une table à l&rsquo;autre.</p>
+<p><img src="/opjoint.png?width=550px" alt=""></p>
+<p>Si on joint sur la clé étrangère d&rsquo;une table correspondant à la clé primaire de l&rsquo;autre table, toutes les lignes seront présentes dans le résultat !</p>
+<br>
+<h2 id="sql">SQL</h2>
+<p>Pour dialoguer avec une base de données relationnelle, on utilise le langage SQL (<em>Structured Query Language</em>).<br>
+On entre des <strong>requêtes</strong> (ou instructions, query en anglais), qui ressemble à des phrases (terminées par des points-virgules). Chaque requête est constituée de <strong>clauses</strong> faites de <strong>commandes</strong> (ou <em>mots clefs</em>) suivies d&rsquo;arguments dont certains peuvent être remplacés par des jokers.<br>
+Les commandes sont des mots anglais, ce qui donne à SQL l&rsquo;apparence d&rsquo;une langue naturelle.</p>
+<p>Pour illustrer les différentes requêtes, on va utiliser la base de données dont le modèle est donné ci-dessous.</p>
+<p><img src="/basedepsql.png?width=800px" alt=""></p>
+<p>Et voici un extrait des trois tables :</p>
+<p><img src="/basedepsqlintro.png?width=600px" alt=""></p>
+<p>Rq : <code>NBCOM</code> désigne le nombre de communes (dans un département ou dans une région) et <code>POP</code> la population (dans une commune, un département, ou une région).</p>
+<p>Cette base est issue des données &ldquo;Populations légales 2019&rdquo; de l&rsquo;INSEE publiées le 12/01/2022. Elle a été construite via SQLite et elle est intégrée au repo du TP si vous voulez interagir avec et reproduire les exemples.</p>
+<br>
+<h3 id="select">SELECT</h3>
+<p>C&rsquo;est la commande la plus importante ! Elle permet de rechercher des données dans une table (ou plusieurs) en précisant des conditions.<br>
+<code>SELECT</code> opère un mélange entre une projection et une restriction.</p>
+<p>La syntaxe de base est :<br></p>
+<blockquote>
+<p><code>SELECT</code> liste d&rsquo;attributs projeté<br>
+<code>FROM</code> liste de tables<br>
+<code>WHERE</code> condition de la restriction</p>
 </blockquote>
-<p><em>Remarque :</em><br>
-On peut déterminer ce que fait la fonction <code>cherche</code> en mettant en lumière deux <strong>invariants</strong>, un pour chaque boucle.<br>
-La boucle interne a pour invariant &ldquo;<code>b</code> équivaut à <code>s[k:k+i]==m[:i]</code>&rdquo;.<br>
-Et la boucle externe a pour invariant &ldquo;<code>s[j:j+len(m)] != m pour tout j&lt;k</code>&rdquo; car s&rsquo;il y avait égalité, on serait sorti de la  boucle avec le <code>return True</code>.<br>
-On en conclut que si la boucle n’est jamais interrompue par le <code>return True</code> alors <code>m</code> n’est pas un sous-mot de <code>s</code>.<br>
-Si la boucle est interrompue, d’après l’invariant de la boucle intérieure, on a trouvé <code>m</code> dans <code>s</code>.</p>
+<ul>
+<li>La partie <code>SELECT</code> indique le sous-ensemble des attributs qui doivent apparaître dans la réponse.</li>
+<li>La partie <code>FROM</code> décrit les tables (relations) qui sont utilisables dans la requête (c&rsquo;est à dire l&rsquo;ensemble des attributs que l&rsquo;on peut utiliser).</li>
+<li>La partie <code>WHERE</code> exprime les conditions que doivent respecter les attributs d&rsquo;une ligne (d&rsquo;un tupe) pour pouvoir être dans la réponse. Une condition est un prédicat et par conséquent renvoie un booléen. Cette partie est optionnelle.</li>
+</ul>
+<p>Pour récupérer <strong>toutes les colonnes</strong> de la table commune :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+<span style="color:#66d9ef">FROM</span> Communes;
+</code></pre></div><p><img src="/sqlsel1.pdf?height=150px" alt="">
+
+<div class="notices tip" ><p>le symbole <code>*</code> sert de joker.</p>
+
+</div></p>
+<hr>
+<p>Pour récupérer <strong>seulement les colonnes</strong> <code>CODCOM</code> et <code>POP</code> de la table commune (on opère ainsi une <strong>projection</strong>) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> CODCOM, POP
+<span style="color:#66d9ef">FROM</span> Communes;
+</code></pre></div><p><img src="/sqlsel2.pdf?height=150px" alt=""></p>
+<hr>
+<p>On peut aussi très simplement opérer le <strong>produit cartésien</strong> de deux tables en sélectionnant des attributs de chacune des tables :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> Regions.REG, Departements.CODDEP
+<span style="color:#66d9ef">FROM</span> Regions, Departements;
+</code></pre></div><p><img src="/sqlpdtcart.pdf?height=220px" alt=""></p>
+<hr>
+<p>Pour récupérer la colonne <code>COM</code> <strong>triée</strong> suivant la colonne <code>POP</code> en <strong>ordre ascendant</strong> (par défaut), on utilise la clause <code>ORDER BY</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> COM
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> POP;
+</code></pre></div><p><img src="/sqlsel3.pdf?height=150px" alt="">
+Il y a étonnament 0 habitants à Cumières-le-Mort-Homme 😨</p>
+<hr>
+<p>Et pout un tri en <strong>ordre descendant</strong>, on ajoute le mot clef <code>DESC</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> COM
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> POP <span style="color:#66d9ef">DESC</span>;
+</code></pre></div><p><img src="/sqlsel4.pdf?height=150px" alt="">
+Où sont passées Lyon, Paris, Marseille ?</p>
+<hr>
+<p>Pour récupérer seulement un <strong>nombre limité d&rsquo;enregistrements (de lignes)</strong>, on utilise le mot clef <code>LIMIT</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> CODDEP, POP
+<span style="color:#66d9ef">FROM</span> Departements
+<span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">5</span>;
+</code></pre></div><p><img src="/sqlsellimit.pdf?height=180px" alt=""></p>
+<p>Et on peut aussi <strong>décaler</strong> l&rsquo;ensemble des résultats d&rsquo;un certain nombre de lignes grâce au mot clef <code>OFFSET</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> CODDEP, POP
+<span style="color:#66d9ef">FROM</span> Departements
+<span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">5</span> <span style="color:#66d9ef">OFFSET</span> <span style="color:#ae81ff">3</span>;
+</code></pre></div><p><img src="/sqlsellimitoffset.pdf?height=180px" alt=""></p>
+<hr>
+<p>Utilions maintenant <code>WHERE</code> pour <strong>filtrer les résultats</strong> (on opère alors une <strong>restriction</strong>/<strong>sélection</strong>).</p>
+<p>Sélectionnons les codes départements des communes de plus de $50\,000$ habitants :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> CODDEP
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">WHERE</span> POP <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">50000</span>;
+</code></pre></div><p><img src="/sqlselpasdis.pdf?height=250px" alt=""></p>
+<p>On remarque sur le résultat précédent qu&rsquo;il y a des résultats redondants&hellip; <strong>Pour éliminer les doublons</strong>, on peut utiliser <code>SELECT DISTINCT</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span> CODDEP
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">WHERE</span> POP <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">50000</span>;
+</code></pre></div><p><img src="/sqlseldis.pdf?height=250px" alt=""></p>
+<p>La clause <code>WHERE</code> d&rsquo;une instruction de sélection est définie par une condition. Une telle condition s&rsquo;exprime à l&rsquo;aide d'<strong>opérateurs de comparaison</strong> et d'<strong>opérateurs logiques</strong>. Le résultat d&rsquo;une expression de condition est toujours un booléen.</p>
+<p>Les opérateurs au programme :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Opérateur</th>
+<th style="text-align:center">Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>=</code></td>
+<td style="text-align:center">égal à</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;&gt;</code></td>
+<td style="text-align:center">différent de</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;</code></td>
+<td style="text-align:center">inférieur à</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;=</code></td>
+<td style="text-align:center">inférieur ou égal à</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&gt;</code></td>
+<td style="text-align:center">supérieur à</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&gt;=</code></td>
+<td style="text-align:center">supérieur ou égal à</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>AND</code></td>
+<td style="text-align:center">et</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>OR</code></td>
+<td style="text-align:center">ou (inclusif)</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>NOT</code></td>
+<td style="text-align:center">non</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>IN</code></td>
+<td style="text-align:center">appartient à</td>
+</tr>
+</tbody>
+</table>
+<br>
+
+<div class="notices tip" ><p>Lorsque la condition porte sur une chaîne de caractères, deux jokers sont utilisable : <code>%</code> pour désigner une chaîne quelconque de taille non fixée et <code>_</code> pour désigner un unique carctère quelconque. Mais il faut alors utiliser l&rsquo;opérateur de comparaison <code>LIKE</code> plutôt que <code>=</code>. C&rsquo;est a priori hors programme.</p>
+
+</div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> COM
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">WHERE</span> COM <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;Paris%&#39;</span>;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> COM
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">WHERE</span> COM <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%Arrondissement&#39;</span>;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> COM
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">WHERE</span> COM <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;_ours&#39;</span>;
+</code></pre></div><p><img src="/sqlseltext.png?height=180px" alt=""></p>
+<hr>
+<p>Afin de décrire un attribut d&rsquo;une table en particulier (dans le cas d&rsquo;une <strong>requête portant sur plusieurs tables</strong> notamment), on utilise la notation <code>table.attribut</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> Communes.COM, Departements.DEP, Regions.REG
+<span style="color:#66d9ef">FROM</span> Communes, Departements, Regions
+<span style="color:#66d9ef">WHERE</span> Communes.CODDEP <span style="color:#f92672">=</span> Departements.CODDEP <span style="color:#66d9ef">AND</span> Communes.CODREG <span style="color:#f92672">=</span> Departements.CODREG;
+</code></pre></div><p><img src="/sqlsel6.pdf?height=200px" alt=""></p>
+<hr>
+<p>On peut aussi <strong>renommer</strong> les tables et les attributs par des <strong>alias</strong> grâce au mot clef <code>AS</code> afin d&rsquo;en simplifier la syntaxe.</p>
+<p>Réécrivons par exemple la requête précédent. Les alias servent à la fois à simplifier le nom des tables (raccourcis définis dans le <code>FROM</code>, mais qu&rsquo;on peut déjà utiliser dans le <code>SELECT</code>) ou rendre le nom des attributs plus parlants (dans le <code>SELECT</code>).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> Co.COM <span style="color:#66d9ef">AS</span> ville, De.DEP <span style="color:#66d9ef">AS</span> departement, Re.REG <span style="color:#66d9ef">AS</span> region
+<span style="color:#66d9ef">FROM</span> Communes <span style="color:#66d9ef">AS</span> Co, Departements <span style="color:#66d9ef">AS</span> De, Regions <span style="color:#66d9ef">AS</span> Re
+<span style="color:#66d9ef">WHERE</span> Co.CODDEP <span style="color:#f92672">=</span> De.CODDEP <span style="color:#66d9ef">AND</span> Co.CODREG <span style="color:#f92672">=</span> Re.CODREG;
+</code></pre></div><p><img src="/sqlalias.pdf?height=200px" alt=""></p>
+<h3 id="agrégation">Agrégation</h3>
+<h4 id="fonctions-dagrégation">Fonctions d&rsquo;agrégation</h4>
+<p>Les <strong>fonctions d&rsquo;agrégation</strong> sont des fonctions de type statistiques qui prennent en argument un ou plusieurs attributs et qui s&rsquo;appliquent à l&rsquo;ensemble des champs ainsi sélectionnés.</p>
+<p>Les fonctions d&rsquo;agrégation ont pour résultat une valeur atomique (pas un groupe) comme un nombre ou une chaîne.</p>
+<p>Les fonctions au programme sont :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Fonction</th>
+<th style="text-align:center">renvoie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>MIN</code></td>
+<td style="text-align:center">la valeur minimale</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>MAX</code></td>
+<td style="text-align:center">la valeur maximale</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>SUM</code></td>
+<td style="text-align:center">la somme</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>AVG</code></td>
+<td style="text-align:center">la moyenne</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>COUNT</code></td>
+<td style="text-align:center">le nombre d&rsquo;enregistrements</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> nb_communes
+<span style="color:#66d9ef">FROM</span> Communes;
+</code></pre></div><p><img src="/sqlcount.pdf?height=80px" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MIN</span>(POP), <span style="color:#66d9ef">MAX</span>(POP)
+<span style="color:#66d9ef">FROM</span> Communes;
+</code></pre></div><p><img src="/sqlminmax.pdf?height=80px" alt=""></p>
+<br>
+<h4 id="group-by"><code>GROUP BY</code></h4>
+<p>Grâce à la clause <code>GROUP BY</code>, on peut grouper ensemble (partitionner) des lignes qui ont les mêmes valeurs dans une ou plusieurs colonne.<br>
+Mais c&rsquo;est l&rsquo;application d&rsquo;une fonction sur chaque agregat obtenu qui en fait tout son intérêt.</p>
+<p>Syntaxe générale d&rsquo;une agrégation :<br></p>
+<blockquote>
+<p><code>SELECT</code> liste ordonnée d&rsquo;attributs de partionnement, liste d&rsquo;application de fonctions sur d&rsquo;autres attributs<br>
+<code>FROM</code> liste de tables<br>
+<code>WHERE</code> condition qui filtre les tables<br>
+<code>GROUP BY</code> liste ordonnée d&rsquo;attributs de partitionnement<br>
+<code>HAVING</code> condition qui filtre les agrégats</p>
+</blockquote>
+<p>Montrons comment on peut retrouver les attributs <code>NBCOM</code> et <code>POP</code> de la table <code>Departements</code> directement à partir de la table <code>Communes</code> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> CODDEP, <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> NBCOM_DEP, <span style="color:#66d9ef">SUM</span>(POP) <span style="color:#66d9ef">AS</span> POP_DEP
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> CODDEP;
+</code></pre></div><p><img src="/sqlgrby1.pdf?height=200px" alt="">
+On retrouve bien les mêmes valeurs que dans la table <code>Departements</code>.</p>
+<p>Supposons maintenant que l&rsquo;on veuille connaître la population moyenne par commune dans chacune des régions :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> CODREG, <span style="color:#66d9ef">AVG</span>(POP) <span style="color:#66d9ef">AS</span> POP_MOY_REG
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> CODREG;
+</code></pre></div><p><img src="/sqlgrby2.pdf?height=200px" alt=""></p>
+<p>La clause <code>HAVING</code> permet d&rsquo;effectuer une restriction sur les résultats de l&rsquo;agrégation grâce à une condition.</p>
+<p>Reprenons l&rsquo;exemple des populations par département, mais n&rsquo;affichons plus que les départements ayant une population supérieure à deux million d&rsquo;habitant.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> CODDEP, <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> NBCOM_DEP, <span style="color:#66d9ef">SUM</span>(POP) <span style="color:#66d9ef">AS</span> POP_DEP
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> CODDEP
+<span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">SUM</span>(POP) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2000000</span>;
+</code></pre></div><p><img src="/sqlgrby3.pdf?height=200px" alt=""></p>
+<p>On a vu lors des exemples de tri que Paris, Marseille et Lyon n&rsquo;apparaissent pas parmi les communes les plus peuplées, ce qui s&rsquo;explique par le fait que chacune de ces villes sont découpées administrativement en arrondissements.<br>
+Essayons maintenant de regrouper ces arrondissements :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> COM, <span style="color:#66d9ef">SUM</span>(POP)
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">WHERE</span> COM <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%Arrondissement&#39;</span>
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> CODDEP;
+</code></pre></div><p><img src="/sqlgrby4.pdf?height=200px" alt=""></p>
+<p>Et si on voulait opérer une sélection supplémentaire sur cette aggrégat de 3 villes, c&rsquo;est un <code>HAVING</code> que l&rsquo;on utiliserait. Par exemple :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> COM, <span style="color:#66d9ef">SUM</span>(POP)
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">WHERE</span> COM <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%Arrondissement&#39;</span>
+<span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> CODDEP
+<span style="color:#66d9ef">HAVING</span> COM <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;Lyon%&#39;</span>
+</code></pre></div><style>
+#where p:first-child:after {
+    content: 'WHERE vs HAVING';
+}
+</style>
+
+<div class="notices info"  id="where"  ><p><code>WHERE</code> est un filtre sur les données ⇒ il s&rsquo;applique avant l&rsquo;agrégation par <code>GROUP BY</code>.<br>
+<code>HAVING</code> est un filtre sur les résultats d&rsquo;un regroupement ⇒ il s&rsquo;applique après l&rsquo;agrégation par <code>GROUP BY</code>.</p>
+
+</div>
+<br>
+<h3 id="opérateurs-ensemblistes">Opérateurs ensemblistes</h3>
+<p>On peut utiliser les opérations ensemblistes vues plus haut grâce aux opérateurs SQL suivants :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Opérateur SQL</th>
+<th style="text-align:center">Opération</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>UNION</code></td>
+<td style="text-align:center">union</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>INTERSECT</code></td>
+<td style="text-align:center">intersection</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>EXCEPT</code>/<code>MINUS</code></td>
+<td style="text-align:center">différence</td>
+</tr>
+</tbody>
+</table>
+<p>La requête suivante donne les noms de communes qui sont aussi des noms de départements :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> COM 
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">INTERSECT</span>
+<span style="color:#66d9ef">SELECT</span> DEP
+<span style="color:#66d9ef">FROM</span> Departements;
+</code></pre></div><p><img src="/sqlinters.pdf?width=100px" alt=""></p>
+<br>
+<h3 id="requêtes-imbriquées">Requêtes imbriquées</h3>
+<p>On peut enchasser des requêtes les unes dans les autres en utilisant des parenthèses.<br></p>
+<p>Cette requête affiche le département ayant les communes les plus faiblement peuplées en moyenne.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> DEP
+<span style="color:#66d9ef">FROM</span> Departements
+<span style="color:#66d9ef">WHERE</span> CODDEP <span style="color:#f92672">=</span> (<span style="color:#66d9ef">SELECT</span> CODDEP
+                <span style="color:#66d9ef">FROM</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>,<span style="color:#66d9ef">AVG</span>(POP) <span style="color:#66d9ef">AS</span> Moy
+                      <span style="color:#66d9ef">FROM</span> Communes
+                      <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> CODDEP)
+                      <span style="color:#66d9ef">WHERE</span> Moy <span style="color:#f92672">=</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">Min</span>(Moy)
+                                   <span style="color:#66d9ef">FROM</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>,<span style="color:#66d9ef">AVG</span>(POP) <span style="color:#66d9ef">AS</span> Moy
+                                         <span style="color:#66d9ef">FROM</span> Communes
+                                         <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> CODDEP)))
+</code></pre></div><p><img src="/sqlimbri.pdf?height=70px" alt=""></p>
+<p>Essayons maintenant d&rsquo;intégrer nos villes à arrondissement dans le classement général des 10 communes les plus peuplées :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> COM,POP
+<span style="color:#66d9ef">FROM</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+      <span style="color:#66d9ef">FROM</span> Communes
+      <span style="color:#66d9ef">WHERE</span> COM <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%Arrondissement&#39;</span>
+      <span style="color:#66d9ef">UNION</span>
+      <span style="color:#66d9ef">SELECT</span> CODREG,CODDEP,CODCOM,COM,<span style="color:#66d9ef">SUM</span>(POP)
+      <span style="color:#66d9ef">FROM</span> Communes
+      <span style="color:#66d9ef">WHERE</span> COM <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%Arrondissement&#39;</span>
+      <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> CODDEP)
+<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> POP <span style="color:#66d9ef">DESC</span>
+<span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">10</span>;
+</code></pre></div><p><img src="/sqlimbr.pdf?height=400px" alt=""></p>
+<p>Pour que les 3 premiers résultats aient des noms corrects, on peut utiliser une commande <code>CASE</code> comme ci-dessous. <em>Ce n&rsquo;est pas au programme</em>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> 
+    (<span style="color:#66d9ef">CASE</span> 
+     <span style="color:#66d9ef">WHEN</span> COM <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;Paris%&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Paris&#39;</span>
+     <span style="color:#66d9ef">WHEN</span> COM <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;Marseille%&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Marseille&#39;</span>
+     <span style="color:#66d9ef">WHEN</span> COM <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;Lyon%&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Lyon&#39;</span>
+     <span style="color:#66d9ef">ELSE</span> COM
+     <span style="color:#66d9ef">END</span>) <span style="color:#66d9ef">AS</span> COM, POP
+<span style="color:#66d9ef">FROM</span> (<span style="color:#66d9ef">SELECT</span> COM,POP
+      <span style="color:#66d9ef">FROM</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+            <span style="color:#66d9ef">FROM</span> Communes
+            <span style="color:#66d9ef">WHERE</span> COM <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%Arrondissement&#39;</span>
+            <span style="color:#66d9ef">UNION</span>
+            <span style="color:#66d9ef">SELECT</span> CODREG,CODDEP,CODCOM,COM,<span style="color:#66d9ef">SUM</span>(POP)
+            <span style="color:#66d9ef">FROM</span> Communes
+            <span style="color:#66d9ef">WHERE</span> COM <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%Arrondissement&#39;</span>
+            <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> CODDEP)
+      <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> POP <span style="color:#66d9ef">DESC</span>
+      <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">10</span>);
+</code></pre></div><p><img src="/sqlimbr2.pdf?height=400px" alt=""></p>
+<br>
+<h3 id="jointures">Jointures</h3>
+<p>Joindre deux tables peut s&rsquo;avérer très utile et s&rsquo;opère grâce à la commande <code>table1 JOIN table2 ON condition</code>.<br>
+Après le mot clef <code>ON</code>, on précise le critère de jointure. S&rsquo;il s&rsquo;agit d&rsquo;un critère d&rsquo;égalité (du type <code>colonneX.table1 = colonneY.table2</code>, alors on parle d'<strong>équi-jointure</strong>.</p>
+<style>
+#bo p:first-child:after {
+    content: 'Point programme';
+}
+</style>
+
+<div class="notices tip"  id="bo"  ><p>Les jointures évoquées ici sont des <strong>jointures internes</strong>. Ce sont de loin les plus utilisées et le programme de CPGE se limite à elles. De même le programme n&rsquo;évoque que les équi-jointures.</p>
+
+</div>
+<p>On a obtenu plus haut un ensemble de communes dont le nom est aussi un nom de département. Associons-leur le nom du département où elles se trouvent grâce à une jointure :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> DEP, COM
+<span style="color:#66d9ef">FROM</span> Communes
+<span style="color:#66d9ef">JOIN</span> (<span style="color:#66d9ef">SELECT</span> COM 
+      <span style="color:#66d9ef">FROM</span> Communes
+      <span style="color:#66d9ef">INTERSECT</span>
+      <span style="color:#66d9ef">SELECT</span> DEP
+      <span style="color:#66d9ef">FROM</span> Departements) <span style="color:#66d9ef">AS</span> Inter
+<span style="color:#66d9ef">ON</span> Inter.COM <span style="color:#f92672">=</span> Communes.COM
+<span style="color:#66d9ef">JOIN</span> Departements <span style="color:#66d9ef">ON</span> Communes.CODDEP <span style="color:#f92672">=</span> Departements.CODDEP;
+</code></pre></div><p>La première jointure sert à simplifier la table <code>Communes</code> de manière à ce qu&rsquo;elle ne contienne plus que les communes ayant des noms de départements.<br>
+Et la deuxième jointure sert à associer le nom du département où elle se trouve à chacune de ces communes.<br>
+<img src="/sqljoint.pdf?width=250px" alt=""></p>
+<p>On constate ainsi que le Doubs, la Corrèze et la Mayenne ont une structure récursive&hellip;</p>
+<p>On aurait pu obtenir le même résultat en joignant d&rsquo;abord les tables <code>Communes</code>et <code>Departements</code>, puis en réalisant une <strong>auto-jointure</strong> sur le résultat de cette première jointure.<br>
+Une auto-jointure consiste à associer enesemble deux colonnes de la même table. Cela nécessite d&rsquo;utiliser deux alias différents pour désigner la table , sinon le moteur SQL est tout perdu (erreur <code>ambiguous columnn name</code>)&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span> DEP, COM
+<span style="color:#66d9ef">FROM</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> Communes
+      <span style="color:#66d9ef">JOIN</span> Departements
+      <span style="color:#66d9ef">ON</span> Communes.CODDEP <span style="color:#f92672">=</span> Departements.CODDEP) <span style="color:#66d9ef">AS</span> ComDep1
+<span style="color:#66d9ef">JOIN</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> Communes
+      <span style="color:#66d9ef">JOIN</span> Departements
+      <span style="color:#66d9ef">ON</span> Communes.CODDEP <span style="color:#f92672">=</span> Departements.CODDEP) <span style="color:#66d9ef">AS</span> ComDep2 
+<span style="color:#66d9ef">ON</span> ComDep1.COM <span style="color:#f92672">=</span> ComDep2.DEP;
+</code></pre></div><p><img src="/sqlautojoint.pdf?width=250px" alt=""></p>
 
 
 <footer class="footline">
@@ -1277,174 +1656,6 @@ Si la boucle est interrompue, d’après l’invariant de la boucle intérieure,
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -1505,6 +1716,174 @@ Si la boucle est interrompue, d’après l’invariant de la boucle intérieure,
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 

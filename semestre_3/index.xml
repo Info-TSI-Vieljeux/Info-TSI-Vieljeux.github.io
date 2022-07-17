@@ -28,22 +28,22 @@ Pivot de Gauss Deux problèmes liés aux flottants :
     </item>
     
     <item>
+      <title>Bases de données</title>
+      <link>https://info-tsi-vieljeux.github.io/semestre_3/basededonnes/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/semestre_3/basededonnes/</guid>
+      <description>Bases de données Les bases de données (database en anglais) sont une forme d&amp;rsquo;organisation des données. Elles permettent de centraliser différentes données en évitant les duplications inutiles et en garantissant un accès contrôlé évitant les corruptions. Une base de données peut gérer des données organisées suivant différents modèles : navigationnel, hierarchique, relationnel, post-relationnel&amp;hellip; C&amp;rsquo;est le modèle relationnel, le plus utilisé, qui va nous intéresser ici.
+Dans un modèle relationnel, les données sont organisées dans des tables (des tableaux à deux dimensions) ayant des relations entre elles via des clés étrangères.</description>
+    </item>
+    
+    <item>
       <title>TP 12 : bases de données</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_3/tp12/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp12/</guid>
       <description>TP 12 : bases de données Cliquez sur cette invitation pour récupérer le repository du TP. </description>
-    </item>
-    
-    <item>
-      <title>Bases de données</title>
-      <link>https://info-tsi-vieljeux.github.io/semestre_3/basededonne%CC%81es/</link>
-      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
-      <guid>https://info-tsi-vieljeux.github.io/semestre_3/basededonne%CC%81es/</guid>
-      <description>Bases de données Les bases de données (database en anglais) sont une forme d&amp;rsquo;organisation des données. Elles permettent de centraliser différentes données en évitant les duplications inutiles et en garantissant un accès contrôlé évitant les corruptions. Une base de données peut gérer des données organisées suivant différents modèles : navigationnel, hierarchique, relationnel, post-relationnel&amp;hellip; C&amp;rsquo;est le modèle relationnel, le plus utilisé, qui va nous intéresser ici.
-Dans un modèle relationnel, les données sont organisées dans des tables (des tableaux à deux dimensions) ayant des relations entre elles via des clés étrangères.</description>
     </item>
     
   </channel>
