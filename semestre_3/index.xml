@@ -43,7 +43,9 @@ Dans un modèle relationnel, les données sont organisées dans des tables (des 
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp12/</guid>
-      <description>TP 12 : bases de données Cliquez sur cette invitation pour récupérer le repository du TP. </description>
+      <description>TP 12 : bases de données Cliquez sur cette invitation pour récupérer le repository du TP. On va utiliser python dans ce tp pout accéder aux bases de données, mais de manière la plus transparente possible.
+Commençons par cloner le repository Github source dans l&amp;rsquo;instance Colab.
+!git clone https://github.com/Info-TSI-Vieljeux/s3-tp12 Clonage dans &#39;s3-tp12&#39;... remote: Enumerating objects: 26, done. remote: Counting objects: 100% (26/26), done. remote: Compressing objects: 100% (24/24), done. remote: Total 26 (delta 8), reused 0 (delta 0), pack-reused 0 Réception d&#39;objets: 100% (26/26), 6.</description>
     </item>
     
   </channel>
