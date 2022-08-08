@@ -49,5 +49,25 @@ Commençons par cloner le repository Github source dans l&amp;rsquo;instance Col
 %load_ext sql Connectons-nous à la base Population.</description>
     </item>
     
+    <item>
+      <title>Intelligence Artificielle</title>
+      <link>https://info-tsi-vieljeux.github.io/semestre_3/ia/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/semestre_3/ia/</guid>
+      <description>Algorithmes pour l&amp;rsquo;Intelligence Artificielle L&#39;intelligence arificielle (IA) est une discipline scientifique qui a vu officiellement le jour en 1956. Elle repose sur la conjecture selon laquelle toutes les fonctions cognitives, en particulier l&amp;rsquo;apprentissage, le raisonnement, le calcul, la perception, la mémorisation, voire la découverte scientifique ou la créativité artistique, peuvent être décrites avec une précision telle qu&amp;rsquo;il serait possible de les reproduire sur des ordinateurs.
+L&#39;apprentissage automatique (Machine Learning) est à l&amp;rsquo;intersection de l&amp;rsquo;IA et d&amp;rsquo;un autre champ scientifique : la science des données (data science).</description>
+    </item>
+    
+    <item>
+      <title>TP 13 : intelligence artificielle</title>
+      <link>https://info-tsi-vieljeux.github.io/semestre_3/tp13/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp13/</guid>
+      <description>TP 13 : Algorithmes pour l&amp;rsquo;intelligence artificielle Cliquez sur cette invitation pour récupérer le repository du TP. Algorithme des k plus proches voisins Interpolation Construisons un jeu de données entâchée de bruit :
+import matplotlib.pyplot as plt plt.style.use(&amp;#39;seaborn&amp;#39;) params = {&amp;#39;figure.figsize&amp;#39;: (15, 10), &amp;#39;axes.titlesize&amp;#39;: &amp;#39;xx-large&amp;#39;, &amp;#39;figure.dpi&amp;#39; : 150} plt.rcParams.update(params) from random import random from math import pi,cos X = [] Y = [] N = 400 for i in range(N) : x = pi*random()-pi/2 X.</description>
+    </item>
+    
   </channel>
 </rss>
