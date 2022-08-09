@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1660052455" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1660052455" rel="stylesheet">
-    <link href="/css/hybrid.css?1660052455" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1660052455" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1660052455" rel="stylesheet">
-    <link href="/css/auto-complete.css?1660052455" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1660052455" rel="stylesheet">
-    <link href="/css/theme.css?1660052455" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1660052455" rel="stylesheet">
+    <link href="/css/nucleus.css?1660053589" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1660053589" rel="stylesheet">
+    <link href="/css/hybrid.css?1660053589" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1660053589" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1660053589" rel="stylesheet">
+    <link href="/css/auto-complete.css?1660053589" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1660053589" rel="stylesheet">
+    <link href="/css/theme.css?1660053589" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1660053589" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1660052455" rel="stylesheet">
+    <link href="/css/theme-green.css?1660053589" rel="stylesheet">
     
-    <link href="/css/foo.css?1660052455" rel="stylesheet"><link href="/css/bar.css?1660052455" rel="stylesheet">
+    <link href="/css/foo.css?1660053589" rel="stylesheet"><link href="/css/bar.css?1660053589" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1660052455"></script>
+    <script src="/js/jquery-3.3.1.min.js?1660053589"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1660052455"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1660052455"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1660053589"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1660053589"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1660052455"></script>
+<script type="text/javascript" src="/js/search.js?1660053589"></script>
 
     
   </div>
@@ -1088,37 +1088,43 @@ où $\mu_i$ est le barycentre des points dans $S_i$.</p>
 <p>$I$ est variance intra-classe ou <strong>inertie</strong> intra-classe (terme surtout utilisé en anglais).</p>
 <br>
 <h3 id="choix-de-k-1">Choix de <em>k</em></h3>
-<p>Choisir le bon nombre de cluster est crucial pour l&rsquo;algorithme des <em>k</em>-moyennes comme l&rsquo;illustre l&rsquo;exemple suivant :</p>
+<p>Choisir le bon nombre de clusters est crucial pour l&rsquo;algorithme des <em>k</em>-moyennes, comme l&rsquo;illustre l&rsquo;exemple suivant :</p>
 <p><img src="/choixdek.png" alt=""></p>
-<p>Mais ce n&rsquo;est pas toujours simple (contrairement à l&rsquo;exemple) de deviner le bon nombre de cluster juste en inspectant les données. Alors comment faire ?</p>
-<p>On pourrait se dire qu&rsquo;il suffit de prendre le modèle avec la plus faible inertie. Mais malheureusement, l&rsquo;inertie n&rsquo;est pas une bonne métrique pour choisir <em>k</em> puisqu&rsquo;elle ne fait que descendre quand <em>k</em> augmente&hellip; C&rsquo;est somme toute logique, plus il y a de clusters, plus la distance intra-cluster diminue&amp;nbsp!</p>
+<p>Mais ce n&rsquo;est pas toujours simple (contrairement à l&rsquo;exemple) de deviner le bon nombre de clusters juste en inspectant les données. Alors comment faire ?</p>
+<p>On pourrait se dire qu&rsquo;il suffit de prendre le modèle avec la plus faible inertie. Mais malheureusement, l&rsquo;inertie n&rsquo;est pas une métrique adaptée au choix de <em>k</em> puisqu&rsquo;elle ne fait que descendre quand <em>k</em> augmente&hellip; Logique : plus il y a de clusters, plus la distance intra-cluster diminue&amp;nbsp!</p>
 <p>Traçons l&rsquo;inertie en fonction de <em>k</em> pour y voir plus clair :
 <img src="/inertiefctk3.png?width=700px" alt=""></p>
-<p>On remarque que le nombre de cluster idéal correspond au point d&rsquo;inflexion de la courbe (ou, si on s&rsquo;imagine un bras, au coude).</p>
+<p>On remarque qu&rsquo;ici, le nombre de clusters idéal correspond au point d&rsquo;inflexion de la courbe (ou, si on imagine un bras, au coude).</p>
 <p>Confirmons en simulant des données séparées en 5 tas et en retraçant la courbe.
 <img src="/inertiefctk5.png?width=1400px" alt=""></p>
-<p>On semble donc avoir trouver une tactique utilisable lorsqu&rsquo;on on n&rsquo;a pas d&rsquo;autres indices.</p>
+<p>Là encore, le coude indique le nombre <em>k</em> idéal.<br>
+On semble donc avoir trouver une tactique utilisable lorsqu&rsquo;on n&rsquo;a pas d&rsquo;autres indices.</p>
 <p>
-<div class="notices tip" ><p>Il est existe des méthodes plus précises pour déterminer <em>k</em>, mais elles sont aussi plus gourmandes en calcul. La plus répandue utilise les <em>coefficients de silhouette</em> de chaque point  (différence entre la distance moyenne avec les points du même groupe que lui (cohésion) et la distance moyenne avec les points des autres groupes voisins (séparation)).</p>
+<div class="notices tip" ><p>Il existe des méthodes plus précises pour déterminer <em>k</em>, mais elles sont aussi plus gourmandes en calcul. La plus répandue utilise les <em>coefficients de silhouette</em> de chaque point  (différence entre la distance moyenne avec les points du même groupe (cohésion) et la distance moyenne avec les points des autres groupes voisins (séparation)).</p>
 
 </div>
 <br></p>
 <h3 id="limites">Limites</h3>
-<p>L&rsquo;algorithme des $k$-moyennes se confronte à une difficulté classique en apprentissage automatique et plus généralement pour tout problème d&rsquo;optimisation : <strong>obtenir un minimum global plutôt qu&rsquo;un minimum local</strong>.</p>
+<p>L&rsquo;algorithme des $k$-moyennes se confronte à une difficulté classique en apprentissage automatique, et plus généralement pour tout problème d&rsquo;optimisation : <strong>obtenir un minimum global plutôt qu&rsquo;un minimum local</strong>.</p>
 <p><img src="/localglobal.png?width=600px" alt=""></p>
-<p>La convergence vers un des minima locaux dépend crucialement de la position initiale des centres. C&rsquo;est pour cela que dans l&rsquo;idéal, on les choisit aléatoirement et on relance l&rsquo;algorithme un certain nombre de fois pour ne garder au final que la solution qui minimise l&rsquo;inertie intra-classe.</p>
+<p>La convergence vers un des minima locaux dépend crucialement de la position initiale des centres.</p>
 <p>Dans l&rsquo;exemple suivant, on obtient 3 partitionnements différents pour 3 initialisations différentes des centres.</p>
 <p><img src="/subopti.png?width=700px" alt=""></p>
 <p>On vérifie que les centres sont bien bloqués sur leur position dans les deux premiers cas puisqu&rsquo;aucun changement d&rsquo;attribution n&rsquo;est possible.</p>
-<p>De plus, KMeans ne se comporte pas très bien avec des clusters de différentes tailles, différentes densités ou des formes non sphériques.</p>
+<p>Dans l&rsquo;algo classique, pour pallier au mieux ce problème, on initialise les centres aléatoirement et on relance l&rsquo;algorithme un certain nombre de fois pour ne garder au final que la solution qui minimise l&rsquo;inertie intra-classe.</p>
+<p>Autre souci des <em>k</em>-moyennes : des difficultés pour partitionner des clusters de différentes tailles, différentes densités ou des formes non sphériques.</p>
 <br>
 <h3 id="applications">Applications</h3>
-<p>K-Means ne présuppose rien sur les données et peut s&rsquo;avérer, par le fait, très utile en première approche. C&rsquo;est bien ce rôle de défricheur que l&rsquo;algorithme a joué dans le TP3 lors de l&rsquo;analyse de l&rsquo;enquête mondiale sur le bonheur pour créer des groupes de pays similaires et tenter de comprendre ce qui les rassemble.</p>
-<p>L&rsquo;algorithme des k-moyennes permet de trancher des débats de la plus haute importance sur les couleurs comme  &ldquo;<font color=#00aaaa>est-ce plus vert que bleu ?</font>&rdquo; en organisant un combat entre le centroïde bleu et le centroïde vert.<br>
-Dans la même veine, on peut utiliser K-Means pour segmenter une image par couleur, ce qui peut s&rsquo;avérer intéressant pour des données satellites par exemple. Le choix de <em>k</em> correspond alors au nombre de couleurs qu&rsquo;on veut garder.</p>
+<p>L&rsquo;algorithme des <em>k</em>-moyennes ne présuppose rien sur les données et peut s&rsquo;avérer, par le fait, très utile en première approche.</p>
+
+<div class="notices tip" ><p>C&rsquo;est bien ce rôle de défricheur qu&rsquo;on a donné à l&rsquo;algorithme dans le TP3 lors de l&rsquo;analyse de l&rsquo;enquête mondiale sur le bonheur pour créer des groupes de pays similaires et tenter de comprendre ce qui les rassemble.</p>
+
+</div>
+<p>L&rsquo;algorithme permet aussi de trancher des débats de la plus haute importance sur les couleurs comme  &ldquo;<font color=#00aaaa>est-ce plus vert que bleu ?</font>&rdquo; en organisant un combat entre les centroïdes de chaque couleur.<br>
+Dans la même veine, on peut utiliser <em>k</em>-moyennes pour <strong>segmenter une image</strong> par couleur (voir TP13), ce qui peut s&rsquo;avérer intéressant pour des données satellite par exemple. Le choix de <em>k</em> correspond alors au nombre de couleurs qu&rsquo;on veut garder.</p>
 <p>L&rsquo;exemple ci-dessous est issu du TP :
 <img src="/moswebb.png" alt=""></p>
-<p>Sa simplicité rend K-Means parfait comme premier outil pour dégrossir les données, y compris sur des données déjà étiquetées. Cela permet de réduire leur dimensionnalité, avant d&rsquo;utiliser des algorithmes plus complexes d&rsquo;apprentissage supervisé.</p>
+<p>Sa simplicité rend <em>k</em>-moyennes parfait comme premier outil pour dégrossir les données, y compris sur des données déjà étiquetées. Cela permet de réduire leur dimensionnalité, avant d&rsquo;utiliser des algorithmes plus complexes d&rsquo;apprentissage supervisé.</p>
 <br>
 <h2 id="jeux-daccessibilité-sur-un-graphe">Jeux d&rsquo;accessibilité sur un graphe</h2>
 <p>Cette partie du cours a moins à voir avec les jeux vidéo qu&rsquo;avec la modélisation de systèmes réactifs (automate bancaire, système-environnement), les problèmes de contrôle, la théorie de la décision, les problèmes de routage sur Internet, l&rsquo;économie&hellip; Autant de domaînes admettant une description en terme d&rsquo;opposition entre adversaires sur une arêne (un des adversaires pouvant modéliser l&rsquo;environnement). La détermination d&rsquo;une stratégie gagnante résout alors le problème posé en assurant sa correction.</p>
@@ -2018,19 +2024,19 @@ potentiel <span style="color:#f92672">=</span> [sum(v[i:]) <span style="color:#6
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1660052455"></script>
-    <script src="/js/perfect-scrollbar.min.js?1660052455"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1660052455"></script>
-    <script src="/js/jquery.sticky.js?1660052455"></script>
-    <script src="/js/featherlight.min.js?1660052455"></script>
-    <script src="/js/highlight.pack.js?1660052455"></script>
+    <script src="/js/clipboard.min.js?1660053589"></script>
+    <script src="/js/perfect-scrollbar.min.js?1660053589"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1660053589"></script>
+    <script src="/js/jquery.sticky.js?1660053589"></script>
+    <script src="/js/featherlight.min.js?1660053589"></script>
+    <script src="/js/highlight.pack.js?1660053589"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1660052455"></script>
-    <script src="/js/learn.js?1660052455"></script>
-    <script src="/js/hugo-learn.js?1660052455"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1660053589"></script>
+    <script src="/js/learn.js?1660053589"></script>
+    <script src="/js/hugo-learn.js?1660053589"></script>
     
         
-            <script src="/mermaid/mermaid.js?1660052455"></script>
+            <script src="/mermaid/mermaid.js?1660053589"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
