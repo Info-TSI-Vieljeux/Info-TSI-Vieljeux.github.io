@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1660051362" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1660051362" rel="stylesheet">
-    <link href="/css/hybrid.css?1660051362" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1660051362" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1660051362" rel="stylesheet">
-    <link href="/css/auto-complete.css?1660051362" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1660051362" rel="stylesheet">
-    <link href="/css/theme.css?1660051362" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1660051362" rel="stylesheet">
+    <link href="/css/nucleus.css?1660051960" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1660051960" rel="stylesheet">
+    <link href="/css/hybrid.css?1660051960" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1660051960" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1660051960" rel="stylesheet">
+    <link href="/css/auto-complete.css?1660051960" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1660051960" rel="stylesheet">
+    <link href="/css/theme.css?1660051960" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1660051960" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1660051362" rel="stylesheet">
+    <link href="/css/theme-green.css?1660051960" rel="stylesheet">
     
-    <link href="/css/foo.css?1660051362" rel="stylesheet"><link href="/css/bar.css?1660051362" rel="stylesheet">
+    <link href="/css/foo.css?1660051960" rel="stylesheet"><link href="/css/bar.css?1660051960" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1660051362"></script>
+    <script src="/js/jquery-3.3.1.min.js?1660051960"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1660051362"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1660051362"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1660051960"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1660051960"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1660051362"></script>
+<script type="text/javascript" src="/js/search.js?1660051960"></script>
 
     
   </div>
@@ -971,7 +971,7 @@ Cela signifie qu&rsquo;on ne présuppose rien de particulier sur les données (�
 <p>Comme le montre la petite animation ci-dessus, le <strong>choix de k</strong> modifie le résultat obtenu.</p>
 <ul>
 <li>Si <em>k</em> est trop petit, le moyennage est faible et donc la variabilité va être très grande. On parle alors de surapprentissage (<strong>overfitting</strong>).</li>
-<li>En augmentant <em>k</em>, les résultats obtenus se stabilisent (vote de la majorité) et les erreurs diminuent, jusqu&rsquo;au moment où la boule à l&rsquo;intérieur de laquelle se fait le moyennage devient trop grosse, amenant in fine l&rsquo;algorithme a choisir systématiquement la catégorie majoritaire, quel que soit le point. On augmente ainsi le biais (ici, le biais est le préjudice en faveur du plus grand nombre). On est alors devant un cas d'<strong>underfitting</strong>.</li>
+<li>En augmentant <em>k</em>, les résultats obtenus se stabilisent (vote de la majorité) et les erreurs diminuent, jusqu&rsquo;au moment où la boule à l&rsquo;intérieur de laquelle se fait le moyennage devient trop grosse, amenant in fine l&rsquo;algorithme a choisir systématiquement la catégorie majoritaire, quel que soit le point&hellip; On augmente alors le <strong>biais</strong> (ici, le biais est le préjudice en faveur du plus grand nombre). L&rsquo;ajustement ne suit plus les variations, on parle de sous-apprentissage (<strong>underfitting</strong>).</li>
 </ul>
 <p>Pour résumer :</p>
 <table>
@@ -1002,15 +1002,15 @@ Cela signifie qu&rsquo;on ne présuppose rien de particulier sur les données (�
 </tbody>
 </table>
 
-<div class="notices tip" ><p>Lorsqu&rsquo;on ne connaît rien sur les données, on peut toujours commencer par prendre la racine carrée du nombre de points dans l&rsquo;ensemble d&rsquo;entraînement.</p>
+<div class="notices tip" ><p>Lorsqu&rsquo;on ne connaît rien sur les données, on peut toujours commencer par prendre la racine carrée du nombre de points dans l&rsquo;ensemble d&rsquo;entraînement comme <em>k</em> de départ.</p>
 
 </div>
-<p>Le choix de k est donc affaire de compromis. Pour le rendre plus scientifique, on peut chercher à mesurer la performance de l&rsquo;algorithme pour différentes valeurs de k.</p>
+<p>Le choix de <em>k</em> est donc affaire de compromis. Pour le rendre plus scientifique, on peut chercher à mesurer la performance de l&rsquo;algorithme pour différentes valeurs de <em>k</em>.</p>
 <p>Mais comment mesure-t-on la <strong>performance d&rsquo;un algorithme d&rsquo;apprentissage automatique</strong> ?</p>
 <br>
 <h3 id="validation----matrice-de-confusion">Validation &ndash; Matrice de confusion</h3>
-<p>La <strong>matrice de confusion</strong> permet d&rsquo;évaluer la qualité des prédictions d&rsquo;un algorithme d&rsquo;aprentissage automatique.</p>
-<p>Prenons l&rsquo;exemple de l&rsquo;utilisation de KNN sur une banque d&rsquo;image de chiffres écrits à la main et plus spécifiquement concentrons-nous sur la capacité à reconnaître des &ldquo;3&rdquo;.</p>
+<p>La <strong>matrice de confusion</strong> permet d&rsquo;évaluer la qualité des prédictions d&rsquo;un algorithme.</p>
+<p>Prenons l&rsquo;exemple de l&rsquo;utilisation de KNN sur une banque d&rsquo;image de chiffres écrits à la main et plus spécifiquement concentrons-nous sur sa capacité à reconnaître des &ldquo;3&rdquo;.</p>
 <p><img src="/MnistExamples.png" alt=""></p>
 <p>On découpe l&rsquo;espace en 4 cadrans. Sur une dimension, on regroupe d&rsquo;un côté les données pertinentes (les 3) et de l&rsquo;autre le reste des données (les non 3), et on décompose l&rsquo;autre dimension en prédictions positives (les 3 prédits) et négatives (les non 3 prédits).</p>
 <p>Puis on compte dans chaque cadran le nombre de données correspondant au recouvrement des prédictions et de la réalité. Un nom issu du vocabulaire des diagnostics médicaux est attribué à chacun de ces cadrans :</p>
@@ -1052,7 +1052,7 @@ $$\frac{VP}{VP+FN}$$<br></p>
 </div>
 
 <div class="notices info" ><p>Un algorithme peut très bien être très précis (les prédictions positives sont bien des 3), mais peu sensible, avec un fort taux de rappel (parmi tous les 3, peu ont été identifiés).<br>
-À l&rsquo;inverse, on peu avoir une bonne sensibilité (la plupart des vrais 3 ont été identifiés comme tel), mais peu précis (beaucoup de chiffres identifiés comme des 3 sont en fait d&rsquo;autres chiffres).</p>
+À l&rsquo;inverse, on peut avoir une bonne sensibilité (la plupart des vrais 3 ont été identifiés comme tel), mais peu précis (beaucoup de chiffres identifiés comme des 3 sont en fait d&rsquo;autres chiffres).</p>
 
 </div>
 <p><img src="/matconfus.png?width=800px" alt=""></p>
@@ -1060,8 +1060,8 @@ $$\frac{VP}{VP+FN}$$<br></p>
 <div class="notices tip" ><p>On peut tout aussi bien définir la matrice de confusion avec les prédictions sur les lignes et la réalité sur les colonnes.</p>
 
 </div>
-<p>Maintenant qu&rsquo;on sait évaluer l&rsquo;algorithme, on peut chercher la valeur de <strong>k</strong> qui maximise l&rsquo;exactitude.<br>
-Dans le graphe ci-dessous, on a tracé l&rsquo;exactitude de l&rsquo;algorithme pour la reconnaissance des &ldquo;9&rdquo; en fonction de la valeur de <em>k</em>  (ce sont les mêmes jeux de données et d&rsquo;apprentissage que dans le TP).
+<p>Maintenant qu&rsquo;on sait évaluer l&rsquo;algorithme, cherchons la valeur de <strong>k</strong> qui maximise l&rsquo;exactitude.</p>
+<p>Dans le graphe ci-dessous, on a tracé l'<em>exactitude</em> de l&rsquo;algorithme pour la reconnaissance des &ldquo;9&rdquo; en fonction de la valeur de <em>k</em>  (ce sont les mêmes jeux de données test et d&rsquo;apprentissage que dans le TP).
 <img src="/meilleurk.png?width=600px" alt="">
 Si notre but est de reconnaître le mieux possible les 9 manuscrits, il semblerait que la valeur de <em>k</em> optimale soit 18.</p>
 <br>
@@ -2018,19 +2018,19 @@ potentiel <span style="color:#f92672">=</span> [sum(v[i:]) <span style="color:#6
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1660051362"></script>
-    <script src="/js/perfect-scrollbar.min.js?1660051362"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1660051362"></script>
-    <script src="/js/jquery.sticky.js?1660051362"></script>
-    <script src="/js/featherlight.min.js?1660051362"></script>
-    <script src="/js/highlight.pack.js?1660051362"></script>
+    <script src="/js/clipboard.min.js?1660051960"></script>
+    <script src="/js/perfect-scrollbar.min.js?1660051960"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1660051960"></script>
+    <script src="/js/jquery.sticky.js?1660051960"></script>
+    <script src="/js/featherlight.min.js?1660051960"></script>
+    <script src="/js/highlight.pack.js?1660051960"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1660051362"></script>
-    <script src="/js/learn.js?1660051362"></script>
-    <script src="/js/hugo-learn.js?1660051362"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1660051960"></script>
+    <script src="/js/learn.js?1660051960"></script>
+    <script src="/js/hugo-learn.js?1660051960"></script>
     
         
-            <script src="/mermaid/mermaid.js?1660051362"></script>
+            <script src="/mermaid/mermaid.js?1660051960"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
