@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1659974767" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1659974767" rel="stylesheet">
-    <link href="/css/hybrid.css?1659974767" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1659974767" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1659974767" rel="stylesheet">
-    <link href="/css/auto-complete.css?1659974767" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1659974767" rel="stylesheet">
-    <link href="/css/theme.css?1659974767" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1659974767" rel="stylesheet">
+    <link href="/css/nucleus.css?1660011338" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1660011338" rel="stylesheet">
+    <link href="/css/hybrid.css?1660011338" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1660011338" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1660011338" rel="stylesheet">
+    <link href="/css/auto-complete.css?1660011338" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1660011338" rel="stylesheet">
+    <link href="/css/theme.css?1660011338" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1660011338" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1659974767" rel="stylesheet">
+    <link href="/css/theme-green.css?1660011338" rel="stylesheet">
     
-    <link href="/css/foo.css?1659974767" rel="stylesheet"><link href="/css/bar.css?1659974767" rel="stylesheet">
+    <link href="/css/foo.css?1660011338" rel="stylesheet"><link href="/css/bar.css?1660011338" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1659974767"></script>
+    <script src="/js/jquery-3.3.1.min.js?1660011338"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1659974767"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1659974767"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1660011338"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1660011338"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1659974767"></script>
+<script type="text/javascript" src="/js/search.js?1660011338"></script>
 
     
   </div>
@@ -1110,22 +1110,24 @@ où $\mu_i$ est le barycentre des points dans $S_i$.</p>
 <p>Dans l&rsquo;exemple suivant, on obtient 3 partitionnements différents pour 3 initialisations différentes des centres.</p>
 <p><img src="/subopti.png?width=700px" alt=""></p>
 <p>On vérifie que les centres sont bien bloqués sur leur position dans les deux premiers cas puisqu&rsquo;aucun changement d&rsquo;attribution n&rsquo;est possible.</p>
-<p>De plus, KMeans ne se comporte pas très bien avec ds clusters de différentes tailles, différentes densités ou des formes non sphériques.</p>
+<p>De plus, KMeans ne se comporte pas très bien avec des clusters de différentes tailles, différentes densités ou des formes non sphériques.</p>
 <br>
 <h3 id="applications">Applications</h3>
-<p>K-Means ne présuppose rien sur les données et peeut s&rsquo;avérer par le fait très utiile pour les explorer. C&rsquo;est ainsi qu&rsquo;on l&rsquo;a déjà utilisé dans le TP3 lors de l&rsquo;analyse de l&rsquo;enquête mondiale sur le bonheur pour créer des groupes de pays similaires et tenter de comprendre ce qui les rassemble.</p>
-<p>On peut aussi utiliser K-Means pour segmenter une image par couleur, ce qui peut s&rsquo;avérer intéressant pour des données satellites par exemple. Le choix de <em>k</em> correspond alors au nombre de couleurs qu&rsquo;on veut garder.</p>
+<p>K-Means ne présuppose rien sur les données et peut s&rsquo;avérer, par le fait, très utile en première approche. C&rsquo;est bien ce rôle de défricheur que l&rsquo;algorithme a joué dans le TP3 lors de l&rsquo;analyse de l&rsquo;enquête mondiale sur le bonheur pour créer des groupes de pays similaires et tenter de comprendre ce qui les rassemble.</p>
+<p>L&rsquo;algorithme des k-moyennes permet de trancher des débats de la plus haute importance sur les couleurs comme  &ldquo;<font color=#00aaaa>est-ce plus vert que bleu ?</font>&rdquo; en organisant un combat entre le centroïde bleu et le centroïde vert.<br>
+Dans la même veine, on peut utiliser K-Means pour segmenter une image par couleur, ce qui peut s&rsquo;avérer intéressant pour des données satellites par exemple. Le choix de <em>k</em> correspond alors au nombre de couleurs qu&rsquo;on veut garder.</p>
 <p>L&rsquo;exemple ci-dessous est issu du TP :
 <img src="/moswebb.png" alt=""></p>
 <p>Sa simplicité rend K-Means parfait comme premier outil pour dégrossir les données, y compris sur des données déjà étiquetées. Cela permet de réduire leur dimensionnalité, avant d&rsquo;utiliser des algorithmes plus complexes d&rsquo;apprentissage supervisé.</p>
 <br>
 <h2 id="jeux-daccessibilité-sur-un-graphe">Jeux d&rsquo;accessibilité sur un graphe</h2>
-<p>Cette partie du cours a moins à voir avec les jeux vidéo qu&rsquo;avec la modélisation de systèmes réactifs (automate bancaire, système-environnement), les problèmes de contrôle, la théorie de la décision, les problèmes de routage sur Internet, l&rsquo;économie&hellip; Autant de domaînes admettant une description en terme d&rsquo;opposition entre adversaires sur une arêne (un des adversaires pouvant modéliser l&rsquo;environnement). La détermination d&rsquo;une stratégie gagnante résout alors le problème posé.</p>
+<p>Cette partie du cours a moins à voir avec les jeux vidéo qu&rsquo;avec la modélisation de systèmes réactifs (automate bancaire, système-environnement), les problèmes de contrôle, la théorie de la décision, les problèmes de routage sur Internet, l&rsquo;économie&hellip; Autant de domaînes admettant une description en terme d&rsquo;opposition entre adversaires sur une arêne (un des adversaires pouvant modéliser l&rsquo;environnement). La détermination d&rsquo;une stratégie gagnante résout alors le problème posé en assurant sa correction.</p>
+<br>
 <h3 id="larène">L&rsquo;arène</h3>
 <p>On entendra ici par jeu&amp;nbsp:</p>
 <ul>
 <li>des jeux à deux joueurs ($J_1$ et $J_2$ ou Eve et Adam)</li>
-<li>à <strong>information complète</strong> : les deux joueurs savent tout (pas comme aux cartes)</li>
+<li>à <strong>information complète</strong> : les deux joueurs savent tout (pas comme aux cartes)</li>
 <li><strong>alternés</strong> (pas comme à chifoumi)</li>
 <li><strong>non randomisés</strong> (pas de hasard)</li>
 </ul>
@@ -1136,25 +1138,25 @@ où $\mu_i$ est le barycentre des points dans $S_i$.</p>
 }
 </style>
 
-<div class="notices def"  id="bipa"  ><p>Un graphe bipartite (ou bipartite) $G$ est un graphe dont l&rsquo;ensemble des sommets peut être divisé en deux sous-ensembles de sommets disjoints $S_1$ et $S_2$ ($S_1$ et $S_2$ sont une partition de $S$ : $S_1\cup S_2=S$, $S_1\cap S_2=\varnothing$) tels que chaque arête de $G$ a une extrémité dans $S_1$ et l&rsquo;autre dans $S_2$.</p>
+<div class="notices def"  id="bipa"  ><p>Un graphe biparti (ou bipartite) $G$ est un graphe dont l&rsquo;ensemble des sommets peut être divisé en deux sous-ensembles de sommets disjoints $S_1$ et $S_2$ ($S_1$ et $S_2$ sont une partition de $S$ : $S_1\cup S_2=S$, $S_1\cap S_2=\varnothing$) tels que chaque arête de $G$ a une extrémité dans $S_1$ et l&rsquo;autre dans $S_2$.</p>
 
 </div>
 <p><img src="/animbipar.gif" alt=""></p>
 
-<div class="notices tip" ><p>Un graphe est bipartite si on peut colorier tous les sommets du graphe avec seulement deux couleurs de manière à ce que deux sommets voisins n&rsquo;est jamais la même couleur (2-coloriage).<br>
-On peut montrer qu&rsquo;un graphe est bipartite si et seulement si il ne possède pas de cycle de longueur 3.<br></p>
+<div class="notices tip" ><p>Un graphe est biparti si on peut colorier tous les sommets du graphe avec seulement deux couleurs de manière à ce que deux sommets voisins n&rsquo;aient jamais la même couleur (2-coloriage).<br>
+On peut montrer qu&rsquo;un graphe est biparti si et seulement si il ne possède pas de cycle de longueur 3.<br></p>
 
 </div>
 <blockquote>
-<p>Démonstration de graphe bipartite $\Leftrightarrow$ pas de cycle impair :</p>
+<p>Démonstration de &ldquo;graphe biparti $\Leftrightarrow$ pas de cycle impair&rdquo; :</p>
 <ul>
-<li>On montre $\Rightarrow$ en constatant l&rsquo;impossibilité d&rsquo;un 2-coloriage sur un cycle impair. Donc tout graphe contenant un cycle impair ne peut pas être bippartite.</li>
-<li>Et on montre $\Leftarrow$ en essayant de créer un 2-coloriage depuis un sommet ; tant qu&rsquo;on ne rencontre pas de cycle, pas de problème. Tous les sommets à une distance impair du sommet de départ sont coloriés d&rsquo;une couleur et tous ceux à une distance pair sont coloriés de l&rsquo;autre couleur.<br>
+<li>On montre $\Rightarrow$ en constatant l&rsquo;impossibilité d&rsquo;un 2-coloriage sur un cycle impair. Donc tout graphe contenant un cycle impair ne peut pas être bipartite.</li>
+<li>Et on montre $\Leftarrow$ en essayant de créer un 2-coloriage depuis un sommet ; tant qu&rsquo;on ne rencontre pas de cycle, pas de problème. Tous les sommets à une distance impaire du sommet de départ sont coloriés d&rsquo;une couleur et tous ceux à une distance paire sont coloriés de l&rsquo;autre couleur.<br>
 Donc un graphe sans cycle est toujours bipartite.<br>
 Place aux cycles maintenant. Supposons que deux des chemins partant d&rsquo;un sommet se rejoignent, alors on a deux possibilités :
 <ul>
 <li>la jonction se fait entre deux sommets de couleurs différentes et le 2-coloriage reste possible.<br>
-Dans ce cas, on joint un chemin de longueur pair et un chemin de longueur impair, ce qui donne un cycle de longueur pair avec le +1 de l&rsquo;arête de la jonction.</li>
+Dans ce cas, on joint un chemin de longueur pair et un chemin de longueur impair, ce qui donne un cycle de longueur pair (avec le +1 de l&rsquo;arête de la jonction).</li>
 <li>la jonction se fait entre sommets de la même couleur rendant impossible le 2-coloriage.<br>
 Dans ce deuxième cas, on obtient nécessairement un cycle de longueur impair puisqu&rsquo;on joint deux chemins de la même parité (+ 1 de l&rsquo;arête de jonction).
 Seul les cycles impairs font donc échouer le 2-coloriage. Tout graphe non bipartite contient au moins un cycle impair.</li>
@@ -1162,19 +1164,21 @@ Seul les cycles impairs font donc échouer le 2-coloriage. Tout graphe non bipar
 </li>
 </ul>
 </blockquote>
-<p>Retournons au jeu. On a donc deux joueurs $J_1$ et $J_2$ sur un graphe orienté biparti $G=(S,A)$ où $S$ est constitué des sommets contrôles par le joueur 1, $S_1$, et de ceux contrôlés par le joueur 2, $S_2$. Chaque sommet est une position possible du jeu et chaque arête est un mouvement possible entre ces positions.</p>
+<p>Retournons aux jeux&hellip;<br>
+Deux joueurs, $J_1$ et $J_2$, s&rsquo;affrontent sur un graphe orienté biparti $G=(S,A)$ où $S$ est constitué des sommets contrôles par le joueur 1, $S_1$, et de ceux contrôlés par le joueur 2, $S_2$. Chaque sommet est une position possible du jeu et chaque arête est un mouvement possible entre ces positions.</p>
 <p>Il manque encore une condition de gain pour rendre le jeu intéressant ; dans le cas d&rsquo;un <strong>jeu d&rsquo;accessibilité</strong>, on attribue à chaque joueur un sous-ensemble de sommets correspondant à des états gagnants qu&rsquo;il convient d&rsquo;atteindre pour&hellip; gagner. Il peut aussi exister un sous-ensemble de sommets correspondant à des états de partie nulle.</p>
 <p>Un jeu d&rsquo;accessibilité est alors défini par un quadruplet $(G,S_1,S_2,F)$ où $(G,S_1,S_2)$ est une arène et $F$ est l&rsquo;ensemble des sommets gagnants pour $J_1$.</p>
 <br>
 <h3 id="exemples">Exemples</h3>
 <h4 id="chomp">Chomp</h4>
 <p>Chomp est un jeu où les deux adversaires mangent à tour de rôle des carrés de chocolat d&rsquo;une tablette avec la &ldquo;contrainte&rdquo; de manger tous les carrés à droite et au-dessus du carré choisi. Le perdant doit manger le brocoli qui reste à la fin.</p>
-<p>Eve commence le jeu avec la tablette ci-dessous composé de 5 carrés. Il existe alors 9 configurations possibles de la tablett, pas toutes atteignables par les deux joueurs. Traçons l&rsquo;arène (les ronds bleus sont pour Eve et les carrés roses pour Adam).</p>
-<p>$F$ est le carré rose avec un brocoli puisque l&rsquo;atteindre signifie qu&rsquo;Adam se retrouve avec le légume.</p>
+<p>Eve commence le jeu avec la tablette ci-dessous composé de 5 carrés. Il existe alors 9 configurations possibles, pas toutes atteignables par les deux joueurs.</p>
+<p>Traçons l&rsquo;arène (les ronds bleus sont pour Eve et les carrés roses pour Adam).</p>
+<p>$F$ (sommet gagnant pour Eve) est le carré rose avec un brocoli puisque l&rsquo;atteindre signifie qu&rsquo;Adam se retrouve avec le légume à manger.</p>
 <p><img src="/chompintro.gif" alt=""></p>
 <br>
 <h4 id="une-des-nombreuses-variantes-du-jeu-de-nim">Une des nombreuses variantes du jeu de Nim</h4>
-<p>Un tas d&rsquo;allumettes est disposé devant Eve et Adam. Eve joue en premier et peu retirer autant d&rsquo;allumettes qu&rsquo;elle le souhaite du moment qu&rsquo;elle en prend au moins une et qu&rsquo;elle en laisse au moins une. C&rsquo;est ensuite au tour d&rsquo;Adam de retirer des allumettes avec pour tous les tours qui suivent une contrainte supplémentaire : on ne peut pas retirer plus de deux fois le nombres d&rsquo;allumettes prises par son adversaire au tour précédent. Le joueur qui retire la dernière allumette gagne. Il n&rsquo;y a pas de match nul.</p>
+<p>Un tas d&rsquo;allumettes est disposé devant Eve et Adam. Eve joue en premier et peut retirer autant d&rsquo;allumettes qu&rsquo;elle le souhaite du moment qu&rsquo;elle en prend au moins une et qu&rsquo;elle en laisse au moins une. C&rsquo;est ensuite au tour d&rsquo;Adam de retirer des allumettes avec pour tous les tours qui suivent une contrainte supplémentaire : on ne peut pas retirer plus de deux fois le nombre d&rsquo;allumettes prises par son adversaire au tour précédent. Le joueur qui retire la dernière allumette gagne. Il n&rsquo;y a pas de match nul.</p>
 <p>Traçons le graphe du jeu en supposant que l&rsquo;on commence avec 5 allumettes et étiquetons les sommets avec le couple (nombre d&rsquo;allumettes présentes, nombres d&rsquo;allumettes prenables). L&rsquo;étiquette du nœud de départ est donc (5,4).<br>
 On a indiqué en jaune le sommet à atteindre pour Eve (sommet de $F$).</p>
 <p><img src="/variantenim.png?width=600px" alt=""></p>
@@ -2014,19 +2018,19 @@ potentiel <span style="color:#f92672">=</span> [sum(v[i:]) <span style="color:#6
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1659974767"></script>
-    <script src="/js/perfect-scrollbar.min.js?1659974767"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1659974767"></script>
-    <script src="/js/jquery.sticky.js?1659974767"></script>
-    <script src="/js/featherlight.min.js?1659974767"></script>
-    <script src="/js/highlight.pack.js?1659974767"></script>
+    <script src="/js/clipboard.min.js?1660011338"></script>
+    <script src="/js/perfect-scrollbar.min.js?1660011338"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1660011338"></script>
+    <script src="/js/jquery.sticky.js?1660011338"></script>
+    <script src="/js/featherlight.min.js?1660011338"></script>
+    <script src="/js/highlight.pack.js?1660011338"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1659974767"></script>
-    <script src="/js/learn.js?1659974767"></script>
-    <script src="/js/hugo-learn.js?1659974767"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1660011338"></script>
+    <script src="/js/learn.js?1660011338"></script>
+    <script src="/js/hugo-learn.js?1660011338"></script>
     
         
-            <script src="/mermaid/mermaid.js?1659974767"></script>
+            <script src="/mermaid/mermaid.js?1660011338"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
