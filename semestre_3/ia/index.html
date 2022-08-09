@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1660012164" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1660012164" rel="stylesheet">
-    <link href="/css/hybrid.css?1660012164" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1660012164" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1660012164" rel="stylesheet">
-    <link href="/css/auto-complete.css?1660012164" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1660012164" rel="stylesheet">
-    <link href="/css/theme.css?1660012164" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1660012164" rel="stylesheet">
+    <link href="/css/nucleus.css?1660012607" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1660012607" rel="stylesheet">
+    <link href="/css/hybrid.css?1660012607" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1660012607" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1660012607" rel="stylesheet">
+    <link href="/css/auto-complete.css?1660012607" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1660012607" rel="stylesheet">
+    <link href="/css/theme.css?1660012607" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1660012607" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1660012164" rel="stylesheet">
+    <link href="/css/theme-green.css?1660012607" rel="stylesheet">
     
-    <link href="/css/foo.css?1660012164" rel="stylesheet"><link href="/css/bar.css?1660012164" rel="stylesheet">
+    <link href="/css/foo.css?1660012607" rel="stylesheet"><link href="/css/bar.css?1660012607" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1660012164"></script>
+    <script src="/js/jquery-3.3.1.min.js?1660012607"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1660012164"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1660012164"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1660012607"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1660012607"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1660012164"></script>
+<script type="text/javascript" src="/js/search.js?1660012607"></script>
 
     
   </div>
@@ -1191,7 +1191,7 @@ On a indiqué en jaune le sommet à atteindre pour Eve (sommet de $F$).</p>
 <h4 id="morpion-tic-tac-toe">Morpion (tic-tac-toe)</h4>
 <p>Pas besoin de rappeler les règles du morpion (oxo en belgique).<br>
 Dans cet exemple, Eve démarre sur un jeu déjà avancé, elle a les ronds.<br>
-Pour une fois, $F$ contient plusieurs sommets (toujours indiqués en jaune).</p>
+Cette fois-ci, $F$ contient plusieurs sommets (toujours indiqués en jaune).</p>
 <p><img src="/graphetictac1.png?width=1000px" alt=""></p>
 <br>
 <h3 id="stratégie">Stratégie</h3>
@@ -1200,10 +1200,10 @@ Pour une fois, $F$ contient plusieurs sommets (toujours indiqués en jaune).</p>
 <h4 id="positions-gagnantes-et-attracteurs">Positions gagnantes et attracteurs</h4>
 <p>Pour déterminer l&rsquo;ensemble des positions gagnantes pour Eve sur l&rsquo;arène, on travaille récursivement depuis les sommets de $F$ en suivant les préceptes suivants :</p>
 <ul>
-<li>un sommet d&rsquo;Eve est gagnant si un de ses arcs sortants le lie à un sommet gagnant.<br>
+<li>un sommet d&rsquo;Eve est gagnant si <strong>un</strong> de ses arcs sortants le lie à un sommet gagnant.<br>
 Eve n&rsquo;a alors plus qu&rsquo;à emprunter ce chemin.<br>
 <img src="/sommetgagnant1.png?width=200px" alt=""></li>
-<li>un sommet d&rsquo;Adam est gagnant (pour Eve) si tous ses arcs sortants le lie à un sommet gagnant.<br>
+<li>un sommet d&rsquo;Adam est gagnant (pour Eve) si <strong>tous</strong> ses arcs sortants le lie à un sommet gagnant.<br>
 En effet, Adam ne peut alors pas éviter de mettre Eve dans une position gagnante.
 <img src="/sommetgagnant2.png?width=200px" alt=""></li>
 </ul>
@@ -1218,9 +1218,9 @@ Tout sommet dans l&rsquo;attracteur est une <strong>position gagnante</strong> p
 <p>Le complémentaire d&rsquo;un attracteur est appelé <strong>piège</strong>. Si le joueur 1 est sur une position n&rsquo;appartenant pas à son attracteur (et donc à son piège), cela signifie que :</p>
 <ul>
 <li>si c&rsquo;est son tour, tous les mouvements possibles restent dans le piège</li>
-<li>si c&rsquo;est le tour de l&rsquo;adversaire, au moins un des ses mouvements possibles permet de laisser 1 dans le piège.</li>
+<li>si c&rsquo;est le tour de l&rsquo;adversaire, celui-ci a toujours au moins une possibilité de laisser 1 dans le piège.</li>
 </ul>
-<p>Cette position est donc perdante.</p>
+<p>Cette position est donc perdante&hellip;</p>
 <br>
 <h5 id="détermination-à-la-main-de-lattracteur-dans-les-exemples-précédents">Détermination &ldquo;à la main&rdquo; de l&rsquo;attracteur dans les exemples précédents</h5>
 <p>L&rsquo;attracteur dans l&rsquo;exemple du jeu Chomp contient 9 sommets, dont le somme de départ.</p>
@@ -1231,7 +1231,7 @@ Tout sommet dans l&rsquo;attracteur est une <strong>position gagnante</strong> p
 <p><img src="/morpionattr.gif" alt=""></p>
 <br>
 <h5 id="programme-permettant-de-calculer-lattracteur">Programme permettant de calculer l&rsquo;attracteur</h5>
-<p>On peut écrire un programme récursif calculant l&rsquo;attracteur en temps linéaire en $|S | + |A|$. Pour éviter de calculer plusieurs fois le même élément, l&rsquo;algorithme tient à jour pour chaque sommet $s$ (sous la forme d&rsquo;un dictionnaire) , un compteur <code>n</code> des successeurs non encore inspectés .</p>
+<p>On peut écrire un programme récursif calculant l&rsquo;attracteur en temps linéaire en $|S | + |A|$. Pour éviter de calculer plusieurs fois le même élément, l&rsquo;algorithme tient à jour, pour chaque sommet $s$, un compteur <code>n</code> des successeurs non encore inspectés (sous la forme d&rsquo;un dictionnaire) .</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">attracteur</span>(G: dict, F: list) <span style="color:#f92672">-&gt;</span> list:
     <span style="color:#e6db74">&#34;&#34;&#34;
 </span><span style="color:#e6db74">    préconditions : G est est un graphe sous forme de liste d&#39;adjacence implémentée par un dictionnaire
@@ -2018,19 +2018,19 @@ potentiel <span style="color:#f92672">=</span> [sum(v[i:]) <span style="color:#6
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1660012164"></script>
-    <script src="/js/perfect-scrollbar.min.js?1660012164"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1660012164"></script>
-    <script src="/js/jquery.sticky.js?1660012164"></script>
-    <script src="/js/featherlight.min.js?1660012164"></script>
-    <script src="/js/highlight.pack.js?1660012164"></script>
+    <script src="/js/clipboard.min.js?1660012607"></script>
+    <script src="/js/perfect-scrollbar.min.js?1660012607"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1660012607"></script>
+    <script src="/js/jquery.sticky.js?1660012607"></script>
+    <script src="/js/featherlight.min.js?1660012607"></script>
+    <script src="/js/highlight.pack.js?1660012607"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1660012164"></script>
-    <script src="/js/learn.js?1660012164"></script>
-    <script src="/js/hugo-learn.js?1660012164"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1660012607"></script>
+    <script src="/js/learn.js?1660012607"></script>
+    <script src="/js/hugo-learn.js?1660012607"></script>
     
         
-            <script src="/mermaid/mermaid.js?1660012164"></script>
+            <script src="/mermaid/mermaid.js?1660012607"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
