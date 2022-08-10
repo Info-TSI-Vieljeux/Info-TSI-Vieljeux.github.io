@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1660060589" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1660060589" rel="stylesheet">
-    <link href="/css/hybrid.css?1660060589" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1660060589" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1660060589" rel="stylesheet">
-    <link href="/css/auto-complete.css?1660060589" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1660060589" rel="stylesheet">
-    <link href="/css/theme.css?1660060589" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1660060589" rel="stylesheet">
+    <link href="/css/nucleus.css?1660144255" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1660144255" rel="stylesheet">
+    <link href="/css/hybrid.css?1660144255" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1660144255" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1660144255" rel="stylesheet">
+    <link href="/css/auto-complete.css?1660144255" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1660144255" rel="stylesheet">
+    <link href="/css/theme.css?1660144255" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1660144255" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1660060589" rel="stylesheet">
+    <link href="/css/theme-green.css?1660144255" rel="stylesheet">
     
-    <link href="/css/foo.css?1660060589" rel="stylesheet"><link href="/css/bar.css?1660060589" rel="stylesheet">
+    <link href="/css/foo.css?1660144255" rel="stylesheet"><link href="/css/bar.css?1660144255" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1660060589"></script>
+    <script src="/js/jquery-3.3.1.min.js?1660144255"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1660060589"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1660060589"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1660144255"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1660144255"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1660060589"></script>
+<script type="text/javascript" src="/js/search.js?1660144255"></script>
 
     
   </div>
@@ -1150,28 +1150,32 @@ Dans la même veine, on peut utiliser <em>k</em>-moyennes pour <strong>segmenter
 <p><img src="/animbipar.gif" alt=""></p>
 
 <div class="notices tip" ><p>Un graphe est biparti si on peut colorier tous les sommets du graphe avec seulement deux couleurs de manière à ce que deux sommets voisins n&rsquo;aient jamais la même couleur (on parle alors de <strong>2-coloriage</strong>).<br>
-On peut montrer qu&rsquo;un graphe est biparti si et seulement si il ne possède pas de cycle de longueur 3.<br></p>
+On peut montrer qu&rsquo;un graphe est biparti si et seulement si il ne possède pas de cycle de longueur impaire.<br></p>
 
 </div>
 <blockquote>
 <p>Démonstration de &ldquo;graphe biparti $\Leftrightarrow$ pas de cycle impair&rdquo; :</p>
 <ul>
-<li>On montre $\Rightarrow$ en constatant l&rsquo;impossibilité d&rsquo;un 2-coloriage sur un cycle impair. Donc tout graphe contenant un cycle impair ne peut pas être bipartite.</li>
-<li>Et on montre $\Leftarrow$ en essayant de créer un 2-coloriage depuis un sommet ; tant qu&rsquo;on ne rencontre pas de cycle, pas de problème. Tous les sommets à une distance impaire du sommet de départ sont coloriés d&rsquo;une couleur et tous ceux à une distance paire sont coloriés de l&rsquo;autre couleur.<br>
-Donc un graphe sans cycle est toujours bipartite.<br>
-Place aux cycles maintenant. Supposons que deux des chemins partant d&rsquo;un sommet se rejoignent, alors on a deux possibilités :
+<li>
+<p>On montre $\Rightarrow$ en constatant l&rsquo;impossibilité d&rsquo;un 2-coloriage sur un cycle impair. <em>Donc tout graphe contenant un cycle impair ne peut pas être biparti.</em></p>
+</li>
+<li>
+<p>Et on montre $\Leftarrow$ en essayant de créer un 2-coloriage depuis un sommet ; tant qu&rsquo;on ne rencontre pas de cycle, pas de problème.<br>
+Tous les sommets à une distance impaire du sommet de départ sont coloriés d&rsquo;une couleur et tous ceux à une distance paire sont coloriés de l&rsquo;autre couleur.<br>
+Donc un graphe sans cycle est toujours biparti.<br>
+Place aux cycles maintenant. Supposons que deux des chemins partant d&rsquo;un sommet se rejoignent, alors on a deux possibilités :</p>
 <ul>
 <li>la jonction se fait entre deux sommets de couleurs différentes et le 2-coloriage reste possible.<br>
 Dans ce cas, on joint un chemin de longueur pair et un chemin de longueur impair, ce qui donne un cycle de longueur pair (avec le +1 de l&rsquo;arête de la jonction).</li>
 <li>la jonction se fait entre sommets de la même couleur rendant impossible le 2-coloriage.<br>
-Dans ce deuxième cas, on obtient nécessairement un cycle de longueur impair puisqu&rsquo;on joint deux chemins de la même parité (+ 1 de l&rsquo;arête de jonction).
-Seul les cycles impairs font donc échouer le 2-coloriage. Tout graphe non bipartite contient au moins un cycle impair.</li>
+Dans ce deuxième cas, on obtient nécessairement un cycle de longueur impaire puisqu&rsquo;on joint deux chemins de la même parité (+ 1 de l&rsquo;arête de jonction).<br></li>
 </ul>
+<p>Seuls les cycles impairs font donc échouer le 2-coloriage. <em>Tout graphe non biparti contient au moins un cycle impair.</em></p>
 </li>
 </ul>
 </blockquote>
 <p>Retournons aux jeux&hellip;<br>
-Deux joueurs, $J_1$ et $J_2$, s&rsquo;affrontent sur un graphe orienté biparti $G=(S,A)$ où $S$ est constitué des sommets contrôles par le joueur 1, $S_1$, et de ceux contrôlés par le joueur 2, $S_2$. Chaque sommet est une position possible du jeu et chaque arête est un mouvement possible entre ces positions.</p>
+Deux joueurs, $J_1$ et $J_2$, s&rsquo;affrontent sur un graphe orienté biparti $G=(S,A)$ où $S$ est constitué des sommets contrôles par le joueur 1, $S_1$, et de ceux contrôlés par le joueur 2, $S_2$. Chaque sommet est une position valide du jeu et chaque arête est un mouvement autorisé entre ces positions.</p>
 <p>Il manque encore une condition de gain pour rendre le jeu intéressant ; dans le cas d&rsquo;un <strong>jeu d&rsquo;accessibilité</strong>, on attribue à chaque joueur un sous-ensemble de sommets correspondant à des états gagnants qu&rsquo;il convient d&rsquo;atteindre pour&hellip; gagner. Il peut aussi exister un sous-ensemble de sommets correspondant à des états de partie nulle.</p>
 <p>Un jeu d&rsquo;accessibilité est alors défini par un quadruplet $(G,S_1,S_2,F)$ où $(G,S_1,S_2)$ est une arène et $F$ est l&rsquo;ensemble des sommets gagnants pour $J_1$.</p>
 <br>
@@ -1179,7 +1183,7 @@ Deux joueurs, $J_1$ et $J_2$, s&rsquo;affrontent sur un graphe orienté biparti 
 <h4 id="chomp">Chomp</h4>
 <p>Chomp est un jeu où les deux adversaires mangent à tour de rôle des carrés de chocolat d&rsquo;une tablette avec la &ldquo;contrainte&rdquo; de manger tous les carrés à droite et au-dessus du carré choisi. Le perdant doit manger le brocoli qui reste à la fin.</p>
 <p>Eve commence le jeu avec la tablette ci-dessous composé de 5 carrés. Il existe alors 9 configurations possibles, pas toutes atteignables par les deux joueurs.</p>
-<p>Traçons l&rsquo;arène (les ronds bleus sont pour Eve et les carrés roses pour Adam).</p>
+<p>Traçons l&rsquo;arène (les ronds bleus sont les positions contrôlées par Eve et les carrés roses par Adam).</p>
 <p>$F$ (sommet gagnant pour Eve) est le carré rose avec un brocoli puisque l&rsquo;atteindre signifie qu&rsquo;Adam se retrouve avec le légume à manger.</p>
 <p><img src="/chompintro.gif" alt=""></p>
 <br>
@@ -1188,7 +1192,7 @@ Deux joueurs, $J_1$ et $J_2$, s&rsquo;affrontent sur un graphe orienté biparti 
 <p>Traçons le graphe du jeu en supposant que l&rsquo;on commence avec 5 allumettes et étiquetons les sommets avec le couple (nombre d&rsquo;allumettes présentes, nombres d&rsquo;allumettes prenables). L&rsquo;étiquette du nœud de départ est donc (5,4).<br>
 On a indiqué en jaune le sommet à atteindre pour Eve (sommet de $F$).</p>
 <p><img src="/variantenim.png?width=600px" alt=""></p>
-<p>Le graphe est ici plutôt simple, mais on verra dans le TP que pour des nombres d&rsquo;allumettes plus grand, on sera content de pouvoir confier la tâche de sa construction à python.</p>
+<p>Le graphe est ici plutôt simple, mais on verra <a href="http://localhost:1313/semestre_3/tp13/#jeux-daccessibilit%C3%A9-%C3%A0-deux-joueurs">dans le TP</a> que pour des nombres d&rsquo;allumettes plus grand, on sera content de pouvoir confier la tâche de sa construction à python.</p>
 
 <div class="notices tip" ><p>Ce jeu est une variante du jeu de Nim (voir TP) comme en fait tout jeu impartial à deux joueurs (théorème de Sprague-Grundy). Un <strong>jeu impartial</strong> est un jeu tour par tour dans lequel les coups autorisés, ainsi que les gains obtenus, dépendent uniquement de la position, et pas du joueur dont c&rsquo;est le tour. C&rsquo;est le cas de Chomp qui est donc, lui aussi, un jeu de Nim déguisé&hellip; Un jeu qui n&rsquo;est pas impartial est appelé <strong>jeu partisan</strong> (le morpion ou les échecs par exemple).</p>
 
@@ -1204,7 +1208,7 @@ Cette fois-ci, $F$ contient plusieurs sommets (toujours indiqués en jaune).</p>
 <p>Gagner la partie, c&rsquo;est arriver sur un sommet de $F$. Comment savoir si Eve peut ou non gagner selon sa position de départ ? Et si elle le peut, comment mettre au point pour elle une stratégie gagnante ?</p>
 <br>
 <h4 id="positions-gagnantes-et-attracteurs">Positions gagnantes et attracteurs</h4>
-<p>Pour déterminer l&rsquo;ensemble des positions gagnantes pour Eve sur l&rsquo;arène, on travaille récursivement depuis les sommets de $F$ en suivant les préceptes suivants :</p>
+<p>Pour déterminer l&rsquo;ensemble des positions gagnantes pour Eve sur l&rsquo;arène, on travaille récursivement depuis les sommets de $F$ en suivant les deux préceptes suivants :</p>
 <ul>
 <li>un sommet d&rsquo;Eve est gagnant si <strong>un</strong> de ses arcs sortants le lie à un sommet gagnant.<br>
 Eve n&rsquo;a alors plus qu&rsquo;à emprunter ce chemin.<br>
@@ -1214,16 +1218,16 @@ En effet, Adam ne peut alors pas éviter de mettre Eve dans une position gagnant
 <img src="/sommetgagnant2.png?width=200px" alt=""></li>
 </ul>
 <p>Formalisons un peu tout ça en définissant la suite $Attr_i(F)$ qui contient l&rsquo;ensemble des sommets gagnants après $i$ étapes :
-$$ \begin{array}{lll} Attr_0(F) &amp;= &amp;F \\  Attr_{i+1}(F) &amp;= &amp;Attr_{i}(F) \\ &amp;&amp;\cup \{s \in S_1|Succ(s)\cap Attr_i(F) = \varnothing \} \\ &amp;&amp;\cup \{s\in S_2| Succ(s)\subseteq Attr_i(F)\} \end{array} $$
+$$ \begin{array}{lll} Attr_0(F) &amp;= &amp;F \\  Attr_{i+1}(F) &amp;= &amp;Attr_{i}(F) \\ &amp;&amp;\cup \{s \in S_1|Succ(s)\cap Attr_i(F) ≠ \varnothing \} \\ &amp;&amp;\cup \{s\in S_2| Succ(s)\subseteq Attr_i(F)\} \end{array} $$
 Étant donné que $Attr_i(F) \subseteq Attr_{i+1}(F) \subseteq S$, pour tout $i≥0$, si on suppose le graphe fini, la suite est croissante et bornée et donc stationnaire (à partir d&rsquo;un certain $i=i_0$, $Attr_i(F)$ est constante, et si $|G|=n$, $i_0$ vaut au plus $n-1$).</p>
 
-<div class="notices info" ><p>On appelle <strong>attracteur</strong> de $F$ pour le joueur $J_1$  la limite de $A_i(F)$. On le note $A(F)$.<br>
+<div class="notices info" ><p>On appelle <strong>attracteur</strong> de $F$ pour le joueur $J_1$  la limite de $Attr_i(F)$. On le note $Attr(F)$.<br>
 Tout sommet dans l&rsquo;attracteur est une <strong>position gagnante</strong> pour $J_1$.</p>
 
 </div>
 <p>Le complémentaire d&rsquo;un attracteur est appelé <strong>piège</strong>. Si le joueur 1 est sur une position n&rsquo;appartenant pas à son attracteur (et donc à son piège), cela signifie que :</p>
 <ul>
-<li>si c&rsquo;est son tour, tous les mouvements possibles restent dans le piège</li>
+<li>si c&rsquo;est son tour, tous les mouvements possibles restent dans le piège,</li>
 <li>si c&rsquo;est le tour de l&rsquo;adversaire, celui-ci a toujours au moins une possibilité de laisser 1 dans le piège.</li>
 </ul>
 <p>Cette position est donc perdante&hellip;</p>
@@ -1231,13 +1235,13 @@ Tout sommet dans l&rsquo;attracteur est une <strong>position gagnante</strong> p
 <h5 id="détermination-à-la-main-de-lattracteur-dans-les-exemples-précédents">Détermination &ldquo;à la main&rdquo; de l&rsquo;attracteur dans les exemples précédents</h5>
 <p>L&rsquo;attracteur dans l&rsquo;exemple du jeu Chomp contient 9 sommets, dont le somme de départ.</p>
 <p><img src="/chompattract.gif" alt=""></p>
-<p>Dans le cas de la variante de Nim, l&rsquo;attracteur se réduit à $Attr(G) = \{(0,0) , (1,1) , (2,2) \}$.</p>
+<p>Dans le cas de la variante de Nim, l&rsquo;attracteur se réduit à $Attr(G) = \{(0,0,1) , (1,1,0) , (2,2,0) \}$ où la troisième valeur des triplets correspond au joueur qui contôle le sommet (0 pour Eve et 1 pour Adam). Le sommet de départ $(5,4,0)$ n&rsquo;est pas dans $F$.</p>
 <p><img src="/nimvarattr.png?width=600px" alt=""></p>
-<p>Enfin, sur l&rsquo;exemple du morpion, l&rsquo;attracteur contient 13 sommets.</p>
+<p>Enfin, sur l&rsquo;exemple du morpion, l&rsquo;attracteur contient 13 sommets dont celui de départ.</p>
 <p><img src="/morpionattr.gif" alt=""></p>
 <br>
 <h5 id="programme-permettant-de-calculer-lattracteur">Programme permettant de calculer l&rsquo;attracteur</h5>
-<p>On peut écrire un programme récursif calculant l&rsquo;attracteur en temps linéaire en $|S | + |A|$. Pour éviter de calculer plusieurs fois le même élément, l&rsquo;algorithme tient à jour, pour chaque sommet $s$, un compteur <code>n</code> des successeurs non encore inspectés (sous la forme d&rsquo;un dictionnaire) .</p>
+<p>On peut écrire un programme récursif calculant l&rsquo;attracteur en temps linéaire en $|S | + |A|$ (<a href="https://info-tsi-vieljeux.github.io/semestre_2/graphes/#parcours-dun-graphe">rappelons-nous</a> que le parcours complet d&rsquo;un graphe est au mieux en $O(|S | + |A|)$ car cela correspond à parcourir les $|S|$ sommets et les $|A|$ arêtes). Pour éviter de calculer plusieurs fois le même élément, l&rsquo;algorithme tient à jour, pour chaque sommet $s$, un compteur <code>n</code> des successeurs non encore inspectés (sous la forme d&rsquo;un dictionnaire) .</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">attracteur</span>(G: dict, F: list) <span style="color:#f92672">-&gt;</span> list:
     <span style="color:#e6db74">&#34;&#34;&#34;
 </span><span style="color:#e6db74">    préconditions : G est est un graphe sous forme de liste d&#39;adjacence implémentée par un dictionnaire
@@ -1270,26 +1274,25 @@ Tout sommet dans l&rsquo;attracteur est une <strong>position gagnante</strong> p
 </style>
 
 <div class="notices def"  id="moryless"  ><p>Une <strong>stratégie sans mémoire</strong> est une fonction $\sigma$ qui assigne un mouvement autorisé à un joueur pour chaque position non terminale : $\forall s\in S, (s,\sigma(s))\in A.$<br>
-Un joueur sur une position $s$ suit une stratégie s&rsquo;il emprunte le chemin $&lt;s,\sigma(s),\sigma^2(s),\ldots&gt;$
-Elle est dite sans mémoire car pour une position donnée, la stratégie est indépendante du chemin qui y a mené ($\sigma$ ne dépend que du sommet).<br>
-Une <strong>stratégie sans mémoire gagnante</strong> depuis une position donnée garantit la victoire au joueur en un nombre de coup limité. Pour le joueur 1, une stratégie gagnante garantit d&rsquo;arriver sur un sommet de $F$. Mais suivant la position de départ, une telle stratégie n&rsquo;existe pas forcément&hellip;</p>
+Un joueur sur une position $s$ suit une stratégie s&rsquo;il emprunte le chemin $&lt;s,\sigma(s),\sigma^2(s),\ldots&gt;$. Elle est dite sans mémoire car pour une position donnée, la stratégie est indépendante du chemin qui y a mené ($\sigma$ ne dépend que du sommet).<br>
+Une <strong>stratégie sans mémoire gagnante</strong> depuis une position donnée garantit la victoire au joueur en un nombre de coups limité. Pour le joueur 1, une stratégie gagnante garantit d&rsquo;arriver sur un sommet de $F$. Mais suivant la position de départ, une telle stratégie n&rsquo;existe pas forcément&hellip;</p>
 
 </div>
-<p>En construisant l&rsquo;attracteur, on répond à notre première question : la position d&rsquo;Eve est-elle gagnante ? Il suffit de vérifier qu&rsquo;elle appartient à l&rsquo;attracteur.<br>
-Si c&rsquo;est le cas, une stratégie gagnante est facile à mettre en place. Il faut faire en sorte que chaque déplacement sur le graphe (chaque coup joué) se fasse vers un sommet de l&rsquo;attracteur. Chaque coup d&rsquo;Eve vers un sommet de l&rsquo;attracteur oblige le coup d&rsquo;Adam a retomber aussi vers un sommet de l&rsquo;attracteur.<br>
+<p>En construisant l&rsquo;attracteur, on répond à notre première question : <strong>la position d&rsquo;Eve est-elle gagnante ? Il suffit de vérifier qu&rsquo;elle appartient à l&rsquo;attracteur.</strong><br>
+Si c&rsquo;est le cas, une stratégie gagnante est facile à mettre en place ; il faut faire en sorte que chaque déplacement sur le graphe (chaque coup joué) se fasse vers un sommet de l&rsquo;attracteur. Chaque coup d&rsquo;Eve vers un sommet de l&rsquo;attracteur piège aussi le coup suivant d&rsquo;Adam dans l&rsquo;attracteur.<br>
 Comme son nom l&rsquo;indique, l&rsquo;attracteur attire irrémédiablement vers $F$, assurant la victoire au joueur 1.</p>
-<p>Le joueur 2 aussi bien sûr a son attracteur, et il appartient au complémentaire de l&rsquo;attracteur du joueur 1 qui est un piège pour lui. Donc un seul écart du joueur 1 en dehors de son attracteur, et s&rsquo;en est fini pour lui, le joueur 2 peut le condanner à rester dans le piège.
+<p>Le joueur 2 aussi, bien sûr, a son attracteur, et il appartient au complémentaire de l&rsquo;attracteur du joueur 1, piège du joueur 1. Donc un seul écart du joueur 1 en dehors de son attracteur, et s&rsquo;en est fini pour lui, le joueur 2 peut le condanner à rester dans le piège.
 <img src="https://i.gifer.com/5LG3.gif" alt=""></p>
 <p>Revenons à nos exemples :</p>
 <ul>
-<li>Pour Chomp, le joueur 1 appartient à l&rsquo;attracteur, ce qui signifie que sa position de départ est gagnante. Par conséquent, il a une stratégie gagnante. Maisattention à ne pas se tromper au début ! Le seul mouvement assurant la victoire est de manger le carré en haut à droite.</li>
+<li>Pour Chomp, le joueur 1 appartient à l&rsquo;attracteur, ce qui signifie que sa position de départ est gagnante. Par conséquent, il a une stratégie gagnante. Mais attention à ne pas se tromper au début ! Sur 5 mouvements possibles, le seul assurant la victoire est de manger le carré en haut à droite.</li>
 <li>Pour la variante de Nim, c&rsquo;est foutu&hellip; Quelle sue soit notre stratégie, elle sera perdante.</li>
 <li>Enfin, pour Tic-tac-toe, la victoire tend les bras au joueur 1. Et, sans surprise, son premier mouvement doit être de prendre le milieu.</li>
 </ul>
 <br>
 <h3 id="arbre-et-minimax">Arbre et minimax</h3>
 <p>Pour des jeux comme les échecs, le graphe est bien trop gros pour pouvoir appliquer nos méthodes précédentes. Alors comment s&rsquo;en sortir ?</p>
-<p>L&rsquo;idée est de se contenter d&rsquo;une recherche partielle autour de la position actuelle. On donne à l&rsquo;algorithme seulement quelques coups d&rsquo;avance. Il évalue alors les différentes positions futures possibles en leur attribuant un score issu d&rsquo;une <strong>heuristique</strong>.</p>
+<p>L&rsquo;idée est de se contenter d&rsquo;une recherche partielle autour de la position actuelle donnant à l&rsquo;algorithme seulement quelques coups d&rsquo;avance. Il évalue alors les différentes positions futures possibles en leur attribuant un score issu d&rsquo;une <strong>heuristique</strong>.</p>
 <style>
 #heuri p:first-child:after {
     content: 'Heuristique';
@@ -1297,29 +1300,35 @@ Comme son nom l&rsquo;indique, l&rsquo;attracteur attire irrémédiablement vers
 </style>
 
 <div class="notices def"  id="heuri"  ><p>Une heuristique est une méthode de calcul qui fournit rapidement une solution réalisable, pas nécessairement optimale ou exacte, pour un problème d&rsquo;optimisation difficile. Elle  s&rsquo;impose quand les algorithmes de résolution exacte sont impraticables, à savoir de complexité polynomiale de haut degré, exponentielle ou plus.<br>
-Une heuristique est donc un compromis entre d&rsquo;un côté l&rsquo;optimalité (trouver la meilleure solution) et/ou la complétude (trouver toutes les solution) de l&rsquo;algorithme et de l&rsquo;autre côté sa vitesse.</p>
+Une heuristique est donc un compromis entre d&rsquo;un côté l&rsquo;optimalité (trouver la meilleure solution) et/ou la complétude (trouver toutes les solutions) de l&rsquo;algorithme et de l&rsquo;autre côté sa vitesse.</p>
 
 </div>
-<p>Pour implémenter efficacement cette recherche partielle, l&rsquo;idée est d&rsquo;utiliser un arbre plutôt que l&rsquo;arêne précédente. Quelle différence ? Absence de cycle ! On le paye au prix de la redondances des sommets (le même sommet peut apparaître plusieurs fois dans l&rsquo;arbre). Pour chaque position, les différents coups possibles correspondent aux différentes branches et on avance ainsi niveau par niveau jusqu&rsquo;aux feuilles représentant les positions terminales.</p>
+<p>Pour implémenter efficacement cette recherche partielle, l&rsquo;idée est d&rsquo;utiliser un arbre plutôt que l&rsquo;arêne précédente. Quelle différence ? L&rsquo;absence de cycle qui va permettre d&rsquo;élaguer ! On le paye au prix de la redondance des sommets (le même sommet peut apparaître plusieurs fois dans l&rsquo;arbre). Pour chaque position, les différents coups possibles correspondent aux différentes branches et on avance ainsi niveau par niveau jusqu&rsquo;aux feuilles représentant les positions terminales.</p>
 <p>Le gros avantage d&rsquo;un arbre est qu&rsquo;il permet facilement de ne garder que quelques niveaux (on raccourci alors toutes les branches jusqu&rsquo;à la profondeur considérée).</p>
-<p>Muni de cet arbre, l&rsquo;algorithme se lance dans un parcours en profondeur jusqu&rsquo;à la profondeur maximale stipulée. Lorsque ce niveau est atteint (2, par exemple, si on veut que l&rsquo;IA ait deux coups d&rsquo;avance), l&rsquo;algorithme évalue les feuilles grâce à son heuristique, puis il propage ce score vers les niveaux supérieurs en suivant le principe du minimax : sur un niveau correspondant au joueur 1, on sélectionne la valeur maximale parmi les branches, et sur un niveau correspondant à l&rsquo;adversaire, on sélectionne la valeur minimale. La valeur est au final transmise à la racine (la position depuis laquelle on a lancé la recherche).</p>
-<p>Prenons l&rsquo;exemple du jeu de Morpion. Une heuristique possible pour évaluer un plateau pourrait consister à compter $+1$ pour chaque alignement encore possible pour le joueur et $-1$ pour son adversaire.</p>
+<p>Muni de cet arbre, l&rsquo;algorithme se lance dans un parcours en profondeur jusqu&rsquo;à la profondeur maximale stipulée. Lorsque ce niveau est atteint (2, par exemple, si on veut que l&rsquo;IA ait deux coups d&rsquo;avance), l&rsquo;algorithme évalue les feuilles grâce à son heuristique, puis il propage ce score vers les niveaux supérieurs en suivant le <strong>principe du minimax</strong> :</p>
+<ul>
+<li>sur un niveau correspondant au joueur 1, on sélectionne la valeur <strong>maximale</strong> parmi les branches,</li>
+<li>et sur un niveau correspondant à l&rsquo;adversaire, on sélectionne la valeur <strong>minimale</strong>.</li>
+</ul>
+<p>Le pricipe est de maximiser les gains du joueur 1 tout en minimisant ceux du joueur 2.
+La valeur est au final transmise à la racine (la position depuis laquelle on a lancé la recherche) et la meilleure branche est sélectionnée.</p>
+<p>Prenons l&rsquo;exemple du jeu de Morpion. Une heuristique possible pour évaluer un plateau pourrait consister à compter $+1$ pour chaque alignement encore possible pour le joueur et  $-1$ pour ceux encore possibles pour son adversaire.</p>
 <p><img src="/minimaxgif.gif" alt=""></p>
-<p>L&rsquo;arbre total du morpion n&rsquo;est pas si gros ; le <strong>facteur de ramification</strong> $b$ est de 5 en moyenne et il y a au plus 9 niveaux (9 coups), ce qui donne $\approx 5^9 = 1\,953\,125$ (à titre de comparaison, aux échecs, $b\approx35$ et un partie dure en moyenne 100 coups, ce qui donne $b^m\approx10^{54}$ sommets à inspecter).</p>
-<p>L&rsquo;algorithme minimax inspecte en réalité environ 4 fois moins de sommets que les deux millions prédits, car ce chiffre ne tient pas compte de la fin avant le neuvième coup de beacoup de partie. Il en inspecte néanmoins beaucoup plus qu&rsquo;il ne faudrait (il n&rsquo;y a que $9!=362\,880$ coups possibles si l&rsquo;ordi commence et seulement $8!=40\,320$ si l&rsquo;humain a l&rsquo;honneur), ce qui illustre le fait qu&rsquo;un arbre contient beaucoup de redondance par rapport au graphe du jeu dont il est tiré (c&rsquo;est le prix à payer pour casser les cycles).</p>
-<p>La taille modéré de l&rsquo;arbre permet de l&rsquo;explorer jusqu&rsquo;aux parties finales, mais on peut constater en jouant avec le petit programme ci-dessous que la réducttion à une profondeur à une profondeur de deux niveaux grâce à l&rsquo;heuristique<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> est tout autant efficace en inspectant 500 fois moins de sommets !</p>
+<p>L&rsquo;arbre total du morpion n&rsquo;est pas si gros ; le <strong>facteur de ramification</strong> $b$ est de 5 en moyenne et il y a au plus 9 niveaux (9 coups), ce qui donne $\approx 5^9 = 1\,953\,125$ (à titre de comparaison, aux échecs, $b\approx35$ et un partie dure en moyenne 100 coups, ce qui donne $b^m\approx10^{54}$ sommets à inspecter&hellip;).</p>
+<p>L&rsquo;algorithme minimax appliqué au morpion inspecte en réalité environ 4 fois moins de sommets que les deux millions prédits, car ce chiffre ne tient pas compte des nombreuses parties potentielles se terminant avant le neuvième coup. Il en inspecte néanmoins beaucoup plus qu&rsquo;il ne faudrait (il n&rsquo;y a que $9!=362\,880$ coups possibles si l&rsquo;ordi commence et seulement $8!=40\,320$ si l&rsquo;humain a l&rsquo;honneur), ce qui illustre le fait qu&rsquo;un arbre contient beaucoup de sommets redondants par rapport au graphe du jeu dont il est tiré (c&rsquo;est le prix à payer pour casser les cycles).</p>
+<p>La taille modéré de l&rsquo;arbre permet de l&rsquo;explorer jusqu&rsquo;aux parties finales, mais on peut constater en jouant avec le petit programme ci-dessous que la réduction à une profondeur de deux niveaux grâce à l&rsquo;heuristique<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> est tout autant redoutable en inspectant 500 fois moins de sommets !</p>
 <br>
 <p>
-<iframe src="https://trinket.io/embed/python3/055c60f8a0" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python3/055c60f8a0" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 </p>
 <br>
-<p>Cela prouve qu&rsquo;au morpion, 2 coups d&rsquo;avance, c&rsquo;est bien suffisant&hellip; Mais ce n&rsquo;est pas vraiment le cas aux échecs, où les plus grands joueurs comme Kasparov prévoit jusqu&rsquo;à 12 coups à l&rsquo;avance ! Deep Blue, qui a battu Kasparov en 1997, cherchait jusqu&rsquo;à une profondeur typiquement comprise entre 6 et 16, mais pouvait aller jusqu&rsquo;à 40 dans certaines situations.</p>
-<p>Dans le cas des échecs, l&rsquo;heuristique permettant d&rsquo;évaluer un état de l&rsquo;échiquier est complexe. Elle doit prendre en compte la quantité de pièces et pions restants, la qualité des pièces et les positions de tout ce beau monde (qui domine le centre, etc.).</p>
-<p>La taille du jeu de Go rend vaine toute tentative de type minimax. C&rsquo;est au point que les grands joueurs de Go ont longtemps refuser de jouer contre des ordinateurs, non par peur de perdre, mais parcequ&rsquo;ils les trouvaient trop mauvais. C&rsquo;est l&rsquo;essor du deep learning, et donc une philosophie basée sur l&rsquo;apprentissage plus que sur la stratégie, qui a permis à la machine de devenir un adversaire coriace à ce jeu-là aussi.</p>
+<p>Cela prouve qu&rsquo;au morpion, 2 coups d&rsquo;avance, c&rsquo;est bien suffisant&hellip; Mais ce n&rsquo;est pas vraiment le cas aux échecs, où les plus grands joueurs (comme Kasparov) prévoient jusqu&rsquo;à 12 coups à l&rsquo;avance ! Deep Blue, qui a battu Kasparov en 1997, cherchait jusqu&rsquo;à une profondeur typiquement comprise entre 6 et 16, mais pouvait aller jusqu&rsquo;à 40 dans certaines situations.</p>
+<p>Dans le cas des échecs, l&rsquo;heuristique permettant d&rsquo;évaluer un état de l&rsquo;échiquier est bein plus complexe qu&rsquo;au morpion. Elle doit prendre en compte la quantité de pièces et pions restants, la qualité des pièces et les positions de tout ce beau monde (domination du centre, structure compacte, etc.).</p>
+<p>La taille du jeu de Go rend vaine toute tentative de type minimax. C&rsquo;est au point que les grands joueurs de Go ont longtemps refusé de jouer contre des ordinateurs, non par peur de perdre, mais parcequ&rsquo;ils les trouvaient trop mauvais. C&rsquo;est l&rsquo;essor du deep learning, et donc une philosophie basée sur l&rsquo;apprentissage plus que sur la stratégie, qui a permis à <a href="https://www.deepmind.com/research/highlighted-research/alphago">la machine</a> de devenir un adversaire coriace à ce jeu-là aussi.</p>
 <br>
 <h4 id="sac-à-dos-et-heuristique">Sac à dos et heuristique</h4>
 <p>Voyons enfin une autre utilisation d&rsquo;heuristique avec le problème du sac à dos, ici dans sa version &ldquo;0/1&rdquo; (knapsack 0/1 en anglais).</p>
-<p>Le problème du sac-à-dos est un probblème classique d&rsquo;optimisation avec d&rsquo;importantes applications théoriques et industrielles.</p>
+<p>Le problème du sac à dos est un problème classique d&rsquo;optimisation avec d&rsquo;importantes applications théoriques et industrielles.</p>
 <p>Soit $x\in\mathbb{N}^{*}$, soit $v$ une séquence de $n$ éléments appartenant à $\mathbb{N}^{*}$, et soit $p$ une séquence de $n$ éléments appartenant à $\{1,2,&hellip;,c\}$.<br>
 Nous appelons $c$ la capacité, $v$ la séquence de valeurs et $p$ la séquence de poids.<br>
 Le problème du sac à dos consiste à mettre des objets de poids $p$, dans un sac à dos qui peut contenir un poids maximal $c$, de telle sorte que la valeur des objets choisis est maximisée.<br>
@@ -1360,7 +1369,7 @@ sous la contrainte $c≥\sum_{i=1}^n x[i]\cdot p[i]$, où $x\in\{0,1\}^n$ indiqu
 </tr>
 </tbody>
 </table>
-<p>Une idée simple pour arriver à nos fins est de suivre une <strong>stratégie gloutonne</strong> (une stratégie étape par étape où un critère de classement permet de sélectionner le prochain objet à ajouter). Un critère qui semble prometteur est le ratio valeur/poids de chaque objet. L&rsquo;idée est de calculer ce ratio pour chaque objet et de les placer dans le sac du plus grand ratio au plus petit, jusqu&rsquo;à ce que le prochain objet ne puisse pas rentrer.</p>
+<p>Le plus simple pour arriver à nos fins est de suivre une <strong>stratégie gloutonne</strong> (une stratégie étape par étape où un critère de classement permet de sélectionner le prochain objet à ajouter). Un critère qui semble prometteur est le ratio valeur/poids de chaque objet. L&rsquo;idée est alors de placer les objets dans le sac dans l&rsquo;ordre inverse de leur ratio. Cela semble une bonne stratégie puisque les objets ajoutés maximisent ainsi la valeur qu&rsquo;ils apportent par rappor à la place qu&rsquo;ils prennent. Mais si l&rsquo;approche gloutonne a l&rsquo;avantage d&rsquo;être très simple, le revers de la médaille est qu&rsquo;elle est à courte vue, on perd la vision d&rsquo;ensemble (on a privilégié le local au global pour reprendre des termes vus plus haut). Et dans certaines configurations, comme c&rsquo;est le cas dans notre exemple, cela s&rsquo;avère contre-productif.</p>
 <table>
 <thead>
 <tr>
@@ -1385,8 +1394,8 @@ sous la contrainte $c≥\sum_{i=1}^n x[i]\cdot p[i]$, où $x\in\{0,1\}^n$ indiqu
 </tr>
 </tbody>
 </table>
-<p>On place donc d&rsquo;abord 🪠, puis 🧸, et c&rsquo;est tout&hellip; Plus de place pour l&rsquo;objet suivant (🥊). On obtient finalement une valeur de 30 et un poids de 250.<br>
-Cet exemple nous montre que l&rsquo;approche gloutonne n&rsquo;est pas nécessairement optimale (loin de là ici, vu la place qu&rsquo;il reste dans le sac&hellip;). On pourrait néanmoins facilement améliorer les choses en continuant d&rsquo;essayer de placer les éléments de ratio plus grand sans s&rsquo;arrêter au premier blocage. On tente 🎺, trop grosse, puis ⏰, là ça rentre, et enfin 🥏 qui ne loge pas. On obtient ainsi une valeur de 42 et un poids de 670. Mais même ainsi, on n&rsquo;a pas obtenu la réponse optimale.</p>
+<p>Dans notre exemple, on place donc d&rsquo;abord 🪠, puis 🧸, et c&rsquo;est tout&hellip; Plus de place pour l&rsquo;objet suivant (🥊). On obtient finalement une valeur de 30 et un poids de 250.<br>
+Cet exemple nous montre que l&rsquo;approche gloutonne ne garantit pas l&rsquo;optimalité (loin de là ici, vu la place qu&rsquo;il reste dans le sac&hellip;). On pourrait néanmoins facilement améliorer les choses en continuant d&rsquo;essayer de placer les éléments de ratio plus grand sans s&rsquo;arrêter au premier blocage. On tente 🎺, trop grosse, puis ⏰, là ça rentre, et enfin 🥏 qui ne loge pas. On obtient ainsi une valeur de 42 et un poids de 670. Mais même ainsi, on n&rsquo;a pas obtenu la réponse optimale.</p>
 <p>Puisqu&rsquo;on suppose, dans cette version &ldquo;0/1&rdquo; du problème qu&rsquo;un objet est soit présent, soit absent (pas de fraction et pas de multiple), on peut représenter l&rsquo;ensemble des possibilités par un <strong>arbre binaire</strong>.<br>
 Une méthode sûre pour résoudre le problème consiste alors à parcourir l&rsquo;arbre dans son entièreté et regarder la valeur de chaque branche complète (de la racine jusqu&rsquo;à la feuille), pour choisir au final la branche la plus rémunératrice et repectant la contrainte de capacité.<br>
 C&rsquo;est la méthode par <strong>force brute</strong>.</p>
@@ -2024,19 +2033,19 @@ potentiel <span style="color:#f92672">=</span> [sum(v[i:]) <span style="color:#6
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1660060589"></script>
-    <script src="/js/perfect-scrollbar.min.js?1660060589"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1660060589"></script>
-    <script src="/js/jquery.sticky.js?1660060589"></script>
-    <script src="/js/featherlight.min.js?1660060589"></script>
-    <script src="/js/highlight.pack.js?1660060589"></script>
+    <script src="/js/clipboard.min.js?1660144255"></script>
+    <script src="/js/perfect-scrollbar.min.js?1660144255"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1660144255"></script>
+    <script src="/js/jquery.sticky.js?1660144255"></script>
+    <script src="/js/featherlight.min.js?1660144255"></script>
+    <script src="/js/highlight.pack.js?1660144255"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1660060589"></script>
-    <script src="/js/learn.js?1660060589"></script>
-    <script src="/js/hugo-learn.js?1660060589"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1660144255"></script>
+    <script src="/js/learn.js?1660144255"></script>
+    <script src="/js/hugo-learn.js?1660144255"></script>
     
         
-            <script src="/mermaid/mermaid.js?1660060589"></script>
+            <script src="/mermaid/mermaid.js?1660144255"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
