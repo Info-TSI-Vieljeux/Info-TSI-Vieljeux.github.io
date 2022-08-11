@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1660144255" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1660144255" rel="stylesheet">
-    <link href="/css/hybrid.css?1660144255" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1660144255" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1660144255" rel="stylesheet">
-    <link href="/css/auto-complete.css?1660144255" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1660144255" rel="stylesheet">
-    <link href="/css/theme.css?1660144255" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1660144255" rel="stylesheet">
+    <link href="/css/nucleus.css?1660178787" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1660178787" rel="stylesheet">
+    <link href="/css/hybrid.css?1660178787" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1660178787" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1660178787" rel="stylesheet">
+    <link href="/css/auto-complete.css?1660178787" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1660178787" rel="stylesheet">
+    <link href="/css/theme.css?1660178787" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1660178787" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1660144255" rel="stylesheet">
+    <link href="/css/theme-green.css?1660178787" rel="stylesheet">
     
-    <link href="/css/foo.css?1660144255" rel="stylesheet"><link href="/css/bar.css?1660144255" rel="stylesheet">
+    <link href="/css/foo.css?1660178787" rel="stylesheet"><link href="/css/bar.css?1660178787" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1660144255"></script>
+    <script src="/js/jquery-3.3.1.min.js?1660178787"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1660144255"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1660144255"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1660178787"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1660178787"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1660144255"></script>
+<script type="text/javascript" src="/js/search.js?1660178787"></script>
 
     
   </div>
@@ -1369,7 +1369,7 @@ sous la contrainte $c≥\sum_{i=1}^n x[i]\cdot p[i]$, où $x\in\{0,1\}^n$ indiqu
 </tr>
 </tbody>
 </table>
-<p>Le plus simple pour arriver à nos fins est de suivre une <strong>stratégie gloutonne</strong> (une stratégie étape par étape où un critère de classement permet de sélectionner le prochain objet à ajouter). Un critère qui semble prometteur est le ratio valeur/poids de chaque objet. L&rsquo;idée est alors de placer les objets dans le sac dans l&rsquo;ordre inverse de leur ratio. Cela semble une bonne stratégie puisque les objets ajoutés maximisent ainsi la valeur qu&rsquo;ils apportent par rappor à la place qu&rsquo;ils prennent. Mais si l&rsquo;approche gloutonne a l&rsquo;avantage d&rsquo;être très simple, le revers de la médaille est qu&rsquo;elle est à courte vue, on perd la vision d&rsquo;ensemble (on a privilégié le local au global pour reprendre des termes vus plus haut). Et dans certaines configurations, comme c&rsquo;est le cas dans notre exemple, cela s&rsquo;avère contre-productif.</p>
+<p>Le plus simple pour arriver à nos fins est de suivre une <strong>stratégie gloutonne</strong> (une stratégie étape par étape où un critère de classement permet de sélectionner le prochain objet à ajouter). Un critère qui semble prometteur est le ratio valeur/poids de chaque objet. L&rsquo;idée est alors de placer les objets dans le sac dans l&rsquo;ordre inverse de leur ratio. Cela semble une bonne stratégie puisque les objets ajoutés maximisent ainsi la valeur qu&rsquo;ils apportent par rappor à la place qu&rsquo;ils prennent. Mais si l&rsquo;approche gloutonne a l&rsquo;avantage d&rsquo;être très simple, le revers de la médaille est qu&rsquo;elle est à courte vue, on perd la vision d&rsquo;ensemble. Et dans certaines configurations, comme c&rsquo;est le cas dans notre exemple, cela s&rsquo;avère contre-productif.</p>
 <table>
 <thead>
 <tr>
@@ -1394,13 +1394,13 @@ sous la contrainte $c≥\sum_{i=1}^n x[i]\cdot p[i]$, où $x\in\{0,1\}^n$ indiqu
 </tr>
 </tbody>
 </table>
-<p>Dans notre exemple, on place donc d&rsquo;abord 🪠, puis 🧸, et c&rsquo;est tout&hellip; Plus de place pour l&rsquo;objet suivant (🥊). On obtient finalement une valeur de 30 et un poids de 250.<br>
-Cet exemple nous montre que l&rsquo;approche gloutonne ne garantit pas l&rsquo;optimalité (loin de là ici, vu la place qu&rsquo;il reste dans le sac&hellip;). On pourrait néanmoins facilement améliorer les choses en continuant d&rsquo;essayer de placer les éléments de ratio plus grand sans s&rsquo;arrêter au premier blocage. On tente 🎺, trop grosse, puis ⏰, là ça rentre, et enfin 🥏 qui ne loge pas. On obtient ainsi une valeur de 42 et un poids de 670. Mais même ainsi, on n&rsquo;a pas obtenu la réponse optimale.</p>
+<p>L&rsquo;approche gloutonne nous encourage ici à placer d&rsquo;abord 🪠 dans le sac, puis 🧸, et c&rsquo;est tout. Plus de place pour l&rsquo;objet suivant (🥊). On obtient finalement une valeur de 30 et un poids de 250.<br>
+Cet exemple nous montre que l&rsquo;approche gloutonne ne garantit pas l&rsquo;optimalité (loin de là même, vu la place qu&rsquo;il reste dans le sac&hellip;). On pourrait néanmoins facilement améliorer les choses en continuant d&rsquo;essayer de placer les éléments de ratio plus grand sans s&rsquo;arrêter au premier blocage. On tente 🎺, trop grosse, puis ⏰, là ça rentre, et enfin 🥏 qui ne loge pas. On obtient ainsi une valeur de 42 et un poids de 670. Mais même ainsi, on n&rsquo;a pas obtenu la réponse optimale.</p>
 <p>Puisqu&rsquo;on suppose, dans cette version &ldquo;0/1&rdquo; du problème qu&rsquo;un objet est soit présent, soit absent (pas de fraction et pas de multiple), on peut représenter l&rsquo;ensemble des possibilités par un <strong>arbre binaire</strong>.<br>
-Une méthode sûre pour résoudre le problème consiste alors à parcourir l&rsquo;arbre dans son entièreté et regarder la valeur de chaque branche complète (de la racine jusqu&rsquo;à la feuille), pour choisir au final la branche la plus rémunératrice et repectant la contrainte de capacité.<br>
+Une méthode sûre pour résoudre le problème consiste alors à parcourir l&rsquo;arbre dans son entièreté et regarder la valeur et le poids de chaque branche complète (de la racine jusqu&rsquo;à la feuille), pour choisir au final la branche la plus rémunératrice et repectant la contrainte de capacité.<br>
 C&rsquo;est la méthode par <strong>force brute</strong>.</p>
 <p><img src="/arbreknapsack.png" alt=""></p>
-<p>Un algorithme récursif possible pour faire ce travail :</p>
+<p>Un algorithme récursif possible pour faire ce travail (à chaque embranchement, on compare avec et sans l&rsquo;objet) :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sacadosBrute</span>(v,p,c,i,valeur,poids) :
     n <span style="color:#f92672">=</span> len(v)
     <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> n :
@@ -1412,13 +1412,15 @@ C&rsquo;est la méthode par <strong>force brute</strong>.</p>
         valeurAvec <span style="color:#f92672">=</span> valeur <span style="color:#f92672">+</span> v[i]
         poidsAvec <span style="color:#f92672">=</span> poids <span style="color:#f92672">+</span> p[i]
         <span style="color:#66d9ef">return</span> max(sacadosBrute(v,p,c,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,valeur,poids),sacadosBrute(v,p,c,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,valeurAvec,poidsAvec))
-</code></pre></div><p>Comme vous l&rsquo;aurez deviné, la résolution du problème du sac à dos par force brute est en $O(2^n)$ où $n$ est le nombre d&rsquo;objet. Donc au-delà de quelques dizaines d&rsquo;objets, c&rsquo;est mort&hellip;</p>
-<p>Pour améliorer les choses, l&rsquo;idée est d&rsquo;utiliser la méthode &ldquo;séparation et évaluation&rdquo; (<strong>branch and bond</strong> ou BB en anglais) qui vise à élaguer l&rsquo;arbre autant que faire se peut.<br>
-Arriver à un certain sommet de l&rsquo;arbre, si les objets se trouvant en-dessous amènent à un dépassement de la capacité, on peut couper sous lui.<br>
-L&rsquo;autre idée est d&rsquo;utiliser la détermination de la valeur optimale du sac par la méthode gloutonne comme une <strong>heuristique</strong> ; si sous un sommet, la somme des valeurs des objets restant aboutit à une valeur totale inférieure à l&rsquo;heuristique, alors on peu élaguer.</p>
+</code></pre></div><p>Comme vous l&rsquo;aurez deviné, la résolution du problème du sac à dos par force brute est en $O(2^n)$ où $n$ est le nombre d&rsquo;objets. Donc au-delà de quelques dizaines d&rsquo;objets, c&rsquo;est mort&hellip;</p>
+<p>Pour améliorer les choses, on peut utiliser la méthode &ldquo;séparation et évaluation&rdquo; (<strong>branch and bond</strong> ou BB en anglais) qui vise à élaguer l&rsquo;arbre autant que faire se peut.<br>
+Arrivé à un certain sommet de l&rsquo;arbre, si l&rsquo;objet se trouvant en-dessous amène à un dépassement de la capacité, cela ne sert plus à rien de continuer sa branche, alors on coupe.<br>
+L&rsquo;autre idée est d&rsquo;utiliser la détermination de la valeur optimale du sac par la méthode gloutonne comme une <strong>heuristique</strong> ; si sous un sommet, la somme des valeurs des objets restant aboutit à une valeur totale inférieure à l&rsquo;heuristique, on coupe.</p>
 <p>Voilà un code possible :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sacadosBB</span>(v,p,c,i,valeur,poids,meilleure,potentiel) :
+    nbappels <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
     n <span style="color:#f92672">=</span> len(v)
+    meilleure <span style="color:#f92672">=</span> max(meilleure,valeur)
     <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> n :
         <span style="color:#66d9ef">if</span> poids <span style="color:#f92672">&gt;</span> c :
             <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
@@ -1430,13 +1432,10 @@ L&rsquo;autre idée est d&rsquo;utiliser la détermination de la valeur optimale
         valeurAvec <span style="color:#f92672">=</span> valeur <span style="color:#f92672">+</span> v[i]
         poidsAvec <span style="color:#f92672">=</span> poids <span style="color:#f92672">+</span> p[i]
         sol <span style="color:#f92672">=</span> sacadosBB(v,p,c,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,valeur,poids,meilleure,potentiel)
-        <span style="color:#66d9ef">if</span> poidsAvec <span style="color:#f92672">&lt;=</span> c <span style="color:#f92672">and</span> valeur <span style="color:#f92672">+</span> potentiel[i] <span style="color:#f92672">&gt;</span> meilleure :
+        <span style="color:#66d9ef">if</span> poidsAvec <span style="color:#f92672">&lt;=</span> c :
             sol <span style="color:#f92672">=</span> max(sol,sacadosBB(v,p,c,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,valeurAvec,poidsAvec,meilleure,potentiel))
         <span style="color:#66d9ef">return</span> sol
-
-meilleure <span style="color:#f92672">=</span> sacadosGlouton(v,p,c)
-potentiel <span style="color:#f92672">=</span> [sum(v[i:]) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(v))]
-</code></pre></div><p>Voià l&rsquo;arbre bien plus clairsemé qu&rsquo;on obtient avec notre exemple (et avec, qui plus est, une heuristique qui nous aide pas des masses, car très mauvaise).</p>
+</code></pre></div><p>Cela donne un arbre bien plus clairsemé sur notre exemple (et avec, qui plus est, une heuristique qui ne nous aide pas des masses, car très mauvaise).</p>
 <p><img src="/arbreknapsackBB.png" alt=""></p>
 <p>Une autre technique possible est d&rsquo;utiliser la <strong>programmation dynamique</strong> qui est présentée dans la vidéo ci-dessous.</p>
 
@@ -2033,19 +2032,19 @@ potentiel <span style="color:#f92672">=</span> [sum(v[i:]) <span style="color:#6
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1660144255"></script>
-    <script src="/js/perfect-scrollbar.min.js?1660144255"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1660144255"></script>
-    <script src="/js/jquery.sticky.js?1660144255"></script>
-    <script src="/js/featherlight.min.js?1660144255"></script>
-    <script src="/js/highlight.pack.js?1660144255"></script>
+    <script src="/js/clipboard.min.js?1660178787"></script>
+    <script src="/js/perfect-scrollbar.min.js?1660178787"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1660178787"></script>
+    <script src="/js/jquery.sticky.js?1660178787"></script>
+    <script src="/js/featherlight.min.js?1660178787"></script>
+    <script src="/js/highlight.pack.js?1660178787"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1660144255"></script>
-    <script src="/js/learn.js?1660144255"></script>
-    <script src="/js/hugo-learn.js?1660144255"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1660178787"></script>
+    <script src="/js/learn.js?1660178787"></script>
+    <script src="/js/hugo-learn.js?1660178787"></script>
     
         
-            <script src="/mermaid/mermaid.js?1660144255"></script>
+            <script src="/mermaid/mermaid.js?1660178787"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
