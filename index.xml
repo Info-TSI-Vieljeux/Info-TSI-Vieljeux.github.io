@@ -244,7 +244,7 @@ Pivot de Gauss Deux problèmes liés aux flottants :
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp11/</guid>
-      <description>TP 11 : algorithmique numérique Cliquez sur cette invitation pour récupérer le repository du TP. Pivot de Gauss def Gauss(M,recherchePivot) : &amp;#34;&amp;#34;&amp;#34; préconditions : M une liste de listes (matrice) contenant des nombres. recherchePivot est une fonction ayant pour paramètres la matrice et deux indices et renvoyant l&amp;#39;indice du prochain pivot. postcondition : M est mutéz sous la forme d&amp;#39;une matrice échelonnée réduite. La fonction ne retourne rien (elle a juste un effet de bord).</description>
+      <description>TP 11 : algorithmique numérique Cliquez sur cette invitation pour récupérer le repository du TP. Pivot de Gauss def Gauss(M,recherchePivot) : &amp;#34;&amp;#34;&amp;#34; préconditions : M une liste de listes (matrice) contenant des nombres. recherchePivot est une fonction ayant pour paramètres la matrice et deux indices et renvoyant l&amp;#39;indice du prochain pivot. postcondition : M est mutée sous la forme d&amp;#39;une matrice échelonnée réduite. La fonction ne retourne rien (elle a juste un effet de bord).</description>
     </item>
     
     <item>
