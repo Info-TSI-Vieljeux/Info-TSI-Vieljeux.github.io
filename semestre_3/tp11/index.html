@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1661699328" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1661699328" rel="stylesheet">
-    <link href="/css/hybrid.css?1661699328" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1661699328" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1661699328" rel="stylesheet">
-    <link href="/css/auto-complete.css?1661699328" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1661699328" rel="stylesheet">
-    <link href="/css/theme.css?1661699328" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1661699328" rel="stylesheet">
+    <link href="/css/nucleus.css?1661823233" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1661823233" rel="stylesheet">
+    <link href="/css/hybrid.css?1661823233" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1661823233" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1661823233" rel="stylesheet">
+    <link href="/css/auto-complete.css?1661823233" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1661823233" rel="stylesheet">
+    <link href="/css/theme.css?1661823233" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1661823233" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1661699328" rel="stylesheet">
+    <link href="/css/theme-green.css?1661823233" rel="stylesheet">
     
-    <link href="/css/foo.css?1661699328" rel="stylesheet"><link href="/css/bar.css?1661699328" rel="stylesheet">
+    <link href="/css/foo.css?1661823233" rel="stylesheet"><link href="/css/bar.css?1661823233" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1661699328"></script>
+    <script src="/js/jquery-3.3.1.min.js?1661823233"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1661699328"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1661699328"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1661823233"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1661823233"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1661699328"></script>
+<script type="text/javascript" src="/js/search.js?1661823233"></script>
 
     
   </div>
@@ -920,7 +920,7 @@ onload='renderMathInElement(document.body);'></script>
 
 
 <h1 id="tp-11--algorithmique-numérique">TP 11 : algorithmique numérique</h1>
-<p style="text-align: center;">  Cliquez sur <a href="">cette invitation</a> pour récupérer le repository du TP. </p>
+<p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/0zrswWI2">cette invitation</a> pour récupérer le repository du TP. </p>
 <h2 id="pivot-de-gauss">Pivot de Gauss</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Gauss</span>(M,recherchePivot) :
     <span style="color:#e6db74">&#34;&#34;&#34;
@@ -950,7 +950,8 @@ onload='renderMathInElement(document.body);'></script>
                     M[i][j] <span style="color:#f92672">-=</span> M[h][j] <span style="color:#f92672">*</span> f        <span style="color:#75715e"># Li &lt;- Li - Lh</span>
             h <span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
             k <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</code></pre></div><p>Il ne reste plus qu&rsquo;à définir la fonction <code>recherchePivot</code>. Dans sa version naïve, il s&rsquo;agit simplement du prochain élément dans la diagonale.<br></p>
+</code></pre></div><p>Il ne reste plus qu&rsquo;à définir la fonction <code>recherchePivot</code>&hellip;<br>
+Dans sa version naïve, il s&rsquo;agit simplement du prochain élément dans la diagonale.<br></p>
 <blockquote>
 <p>Écrire la fonction <code>recherchePivotNaive</code> correspondante en essayant de vous y retrouver avec les indices.
 La fonction doit retourner l&rsquo;indice du pivot.</p>
@@ -1117,7 +1118,7 @@ plt<span style="color:#f92672">.</span>tight_layout()
 <h3 id="interpolation-par-morceaux">Interpolation par morceaux</h3>
 <p>On découpe maintenant l&rsquo;intervalle d&rsquo;étude en $N$ sous-intervalles et on interpole la fonction sur un petit nombre de points sur chacun de ces intervalles.</p>
 <h4 id="degré-0">Degré 0</h4>
-<p>La fonction suivante produit une interpolation par morceau de degré 0 de la fonction <code>f</code>.<br>
+<p>La fonction suivante produit une interpolation par morceaux de degré 0 de la fonction <code>f</code>.<br>
 <code>N</code> est le nombre de sous-intervalles.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">interp_rect</span>(f,interv,N,x) :
     debut,fin <span style="color:#f92672">=</span> interv[<span style="color:#ae81ff">0</span>],interv[<span style="color:#ae81ff">1</span>]
@@ -1900,19 +1901,19 @@ fig<span style="color:#f92672">.</span>show()
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1661699328"></script>
-    <script src="/js/perfect-scrollbar.min.js?1661699328"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1661699328"></script>
-    <script src="/js/jquery.sticky.js?1661699328"></script>
-    <script src="/js/featherlight.min.js?1661699328"></script>
-    <script src="/js/highlight.pack.js?1661699328"></script>
+    <script src="/js/clipboard.min.js?1661823233"></script>
+    <script src="/js/perfect-scrollbar.min.js?1661823233"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1661823233"></script>
+    <script src="/js/jquery.sticky.js?1661823233"></script>
+    <script src="/js/featherlight.min.js?1661823233"></script>
+    <script src="/js/highlight.pack.js?1661823233"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1661699328"></script>
-    <script src="/js/learn.js?1661699328"></script>
-    <script src="/js/hugo-learn.js?1661699328"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1661823233"></script>
+    <script src="/js/learn.js?1661823233"></script>
+    <script src="/js/hugo-learn.js?1661823233"></script>
     
         
-            <script src="/mermaid/mermaid.js?1661699328"></script>
+            <script src="/mermaid/mermaid.js?1661823233"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
