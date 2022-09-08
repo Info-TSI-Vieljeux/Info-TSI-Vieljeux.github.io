@@ -25,7 +25,7 @@ Pivot de Gauss Deux problèmes liés aux flottants :
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp11/</guid>
       <description>TP 11 : algorithmique numérique Cliquez sur cette invitation pour récupérer le repository du TP. Pivot de Gauss On cherche résoudre un système d&amp;rsquo;équations grâce à la méthode du pivot de Gauss.
-Pour cela, on crée une fonction qui transforme la matrice augmentée obtenue à partir du sytème en une matrice échelonnée réduite.
+Pour cela, on crée une fonction qui transforme la matrice augmentée obtenue à partir du sytème en une matrice échelonnée.
 def Gauss(M,recherchePivot) : &amp;#34;&amp;#34;&amp;#34; préconditions : M une liste de listes (matrice) contenant des nombres. recherchePivot est une fonction ayant pour paramètres la matrice et deux indices et renvoyant l&amp;#39;indice du prochain pivot.</description>
     </item>
     

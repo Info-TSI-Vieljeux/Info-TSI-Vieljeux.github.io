@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1662584624" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1662584624" rel="stylesheet">
-    <link href="/css/hybrid.css?1662584624" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1662584624" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1662584624" rel="stylesheet">
-    <link href="/css/auto-complete.css?1662584624" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1662584624" rel="stylesheet">
-    <link href="/css/theme.css?1662584624" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1662584624" rel="stylesheet">
+    <link href="/css/nucleus.css?1662672111" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1662672111" rel="stylesheet">
+    <link href="/css/hybrid.css?1662672111" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1662672111" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1662672111" rel="stylesheet">
+    <link href="/css/auto-complete.css?1662672111" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1662672111" rel="stylesheet">
+    <link href="/css/theme.css?1662672111" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1662672111" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1662584624" rel="stylesheet">
+    <link href="/css/theme-green.css?1662672111" rel="stylesheet">
     
-    <link href="/css/foo.css?1662584624" rel="stylesheet"><link href="/css/bar.css?1662584624" rel="stylesheet">
+    <link href="/css/foo.css?1662672111" rel="stylesheet"><link href="/css/bar.css?1662672111" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1662584624"></script>
+    <script src="/js/jquery-3.3.1.min.js?1662672111"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1662584624"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1662584624"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1662672111"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1662672111"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1662584624"></script>
+<script type="text/javascript" src="/js/search.js?1662672111"></script>
 
     
   </div>
@@ -923,13 +923,13 @@ onload='renderMathInElement(document.body);'></script>
 <p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/0zrswWI2">cette invitation</a> pour récupérer le repository du TP. </p>
 <h2 id="pivot-de-gauss">Pivot de Gauss</h2>
 <p>On cherche résoudre un système d&rsquo;équations grâce à la méthode du pivot de Gauss.</p>
-<p>Pour cela, on crée une fonction qui transforme la <strong>matrice augmentée</strong> obtenue à partir du sytème en une matrice échelonnée réduite.</p>
+<p>Pour cela, on crée une fonction qui transforme la <strong>matrice augmentée</strong> obtenue à partir du sytème en une matrice échelonnée.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Gauss</span>(M,recherchePivot) :
     <span style="color:#e6db74">&#34;&#34;&#34;
 </span><span style="color:#e6db74">    préconditions : M une liste de listes (matrice) contenant des nombres.
 </span><span style="color:#e6db74">                    recherchePivot est une fonction ayant pour paramètres la matrice et deux indices 
 </span><span style="color:#e6db74">                    et renvoyant l&#39;indice du prochain pivot.
-</span><span style="color:#e6db74">    postcondition : M est mutée sous la forme d&#39;une matrice échelonnée réduite.
+</span><span style="color:#e6db74">    postcondition : M est mutée sous la forme d&#39;une matrice échelonnée.
 </span><span style="color:#e6db74">    La fonction ne retourne rien (elle a juste un effet de bord).
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     m <span style="color:#f92672">=</span> len(M)                                    <span style="color:#75715e"># nombre de lignes de la matrice M</span>
@@ -990,13 +990,13 @@ affiche(A)
 </code></pre></div><pre><code class="language-nohighlight" data-lang="nohighlight">1.0       0.75      0.5       2.25   
 0.0       1.0      8500.0    8500.0  
 0.0       0.0       1.0      0.9995 
-</code></pre><p>Construisons maintenant une fonction <code>substitution</code> qui part d&rsquo;une matrice échelonnée réduite $M_{n,n+1}$ et qui en déduit le vecteur solution $V$ du système d&rsquo;équations représenté par la matrice.</p>
+</code></pre><p>Construisons maintenant une fonction <code>substitution</code> qui part d&rsquo;une matrice échelonnée  $M_{n,n+1}$ et qui en déduit le vecteur solution $V$ du système d&rsquo;équations représenté par la matrice.</p>
 <p>$V = (v_1,v_2,\ldots,v_n)^t$ est tel que :</p>
 <p>$$ \begin{cases} m_{11}\,v_1 +m_{12}\,v_2 + \ldots + m_{1n}\,v_n = m_{1\,n+1} \\m_{21}\,v_1+m_{22}\,v_2 + \ldots + m_{2n}\,v_n = m_{2\,n+1} \\ \quad\vdots \qquad\qquad\vdots\;\;\;\;\;\;\;\;\ddots\qquad \vdots \qquad\qquad\vdots\\m_{n1}\,v_1 +m_{n2}\,v_2 + \ldots + m_{nn}\,v_n = m_{n\,n+1} \end{cases} $$</p>
 <p>où $m_{ii} = 1$ pour $i$ allant de $1$ à $n$, et où $m_{i,j}=0$ pour $i&gt;j$.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">substitution</span>(M) :
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    précondition : M est une matrice (liste de listes) échelonnée réduite de dimension n*(n+1)
+</span><span style="color:#e6db74">    précondition : M est une matrice (liste de listes) échelonnée de dimension n*(n+1)
 </span><span style="color:#e6db74">    postcondition : la fonction retourne le vecteur solution V
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     n <span style="color:#f92672">=</span> len(M)
@@ -1027,7 +1027,7 @@ z = 0.9995
 <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Matrice de départ :&#34;</span>)
 affiche(A)
 
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Forme échelonnée réduite avec méthode du pivot partiel :&#34;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Forme échelonnée avec méthode du pivot partiel :&#34;</span>)
 Gauss(A,recherchePivotPartiel)
 affiche(A)
 
@@ -1038,7 +1038,7 @@ afficheSolution(A)
 -3.0     -2.249     7.0      1.751   
 5.0       1.0       3.0       9.0    
     
-Forme échelonnée réduite avec méthode du pivot partiel :
+Forme échelonnée avec méthode du pivot partiel :
 1.0       0.75      0.5       2.25   
 0.0       1.0     -0.1818    0.8181  
 0.0       0.0       1.0      0.9998  
@@ -1049,7 +1049,7 @@ y = 0.9998
 z = 0.9998
 </code></pre><p>On constate que la méthode avec pivot partiel est beaucoup moins aux fraises que la méthode naïve&hellip;</p>
 <blockquote>
-<p>Quelle est la complexité de la méthode du pivot de gausse ainsi construite ?<br>
+<p>Quelle est la complexité de la méthode du pivot de Gauss ainsi construite ?<br>
 a : linéaire<br>
 b : quadratique<br>
 c : cubique<br>
@@ -1905,19 +1905,19 @@ fig<span style="color:#f92672">.</span>show()
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1662584624"></script>
-    <script src="/js/perfect-scrollbar.min.js?1662584624"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1662584624"></script>
-    <script src="/js/jquery.sticky.js?1662584624"></script>
-    <script src="/js/featherlight.min.js?1662584624"></script>
-    <script src="/js/highlight.pack.js?1662584624"></script>
+    <script src="/js/clipboard.min.js?1662672111"></script>
+    <script src="/js/perfect-scrollbar.min.js?1662672111"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1662672111"></script>
+    <script src="/js/jquery.sticky.js?1662672111"></script>
+    <script src="/js/featherlight.min.js?1662672111"></script>
+    <script src="/js/highlight.pack.js?1662672111"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1662584624"></script>
-    <script src="/js/learn.js?1662584624"></script>
-    <script src="/js/hugo-learn.js?1662584624"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1662672111"></script>
+    <script src="/js/learn.js?1662672111"></script>
+    <script src="/js/hugo-learn.js?1662672111"></script>
     
         
-            <script src="/mermaid/mermaid.js?1662584624"></script>
+            <script src="/mermaid/mermaid.js?1662672111"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
