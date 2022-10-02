@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1664577990" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1664577990" rel="stylesheet">
-    <link href="/css/hybrid.css?1664577990" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1664577990" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1664577990" rel="stylesheet">
-    <link href="/css/auto-complete.css?1664577990" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1664577990" rel="stylesheet">
-    <link href="/css/theme.css?1664577990" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1664577990" rel="stylesheet">
+    <link href="/css/nucleus.css?1664739222" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1664739222" rel="stylesheet">
+    <link href="/css/hybrid.css?1664739222" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1664739222" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1664739222" rel="stylesheet">
+    <link href="/css/auto-complete.css?1664739222" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1664739222" rel="stylesheet">
+    <link href="/css/theme.css?1664739222" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1664739222" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1664577990" rel="stylesheet">
+    <link href="/css/theme-green.css?1664739222" rel="stylesheet">
     
-    <link href="/css/foo.css?1664577990" rel="stylesheet"><link href="/css/bar.css?1664577990" rel="stylesheet">
+    <link href="/css/foo.css?1664739222" rel="stylesheet"><link href="/css/bar.css?1664739222" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1664577990"></script>
+    <script src="/js/jquery-3.3.1.min.js?1664739222"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1664577990"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1664577990"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1664739222"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1664739222"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1664577990"></script>
+<script type="text/javascript" src="/js/search.js?1664739222"></script>
 
     
   </div>
@@ -1104,7 +1104,7 @@ $$</p>
 <p>La solution numérique est donnée par :
 $$y_1 = y_0+hf(t,y_0)$$
 Et la solution exacte, donnée par un développement de Taylor autour de $t_0$, s&rsquo;écrit :
-$$y(t_1)=y(t_0+h)=y(t_0)+hy'(t_0)+\frac{1}{2}h^2y''(t)+O(h^3)$$
+$$y(t_1)=y(t_0+h)=y(t_0)+hy'(t_0)+\frac{1}{2}h^2y''(t_0)+O(h^3)$$
 L&rsquo;erreur vaut la différence :
 $$y(t_1)-y_1=\frac{1}{2}h^2y''(t)+O(h^3)$$
 Cela montre que pour un petit $h$, l&rsquo;erreur de troncature locale est approximativement proportionnelle à $h^2$.</p>
@@ -1130,25 +1130,25 @@ En python, comme la mantisse d&rsquo;un flottant correspond à 53 bits, l&rsquo;
 <p>Le code ci-dessous trouve la première puissance de 2, $x$, pour laquelle $x+1$ est arrondie à $x$ (<strong>absorption</strong>), provoquant une erreur relative (la plus grande possible) de $1/x$.
 <img src="/petitcodeepsilon.png?width=300px" alt=""></p>
 </blockquote>
-<p>Par conséquent, l&rsquo;erreur d&rsquo;arrondi sur chaque valeur $y_n$ obtenue par la méthode d&rsquo;Euler est de l&rsquo;ordre de $\varepsilon y_n$. Et en supposant ces erreurs d&rsquo;arrondi comme des variables aléatoires indépendantes, l&rsquo;erreur d&rsquo;arrondi totale va être de l&rsquo;ordre de $\varepsilon\sqrt{n}$ où $n$, le nombre de valeurs calculées, est inversement proportionnel au pas.<br>
+<p>Par conséquent, l&rsquo;erreur d&rsquo;arrondi sur chaque valeur $y_n$ obtenue par la méthode d&rsquo;Euler est de l&rsquo;ordre de $\varepsilon y_n$. Et en considérant ces erreurs d&rsquo;arrondi comme des variables aléatoires indépendantes, l&rsquo;erreur d&rsquo;arrondi totale va être de l&rsquo;ordre de $\varepsilon\sqrt{n}$ où $n$, le nombre de valeurs calculées, est inversement proportionnel au pas.<br>
 Finalement, l&rsquo;erreur d&rsquo;arrondi globale est proportionnelle à $\frac{\varepsilon}{\sqrt{h}}$ et donc diverge lorsque $h$ tend vers 0 !</p>
 <p>Réduire l&rsquo;erreur de troncature se fait donc au détriment de l&rsquo;erreur d&rsquo;arrondi. Néanmoins, on peut se prémunir en bonne part des erreurs d&rsquo;arrondi grâce à une sommation compensée (algorithme de Kahan).</p>
 <br>
 <h4 id="stabilité-numérique">Stabilité numérique</h4>
-<p align="center"><iframe src="https://trinket.io/embed/glowscript/45100c7d66?start=result" width="800" height="500" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></p>
+<p align="center"><iframe src="https://trinket.io/embed/glowscript/45100c7d66" width="800" height="500" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></p>
 
 <p>Comme le montre l&rsquo;exemple précédent d&rsquo;un oscillateur harmonique amorti, la  méthode d&rsquo;Euler explicite peut être numériquement instable, la solution numérique s&rsquo;écartant de plus en plus de la solution exacte.</p>
-<p>Si la méthode d&rsquo;Euler est utilisée sur l&rsquo;équation linéaire $y'=ky$, alors la solution numérique ne sera stable que si le produit $hk$ est dans la région $\left\{z \in\mathbb{C} ,|z| ≤ 1\right\}$.<br>
+<p>Si la méthode d&rsquo;Euler est utilisée sur l&rsquo;équation linéaire $y'=ky$, alors la solution numérique ne sera stable que si le produit $hk$ est dans la région $\left\{z \in\mathbb{C} ,|1+z| ≤ 1\right\}$.<br>
 On obtient en effet : $y_{n+1}=(1+hk)y_n$<br>
 Et donc :  $y_n = y_0(1+hk)^n$<br>
 Le domaine de stabilité correspond à la partie du plan complexe où cette suite géométrique est bornée. Il s&rsquo;agit bien du disque de centre $z=-1$ et de rayon 1 (en posant $z=hk$).</p>
 <p>En généralisant à un système différentiel linéaire de la forme : $y'(t)=My(t)$ (où $M$ est une matrice carrée), il faudra, pour obtenir une solution stable, que chaque valeur propre de $M$ soit dans le disque précédent.</p>
 <blockquote>
 <p>Pour notre exemple, on a :
-$$\begin{pmatrix}\dot{z}_1\\ \dot{z}_2\end{pmatrix}=\begin{pmatrix}0&amp;1\\ -{\omega_0}^2 &amp; \alpha\end{pmatrix}\begin{pmatrix}z_1\\ z_2\end{pmatrix}$$</p>
-<p>On obtient deux valeurs propres imaginaires pures
-$$\lambda_{\genfrac{}{}{0pt}{}{1}{2}} = \frac{\alpha}{2} \pm i\sqrt{\left(\frac{\alpha}{2}\right)^2-{\omega_0}^2}$$
-et donc pour que $hk=h\lambda_{\genfrac{}{}{0pt}{}{1}{2}}$ soit à l&rsquo;intérieur du domaîne de stabilité, il faut que $h^2\left(\left(\frac{\alpha}{2}+1\right)^2 + \left(\frac{\alpha}{2}\right)^2-{\omega_0}^2\right) ≤ 1$.
+$$\begin{pmatrix}\dot{z}_1\\ \dot{z}_2\end{pmatrix}=\begin{pmatrix}0&amp;1\\ -{\omega_0}^2 &amp; -\frac{\omega_0}{Q}\end{pmatrix}\begin{pmatrix}z_1\\ z_2\end{pmatrix}$$</p>
+<p>On obtient deux valeurs propres imaginaires pures si $Q&gt;1/2$ :
+$$\lambda_{\genfrac{}{}{0pt}{}{1}{2}} = \omega_0\left(\frac{1}{2Q} \pm i\sqrt{\left(1-\frac{1}{2Q}\right)^2}\right)$$
+et donc pour que $hk=h\lambda_{\genfrac{}{}{0pt}{}{1}{2}}$ soit à l&rsquo;intérieur du domaîne de stabilité, il faut que $\left(-\frac{h\omega_0}{2Q}+1\right)^2 + \left(\frac{h\omega_0}{2Q}\right)^2(4Q^2-1) ≤ 1$.
 <img src="/soleulerstable2.png?width=500px" alt="">
 <img src="/soleulerstable.png?width=1000px" alt="">
 En passant la valeur de $h$ à <code>0.002</code> dans le programme de l&rsquo;oscillateur harmonique amorti, on constate effectivement que l&rsquo;amplitude de l&rsquo;oscillation daigne  bien maintenant diminuer&hellip;</p>
@@ -1159,7 +1159,7 @@ En passant la valeur de $h$ à <code>0.002</code> dans le programme de l&rsquo;o
 <p>Si plutôt qu&rsquo;évaluer $f$ au point de départ ($t_n$,$y_n$), on l&rsquo;évalue au point d&rsquo;arrivée ($t_{n+1}$,$y_{n+1}$), on obtient la méthode d&rsquo;Euler implicite :
 $$y_{n+1}=y_n+hf(t_{n+1},y_{n+1})$$
 La méthode est dite implicite car $y_{n+1}$ est présent dans les deux membres. Par conséquent, on doit à chaque étape résoudre une équation pour déterminer le nouveau point, ce qui rend l&rsquo;implémentation plus coûteuse.<br>
-Cette méthode est aussi d&rsquo;ordre 1, mais son domaîne de stabilité est complémentaire à celui de la méthode explicite ce qui permet de l&rsquo;utiliser sur les équations différentielles raides.</p>
+Cette méthode est aussi d&rsquo;ordre 1, mais son domaîne de stabilité est beaucoup plus grand que celui de la méthode explicite puisqu&rsquo;il s&rsquo;agit de l&rsquo;extérieur du disque de rayon 1 centré sur (1;0). Cela permet de l&rsquo;utiliser sur les équations différentielles raides.</p>
 
 <div class="notices warning" ><p>Les méthodes explicites et implicites présentent toutes deux un gros défaut pour qui s&rsquo;attelle à la résolution de problèmes de mécanique : <strong>elles ne conservent pas l&rsquo;énergie</strong> !<br>
 La méthode explicite va avoir tendance à ajouter de l&rsquo;énergie dans le système alors que la métode implicite va avoir tendance à en enlever (ce qu&rsquo;on peut mettre en lien avec sa plus grande stabilité).</p>
@@ -1769,19 +1769,19 @@ Résoudre numériquement l&rsquo;équation différentielle revient donc à inté
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1664577990"></script>
-    <script src="/js/perfect-scrollbar.min.js?1664577990"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1664577990"></script>
-    <script src="/js/jquery.sticky.js?1664577990"></script>
-    <script src="/js/featherlight.min.js?1664577990"></script>
-    <script src="/js/highlight.pack.js?1664577990"></script>
+    <script src="/js/clipboard.min.js?1664739222"></script>
+    <script src="/js/perfect-scrollbar.min.js?1664739222"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1664739222"></script>
+    <script src="/js/jquery.sticky.js?1664739222"></script>
+    <script src="/js/featherlight.min.js?1664739222"></script>
+    <script src="/js/highlight.pack.js?1664739222"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1664577990"></script>
-    <script src="/js/learn.js?1664577990"></script>
-    <script src="/js/hugo-learn.js?1664577990"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1664739222"></script>
+    <script src="/js/learn.js?1664739222"></script>
+    <script src="/js/hugo-learn.js?1664739222"></script>
     
         
-            <script src="/mermaid/mermaid.js?1664577990"></script>
+            <script src="/mermaid/mermaid.js?1664739222"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
