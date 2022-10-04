@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1664741273" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1664741273" rel="stylesheet">
-    <link href="/css/hybrid.css?1664741273" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1664741273" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1664741273" rel="stylesheet">
-    <link href="/css/auto-complete.css?1664741273" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1664741273" rel="stylesheet">
-    <link href="/css/theme.css?1664741273" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1664741273" rel="stylesheet">
+    <link href="/css/nucleus.css?1664893990" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1664893990" rel="stylesheet">
+    <link href="/css/hybrid.css?1664893990" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1664893990" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1664893990" rel="stylesheet">
+    <link href="/css/auto-complete.css?1664893990" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1664893990" rel="stylesheet">
+    <link href="/css/theme.css?1664893990" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1664893990" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1664741273" rel="stylesheet">
+    <link href="/css/theme-green.css?1664893990" rel="stylesheet">
     
-    <link href="/css/foo.css?1664741273" rel="stylesheet"><link href="/css/bar.css?1664741273" rel="stylesheet">
+    <link href="/css/foo.css?1664893990" rel="stylesheet"><link href="/css/bar.css?1664893990" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1664741273"></script>
+    <script src="/js/jquery-3.3.1.min.js?1664893990"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1664741273"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1664741273"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1664893990"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1664893990"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1664741273"></script>
+<script type="text/javascript" src="/js/search.js?1664893990"></script>
 
     
   </div>
@@ -992,8 +992,8 @@ affiche(A)
 0.0       1.0      8500.0    8500.0  
 0.0       0.0       1.0      0.9995 
 </code></pre><p>Construisons maintenant une fonction <code>substitution</code> qui part d&rsquo;une matrice échelonnée  $M_{n,n+1}$ et qui en déduit le vecteur solution $V$ du système d&rsquo;équations représenté par la matrice.</p>
-<p>$V = (v_1,v_2,\ldots,v_n)^t$ est tel que :</p>
-<p>$$ \begin{cases} m_{11}\,v_1 +m_{12}\,v_2 + \ldots + m_{1n}\,v_n = m_{1\,n+1} \\m_{21}\,v_1+m_{22}\,v_2 + \ldots + m_{2n}\,v_n = m_{2\,n+1} \\ \quad\vdots \qquad\qquad\vdots\;\;\;\;\;\;\;\;\ddots\qquad \vdots \qquad\qquad\vdots\\m_{n1}\,v_1 +m_{n2}\,v_2 + \ldots + m_{nn}\,v_n = m_{n\,n+1} \end{cases} $$</p>
+<p>$\color{green}V \color{black} = (\color{green}v_1\color{black},\color{green}v_2\color{black},\color{green}\ldots\color{black},\color{green}v_n\color{black})^t$ est tel que :</p>
+<p>$$ \begin{cases} m_{11}\,\color{green}v_1\color{black} +m_{12}\,\color{green}v_2\color{black} + \ldots + m_{1n}\,\color{green}v_n\color{black} = m_{1\,n+1} \\m_{21}\,\color{green}v_1\color{black}+m_{22}\,\color{green}v_2\color{black} + \ldots + m_{2n}\,\color{green}v_n\color{black} = m_{2\,n+1} \\ \quad\vdots \qquad\qquad\vdots\;\;\;\;\;\;\;\;\ddots\qquad \vdots \qquad\qquad\vdots\\m_{n1}\,\color{green}v_1\color{black} +m_{n2}\,\color{green}v_2\color{black} + \ldots + m_{nn}\,\color{green}v_n\color{black} = m_{n\,n+1} \end{cases} $$</p>
 <p>où $m_{ii} = 1$ pour $i$ allant de $1$ à $n$, et où $m_{i,j}=0$ pour $i&gt;j$.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">substitution</span>(M) :
     <span style="color:#e6db74">&#34;&#34;&#34;
@@ -1233,7 +1233,9 @@ f_noeuds <span style="color:#f92672">=</span> [h(n) <span style="color:#66d9ef">
 plt<span style="color:#f92672">.</span>scatter(Noeuds,f_noeuds,c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>,zorder<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
 plt<span style="color:#f92672">.</span>legend()
 </code></pre></div><p><img src="/compinterpheavi.png?width=1100px" alt=""></p>
+<br>
 <h2 id="méthode-deuler">Méthode d&rsquo;Euler</h2>
+<p style="text-align:center;font-size:20px;font-weight:bold"><a href="https://presentationssite.github.io/info/euler/">Présentation</a></p>
 <blockquote>
 <p>Complétez la fonction <code>Euler</code> ci-dessous qui implémente la méthode d&rsquo;Euler explicite permettant de résoudre les équations différentielles du premier ordre :
 $$\begin{cases}y'(t)=f(t,y(t))\\y(t_0)=y_0\end{cases}$$</p>
@@ -1907,19 +1909,19 @@ fig<span style="color:#f92672">.</span>show()
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1664741273"></script>
-    <script src="/js/perfect-scrollbar.min.js?1664741273"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1664741273"></script>
-    <script src="/js/jquery.sticky.js?1664741273"></script>
-    <script src="/js/featherlight.min.js?1664741273"></script>
-    <script src="/js/highlight.pack.js?1664741273"></script>
+    <script src="/js/clipboard.min.js?1664893990"></script>
+    <script src="/js/perfect-scrollbar.min.js?1664893990"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1664893990"></script>
+    <script src="/js/jquery.sticky.js?1664893990"></script>
+    <script src="/js/featherlight.min.js?1664893990"></script>
+    <script src="/js/highlight.pack.js?1664893990"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1664741273"></script>
-    <script src="/js/learn.js?1664741273"></script>
-    <script src="/js/hugo-learn.js?1664741273"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1664893990"></script>
+    <script src="/js/learn.js?1664893990"></script>
+    <script src="/js/hugo-learn.js?1664893990"></script>
     
         
-            <script src="/mermaid/mermaid.js?1664741273"></script>
+            <script src="/mermaid/mermaid.js?1664893990"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
