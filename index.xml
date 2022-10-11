@@ -52,6 +52,17 @@ Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;
     </item>
     
     <item>
+      <title>Wordle</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/wordle/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/projets/wordle/</guid>
+      <description>Wordle Écrire un solveur du jeu Wordle qui propose un premier mot puis qui propose le mot suivant en fonction du motif coloré qu&amp;rsquo;on lui transmet en réponse au premier mot rentré, et ainsi de suite jusqu&amp;rsquo;à ce qu&amp;rsquo;il nous propose le mot du jour. Et le tout en moins de 6 essais.
+Pour récupérer dans le code la liste des 2315 mots pouvant être solution :
+import pandas as pd url1 = &amp;#39;https://gist.</description>
+    </item>
+    
+    <item>
       <title>Correction / Terminaison</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/correctionterminaison/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
@@ -59,6 +70,18 @@ Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/correctionterminaison/</guid>
       <description>Prouver un algorithme Le mot algorithme vient de la latinisation du nom du savant arabe al-Khuwārizmī (780-850) qui a entre autres permis l&amp;rsquo;introduction de l&amp;rsquo;algèbre en Europe (et il est aussi à l&amp;rsquo;origine de ce mot).
 Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc.</description>
+    </item>
+    
+    <item>
+      <title>Doomsday</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/doomsday/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/projets/doomsday/</guid>
+      <description>Algorithme du Doomsday Permet de trouver de tête le jour de la semaine pour n&amp;rsquo;importe quelle date du calendrier grégorien (à partir de 1753).
+On donne une date sous la forme $jour/mois/annee$.
+On décompose tout d&amp;rsquo;abord $annee$ en $s\times 100 + an$ où $s$ est le nombre de siècles ($an&amp;lt;100$).
+doomscentury $c$  on calcule le reste de la division euclidienne par 4 du nombre de siècle $s$ on multiplié par 2 on prend le complément à 7  $$c = 7-(s\mod 4) \times2 $$</description>
     </item>
     
     <item>
@@ -93,6 +116,15 @@ Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est i
       <description>Complexité d&amp;rsquo;un algorithme Parmi les 3 questions qu&amp;rsquo;on peut se poser naturellement devant un algorithme (termine-t-il ? est-il correct ? combien de temps met-il ?), on a laissé la dernière en plan dans le chapitre précédent.
 La question du temps mis par l&amp;rsquo;algorithme est le problème de la complexité de l&amp;rsquo;algorithme.
 L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique est de pouvoir comparer l’efficacité d’algorithmes résolvant le même problème. Dans une situation donnée, cela permet donc d&amp;rsquo;établir lequel des algorithmes disponibles est le meilleur (du point de vue temps d&amp;rsquo;exécution).</description>
+    </item>
+    
+    <item>
+      <title>Doomsday</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/steganographie/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/projets/steganographie/</guid>
+      <description>Stéganographie </description>
     </item>
     
     <item>
@@ -265,7 +297,8 @@ Dans un modèle relationnel, les données sont organisées dans des tables (des 
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp12/</guid>
-      <description>TP 12 : bases de données Cliquez sur cette invitation pour récupérer le repository du TP. On va utiliser python dans ce tp pout accéder aux bases de données, mais de manière la plus transparente possible.
+      <description>TP 12 : bases de données Cliquez sur cette invitation pour récupérer le repository du TP. Présentation
+On va utiliser python dans ce tp pout accéder aux bases de données, mais de manière la plus transparente possible.
 Commençons par cloner le repository Github source dans l&amp;rsquo;instance Colab.
 !git clone https://github.com/Info-TSI-Vieljeux/s3-tp12 Puis, chargeons une extension ipython permettant de se connecter à une base de données et d&amp;rsquo;interagir avec en SQL.
 %load_ext sql Connectons-nous à la base Population.</description>

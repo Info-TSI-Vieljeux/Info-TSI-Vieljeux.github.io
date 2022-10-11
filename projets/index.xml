@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projets on Cours info TSI</title>
+    <link>https://info-tsi-vieljeux.github.io/projets/</link>
+    <description>Recent content in Projets on Cours info TSI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate><atom:link href="https://info-tsi-vieljeux.github.io/projets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wordle</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/wordle/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/projets/wordle/</guid>
+      <description>Wordle Écrire un solveur du jeu Wordle qui propose un premier mot puis qui propose le mot suivant en fonction du motif coloré qu&amp;rsquo;on lui transmet en réponse au premier mot rentré, et ainsi de suite jusqu&amp;rsquo;à ce qu&amp;rsquo;il nous propose le mot du jour. Et le tout en moins de 6 essais.
+Pour récupérer dans le code la liste des 2315 mots pouvant être solution :
+import pandas as pd url1 = &amp;#39;https://gist.</description>
+    </item>
+    
+    <item>
+      <title>Doomsday</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/doomsday/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/projets/doomsday/</guid>
+      <description>Algorithme du Doomsday Permet de trouver de tête le jour de la semaine pour n&amp;rsquo;importe quelle date du calendrier grégorien (à partir de 1753).
+On donne une date sous la forme $jour/mois/annee$.
+On décompose tout d&amp;rsquo;abord $annee$ en $s\times 100 + an$ où $s$ est le nombre de siècles ($an&amp;lt;100$).
+doomscentury $c$  on calcule le reste de la division euclidienne par 4 du nombre de siècle $s$ on multiplié par 2 on prend le complément à 7  $$c = 7-(s\mod 4) \times2 $$</description>
+    </item>
+    
+    <item>
+      <title>Doomsday</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/steganographie/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/projets/steganographie/</guid>
+      <description>Stéganographie </description>
+    </item>
+    
+  </channel>
+</rss>
