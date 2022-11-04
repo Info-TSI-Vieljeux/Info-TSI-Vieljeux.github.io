@@ -88,7 +88,7 @@
 	"title": "Stéganographie",
 	"tags": [],
 	"description": "",
-	"content": "Stéganographie Première mission Dévoiler le message caché dans les 2 bits de poids faible de l\u0026rsquo;image fournie.\nCe petit code suffit pour dévoiler l\u0026rsquo;image cachée dans l\u0026rsquo;image :\ndef decache_image(image) : image_decrypt = (image % 4) * 2**6 + 2**5 return image_decrypt Pour l\u0026rsquo;afficher :\n``"
+	"content": "Stéganographie Première mission Dévoiler le message caché dans les 2 bits de poids faible de l\u0026rsquo;image fournie.\nImportons d\u0026rsquo;abord les modules nécessaires :\nfrom PIL import Image import urllib.request # pour récupérer une image sur le web from IPython.display import display # pour afficher dans un notebook import numpy as np Ce petit code suffit pour dévoiler l\u0026rsquo;image cachée dans l\u0026rsquo;image :\ndef decache_image(image) : image_decrypt = (image % 4) * 2**6 + 2**5 return image_decrypt Pour l\u0026rsquo;afficher :\n``"
 },
 {
 	"uri": "https://info-tsi-vieljeux.github.io/semestre_1/tp3data/",

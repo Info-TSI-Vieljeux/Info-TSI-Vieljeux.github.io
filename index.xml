@@ -125,7 +125,8 @@ L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique 
       
       <guid>https://info-tsi-vieljeux.github.io/projets/steganographie/</guid>
       <description>Stéganographie Première mission Dévoiler le message caché dans les 2 bits de poids faible de l&amp;rsquo;image fournie.
-Ce petit code suffit pour dévoiler l&amp;rsquo;image cachée dans l&amp;rsquo;image :
+Importons d&amp;rsquo;abord les modules nécessaires :
+from PIL import Image import urllib.request # pour récupérer une image sur le web from IPython.display import display # pour afficher dans un notebook import numpy as np Ce petit code suffit pour dévoiler l&amp;rsquo;image cachée dans l&amp;rsquo;image :
 def decache_image(image) : image_decrypt = (image % 4) * 2**6 + 2**5 return image_decrypt Pour l&amp;rsquo;afficher :</description>
     </item>
     
