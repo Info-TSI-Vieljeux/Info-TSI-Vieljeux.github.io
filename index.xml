@@ -154,15 +154,13 @@ Et donc si la structure contient n éléments, le dernier indice est n-1.</descr
     
     <item>
       <title>IEEE-754</title>
-      <link>https://info-tsi-vieljeux.github.io/projets/iee754/</link>
+      <link>https://info-tsi-vieljeux.github.io/projets/ieee754/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
-      <guid>https://info-tsi-vieljeux.github.io/projets/iee754/</guid>
-      <description>IEEE-754   Réaliser un convertisseur permettant de donner l&amp;rsquo;écriture d&amp;rsquo;un flottant sous la forme d&amp;rsquo;un nombre binaire de 64 bits suivant la norme IEE-754 (cf. cours sur le codage des nombres).
-  Réaliser aussi le convertisseur inverse.
-   Pour vérifier Nombre à convertir en mot machine 64 bits : Conversion
+      <guid>https://info-tsi-vieljeux.github.io/projets/ieee754/</guid>
+      <description>IEEE-754  Réaliser un convertisseur permettant de donner l&amp;rsquo;écriture d&amp;rsquo;un flottant sous la forme d&amp;rsquo;un nombre binaire de 64 bits suivant la norme IEE-754 (cf. cours sur le codage des nombres). Réaliser aussi le convertisseur inverse.   Pour vérifier Nombre à convertir en mot machine 64 bits : Conversion
 Mot machine 64 bits à convertir en nombre décimal : Conversion
- function conv_fract(n) { n = Math.</description>
+ function conv_fract(n) { n = Math.abs(n); n = n - Math.</description>
     </item>
     
     <item>
