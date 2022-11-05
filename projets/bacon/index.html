@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1667617583" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1667617583" rel="stylesheet">
-    <link href="/css/hybrid.css?1667617583" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1667617583" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1667617583" rel="stylesheet">
-    <link href="/css/auto-complete.css?1667617583" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1667617583" rel="stylesheet">
-    <link href="/css/theme.css?1667617583" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1667617583" rel="stylesheet">
+    <link href="/css/nucleus.css?1667671647" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1667671647" rel="stylesheet">
+    <link href="/css/hybrid.css?1667671647" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1667671647" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1667671647" rel="stylesheet">
+    <link href="/css/auto-complete.css?1667671647" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1667671647" rel="stylesheet">
+    <link href="/css/theme.css?1667671647" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1667671647" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1667617583" rel="stylesheet">
+    <link href="/css/theme-green.css?1667671647" rel="stylesheet">
     
-    <link href="/css/foo.css?1667617583" rel="stylesheet"><link href="/css/bar.css?1667617583" rel="stylesheet">
+    <link href="/css/foo.css?1667671647" rel="stylesheet"><link href="/css/bar.css?1667671647" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1667617583"></script>
+    <script src="/js/jquery-3.3.1.min.js?1667671647"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1667617583"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1667617583"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1667671647"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1667671647"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1667617583"></script>
+<script type="text/javascript" src="/js/search.js?1667671647"></script>
 
     
   </div>
@@ -1063,9 +1063,15 @@ onload='renderMathInElement(document.body);'></script>
 <p>À partir de ces informations, on peut créer un <strong>graphe</strong> où les sommets sont les films et les acteurs et où une arête lie un acteur à un film dans lequel il joue.</p>
 <p>Le graphe obtenu est <strong>biparti</strong> car il n&rsquo;y a pas d&rsquo;arête entre les acteurs, ni entre les films, seulement entre sommets de catégories différentes.</p>
 <p>Ce graphe va nous permettre de tester l&rsquo;effet <strong>« petits mondes »</strong> qui consiste à obtenir des distances faibles entre deux sommets quelconques lorsque les graphes sont suffisamment interconnectés. Le graphe est alors gros mais peu large (petit diamètre) !</p>
+<p>Le « nombre de Bacon » d&rsquo;un acteur est le chiffre caractérisé par le degré de séparation qu&rsquo;il a avec Kevin Bacon. C&rsquo;est une application du <strong><a href="https://fr.wikipedia.org/wiki/Nombre_d%27Erd%C5%91s">nombre d&rsquo;Erdős</a></strong> au secteur du cinéma. Plus le chiffre est grand, plus l&rsquo;acteur en question est éloigné de Bacon.</p>
+<ul>
+<li>Le nombre de Bacon de Kevin Bacon lui-même est 0</li>
+<li>Le nombre de Bacon d&rsquo;un acteur A ayant tourné directement avec Kevin Bacon est 1</li>
+<li>Si le plus nombre de Bacon d&rsquo;un acteur avec qui A a tourné est N, le Bacon number de A est N + 1.</li>
+</ul>
 <h3 id="première-mission-">Première mission :</h3>
 <blockquote>
-<p>créer une fonction qui donne le nombre de Bacon d&rsquo;un acteur A et qui affiche la chaîne &ldquo;acteur A - film A - acteur B - film B - &hellip; - Kevin Bacon&rdquo;.</p>
+<p>Créer une fonction qui donne le nombre de Bacon d&rsquo;un acteur A et qui affiche la chaîne &ldquo;acteur A - film A - acteur B - film B - &hellip; - Kevin Bacon&rdquo; sur notre jeu de données restreint.</p>
 </blockquote>
 <p><img src="/kevinmarilyn.png" alt=""></p>
 <p>Pour cela, il faudra d&rsquo;abord créer la matrice d&rsquo;adjacence du graphe ayant pour sommets tous les films et acteurs et dont les arêtes lient un acteur au film dans lequel il joue.</p>
@@ -1077,8 +1083,8 @@ response <span style="color:#f92672">=</span> requests<span style="color:#f92672
 data <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
 </code></pre></div><hr>
 <h3 id="seconde-mission-">Seconde mission :</h3>
-<p>Toujours grâce à un parcours en largeur, vous recenserez les différentes composantes connexes du graphe.</p>
-<p>Ensuite, vous tenterez de calculer la distance moyenne entre deux acteurs dans la plus grosse composante.</p>
+<p>Toujours grâce à un parcours en largeur, vous recenserez les différents domaines connexes du graphe.</p>
+<p>Ensuite, vous calculerez la distance moyenne d&rsquo;un acteur avec les autres acteurs de son domaine, dans le plus gros des domaines.</p>
 <hr>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/QCj7VijRkiM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
@@ -1088,15 +1094,18 @@ data <span style="color:#f92672">=</span> response<span style="color:#f92672">.<
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
 response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;http://cs.oberlin.edu/~gr151/imdb/imdb.top250.txt&#34;</span>)
 data <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
-</code></pre></div><p>Fabrication du graphe :</p>
+</code></pre></div><p>Fabrication du graphe et de la liste des acteurs :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">LA <span style="color:#f92672">=</span> {}
-Acteurs <span style="color:#f92672">=</span> []
+Acteurs <span style="color:#f92672">=</span> {}
+Films <span style="color:#f92672">=</span> {}
 <span style="color:#66d9ef">for</span> ligne <span style="color:#f92672">in</span> data[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] :
     acteur,film <span style="color:#f92672">=</span> ligne<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;|&#39;</span>)
     <span style="color:#66d9ef">if</span> acteur[<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>:] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;(I)&#39;</span> :
         acteur <span style="color:#f92672">=</span> acteur[:<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>]
-    <span style="color:#66d9ef">if</span> acteur <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> Acteurs :
-        Acteurs<span style="color:#f92672">.</span>append(acteur)
+    <span style="color:#66d9ef">if</span> acteur <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> Acteurs : <span style="color:#75715e"># utiliser un dictionnaire permet de ne pas passer en O(n^2)</span>
+        Acteurs[acteur] <span style="color:#f92672">=</span> True 
+    <span style="color:#66d9ef">if</span> film <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> Films : <span style="color:#75715e"># idem</span>
+        Films[film] <span style="color:#f92672">=</span> True
     <span style="color:#66d9ef">if</span> acteur <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> LA :
         LA[acteur] <span style="color:#f92672">=</span> [film]
     <span style="color:#66d9ef">else</span> :
@@ -1105,25 +1114,25 @@ Acteurs <span style="color:#f92672">=</span> []
         LA[film] <span style="color:#f92672">=</span> [acteur]
     <span style="color:#66d9ef">else</span> :
         LA[film] <span style="color:#f92672">+=</span> [acteur]
-</code></pre></div><p>Parcours en largeur :</p>
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{len(Films)} films où jouent {len(Acteurs)} acteurs.&#34;</span>)
+</code></pre></div><p><code>250 films où jouent 12465 acteurs.</code></p>
+<p>Parcours en largeur avec mémorisation des prédécesseurs pour reconstituer ensuite le chemin le plus court :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parcours_largeur</span>(G,depart,cible):
     file <span style="color:#f92672">=</span> deque()
     file<span style="color:#f92672">.</span>append((depart,depart))
-    Parents <span style="color:#f92672">=</span> {depart : <span style="color:#ae81ff">0</span>}
-    Vus_sommet <span style="color:#f92672">=</span> []
-    distance <span style="color:#f92672">=</span> {depart:<span style="color:#ae81ff">0</span>}
+    Parents <span style="color:#f92672">=</span> {depart : None}
+    Vus_sommet <span style="color:#f92672">=</span> {}
     <span style="color:#66d9ef">while</span> file :
         sommet,parent <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>popleft()
         <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus_sommet :
             <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> G[sommet] :
                 file<span style="color:#f92672">.</span>append((v,sommet))
             Parents[sommet] <span style="color:#f92672">=</span> parent
-            Vus_sommet<span style="color:#f92672">.</span>append(sommet)
-            distance[sommet] <span style="color:#f92672">=</span> distance[parent]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+            Vus_sommet[sommet] <span style="color:#f92672">=</span> True
             <span style="color:#66d9ef">if</span> sommet <span style="color:#f92672">==</span> cible :
-                <span style="color:#66d9ef">break</span>
-    <span style="color:#66d9ef">return</span> Parents,(distance[cible]<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>
+                <span style="color:#66d9ef">return</span> Parents
+    <span style="color:#66d9ef">return</span> None <span style="color:#75715e"># depart et cible ne sont pas connectés</span>
 </code></pre></div><p>Reconstruction du chemin entre les deux acteurs :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">chemin</span>(parents,cible,depart,chem) :
     <span style="color:#66d9ef">if</span> cible <span style="color:#f92672">==</span> depart :
@@ -1135,22 +1144,110 @@ Acteurs <span style="color:#f92672">=</span> []
     chem <span style="color:#f92672">=</span> [cible]    
     chemin(parents,cible,depart,chem)
     <span style="color:#66d9ef">return</span> chem[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-</code></pre></div><p>Et au final :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">depart <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Marilyn Monroe&#39;</span>
-cible <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Kevin Bacon&#39;</span>
-parents, dist <span style="color:#f92672">=</span> parcours_largeur(LA,depart,cible)
-ch <span style="color:#f92672">=</span> rec_chem(parents,cible,depart)
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,len(ch)<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>) :
-  <span style="color:#66d9ef">print</span>(ch[i]<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; - &#34;</span><span style="color:#f92672">+</span>ch[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; - &#34;</span><span style="color:#f92672">+</span>ch[i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>])
-<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;distance : {dist}&#34;</span>)
-</code></pre></div><p><code>Marilyn Monroe - All About Eve (1950) - Franklyn Farnu</code><br>
-<code>Franklyn Farnum - Sunset Blvd. (1950) - William Holden</code><br>
-<code>William Holden - Network (1976) - Tim Robbins</code><br>
-<code>Tim Robbins - Mystic River (2003) - Kevin Bacon</code><br>
+</code></pre></div><p>Et au final, le nombre de Bacon n&rsquo;est autre que la moitié de la distance entre Francis Bacon et l&rsquo;autre acteur (ce qui revient au nombre de films qui les séparent) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">depart <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Kevin Bacon&#39;</span>
+cible <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Marilyn Monroe&#39;</span>
+<span style="color:#66d9ef">if</span> cible <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> Acteurs :
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Pas de {cible} dans la liste...&#34;</span>)
+<span style="color:#66d9ef">else</span> :
+    parents <span style="color:#f92672">=</span> parcours_largeur(LA,depart,cible)
+    ch <span style="color:#f92672">=</span> rec_chem(parents,cible,depart)
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,len(ch)<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>) :
+      <span style="color:#66d9ef">print</span>(ch[i]<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; - &#34;</span><span style="color:#f92672">+</span>ch[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; - &#34;</span><span style="color:#f92672">+</span>ch[i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>])
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;distance : {(len(ch)-1)//2}&#34;</span>)
+</code></pre></div><p><code>Kevin Bacon - Mystic River (2003) - Laurence Fishburne</code><br>
+<code>Laurence Fishburne - Apocalypse Now (1979) - Marlon Brando</code><br>
+<code>Marlon Brando - On the Waterfront (1954) - Nehemiah Persoff</code><br>
+<code>Nehemiah Persoff - Some Like It Hot (1959) - Marilyn Monroe</code><br>
 <code>distance : 4</code></p>
 <hr>
 <h2 id="une-solution-pour-la-seconde-mission-">Une solution pour la seconde mission :</h2>
 <p><img src="/graphedomcoul.png" alt=""></p>
+<p>Le code suivant permet de créer une liste de listes où chaque sous liste est un des domaines connexes.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">domaines_connexes</span>(G):
+    Domaines <span style="color:#f92672">=</span> []
+    Vus_tous <span style="color:#f92672">=</span> {}
+    <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G :
+        <span style="color:#66d9ef">if</span> s <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> Vus_tous :
+            file <span style="color:#f92672">=</span> deque()
+            file<span style="color:#f92672">.</span>append(s)
+            Vus <span style="color:#f92672">=</span> {}
+            <span style="color:#66d9ef">while</span> file :
+                sommet <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>popleft()
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus :
+                    file <span style="color:#f92672">+=</span> G[sommet]
+                    Vus[sommet] <span style="color:#f92672">=</span> True
+                    Vus_tous[sommet] <span style="color:#f92672">=</span> True
+            Domaines<span style="color:#f92672">.</span>append(list(Vus<span style="color:#f92672">.</span>keys()))
+    <span style="color:#66d9ef">assert</span> len(Vus_tous) <span style="color:#f92672">==</span> len(G) <span style="color:#75715e"># check qu&#39;on a bien vu tout le monde</span>
+    <span style="color:#66d9ef">return</span> Domaines
+</code></pre></div><p>Vérification :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> DOM <span style="color:#f92672">=</span> domaines_connexes(LA)
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(DOM)) :
+<span style="color:#f92672">...</span>    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Taille domaine {i} : {len(DOM[i])}&#34;</span>)
+</code></pre></div><p><code>Taille domaine 0 : 1203</code><br>
+<code>Taille domaine 1 : 108</code><br>
+<code>Taille domaine 2 : 32</code><br>
+<code>Taille domaine 3 : 33</code><br>
+<code>Taille domaine 4 : 86</code><br>
+<code>Taille domaine 5 : 31</code><br>
+<code>Taille domaine 6 : 150</code><br>
+<code>Taille domaine 7 : 47</code><br>
+<code>Taille domaine 8 : 22</code><br>
+<code>Taille domaine 9 : 49</code><br>
+<code>Taille domaine 10 : 13</code><br>
+<code>Taille domaine 11 : 51</code><br>
+<code>Taille domaine 12 : 38</code><br>
+<code>Taille domaine 13 : 7</code><br>
+<code>Taille domaine 14 : 13</code></p>
+<p>Retirons ensuite du graphe et de la liste des acteurs, tous les sommets qui ne sont pas dans le domaine 0 :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">LA0 <span style="color:#f92672">=</span> LA<span style="color:#f92672">.</span>copy()
+Acteurs0 <span style="color:#f92672">=</span> Acteurs<span style="color:#f92672">.</span>copy()
+Films0 <span style="color:#f92672">=</span> Films<span style="color:#f92672">.</span>copy()
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(DOM)) :
+    <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> DOM[i] :
+        <span style="color:#66d9ef">del</span> LA0[s]
+        <span style="color:#66d9ef">if</span> s <span style="color:#f92672">in</span> Acteurs :
+            <span style="color:#66d9ef">del</span> Acteurs0[s]
+        <span style="color:#66d9ef">if</span> s <span style="color:#f92672">in</span> Films :
+            <span style="color:#66d9ef">del</span> Films0[s]
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Il y a {len(Films0)} films et {len(Acteurs0)} acteurs dans le plus gros domaine connexe.&#34;</span>)
+</code></pre></div><p><code>Il y a 233 films et 11802 acteurs dans le plus gros domaine connexe.</code></p>
+<p>Comme on n&rsquo;a plus besoin de reconstituer un chemin, écrivons une version simplifiée du parcours en largeur permettant de calculer la distance entre deux acteurs le plus vite possible.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">BFS0</span>(G,depart,cible):
+    file <span style="color:#f92672">=</span> deque()
+    file<span style="color:#f92672">.</span>append((depart,<span style="color:#ae81ff">0</span>))
+    Vus_sommet <span style="color:#f92672">=</span> {}
+    <span style="color:#66d9ef">while</span> file :
+        sommet,dist <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>popleft()
+        <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> G[sommet] :
+            <span style="color:#66d9ef">if</span> v <span style="color:#f92672">==</span> cible :
+                <span style="color:#66d9ef">return</span> (dist<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> v <span style="color:#f92672">in</span> Vus_sommet :
+                Vus_sommet[v] <span style="color:#f92672">=</span> True
+                file<span style="color:#f92672">.</span>append((v,dist<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))
+</code></pre></div><p>Une fonction permettant de trouver la distance moyenne d&rsquo;un acteur aux autres :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">distMoy</span>(acteur,G,listeActeurs) :
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    précondition : G est connexe, acteur et listeActeurs appartiennent à G
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    listact <span style="color:#f92672">=</span> list(Acteurs0<span style="color:#f92672">.</span>keys())
+    listact<span style="color:#f92672">.</span>remove(acteur)
+    distMoy <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    nbPaires <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> cible <span style="color:#f92672">in</span> listact :
+        dist <span style="color:#f92672">=</span> BFS0(G,acteur,cible)
+        distMoy <span style="color:#f92672">+=</span> dist
+        nbPaires <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+    distMoy <span style="color:#f92672">=</span> distMoy<span style="color:#f92672">/</span>nbPaires
+    <span style="color:#66d9ef">return</span> distMoy 
+</code></pre></div><p>Y a plus qu&rsquo;à :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Acteur <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Tom Cruise&#34;</span>
+<span style="color:#66d9ef">if</span> Acteur <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> Acteurs0 :
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{Acteur} n&#39;est pas présent dans la liste&#34;</span>)
+<span style="color:#66d9ef">else</span> :
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;La distance entre {Acteur} et un autre acteur du domaine 0 est en moyenne de {distMoy(Acteur,LA0,Acteurs0):.2f}.&#34;</span>)
+</code></pre></div><p><code>LA distance entre Tom Cruise et un autre acteur du domaine 0 est en moyenne de 3.32.</code></p>
 
 
 <footer class="footline">
@@ -1817,19 +1914,19 @@ ch <span style="color:#f92672">=</span> rec_chem(parents,cible,depart)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1667617583"></script>
-    <script src="/js/perfect-scrollbar.min.js?1667617583"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1667617583"></script>
-    <script src="/js/jquery.sticky.js?1667617583"></script>
-    <script src="/js/featherlight.min.js?1667617583"></script>
-    <script src="/js/highlight.pack.js?1667617583"></script>
+    <script src="/js/clipboard.min.js?1667671647"></script>
+    <script src="/js/perfect-scrollbar.min.js?1667671647"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1667671647"></script>
+    <script src="/js/jquery.sticky.js?1667671647"></script>
+    <script src="/js/featherlight.min.js?1667671647"></script>
+    <script src="/js/highlight.pack.js?1667671647"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1667617583"></script>
-    <script src="/js/learn.js?1667617583"></script>
-    <script src="/js/hugo-learn.js?1667617583"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1667671647"></script>
+    <script src="/js/learn.js?1667671647"></script>
+    <script src="/js/hugo-learn.js?1667671647"></script>
     
         
-            <script src="/mermaid/mermaid.js?1667617583"></script>
+            <script src="/mermaid/mermaid.js?1667671647"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
