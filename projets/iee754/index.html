@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1667610921" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1667610921" rel="stylesheet">
-    <link href="/css/hybrid.css?1667610921" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1667610921" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1667610921" rel="stylesheet">
-    <link href="/css/auto-complete.css?1667610921" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1667610921" rel="stylesheet">
-    <link href="/css/theme.css?1667610921" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1667610921" rel="stylesheet">
+    <link href="/css/nucleus.css?1667613711" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1667613711" rel="stylesheet">
+    <link href="/css/hybrid.css?1667613711" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1667613711" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1667613711" rel="stylesheet">
+    <link href="/css/auto-complete.css?1667613711" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1667613711" rel="stylesheet">
+    <link href="/css/theme.css?1667613711" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1667613711" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1667610921" rel="stylesheet">
+    <link href="/css/theme-green.css?1667613711" rel="stylesheet">
     
-    <link href="/css/foo.css?1667610921" rel="stylesheet"><link href="/css/bar.css?1667610921" rel="stylesheet">
+    <link href="/css/foo.css?1667613711" rel="stylesheet"><link href="/css/bar.css?1667613711" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1667610921"></script>
+    <script src="/js/jquery-3.3.1.min.js?1667613711"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1667610921"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1667610921"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1667613711"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1667613711"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1667610921"></script>
+<script type="text/javascript" src="/js/search.js?1667613711"></script>
 
     
   </div>
@@ -1072,13 +1072,6 @@ onload='renderMathInElement(document.body);'></script>
 <script>
 function conv_fract(n) {
 	n = Math.abs(n);
-  var test;
-  if (n >= 1) {
-  	test = true;
-  }
-  else {
-  	test = false
-  }
   n = n - Math.trunc(n);
   n *= 2;
   let count = 0;
@@ -1086,23 +1079,16 @@ function conv_fract(n) {
   let eps = 10**(-9);
   while (count < 64) {
   	if (n>=1) {
-    	if (test == true) {
       	s += '1';
-      }
-    	else {
-      	test = true;
-      }
-      if (!((1-eps < n) && (n < 1+eps))) {
-      	n = (n-1)*2;
-      }
-      else {
-      	break;
-      }
+        if (!((1-eps < n) && (n < 1+eps))) {
+      	  n = (n-1)*2;
+        }
+        else {
+      	  break;
+        }
   	}
     else {
-    	if (test == true){
-      	s += '0';
-      }
+      s += '0';
     	n *= 2
     }
     count += 1
@@ -1145,10 +1131,15 @@ function convNb() {
       mantisse_str = '0'*52;
     }
 		else {
-      exp = Math.trunc(1/n).toString(2).length*(-1) + 1023;
+      let dvlpt = "0"+conv_fract(n);
+      let Exp = 0;
+      while (dvlpt[Exp] == "0" ){
+        Exp += 1;
+      }
+      exp = Exp*(-1) + 1023
       exp_str = exp.toString(2);
       s += exp_str.padStart(11, '0');
-      mantisse_str = conv_fract(n).slice(0,52);
+      mantisse_str = conv_fract(n).slice(Exp,);
     }
     }
   element.innerHTML += "exposant (en puissance de 2) : ";
@@ -1988,19 +1979,19 @@ Tous les nombres auront nécessairement un développement binaire fini (et seron
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1667610921"></script>
-    <script src="/js/perfect-scrollbar.min.js?1667610921"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1667610921"></script>
-    <script src="/js/jquery.sticky.js?1667610921"></script>
-    <script src="/js/featherlight.min.js?1667610921"></script>
-    <script src="/js/highlight.pack.js?1667610921"></script>
+    <script src="/js/clipboard.min.js?1667613711"></script>
+    <script src="/js/perfect-scrollbar.min.js?1667613711"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1667613711"></script>
+    <script src="/js/jquery.sticky.js?1667613711"></script>
+    <script src="/js/featherlight.min.js?1667613711"></script>
+    <script src="/js/highlight.pack.js?1667613711"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1667610921"></script>
-    <script src="/js/learn.js?1667610921"></script>
-    <script src="/js/hugo-learn.js?1667610921"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1667613711"></script>
+    <script src="/js/learn.js?1667613711"></script>
+    <script src="/js/hugo-learn.js?1667613711"></script>
     
         
-            <script src="/mermaid/mermaid.js?1667610921"></script>
+            <script src="/mermaid/mermaid.js?1667613711"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

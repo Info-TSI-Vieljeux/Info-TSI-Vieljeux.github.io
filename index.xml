@@ -217,7 +217,7 @@ La représentation machine d&amp;rsquo;un nombre est appelée mot machine. Sa ta
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/projets/bacon/</guid>
-      <description>Nombre de Bacon Le gros fichier texte accessible en ligne grâce au code ci-dessous contient sur chaque ligne un nom d&amp;rsquo;acteur et le film dans lequel il joue.
+      <description>Nombre de Bacon Le fichier texte accessible en ligne grâce au code ci-dessous contient sur chaque ligne un nom d&amp;rsquo;acteur et le film dans lequel il joue.
 Mission :
  créer une fonction qui donne le nombre de Bacon d&amp;rsquo;un acteur A et qui affiche la chaîne &amp;ldquo;acteur A - film A - acteur B - film B - &amp;hellip; - Kevin Bacon&amp;rdquo;.
  Pour cela, il faudra d&amp;rsquo;abord créer la matrice d&amp;rsquo;adjacence du graphe ayant pour sommets tous les films et acteurs et dont les arêtes lient un acteur au film dans lequel il joue.</description>
