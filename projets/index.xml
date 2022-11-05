@@ -42,5 +42,30 @@ from PIL import Image import urllib.request # pour récupérer une image sur le 
 def decache_image(image) : image_decrypt = (image % 2**2) * 2**6 + 2**5 return image_decrypt  image % 2**2 récupère les deux bits de poids faibles.</description>
     </item>
     
+    <item>
+      <title>IEEE-754</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/iee754/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/projets/iee754/</guid>
+      <description>IEEE-754   Réaliser un convertisseur permettant de donner l&amp;rsquo;écriture d&amp;rsquo;un flottant sous la forme d&amp;rsquo;un nombre binaire de 64 bits suivant la norme IEE-754 (cf. cours sur le codage des nombres).
+  Réaliser aussi le convertisseur inverse.
+   Pour vérifier Nombre à convertir en mot machine 64 bits : Conversion
+Mot machine 64 bits à convertir en nombre décimal : Conversion
+ function conv_fract(n) { n = Math.</description>
+    </item>
+    
+    <item>
+      <title>Nombre de Bacon</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/bacon/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/projets/bacon/</guid>
+      <description>Nombre de Bacon Le gros fichier texte accessible en ligne grâce au code ci-dessous contient sur chaque ligne un nom d&amp;rsquo;acteur et le film dans lequel il joue.
+Mission :
+ créer une fonction qui donne le nombre de Bacon d&amp;rsquo;un acteur A et qui affiche la chaîne &amp;ldquo;acteur A - film A - acteur B - film B - &amp;hellip; - Kevin Bacon&amp;rdquo;.
+ Pour cela, il faudra d&amp;rsquo;abord créer la matrice d&amp;rsquo;adjacence du graphe ayant pour sommets tous les films et acteurs et dont les arêtes lient un acteur au film dans lequel il joue.</description>
+    </item>
+    
   </channel>
 </rss>

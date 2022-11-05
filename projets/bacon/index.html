@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Semestre 2 - Cours info TSI</title>
+    <title>Nombre de Bacon - Cours info TSI</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -65,7 +65,7 @@ onload='renderMathInElement(document.body);'></script>
     
 	
   </head>
-  <body class="" data-url="/semestre_2/">
+  <body class="" data-url="/projets/bacon/">
     <nav id="sidebar" class="">
 
 
@@ -467,8 +467,8 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_2/" title="Semestre 2" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/semestre_2/">
@@ -693,7 +693,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/projets/" title="Projets" class="dd-item
-        
+        parent
         
         
         ">
@@ -803,7 +803,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/projets/bacon/" title="Nombre de Bacon" class="dd-item ">
+      <li data-nav-id="/projets/bacon/" title="Nombre de Bacon" class="dd-item active">
         <a href="/projets/bacon/">
         Nombre de Bacon
         
@@ -1017,13 +1017,26 @@ onload='renderMathInElement(document.body);'></script>
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
-                   Semestre 2
+                   Nombre de Bacon
                  
                   </span>
                 </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#une-solution-">Une solution :</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
                 
               </div>
             </div>
@@ -1032,38 +1045,93 @@ onload='renderMathInElement(document.body);'></script>
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
 
 
         
 
 
+<h1 id="nombre-de-bacon">Nombre de Bacon</h1>
+<p>Le gros fichier texte accessible en ligne grâce au code ci-dessous contient sur chaque ligne un nom d&rsquo;acteur et le film dans lequel il joue.</p>
+<p>Mission :</p>
+<blockquote>
+<p>créer une fonction qui donne le nombre de Bacon d&rsquo;un acteur A et qui affiche la chaîne &ldquo;acteur A - film A - acteur B - film B - &hellip; - Kevin Bacon&rdquo;.</p>
+</blockquote>
+<p>Pour cela, il faudra d&rsquo;abord créer la matrice d&rsquo;adjacence du graphe ayant pour sommets tous les films et acteurs et dont les arêtes lient un acteur au film dans lequel il joue.</p>
+<p>Puis l&rsquo;idée est d&rsquo;utiliser un <strong>parcours en largeur</strong> avec une reconstruction de chemin.</p>
+<hr>
+<p>Lignes de code pour récupérer les données du fichier dans une liste <code>data</code> (chaque élément de <code>data</code> est une ligne du fichier texte) :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;http://cs.oberlin.edu/~gr151/imdb/imdb.top250.txt&#34;</span>)
+data <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><br>
+<hr>
+<h2 id="une-solution-">Une solution :</h2>
+<p>Récupération des données :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;http://cs.oberlin.edu/~gr151/imdb/imdb.top250.txt&#34;</span>)
+data <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p>Fabrication du graphe :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">LA <span style="color:#f92672">=</span> {}
+Acteurs <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> ligne <span style="color:#f92672">in</span> data[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] :
+    acteur,film <span style="color:#f92672">=</span> ligne<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;|&#39;</span>)
+    <span style="color:#66d9ef">if</span> acteur[<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>:] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;(I)&#39;</span> :
+        acteur <span style="color:#f92672">=</span> acteur[:<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>]
+    <span style="color:#66d9ef">if</span> acteur <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> Acteurs :
+        Acteurs<span style="color:#f92672">.</span>append(acteur)
+    <span style="color:#66d9ef">if</span> acteur <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> LA :
+        LA[acteur] <span style="color:#f92672">=</span> [film]
+    <span style="color:#66d9ef">else</span> :
+        LA[acteur] <span style="color:#f92672">+=</span> [film]
+    <span style="color:#66d9ef">if</span> film <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> LA :
+        LA[film] <span style="color:#f92672">=</span> [acteur]
+    <span style="color:#66d9ef">else</span> :
+        LA[film] <span style="color:#f92672">+=</span> [acteur]
+</code></pre></div><p>Parcours en largeur :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parcours_largeur</span>(G,depart,cible):
+    file <span style="color:#f92672">=</span> deque()
+    file<span style="color:#f92672">.</span>append((depart,depart))
+    Parents <span style="color:#f92672">=</span> {depart : <span style="color:#ae81ff">0</span>}
+    Vus_sommet <span style="color:#f92672">=</span> []
+    distance <span style="color:#f92672">=</span> {depart:<span style="color:#ae81ff">0</span>}
+    <span style="color:#66d9ef">while</span> file :
+        sommet,parent <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>popleft()
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sommet <span style="color:#f92672">in</span> Vus_sommet :
+            <span style="color:#66d9ef">for</span> v <span style="color:#f92672">in</span> G[sommet] :
+                file<span style="color:#f92672">.</span>append((v,sommet))
+            Parents[sommet] <span style="color:#f92672">=</span> parent
+            Vus_sommet<span style="color:#f92672">.</span>append(sommet)
+            distance[sommet] <span style="color:#f92672">=</span> distance[parent]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+            <span style="color:#66d9ef">if</span> sommet <span style="color:#f92672">==</span> cible :
+                <span style="color:#66d9ef">break</span>
+    <span style="color:#66d9ef">return</span> Parents,(distance[cible]<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>
+</code></pre></div><p>Reconstruction du chemin entre les deux acteurs :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">chemin</span>(parents,cible,depart,chem) :
+    <span style="color:#66d9ef">if</span> cible <span style="color:#f92672">==</span> depart :
+        <span style="color:#66d9ef">return</span> chem
+    chem<span style="color:#f92672">.</span>append(parents[cible])
+    <span style="color:#66d9ef">return</span> chemin(parents,parents[cible],depart,chem)
 
-	<h1 id="semestre-2">Semestre 2</h1>
-<p>On consolide certains concepts rencontrés pendant les TP du semestre 1 :</p>
-<ul>
-<li>les bonnes pratiques en programmation</li>
-<li>la correction et la terminaison d&rsquo;un algorithme</li>
-<li>la complexité</li>
-</ul>
-<p>Puis on développe deux nouveaux points :</p>
-<ul>
-<li>la représentation des nombres</li>
-<li>les graphes</li>
-</ul>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">rec_chem</span>(parents,cible,depart) :
+    chem <span style="color:#f92672">=</span> [cible]    
+    chemin(parents,cible,depart,chem)
+    <span style="color:#66d9ef">return</span> chem[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</code></pre></div><p>Et au final :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">depart <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Kevin Bacon&#34;</span>
+cible <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Marilyn Monroe&#39;</span>
+parents, dist <span style="color:#f92672">=</span> parcours_largeur(LA,depart,cible)
+ch <span style="color:#f92672">=</span> rec_chem(parents,cible,depart)
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,len(ch)<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>) :
+  <span style="color:#66d9ef">print</span>(ch[i]<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; - &#34;</span><span style="color:#f92672">+</span>ch[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; - &#34;</span><span style="color:#f92672">+</span>ch[i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>])
+<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;distance : {dist}&#34;</span>)
+</code></pre></div>
 
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -1338,7 +1406,6 @@ onload='renderMathInElement(document.body);'></script>
             
                 
                     
-                    
                 
                 
 
@@ -1346,41 +1413,6 @@ onload='renderMathInElement(document.body);'></script>
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1478,86 +1510,6 @@ onload='renderMathInElement(document.body);'></script>
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -1597,6 +1549,126 @@ onload='renderMathInElement(document.body);'></script>
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1742,3 +1814,4 @@ onload='renderMathInElement(document.body);'></script>
 
   </body>
 </html>
+
