@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1669554469" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1669554469" rel="stylesheet">
-    <link href="/css/hybrid.css?1669554469" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1669554469" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1669554469" rel="stylesheet">
-    <link href="/css/auto-complete.css?1669554469" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1669554469" rel="stylesheet">
-    <link href="/css/theme.css?1669554469" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1669554469" rel="stylesheet">
+    <link href="/css/nucleus.css?1669835261" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1669835261" rel="stylesheet">
+    <link href="/css/hybrid.css?1669835261" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1669835261" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1669835261" rel="stylesheet">
+    <link href="/css/auto-complete.css?1669835261" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1669835261" rel="stylesheet">
+    <link href="/css/theme.css?1669835261" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1669835261" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1669554469" rel="stylesheet">
+    <link href="/css/theme-green.css?1669835261" rel="stylesheet">
     
-    <link href="/css/foo.css?1669554469" rel="stylesheet"><link href="/css/bar.css?1669554469" rel="stylesheet">
+    <link href="/css/foo.css?1669835261" rel="stylesheet"><link href="/css/bar.css?1669835261" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1669554469"></script>
+    <script src="/js/jquery-3.3.1.min.js?1669835261"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1669554469"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1669554469"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1669835261"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1669835261"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1669554469"></script>
+<script type="text/javascript" src="/js/search.js?1669835261"></script>
 
     
   </div>
@@ -1180,7 +1180,7 @@ labels_appr <span style="color:#f92672">=</span> labels[:n<span style="color:#f9
 data_test <span style="color:#f92672">=</span> data[n<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>:]
 labels_test <span style="color:#f92672">=</span> labels[n<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>:]
 </code></pre></div><blockquote>
-<p>C&rsquo;est le moment de construire une fonction <code>KNN_clas</code> prenant en paramètre une image (liste de 64 flottants), l&rsquo;entier $k$ du nombre de voisins à considérer, la liste des données servant à l&rsquo;apprentissage et la liste des étiquettes (dans le même ordre) et qui retourne un entier entre 0 et 9 correspondant au mode (étiquette la plus représentée) des k plus proches voisins.<br>Votre fonction devra utiliser la fonction <code>dist</code>.<br>Pour calculer le mode d&rsquo;une liste <code>L</code>, vous utiliserez l&rsquo;expression suivante <code>stats.mode(L).mode[0]</code>.
+<p>C&rsquo;est le moment de construire une fonction <code>KNN_clas</code> prenant en paramètre une image (liste de 64 flottants), l&rsquo;entier $k$ du nombre de voisins à considérer, la liste des données servant à l&rsquo;apprentissage et la liste des étiquettes (dans le même ordre) et qui retourne un entier entre 0 et 9 correspondant au mode (étiquette la plus représentée) des k plus proches voisins.<br>Votre fonction devra utiliser la fonction <code>dist</code>.<br>Pour calculer le mode d&rsquo;une liste <code>L</code>, vous utiliserez l&rsquo;expression suivante <code>stats.mode(L).mode[0]</code>.<br>
 Aide : une liste de listes ou de tuples est triée en fonction du premier élément de la sous-liste ou du tuple.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> scipy <span style="color:#f92672">import</span> stats
@@ -1188,7 +1188,7 @@ Aide : une liste de listes ou de tuples est triée en fonction du premier élém
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">KNN_class</span>(X: list, k: int, Appr: list, Etiq: list) <span style="color:#f92672">-&gt;</span> list:
     <span style="color:#e6db74">&#34;&#34;&#34;
 </span><span style="color:#e6db74">    préconditions :  X est l&#39;image dont on veut déterminer l&#39;étiquette
-</span><span style="color:#e6db74">                     Appr est l&#39;ensemble des données d&#39;apprentissage, c&#39;est une liste de liste,
+</span><span style="color:#e6db74">                     Appr est l&#39;ensemble des données d&#39;apprentissage, c&#39;est une liste de listes,
 </span><span style="color:#e6db74">                     chacune de ces liste correspond à une image
 </span><span style="color:#e6db74">                     Etiq est une liste d&#39;entiers correspondant aux étiquettes de chaque image.
 </span><span style="color:#e6db74">    postconditions : la fonction doit retourner l&#39;étiquette la plus fréquente (mode) parmi les k images les plus proches
@@ -2419,19 +2419,19 @@ Dans le code du cours, il manque à nouveau la définition d&rsquo;une fonction�
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1669554469"></script>
-    <script src="/js/perfect-scrollbar.min.js?1669554469"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1669554469"></script>
-    <script src="/js/jquery.sticky.js?1669554469"></script>
-    <script src="/js/featherlight.min.js?1669554469"></script>
-    <script src="/js/highlight.pack.js?1669554469"></script>
+    <script src="/js/clipboard.min.js?1669835261"></script>
+    <script src="/js/perfect-scrollbar.min.js?1669835261"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1669835261"></script>
+    <script src="/js/jquery.sticky.js?1669835261"></script>
+    <script src="/js/featherlight.min.js?1669835261"></script>
+    <script src="/js/highlight.pack.js?1669835261"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1669554469"></script>
-    <script src="/js/learn.js?1669554469"></script>
-    <script src="/js/hugo-learn.js?1669554469"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1669835261"></script>
+    <script src="/js/learn.js?1669835261"></script>
+    <script src="/js/hugo-learn.js?1669835261"></script>
     
         
-            <script src="/mermaid/mermaid.js?1669554469"></script>
+            <script src="/mermaid/mermaid.js?1669835261"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
