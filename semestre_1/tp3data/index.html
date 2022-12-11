@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1669835261" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1669835261" rel="stylesheet">
-    <link href="/css/hybrid.css?1669835261" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1669835261" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1669835261" rel="stylesheet">
-    <link href="/css/auto-complete.css?1669835261" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1669835261" rel="stylesheet">
-    <link href="/css/theme.css?1669835261" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1669835261" rel="stylesheet">
+    <link href="/css/nucleus.css?1670790473" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1670790473" rel="stylesheet">
+    <link href="/css/hybrid.css?1670790473" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1670790473" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1670790473" rel="stylesheet">
+    <link href="/css/auto-complete.css?1670790473" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1670790473" rel="stylesheet">
+    <link href="/css/theme.css?1670790473" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1670790473" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1669835261" rel="stylesheet">
+    <link href="/css/theme-green.css?1670790473" rel="stylesheet">
     
-    <link href="/css/foo.css?1669835261" rel="stylesheet"><link href="/css/bar.css?1669835261" rel="stylesheet">
+    <link href="/css/foo.css?1670790473" rel="stylesheet"><link href="/css/bar.css?1670790473" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1669835261"></script>
+    <script src="/js/jquery-3.3.1.min.js?1670790473"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1669835261"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1669835261"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1670790473"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1670790473"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1669835261"></script>
+<script type="text/javascript" src="/js/search.js?1670790473"></script>
 
     
   </div>
@@ -2057,7 +2057,7 @@ Plotly.d3.json("/zoompairplot.json", function(err, fig) {
 </script>
 <blockquote>
 <p>Trouvez la région du monde représentée sur le graphe suivant (le graphe interactif permet de trouver la réponse facilement).
-<img src="http://cordier-phychi.toile-libre.org/Info/images/graphemystere.png?width=600" alt=""></p>
+<img src="/graphemystere.png?width=600" alt=""></p>
 </blockquote>
 <p>Allons maintenant au-delà de la proximité géographique pour regrouper les pays en 3 grands blocs socioéconomiques : &ldquo;Nord&rdquo;, &ldquo;Sud&rdquo;, &ldquo;Intermédiaire&rdquo;.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conditions <span style="color:#f92672">=</span> [(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Western Europe&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;North America and ANZ&#39;</span>),(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;South Asia&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Sub-Saharan Africa&#39;</span>)]
@@ -2105,7 +2105,7 @@ Chaque variable correspondant à un axe du repère.</p>
 L&rsquo;idée est de déterminer les combinaisons des différentes variables expliquant le mieux la variance des données. Chaque nouvel axe ainsi formé (les composantes principales) explique une part décroissante mais complémentaire de la variance (sur la deuxième composante, les données sont moins étalées que sur la première, mais elles s&rsquo;étalent dans une direction orthogonale, et ainsi de suite).<br>
 Projeter les données sur les premières composantes permet de les étaler le plus possible. On peut ainsi réduire l&rsquo;espace à <em>n</em> dimensions du départ à un espace de seulement 2 ou 3 dimensions expliquant la majorité de la variance des données.</p>
 <p>L&rsquo;animation suivante montre comment serait sélectionné l&rsquo;axe de la composante principale dans un espace à deux dimensions : il correspond à la position de la droite pour  laquelle la distance cumulée de tous les points à la droite est la plus grande.</p>
-<p><img src="http://cordier-phychi.toile-libre.org/Info/github/acp.gif" alt="" title="acp"></p>
+<p><img src="/acp.gif" alt=""></p>
 <p>La bibliothèque <code>Scikit-learn</code>, destinée à l&rsquo;apprentissage automatique, contient tout ce qu&rsquo;il nous faut :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.decomposition <span style="color:#f92672">import</span> PCA <span style="color:#75715e"># l&#39;algorithme d&#39;analyse en composantes principales (PCA en anglais)</span>
 <span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler <span style="color:#75715e"># pour centrer-réduire les données</span>
@@ -3653,19 +3653,19 @@ Plotly.d3.json("/jourparjour.json", function(err, fig) {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1669835261"></script>
-    <script src="/js/perfect-scrollbar.min.js?1669835261"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1669835261"></script>
-    <script src="/js/jquery.sticky.js?1669835261"></script>
-    <script src="/js/featherlight.min.js?1669835261"></script>
-    <script src="/js/highlight.pack.js?1669835261"></script>
+    <script src="/js/clipboard.min.js?1670790473"></script>
+    <script src="/js/perfect-scrollbar.min.js?1670790473"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1670790473"></script>
+    <script src="/js/jquery.sticky.js?1670790473"></script>
+    <script src="/js/featherlight.min.js?1670790473"></script>
+    <script src="/js/highlight.pack.js?1670790473"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1669835261"></script>
-    <script src="/js/learn.js?1669835261"></script>
-    <script src="/js/hugo-learn.js?1669835261"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1670790473"></script>
+    <script src="/js/learn.js?1670790473"></script>
+    <script src="/js/hugo-learn.js?1670790473"></script>
     
         
-            <script src="/mermaid/mermaid.js?1669835261"></script>
+            <script src="/mermaid/mermaid.js?1670790473"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

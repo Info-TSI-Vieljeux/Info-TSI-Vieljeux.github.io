@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1669835261" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1669835261" rel="stylesheet">
-    <link href="/css/hybrid.css?1669835261" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1669835261" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1669835261" rel="stylesheet">
-    <link href="/css/auto-complete.css?1669835261" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1669835261" rel="stylesheet">
-    <link href="/css/theme.css?1669835261" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1669835261" rel="stylesheet">
+    <link href="/css/nucleus.css?1670790473" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1670790473" rel="stylesheet">
+    <link href="/css/hybrid.css?1670790473" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1670790473" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1670790473" rel="stylesheet">
+    <link href="/css/auto-complete.css?1670790473" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1670790473" rel="stylesheet">
+    <link href="/css/theme.css?1670790473" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1670790473" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1669835261" rel="stylesheet">
+    <link href="/css/theme-green.css?1670790473" rel="stylesheet">
     
-    <link href="/css/foo.css?1669835261" rel="stylesheet"><link href="/css/bar.css?1669835261" rel="stylesheet">
+    <link href="/css/foo.css?1670790473" rel="stylesheet"><link href="/css/bar.css?1670790473" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1669835261"></script>
+    <script src="/js/jquery-3.3.1.min.js?1670790473"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1669835261"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1669835261"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1670790473"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1670790473"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1669835261"></script>
+<script type="text/javascript" src="/js/search.js?1670790473"></script>
 
     
   </div>
@@ -1093,7 +1093,7 @@ cg <span style="color:#f92672">=</span> CallGraph()
 <span style="color:#66d9ef">print</span>(somme(<span style="color:#ae81ff">5</span>))
 cg<span style="color:#f92672">.</span>render()
 </code></pre></div><p><code>somme(5) = 15</code>
-<img src="http://cordier-phychi.toile-libre.org/Info/github/sommerecu.png?width=900px" alt=""></p>
+<img src="/sommerecu.png?width=900px" alt=""></p>
 <p>On observe l&rsquo;empilement des appels successifs de <code>somme</code> jusqu&rsquo;à ce que le cas de base soit touché. Ces appels forment une <strong>pile d&rsquo;exécution</strong> (ou pile d&rsquo;appels, &ldquo;call stack&rdquo; en anglais).<br>
 Le cas de base correspond à la première valeur retournée (0 ici) et donc au premier appel retiré de la pile. Tous les appels précédents sont restés <strong>en attente</strong>.<br>
 On remonte ensuite chronologiquement la pile des appels avec à chaque fois une nouvelle valeur retournée, jusqu&rsquo;à l&rsquo;appel initial, appelé <strong>appel terminal</strong>.</p>
@@ -1111,7 +1111,7 @@ Le nombre d&rsquo;appels progresse maintenant exponentiellement mais pas la tail
 <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;{fib(5) = }&#39;</span>)
 cg<span style="color:#f92672">.</span>render()
 </code></pre></div><p><code>fib(5) = 5</code>
-<img src="http://cordier-phychi.toile-libre.org/Info/github/fibrecu.png?width=900px" alt=""></p>
+<img src="/fibrecu.png?width=900px" alt=""></p>
 <p>Comme on le voit ci-dessus, <code>fib(5)</code> fait 15 appels à la fonction mais la pile ne dépasse jamais 6 appels en attente.<br>
 En effet, <code>fib(5)</code> appelle <code>fib(4)</code> qui appelle <code>fib(3)</code>qui appelle <code>fib(2)</code> qui appelle <code>fib(1)</code>. Comme <code>fib(1)</code> est un des deux cas de base possible, il retourne la valeur 1 et est retiré de la pile. Le dernier appel en attente de la pile est alors <code>fib(2)</code>, on y retourne.<br>
 <code>fib(2)</code> fait son deuxième appel : <code>fib(0)</code>. <code>fib(0)</code> étant l&rsquo;autre cas de base, il retourne une valeur (0) et est retiré de la pile. <code>fib(2)</code> peut maintenant elle aussi retourner une valeur (1+0) et est à son tour retirée de la pile.<br>
@@ -1256,7 +1256,7 @@ cercles((<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">10</s
 <blockquote>
 <p>Définir une fonction récursive <code>dessin</code> qui affiche l&rsquo;image ci-dessous avec l&rsquo;appel <code>dessin((0,0),20)</code>.</p>
 </blockquote>
-<p><img src="http://cordier-phychi.toile-libre.org/Info/github/dessin_a_reproduire.png" alt=""></p>
+<p><img src="/dessin_a_reproduire.png" alt=""></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dessin</span>(centre,rayon) :
     <span style="color:#75715e">### VOTRE CODE</span>
     <span style="color:#66d9ef">return</span> fig
@@ -1328,7 +1328,7 @@ dessine_points(consigne_vers_points(<span style="color:#e6db74">&#39;A-A+A--A-A&
 </code></pre></div><p><img src="/Linden2.png" alt="png"></p>
 <blockquote>
 <p>Donner la consigne et l&rsquo;angle permettant de tracer le triangle équilatéral suivant (ne pas utiliser plus de points que nécessaires (3) sous peine de voir sa solution non validée) :
-<img src="http://cordier-phychi.toile-libre.org/Info/github/trianglefractale.png" alt=""></p>
+<img src="/trianglefractale.png" alt=""></p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ax<span style="color:#f92672">.</span>clear()
 consigne <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;...&#39;</span>
@@ -1386,7 +1386,7 @@ regle <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;a&#
 <blockquote>
 <p>À vous de déterminer l&rsquo;axiome et la bonne règle.</p>
 </blockquote>
-<p><img src="http://cordier-phychi.toile-libre.org/Info/github/RegleKoch.png?width=800px" alt=""></p>
+<p><img src="/RegleKoch.png?width=800px" alt=""></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">axiome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;...&#39;</span>
 regle_Koch <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;</span>:<span style="color:#e6db74">&#39;...&#39;</span>}
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ax<span style="color:#f92672">.</span>clear()
@@ -1448,7 +1448,7 @@ dessine_points(consigne_vers_points_branche(<span style="color:#e6db74">&#39;A[-
 </code></pre></div><p><img src="/Linden3.png" alt="png"></p>
 <blockquote>
 <p>Reproduisez la figure suivante en définissant la bonne consigne et le bon angle :
-<img src="http://cordier-phychi.toile-libre.org/Info/github/bonhomerecu.png" alt=""></p>
+<img src="/bonhomerecu.png" alt=""></p>
 </blockquote>
 <p>Et en utilisant la récursivité, on peut désormais dessiner de jolis arbres :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">axiome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;P&#39;</span>
@@ -2124,19 +2124,19 @@ dessine_points(consigne_vers_points_branche(transformation_recu(axiome,regle,<sp
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1669835261"></script>
-    <script src="/js/perfect-scrollbar.min.js?1669835261"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1669835261"></script>
-    <script src="/js/jquery.sticky.js?1669835261"></script>
-    <script src="/js/featherlight.min.js?1669835261"></script>
-    <script src="/js/highlight.pack.js?1669835261"></script>
+    <script src="/js/clipboard.min.js?1670790473"></script>
+    <script src="/js/perfect-scrollbar.min.js?1670790473"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1670790473"></script>
+    <script src="/js/jquery.sticky.js?1670790473"></script>
+    <script src="/js/featherlight.min.js?1670790473"></script>
+    <script src="/js/highlight.pack.js?1670790473"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1669835261"></script>
-    <script src="/js/learn.js?1669835261"></script>
-    <script src="/js/hugo-learn.js?1669835261"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1670790473"></script>
+    <script src="/js/learn.js?1670790473"></script>
+    <script src="/js/hugo-learn.js?1670790473"></script>
     
         
-            <script src="/mermaid/mermaid.js?1669835261"></script>
+            <script src="/mermaid/mermaid.js?1670790473"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
