@@ -172,7 +172,14 @@
 	"title": "Projets",
 	"tags": [],
 	"description": "",
-	"content": "Divers projets\net défis algorithmiques Défis Présentation et solutions\nProjets  Projet Wordle Projet Doomsday Projet Stéganographie Projet IEEE-754 Projet nombre de Bacon  "
+	"content": "Divers projets\net défis algorithmiques Défis Présentation et solutions\nProjets  Projet Wordle Projet Doomsday Projet Stéganographie Projet IEEE-754 Projet nombre de Bacon Projet oracle  "
+},
+{
+	"uri": "https://info-tsi-vieljeux.github.io/projets/oracle/",
+	"title": "Oracle",
+	"tags": [],
+	"description": "",
+	"content": "L\u0026rsquo;oracle d\u0026rsquo;Aaronson Un petit projet tout gentil pour la fin\u0026hellip;\nL\u0026rsquo;oracle d\u0026rsquo;Aaronson est un petit programme capable de prédire si une personne va taper \u0026ldquo;g\u0026rdquo; ou \u0026ldquo;h\u0026rdquo; sur son clavier avec une précision généralement supérieure à 60%.\nL\u0026rsquo;idée du programme de base :\n Pour chaque mot possible de 5 lettres (\u0026ldquo;g\u0026rdquo; ou \u0026ldquo;h\u0026rdquo;) entré par l\u0026rsquo;utilisateur, on tient à jour dans un registre la lettre que l\u0026rsquo;utilisateur tape tout de suite après. Il suffit ensuite de générer une prédiction pour les 5 dernières lettres qui ont été entrées en regardant quelle lettre est majoritairement donnée après ce mot.   Écrire le programme. Comment pourrait-on l\u0026rsquo;améliorer ?   L\u0026rsquo;oracle en action \n"
 },
 {
 	"uri": "https://info-tsi-vieljeux.github.io/semestre_1/tp6tri/",

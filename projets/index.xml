@@ -64,5 +64,17 @@ Mot machine 64 bits à convertir en nombre décimal : Conversion
 Le graphe obtenu est biparti car il n&amp;rsquo;y a pas d&amp;rsquo;arête entre les acteurs, ni entre les films, seulement entre sommets de catégories différentes.</description>
     </item>
     
+    <item>
+      <title>Oracle</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/oracle/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/projets/oracle/</guid>
+      <description>L&amp;rsquo;oracle d&amp;rsquo;Aaronson Un petit projet tout gentil pour la fin&amp;hellip;
+L&amp;rsquo;oracle d&amp;rsquo;Aaronson est un petit programme capable de prédire si une personne va taper &amp;ldquo;g&amp;rdquo; ou &amp;ldquo;h&amp;rdquo; sur son clavier avec une précision généralement supérieure à 60%.
+L&amp;rsquo;idée du programme de base :
+ Pour chaque mot possible de 5 lettres (&amp;ldquo;g&amp;rdquo; ou &amp;ldquo;h&amp;rdquo;) entré par l&amp;rsquo;utilisateur, on tient à jour dans un registre la lettre que l&amp;rsquo;utilisateur tape tout de suite après.</description>
+    </item>
+    
   </channel>
 </rss>
