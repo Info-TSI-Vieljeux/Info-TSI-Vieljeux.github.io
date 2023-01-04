@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1672683746" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1672683746" rel="stylesheet">
-    <link href="/css/hybrid.css?1672683746" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1672683746" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1672683746" rel="stylesheet">
-    <link href="/css/auto-complete.css?1672683746" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1672683746" rel="stylesheet">
-    <link href="/css/theme.css?1672683746" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1672683746" rel="stylesheet">
+    <link href="/css/nucleus.css?1672799329" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1672799329" rel="stylesheet">
+    <link href="/css/hybrid.css?1672799329" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1672799329" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1672799329" rel="stylesheet">
+    <link href="/css/auto-complete.css?1672799329" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1672799329" rel="stylesheet">
+    <link href="/css/theme.css?1672799329" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1672799329" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1672683746" rel="stylesheet">
+    <link href="/css/theme-green.css?1672799329" rel="stylesheet">
     
-    <link href="/css/foo.css?1672683746" rel="stylesheet"><link href="/css/bar.css?1672683746" rel="stylesheet">
+    <link href="/css/foo.css?1672799329" rel="stylesheet"><link href="/css/bar.css?1672799329" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1672683746"></script>
+    <script src="/js/jquery-3.3.1.min.js?1672799329"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1672683746"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1672683746"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1672799329"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1672799329"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1672683746"></script>
+<script type="text/javascript" src="/js/search.js?1672799329"></script>
 
     
   </div>
@@ -1478,11 +1478,11 @@ La valeur est au final transmise à la racine (la position depuis laquelle on a 
 <p><img src="/minimaxgif.gif" alt=""></p>
 <p>L&rsquo;arbre total du morpion n&rsquo;est pas si gros ; le <strong>facteur de ramification</strong> $b$ est de 5 en moyenne et il y a au plus 9 niveaux (9 coups), ce qui donne $\approx 5^9 = 1\,953\,125$ (à titre de comparaison, aux échecs, $b\approx35$ et un partie dure en moyenne 100 coups, ce qui donne $b^m\approx10^{54}$ sommets à inspecter&hellip;).</p>
 <p>L&rsquo;algorithme minimax appliqué au morpion inspecte en réalité environ 4 fois moins de sommets que les deux millions prédits, car ce chiffre ne tient pas compte des nombreuses parties potentielles se terminant avant le neuvième coup. Il en inspecte néanmoins beaucoup plus qu&rsquo;il ne faudrait (il n&rsquo;y a que $9!=362\,880$ coups possibles si l&rsquo;ordi commence et seulement $8!=40\,320$ si l&rsquo;humain a l&rsquo;honneur), ce qui illustre le fait qu&rsquo;un arbre contient beaucoup de sommets redondants par rapport au graphe du jeu dont il est tiré (c&rsquo;est le prix à payer pour casser les cycles).</p>
-<p>La taille modéré de l&rsquo;arbre permet de l&rsquo;explorer jusqu&rsquo;aux parties finales, mais on peut constater en jouant avec le petit programme ci-dessous que la réduction à une profondeur de deux niveaux grâce à l&rsquo;heuristique<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> est tout autant redoutable en inspectant 500 fois moins de sommets !</p>
+<p>La taille modéré de l&rsquo;arbre permet de l&rsquo;explorer jusqu&rsquo;aux parties finales, mais on peut constater en jouant avec le petit programme ci-dessous que la réduction à une profondeur d&rsquo;un seul niveau grâce à l&rsquo;heuristique<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> est tout autant redoutable en inspectant presque 4000 fois moins de sommets !</p>
 <p>
 <iframe src="https://trinket.io/embed/python/5a7f499742" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 </p>
-<p>Cela prouve qu&rsquo;au morpion, 2 coups d&rsquo;avance, c&rsquo;est bien suffisant&hellip; Mais ce n&rsquo;est pas vraiment le cas aux échecs, où les plus grands joueurs (comme Kasparov) prévoient jusqu&rsquo;à 12 coups à l&rsquo;avance ! Deep Blue, qui a battu Kasparov en 1997, cherchait jusqu&rsquo;à une profondeur typiquement comprise entre 6 et 16, mais pouvait aller jusqu&rsquo;à 40 dans certaines situations.</p>
+<p>Cela prouve qu&rsquo;au morpion, 1 coup d&rsquo;avance, c&rsquo;est bien suffisant&hellip; Mais ce n&rsquo;est pas vraiment le cas aux échecs, où les plus grands joueurs (comme Kasparov) prévoient jusqu&rsquo;à 12 coups à l&rsquo;avance ! Deep Blue, qui a battu Kasparov en 1997, cherchait jusqu&rsquo;à une profondeur typiquement comprise entre 6 et 16, mais pouvait aller jusqu&rsquo;à 40 dans certaines situations.</p>
 <p>Dans le cas des échecs, l&rsquo;heuristique permettant d&rsquo;évaluer un état de l&rsquo;échiquier est bein plus complexe qu&rsquo;au morpion. Elle doit prendre en compte la quantité de pièces et pions restants, la qualité des pièces et les positions de tout ce beau monde (domination du centre, structure compacte, etc.).</p>
 <p>La taille du jeu de Go rend vaine toute tentative de type minimax. C&rsquo;est au point que les grands joueurs de Go ont longtemps refusé de jouer contre des ordinateurs, non par peur de perdre, mais parcequ&rsquo;ils les trouvaient trop mauvais. C&rsquo;est l&rsquo;essor du deep learning, et donc une philosophie basée sur l&rsquo;apprentissage plus que sur la stratégie, qui a permis à <a href="https://www.deepmind.com/research/highlighted-research/alphago">la machine</a> de devenir un adversaire coriace à ce jeu-là aussi.</p>
 <br>
@@ -2304,19 +2304,19 @@ L&rsquo;autre idée est d&rsquo;utiliser la détermination de la valeur optimale
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1672683746"></script>
-    <script src="/js/perfect-scrollbar.min.js?1672683746"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1672683746"></script>
-    <script src="/js/jquery.sticky.js?1672683746"></script>
-    <script src="/js/featherlight.min.js?1672683746"></script>
-    <script src="/js/highlight.pack.js?1672683746"></script>
+    <script src="/js/clipboard.min.js?1672799329"></script>
+    <script src="/js/perfect-scrollbar.min.js?1672799329"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1672799329"></script>
+    <script src="/js/jquery.sticky.js?1672799329"></script>
+    <script src="/js/featherlight.min.js?1672799329"></script>
+    <script src="/js/highlight.pack.js?1672799329"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1672683746"></script>
-    <script src="/js/learn.js?1672683746"></script>
-    <script src="/js/hugo-learn.js?1672683746"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1672799329"></script>
+    <script src="/js/learn.js?1672799329"></script>
+    <script src="/js/hugo-learn.js?1672799329"></script>
     
         
-            <script src="/mermaid/mermaid.js?1672683746"></script>
+            <script src="/mermaid/mermaid.js?1672799329"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
