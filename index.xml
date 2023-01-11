@@ -231,6 +231,19 @@ Le graphe obtenu est biparti car il n&amp;rsquo;y a pas d&amp;rsquo;arête entre
     </item>
     
     <item>
+      <title>Nim</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/nim/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      
+      <guid>https://info-tsi-vieljeux.github.io/projets/nim/</guid>
+      <description>Jeu de Nim Présentation du jeu et de l&amp;rsquo;algorithme de Bouton :
+  Mission : Coder une IA qui joue un coup gagnant lorsqu&amp;rsquo;elle est est en position gagnante (en suivant l&amp;rsquo;algorithme de Bouton) et qui joue aléatoirement si elle est sur une position perdante.
+Jouer contre une telle IA.
+
+Un code possible : # exemple de plateau : [1,3,5,7] from random import randint def tourIA(plateau): nimSomme = 0 for nb in plateau: nimSomme ^= nb if nimSomme == 0: # position perdante ligne = randint(0,len(plateau)-1) while plateau[ligne] == 0: ligne = randint(0,len(plateau)-1) nbjetons = randint(1,plateau[ligne]) plateau[ligne] -= nbjetons print(f&amp;#34;l&amp;#39;IA en prend {nbjetons} sur la ligne {ligne+1}&amp;#34;) print(plateau) else: compteur = 0 for i in range(len(plateau)): if plateau[i] !</description>
+    </item>
+    
+    <item>
       <title>Oracle</title>
       <link>https://info-tsi-vieljeux.github.io/projets/oracle/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>

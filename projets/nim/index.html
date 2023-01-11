@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>TP 3 : utilisation de modules - Cours info TSI</title>
+    <title>Nim - Cours info TSI</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -65,7 +65,7 @@ onload='renderMathInElement(document.body);'></script>
     
 	
   </head>
-  <body class="" data-url="/semestre_1/tp3data/">
+  <body class="" data-url="/projets/nim/">
     <nav id="sidebar" class="">
 
 
@@ -265,7 +265,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_1/" title="Semestre 1" class="dd-item
-        parent
+        
         
         
         ">
@@ -354,7 +354,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_1/tp3data/" title="TP 3 : utilisation de modules" class="dd-item active">
+      <li data-nav-id="/semestre_1/tp3data/" title="TP 3 : utilisation de modules" class="dd-item ">
         <a href="/semestre_1/tp3data/">
         TP 3 : utilisation de modules
         
@@ -693,7 +693,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/projets/" title="Projets" class="dd-item
-        
+        parent
         
         
         ">
@@ -824,7 +824,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/projets/nim/" title="Nim" class="dd-item ">
+      <li data-nav-id="/projets/nim/" title="Nim" class="dd-item active">
         <a href="/projets/nim/">
         Nim
         
@@ -1064,7 +1064,7 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   TP 3 : utilisation de modules
+                   Nim
                  
                   </span>
                 </div>
@@ -1073,9 +1073,12 @@ onload='renderMathInElement(document.body);'></script>
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#statistiques-simples">Statistiques simples</a></li>
-    <li><a href="#regroupement-des-données">Regroupement des données</a></li>
-    <li><a href="#corrélations">Corrélations</a></li>
+    <li>
+      <ul>
+        <li><a href="#mission-">Mission :</a></li>
+        <li><a href="#un-code-possible-">Un code possible :</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -1095,1940 +1098,51 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-<p>L&rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.<br>
-On va se placer dans un des champs les plus porteurs actuellement (et où python est très utilisé), l&rsquo;analyse de données.</p>
-<p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/3BZhe_dl">cette invitation</a> pour récupérer le repository du TP. </p>
-<h1 id="exploration-dun-jeu-de-données">Exploration d&rsquo;un jeu de données</h1>
-<h2 id="statistiques-simples">Statistiques simples</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd <span style="color:#75715e"># bibliothèques dédiée au traitement de jeux de données</span>
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt <span style="color:#75715e"># bibliothèque graphique</span>
-<span style="color:#f92672">import</span> seaborn <span style="color:#f92672">as</span> sns <span style="color:#75715e"># bibliothèque graphique reposant sur matplotlib et dédiée plus particulièrement à la représentation de jeux de données</span>
-<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np <span style="color:#75715e"># bibliothèque puissante permettant de gérer des tableaux multidimensionnels</span>
-<span style="color:#f92672">import</span> plotly.express <span style="color:#f92672">as</span> px <span style="color:#75715e"># libraire permettant des graphes interactifs</span>
-<span style="color:#f92672">import</span> plotly.graph_objects <span style="color:#f92672">as</span> go <span style="color:#75715e"># complémentaire à la première (seulement utile dans les cas complexes)</span>
-</code></pre></div><p>Pour pouvoir être importé, un module doit avoir été préalablement installé. Les plus importants sont installés par défaut dans certaines distributions (comme Anaconda).<br>
-Les gros modules sont généralement importés sous la forme <code>import module as x</code> où <code>x</code> est un raccourci pour le nom du module (<code>np</code> pour <code>numpy</code> ou <code>plt</code> pour <code>matplotlib.pyplot</code>). Se référer au cours Python pour les autres formes d&rsquo;importation.<br>
-Pour obtenir de l&rsquo;aide sur un module, on peut demander à Python (<code>help(pd)</code> par exemple pour avoir de l&rsquo;aide sur pandas ou <code>help(pd.read_csv)</code> pour avoir de l&rsquo;aide sur la fonction spécifique <code>read_csv</code>), mais il y a généralement beaucoup moins indigeste : l&rsquo;aide en ligne des modules (<a href="(https://pandas.pydata.org/docs/user_guide/index.html)">pour Pandas par exemple</a>).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># paramètres par défaut pour les graphes</span>
-plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;figure.figsize&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">6</span>)
-plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;font.family&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;serif&#34;</span>
-plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;font.size&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>
-sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;white&#34;</span>)
-</code></pre></div><p>Le premier jeu de données qu&rsquo;on va utiliser est issu du <a href="https://worldhappiness.report">World Happiness report</a> (une publication annuelle de l&rsquo;ONU mesurant le degrés de bonheur de la population mondiale par pays à partir de sondages).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/Info-TSI-Vieljeux/s1-tp3/main/2020.csv&#34;</span>
-data_monde <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url,sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;;&#34;</span>,index_col<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#75715e"># data_monde est une dataframe Pandas</span>
-<span style="color:#75715e"># Une dataframe est une sorte de dictionnaire dont les clés sont les en-têtes des colonnes et dont les lignes sont indexées.</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Région du monde</th>
-      <th>Score de bonheur</th>
-      <th>Écart-type</th>
-      <th>PIB par habitant (log)</th>
-      <th>Entraide sociale</th>
-      <th>Espérance de vie en bonne santé</th>
-      <th>Liberté des choix de vie</th>
-      <th>Générosité</th>
-      <th>Corruption perçue</th>
-      <th>Score de bonheur en Distopie</th>
-    </tr>
-    <tr>
-      <th>Pays</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Finland</th>
-      <td>Western Europe</td>
-      <td>7.8087</td>
-      <td>0.031156</td>
-      <td>10.639267</td>
-      <td>0.954330</td>
-      <td>71.900825</td>
-      <td>0.949172</td>
-      <td>-0.059482</td>
-      <td>0.195445</td>
-      <td>1.972317</td>
-    </tr>
-    <tr>
-      <th>Denmark</th>
-      <td>Western Europe</td>
-      <td>7.6456</td>
-      <td>0.033492</td>
-      <td>10.774001</td>
-      <td>0.955991</td>
-      <td>72.402504</td>
-      <td>0.951444</td>
-      <td>0.066202</td>
-      <td>0.168489</td>
-      <td>1.972317</td>
-    </tr>
-    <tr>
-      <th>Switzerland</th>
-      <td>Western Europe</td>
-      <td>7.5599</td>
-      <td>0.035014</td>
-      <td>10.979933</td>
-      <td>0.942847</td>
-      <td>74.102448</td>
-      <td>0.921337</td>
-      <td>0.105911</td>
-      <td>0.303728</td>
-      <td>1.972317</td>
-    </tr>
-    <tr>
-      <th>Iceland</th>
-      <td>Western Europe</td>
-      <td>7.5045</td>
-      <td>0.059616</td>
-      <td>10.772559</td>
-      <td>0.974670</td>
-      <td>73.000000</td>
-      <td>0.948892</td>
-      <td>0.246944</td>
-      <td>0.711710</td>
-      <td>1.972317</td>
-    </tr>
-    <tr>
-      <th>Norway</th>
-      <td>Western Europe</td>
-      <td>7.4880</td>
-      <td>0.034837</td>
-      <td>11.087804</td>
-      <td>0.952487</td>
-      <td>73.200783</td>
-      <td>0.955750</td>
-      <td>0.134533</td>
-      <td>0.263218</td>
-      <td>1.972317</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>Central African Republic</th>
-      <td>Sub-Saharan Africa</td>
-      <td>3.4759</td>
-      <td>0.115183</td>
-      <td>6.625160</td>
-      <td>0.319460</td>
-      <td>45.200001</td>
-      <td>0.640881</td>
-      <td>0.082410</td>
-      <td>0.891807</td>
-      <td>1.972317</td>
-    </tr>
-    <tr>
-      <th>Rwanda</th>
-      <td>Sub-Saharan Africa</td>
-      <td>3.3123</td>
-      <td>0.052425</td>
-      <td>7.600104</td>
-      <td>0.540835</td>
-      <td>61.098846</td>
-      <td>0.900589</td>
-      <td>0.055484</td>
-      <td>0.183541</td>
-      <td>1.972317</td>
-    </tr>
-    <tr>
-      <th>Zimbabwe</th>
-      <td>Sub-Saharan Africa</td>
-      <td>3.2992</td>
-      <td>0.058674</td>
-      <td>7.865712</td>
-      <td>0.763093</td>
-      <td>55.617260</td>
-      <td>0.711458</td>
-      <td>-0.072064</td>
-      <td>0.810237</td>
-      <td>1.972317</td>
-    </tr>
-    <tr>
-      <th>South Sudan</th>
-      <td>Sub-Saharan Africa</td>
-      <td>2.8166</td>
-      <td>0.107610</td>
-      <td>7.425360</td>
-      <td>0.553707</td>
-      <td>51.000000</td>
-      <td>0.451314</td>
-      <td>0.016519</td>
-      <td>0.763417</td>
-      <td>1.972317</td>
-    </tr>
-    <tr>
-      <th>Afghanistan</th>
-      <td>South Asia</td>
-      <td>2.5669</td>
-      <td>0.031311</td>
-      <td>7.462861</td>
-      <td>0.470367</td>
-      <td>52.590000</td>
-      <td>0.396573</td>
-      <td>-0.096429</td>
-      <td>0.933687</td>
-      <td>1.972317</td>
-    </tr>
-  </tbody>
-</table>
-<p>153 rows × 10 columns</p>
-
+<h1 id="jeu-de-nim">Jeu de Nim</h1>
+<p>Présentation du jeu et de l&rsquo;algorithme de Bouton :</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/2jahbr5wMHk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
+<br>
+<h3 id="mission-">Mission :</h3>
+<p>Coder une IA qui joue un coup gagnant lorsqu&rsquo;elle est est en position gagnante (en suivant l&rsquo;algorithme de Bouton) et qui joue aléatoirement si elle est sur une position perdante.</p>
+<p><a href="https://presentationssite.github.io/info/nim/#/"><strong>Jouer contre une telle IA</strong>.</a></p>
+<p><br><br></p>
+<h3 id="un-code-possible-">Un code possible :</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># exemple de plateau : [1,3,5,7]</span>
+<span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
 
-<p>Précisions sur ces données :</p>
-<ul>
-<li>le <strong>score de bonheur</strong> est un score sur 10 correspondant à la moyenne des réponses des sondés (0 correspond à la pire vie possible et 10 à la meilleure)</li>
-<li>ce n&rsquo;est pas le <strong>PIB par habitant</strong> mais son <strong>logarithme</strong> qui est utilisé pour ne pas avoir des valeurs sur des ordres de grandeur trop différents d&rsquo;une colonne à l&rsquo;autre</li>
-<li><strong>entraide sociale</strong> : moyenne des réponses à la question binaire &ldquo;en cas de difficultés, pouvez-vous compter sur de la famille ou des amis pour vous aider ?&rdquo; (0 : non, 1 : oui)</li>
-<li><strong>liberté des choix de vie</strong> : moyenne des réponses à la question binaire &ldquo;êtes-vous satisfait ou non de votre liberté à choisir ce que vous voulez faire de votre vie ?&rdquo; (0 : non, 1 : oui)</li>
-<li><strong>générosité</strong> : moyenne des réponses à &ldquo;Avez-vous donné à une association caritative le mois dernier ?&rdquo; ajustée par rapport au PIB par habitant (valeur résiduelle)</li>
-<li><strong>corruption perçue</strong> : moyenne des réponses à la question binaire &ldquo;la corruption est-elle répandue dans le gouvernement ?&rdquo; (0 : non, 1 : oui)</li>
-</ul>
-<p>On simplifie un peu le jeu de données en retirant la colonne &lsquo;Écart-type&rsquo; et &lsquo;Score de bonheur en distopie&rsquo; (score minimal obtenu).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde<span style="color:#f92672">.</span>drop(columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Écart-type&#39;</span>,<span style="color:#e6db74">&#39;Score de bonheur en Distopie&#39;</span>], inplace<span style="color:#f92672">=</span>True)
-data_monde<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">3</span>)
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Région du monde</th>
-      <th>Score de bonheur</th>
-      <th>PIB par habitant (log)</th>
-      <th>Entraide sociale</th>
-      <th>Espérance de vie en bonne santé</th>
-      <th>Liberté des choix de vie</th>
-      <th>Générosité</th>
-      <th>Corruption perçue</th>
-    </tr>
-    <tr>
-      <th>Pays</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Finland</th>
-      <td>Western Europe</td>
-      <td>7.8087</td>
-      <td>10.639267</td>
-      <td>0.954330</td>
-      <td>71.900825</td>
-      <td>0.949172</td>
-      <td>-0.059482</td>
-      <td>0.195445</td>
-    </tr>
-    <tr>
-      <th>Denmark</th>
-      <td>Western Europe</td>
-      <td>7.6456</td>
-      <td>10.774001</td>
-      <td>0.955991</td>
-      <td>72.402504</td>
-      <td>0.951444</td>
-      <td>0.066202</td>
-      <td>0.168489</td>
-    </tr>
-    <tr>
-      <th>Switzerland</th>
-      <td>Western Europe</td>
-      <td>7.5599</td>
-      <td>10.979933</td>
-      <td>0.942847</td>
-      <td>74.102448</td>
-      <td>0.921337</td>
-      <td>0.105911</td>
-      <td>0.303728</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde<span style="color:#f92672">.</span>tail(<span style="color:#ae81ff">3</span>)
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Région du monde</th>
-      <th>Score de bonheur</th>
-      <th>PIB par habitant (log)</th>
-      <th>Entraide sociale</th>
-      <th>Espérance de vie en bonne santé</th>
-      <th>Liberté des choix de vie</th>
-      <th>Générosité</th>
-      <th>Corruption perçue</th>
-    </tr>
-    <tr>
-      <th>Pays</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Zimbabwe</th>
-      <td>Sub-Saharan Africa</td>
-      <td>3.2992</td>
-      <td>7.865712</td>
-      <td>0.763093</td>
-      <td>55.61726</td>
-      <td>0.711458</td>
-      <td>-0.072064</td>
-      <td>0.810237</td>
-    </tr>
-    <tr>
-      <th>South Sudan</th>
-      <td>Sub-Saharan Africa</td>
-      <td>2.8166</td>
-      <td>7.425360</td>
-      <td>0.553707</td>
-      <td>51.00000</td>
-      <td>0.451314</td>
-      <td>0.016519</td>
-      <td>0.763417</td>
-    </tr>
-    <tr>
-      <th>Afghanistan</th>
-      <td>South Asia</td>
-      <td>2.5669</td>
-      <td>7.462861</td>
-      <td>0.470367</td>
-      <td>52.59000</td>
-      <td>0.396573</td>
-      <td>-0.096429</td>
-      <td>0.933687</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<p>Traçons un histogramme brut du jeu de données complet pour y voir plus clair (la librairie Seaborn rend cela très simple).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sns<span style="color:#f92672">.</span>histplot(data<span style="color:#f92672">=</span>data_monde)
-</code></pre></div><p><img src="/histoseaborn.png" alt=""></p>
-<p>La méthode <code>describe</code> s&rsquo;appliquant à des dataframe pandas retourne un résumé statistique très pratique des données de chaque colonne :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde<span style="color:#f92672">.</span>describe()
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Score de bonheur</th>
-      <th>PIB par habitant (log)</th>
-      <th>Entraide sociale</th>
-      <th>Espérance de vie en bonne santé</th>
-      <th>Liberté des choix de vie</th>
-      <th>Générosité</th>
-      <th>Corruption perçue</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>153.00000</td>
-      <td>153.000000</td>
-      <td>153.000000</td>
-      <td>153.000000</td>
-      <td>153.000000</td>
-      <td>153.000000</td>
-      <td>153.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>5.47324</td>
-      <td>9.295706</td>
-      <td>0.808721</td>
-      <td>64.445529</td>
-      <td>0.783360</td>
-      <td>-0.014568</td>
-      <td>0.733120</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>1.11227</td>
-      <td>1.201588</td>
-      <td>0.121453</td>
-      <td>7.057848</td>
-      <td>0.117786</td>
-      <td>0.151809</td>
-      <td>0.175172</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>2.56690</td>
-      <td>6.492642</td>
-      <td>0.319460</td>
-      <td>45.200001</td>
-      <td>0.396573</td>
-      <td>-0.300907</td>
-      <td>0.109784</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>4.72410</td>
-      <td>8.350645</td>
-      <td>0.737217</td>
-      <td>58.961712</td>
-      <td>0.714839</td>
-      <td>-0.127015</td>
-      <td>0.683019</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>5.51500</td>
-      <td>9.456313</td>
-      <td>0.829204</td>
-      <td>66.305145</td>
-      <td>0.799805</td>
-      <td>-0.033665</td>
-      <td>0.783122</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>6.22850</td>
-      <td>10.265124</td>
-      <td>0.906747</td>
-      <td>69.289192</td>
-      <td>0.877709</td>
-      <td>0.085429</td>
-      <td>0.849151</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>7.80870</td>
-      <td>11.450681</td>
-      <td>0.974670</td>
-      <td>76.804581</td>
-      <td>0.974998</td>
-      <td>0.560664</td>
-      <td>0.935585</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<blockquote>
-<p>Pour confirmer certaines des valeurs, vous allez construire différentes fonctions :</p>
-<ul>
-<li>une fonction <code>decompte</code> qui retourne le nombre d&rsquo;éléments d&rsquo;une liste,</li>
-<li>une fonction <code>moyenne</code> qui retourne la moyenne des éléments d&rsquo;une liste,</li>
-<li>une fonction <code>mediane</code> qui retourne la médiane des éléments d&rsquo;une liste triée en ordre croissant.</li>
-</ul>
-<p>L&rsquo;utilisation de fonctions statistiques déjà existantes est bien sûr prohibée.</p>
-</blockquote>
-<blockquote>
-<p>Calculez, pour les 3 formes d&rsquo;importation du module, l&rsquo;écart-type des éléments de la liste <code>Liste_scores</code> en utilisant la fonction <code>stdev</code> du module <code>statistics</code>.<br>
-Il s&rsquo;agit d&rsquo;évaluer directement l&rsquo;expresion (le nombre doit s&rsquo;afficher sous la cellule sans utiliser de <code>print</code>).</p>
-</blockquote>
-<p>Tracons maintenant un diagramme en batons des scores de bonheur des 60 premiers pays.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig,ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">4</span>))
-sns<span style="color:#f92672">.</span>barplot(ax <span style="color:#f92672">=</span> ax,x <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>index[:<span style="color:#ae81ff">60</span>], y <span style="color:#f92672">=</span> data_monde[<span style="color:#e6db74">&#39;Score de bonheur&#39;</span>]<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">60</span>))
-plt<span style="color:#f92672">.</span>xticks(rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>)
-ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;&#39;</span>)
-</code></pre></div><p><img src="/batonmonde.png" alt=""></p>
-<p>On remarque que les pays sont classés par score de bonheur décroissant dans le jeu de données d&rsquo;origine.<br>
-Mais on peut évidemment choisir un autre critère de classement si on le désire :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PIB par habitant (log)&#34;</span>,ascending<span style="color:#f92672">=</span>True)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Région du monde</th>
-      <th>Score de bonheur</th>
-      <th>PIB par habitant (log)</th>
-      <th>Entraide sociale</th>
-      <th>Espérance de vie en bonne santé</th>
-      <th>Liberté des choix de vie</th>
-      <th>Générosité</th>
-      <th>Corruption perçue</th>
-    </tr>
-    <tr>
-      <th>Pays</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Burundi</th>
-      <td>Sub-Saharan Africa</td>
-      <td>3.7753</td>
-      <td>6.492642</td>
-      <td>0.490326</td>
-      <td>53.400002</td>
-      <td>0.626350</td>
-      <td>-0.017552</td>
-      <td>0.606935</td>
-    </tr>
-    <tr>
-      <th>Central African Republic</th>
-      <td>Sub-Saharan Africa</td>
-      <td>3.4759</td>
-      <td>6.625160</td>
-      <td>0.319460</td>
-      <td>45.200001</td>
-      <td>0.640881</td>
-      <td>0.082410</td>
-      <td>0.891807</td>
-    </tr>
-    <tr>
-      <th>Congo (Kinshasa)</th>
-      <td>Sub-Saharan Africa</td>
-      <td>4.3110</td>
-      <td>6.694256</td>
-      <td>0.672159</td>
-      <td>52.900002</td>
-      <td>0.700794</td>
-      <td>0.083638</td>
-      <td>0.809404</td>
-    </tr>
-    <tr>
-      <th>Niger</th>
-      <td>Sub-Saharan Africa</td>
-      <td>4.9096</td>
-      <td>6.842167</td>
-      <td>0.617435</td>
-      <td>53.500095</td>
-      <td>0.759772</td>
-      <td>0.013861</td>
-      <td>0.722530</td>
-    </tr>
-    <tr>
-      <th>Liberia</th>
-      <td>Sub-Saharan Africa</td>
-      <td>4.5579</td>
-      <td>7.054380</td>
-      <td>0.709281</td>
-      <td>56.096313</td>
-      <td>0.735269</td>
-      <td>0.042273</td>
-      <td>0.856376</td>
-    </tr>
-    <tr>
-      <th>Malawi</th>
-      <td>Sub-Saharan Africa</td>
-      <td>3.5380</td>
-      <td>7.062226</td>
-      <td>0.544007</td>
-      <td>57.592888</td>
-      <td>0.803223</td>
-      <td>0.021433</td>
-      <td>0.731701</td>
-    </tr>
-    <tr>
-      <th>Mozambique</th>
-      <td>Sub-Saharan Africa</td>
-      <td>4.6236</td>
-      <td>7.069346</td>
-      <td>0.723874</td>
-      <td>54.205822</td>
-      <td>0.864452</td>
-      <td>0.032376</td>
-      <td>0.683019</td>
-    </tr>
-    <tr>
-      <th>Sierra Leone</th>
-      <td>Sub-Saharan Africa</td>
-      <td>3.9264</td>
-      <td>7.268803</td>
-      <td>0.636142</td>
-      <td>50.865143</td>
-      <td>0.715315</td>
-      <td>0.088661</td>
-      <td>0.861331</td>
-    </tr>
-    <tr>
-      <th>Madagascar</th>
-      <td>Sub-Saharan Africa</td>
-      <td>4.1656</td>
-      <td>7.281686</td>
-      <td>0.668196</td>
-      <td>59.105427</td>
-      <td>0.557574</td>
-      <td>-0.011824</td>
-      <td>0.817486</td>
-    </tr>
-    <tr>
-      <th>Gambia</th>
-      <td>Sub-Saharan Africa</td>
-      <td>4.7506</td>
-      <td>7.321815</td>
-      <td>0.693169</td>
-      <td>55.012016</td>
-      <td>0.733163</td>
-      <td>0.343199</td>
-      <td>0.690718</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Corruption perçue&#34;</span>,ascending<span style="color:#f92672">=</span>False)<span style="color:#f92672">.</span>head()
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Région du monde</th>
-      <th>Score de bonheur</th>
-      <th>PIB par habitant (log)</th>
-      <th>Entraide sociale</th>
-      <th>Espérance de vie en bonne santé</th>
-      <th>Liberté des choix de vie</th>
-      <th>Générosité</th>
-      <th>Corruption perçue</th>
-    </tr>
-    <tr>
-      <th>Pays</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Bulgaria</th>
-      <td>Central and Eastern Europe</td>
-      <td>5.1015</td>
-      <td>9.869319</td>
-      <td>0.937840</td>
-      <td>66.803978</td>
-      <td>0.745178</td>
-      <td>-0.143908</td>
-      <td>0.935585</td>
-    </tr>
-    <tr>
-      <th>Romania</th>
-      <td>Central and Eastern Europe</td>
-      <td>6.1237</td>
-      <td>10.107584</td>
-      <td>0.825162</td>
-      <td>67.207237</td>
-      <td>0.842823</td>
-      <td>-0.197815</td>
-      <td>0.934300</td>
-    </tr>
-    <tr>
-      <th>Bosnia and Herzegovina</th>
-      <td>Central and Eastern Europe</td>
-      <td>5.6741</td>
-      <td>9.455817</td>
-      <td>0.829204</td>
-      <td>67.808136</td>
-      <td>0.651353</td>
-      <td>0.098275</td>
-      <td>0.933769</td>
-    </tr>
-    <tr>
-      <th>Afghanistan</th>
-      <td>South Asia</td>
-      <td>2.5669</td>
-      <td>7.462861</td>
-      <td>0.470367</td>
-      <td>52.590000</td>
-      <td>0.396573</td>
-      <td>-0.096429</td>
-      <td>0.933687</td>
-    </tr>
-    <tr>
-      <th>Kosovo</th>
-      <td>Central and Eastern Europe</td>
-      <td>6.3252</td>
-      <td>9.204430</td>
-      <td>0.820727</td>
-      <td>63.885555</td>
-      <td>0.861536</td>
-      <td>0.190934</td>
-      <td>0.922328</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Générosité&#34;</span>,ascending<span style="color:#f92672">=</span>False)<span style="color:#f92672">.</span>iloc[[<span style="color:#ae81ff">45</span>]]
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Région du monde</th>
-      <th>Score de bonheur</th>
-      <th>PIB par habitant (log)</th>
-      <th>Entraide sociale</th>
-      <th>Espérance de vie en bonne santé</th>
-      <th>Liberté des choix de vie</th>
-      <th>Générosité</th>
-      <th>Corruption perçue</th>
-    </tr>
-    <tr>
-      <th>Pays</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Denmark</th>
-      <td>Western Europe</td>
-      <td>7.6456</td>
-      <td>10.774001</td>
-      <td>0.955991</td>
-      <td>72.402504</td>
-      <td>0.951444</td>
-      <td>0.066202</td>
-      <td>0.168489</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<p>D&rsquo;après la cellule précédente, le 46<sup>e</sup> (le 1<sup>er</sup> est à l&rsquo;indice 0) meilleur score de générosité appartient au Danemark.</p>
-<blockquote>
-<p>Quel pays correspond à la 59<sup>e</sup> plus courte espérance de vie en bonne santé ?</p>
-</blockquote>
-<p>On peut aussi aisément filtrer le jeu de données en fonction de n&rsquo;importe quel critère :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde[(data_monde[<span style="color:#e6db74">&#34;Espérance de vie en bonne santé&#34;</span>]<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">60</span>) <span style="color:#f92672">&amp;</span> (data_monde[<span style="color:#e6db74">&#34;Espérance de vie en bonne santé&#34;</span>]<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">61</span>)]
-<span style="color:#75715e"># Rq : pandas nécessite les opérateurs logiques bit à bit &#39;&amp;&#39; (et) et &#39;|&#39; (ou) </span>
-<span style="color:#75715e"># plutôt que les opérateurs élément par élément &#39;and&#39; et &#39;or&#39; qui lèveraient une erreur.</span>
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Région du monde</th>
-      <th>Score de bonheur</th>
-      <th>PIB par habitant (log)</th>
-      <th>Entraide sociale</th>
-      <th>Espérance de vie en bonne santé</th>
-      <th>Liberté des choix de vie</th>
-      <th>Générosité</th>
-      <th>Corruption perçue</th>
-    </tr>
-    <tr>
-      <th>Pays</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Kenya</th>
-      <td>Sub-Saharan Africa</td>
-      <td>4.5830</td>
-      <td>8.029776</td>
-      <td>0.702652</td>
-      <td>60.096931</td>
-      <td>0.829748</td>
-      <td>0.294682</td>
-      <td>0.831499</td>
-    </tr>
-    <tr>
-      <th>India</th>
-      <td>South Asia</td>
-      <td>3.5733</td>
-      <td>8.849824</td>
-      <td>0.592201</td>
-      <td>60.215187</td>
-      <td>0.881445</td>
-      <td>0.057552</td>
-      <td>0.772043</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<blockquote>
-<p>Quel pays possède un score de bonheur inférieur à 5 malgré une valeur de corruption perçue inférieure à 0.5 ?</p>
-</blockquote>
-<p>Pour récupérer l&rsquo;ensemble des données d&rsquo;un pays en particulier, on utilise :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde<span style="color:#f92672">.</span>loc[<span style="color:#e6db74">&#39;France&#39;</span>]
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Région du monde                    Western Europe
-Score de bonheur                           <span style="color:#ae81ff">6.6638</span>
-PIB par habitant (log)                  <span style="color:#ae81ff">10.584223</span>
-Entraide sociale                         <span style="color:#ae81ff">0.937104</span>
-Espérance de vie en bonne santé         <span style="color:#ae81ff">73.801933</span>
-Liberté des choix de vie                 <span style="color:#ae81ff">0.825468</span>
-Générosité                              <span style="color:#f92672">-</span><span style="color:#ae81ff">0.130642</span>
-Corruption perçue                        <span style="color:#ae81ff">0.583521</span>
-Name: France, dtype: object
-</code></pre></div><p>Pour chaque variable mesurée (chaque colonne), on peut facilement tracer des histogrammes illustrant la répartition des valeurs.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sns<span style="color:#f92672">.</span>displot(data_monde, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Score de bonheur&#34;</span>, bins<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>,  kde<span style="color:#f92672">=</span>True, height<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>, aspect<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
-<span style="color:#75715e"># bins contrôle le nombre de classes</span>
-</code></pre></div><p><img src="/histobonhseab.png" alt=""></p>
-<p>On peut faciliter la lecture des graphes en les rendant interactif.</p>
-<p>On utilise pour cela la bibliothèque <code>Plotly express</code> qui sait (comme seaborn) parler à une dataframe pandas.<br>
-On peut zoomer sur ces graphiques interactifs et obtenir des informations en survolant avec le curseur.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">px<span style="color:#f92672">.</span>histogram(data_monde,<span style="color:#e6db74">&#39;Corruption perçue&#39;</span>,nbins<span style="color:#f92672">=</span><span style="color:#ae81ff">40</span>,title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Corruption perçue&#34;</span>)
-<span style="color:#75715e"># Cette fois-ci, le nombre de classes est désigné par nbins.</span>
-</code></pre></div><p>
-  
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-
-
-<div id="/corrup.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/corrup.json", function(err, fig) {
-    Plotly.plot('\/corrup.json', fig.data, fig.layout, {responsive: true});
-});
-</script></p>
-<blockquote>
-<p>Modifez le graphe précedent pour répondre à cette question : combien la classe la plus peuplée de l&rsquo;histogramme de l&rsquo;espérence de vie en bonne santé compte-elle de valeurs si l&rsquo;histogramme comporte 30 classes ?</p>
-</blockquote>
-<p> 
- </p>
-<h2 id="regroupement-des-données">Regroupement des données</h2>
-<p>On remarque que le jeu de données contient une colonne catégorielle : &ldquo;Région du monde&rdquo;.<br>
-Cela va nous permettre d&rsquo;explorer de possibles dynamiques régionales : est-ce que les pays d&rsquo;une même zone ont des indicateurs semblables ?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pd<span style="color:#f92672">.</span>unique(data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>]) <span style="color:#75715e"># permet d&#39;afficher une seule fois chacune des valeurs différentes de la colonne</span>
-</code></pre></div><p><code>array(['Western Europe', 'North America and ANZ','Middle East and North Africa', 'Latin America and Caribbean','Central and Eastern Europe', 'East Asia', 'Southeast Asia','Commonwealth of Independent States', 'Sub-Saharan Africa','South Asia'], dtype=object)</code></p>
-<p>Traçons des diagrammes en boîte à moustaches représentant les scores de bonheur pour chacune des régions.</p>
-
-<div class="notices note" ><p>Construction des boîtes à moustaches (ou diagrammes en boîtes de Tukey) :<br>
-Les frontières de la boites sont formées des premier Q1 et troisième quartile Q3 et la barre dans la boite correspond à la médiane (50% des valeurs sont donc dans la boîte).<br>
-Pour les moustaches, on calcule d&rsquo;abord 1,5 fois la distance interquartile entre le premier et le troisième quartile (la longueur de la boîte) : L=1,5×(Q3-Q1). Si les valeurs ne s&rsquo;étendent pas au-delà de Q1-L et Q3+L, on trace les moustaches aux valeurs min et max. Sinon, on trace les moustaches au niveau des valeurs précédant immédiatement la limite. Les valeurs au-delà sont représentées par des points et sont le plus souvent considérées comme des anomalies.</p>
-
-</div>
-<p>À nouveau Seaborn rend cela très simple&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;white&#34;</span>)
-fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">8</span>))
-sns<span style="color:#f92672">.</span>boxplot(ax <span style="color:#f92672">=</span> ax, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Score de bonheur&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Région du monde&#34;</span>, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;husl&#34;</span>, data<span style="color:#f92672">=</span>data_monde)
-sns<span style="color:#f92672">.</span>despine(offset<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, trim<span style="color:#f92672">=</span>True)
-ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;&#39;</span>)
-</code></pre></div><p><img src="/moustacheseab.png" alt=""></p>
-<p>Traçons maintenant un graphe plus général représentant toutes les relations possibles entre deux axes du jeu de données pour voir si certaines combinaisons discriminent plus nettement les différentes régions.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Un peu long à s&#39;exécuter (environ 30 s)</span>
-g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>pairplot(data_monde, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Région du monde&#34;</span>, corner<span style="color:#f92672">=</span>True)
-g<span style="color:#f92672">.</span>_legend<span style="color:#f92672">.</span>set_bbox_to_anchor((<span style="color:#ae81ff">0.6</span>, <span style="color:#ae81ff">0.8</span>))
-</code></pre></div><p><img src="/pairplotseab.png" alt="png"></p>
-<p>On constate que les groupes régionaux sont relativement homogènes pour la plupart des critères.</p>
-<p>Zoomons sur un de ces graphes :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;whitegrid&#34;</span>)
-sns<span style="color:#f92672">.</span>jointplot(data<span style="color:#f92672">=</span>data_monde,x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PIB par habitant (log)&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Score de bonheur&#34;</span>, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Région du monde&#34;</span>, kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;scatter&#39;</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>, legend<span style="color:#f92672">=</span>False)
-</code></pre></div><p><img src="/zoompairplot.png" alt="png"></p>
-<p>Une version interactive du même graphique permet de consulter les informations pour chaque point :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">px<span style="color:#f92672">.</span>scatter(data_monde,x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;PIB par habitant (log)&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Score de bonheur&#39;</span>, hover_name<span style="color:#f92672">=</span>data_monde<span style="color:#f92672">.</span>index, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Région du monde&#39;</span>)
-</code></pre></div>
-
-<div id="/zoompairplot.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/zoompairplot.json", function(err, fig) {
-    Plotly.plot('\/zoompairplot.json', fig.data, fig.layout, {responsive: true});
-});
-</script>
-<blockquote>
-<p>Trouvez la région du monde représentée sur le graphe suivant (le graphe interactif permet de trouver la réponse facilement).
-<img src="/graphemystere.png?width=600" alt=""></p>
-</blockquote>
-<p>Allons maintenant au-delà de la proximité géographique pour regrouper les pays en 3 grands blocs socioéconomiques : &ldquo;Nord&rdquo;, &ldquo;Sud&rdquo;, &ldquo;Intermédiaire&rdquo;.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conditions <span style="color:#f92672">=</span> [(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Western Europe&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;North America and ANZ&#39;</span>),(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;South Asia&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Sub-Saharan Africa&#39;</span>)]
-choix <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#34;Nord&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#34;Sud&#34;&#39;</span>]
-data_monde[<span style="color:#e6db74">&#39;Groupe&#39;</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>select(conditions, choix, default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Autres&#39;</span>)
-deux_gpes <span style="color:#f92672">=</span> data_monde[data_monde[<span style="color:#e6db74">&#34;Groupe&#34;</span>]<span style="color:#f92672">.</span>isin([<span style="color:#e6db74">&#39;&#34;Nord&#34;&#39;</span>,<span style="color:#e6db74">&#39;&#34;Sud&#34;&#39;</span>])]
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Un peu long à s&#39;exécuter (environ 30 s)</span>
-sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;white&#34;</span>)
-g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>PairGrid(data_monde, diag_sharey<span style="color:#f92672">=</span>False, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Groupe&#34;</span>)
-g<span style="color:#f92672">.</span>map_upper(sns<span style="color:#f92672">.</span>scatterplot)
-g<span style="color:#f92672">.</span>map_lower(sns<span style="color:#f92672">.</span>kdeplot,common_norm<span style="color:#f92672">=</span>False)
-g<span style="color:#f92672">.</span>map_diag(sns<span style="color:#f92672">.</span>histplot,bins<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>,kde<span style="color:#f92672">=</span>True)
-g<span style="color:#f92672">.</span>add_legend(title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Grands groupes&#34;</span>,adjust_subtitles<span style="color:#f92672">=</span>True)
-</code></pre></div><p><img src="/troisblocs.png" alt="png"></p>
-<p>L&rsquo;homogénéité de ces 3 groupes saute aux yeux.</p>
-<p> 
- </p>
-<h2 id="corrélations">Corrélations</h2>
-<p>Les graphiques précédents mettent en évidence des corrélations assez fortes entre certaines grandeurs.<br>
-Creusons un peu.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>PairGrid(data_monde, y_vars<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;Score de bonheur&#34;</span>], x_vars<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;PIB par habitant (log)&#34;</span>, <span style="color:#e6db74">&#34;Corruption perçue&#34;</span>], height<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>, aspect<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>)
-g<span style="color:#f92672">.</span>map(sns<span style="color:#f92672">.</span>regplot)
-</code></pre></div><p><img src="/pairgrid.png" alt="png"></p>
-<p>On constate sur cet exemple que le score de bonheur est corrélé positivement avec le PIB par habitant et négativement avec le degré de corruption perçue.</p>
-<p>Pour avoir un panorama complet, traçons la matrice de corrélation donnant, pour chaque couple de variable, la valeur du coefficient de corrélation $r$ (valeur entre -1 et 1 traduisant le degré de dépendance linéaire entre deux variables) :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">10</span>))   
-cmap <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>diverging_palette(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">230</span>, <span style="color:#ae81ff">90</span>, <span style="color:#ae81ff">60</span>, as_cmap<span style="color:#f92672">=</span>True)<span style="color:#f92672">.</span>reversed() <span style="color:#75715e"># choix de la palette de couleurs</span>
-sns<span style="color:#f92672">.</span>heatmap(data_monde<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">1</span>:]<span style="color:#f92672">.</span>corr(), cmap<span style="color:#f92672">=</span>cmap, center<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, annot<span style="color:#f92672">=</span>True, fmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.2f&#34;</span>, linewidth <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, ax<span style="color:#f92672">=</span>ax)
-</code></pre></div><p><img src="/heatmap.png" alt="png"></p>
-<blockquote>
-<p>Citez les deux variables les moins corrélées entre elles (donner les noms exacts tels qu&rsquo;ils apparaissent dans les données, attention à la casse). L&rsquo;ordre des variables n&rsquo;est pas important.</p>
-</blockquote>
-<p> 
- </p>
-<p><em>Fin du TP3a</em></p>
-<hr>
-<h1 id="un-chouïa-dapprentissage-automatique-machine-learning">Un chouïa d&rsquo;apprentissage automatique (machine learning)</h1>
-<p>On a vu qu&rsquo;un regroupement des données en 3 grands groupes &ldquo;Nord&rdquo;, &ldquo;Sud&rdquo; et &ldquo;Intermédiaire&rdquo; semble plutôt cohérent.<br>
-Mais pourquoi pas laisser un algorithme décider lui-même de qui va le mieux ensemble ? Ensuite nous pourrons vérifier si cela recoupe notre découpage fait à la main.<br>
-On appelle cela un <strong>apprentissage non supervisé</strong>.</p>
-<p>Nous allons utiliser l&rsquo;algorithme des <strong>k-moyennes</strong> pour partitionner automatiquement nos données.<br>
-Il consiste à placer chaque point de données dans un espace à $n$ dimensions où $n$ est le nombre de variables (les descripteurs) et chercher à les regrouper en <strong>clusters</strong> en fonction de leurs distances.<br>
-Chaque variable correspondant à un axe du repère.</p>
-<p>Pour aider l&rsquo;algorithme, on peut tenter de réduire la dimension de l&rsquo;espace dans lequel chaque point de données est plongé en utilisant une <strong>analyse en composantes principales</strong>.<br>
-L&rsquo;idée est de déterminer les combinaisons des différentes variables expliquant le mieux la variance des données. Chaque nouvel axe ainsi formé (les composantes principales) explique une part décroissante mais complémentaire de la variance (sur la deuxième composante, les données sont moins étalées que sur la première, mais elles s&rsquo;étalent dans une direction orthogonale, et ainsi de suite).<br>
-Projeter les données sur les premières composantes permet de les étaler le plus possible. On peut ainsi réduire l&rsquo;espace à <em>n</em> dimensions du départ à un espace de seulement 2 ou 3 dimensions expliquant la majorité de la variance des données.</p>
-<p>L&rsquo;animation suivante montre comment serait sélectionné l&rsquo;axe de la composante principale dans un espace à deux dimensions : il correspond à la position de la droite pour  laquelle la distance cumulée de tous les points à la droite est la plus grande.</p>
-<p><img src="/acp.gif" alt=""></p>
-<p>La bibliothèque <code>Scikit-learn</code>, destinée à l&rsquo;apprentissage automatique, contient tout ce qu&rsquo;il nous faut :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.decomposition <span style="color:#f92672">import</span> PCA <span style="color:#75715e"># l&#39;algorithme d&#39;analyse en composantes principales (PCA en anglais)</span>
-<span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler <span style="color:#75715e"># pour centrer-réduire les données</span>
-<span style="color:#f92672">from</span> sklearn.cluster <span style="color:#f92672">import</span> KMeans <span style="color:#75715e"># l&#39;algorithme des k-moyennes</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">variables <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>values[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
-scaler <span style="color:#f92672">=</span> StandardScaler()
-X <span style="color:#f92672">=</span> scaler<span style="color:#f92672">.</span>fit_transform(data_monde[variables]) 
-<span style="color:#75715e"># chaque vecteur correspondant à chacune des variables est maintenant centré-réduit</span>
-pca <span style="color:#f92672">=</span> PCA()
-components <span style="color:#f92672">=</span> pca<span style="color:#f92672">.</span>fit_transform(X)
-</code></pre></div><p>Quelle combinaison des variables de départ utilise la première composante ?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>copy() <span style="color:#75715e"># pour pouvoir revenir sur le graphe suivant même après ajout de colonnes à data_monde</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n_c <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e"># numéro de la composante principale à décrire</span>
-px<span style="color:#f92672">.</span>bar(components<span style="color:#f92672">.</span>T, x<span style="color:#f92672">=</span>data<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>values[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], y<span style="color:#f92672">=</span>n_c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, labels<span style="color:#f92672">=</span>{f<span style="color:#e6db74">&#34;{n_c-1}&#34;</span>: f<span style="color:#e6db74">&#34;Composante Principale (CP) {n_c}&#34;</span>})
-</code></pre></div>
-
-<div id="/compppale.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/compppale.json", function(err, fig) {
-    Plotly.plot('\/compppale.json', fig.data, fig.layout, {responsive: true});
-});
-</script>
-<blockquote>
-<p>Quelle est le nom de la variable participant le plus à la composante principale n°34 ?</p>
-</blockquote>
-<p>Représentons le pourcentage de variance expliquée par chacune des composantes :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">exp_var_cumul <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>cumsum(pca<span style="color:#f92672">.</span>explained_variance_ratio_)
-fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>bar(x<span style="color:#f92672">=</span>range(<span style="color:#ae81ff">1</span>, exp_var_cumul<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>),y<span style="color:#f92672">=</span>pca<span style="color:#f92672">.</span>explained_variance_ratio_,labels<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;x&#34;</span>: <span style="color:#e6db74">&#34;composante&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>: <span style="color:#e6db74">&#34;% variance expliquée&#34;</span>})
-fig<span style="color:#f92672">.</span>add_scatter(x<span style="color:#f92672">=</span>list(range(<span style="color:#ae81ff">1</span>, exp_var_cumul<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)), y<span style="color:#f92672">=</span>exp_var_cumul, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>, showlegend<span style="color:#f92672">=</span>False)
-</code></pre></div><p>
-
-
-<div id="/explvariance.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/explvariance.json", function(err, fig) {
-    Plotly.plot('\/explvariance.json', fig.data, fig.layout, {responsive: true});
-});
-</script></p>
-<p>Les trois premières composantes expliquent plus de 80% de la variance !</p>
-<p>Plaçons les données dans un espace réduit à ces 3 dimensions :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">px<span style="color:#f92672">.</span>scatter_3d(components, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, z<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, 
-              color<span style="color:#f92672">=</span>data_monde[<span style="color:#e6db74">&#39;Groupe&#39;</span>],
-              labels<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;0&#39;</span>: <span style="color:#e6db74">&#39;CP 1&#39;</span>, <span style="color:#e6db74">&#39;1&#39;</span>: <span style="color:#e6db74">&#39;CP 2&#39;</span>, <span style="color:#e6db74">&#39;2&#39;</span>: <span style="color:#e6db74">&#39;CP 3&#39;</span>},
-              hover_name<span style="color:#f92672">=</span>data_monde<span style="color:#f92672">.</span>index)
-</code></pre></div>
-
-<div id="/scat3Dgpe.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/scat3Dgpe.json", function(err, fig) {
-    Plotly.plot('\/scat3Dgpe.json', fig.data, fig.layout, {responsive: true});
-});
-</script>
-<p>On constate à nouveau que nos 3 groupes discriminent plutôt très bien nos données même si quelques chevauchements existent.</p>
-<p>C&rsquo;est le moment d&rsquo;utiliser l&rsquo;algorithme des k-moyennes pour essayer de former 3 groupes homogènes :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># on ne garde que les 3 premières composantes principales</span>
-pca <span style="color:#f92672">=</span> PCA(n_components <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)
-pca<span style="color:#f92672">.</span>fit(X)
-score_pca <span style="color:#f92672">=</span> pca<span style="color:#f92672">.</span>transform(X)
-kmeans_pca <span style="color:#f92672">=</span> KMeans(n_clusters<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>,init<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k-means++&#39;</span>,random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
-kmeans_pca<span style="color:#f92672">.</span>fit(score_pca)
-data_monde[<span style="color:#e6db74">&#34;Cluster&#34;</span>]<span style="color:#f92672">=</span>kmeans_pca<span style="color:#f92672">.</span>labels_<span style="color:#f92672">.</span>astype(str)
-data_monde<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">3</span>)
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Région du monde</th>
-      <th>Score de bonheur</th>
-      <th>PIB par habitant (log)</th>
-      <th>Entraide sociale</th>
-      <th>Espérance de vie en bonne santé</th>
-      <th>Liberté des choix de vie</th>
-      <th>Générosité</th>
-      <th>Corruption perçue</th>
-      <th>Groupe</th>
-      <th>Cluster</th>
-    </tr>
-    <tr>
-      <th>Pays</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Finland</th>
-      <td>Western Europe</td>
-      <td>7.8087</td>
-      <td>10.639267</td>
-      <td>0.954330</td>
-      <td>71.900825</td>
-      <td>0.949172</td>
-      <td>-0.059482</td>
-      <td>0.195445</td>
-      <td>"Nord"</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>Denmark</th>
-      <td>Western Europe</td>
-      <td>7.6456</td>
-      <td>10.774001</td>
-      <td>0.955991</td>
-      <td>72.402504</td>
-      <td>0.951444</td>
-      <td>0.066202</td>
-      <td>0.168489</td>
-      <td>"Nord"</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>Switzerland</th>
-      <td>Western Europe</td>
-      <td>7.5599</td>
-      <td>10.979933</td>
-      <td>0.942847</td>
-      <td>74.102448</td>
-      <td>0.921337</td>
-      <td>0.105911</td>
-      <td>0.303728</td>
-      <td>"Nord"</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>scatter_3d(components, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, z<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, 
-              color<span style="color:#f92672">=</span>data_monde[<span style="color:#e6db74">&#39;Cluster&#39;</span>],
-              labels<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;0&#39;</span>: <span style="color:#e6db74">&#39;CP 1&#39;</span>, <span style="color:#e6db74">&#39;1&#39;</span>: <span style="color:#e6db74">&#39;CP 2&#39;</span>, <span style="color:#e6db74">&#39;2&#39;</span>: <span style="color:#e6db74">&#39;CP 3&#39;</span>},
-              color_discrete_sequence<span style="color:#f92672">=</span>px<span style="color:#f92672">.</span>colors<span style="color:#f92672">.</span>qualitative<span style="color:#f92672">.</span>Bold,
-              hover_name<span style="color:#f92672">=</span>data_monde<span style="color:#f92672">.</span>index)
-fig<span style="color:#f92672">.</span>update_layout(legend_title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Cluster&#34;</span>)
-</code></pre></div>
-
-<div id="/scat3Dclust.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/scat3Dclust.json", function(err, fig) {
-    Plotly.plot('\/scat3Dclust.json', fig.data, fig.layout, {responsive: true});
-});
-</script>
-<p>Les 3 clusters créés reproduisent à peu de chose près les 3 groupes &ldquo;Nord&rdquo;, &ldquo;Sud&rdquo;, &ldquo;Intermédiaire&rdquo; construits à la main.</p>
-<blockquote>
-<p>À quel cluster correspondent approximativement les pays du groupe &ldquo;Sud&rdquo; ?</p>
-</blockquote>
-<p>Mais l&rsquo;accord n&rsquo;est pas parfait !</p>
-<blockquote>
-<p>Citez un pays qui appartient au groupe &ldquo;Nord&rdquo; mais qui n&rsquo;appartient pas au cluster lui correspondant.</p>
-</blockquote>
-<p>Nous allons voir dans la prochaine partie du TP comment représenter ces données sur une carte pour y voir plus clair.</p>
-<p> 
- </p>
-<p><em>Fin du TP3b</em></p>
-<hr>
-<h1 id="un-peu-de-géographie">Un peu de géographie</h1>
-<p>Le module suivant va permettre d&rsquo;ajouter à nos données le code à 3 lettres (SO 3166-1 alpha-3) de chaque pays.<br>
-Mais pourquoi donc ? <code>plotly express</code> permet de tracer la carte d&rsquo;un pays directement à partir de ce petit code de 3 lettres !</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> country_converter <span style="color:#f92672">as</span> coco
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">iso3 <span style="color:#f92672">=</span> coco<span style="color:#f92672">.</span>convert(names<span style="color:#f92672">=</span>data_monde<span style="color:#f92672">.</span>index, to<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ISO3&#39;</span>, not_found<span style="color:#f92672">=</span>None)
-data_monde[<span style="color:#e6db74">&#34;code&#34;</span>] <span style="color:#f92672">=</span> iso3
-data_monde<span style="color:#f92672">.</span>head()
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Région du monde</th>
-      <th>Score de bonheur</th>
-      <th>PIB par habitant (log)</th>
-      <th>Entraide sociale</th>
-      <th>Espérance de vie en bonne santé</th>
-      <th>Liberté des choix de vie</th>
-      <th>Générosité</th>
-      <th>Corruption perçue</th>
-      <th>Groupe</th>
-      <th>Cluster</th>
-      <th>code</th>
-    </tr>
-    <tr>
-      <th>Pays</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Finland</th>
-      <td>Western Europe</td>
-      <td>7.8087</td>
-      <td>10.639267</td>
-      <td>0.954330</td>
-      <td>71.900825</td>
-      <td>0.949172</td>
-      <td>-0.059482</td>
-      <td>0.195445</td>
-      <td>"Nord"</td>
-      <td>2</td>
-      <td>FIN</td>
-    </tr>
-    <tr>
-      <th>Denmark</th>
-      <td>Western Europe</td>
-      <td>7.6456</td>
-      <td>10.774001</td>
-      <td>0.955991</td>
-      <td>72.402504</td>
-      <td>0.951444</td>
-      <td>0.066202</td>
-      <td>0.168489</td>
-      <td>"Nord"</td>
-      <td>2</td>
-      <td>DNK</td>
-    </tr>
-    <tr>
-      <th>Switzerland</th>
-      <td>Western Europe</td>
-      <td>7.5599</td>
-      <td>10.979933</td>
-      <td>0.942847</td>
-      <td>74.102448</td>
-      <td>0.921337</td>
-      <td>0.105911</td>
-      <td>0.303728</td>
-      <td>"Nord"</td>
-      <td>2</td>
-      <td>CHE</td>
-    </tr>
-    <tr>
-      <th>Iceland</th>
-      <td>Western Europe</td>
-      <td>7.5045</td>
-      <td>10.772559</td>
-      <td>0.974670</td>
-      <td>73.000000</td>
-      <td>0.948892</td>
-      <td>0.246944</td>
-      <td>0.711710</td>
-      <td>"Nord"</td>
-      <td>2</td>
-      <td>ISL</td>
-    </tr>
-    <tr>
-      <th>Norway</th>
-      <td>Western Europe</td>
-      <td>7.4880</td>
-      <td>11.087804</td>
-      <td>0.952487</td>
-      <td>73.200783</td>
-      <td>0.955750</td>
-      <td>0.134533</td>
-      <td>0.263218</td>
-      <td>"Nord"</td>
-      <td>2</td>
-      <td>NOR</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>choropleth(data_monde,
-                    locations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;code&#34;</span>,
-                    color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Score de bonheur&#34;</span>,
-                    projection <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;orthographic&#34;</span>,
-                    color_continuous_scale <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Spectral_r&#34;</span>,
-                    hover_name <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>index,
-                    hover_data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;code&#34;</span> : False})
-
-fig<span style="color:#f92672">.</span>update_geos(
-    showland <span style="color:#f92672">=</span> True, landcolor <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LightGrey&#34;</span>,
-    showocean <span style="color:#f92672">=</span> True, oceancolor <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LightBlue&#34;</span>,
-    showlakes <span style="color:#f92672">=</span> True, lakecolor <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;LightBlue&#34;</span>,
-    showframe <span style="color:#f92672">=</span> False)
-
-fig<span style="color:#f92672">.</span>update_layout(margin<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;r&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;t&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;l&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;b&#34;</span>:<span style="color:#ae81ff">0</span>})
-fig<span style="color:#f92672">.</span>show()
-</code></pre></div>
-
-<div id="/cartechoro1.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/cartechoro1.json", function(err, fig) {
-    Plotly.plot('\/cartechoro1.json', fig.data, fig.layout, {responsive: true});
-});
-</script>
-<p>On est maintenant paré pour représenter les 3 clusters obtenus par l&rsquo;algo des k-moyennes du tp3b.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde[<span style="color:#e6db74">&#34;Cluster&#34;</span>] <span style="color:#f92672">=</span> [f<span style="color:#e6db74">&#39;n°{cluster}&#39;</span> <span style="color:#66d9ef">for</span> cluster <span style="color:#f92672">in</span> data_monde[<span style="color:#e6db74">&#34;Cluster&#34;</span>]<span style="color:#f92672">.</span>astype(<span style="color:#e6db74">&#39;int64&#39;</span>) <span style="color:#66d9ef">if</span> cluster <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;nan&#39;</span>]
-data_monde<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">1</span>)
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Région du monde</th>
-      <th>Score de bonheur</th>
-      <th>PIB par habitant (log)</th>
-      <th>Entraide sociale</th>
-      <th>Espérance de vie en bonne santé</th>
-      <th>Liberté des choix de vie</th>
-      <th>Générosité</th>
-      <th>Corruption perçue</th>
-      <th>Groupe</th>
-      <th>Cluster</th>
-      <th>code</th>
-    </tr>
-    <tr>
-      <th>Pays</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Finland</th>
-      <td>Western Europe</td>
-      <td>7.8087</td>
-      <td>10.639267</td>
-      <td>0.95433</td>
-      <td>71.900825</td>
-      <td>0.949172</td>
-      <td>-0.059482</td>
-      <td>0.195445</td>
-      <td>"Nord"</td>
-      <td>n°2</td>
-      <td>FIN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>choropleth(data_monde,
-                    locations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;code&#34;</span>,
-                    color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Cluster&#34;</span>,
-                    projection <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;natural earth&#34;</span>,
-                    color_discrete_sequence <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>colors<span style="color:#f92672">.</span>qualitative<span style="color:#f92672">.</span>Set2,
-                    hover_name <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>index,
-                    hover_data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;code&#34;</span> : False}
-                   )
-<span style="color:#75715e">#fig.update_geos(fitbounds=&#34;locations&#34;, visible=True)</span>
-fig<span style="color:#f92672">.</span>update_layout(margin <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;r&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;t&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;l&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;b&#34;</span>:<span style="color:#ae81ff">0</span>})
-fig<span style="color:#f92672">.</span>update_geos(showframe <span style="color:#f92672">=</span> False)
-fig<span style="color:#f92672">.</span>show()
-</code></pre></div>
-
-<div id="/cartechoro2.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/cartechoro2.json", function(err, fig) {
-    Plotly.plot('\/cartechoro2.json', fig.data, fig.layout, {responsive: true});
-});
-</script>
-<p>Terminons en fabriquant une carte régionale.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pd<span style="color:#f92672">.</span>unique(data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>])
-</code></pre></div><p><code>array(['Western Europe', 'North America and ANZ','Middle East and North Africa', 'Latin America and Caribbean','Central and Eastern Europe', 'East Asia', 'Southeast Asia','Commonwealth of Independent States', 'Sub-Saharan Africa','South Asia'], dtype=object)</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">region <span style="color:#f92672">=</span> data_monde[data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Middle East and North Africa&#34;</span>]
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>choropleth(region,
-                    locations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;code&#34;</span>,
-                    color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Score de bonheur&#34;</span>,
-                    projection <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;natural earth&#34;</span>,
-                    color_continuous_scale <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Temps&#34;</span>,
-                    hover_name <span style="color:#f92672">=</span> region<span style="color:#f92672">.</span>index,
-                    hover_data <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;code&#34;</span> : False}
-                   )
-fig<span style="color:#f92672">.</span>update_geos(fitbounds <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;locations&#34;</span>, visible <span style="color:#f92672">=</span> True)
-fig<span style="color:#f92672">.</span>update_layout(margin <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;r&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;t&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;l&#34;</span>:<span style="color:#ae81ff">0</span>,<span style="color:#e6db74">&#34;b&#34;</span>:<span style="color:#ae81ff">0</span>})
-fig<span style="color:#f92672">.</span>update_geos(showframe <span style="color:#f92672">=</span> False, resolution <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>)
-fig<span style="color:#f92672">.</span>show()
-</code></pre></div>
-
-<div id="/cartechoro3.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/cartechoro3.json", function(err, fig) {
-    Plotly.plot('\/cartechoro3.json', fig.data, fig.layout, {responsive: true});
-});
-</script>
-<blockquote>
-<p>Modifiez les cellules qui précèdent pour que le graphique ci-dessus affiche la carte du score de générosité des pays d&rsquo;Asie du sud-est.</p>
-</blockquote>
-<blockquote>
-<p>De quelle couleur est le Vietnam sur cette carte ?</p>
-</blockquote>
-<p> 
- </p>
-<p><em>Fin du TP3c</em></p>
-<hr>
-<h1 id="série-temporelle">Série temporelle</h1>
-<p>Utilisons un nouveau jeu de données comprenant des relevés de consommation électrique allemands entre 2006 et 2018 :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://cordier-phychi.toile-libre.org/Info/github/elec_allemagne.csv&#34;</span>
-serie_temp <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url,sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;,&#34;</span>)
-serie_temp<span style="color:#f92672">.</span>drop(columns<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Wind+Solar&#34;</span>,inplace<span style="color:#f92672">=</span>True)
-serie_temp
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Date</th>
-      <th>Consumption</th>
-      <th>Wind</th>
-      <th>Solar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2006-01-01</td>
-      <td>1069.18400</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2006-01-02</td>
-      <td>1380.52100</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2006-01-03</td>
-      <td>1442.53300</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2006-01-04</td>
-      <td>1457.21700</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2006-01-05</td>
-      <td>1477.13100</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>4378</th>
-      <td>2017-12-27</td>
-      <td>1263.94091</td>
-      <td>394.507</td>
-      <td>16.530</td>
-    </tr>
-    <tr>
-      <th>4379</th>
-      <td>2017-12-28</td>
-      <td>1299.86398</td>
-      <td>506.424</td>
-      <td>14.162</td>
-    </tr>
-    <tr>
-      <th>4380</th>
-      <td>2017-12-29</td>
-      <td>1295.08753</td>
-      <td>584.277</td>
-      <td>29.854</td>
-    </tr>
-    <tr>
-      <th>4381</th>
-      <td>2017-12-30</td>
-      <td>1215.44897</td>
-      <td>721.247</td>
-      <td>7.467</td>
-    </tr>
-    <tr>
-      <th>4382</th>
-      <td>2017-12-31</td>
-      <td>1107.11488</td>
-      <td>721.176</td>
-      <td>19.980</td>
-    </tr>
-  </tbody>
-</table>
-<p>4383 rows × 4 columns</p>
-</div>
-
-<p>Petit toilettage des données : on transforme les valeurs de la colonne des dates en un type date reconnu par pandas et on les utilise comme index.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">serie_temp[<span style="color:#e6db74">&#39;Date&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_datetime(serie_temp[<span style="color:#e6db74">&#39;Date&#39;</span>])
-serie_temp <span style="color:#f92672">=</span> serie_temp<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;Date&#39;</span>)
-serie_temp<span style="color:#f92672">.</span>head()
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Consumption</th>
-      <th>Wind</th>
-      <th>Solar</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2006-01-01</th>
-      <td>1069.184</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2006-01-02</th>
-      <td>1380.521</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2006-01-03</th>
-      <td>1442.533</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2006-01-04</th>
-      <td>1457.217</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2006-01-05</th>
-      <td>1477.131</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<p>On francise ensuite les noms de colonne&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">serie_temp<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Consommation&#34;</span>,<span style="color:#e6db74">&#34;Vent&#34;</span>,<span style="color:#e6db74">&#34;Solaire&#34;</span>]
-serie_temp<span style="color:#f92672">.</span>head()
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Consommation</th>
-      <th>Vent</th>
-      <th>Solaire</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2006-01-01</th>
-      <td>1069.184</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2006-01-02</th>
-      <td>1380.521</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2006-01-03</th>
-      <td>1442.533</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2006-01-04</th>
-      <td>1457.217</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2006-01-05</th>
-      <td>1477.131</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<p>Et enfin, on ajoute des colonnes &ldquo;jour&rdquo;, &ldquo;mois&rdquo; et &ldquo;année&rdquo;.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">serie_temp[<span style="color:#e6db74">&#39;jour&#39;</span>] <span style="color:#f92672">=</span> serie_temp<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>day_name()
-serie_temp[<span style="color:#e6db74">&#39;mois&#39;</span>] <span style="color:#f92672">=</span> serie_temp<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>month
-serie_temp[<span style="color:#e6db74">&#39;année&#39;</span>] <span style="color:#f92672">=</span> serie_temp<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>year
-serie_temp[<span style="color:#e6db74">&#34;date&#34;</span>] <span style="color:#f92672">=</span> serie_temp<span style="color:#f92672">.</span>index
-serie_temp[<span style="color:#e6db74">&#34;date&#34;</span>] <span style="color:#f92672">=</span> serie_temp[<span style="color:#e6db74">&#34;date&#34;</span>]<span style="color:#f92672">.</span>dt<span style="color:#f92672">.</span>date <span style="color:#75715e"># pour aider Colab qui a des soucis avec les dates</span>
-serie_temp<span style="color:#f92672">.</span>head()
-</code></pre></div>
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-    
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Consommation</th>
-      <th>Vent</th>
-      <th>Solaire</th>
-      <th>jour</th>
-      <th>mois</th>
-      <th>année</th>
-      <th>date</th>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2006-01-01</th>
-      <td>1069.184</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Sunday</td>
-      <td>1</td>
-      <td>2006</td>
-      <td>2006-01-01</td>
-    </tr>
-    <tr>
-      <th>2006-01-02</th>
-      <td>1380.521</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Monday</td>
-      <td>1</td>
-      <td>2006</td>
-      <td>2006-01-02</td>
-    </tr>
-    <tr>
-      <th>2006-01-03</th>
-      <td>1442.533</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Tuesday</td>
-      <td>1</td>
-      <td>2006</td>
-      <td>2006-01-03</td>
-    </tr>
-    <tr>
-      <th>2006-01-04</th>
-      <td>1457.217</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Wednesday</td>
-      <td>1</td>
-      <td>2006</td>
-      <td>2006-01-04</td>
-    </tr>
-    <tr>
-      <th>2006-01-05</th>
-      <td>1477.131</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Thursday</td>
-      <td>1</td>
-      <td>2006</td>
-      <td>2006-01-05</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">px<span style="color:#f92672">.</span>line(serie_temp[[<span style="color:#e6db74">&#34;Consommation&#34;</span>,<span style="color:#e6db74">&#34;Vent&#34;</span>,<span style="color:#e6db74">&#34;Solaire&#34;</span>]])
-</code></pre></div>
-
-<div id="/linecomplet.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/linecomplet.json", function(err, fig) {
-    Plotly.plot('\/linecomplet.json', fig.data, fig.layout, {responsive: true});
-});
-</script>
-<p>On constate d&rsquo;importantes variations saisonnières.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">zoom <span style="color:#f92672">=</span> serie_temp[serie_temp[<span style="color:#e6db74">&#39;année&#39;</span>]<span style="color:#f92672">==</span><span style="color:#ae81ff">2016</span>]
-fig1 <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>line(zoom,<span style="color:#e6db74">&#39;date&#39;</span>,<span style="color:#e6db74">&#39;Consommation&#39;</span>)
-fig2 <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>scatter(zoom,<span style="color:#e6db74">&#39;date&#39;</span>,<span style="color:#e6db74">&#39;Consommation&#39;</span>,color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;jour&#39;</span>)
-fig <span style="color:#f92672">=</span> go<span style="color:#f92672">.</span>Figure()
-fig<span style="color:#f92672">.</span>add_traces([fig1<span style="color:#f92672">.</span>data[<span style="color:#ae81ff">0</span>],<span style="color:#f92672">*</span>[fig2<span style="color:#f92672">.</span>data[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">7</span>)]])
-</code></pre></div>
-
-<div id="/zoom2016.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/zoom2016.json", function(err, fig) {
-    Plotly.plot('\/zoom2016.json', fig.data, fig.layout, {responsive: true});
-});
-</script>
-<p>Une variabilité hebdomadaire se superpose à la tendance saisonnière.</p>
-<p>Grâce à la méthode des dataframe pandas <code>groupby</code>, on peut facilement grouper les donner de manière à obtenir les statistiques qui nous intéressent.<br>
-Exemple : trouvons combien d&rsquo;électricité d&rsquo;origine éolienne a été produite chaque mois en 2016.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">serie_temp[serie_temp[<span style="color:#e6db74">&#39;année&#39;</span>]<span style="color:#f92672">==</span><span style="color:#ae81ff">2016</span>]<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#34;mois&#34;</span>)[<span style="color:#e6db74">&#34;Vent&#34;</span>]<span style="color:#f92672">.</span>sum()
-</code></pre></div><p><code>mois</code><br>
-<code>1     9264.588</code><br>
-<code>2     9814.294</code><br>
-<code>3     6030.177</code><br>
-<code>4     5910.504</code><br>
-<code>5     6089.484</code><br>
-<code>6     3369.069</code><br>
-<code>7     4651.582</code><br>
-<code>8     4742.343</code><br>
-<code>9     4222.315</code><br>
-<code>10    5585.248</code><br>
-<code>11    8076.232</code><br>
-<code>12    9252.290</code><br>
-<code>Name: Vent, dtype: float64</code></p>
-<blockquote>
-<p>Sur le modèle précédent, déterminez le jour de la semaine où l&rsquo;Allemagne a consommé le plus d&rsquo;électricité en moyenne en 2016 (vous pourrez utilisez la méthode <code>mean</code> à la place de <code>sum</code>.</p>
-</blockquote>
-<p>Traçons une boîte à moustaches de la répartition des 3 variables mois par mois :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">10</span>), sharex<span style="color:#f92672">=</span>True)
-<span style="color:#66d9ef">for</span> var, ax <span style="color:#f92672">in</span> zip([<span style="color:#e6db74">&#39;Consommation&#39;</span>, <span style="color:#e6db74">&#39;Solaire&#39;</span>, <span style="color:#e6db74">&#39;Vent&#39;</span>], axes):
-    sns<span style="color:#f92672">.</span>boxplot(data<span style="color:#f92672">=</span>serie_temp, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mois&#39;</span>, y<span style="color:#f92672">=</span>var, ax<span style="color:#f92672">=</span>ax)  
-    ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;GWh&#39;</span>)
-    ax<span style="color:#f92672">.</span>set_title(var)  
-    <span style="color:#66d9ef">if</span> ax <span style="color:#f92672">!=</span> axes[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]:
-        ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;&#39;</span>)
-</code></pre></div><p><img src="/moustachallemagne.png" alt="png"></p>
-<p>On observe que :</p>
-<ul>
-<li>les trois graphes présentent bien une variabilité saisonnière ; la consommation électrique est plus forte en hiver ainsi que la production éolienne (même si l&rsquo;écart est moins marqué) et la production solaire est beaucoup plus importante en été.</li>
-<li>beaucoup de valeurs se retrouvent à l&rsquo;extérieur des moustaches supérieures pour la production éolienne, ce qui est probablement dû à des périodes de fort vent.</li>
-</ul>
-<p>Regardons maintenant jour par jour :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">serie_temp[<span style="color:#e6db74">&#34;date&#34;</span>]<span style="color:#f92672">=</span>(serie_temp<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %B&#39;</span>))
-px<span style="color:#f92672">.</span>box(serie_temp,x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;jour&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Consommation&#39;</span>,hover_data<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;date&#34;</span>})
-</code></pre></div>
-
-<div id="/jourparjour.json" class="plotly" style="height:600px"></div>
-<script>
-Plotly.d3.json("/jourparjour.json", function(err, fig) {
-    Plotly.plot('\/jourparjour.json', fig.data, fig.layout, {responsive: true});
-});
-</script>
-<blockquote>
-<p>Pourquoi y a-t-il autant de points au-delà des moustaches les jours de semaine ?</p>
-</blockquote>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tourIA</span>(plateau):
+  nimSomme <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+  <span style="color:#66d9ef">for</span> nb <span style="color:#f92672">in</span> plateau:
+    nimSomme <span style="color:#f92672">^=</span> nb
+  <span style="color:#66d9ef">if</span> nimSomme <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>: <span style="color:#75715e"># position perdante</span>
+    ligne <span style="color:#f92672">=</span> randint(<span style="color:#ae81ff">0</span>,len(plateau)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">while</span> plateau[ligne] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+      ligne <span style="color:#f92672">=</span> randint(<span style="color:#ae81ff">0</span>,len(plateau)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+    nbjetons <span style="color:#f92672">=</span> randint(<span style="color:#ae81ff">1</span>,plateau[ligne])
+    plateau[ligne] <span style="color:#f92672">-=</span> nbjetons
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;l&#39;IA en prend {nbjetons} sur la ligne {ligne+1}&#34;</span>)
+    <span style="color:#66d9ef">print</span>(plateau)
+  <span style="color:#66d9ef">else</span>:
+    compteur <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(plateau)):
+      <span style="color:#66d9ef">if</span> plateau[i] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+        ligne <span style="color:#f92672">=</span> i
+        compteur <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">if</span> compteur <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>: <span style="color:#75715e"># s&#39;il ne reste qu&#39;une seule ligne non vide, c&#39;est fini</span>
+      <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;l&#39;IA en prend {plateau[ligne]} sur la ligne {ligne+1}.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Le plateau est vide, vous avez perdu...&#34;</span>)
+      plateau[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+      <span style="color:#66d9ef">print</span>(plateau)
+    <span style="color:#66d9ef">else</span> :
+      i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+      <span style="color:#66d9ef">while</span> (plateau[i]<span style="color:#f92672">^</span>nimSomme) <span style="color:#f92672">&gt;</span> plateau[i]: <span style="color:#75715e"># on cherche une ligne permettant d&#39;obtenir à nouveau nimSomme=0</span>
+        i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+      vieux <span style="color:#f92672">=</span> plateau[i]
+      plateau[i] <span style="color:#f92672">=</span> nimSomme<span style="color:#f92672">^</span>plateau[i]
+      <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;l&#39;IA en prend {vieux-plateau[i]} sur la ligne {i+1}&#34;</span>)
+      <span style="color:#66d9ef">print</span>(plateau)
+</code></pre></div><br>
 
 
 <footer class="footline">
@@ -3165,158 +1279,6 @@ Plotly.d3.json("/jourparjour.json", function(err, fig) {
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -3469,22 +1431,6 @@ Plotly.d3.json("/jourparjour.json", function(err, fig) {
                     
 
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -3585,6 +1531,174 @@ Plotly.d3.json("/jourparjour.json", function(err, fig) {
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
