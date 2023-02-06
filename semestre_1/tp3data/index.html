@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1675702025" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675702025" rel="stylesheet">
-    <link href="/css/hybrid.css?1675702025" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675702025" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675702025" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675702025" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675702025" rel="stylesheet">
-    <link href="/css/theme.css?1675702025" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675702025" rel="stylesheet">
+    <link href="/css/nucleus.css?1675717597" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675717597" rel="stylesheet">
+    <link href="/css/hybrid.css?1675717597" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675717597" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675717597" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675717597" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675717597" rel="stylesheet">
+    <link href="/css/theme.css?1675717597" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675717597" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1675702025" rel="stylesheet">
+    <link href="/css/theme-green.css?1675717597" rel="stylesheet">
     
-    <link href="/css/foo.css?1675702025" rel="stylesheet"><link href="/css/bar.css?1675702025" rel="stylesheet">
+    <link href="/css/foo.css?1675717597" rel="stylesheet"><link href="/css/bar.css?1675717597" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1675702025"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675717597"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675702025"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675702025"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675717597"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675717597"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675702025"></script>
+<script type="text/javascript" src="/js/search.js?1675717597"></script>
 
     
   </div>
@@ -1095,8 +1095,33 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
+<link rel="stylesheet" href="/path/to/styles/default.min.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+#correc
+{
+  color: #006C65;
+  border-left: solid 10px #C7DDDC;
+}
+#comm
+{
+  color: #004D80;
+  border-left: solid 10px #B3CAD9;
+}
+#commsum
+{
+  color: #004D80;
+}
+#correcsum
+{
+  color: #006C65;
+}
+</style>
+<br>
 <p>L&rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.<br>
 On va se placer dans un des champs les plus porteurs actuellement (et où python est très utilisé), l&rsquo;analyse de données.</p>
+<br>
 <p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/3BZhe_dl">cette invitation</a> pour récupérer le repository du TP. </p>
 <h1 id="exploration-dun-jeu-de-données">Exploration d&rsquo;un jeu de données</h1>
 <h2 id="statistiques-simples">Statistiques simples</h2>
@@ -1613,10 +1638,69 @@ data_monde<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">3
 </ul>
 <p>L&rsquo;utilisation de fonctions statistiques déjà existantes est bien sûr prohibée.</p>
 </blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decompte</span>(L):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    decompte(L: liste) -&gt; entier
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#75715e"># CODE</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">moyenne</span>(L):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    decompte(L: liste) -&gt; flottant
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#75715e"># CODE</span>
+    
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">mediane</span>(L):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    decompte(L: liste) -&gt; floattant ou entier (suivant les valeurs de L)
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#75715e"># CODE</span>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def decompte(L):
+    return len(L)
+</code></pre>
+<pre><code class="language-python">def moyenne(L):
+    s = 0
+    for e in L:
+        s += e
+    return s/len(L)
+</code></pre>
+<pre><code class="language-python">def mediane(L):
+    N = decompte(L)
+    return L[N//2]
+</code></pre>
+</blockquote>
+</details>
 <blockquote>
 <p>Calculez, pour les 3 formes d&rsquo;importation du module, l&rsquo;écart-type des éléments de la liste <code>Liste_scores</code> en utilisant la fonction <code>stdev</code> du module <code>statistics</code>.<br>
 Il s&rsquo;agit d&rsquo;évaluer directement l&rsquo;expresion (le nombre doit s&rsquo;afficher sous la cellule sans utiliser de <code>print</code>).</p>
 </blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> statistics
+<span style="color:#75715e"># CODE</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> statistics <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#75715e"># CODE</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> statistics <span style="color:#f92672">as</span> st
+<span style="color:#75715e"># CODE</span>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">import statistics
+statistics.stdev(Liste_scores)
+</code></pre>
+<pre><code class="language-python">from statistics import *
+# Rq : on évite le plus souvent ce type d'importation qui peut générer des conflits de définition.
+stdev(Liste_scores)
+</code></pre>
+<pre><code class="language-python">import statistics as st
+# C'est la forme la plus pratique si le module est souvent utilisé
+st.stdev(Liste_scores)
+</code></pre>
+</blockquote>
+</details>
 <p>Tracons maintenant un diagramme en batons des scores de bonheur des 60 premiers pays.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig,ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">4</span>))
 sns<span style="color:#f92672">.</span>barplot(ax <span style="color:#f92672">=</span> ax,x <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>index[:<span style="color:#ae81ff">60</span>], y <span style="color:#f92672">=</span> data_monde[<span style="color:#e6db74">&#39;Score de bonheur&#39;</span>]<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">60</span>))
@@ -1946,6 +2030,15 @@ Mais on peut évidemment choisir un autre critère de classement si on le désir
 <blockquote>
 <p>Quel pays correspond à la 59<sup>e</sup> plus courte espérance de vie en bonne santé ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+On obtient son nom grâce à l'expression suivante&nbsp;:<br>
+<code>data_monde.sort_values(by="Espérance de vie en bonne santé",ascending=True).iloc[[58]]</code><br>
+Il s'agit de <code>'Russia'</code>.
+</blockquote>
+</details>
 <p>On peut aussi aisément filtrer le jeu de données en fonction de n&rsquo;importe quel critère :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde[(data_monde[<span style="color:#e6db74">&#34;Espérance de vie en bonne santé&#34;</span>]<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">60</span>) <span style="color:#f92672">&amp;</span> (data_monde[<span style="color:#e6db74">&#34;Espérance de vie en bonne santé&#34;</span>]<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">61</span>)]
 <span style="color:#75715e"># Rq : pandas nécessite les opérateurs logiques bit à bit &#39;&amp;&#39; (et) et &#39;|&#39; (ou) </span>
@@ -2021,6 +2114,15 @@ Mais on peut évidemment choisir un autre critère de classement si on le désir
 <blockquote>
 <p>Quel pays possède un score de bonheur inférieur à 5 malgré une valeur de corruption perçue inférieure à 0.5 ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+On obtient son nom grâce à l'expression suivante&nbsp;:<br>
+<code>data_monde[(data_monde["Score de bonheur"]<5) & (data_monde["Corruption perçue"]<0.5)]</code><br>
+Il s'agit de <code>'Rwanda'</code>.
+</blockquote>
+</details>
 <p>Pour récupérer l&rsquo;ensemble des données d&rsquo;un pays en particulier, on utilise :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_monde<span style="color:#f92672">.</span>loc[<span style="color:#e6db74">&#39;France&#39;</span>]
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Région du monde                    Western Europe
@@ -2056,6 +2158,15 @@ Plotly.d3.json("/corrup.json", function(err, fig) {
 <blockquote>
 <p>Modifez le graphe précedent pour répondre à cette question : combien la classe la plus peuplée de l&rsquo;histogramme de l&rsquo;espérence de vie en bonne santé compte-elle de valeurs si l&rsquo;histogramme comporte 30 classes ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+On écrit maintenant&nbsp;:<br>
+<code>px.histogram(data_monde,'Espérance de vie en bonne santé',nbins=30)</code><br>
+Et on n'a plus qu'à survoler la classe la plus peuplée pour découvrir le nombre de valeurs qu'elle contient&nbsp;: 29.
+</blockquote>
+</details>
 <p> 
  </p>
 <h2 id="regroupement-des-données">Regroupement des données</h2>
@@ -2101,6 +2212,13 @@ Plotly.d3.json("/zoompairplot.json", function(err, fig) {
 <p>Trouvez la région du monde représentée sur le graphe suivant (le graphe interactif permet de trouver la réponse facilement).
 <img src="/graphemystere.png?width=600" alt=""></p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Il s'agit de 'Latin America and Caribbean'.
+</blockquote>
+</details>
 <p>Allons maintenant au-delà de la proximité géographique pour regrouper les pays en 3 grands blocs socioéconomiques : &ldquo;Nord&rdquo;, &ldquo;Sud&rdquo;, &ldquo;Intermédiaire&rdquo;.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">conditions <span style="color:#f92672">=</span> [(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Western Europe&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;North America and ANZ&#39;</span>),(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;South Asia&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Sub-Saharan Africa&#39;</span>)]
 choix <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#34;Nord&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#34;Sud&#34;&#39;</span>]
@@ -2132,11 +2250,24 @@ sns<span style="color:#f92672">.</span>heatmap(data_monde<span style="color:#f92
 <blockquote>
 <p>Citez les deux variables les moins corrélées entre elles (donner les noms exacts tels qu&rsquo;ils apparaissent dans les données, attention à la casse). L&rsquo;ordre des variables n&rsquo;est pas important.</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Voilà le test utiliser pour vérifier la réponse&nbsp;:
+<pre><code class="language-python">assert variable1 == "Générosité" or variable1 == "Entraide sociale"
+if variable1 == "Générosité":
+    assert variable2 == "Entraide sociale"
+else:
+    assert variable2 == "Générosité"
+</code></pre>
+</blockquote>
+</details>
 <p> 
  </p>
 <p><em>Fin du TP3a</em></p>
 <hr>
-<h1 id="un-chouïa-dapprentissage-automatique-machine-learning">Un chouïa d&rsquo;apprentissage automatique (machine learning)</h1>
+<h1 id="un-chouïa-dapprentissage-automatiquebrmachine-learning">Un chouïa d&rsquo;apprentissage automatique<br>(machine learning)</h1>
 <p>On a vu qu&rsquo;un regroupement des données en 3 grands groupes &ldquo;Nord&rdquo;, &ldquo;Sud&rdquo; et &ldquo;Intermédiaire&rdquo; semble plutôt cohérent.<br>
 Mais pourquoi pas laisser un algorithme décider lui-même de qui va le mieux ensemble ? Ensuite nous pourrons vérifier si cela recoupe notre découpage fait à la main.<br>
 On appelle cela un <strong>apprentissage non supervisé</strong>.</p>
@@ -2146,6 +2277,13 @@ Chaque variable correspondant à un axe du repère.</p>
 <p>Pour aider l&rsquo;algorithme, on peut tenter de réduire la dimension de l&rsquo;espace dans lequel chaque point de données est plongé en utilisant une <strong>analyse en composantes principales</strong>.<br>
 L&rsquo;idée est de déterminer les combinaisons des différentes variables expliquant le mieux la variance des données. Chaque nouvel axe ainsi formé (les composantes principales) explique une part décroissante mais complémentaire de la variance (sur la deuxième composante, les données sont moins étalées que sur la première, mais elles s&rsquo;étalent dans une direction orthogonale, et ainsi de suite).<br>
 Projeter les données sur les premières composantes permet de les étaler le plus possible. On peut ainsi réduire l&rsquo;espace à <em>n</em> dimensions du départ à un espace de seulement 2 ou 3 dimensions expliquant la majorité de la variance des données.</p>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)&nbsp;</summary>
+<blockquote id="comm">
+<a href="https://youtu.be/sRMplEDuEig">Une vidéo</a> pour ceux qui voudraient en savoir plus sur ce sujet.
+</blockquote>
+</details>
 <p>L&rsquo;animation suivante montre comment serait sélectionné l&rsquo;axe de la composante principale dans un espace à deux dimensions : il correspond à la position de la droite pour  laquelle la distance cumulée de tous les points à la droite est la plus grande.</p>
 <p><img src="/acp.gif" alt=""></p>
 <p>La bibliothèque <code>Scikit-learn</code>, destinée à l&rsquo;apprentissage automatique, contient tout ce qu&rsquo;il nous faut :</p>
@@ -2158,7 +2296,7 @@ X <span style="color:#f92672">=</span> scaler<span style="color:#f92672">.</span
 <span style="color:#75715e"># chaque vecteur correspondant à chacune des variables est maintenant centré-réduit</span>
 pca <span style="color:#f92672">=</span> PCA()
 components <span style="color:#f92672">=</span> pca<span style="color:#f92672">.</span>fit_transform(X)
-</code></pre></div><p>Quelle combinaison des variables de départ utilise la première composante ?</p>
+</code></pre></div><p>Quelle combinaison des variables de départ utilise la première composante ? Les quelqus lignes suivantes permettent de le déterminer.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>copy() <span style="color:#75715e"># pour pouvoir revenir sur le graphe suivant même après ajout de colonnes à data_monde</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n_c <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e"># numéro de la composante principale à décrire</span>
 px<span style="color:#f92672">.</span>bar(components<span style="color:#f92672">.</span>T, x<span style="color:#f92672">=</span>data<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>values[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], y<span style="color:#f92672">=</span>n_c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, labels<span style="color:#f92672">=</span>{f<span style="color:#e6db74">&#34;{n_c-1}&#34;</span>: f<span style="color:#e6db74">&#34;Composante Principale (CP) {n_c}&#34;</span>})
@@ -2173,6 +2311,13 @@ Plotly.d3.json("/compppale.json", function(err, fig) {
 <blockquote>
 <p>Quelle est le nom de la variable participant le plus à la composante principale n°34 ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+La 'Générosité'.
+</blockquote>
+</details>
 <p>Représentons le pourcentage de variance expliquée par chacune des composantes :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">exp_var_cumul <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>cumsum(pca<span style="color:#f92672">.</span>explained_variance_ratio_)
 fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>bar(x<span style="color:#f92672">=</span>range(<span style="color:#ae81ff">1</span>, exp_var_cumul<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>),y<span style="color:#f92672">=</span>pca<span style="color:#f92672">.</span>explained_variance_ratio_,labels<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;x&#34;</span>: <span style="color:#e6db74">&#34;composante&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>: <span style="color:#e6db74">&#34;% variance expliquée&#34;</span>})
@@ -2317,10 +2462,25 @@ Plotly.d3.json("/scat3Dclust.json", function(err, fig) {
 <blockquote>
 <p>À quel cluster correspondent approximativement les pays du groupe &ldquo;Sud&rdquo; ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Au cluster "1".
+</blockquote>
+</details>
 <p>Mais l&rsquo;accord n&rsquo;est pas parfait !</p>
 <blockquote>
 <p>Citez un pays qui appartient au groupe &ldquo;Nord&rdquo; mais qui n&rsquo;appartient pas au cluster lui correspondant.</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Un des pays suivant : "Spain", "Italy", "Cyprus", "North Cyprus", "Portugal", "Greece".<br>
+On remarque qu'il s'agit exclusivement de pays du sud de l'Europe.
+</blockquote>
+</details>
 <p>Nous allons voir dans la prochaine partie du TP comment représenter ces données sur une carte pour y voir plus clair.</p>
 <p> 
  </p>
@@ -2569,8 +2729,18 @@ Plotly.d3.json("/cartechoro2.json", function(err, fig) {
 });
 </script>
 <p>Terminons en fabriquant une carte régionale.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pd<span style="color:#f92672">.</span>unique(data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>])
-</code></pre></div><p><code>array(['Western Europe', 'North America and ANZ','Middle East and North Africa', 'Latin America and Caribbean','Central and Eastern Europe', 'East Asia', 'Southeast Asia','Commonwealth of Independent States', 'Sub-Saharan Africa','South Asia'], dtype=object)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> reg <span style="color:#f92672">in</span> pd<span style="color:#f92672">.</span>unique(data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>]):
+    <span style="color:#66d9ef">print</span>(reg)
+</code></pre></div><p><code>Western Europe</code><br>
+<code>North America and ANZ</code><br>
+<code>Middle East and North Africa</code><br>
+<code>Latin America and Caribbean</code><br>
+<code>Central and Eastern Europe</code><br>
+<code>East Asia</code><br>
+<code>Southeast Asia</code><br>
+<code>Commonwealth of Independent States</code><br>
+<code>Sub-Saharan Africa</code><br>
+<code>South Asia</code><br></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">region <span style="color:#f92672">=</span> data_monde[data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Middle East and North Africa&#34;</span>]
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>choropleth(region,
                     locations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;code&#34;</span>,
@@ -2595,9 +2765,37 @@ Plotly.d3.json("/cartechoro3.json", function(err, fig) {
 <blockquote>
 <p>Modifiez les cellules qui précèdent pour que le graphique ci-dessus affiche la carte du score de générosité des pays d&rsquo;Asie du sud-est.</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Voilà les lignes modifiées&nbsp;:
+<pre><code class="language-python">region = data_monde[data_monde["Région du monde"] == "Southeast Asia"]
+fig = px.choropleth(region,
+                    locations="code",
+                    color="Générosité",
+                    projection="natural earth",
+                    color_continuous_scale="Temps",
+                    hover_name = region.index,
+                    hover_data ={"code" : False}
+                   )
+fig.update_geos(fitbounds="locations", visible=True)
+fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+fig.update_geos(showframe = False, resolution=50)
+fig.show()
+</code></pre>
+</blockquote>
+</details>
 <blockquote>
 <p>De quelle couleur est le Vietnam sur cette carte ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+vert
+</blockquote>
+</details>
 <p> 
  </p>
 <p><em>Fin du TP3c</em></p>
@@ -2999,8 +3197,24 @@ Exemple : trouvons combien d&rsquo;électricité d&rsquo;origine éolienne a ét
 <code>12    9252.290</code><br>
 <code>Name: Vent, dtype: float64</code></p>
 <blockquote>
-<p>Sur le modèle précédent, déterminez le jour de la semaine où l&rsquo;Allemagne a consommé le plus d&rsquo;électricité en moyenne en 2016 (vous pourrez utilisez la méthode <code>mean</code> à la place de <code>sum</code>.</p>
+<p>Sur le modèle précédent, déterminez le jour de la semaine où l&rsquo;Allemagne a consommé le plus d&rsquo;électricité en moyenne en 2016 (vous pourrez utilisez la méthode <code>mean</code> à la place de <code>sum</code>).</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Il suffit d'écrire la ligne suivante&nbsp;:<br>
+<code>serie_temp[serie_temp['année']==2016].groupby("jour")["Consommation"].mean()</code><br>
+Et on constate alors que le mercredi est le jour où les allemands ont le plus consommé en moyenne en 2016.
+</blockquote>
+</details>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)&nbsp;</summary>
+<blockquote id="comm">
+On retrouve une philosophie proche des fonctions d'agrégations en SQL.
+</blockquote>
+</details>
 <p>Traçons une boîte à moustaches de la répartition des 3 variables mois par mois :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">10</span>), sharex<span style="color:#f92672">=</span>True)
 <span style="color:#66d9ef">for</span> var, ax <span style="color:#f92672">in</span> zip([<span style="color:#e6db74">&#39;Consommation&#39;</span>, <span style="color:#e6db74">&#39;Solaire&#39;</span>, <span style="color:#e6db74">&#39;Vent&#39;</span>], axes):
@@ -3029,7 +3243,13 @@ Plotly.d3.json("/jourparjour.json", function(err, fig) {
 <blockquote>
 <p>Pourquoi y a-t-il autant de points au-delà des moustaches les jours de semaine ?</p>
 </blockquote>
-
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+À cause des jours fériés.
+</blockquote>
+</details>
 
 <footer class="footline">
 	
@@ -3727,19 +3947,19 @@ Plotly.d3.json("/jourparjour.json", function(err, fig) {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675702026"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675702026"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675702026"></script>
-    <script src="/js/jquery.sticky.js?1675702026"></script>
-    <script src="/js/featherlight.min.js?1675702026"></script>
-    <script src="/js/highlight.pack.js?1675702026"></script>
+    <script src="/js/clipboard.min.js?1675717597"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675717597"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675717597"></script>
+    <script src="/js/jquery.sticky.js?1675717597"></script>
+    <script src="/js/featherlight.min.js?1675717597"></script>
+    <script src="/js/highlight.pack.js?1675717597"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675702026"></script>
-    <script src="/js/learn.js?1675702026"></script>
-    <script src="/js/hugo-learn.js?1675702026"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675717597"></script>
+    <script src="/js/learn.js?1675717597"></script>
+    <script src="/js/hugo-learn.js?1675717597"></script>
     
         
-            <script src="/mermaid/mermaid.js?1675702026"></script>
+            <script src="/mermaid/mermaid.js?1675717597"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

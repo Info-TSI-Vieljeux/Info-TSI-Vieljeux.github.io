@@ -133,9 +133,8 @@ def decache_image(image) : image_decrypt = (image % 2**2) * 2**6 + 2**5 return i
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp3data/</guid>
-      <description>L&amp;rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.
-On va se placer dans un des champs les plus porteurs actuellement (et où python est très utilisé), l&amp;rsquo;analyse de données.
-Cliquez sur cette invitation pour récupérer le repository du TP. Exploration d&amp;rsquo;un jeu de données Statistiques simples import pandas as pd # bibliothèques dédiée au traitement de jeux de données import matplotlib.</description>
+      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  L&amp;rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.
+On va se placer dans un des champs les plus porteurs actuellement (et où python est très utilisé), l&amp;rsquo;analyse de données.</description>
     </item>
     
     <item>
