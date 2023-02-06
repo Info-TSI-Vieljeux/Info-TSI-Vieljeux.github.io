@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1675197486" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675197486" rel="stylesheet">
-    <link href="/css/hybrid.css?1675197486" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675197486" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675197486" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675197486" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675197486" rel="stylesheet">
-    <link href="/css/theme.css?1675197486" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675197486" rel="stylesheet">
+    <link href="/css/nucleus.css?1675695660" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675695660" rel="stylesheet">
+    <link href="/css/hybrid.css?1675695660" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675695660" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675695660" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675695660" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675695660" rel="stylesheet">
+    <link href="/css/theme.css?1675695660" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675695660" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1675197486" rel="stylesheet">
+    <link href="/css/theme-green.css?1675695660" rel="stylesheet">
     
-    <link href="/css/foo.css?1675197486" rel="stylesheet"><link href="/css/bar.css?1675197486" rel="stylesheet">
+    <link href="/css/foo.css?1675695660" rel="stylesheet"><link href="/css/bar.css?1675695660" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1675197486"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675695660"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675197486"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675197486"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675695660"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675695660"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675197486"></script>
+<script type="text/javascript" src="/js/search.js?1675695660"></script>
 
     
   </div>
@@ -1094,6 +1094,29 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
+<link rel="stylesheet" href="/path/to/styles/default.min.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+#correc
+{
+  color: #006C65;
+  border-left: solid 10px #C7DDDC;
+}
+#comm
+{
+  color: #004D80;
+  border-left: solid 10px #B3CAD9;
+}
+#commsum
+{
+  color: #004D80;
+}
+#correcsum
+{
+  color: #006C65;
+}
+</style>
 <h1 id="tp-1--recherche-séquentielle-dans-un-tableau-unidimensionnel-dictionnaires">TP 1 : Recherche séquentielle dans un tableau unidimensionnel. Dictionnaires.</h1>
 <p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/OITDK7qN">cette invitation</a> pour récupérer le repository du TP. </p>
 <h2 id="recherche-dun-élément-dans-une-liste">Recherche d&rsquo;un élément dans une liste</h2>
@@ -1102,37 +1125,84 @@ onload='renderMathInElement(document.body);'></script>
 Le corps de la fonction devra comprendre une boucle.</p>
 </blockquote>
 <p>Rq : le but de <code>recherche</code> est de reproduire le fonctionnement du mot clé <code>in</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recherche</span>(x,L) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recherche</span>(x,L):
     <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">    recherche(x : tout type, L : list) -&gt; bool
+</span><span style="color:#e6db74">    recherche(x: tout type, L: list) -&gt; bool
 </span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><blockquote>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer)&nbsp;</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def recherche(x,L):
+    for e in L:
+        if e == x:
+            return True
+    return False
+</code></pre>
+</blockquote>
+</details>
+<blockquote>
 <p>Dans le pire des cas (élément ne se trouvant pas dans la liste), combien de comparaisons doit-on opérer pour savoir si un élément est présent dans une liste de taille 400 ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer)&nbsp;</summary>
+<blockquote id="correc">
+La fonction réalise une comparaison pour chaque élément $\Rightarrow$ 400 comparaisons.
+</blockquote>
+</details>
 <blockquote>
 <p>Construisez une fonction <code>dico</code> qui prend en argument une liste <code>L</code> de $n$ entiers inférieurs à $n$ et qui retourne un dictionnaire de longueur $n$ dont les clés sont les $n$ premiers entiers (de 0 à $n$-1) et les valeurs comptent le nombre de fois que la clé est présente dans la liste.<br>
 Exemple : s&rsquo;il y a 2 fois l&rsquo;élément 18 dans la liste <code>L</code>, alors <code>dico(L)[18]==2</code>, et si l&rsquo;élément 97 n&rsquo;est pas présent dans la liste, alors <code>dico(L)[97]==0</code>.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint 
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dico</span>(L) :
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dico</span>(L):
     <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">    dico(L : list) -&gt; dict
+</span><span style="color:#e6db74">    dico(L: list) -&gt; dict
 </span><span style="color:#e6db74">    précondition : si la longueur de L vaut n, alors L ne contient que des entiers &lt; n
 </span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><p>Définissons une fonction <code>recherche_dico</code> qui vérifie si un entier est bien présent :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recherche_dico</span>(e,dic) :
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer)&nbsp;</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def dico(L) :
+    n = len(L)
+    dic = {}
+    for i in range(n):
+        dic[i] = 0
+    for e in L:
+        dic[e] += 1
+    return dic
+</code></pre>
+</blockquote>
+</details>
+<details>
+<summary id="commsum">
+Commentaire (cliquer)&nbsp;</summary>
+<blockquote id="comm">
+La signature de la fonction et les préconditions délimitent les types et les domaines des entrées (les arguments).<br>
+On peut, ou non, s'assurer de leur respect grâce à des <code>asser</code>.<br>
+Ici, par exemple, on aurait pu commencer le code de la fonction par les lignes suivantes&nbsp;:<br>
+<pre><code class="language-python">n = len(L)
+for e in L:
+    assert e < n
+</code></pre>
+</blockquote>
+</details>
+<p>Définissons une fonction <code>recherche_dico</code> qui vérifie si un entier est bien présent :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recherche_dico</span>(e,dic):
     <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">    recherche_dico(e : int, dic : dict) -&gt; bool
+</span><span style="color:#e6db74">    recherche_dico(e: int, dic: dict) -&gt; bool
 </span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
-    <span style="color:#66d9ef">if</span> dic[e] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span> :
+    <span style="color:#66d9ef">if</span> dic[e] <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span>:
         <span style="color:#66d9ef">return</span> True
-    <span style="color:#66d9ef">else</span> :
+    <span style="color:#66d9ef">else</span>:
         <span style="color:#66d9ef">return</span> False
     
-<span style="color:#75715e"># Exemple d&#39;utilisation :</span>
+<span style="color:#75715e"># Exemple d&#39;utilisation:</span>
 L <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>]
 dic <span style="color:#f92672">=</span> dico(L)
 (recherche_dico(<span style="color:#ae81ff">3</span>,dic),recherche_dico(<span style="color:#ae81ff">4</span>,dic))
@@ -1145,7 +1215,7 @@ plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>
 
 I, T_ch, T_dico <span style="color:#f92672">=</span> [], [], []
 
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1000</span>,<span style="color:#ae81ff">200000</span>,<span style="color:#ae81ff">1000</span>) :
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1000</span>,<span style="color:#ae81ff">200000</span>,<span style="color:#ae81ff">1000</span>):
     L <span style="color:#f92672">=</span> []
     L <span style="color:#f92672">=</span> [randint(<span style="color:#ae81ff">0</span>,i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(i)] <span style="color:#75715e"># randint(i,j) retourne un entier dans {i;...;j}</span>
     <span style="color:#75715e"># la liste L contient i éléments tirés au hasard entre 0 et i-1</span>
@@ -1167,6 +1237,14 @@ plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;t
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;temps d&#39;exécution (s)&#34;</span>)
 plt<span style="color:#f92672">.</span>legend()
 </code></pre></div><p><img src="/dichovslin.png" alt=""></p>
+<details>
+<summary id="commsum">
+Commentaire (cliquer)&nbsp;</summary>
+<blockquote id="comm">
+Le graphique montre que la fonction <code>recherche</code> a une complexité constante (nombre constant d'opération) dans le meilleur des cas (élément à rechercher au début de la liste) et une complexité linéaire (nombre d'opérations proportionnel à la longueur de la liste) dans le pire des cas.<br>
+Par contre, la fonction <code>recherche_dico</code> semble, elle, toujours de complexité constante.
+</blockquote>
+</details>
 <h2 id="recherche-dun-maximum">Recherche d&rsquo;un maximum</h2>
 <blockquote>
 <p>Écrire une fonction <code>maximum</code> qui prend pour argument une liste et qui retourne le plus grand élément de la liste.<br>
@@ -1177,7 +1255,55 @@ plt<span style="color:#f92672">.</span>legend()
 </span><span style="color:#e6db74">    maximum(L : list) -&gt; float ou int
 </span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><p>Que se passera-t-il si on passe la liste suivante <code>[1,3,'a',-2]</code> en argument à <code>maximum</code> ?</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer)&nbsp;</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def maximum(L):
+    m = L[0] 
+    for e in L[1:]: # on commence à partir du 2e élément de L
+        if e > m:
+            m = e
+    return m
+</code></pre>
+</blockquote>
+</details>
+<details>
+<summary id="commsum">
+Commentaire 1 (cliquer)&nbsp;</summary>
+<blockquote id="comm">
+L'utilisation du découpage (slicing) <code>L[1:]</code> permet d'éviter l'erreur <code>indexerror : list index out of range</code> (qui signifie que l'indice est hors-plage) dans le cas d'une liste de seulement 1 élément. En effet, <code>L[1:]</code> ne renvoie alors pas une erreur mais la liste vide <code>[]</code>. On ne rentre donc pas dans la boucle.<br>
+On aurait aussi pu utiliser <code>L</code> pour itérer car bien que cela entraîne une comparaison supplémentaire inutile, pour des grandes listes, c'est complètement insignifiant.<br><br>
+<u>Rq :</u> la fonction lèvera une erreur si <code>L</code> est une liste vide car dans ce cas, même <code>L[0]</code> n'existe pas.
+</blockquote>
+</details>
+<details>
+<summary id="commsum">
+Commentaire 2 (cliquer)&nbsp;</summary>
+<blockquote id="comm">
+Il faut aussi savoir construire une fonction qui renvoie l'indice du maximum (le premier indice au cas où le maximum serait présent plusieur fois)&nbsp;:
+<pre><code class="language-python">def indice_maximum(L):
+    n = len(L)
+    im = 0
+    for i in range(1,n):
+        if L[i] > L[im]:
+            im = i
+    return im
+</code></pre>
+Et si on a besoin des deux à la fois, on peut renvoyer le max et son indice dans un tuple&nbsp;:
+<pre><code class="language-python">def max_et_indice(L):
+    n = len(L)
+    im = 0
+    m = L[im]
+    for i in range(1,n):
+        if L[i] > m:
+            im = i
+            m = L[im]
+    return m,im
+</code></pre>
+</blockquote>
+</details>
+<p>Que se passera-t-il si on passe la liste suivante <code>[1,3,'a',-2]</code> en argument à <code>maximum</code> ?</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">maximum([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#e6db74">&#39;a&#39;</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>])
 </code></pre></div><blockquote>
 <p>Pour éviter cela, vous devrez vous assurez en amont que la liste donnée en argument contient bien que des nombres.<br>
@@ -1190,23 +1316,57 @@ Vous placerez un <code>assert</code> en début de fonction prévenant l&rsquo;ut
 </span><span style="color:#e6db74">    la fonction lève une &#39;AsserionError&#39; si la liste ne contient pas que des nombres
 </span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><blockquote>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer)&nbsp;</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def maximum_secure(L) :
+    for e in L :
+        assert type(e)==int or type(e)==float, 'la list ne contient pas que des nombres'
+    return maximum(L)
+</code></pre>
+On aurai aussi pu écrire : <code>assert type(e) in (float,int)</code>
+</blockquote>
+</details>
+<blockquote>
 <p>Construisez maintenant une fonction <code>max_2</code> qui retourne le deuxième maximum défini comme le plus grand élément strictement inférieur au maximum (s&rsquo;il y a plusieurs éléments ayant la valeur maximale, il ne faut pas retourner un de ceux-là).<br>
 Votre fonction <code>max_2</code> devra utiliser votre ancienne fonction <code>maximum</code>, mais vous ferez attention à ne pas placer <code>maximum</code> à l&rsquo;intérieur d&rsquo;une boucle.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">max_2</span>(L) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">max_2</span>(L):
     <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">    max_2(L : list) -&gt; float ou int
+</span><span style="color:#e6db74">    max_2(L: list) -&gt; float ou int
 </span><span style="color:#e6db74">    précondition : L est une liste de nombres
 </span><span style="color:#e6db74">    postcondition : la fonction retourne le plus grand élément strictement plus petit que le max de la liste.
 </span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><p>Ci-dessous est représentée l&rsquo;évolution du temps d&rsquo;exécution de la fonction native <code>max</code> ainsi que de la fonction <code>maximum</code> (si vous avez réussi à l&rsquo;implémenter) en fonction de la taille de la liste en argument.<br>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer)&nbsp;</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def max_2(L):
+    assert len(L)>1, "la liste ne contient qu'un élément"
+    x = L[0]
+    b = False # b va servir à tester qu'un 2e max est bien présent
+    for e in L:
+        if e != x:
+            b = True
+    assert b, "pas de second max puisque tous les éléments sont identiques"
+    M = maximum(L)
+    m = M
+    while m == M:
+        L.remove(m)
+        m = maximum(L)
+    m2 = maximum(L)
+    return m2
+</code></pre>
+</blockquote>
+</details>
+<p>Ci-dessous est représentée l&rsquo;évolution du temps d&rsquo;exécution de la fonction native <code>max</code> ainsi que de la fonction <code>maximum</code> (si vous avez réussi à l&rsquo;implémenter) en fonction de la taille de la liste en argument.<br>
 On remarque que cette évolution est linéaire : l&rsquo;augmentation du temps d&rsquo;exécution semble proportionnelle à l&rsquo;augmentation de la taille de la liste.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">I, T_max, T_maximum <span style="color:#f92672">=</span> [], [], []
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">50000</span>,<span style="color:#ae81ff">1000000</span>,<span style="color:#ae81ff">50000</span>) :
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">50000</span>,<span style="color:#ae81ff">1000000</span>,<span style="color:#ae81ff">50000</span>):
     L <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(i) :
+    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(i):
         L <span style="color:#f92672">+=</span> [randint(<span style="color:#ae81ff">0</span>,k)]
         <span style="color:#75715e"># randint(i,j) retourne un entier dans {i;...;j}</span>
     start1 <span style="color:#f92672">=</span> time()
@@ -1220,8 +1380,8 @@ On remarque que cette évolution est linéaire : l&rsquo;augmentation du temps d
     I<span style="color:#f92672">.</span>append(i)
 
 plt<span style="color:#f92672">.</span>figure(figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">5</span>))
-plt<span style="color:#f92672">.</span>plot(I,T_max,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;la fonction Python &#39;max&#39;&#34;</span>)
-plt<span style="color:#f92672">.</span>plot(I,T_maximum,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;votre fonction &#39;maximum&#39;&#34;</span>)
+plt<span style="color:#f92672">.</span>plot(I,T_max,label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;la fonction Python &#39;max&#39;&#34;</span>)
+plt<span style="color:#f92672">.</span>plot(I,T_maximum,label <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;votre fonction &#39;maximum&#39;&#34;</span>)
 
 plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;taille de la liste&#39;</span>)
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;temps d&#39;exécution (s)&#34;</span>)
@@ -1230,7 +1390,50 @@ plt<span style="color:#f92672">.</span>legend()
 <blockquote>
 <p>Ajoutez la fonction <code>max_2</code> à ce graphe et répondre dans la cellule suivante si oui ou non, le temps d&rsquo;exécution de <code>max_2</code> semble dépendre linéairement de la taille de la liste.</p>
 </blockquote>
-
+<details>
+<summary id="correcsum">
+Correction (cliquer)&nbsp;</summary>
+<blockquote id="correc">
+Code avec ajout de <code>max_2</code>&nbsp;:
+<pre><code class="language-python">I, T_max, T_maximum, T_max2 = [], [], [], []
+for i in range(50000,1000000,50000) :
+    L = []
+    for k in range(i) :
+        L += [randint(0,k)]
+        # randint(i,j) retourne un entier dans {i;...;j}
+    start1 = time()
+    max(L)
+    stop1 = time()
+    T_max.append(stop1-start1)
+    start2 = time()
+    maximum(L)
+    stop2 = time()
+    T_maximum.append(stop2-start2)
+    start3 = time()
+    max_2(L)
+    stop3 = time()
+    T_max2.append(stop3-start3)
+    I.append(i)
+plt.figure(figsize = (15,5))
+plt.plot(I, T_max, label= "la fonction Python 'max'")
+plt.plot(I, T_maximum, label= "votre fonction 'maximum'")
+plt.plot(I, T_max2, label= "votre fonction 'max_2'")
+plt.xlabel('taille de la liste')
+plt.ylabel("temps d'exécution (s)")
+plt.legend()
+</code></pre>
+On obtient&nbsp;:
+<img src="/avmax2.png">
+La fonction <code>max_2</code> semble donc bien dépendre linéairement de la taille de la liste. La pente plus élevée traduit que le nombre d'opérations à réaliser pour chaque élément de la liste est plus élevé.
+</blockquote>
+</details>
+<details>
+<summary id="commsum">
+Commentaire (cliquer)&nbsp;</summary>
+<blockquote id="comm">
+La fonction python native n'utilise pas un meilleur algorithme. D'ailleurs sa complexité est bien linéaire mais comme souvent avec les fonctions natives, l'optimisation joue sur l'interfaçage entre le code et la machine. Le code d'une fonction native Python n'est pas écrit en Python mais dans un langage de plus bas niveau, le C, plus proche de la machine, donc plus rapide.
+</blockquote>
+</details>
 
 <footer class="footline">
 	
@@ -1928,19 +2131,19 @@ plt<span style="color:#f92672">.</span>legend()
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675197486"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675197486"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675197486"></script>
-    <script src="/js/jquery.sticky.js?1675197486"></script>
-    <script src="/js/featherlight.min.js?1675197486"></script>
-    <script src="/js/highlight.pack.js?1675197486"></script>
+    <script src="/js/clipboard.min.js?1675695660"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675695660"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675695660"></script>
+    <script src="/js/jquery.sticky.js?1675695660"></script>
+    <script src="/js/featherlight.min.js?1675695660"></script>
+    <script src="/js/highlight.pack.js?1675695660"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675197486"></script>
-    <script src="/js/learn.js?1675197486"></script>
-    <script src="/js/hugo-learn.js?1675197486"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675695660"></script>
+    <script src="/js/learn.js?1675695660"></script>
+    <script src="/js/hugo-learn.js?1675695660"></script>
     
         
-            <script src="/mermaid/mermaid.js?1675197486"></script>
+            <script src="/mermaid/mermaid.js?1675695660"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
