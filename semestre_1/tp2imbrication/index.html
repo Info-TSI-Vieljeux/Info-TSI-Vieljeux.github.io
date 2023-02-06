@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1675695660" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675695660" rel="stylesheet">
-    <link href="/css/hybrid.css?1675695660" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675695660" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675695660" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675695660" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675695660" rel="stylesheet">
-    <link href="/css/theme.css?1675695660" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675695660" rel="stylesheet">
+    <link href="/css/nucleus.css?1675702025" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675702025" rel="stylesheet">
+    <link href="/css/hybrid.css?1675702025" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675702025" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675702025" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675702025" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675702025" rel="stylesheet">
+    <link href="/css/theme.css?1675702025" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675702025" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1675695660" rel="stylesheet">
+    <link href="/css/theme-green.css?1675702025" rel="stylesheet">
     
-    <link href="/css/foo.css?1675695660" rel="stylesheet"><link href="/css/bar.css?1675695660" rel="stylesheet">
+    <link href="/css/foo.css?1675702025" rel="stylesheet"><link href="/css/bar.css?1675702025" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1675695660"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675702025"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675695660"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675695660"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675702025"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675702025"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675695660"></script>
+<script type="text/javascript" src="/js/search.js?1675702025"></script>
 
     
   </div>
@@ -1094,6 +1094,29 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
+<link rel="stylesheet" href="/path/to/styles/default.min.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+#correc
+{
+  color: #006C65;
+  border-left: solid 10px #C7DDDC;
+}
+#comm
+{
+  color: #004D80;
+  border-left: solid 10px #B3CAD9;
+}
+#commsum
+{
+  color: #004D80;
+}
+#correcsum
+{
+  color: #006C65;
+}
+</style>
 <h1 id="algorithmes-opérant-sur-une-structure-séquentielle-par-boucles-imbriquées">Algorithmes opérant sur une structure séquentielle par boucles imbriquées</h1>
 <p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/WWk1ka96">cette invitation</a> pour récupérer le repository du TP. </p>
 <h2 id="chercher-un-mot-dans-un-texte">Chercher un mot dans un texte</h2>
@@ -1101,12 +1124,40 @@ onload='renderMathInElement(document.body);'></script>
 <p>Écrire une fonction <code>cherche_mot</code> naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.<br>
 Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&rsquo;est pas plus long que le texte.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche_mot</span>(mot,texte) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche_mot</span>(mot, texte):
     <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">    cherche_mot(mot:string, texte:string)-&gt;bool
+</span><span style="color:#e6db74">    cherche_mot(mot: string, texte: string) -&gt; bool
 </span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># importation de la classique liste de mots de passe rockyou (cela prend quelques secondes)</span>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def cherche_mot(mot,texte):
+    assert type(mot) == str, "'mot' n'est pas une chaîne de caractères"
+    assert type(texte) == str, "'texte' n'est pas une chaîne de caractères"
+    n = len(texte)
+    m = len(mot)
+    assert n >= m, "'mot' plus grand que 'texte'..."
+    for i in range(n-m+1):
+        if texte[i:i+m] == mot:
+            return True
+    return False
+</code></pre>
+</blockquote>
+</details>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)&nbsp;</summary>
+<blockquote id="comm">
+Imaginez que vous ayez oublié le <code>+1</code> dans le <code>range</code> de la boucle. Vous devez être capable de déceler l'erreur en <span style="font-weight:bold">testant</span> votre fonction.<br>
+Vos tests doivent consister à vérifier que votre fonction donne la réponse attendue sur différents exemples. Et en particulier, il faut toujours tester les <span style="font-weight:bold">extrémités d'un domaîne</span> et les cas pathologiques lorsqu'il y en a (comme une division par zéro).<br>
+Ici par exemple, il était capital de tester que la fonction réponde bien <code>True</code> pour un mot au tout début du texte ou à la toute fin.<br>
+Si la fonction bugue, il faut utiliser des <code>print</code> bien placés pour comprendre ce qui se passe. Une démarche plus systématique est détaillée <a href="https://info-tsi-vieljeux.github.io/semestre_2/bonnes_pratiques/#tester">ici</a>.<br>
+Par exemple, ici, on aurait pu écrire <code>print(texte[i:i+m])</code> en première ligne de la boucle.
+</blockquote>
+</details>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># importation de la classique liste de mots de passe rockyou (cela prend quelques secondes)</span>
 <span style="color:#f92672">from</span> urllib.request <span style="color:#f92672">import</span> urlopen
 url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://cordier-phychi.toile-libre.org/Info/github/rockyou.txt&#39;</span>
 rockyou <span style="color:#f92672">=</span> urlopen(url)<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;latin-1&#39;</span>)
@@ -1116,8 +1167,17 @@ rockyou <span style="color:#f92672">=</span> urlopen(url)<span style="color:#f92
 mot_de_passe <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;...&#39;</span>
 cherche_mot(mot_de_passe,rockyou)
 </code></pre></div><blockquote>
-<p>Sans ce soucier de l&rsquo;implémentation, combien faudra-t-il théoriquement faire de comparaisons au minimum pour s&rsquo;assurer qu&rsquo;un mot de 3 caractères est absent d&rsquo;une chaîne de 10 caractères ?</p>
+<p>Quel est le nombre minimum de comparaisons à faire pour s&rsquo;assurer qu&rsquo;un mot de 3 caractères est absent d&rsquo;une chaîne de 10 caractères ? Attention, comparer deux mots ne compte pas que pour une seule comparaison !</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Pour chaque morceau du texte de la taille du mot, il y a $m$ comparaisons réalisées ($m$ : taille du mot). Ici, $m=3$.<br>
+Et combien y a-t-il de morceaux différents de taille $m$ dans un texte de taille $n$&nbsp;? $n-m+1$.<br>
+Cela fait donc en tout $m\times(n-m+1)=nm-m^2+m$ comparaisons, soit 24 ici.
+</blockquote>
+</details>
 <p>Traçons l&rsquo;évolution du temps d&rsquo;exécution de <code>cherche_mot</code> en fonction de la taille du texte pour une taille du mot fixe.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> time <span style="color:#f92672">import</span> time
 <span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
@@ -1126,7 +1186,7 @@ plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>
 plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;figure.figsize&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">5</span>)
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">I, T_in, T_ch <span style="color:#f92672">=</span> [], [], []
 mot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&amp;&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10000</span>,<span style="color:#ae81ff">500000</span>,<span style="color:#ae81ff">10000</span>) :
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10000</span>,<span style="color:#ae81ff">500000</span>,<span style="color:#ae81ff">10000</span>):
     texte <span style="color:#f92672">=</span> rockyou[:i]
     start <span style="color:#f92672">=</span> time()
     cherche_mot(mot,texte)
@@ -1147,14 +1207,33 @@ plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Te
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">I, T_ch_mot <span style="color:#f92672">=</span> [], []
 
 texte <span style="color:#f92672">=</span> rockyou[:<span style="color:#ae81ff">200000</span>]
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1000</span>,<span style="color:#ae81ff">20000</span>,<span style="color:#ae81ff">1000</span>) :
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1000</span>,<span style="color:#ae81ff">20000</span>,<span style="color:#ae81ff">1000</span>):
     <span style="color:#75715e"># à compléter (i doit correspondre au nombre de caractères du mot)</span>
 
 fig,ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">5</span>))
 ax<span style="color:#f92672">.</span>plot(I,T_ch_mot)
 ax<span style="color:#f92672">.</span>set(xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;longueur du mot&#34;</span>, ylabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;temps d&#39;exécution (s)&#34;</span>)
 ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34;Temps d&#39;excution de &#39;cherche_mot&#39; en fonction de la longueur du mot&#34;</span>)
-</code></pre></div><p><img src="/che_mot_texte.png" alt=""></p>
+</code></pre></div><details>
+<summary id="correcsum">
+Code complété (cliquer pour afficher)</summary>
+<blockquote id="correc"><pre><code class="language-python">I, T_ch_mot = [], []
+texte = rockyou[:250000]
+for i in range(1000,12500,500):
+    mot = 'f'*i # mot de i lettres
+    start = time()
+    cherche_mot(mot,texte)
+    stop = time()
+    T_ch_mot.append(stop-start)
+    I.append(i)
+fig,ax = plt.subplots(figsize = (15,5))
+ax.plot(I,T_ch_mot)
+ax.set(xlabel="longueur du mot", ylabel="temps d'exécution (s)")
+ax.set_title("Temps d'excution de 'cherche_mot' en fonction de la longueur du mot")
+</code></pre>
+</blockquote>
+</details>
+<p><img src="/che_mot_texte.png" alt=""></p>
 <blockquote>
 <p>Pour des petits mots par rapport au texte et en appelant $n$ la longueur du texte et $m$ la longueur du mot, quelle fonction semble-t-elle le mieux modéliser l&rsquo;évolution du temps d&rsquo;exécution en fonction de $n$ et $m$ ?</p>
 </blockquote>
@@ -1164,15 +1243,24 @@ ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34
 <li>C : $a\times n^2$ où $a$ est une constante</li>
 <li>D : $a\times m\times n$ où $a$ est une constante</li>
 </ul>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Le premier graphique nous montre que pour une taille de mot $m$ fixée, le temps d'exécution semble proportionnel à la taille $n$ du texte.<br>
+Le deuxième graphique nous montre que pour une taille de texte $n$ fixée, le temps d'exécution semble proportionnel à la taille $m$ du mot.<br>
+On peut donc supposé un temps d'exécution proportionnel à $n\times m$ (réponse D).
+</blockquote>
+</details>
 <p> 
  </p>
 <h2 id="chercher-un-doublon">Chercher un doublon</h2>
 <p>La fonction suivante cherche si un élément d&rsquo;une liste se trouve en double et le cas échéant, le retourne.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche_duplicata</span>(liste) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche_duplicata</span>(liste):
     N <span style="color:#f92672">=</span> len(liste)
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N) :
-        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(N) :
-            <span style="color:#66d9ef">if</span> i <span style="color:#f92672">!=</span> j <span style="color:#f92672">and</span> liste[i] <span style="color:#f92672">==</span> liste[j] :
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N):
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(N):
+            <span style="color:#66d9ef">if</span> i <span style="color:#f92672">!=</span> j <span style="color:#f92672">and</span> liste[i] <span style="color:#f92672">==</span> liste[j]:
                 <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Un élément en double a été trouvé :&#39;</span>)
                 <span style="color:#66d9ef">return</span> liste[i]
     <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Pas de doublons trouvés 😞&#39;</span>
@@ -1184,12 +1272,20 @@ a <span style="color:#f92672">=</span> cherche_duplicata(liste_fruits)
 <blockquote>
 <p>Combien de fois la comparaison <code>liste[i] == liste[j]</code> est-elle opérée au maximum si la liste contient 200 éléments ?</p>
 </blockquote>
-<p>On peut aisément améliorer la fonction en évitant de doubler les comparaisons :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche_duplicata_bis</span>(liste) :
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Pour chacun des $N$  tours dans la boucle principale, on réalise $N-1$ fois la comparaison (on compare à tous les éléments sauf lui-même). Cela fait $N\times(N-1)=N^2-N$.<br>
+Soit ici, $39\,800$ comparaisons.
+</blockquote>
+</details>
+<p>On peut aisément améliorer la fonction en évitant de doubler les comparaisons :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche_duplicata_bis</span>(liste):
     N <span style="color:#f92672">=</span> len(liste)
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) :
-        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,N) :
-            <span style="color:#66d9ef">if</span> liste[i] <span style="color:#f92672">==</span> liste[j] :
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,N):
+            <span style="color:#66d9ef">if</span> liste[i] <span style="color:#f92672">==</span> liste[j]:
                 <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Un élément en double a été trouvé :&#39;</span>)
                 <span style="color:#66d9ef">return</span> liste[i]
     <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Pas de doublons trouvés 😞&#39;</span>
@@ -1217,6 +1313,16 @@ N <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
 <code>[(6, 7), (6, 8), (6, 9)]</code><br>
 <code>[(7, 8), (7, 9)]</code><br>
 <code>[(8, 9)]</code></p>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Il y a $N-1$ comparaisons dans la première itération de la boucle principale, $N-2$ dans la deuxième, $N-3$ dans la troisième, etc.<br>
+Et il y aura $N-1$ tours dans la boucle principale.<br>
+Cela donne : $\sum_{i=1}^{N-1} (N-i)$ $= N(N-1) - (N-1)(1+N-1)/2$ $=N(N-1)/2$ $=N^2/2 - N/2$.<br>
+Et donc ici : $19\,900$ comparaisons
+</blockquote>
+</details>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
 
 I, T_dup, T_dup_bis <span style="color:#f92672">=</span> [], [], []
@@ -1243,6 +1349,16 @@ axs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>set
 axs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>legend()
 </code></pre></div><p><img src="/comp_dupl.png" alt=""></p>
 <p>On constate que même si l&rsquo;amélioration est visible entre les deux fonctions, le comportement général (la classe de complexité comme on le verra plus tard) est identique.</p>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)&nbsp;</summary>
+<blockquote id="comm">
+Ici, on peut résumer la complexité au comptage des comparaisons.<br>
+Le premier algorithme opère $N(N-1)$ comparaisons et le deuxième $N(N-1)/2$.<br>
+On a bien divisé le nombre de comparaisons par deux mais la complexité est quadratique dans les deux cas (en $O(n^2)$ car le terme qui domine la croissance de la fonction donnant le nombre de comparaisons est dans les deux cas en $N^2$).<br>
+Cela traduit le fait que dans les deux cas, pour des grandes listes, si la taille de la liste est multipliée par $a$, alors le nombre de comparaisons est approximativement multiplié par $a^2$&nbsp;!
+</blockquote>
+</details>
 <p> 
  </p>
 <h1 id="intégration-numérique">Intégration numérique</h1>
@@ -1259,7 +1375,19 @@ axs[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>leg
     <span style="color:#66d9ef">return</span> s
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x) :
     <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>cos(x)<span style="color:#f92672">*</span>x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+</code></pre></div><details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)&nbsp;</summary>
+<blockquote id="comm">
+Le code ci-dessus est dit <span style="font-weight:bold">modulaire</span> dans le sens où plutôt qu'utiliser un gros bloc de code, l'algorithme est découpée en différentes fonctions.<br><br>
+Deux gros avantages à ce type d'écriture&nbsp;:
+<ul>
+<li>la lecture et la compréhension du code sont facilitées&nbsp;;</li>
+<li>le code est beaucoup plus facilement adaptable (facile d'ajouter ou changer la méthode d'intégration utilisée ou de modifier la fonction intégrée).</li>
+</ul>
+</blockquote>
+</details>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
 <span style="color:#f92672">import</span> matplotlib.patches <span style="color:#f92672">as</span> patches
 
 a <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>pi
@@ -1287,10 +1415,25 @@ fig,axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</s
 <p>À comparer à :
 $$ \int_{-\pi}^{3\pi/2}(x^2\cos(x)+10)dx = 2+23\pi-9\frac{\pi^2}{4}\approx 52,05$$</p>
 <blockquote>
-<p>Pour quelle valeur de $n$, la valeur de $I$ atteint-elle 52 (à 0,5 près) avec la méthode des rectangles à gauche ?<br>
+<p>Pour quelle valeur de $n$, la valeur de $I$ atteint-elle 52,0 (à 0,5 près) avec la méthode des rectangles à gauche ?<br>
 Vous appelerez cette valeur <code>n_cible</code> et votre code devra l&rsquo;afficher.</p>
 </blockquote>
-
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Savoir <span style="font-weight:bold">tester une convergence</span>, ou comme ici, trouver au bout de combien d'étapes un algorithme a convergé vers une valeur cible pour une imprécision donnée, est très important.<br>
+Cela se fait le plus fréquemment avec une boucle <code>while</code>.
+<pre><code class="language-python">I = 0
+n_cible = 1
+while not(52+0.5 >= I >= 52-0.5): # 52,0 ± 0,5
+    I = integrale(f, a, b, n_cible, rect_gauche)
+    n_cible += 1
+print(n_cible)
+</code></pre>
+Cela donne $70$ étapes pour la méthode des rectangles à gauche alors qu'on voit sur le graphique qu'il n'a fallu qu'entre 10 et 20 étapes pour la méthode des trapèzes (remplacer <code>rect_gauche</code> par <code>trapeze</code> dans le code ci-dessus donne bien d'ailleurs $15$)
+</blockquote>
+</details>
 
 <footer class="footline">
 	
@@ -1988,19 +2131,19 @@ Vous appelerez cette valeur <code>n_cible</code> et votre code devra l&rsquo;aff
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675695660"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675695660"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675695660"></script>
-    <script src="/js/jquery.sticky.js?1675695660"></script>
-    <script src="/js/featherlight.min.js?1675695660"></script>
-    <script src="/js/highlight.pack.js?1675695660"></script>
+    <script src="/js/clipboard.min.js?1675702026"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675702026"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675702026"></script>
+    <script src="/js/jquery.sticky.js?1675702026"></script>
+    <script src="/js/featherlight.min.js?1675702026"></script>
+    <script src="/js/highlight.pack.js?1675702026"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675695660"></script>
-    <script src="/js/learn.js?1675695660"></script>
-    <script src="/js/hugo-learn.js?1675695660"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675702026"></script>
+    <script src="/js/learn.js?1675702026"></script>
+    <script src="/js/hugo-learn.js?1675702026"></script>
     
         
-            <script src="/mermaid/mermaid.js?1675695660"></script>
+            <script src="/mermaid/mermaid.js?1675702026"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

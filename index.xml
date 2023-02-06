@@ -88,8 +88,7 @@ doomscentury $c$  on calcule le reste de la division euclidienne par 4 du nombre
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp2imbrication/</guid>
-      <description>Algorithmes opérant sur une structure séquentielle par boucles imbriquées Cliquez sur cette invitation pour récupérer le repository du TP. Chercher un mot dans un texte  Écrire une fonction cherche_mot naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.
-Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&amp;rsquo;est pas plus long que le texte.</description>
+      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  Algorithmes opérant sur une structure séquentielle par boucles imbriquées Cliquez sur cette invitation pour récupérer le repository du TP. Chercher un mot dans un texte  Écrire une fonction cherche_mot naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.</description>
     </item>
     
     <item>
