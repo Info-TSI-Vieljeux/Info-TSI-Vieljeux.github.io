@@ -53,10 +53,8 @@ On va se placer dans un des champs les plus porteurs actuellement (et où python
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp4dicho/</guid>
-      <description>Algorithmes dichotomiques Cliquez sur cette invitation pour récupérer le repository du TP. Recherche dichotomique L&amp;rsquo;algorithme de recherche mis au point dans le tp1 compte dans le pire des cas autant d&amp;rsquo;étapes que l&amp;rsquo;ensemble scruté contient d&amp;rsquo;éléments.
-Peut-on faire mieux ?
-Dans le cas, d&amp;rsquo;un ensemble ordonné trié, la réponse est oui. On peut même faire beaucoup mieux !
-Imaginons que l&amp;rsquo;on cherche une carte dans un jeu trié en ordre croissant.</description>
+      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  Algorithmes dichotomiques Cliquez sur cette invitation pour récupérer le repository du TP. Recherche dichotomique L&amp;rsquo;algorithme de recherche mis au point dans le tp1 compte dans le pire des cas autant d&amp;rsquo;étapes que l&amp;rsquo;ensemble scruté contient d&amp;rsquo;éléments.
+Peut-on faire mieux ?</description>
     </item>
     
     <item>
