@@ -292,9 +292,7 @@ Un peu d&amp;rsquo;histoire L&amp;rsquo;acte de naissance de la théorie des gra
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp7image/</guid>
-      <description>Tableau de pixels et images Cliquez sur cette invitation pour récupérer le repository du TP. Importer une image PIL (python imaging library) est l&amp;rsquo;une des librairies Python permettant de manipuler des fichiers image. On va l&amp;rsquo;utiliser en association avec numpy qui est le module de choix pour jouer avec des tableaux numériques.
-Listes et tableaux (array en anglais) :
-Les deux structures permettent l&amp;rsquo;indexation, le découpage et l&amp;rsquo;itération sur les éléments.</description>
+      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  Tableau de pixels et images Cliquez sur cette invitation pour récupérer le repository du TP. Importer une image PIL (python imaging library) est l&amp;rsquo;une des librairies Python permettant de manipuler des fichiers image. On va l&amp;rsquo;utiliser en association avec numpy qui est le module de choix pour jouer avec des tableaux numériques.</description>
     </item>
     
     <item>
