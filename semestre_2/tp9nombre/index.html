@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1675945206" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675945206" rel="stylesheet">
-    <link href="/css/hybrid.css?1675945206" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675945206" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675945206" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675945206" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675945206" rel="stylesheet">
-    <link href="/css/theme.css?1675945206" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675945206" rel="stylesheet">
+    <link href="/css/nucleus.css?1675974518" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675974518" rel="stylesheet">
+    <link href="/css/hybrid.css?1675974518" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675974518" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675974518" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675974518" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675974518" rel="stylesheet">
+    <link href="/css/theme.css?1675974518" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675974518" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1675945206" rel="stylesheet">
+    <link href="/css/theme-green.css?1675974518" rel="stylesheet">
     
-    <link href="/css/foo.css?1675945206" rel="stylesheet"><link href="/css/bar.css?1675945206" rel="stylesheet">
+    <link href="/css/foo.css?1675974518" rel="stylesheet"><link href="/css/bar.css?1675974518" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1675945206"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675974518"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675945206"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675945206"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675974518"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675974518"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675945206"></script>
+<script type="text/javascript" src="/js/search.js?1675974518"></script>
 
     
   </div>
@@ -1095,6 +1095,29 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
+<link rel="stylesheet" href="/path/to/styles/default.min.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+#correc
+{
+  color: #006C65;
+  border-left: solid 10px #C7DDDC;
+}
+#comm
+{
+  color: #004D80;
+  border-left: solid 10px #B3CAD9;
+}
+#commsum
+{
+  color: #004D80;
+}
+#correcsum
+{
+  color: #006C65;
+}
+</style>
 <h1 id="tp9--nombres">TP9 : nombres</h1>
 <p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/m2zkkfNO">cette invitation</a> pour récupérer le repository du TP. </p>
 <h2 id="exo-1--nombres-palindromiques">Exo 1 : nombres palindromiques</h2>
@@ -1102,9 +1125,35 @@ onload='renderMathInElement(document.body);'></script>
 <p>Déterminer grâce à un code Python le plus petit nombre supérieur ou égal à $10,000$ dont l&rsquo;écriture est palindromique (se lisant pareil dans les deux sens) à la fois en base 10 et en base 2.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Affectez votre réponse (l&#39;écriture en base 10 du nombre entier trouvé) à la variable nb</span>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">a = False
+b = False
+i = 10000
+while not (a and b):
+    str_i_10 = str(i)
+    str_i_2 = bin(i)[2:]
+    a = str_i_10 == str_i_10[::-1] # i palindromique en base 10
+    b = str_i_2 == str_i_2[::-1]   # i palindromique en base 2
+    i += 1
+print(str_i_10,str_i_2)
+</code></pre>
+Saffiche alors&nbsp;:<br>
+<code>15351 11101111110111</code>
+</blockquote>
+</details>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Affectez votre réponse (l&#39;écriture en base 10 du nombre entier trouvé) à la variable nb</span>
 nb <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-</code></pre></div><p> </p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+$15\,351$
+</blockquote>
+</details>
+<p> </p>
 <h2 id="exo-2--missiles-patriot">Exo 2 : missiles Patriot</h2>
 <p>Une batterie de missiles Patriot détecte les missiles ennemis et les intercepte avec un contre-missile. La batterie mesure le temps pour prévoir le déplacement des missiles ennemis.<br>
 Elle dispose d’un compteur (un entier) que nous appellerons <code>c</code> qui compte le nombre de dixièmes de secondes écoulés depuis sa mise en marche. Le temps écoulé <code>t</code> est calculé par l’opération <code>t=c*0.1</code>. Nous nous intéressons à l’erreur de calcul commise lors de cette multiplication.<br>
@@ -1131,13 +1180,53 @@ apres <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39
 </code></pre></div><p><code>10,101100110</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Affectez à la variable z la chaîne de caractères correspondant à l&#39;écriture binaire demandée :</span>
 z <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;0,...&#39;</span>
-</code></pre></div><p>On note $\varepsilon = |0,1 − z|$. La batterie de missiles Patriot fait une erreur de $\varepsilon$ en approximant 0,1.<br></p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">a = 0.1
+avt = bin(int(a))[2:] + ','
+n = a - int(a)
+apres = ''
+while len(apres)<23:
+    n *= 2
+    if n > 1:
+        apres += '1'
+        n -= 1
+    else:
+        apres += '0'
+print(avt+apres)
+</code></pre>
+Saffiche alors&nbsp;:<br>
+<code>0,00011001100110011001100</code>
+</blockquote>
+</details>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)</summary>
+<blockquote id="comm">
+On aurait aussi pu obtenir l'écriture en moins de lignes en utilisant <code>bin</code> sur $\lfloor 0,1\times2^{23} \rfloor$ (ce qui revient à décaler la virgule de 23 rangs en binaire)&nbsp;:
+<pre><code class="language-python">a = bin(int(0.1*2**23))[2:23] # mais attention, il manque des zéros avant !
+z = '0,'+'0'*(23-len(a))+a
+</code></pre>
+</blockquote>
+</details>
+<p>On note $\varepsilon = |0,1 − z|$. La batterie de missiles Patriot fait une erreur de $\varepsilon$ en approximant 0,1.<br></p>
 <blockquote>
 <p>Faites calculer par Python la valeur de $\varepsilon$ et affectez cette valeur à une variable epsilon.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Vous affecterez la valeur à la variable epsilon</span>
 epsilon <span style="color:#f92672">=</span> 
-</code></pre></div><p>Début février 1991, l’armée israélienne a empiriquement constaté qu’au bout de 8h, la précision des missiles est significativement réduite. Puis, le 25 février 1991, six batteries de missiles Patriot (un bataillon) ont été déployées à Dhahran, en Arabie Saoudite, pendant 100h.</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">z = '0,00011001100110011001100'
+eps = abs(0.1*2**23-int(z[2:],2))/2**23
+</code></pre>
+</blockquote>
+</details>
+<p>Début février 1991, l’armée israélienne a empiriquement constaté qu’au bout de 8h, la précision des missiles est significativement réduite. Puis, le 25 février 1991, six batteries de missiles Patriot (un bataillon) ont été déployées à Dhahran, en Arabie Saoudite, pendant 100h.</p>
 <p>Nous noterons $e_8$ et $e_{100}$ l’erreur commise sur $t$ par la batterie au bout de 8h puis au bout de 100h.<br></p>
 <blockquote>
 <p>Calculez des deux erreurs précédentes.</p>
@@ -1145,13 +1234,30 @@ epsilon <span style="color:#f92672">=</span>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Vous affecterez les valeurs aux variables e_8 et e_100</span>
 e_8 <span style="color:#f92672">=</span> 
 e_100 <span style="color:#f92672">=</span> 
-</code></pre></div><p>Un Scud a une vitesse de croisière de 1676 m/s (Mach 5).<br></p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">e8 = eps*8*3600*10
+e100 = eps*100*3600*10
+</code></pre>
+</blockquote>
+</details>
+<p>Un Scud a une vitesse de croisière de 1676 m/s (Mach 5).<br></p>
 <blockquote>
 <p>Pendant une durée $e_{100}$, de quelle distance $d$ (en m) se déplace un Scud ?</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Vous affecterez la valeur à la variable d</span>
 d <span style="color:#f92672">=</span>
-</code></pre></div><p>Suite à cette imprécision, un Scud irakien ne fut pas intercepté et causa 28 morts parmi les soldats américains.</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">d = e100*1676
+</code></pre>
+</blockquote>
+</details>
+<p>Suite à cette imprécision, un Scud irakien ne fut pas intercepté et causa 28 morts parmi les soldats américains.</p>
 <p> </p>
 <h2 id="exo-3--overflows">Exo 3 : overflows</h2>
 <p>Les 3 &ldquo;évènements&rdquo; suivant correspondent au même bug : un dépassement de capacité d&rsquo;entiers (signés ou non) codés sur 32 bits.</p>
@@ -1162,14 +1268,30 @@ d <span style="color:#f92672">=</span>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Vous affecterez la valeur entière à la variable nb_centi</span>
 nb_centi <span style="color:#f92672">=</span> 
-</code></pre></div><p>En 2004, l&rsquo;oubli d&rsquo;un technicien de rebooter un serveur a provoqué une immense pagaille dans le ciel californien. En effet, le 14 septembre, les aiguilleurs du ciel des aéroports du sud californien ont perdu le contact vocal avec 400 avions pendant plus de 3 heures, heureusement sans graves conséquences (grâce à la réaction rapide des contrôleurs qui ont tout de suite utilisé leurs portables pour contacter d&rsquo;autres centres de contrôle aérien). La maintenance de routine du système de communication consistait à le rebooter tous les 30 jours. Ce système mesure le temps depuis sa mise en route en incrémentant un compteur toutes les millisecondes.
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+On cherche un nombre de centisecondes correspondant à 248 jours.<br>
+Comme 2<sup>31</sup> cs correspondent à 248,6 jours, on peut supposer que le nombre de cs est codé en 32 bits signés.
+</blockquote>
+</details>
+<p>En 2004, l&rsquo;oubli d&rsquo;un technicien de rebooter un serveur a provoqué une immense pagaille dans le ciel californien. En effet, le 14 septembre, les aiguilleurs du ciel des aéroports du sud californien ont perdu le contact vocal avec 400 avions pendant plus de 3 heures, heureusement sans graves conséquences (grâce à la réaction rapide des contrôleurs qui ont tout de suite utilisé leurs portables pour contacter d&rsquo;autres centres de contrôle aérien). La maintenance de routine du système de communication consistait à le rebooter tous les 30 jours. Ce système mesure le temps depuis sa mise en route en incrémentant un compteur toutes les millisecondes.
 <img src="http://cordier-phychi.toile-libre.org/Info/github/radar.jpeg?width=800" alt=""></p>
 <blockquote>
 <p>D&rsquo;après les informations fournies et vos réflexions, au bout de combien de millisecondes exactement, la capacité du compteur s&rsquo;est trouvée dépassée, expliquant le bug ?</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Vous affecterez la valeur entière à la variable nb_milli</span>
 nb_milli <span style="color:#f92672">=</span> 
-</code></pre></div><p>Le bug de l&rsquo;an 2038 concerne les horloges des systèmes unix 32 bits dont le temps 0, appelé <em>epoch</em>, est le 1 janvier 1970 à 00:00:00 UT.</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+On cherche un nombre de millisecondes dépassant les 30 jours (mais pas trop).<br>
+Comme 2<sup>32</sup> ms correspondent à 49,7 jours. On peut supposer que le nombre de ms est codé en 32 bits non signés.
+</blockquote>
+</details>
+<p>Le bug de l&rsquo;an 2038 concerne les horloges des systèmes unix 32 bits dont le temps 0, appelé <em>epoch</em>, est le 1 janvier 1970 à 00:00:00 UT.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
 time<span style="color:#f92672">.</span>gmtime(<span style="color:#ae81ff">0</span>)
 </code></pre></div><p><code>time.struct_time(tm_year=1970, tm_mon=1, tm_mday=1, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=3, tm_yday=1, tm_isdst=0</code>
@@ -1182,7 +1304,15 @@ time<span style="color:#f92672">.</span>gmtime(<span style="color:#ae81ff">0</sp
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Vous affecterez la valeur entière à la variable </span>
 nb_sec <span style="color:#f92672">=</span> 
-</code></pre></div><p>Les overflows peuvent aussi avoir des conséquences plus sympatiques comme la machine à sous d&rsquo;un casino qui a décidé un jour d&rsquo;imprimer un ticket de <strong>42 949 672,96 $</strong> !! Malheureusement pour le gagnant, le casino a refusé de payer sous prétexte que la machine indiquait un prix maximum de 10 000 $ et le tribunal a finalement donné raison au casino&hellip;</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+On cherche un nombre de secondes correspondant à 68 ans.<br>
+Comme 2<sup>31</sup> s correspondent à 68,05 années. On peut supposer que le nombre de secondes est codé en 32 bits signés.
+</blockquote>
+</details>
+<p>Les overflows peuvent aussi avoir des conséquences plus sympatiques comme la machine à sous d&rsquo;un casino qui a décidé un jour d&rsquo;imprimer un ticket de <strong>42 949 672,96 $</strong> !! Malheureusement pour le gagnant, le casino a refusé de payer sous prétexte que la machine indiquait un prix maximum de 10 000 $ et le tribunal a finalement donné raison au casino&hellip;</p>
 <p><img src="http://cordier-phychi.toile-libre.org/Info/github/courtois.png" alt=""></p>
 
 
@@ -1882,19 +2012,19 @@ nb_sec <span style="color:#f92672">=</span>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675945206"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675945206"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675945206"></script>
-    <script src="/js/jquery.sticky.js?1675945206"></script>
-    <script src="/js/featherlight.min.js?1675945206"></script>
-    <script src="/js/highlight.pack.js?1675945206"></script>
+    <script src="/js/clipboard.min.js?1675974518"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675974518"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675974518"></script>
+    <script src="/js/jquery.sticky.js?1675974518"></script>
+    <script src="/js/featherlight.min.js?1675974518"></script>
+    <script src="/js/highlight.pack.js?1675974518"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675945206"></script>
-    <script src="/js/learn.js?1675945206"></script>
-    <script src="/js/hugo-learn.js?1675945206"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675974518"></script>
+    <script src="/js/learn.js?1675974518"></script>
+    <script src="/js/hugo-learn.js?1675974518"></script>
     
         
-            <script src="/mermaid/mermaid.js?1675945206"></script>
+            <script src="/mermaid/mermaid.js?1675974518"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

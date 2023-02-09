@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1675945206" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675945206" rel="stylesheet">
-    <link href="/css/hybrid.css?1675945206" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675945206" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675945206" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675945206" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675945206" rel="stylesheet">
-    <link href="/css/theme.css?1675945206" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675945206" rel="stylesheet">
+    <link href="/css/nucleus.css?1675974518" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675974518" rel="stylesheet">
+    <link href="/css/hybrid.css?1675974518" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675974518" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675974518" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675974518" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675974518" rel="stylesheet">
+    <link href="/css/theme.css?1675974518" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675974518" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1675945206" rel="stylesheet">
+    <link href="/css/theme-green.css?1675974518" rel="stylesheet">
     
-    <link href="/css/foo.css?1675945206" rel="stylesheet"><link href="/css/bar.css?1675945206" rel="stylesheet">
+    <link href="/css/foo.css?1675974518" rel="stylesheet"><link href="/css/bar.css?1675974518" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1675945206"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675974518"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675945206"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675945206"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675974518"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675974518"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675945206"></script>
+<script type="text/javascript" src="/js/search.js?1675974518"></script>
 
     
   </div>
@@ -1108,6 +1108,29 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
+<link rel="stylesheet" href="/path/to/styles/default.min.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+#correc
+{
+  color: #006C65;
+  border-left: solid 10px #C7DDDC;
+}
+#comm
+{
+  color: #004D80;
+  border-left: solid 10px #B3CAD9;
+}
+#commsum
+{
+  color: #004D80;
+}
+#correcsum
+{
+  color: #006C65;
+}
+</style>
 <h1 id="tp10--les-graphes">TP10 : les graphes</h1>
 <p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/s3mibvcO">cette invitation</a> pour récupérer le repository du TP. </p>
 <p><img src="/graphetp10.png" alt=""></p>
@@ -1118,6 +1141,13 @@ onload='renderMathInElement(document.body);'></script>
 <li>b : un graphe non orienté</li>
 </ul>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Un graphe orienté.
+</blockquote>
+</details>
 <blockquote>
 <p>Le degré du sommet C vaut :</p>
 <ul>
@@ -1126,6 +1156,13 @@ onload='renderMathInElement(document.body);'></script>
 <li>c : 5</li>
 </ul>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+5
+</blockquote>
+</details>
 <blockquote>
 <p>Le distance de F à C vaut :</p>
 <ul>
@@ -1134,6 +1171,13 @@ onload='renderMathInElement(document.body);'></script>
 <li>c : $\infty$</li>
 </ul>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Comme il n'y a pas de chemin allant de F à C, la distance est dite par convention infinie.
+</blockquote>
+</details>
 <blockquote>
 <p>En transformant les arcs en arêtes, quel serait le diamètre du graphe ?</p>
 <ul>
@@ -1142,32 +1186,78 @@ onload='renderMathInElement(document.body);'></script>
 <li>c : $\infty$</li>
 </ul>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Le diamètre d'un graphe est la plus grande des distances entre deux sommets.<br>
+Ici, il vaut 4.
+</blockquote>
+</details>
 <p> </p>
 <h2 id="listes-et-matrices-dadjacence">Listes et matrices d&rsquo;adjacence</h2>
 <blockquote>
 <p>Construire le graphe <code>G_la</code> correspondant au dessin du haut sous la forme d&rsquo;une <strong>liste d&rsquo;adjacence</strong> en utilisant un <strong>dictionnaire</strong> (sur le modèle du cours).<br>
 Les sommets devront s&rsquo;appeler <code>&quot;A&quot;</code>,<code>&quot;B&quot;</code>,<code>&quot;C&quot;</code>,<code>&quot;D&quot;</code>,<code>&quot;E&quot;</code> et <code>&quot;F&quot;</code>.</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">G_la = {"A":["B"],
+        "B":["C"],
+        "C":["B","D","F"],
+        "D":["C","E"],
+        "E":["F"],
+        "F":[]}
+</code></pre>
+</blockquote>
+</details>
 <blockquote>
 <p>Construire maintenant le graphe <code>G_ma</code> correspondant au dessin ci-dessus sous la forme d&rsquo;une <strong>matrice d&rsquo;adjacence</strong> (en suivant le modèle donné dans le cours).</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">G_ma = [[0,1,0,0,0,0],
+        [0,0,1,0,0,0],
+        [0,1,0,1,0,1],
+        [0,0,1,0,1,0],
+        [0,0,0,0,0,1],
+        [0,0,0,0,0,0]]
+</code></pre>
+</blockquote>
+</details>
 <p> </p>
 <h2 id="manipulation-dun-graphe">Manipulation d&rsquo;un graphe</h2>
 <h3 id="ajouter-un-sommet-à-un-graphe">Ajouter un sommet à un graphe</h3>
 <blockquote>
 <p>Construire une fonction qui ajoute un sommet S à un graphe G orienté. Le graphe G est représenté par une liste d&rsquo;adjacence et on donne en argument de la fonction la liste des prédécesseurs et des successeurs du sommet S ($Pred(S)$ et $Succ(S)$).</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ajouteSommet</span>(G,S,pred,succ) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ajouteSommet</span>(G,S,pred,succ):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    ajouteSommet(G:dict,S:str,pred:list,succ:list)-&gt;G:dict
-</span><span style="color:#e6db74">    préconditions : G est un graphe dont certains des sommets font partie de la liste pred et certains de la liste succ.
+</span><span style="color:#e6db74">    ajouteSommet(G: dict,S: str,pred: list,succ: list) -&gt; G: dict
+</span><span style="color:#e6db74">    préconditions: G est un graphe dont certains des sommets font partie de la liste pred et certains de la liste succ.
 </span><span style="color:#e6db74">    S est le nom d&#39;un sommet n&#39;appartenenat pas à G.
 </span><span style="color:#e6db74">    G est modélisé par une liste d&#39;adjacence utilisant un dictionnaire.
 </span><span style="color:#e6db74">    pred et succ sont les listes des prédécesseurs et des successeurs de S.
-</span><span style="color:#e6db74">    postcondition : la fonction retourne le graphe mis à jour (muté) avec le sommet S ajouté.
+</span><span style="color:#e6db74">    postcondition: la fonction retourne le graphe mis à jour (muté) avec le sommet S ajouté.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e"># VOTRE CODE</span>
-</code></pre></div><p><img src="/tp10gr1.png" alt=""></p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def ajouteSommet(G,S,pred,succ):
+    G[S] = succ
+    for sp in pred:
+        G[sp].append(S)
+    return G
+</code></pre>
+</blockquote>
+</details>
+<p><img src="/tp10gr1.png" alt=""></p>
 <p>Le graphe de gauche est modélisé ci-dessous par une liste d&rsquo;adjacence :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Graphe <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;</span> : [<span style="color:#e6db74">&#39;E&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>],
           <span style="color:#e6db74">&#39;B&#39;</span> : [<span style="color:#e6db74">&#39;D&#39;</span>],
@@ -1181,9 +1271,34 @@ Les sommets devront s&rsquo;appeler <code>&quot;A&quot;</code>,<code>&quot;B&quo
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Pred <span style="color:#f92672">=</span> []
 Succ <span style="color:#f92672">=</span> []
-</code></pre></div><blockquote>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">Pred = ['B']
+Succ = ['A','C']
+</code></pre>
+</blockquote>
+</details>
+<blockquote>
 <p>Testez ensuite votre fonction <code>ajouteSommet</code> pour vérifier que le graphe est modifié comme souhaité.</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<code>ajouteSommet(Graphe,'G',Pred,Succ)</code> donne alors&nbsp;:<br>
+<div style="font-family:monospace">
+{'A': ['E', 'D'],<br>
+&nbsp;'B': ['D', 'G'],<br>
+&nbsp;'C': ['B'],<br>
+&nbsp;'D': ['C', 'E'],<br>
+&nbsp;'E': [],<br>
+&nbsp;'F': ['B'],<br>
+&nbsp;'G': ['A', 'C']}<br>
+</div>
+</blockquote>
+</details>
 <p> </p>
 <h3 id="retirer-un-sommet-à-un-graphe">Retirer un sommet à un graphe</h3>
 <blockquote>
@@ -1191,15 +1306,29 @@ Succ <span style="color:#f92672">=</span> []
 Elle prend en argument le graphe et un sommet du graphe.<br>
 Vous utiliserez un <code>assert</code> pour vous assurer que le sommet passé en argument appartient bien augraphe.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">retireSommet</span>(G,S) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">retireSommet</span>(G,S):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    retireSommet(G:dict,S:str)-&gt;G:dict
-</span><span style="color:#e6db74">    préconditions : G est un graphe et S est un de ses sommets.
+</span><span style="color:#e6db74">    retireSommet(G: dict,S: str) -&gt; G: dict
+</span><span style="color:#e6db74">    préconditions: G est un graphe et S est un de ses sommets.
 </span><span style="color:#e6db74">    G est modélisé par une liste d&#39;adjacence utilisant un dictionnaire
-</span><span style="color:#e6db74">    postcondition : la fonction retourne le graphe mis à jour (muté) avec le sommet S en moins
+</span><span style="color:#e6db74">    postcondition: la fonction retourne le graphe mis à jour (muté) avec le sommet S en moins
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e"># VOTRE CODE</span>
-</code></pre></div><p>Reprenons le graphe précédent avant l&rsquo;ajout du sommet <code>'G'</code>.</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def retireSommet(G,S):
+    assert S in G
+    del G[S]
+    for liste in G.values():
+        if S in liste:
+            liste.remove(S)
+    return G
+</code></pre>
+</blockquote>
+</details>
+<p>Reprenons le graphe précédent avant l&rsquo;ajout du sommet <code>'G'</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Graphe <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;</span> : [<span style="color:#e6db74">&#39;E&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>],
           <span style="color:#e6db74">&#39;B&#39;</span> : [<span style="color:#e6db74">&#39;D&#39;</span>],
           <span style="color:#e6db74">&#39;C&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>],
@@ -1235,7 +1364,19 @@ Attention: le nom de la matrice doit être <code>M</code>.</p>
 n <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#75715e"># nombre de sommets</span>
 
 <span style="color:#75715e"># VOTRE CODE</span>
-</code></pre></div><p>Si vous avez réussi à construire <code>M</code> vous pourrez utilisez votre matrice par la suite.</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">M = [[choice([1,2,3,4,5,6]) for i in range(n)] for j in range(n)]
+for i in range(n):
+    M[i][i] = 0
+    for j in range(i):
+        M[j][i] = M[i][j]
+</code></pre>
+</blockquote>
+</details>
+<p>Si vous avez réussi à construire <code>M</code> vous pourrez utilisez votre matrice par la suite.</p>
 <p>On transforme ensuite la matrice en dataframe pandas (pandas est un module de gestion de données très riche déjà utilisé dans le tp3 et un dataframe est un tableau à deux dimensions) qui sera reconnue par networkx et on lui ajoute des lettres en en-tête de ligne et de colonne pour nommer les sommets.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">abc <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
 labels <span style="color:#f92672">=</span> list(abc[:n])
@@ -1428,7 +1569,21 @@ plt<span style="color:#f92672">.</span>show()
  <span style="color:#e6db74">&#39;H&#39;</span>: {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#ae81ff">2</span>},
  <span style="color:#e6db74">&#39;I&#39;</span>: {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">6</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">6</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">6</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;J&#39;</span>: <span style="color:#ae81ff">2</span>},
  <span style="color:#e6db74">&#39;J&#39;</span>: {<span style="color:#e6db74">&#39;A&#39;</span>: <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;B&#39;</span>: <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;C&#39;</span>: <span style="color:#ae81ff">6</span>, <span style="color:#e6db74">&#39;D&#39;</span>: <span style="color:#ae81ff">6</span>, <span style="color:#e6db74">&#39;E&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;F&#39;</span>: <span style="color:#ae81ff">6</span>, <span style="color:#e6db74">&#39;G&#39;</span>: <span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;H&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;I&#39;</span>: <span style="color:#ae81ff">2</span>}}
-</code></pre></div><p> </p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">G_la = {}
+for i in range(n):
+    D = {}
+    for j in range(n):
+        if matrice[i][j] != 0:
+            D[abc[j]] = matrice[i][j]
+    G_la[abc[i]] = D
+</code></pre>
+</blockquote>
+</details>
+<p> </p>
 <h2 id="une-application-concrète-des-graphes--larbre-couvrant-minimal">Une application concrète des graphes : l&rsquo;arbre couvrant minimal</h2>
 <p>Supposons que chaque sommet du graphe précédent représente les nœuds d&rsquo;un réseau que l&rsquo;on souhaite relier à moindre coût. Ces sommets peuvent être des villes que l&rsquo;on veut relier électriquement, des champs à irriguer, des serveurs à relier, etc. Les différents poids des arêtes matérialisent la difficulté ou le coût de la liaison entre les deux sommets.<br>Comment trouver facilement le moyen de relier tout le monde en minimisant les coûts ? Il faut trouver un <strong>arbre couvrant minimal</strong> du graphe.</p>
 <p>Un <strong>arbre couvrant</strong> est un arbre (graphe sans cycle) qui rejoint tous les sommets d&rsquo;un <strong>graphe connexe</strong>.<br>Un arbre couvrant <strong>minimal</strong> est un arbre couvrant dont la somme des poids des arêtes est minimale.</p>
@@ -1441,6 +1596,13 @@ plt<span style="color:#f92672">.</span>show()
 <li>c : exponentielle en n</li>
 </ul>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Pire qu'exponentielle en fait, mais on classe généralement tout ça ($n!$, $,n^n$, etc.) sous l'étiquette exponentielle car c'est quoiqu'il arrive trop lent.
+</blockquote>
+</details>
 <p>Grâce à l'<strong>algorithme de Prim</strong>, on peut trouver un arbre couvrant minimal d&rsquo;un graphe connexe pondéré en temps raisonable !<br></p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -1465,12 +1627,26 @@ plt<span style="color:#f92672">.</span>show()
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">verifConnexe</span>(G):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    verifConnexe(G : dict) -&gt; bool
-</span><span style="color:#e6db74">    précondition : G est un graphe sous la forme d&#39;une liste d&#39;adjacence représentée par un dictionnaire comme ci-dessus
-</span><span style="color:#e6db74">    postcondition : la fonction retourne True si le graphe est connexe, False sinon
+</span><span style="color:#e6db74">    verifConnexe(G: dict) -&gt; bool
+</span><span style="color:#e6db74">    précondition: G est un graphe sous la forme d&#39;une liste d&#39;adjacence représentée par un dictionnaire comme ci-dessus
+</span><span style="color:#e6db74">    postcondition: la fonction retourne True si le graphe est connexe, False sinon
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e"># VOTRE CODE</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Construction d&#39;un graphe G_nc non connexe</span>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def verifConnexe(G):
+    depart = list(G.keys())[0]
+    Sommets = parcours_profondeur(G,depart)
+    if len(Sommets) == len(G):
+        return True
+    else:
+        return False
+</code></pre>
+</blockquote>
+</details>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Construction d&#39;un graphe G_nc non connexe</span>
 G_nc <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>Graph()
 G_nc<span style="color:#f92672">.</span>add_nodes_from([i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">9</span>)])
 color_map <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;red&#39;</span> <span style="color:#66d9ef">if</span> node <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">4</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;green&#39;</span> <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> G_nc]
@@ -1488,8 +1664,8 @@ nx<span style="color:#f92672">.</span>draw(G_nc,posi,<span style="color:#f92672"
 </code></pre></div><p><img src="/nonconnexe.png" alt=""></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;G_la est connexe :&#39;</span>,verifConnexe(G_la))
 <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;G_nc_la est connexe :&#39;</span>,verifConnexe(G_nc_la))
-</code></pre></div><p><code>True</code><br>
-<code>False</code></p>
+</code></pre></div><p><code>G_la est connexe : True</code><br>
+<code>G_nc_la est connexe : False</code></p>
 <p>Implémentons maintenant une version lente (quadratique) de l'<strong>algorithme de Prim</strong>.</p>
 <p>Comme Dijkstra, Prim est un <strong>algorithme glouton</strong>. À chaque itération, il se jette sur l&rsquo;arête de poids le plus faible permettant de traverser la frontière entre l&rsquo;ensemble des sommets déjà inspectés et l&rsquo;ensemble des autres. Une fois l&rsquo;arête choisie, on ajoute le sommet non inspecté qu&rsquo;elle relie à l&rsquo;ensemble des sommets inspectés.</p>
 <blockquote>
@@ -1523,7 +1699,36 @@ nx<span style="color:#f92672">.</span>draw(G_nc,posi,<span style="color:#f92672"
         NX<span style="color:#f92672">.</span>remove(Fmin)
         A<span style="color:#f92672">.</span>append((Dmin,Fmin))
     <span style="color:#66d9ef">return</span> A
-</code></pre></div><p>Traçons maintenant l&rsquo;arbre couvrant minimal trouvé par Prim.</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def Prim(G):
+    assert verifConnexe(G) # assertion demandée
+    inf = float('inf')
+    NX = list(G.keys())
+    S0 = NX[0]
+    X = [S0]
+    NX.remove(S0)
+    A = []
+    cout = 0 # initialisation du cout
+    while NX != []:
+        Min = inf
+        for S1 in X:
+            for S2 in NX:
+                if G[S1].get(S2,inf) < Min:
+                    Min = G[S1][S2]
+                    Fmin = S2
+                    Dmin = S1
+        X.append(Fmin)
+        NX.remove(Fmin)
+        A.append((Dmin,Fmin))
+        cout += Min # incrémentation du cout
+    return A,cout
+</code></pre>
+</blockquote>
+</details>
+<p>Traçons maintenant l&rsquo;arbre couvrant minimal trouvé par Prim.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">A,cout <span style="color:#f92672">=</span> Prim(G_la)
 H <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>Graph()
 <span style="color:#66d9ef">for</span> S <span style="color:#f92672">in</span> abc[:n]:
@@ -1566,44 +1771,130 @@ plt<span style="color:#f92672">.</span>show()
 <p>En vous aidant de la vidéo ci-dessus, choisir parmi les listes suivantes celle qui peut représenter un tas :</p>
 </blockquote>
 <ul>
-<li>a : <code>[3,5,8,5,13,11,9,6,12,15,18,11,12]</code></li>
-<li>b : <code>[3,7,8,8,7,12,9,9,8,8,8,10]</code></li>
-<li>c : <code>[3,5,8,5,13,11,9,6,12,15,18,11,11,10,12]</code></li>
+<li>a : <code>[3,5,8,5,13,7,9,6,12,15,18,11,12,10]</code></li>
+<li>b : <code>[3,5,8,5,13,11,11,6,12,15,18,11,11,12,10]</code></li>
+<li>c : <code>[3,5,8,5,13,11,9,6,12,15,18,11,12]</code></li>
 </ul>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<ul>
+<li>a : le parent à la position 3 a un enfant plus petit que lui (position 6)</li>
+<li>b : le parent à la position 7 a un enfant plus petit que lui (position 15)</li>
+<li>c : tout va bien</li>
+</ul>
+</blockquote>
+</details>
 <blockquote>
-<p>Construire une fonction <code>plusPetitEnfant</code> qui retourne la position du petit enfant d&rsquo;un élément dans le tas.<br>La fonction prend en argument le tas (représenté sous la forme d&rsquo;une liste) et la position du parent.<br>La fonction retourne la position du plus petit enfant.<br>Si l&rsquo;élément n&rsquo;a pas d&rsquo;enfant, la fonction retourne <code>None</code>.<br><strong>Attention :</strong> les positions dans le tas vont de 1 à n (et non de 0 à n-1) où n est le nombre d&rsquo;éléments dans le tas</p>
+<p>Construire une fonction <code>plusPetitEnfant</code> qui retourne la position du petit enfant d&rsquo;un élément dans le tas.<br>La fonction prend en argument le tas (représenté sous la forme d&rsquo;une liste) et la position du parent.<br>La fonction retourne la position du plus petit enfant.<br>Si l&rsquo;élément n&rsquo;a pas d&rsquo;enfant, la fonction retourne <code>None</code>.<br><strong>Attention :</strong> les positions dans le tas vont de 1 à n (et non de 0 à n-1) où n est le nombre d&rsquo;éléments dans le tas.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plusPetitEnfant</span>(tas,position):
     <span style="color:#e6db74">&#34;&#34;&#34; 
-</span><span style="color:#e6db74">    plusPetitEnfant(tas : list, position : int) -&gt; int ou Nonetype
+</span><span style="color:#e6db74">    plusPetitEnfant(tas: list, position: int) -&gt; int ou Nonetype
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e"># VOTRE CODE</span>
 </code></pre></div><p>Si <code>Tas = [3,7,8,8,7,12,9,9,8,8,8,13]</code> et <code>pos = 3</code>, alors <code>plusPetitEnfant(Tas,pos)</code> doit retourner <code>7</code> (car à la position 3, on trouve 8 dont les deux enfants 12 et 9 sont aux positions 6 et 7).</p>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def plusPetitEnfant(tas,position):
+    n = len(tas)
+    if 2*position > n:
+        return None
+    elif 2*position == n:
+        return 2*position
+    else:
+        if tas[2*position-1] <= tas[2*position]:
+            return 2*position
+        else:
+            return 2*position+1
+</code></pre>
+</blockquote>
+</details>
 <blockquote>
 <p>Construire les fonctions <code>insert</code> et <code>extractMin</code> (pour cette dernière, pensez à utiliser <code>plusPetitEnfant</code>).<br>On supposera que le tas ne contient que des entiers.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">insert</span>(tas,x):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    insert(tas : list , x : int) -&gt; Nonetype
+</span><span style="color:#e6db74">    insert(tas: list , x: int) -&gt; Nonetype
 </span><span style="color:#e6db74">    la fonction doit ajouter un élément au tas de manière à ce qu&#39;il reste un arbre binaire presque complet
 </span><span style="color:#e6db74">    tout en respectant l&#39;invariant : les valeurs des parents doivent être inférieures à celles des enfants.
 </span><span style="color:#e6db74">    la fonction ne retourne rien.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e"># VOTRE CODE</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extractMin</span>(tas):
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def insert(tas,x):
+    tas.append(x)
+    n = len(tas)
+    enfant = n
+    parent = enfant//2
+    while enfant > 1 and tas[enfant-1] < tas[parent-1]:
+        tas[enfant-1],tas[parent-1] = tas[parent-1],tas[enfant-1]
+        enfant = parent
+        parent = enfant//2
+</code></pre>
+Test :
+<pre><code class="language-python">Tas = [3,7,8,8,7,12,9,9,8,8,8,13]
+insert(Tas,1)
+print(Tas)
+</code></pre>
+<code>[1, 7, 3, 8, 7, 8, 9, 9, 8, 8, 8, 13, 12]</code>
+</blockquote>
+</details>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extractMin</span>(tas):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    extractMin(tas : list) -&gt; Min : int 
+</span><span style="color:#e6db74">    extractMin(tas: list) -&gt; Min: int 
 </span><span style="color:#e6db74">    la fonction doit retirer la racine du tas 
 </span><span style="color:#e6db74">    tout en respectant l&#39;invariant : les valeurs des parents doivent être inférieures à celles des enfants.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e"># VOTRE CODE</span>
-</code></pre></div><p>Construisons maintenant un <strong>tri par tas</strong> et montrons qu&rsquo;il est bien plus rapide que le tri par sélection dont il est issu.</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def extractMin(tas):
+    n = len(tas)
+    # on place la racine à la fin et on l'extrait
+    tas[n-1],tas[0] = tas[0],tas[n-1]
+    Min = tas.pop()
+    n -= 1
+    # Si le tas ne contient plus qu'1 ou 0 élément, c'est fini
+    if n == 0 or n == 1:
+        return Min
+    # on identifie ensuite le plus petit des deux enfants de la nouvelle racine (ou l'unique enfant s'il n'y en a qu'un...)
+    parent = 1
+    enfant = plusPetitEnfant(tas,parent)
+    # tant que le plus petit enfant est plus petit que son parent, on les permute
+    while tas[enfant-1] < tas[parent-1]:
+        tas[enfant-1],tas[parent-1] = tas[parent-1],tas[enfant-1]
+        # nouveaux parents et enfants
+        parent = enfant
+        if not plusPetitEnfant(tas,parent):
+            break # si le nouveau parent n'a pas d'enfant
+        else:
+            enfant = plusPetitEnfant(tas,parent)
+    return Min
+</code></pre>
+Test :
+<pre><code class="language-python">Tas = [3,7,8,8,7,9,12,9,8,8,8,10]
+m = extractMin(Tas)
+print(m,Tas)
+</code></pre>
+<code>3 [7, 7, 8, 8, 8, 9, 12, 7, 8, 10, 8]</code>
+</blockquote>
+</details>
+<p>Construisons maintenant un <strong>tri par tas</strong> et montrons qu&rsquo;il est bien plus rapide que le tri par sélection dont il est issu.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">triParSelection</span>(liste):
     n <span style="color:#f92672">=</span> len(liste)
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
         min <span style="color:#f92672">=</span> i
         <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,n):
-            <span style="color:#66d9ef">if</span> liste[j]<span style="color:#f92672">&lt;</span>liste[min] :
+            <span style="color:#66d9ef">if</span> liste[j]<span style="color:#f92672">&lt;</span>liste[min]:
                 min <span style="color:#f92672">=</span> j
         <span style="color:#66d9ef">if</span> min <span style="color:#f92672">!=</span> i:
             liste[i], liste[min] <span style="color:#f92672">=</span> liste[min], liste[i]
@@ -1613,9 +1904,9 @@ plt<span style="color:#f92672">.</span>show()
     Ltrie <span style="color:#f92672">=</span> []
     n <span style="color:#f92672">=</span> len(liste)
     <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> liste:
-        insert(T,e)
+        insert(T,e) <span style="color:#75715e"># on construit un tas à partir de la liste</span>
     <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
-        Ltrie<span style="color:#f92672">.</span>append(extractMin(T))
+        Ltrie<span style="color:#f92672">.</span>append(extractMin(T)) <span style="color:#75715e"># la recherche du min est remplacé par extractMin</span>
     <span style="color:#66d9ef">return</span> Ltrie
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L <span style="color:#f92672">=</span> [<span style="color:#f92672">-</span><span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">95</span>,<span style="color:#ae81ff">4</span>]
 <span style="color:#66d9ef">print</span>(triParSelection(L))
@@ -1649,6 +1940,13 @@ plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;t
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;temps d&#39;exécution (s)&#34;</span>)
 plt<span style="color:#f92672">.</span>legend()
 </code></pre></div><p><img src="/comptas.png" alt=""></p>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)</summary>
+<blockquote id="comm">
+Le tri par tas rejoint donc le tri fusion et le tri rapide dans la catégorie des tris comparatifs quasilinéaires (meilleur complexité possible pour un tri à base de comparaisons).
+</blockquote>
+</details>
 <p>Les graphes nous ont donc ici permis de mettre au point une structure de données capable d&rsquo;upgrader tout algorithme nécessitant une détermination répétée d&rsquo;un plus petit (ou grand) élément dans un ensemble.</p>
 <p> </p>
 <h2 id="parcours-dun-graphe">Parcours d&rsquo;un graphe</h2>
@@ -1658,7 +1956,8 @@ plt<span style="color:#f92672">.</span>legend()
 <p>Quelle que soit l&rsquo;application, détecter les cycles est donc primordial pour éviter de se retrouver dans ce type de situation.</p>
 <p>Une idée pour détecter un cycle est d&rsquo;utiliser à nouveau le <strong>parcours en profondeur</strong> : si on tombe sur un sommet déjà exploré au cours de la progression dans une branche, alors on a affaire à un cycle.</p>
 <p>Point important : on suppose ici que les graphes donnés en argument à la fonction sont non orientés.</p>
-<p>Le problème que pose ce type de graphe pour la recherche de cycle est la présence systématique du sommet considéré dans la liste de ses voisins (si &lsquo;A&rsquo; est le voisin de &lsquo;B&rsquo; alors &lsquo;B&rsquo; est le voisin de &lsquo;A&rsquo;) puisqu&rsquo;un graphe non-orienté permet les aller-retour.<br>On oriente alors dans un premier temps le graphe non orienté donné en argument en retirant systématiquement de la liste des voisins d&rsquo;un sommet les sommets dont lui-même est le voisin. On ne sera ainsi plus piégé par un aller-retour entre deux voisins. On peut s&rsquo;assurer ensuite de la présence d&rsquo;un cycle si le parcours en profondeur rencontre un sommet présent dans <code>Vus</code>.<br></p>
+<p>Le problème que pose ce type de graphe pour la recherche de cycle est la présence systématique du sommet considéré dans la liste de ses voisins (si &lsquo;A&rsquo; est le voisin de &lsquo;B&rsquo; alors &lsquo;B&rsquo; est le voisin de &lsquo;A&rsquo;) puisqu&rsquo;un graphe non-orienté permet les aller-retour.</p>
+<p>On oriente alors dans un premier temps le graphe non orienté donné en argument en retirant systématiquement de la liste des voisins d&rsquo;un sommet les sommets dont lui-même est le voisin. On ne sera ainsi plus piégé par un aller-retour entre deux voisins. On peut s&rsquo;assurer ensuite de la présence d&rsquo;un cycle si le parcours en profondeur rencontre un sommet présent dans <code>Vus</code>.<br></p>
 <blockquote>
 <p>Ajoutez donc à la fonction un bout de code qui construit un graphe <code>Go</code> orienté à partir de <code>G</code>.</p>
 </blockquote>
@@ -1666,7 +1965,7 @@ plt<span style="color:#f92672">.</span>legend()
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">detecteCycles</span>(G,depart):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    detecteCycles(G : dict , depart) -&gt; bool
+</span><span style="color:#e6db74">    detecteCycles(G: dict, depart) -&gt; bool
 </span><span style="color:#e6db74">    depart est une des clés de G
 </span><span style="color:#e6db74">    detecteCycles doit retourner True si un cycle est rencontré
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
@@ -1678,14 +1977,25 @@ plt<span style="color:#f92672">.</span>legend()
     <span style="color:#75715e"># VOTRE CODE</span>
     <span style="color:#66d9ef">while</span> pile:
         sommet <span style="color:#f92672">=</span> pile<span style="color:#f92672">.</span>pop()
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> Vus[sommet] :
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> Vus[sommet]:
             Voisins <span style="color:#f92672">=</span> Go[sommet]<span style="color:#f92672">.</span>copy()
             pile <span style="color:#f92672">+=</span> Voisins
             Vus[sommet] <span style="color:#f92672">=</span> True
         <span style="color:#66d9ef">else</span>: 
             <span style="color:#66d9ef">return</span> True
     <span style="color:#66d9ef">return</span> False
-</code></pre></div><blockquote>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+On ajoute ces 3 lignes avant le <code>while</code>&nbsp;:
+<pre><code class="language-python">for s1 in Go:
+    for s2 in Go[s1]:
+        Go[s2].remove(s1) # sans deepcopy, on modifierait G 
+</code></pre>
+</blockquote>
+</details>
+<blockquote>
 <p>Testez votre fonction sur les trois graphes suivants :</p>
 </blockquote>
 <p><img src="/cyclounon.png" alt=""></p>
@@ -1704,7 +2014,20 @@ G3 <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;
       <span style="color:#e6db74">&#39;C&#39;</span> : [<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>],
       <span style="color:#e6db74">&#39;D&#39;</span> : [<span style="color:#e6db74">&#39;C&#39;</span>],
       <span style="color:#e6db74">&#39;E&#39;</span> : [<span style="color:#e6db74">&#39;A&#39;</span>]}
-</code></pre></div><p> </p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">print(detecteCycles(G1,'A'))
+detecteCycles(G2,'A')
+detecteCycles(G3,'A')
+</code></pre>
+<code>True</code><br>
+<code>True</code><br>
+<code>False</code><br>
+</blockquote>
+</details>
+<p> </p>
 <h3 id="plus-court-chemin">Plus court chemin</h3>
 <p>Une autre application ultra importante des graphes : trouver le plus vite possible le plus court chemin entre deux points.<br></p>
 <p>On peut presque toujours modéliser un déplacement comme un chemin sur un graphe (ou plutôt une chaîne dans le cas présent car nos graphes ne seront pas orientés).</p>
@@ -1754,10 +2077,10 @@ limites_marecages_2 <span style="color:#f92672">=</span> ((<span style="color:#a
             carte[sommet][voisin] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
 <span style="color:#75715e"># pour reconnaître les sommets dans le marécage lors du dessin</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(limites_marecages_1[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>],limites_marecages_1[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
-    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(limites_marecages_1[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>],limites_marecages_1[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(limites_marecages_1[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>],limites_marecages_1[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
         dessin[(i,j)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(limites_marecages_2[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>],limites_marecages_2[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
-    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(limites_marecages_2[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>],limites_marecages_2[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(limites_marecages_2[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>],limites_marecages_2[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
         dessin[(i,j)] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
 
 <span style="color:#75715e"># murs (on retire les sommets concernés (y compris des voisins))</span>
@@ -1863,6 +2186,17 @@ fig
 <li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
 </ul>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<ul>
+<li>oui</li>
+<li>non</li>
+<li>non</li>
+</ul>
+</blockquote>
+</details>
 <p> </p>
 <h4 id="dijkstra">Dijkstra</h4>
 <p>Passons de la recherche en largeur à l&rsquo;algorithme de Dijkstra. On utilise l&rsquo;implémentation du cours avec des tas (file de priorité) fournis par le module <code>heapq</code>.</p>
@@ -1894,7 +2228,7 @@ fig
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reconstruction_chaine</span>(predecesseurs,depart,arrivee):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    reconstruction_chemin(predecesseur : dict , depart : tuple , arrivee : tuple) -&gt; chemin : liste de tuples
+</span><span style="color:#e6db74">    reconstruction_chemin(predecesseur: dict , depart: tuple , arrivee: tuple) -&gt; chemin: liste de tuples
 </span><span style="color:#e6db74">    predecesseur est un dictionnaire qui pour chaque clé sous forme de tuple (x,y) (un des sommets) donne son prédécesseur là aussi sous forme de tuple (x&#39;,y&#39;).
 </span><span style="color:#e6db74">    la liste retournée, chaine, doit contenir la liste des sommets (chaque sommet est un tuple (x,y)) allant du depart à l&#39;arrivee.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
@@ -1902,7 +2236,21 @@ fig
     chaine <span style="color:#f92672">=</span> [s]
     <span style="color:#75715e"># VOTRE CODE</span>
     <span style="color:#66d9ef">return</span> chaine
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chaine_Dijk <span style="color:#f92672">=</span> reconstruction_chaine(Preds,depart,arrivee)
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def reconstruction_chaine(predecesseurs,depart,arrivee):
+    s = arrivee
+    chaine = [arrivee]
+    while s != depart :
+        s = predecesseurs[s]
+        chaine = [s] + chaine
+    return chaine
+</code></pre>
+</blockquote>
+</details>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chaine_Dijk <span style="color:#f92672">=</span> reconstruction_chaine(Preds,depart,arrivee)
 </code></pre></div><p>Vérifiez que votre chaîne est bien la même que celle ci-dessous :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chaine_Dijk <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">6</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">7</span>), (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">8</span>), (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">9</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">10</span>), (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">11</span>), (<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">12</span>), (<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">13</span>), (<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">14</span>), (<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">15</span>), (<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">16</span>), (<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">17</span>), (<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">18</span>), (<span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">19</span>), (<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">18</span>), (<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">17</span>), (<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">16</span>), (<span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">15</span>)]
 </code></pre></div><p>Traçons la chaîne obtenue.</p>
@@ -1926,6 +2274,17 @@ fig
 <li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
 </ul>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<ul>
+<li>non</li>
+<li>oui</li>
+<li>non</li>
+</ul>
+</blockquote>
+</details>
 <p> </p>
 <h4 id="ajout-dune-heuristique">Ajout d&rsquo;une heuristique</h4>
 <p>Pour améliorer la vitesse des algorithmes précédents, on va leur ajouter une <strong>heuristique</strong>. Une heuristique est une petite recette, une règle simple, que l&rsquo;algorithme va suivre pour s&rsquo;économiser des étapes.</p>
@@ -1966,13 +2325,13 @@ Il s&rsquo;agit à nouveau d&rsquo;un <strong>algorithme glouton</strong>.</p>
                 Preds[voisin] <span style="color:#f92672">=</span> sommet_actuel
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">chaine_glouton <span style="color:#f92672">=</span> reconstruction_chaine(bfs_glouton(carte,depart,arrivee)[<span style="color:#ae81ff">0</span>],depart,arrivee)
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee)
-<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> chaine_glouton[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] :
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> chaine_glouton[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]:
     ax<span style="color:#f92672">.</span>add_patch(Rectangle(sommet,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,edgecolor<span style="color:#f92672">=</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">110</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">118</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>),facecolor<span style="color:#f92672">=</span>(<span style="color:#ae81ff">255</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">209</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">247</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>),fill<span style="color:#f92672">=</span>True,lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
 fig
 </code></pre></div><p><img src="/cheminbfsglout.png" alt=""></p>
 <p>On voit que le chemin se dirige tout de suite vers l&rsquo;arrivée, jusqu&rsquo;à rencontrer un mur&hellip;</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">trace_terrain((<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">20</span>),depart,arrivee)
-<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> bfs_glouton(carte,depart,arrivee)[<span style="color:#ae81ff">1</span>] :
+<span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> bfs_glouton(carte,depart,arrivee)[<span style="color:#ae81ff">1</span>]:
     ax<span style="color:#f92672">.</span>add_patch(Rectangle(sommet,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,edgecolor<span style="color:#f92672">=</span>(<span style="color:#ae81ff">0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">110</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">118</span><span style="color:#f92672">/</span><span style="color:#ae81ff">255</span>),facecolor<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0.8</span>),fill<span style="color:#f92672">=</span>True,lw<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>))
 fig
 </code></pre></div><p><img src="/visitebfsglout.png" alt=""></p>
@@ -1985,18 +2344,29 @@ fig
 <li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
 </ul>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<ul>
+<li>non</li>
+<li>non</li>
+<li>oui</li>
+</ul>
+</blockquote>
+</details>
 <p> </p>
 <h4 id="a">A*</h4>
 <p>Appliquons maintenant l&rsquo;heuristique à l&rsquo;algorithme de Dijkstra. On obtient l'<strong>algorithme A</strong>* (A étoile ou A star).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Astar</span>(G, depart, arrivee):
-    Scores <span style="color:#f92672">=</span> {sommet: float(<span style="color:#e6db74">&#39;inf&#39;</span>) <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> G}
+    Scores <span style="color:#f92672">=</span> {sommet : float(<span style="color:#e6db74">&#39;inf&#39;</span>) <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> G}
     Preds <span style="color:#f92672">=</span> {sommet : None <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> G}
     Scores[depart] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     Vus <span style="color:#f92672">=</span> {}
     tas <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, depart)]
-    <span style="color:#66d9ef">while</span> tas :
+    <span style="color:#66d9ef">while</span> tas:
         _, score_actuel, sommet_actuel <span style="color:#f92672">=</span> heapq<span style="color:#f92672">.</span>heappop(tas) <span style="color:#75715e"># on utilise par convention &#39;_&#39; pour déballer un élément d&#39;un tuple dont on ne fera pas usage.</span>
-        <span style="color:#66d9ef">if</span> sommet_actuel <span style="color:#f92672">==</span> arrivee :
+        <span style="color:#66d9ef">if</span> sommet_actuel <span style="color:#f92672">==</span> arrivee:
             <span style="color:#66d9ef">return</span> Preds,Scores,Vus
         <span style="color:#66d9ef">if</span> score_actuel <span style="color:#f92672">==</span> Scores[sommet_actuel]:          
             score_voisin <span style="color:#f92672">=</span> G[sommet_actuel]
@@ -2028,9 +2398,20 @@ fig
 <li>l&rsquo;algorithme est-il efficace en terme de nombre de sommets inspectés ?</li>
 </ul>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<ul>
+<li>non</li>
+<li>oui</li>
+<li>oui</li>
+</ul>
+</blockquote>
+</details>
 <ul>
 <li>
-<p>Évolution comparée de <code>recherche_largeur</code> et de <code>Dijkstra</code> :</p>
+<p>Évolutions comparées de <code>recherche_largeur</code> et de <code>Dijkstra</code> :</p>
 <video class="video-shortcode" preload="" controls>
     <source src="/compbfsdij.m4v" type="video/mp4">
     There should have been a video here but your browser does not seem
@@ -2038,7 +2419,7 @@ fig
 </video>
 </li>
 <li>
-<p>Évolution comparée de <code>bfs_glouton</code> et de <code>Astar</code> (vidéo ralentie 2$\times$ par rapport à la précédente) :</p>
+<p>Évolutions comparées de <code>bfs_glouton</code> et de <code>Astar</code> (vidéo ralentie 2$\times$ par rapport à la précédente) :</p>
 <video class="video-shortcode" preload="" controls>
     <source src="/compgltast.m4v" type="video/mp4">
     There should have been a video here but your browser does not seem
@@ -2744,19 +3125,19 @@ fig
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675945206"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675945206"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675945206"></script>
-    <script src="/js/jquery.sticky.js?1675945206"></script>
-    <script src="/js/featherlight.min.js?1675945206"></script>
-    <script src="/js/highlight.pack.js?1675945206"></script>
+    <script src="/js/clipboard.min.js?1675974519"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675974519"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675974519"></script>
+    <script src="/js/jquery.sticky.js?1675974519"></script>
+    <script src="/js/featherlight.min.js?1675974519"></script>
+    <script src="/js/highlight.pack.js?1675974519"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675945206"></script>
-    <script src="/js/learn.js?1675945206"></script>
-    <script src="/js/hugo-learn.js?1675945206"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675974519"></script>
+    <script src="/js/learn.js?1675974519"></script>
+    <script src="/js/hugo-learn.js?1675974519"></script>
     
         
-            <script src="/mermaid/mermaid.js?1675945206"></script>
+            <script src="/mermaid/mermaid.js?1675974519"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
