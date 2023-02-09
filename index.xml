@@ -311,9 +311,8 @@ Pivot de Gauss Deux problèmes liés aux flottants :
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp11/</guid>
-      <description>TP 11 : algorithmique numérique Cliquez sur cette invitation pour récupérer le repository du TP. Pivot de Gauss Présentation
-On cherche résoudre un système d&amp;rsquo;équations grâce à la méthode du pivot de Gauss (on ne considèrera que des systèmes de n équations avec un nombre d&amp;rsquo;inconnues inférieur ou égal à n).
-Pour cela, on crée une fonction qui transforme la matrice augmentée obtenue à partir du sytème en une matrice échelonnée.</description>
+      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  TP 11 : algorithmique numérique Cliquez sur cette invitation pour récupérer le repository du TP. Pivot de Gauss Présentation
+On cherche résoudre un système d&amp;rsquo;équations grâce à la méthode du pivot de Gauss (on ne considèrera que des systèmes de n équations avec un nombre d&amp;rsquo;inconnues inférieur ou égal à n).</description>
     </item>
     
     <item>
