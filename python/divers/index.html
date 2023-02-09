@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1675980057" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675980057" rel="stylesheet">
-    <link href="/css/hybrid.css?1675980057" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675980057" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675980057" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675980057" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675980057" rel="stylesheet">
-    <link href="/css/theme.css?1675980057" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675980057" rel="stylesheet">
+    <link href="/css/nucleus.css?1675980597" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675980597" rel="stylesheet">
+    <link href="/css/hybrid.css?1675980597" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675980597" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675980597" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675980597" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675980597" rel="stylesheet">
+    <link href="/css/theme.css?1675980597" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675980597" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1675980057" rel="stylesheet">
+    <link href="/css/theme-green.css?1675980597" rel="stylesheet">
     
-    <link href="/css/foo.css?1675980057" rel="stylesheet"><link href="/css/bar.css?1675980057" rel="stylesheet">
+    <link href="/css/foo.css?1675980597" rel="stylesheet"><link href="/css/bar.css?1675980597" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1675980057"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675980597"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675980057"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675980057"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675980597"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675980597"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675980057"></script>
+<script type="text/javascript" src="/js/search.js?1675980597"></script>
 
     
   </div>
@@ -1201,7 +1201,7 @@ Ce mode est à utiliser pour les fichiers contenant autre chose que du texte.</p
 f<span style="color:#f92672">.</span>close()
 </code></pre></div><p>Exemple : le programme suivant écrit les quatre premières puissances de tous les entiers entre 1 et 1000, chaque champ étant séparé par une virgule, dans le fichier puissances.txt.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fi <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;puissances.txt&#39;</span>,<span style="color:#e6db74">&#39;w&#39;</span>)
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1001</span>) :
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1001</span>):
     <span style="color:#66d9ef">print</span>(i, i<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>, i<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span>, i<span style="color:#f92672">**</span><span style="color:#ae81ff">4</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;, &#39;</span>, file<span style="color:#f92672">=</span>fi)
 fi<span style="color:#f92672">.</span>close()
 </code></pre></div><p> 
@@ -1213,7 +1213,7 @@ fi<span style="color:#f92672">.</span>close()
 Pour lire en une fois toutes les lignes dans une liste de chaînes, on utilise <code>f.readlines()</code>.</p>
 <p>Les objet <code>file</code> sont itérables. On peut ainsi retourner chaque ligne d&rsquo;un fichier une à une en utilisant une boucle :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#39;monfichier.txt&#39;</span>)
-<span style="color:#66d9ef">for</span> ligne <span style="color:#f92672">in</span> f :
+<span style="color:#66d9ef">for</span> ligne <span style="color:#f92672">in</span> f:
     <span style="color:#66d9ef">print</span>(ligne, end<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>)
 f<span style="color:#f92672">.</span>close()
 </code></pre></div><p><code>Coucou monde !</code><br>
@@ -1239,7 +1239,7 @@ Pour cela, chaque ligne doit être décomposée en ses différents champs et cha
 carrés, cubes, puiss4 <span style="color:#f92672">=</span> [],[],[]
 lignes <span style="color:#f92672">=</span> fo<span style="color:#f92672">.</span>readlines()
 fo<span style="color:#f92672">.</span>close()
-<span style="color:#66d9ef">for</span> ligne <span style="color:#f92672">in</span> lignes :
+<span style="color:#66d9ef">for</span> ligne <span style="color:#f92672">in</span> lignes:
     champs <span style="color:#f92672">=</span> ligne<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;,&#39;</span>)
     carrés<span style="color:#f92672">.</span>append(int(champs[<span style="color:#ae81ff">1</span>]))
     cubes<span style="color:#f92672">.</span>append(int(champs[<span style="color:#ae81ff">2</span>]))
@@ -1259,7 +1259,7 @@ Vous apprendrez aussi au 3<sup>e</sup> trimestre à utiliser les méthodes des <
 <p>On peut utiliser les assertions pour s’assurer que les arguments d’une fonction vont permettre son exécution.</p>
 <p>On peut par exemple sécuriser la définition d&rsquo;une fonction racines donnant les racines d&rsquo;un trinôme du second degré. On va s’assurer que les arguments passés sont bien des nombres (et renvoyer un message explicatif si ce n’est pas le cas) :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> math
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">racines</span>(a,b,c) :
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">racines</span>(a,b,c):
     <span style="color:#e6db74">&#34;&#34;&#34;Retourne les racines de ax^2 + bx + c&#34;&#34;&#34;</span>
     type_nombre <span style="color:#f92672">=</span> (float,int)
     <span style="color:#66d9ef">assert</span> (type(a) <span style="color:#f92672">in</span> type_nombre) <span style="color:#f92672">and</span> (type(b) <span style="color:#f92672">in</span> type_nombre) <span style="color:#f92672">and</span> (type(c) <span style="color:#f92672">in</span> type_nombre),<span style="color:#e6db74">&#34;les arguments doivent être des nombres !&#34;</span>
@@ -1964,19 +1964,19 @@ Vous apprendrez aussi au 3<sup>e</sup> trimestre à utiliser les méthodes des <
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675980057"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675980057"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675980057"></script>
-    <script src="/js/jquery.sticky.js?1675980057"></script>
-    <script src="/js/featherlight.min.js?1675980057"></script>
-    <script src="/js/highlight.pack.js?1675980057"></script>
+    <script src="/js/clipboard.min.js?1675980597"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675980597"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675980597"></script>
+    <script src="/js/jquery.sticky.js?1675980597"></script>
+    <script src="/js/featherlight.min.js?1675980597"></script>
+    <script src="/js/highlight.pack.js?1675980597"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675980057"></script>
-    <script src="/js/learn.js?1675980057"></script>
-    <script src="/js/hugo-learn.js?1675980057"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675980597"></script>
+    <script src="/js/learn.js?1675980597"></script>
+    <script src="/js/hugo-learn.js?1675980597"></script>
     
         
-            <script src="/mermaid/mermaid.js?1675980057"></script>
+            <script src="/mermaid/mermaid.js?1675980597"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

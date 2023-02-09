@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1675980057" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675980057" rel="stylesheet">
-    <link href="/css/hybrid.css?1675980057" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675980057" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675980057" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675980057" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675980057" rel="stylesheet">
-    <link href="/css/theme.css?1675980057" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675980057" rel="stylesheet">
+    <link href="/css/nucleus.css?1675980597" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675980597" rel="stylesheet">
+    <link href="/css/hybrid.css?1675980597" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675980597" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675980597" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675980597" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675980597" rel="stylesheet">
+    <link href="/css/theme.css?1675980597" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675980597" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1675980057" rel="stylesheet">
+    <link href="/css/theme-green.css?1675980597" rel="stylesheet">
     
-    <link href="/css/foo.css?1675980057" rel="stylesheet"><link href="/css/bar.css?1675980057" rel="stylesheet">
+    <link href="/css/foo.css?1675980597" rel="stylesheet"><link href="/css/bar.css?1675980597" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1675980057"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675980597"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675980057"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675980057"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675980597"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675980597"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675980057"></script>
+<script type="text/javascript" src="/js/search.js?1675980597"></script>
 
     
   </div>
@@ -1260,7 +1260,7 @@ Par exemple, pour créer une liste <code>L</code> de 10 zéros, il suffit d&rsqu
 <p>On initialise une liste vide (<code>[]</code>), puis on la garnit élément par élément grâce à la méthode <code>append</code>.</p>
 <p>Exemple :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">L <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>) :
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
 		L<span style="color:#f92672">.</span>append(i<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>)
 L
 </code></pre></div><p><code>[0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8]</code></p>
@@ -1375,13 +1375,13 @@ coef[<span style="color:#e6db74">&#39;philo&#39;</span>] <span style="color:#f92
 <p>Exemple : à partir d&rsquo;une liste de 12 éléments pris au hasard parmi les entiers de 1 à 10, fabriquons un dictionnaire qui compte les occurrences de chacun des 10 entiers :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
 L <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">12</span>) :
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">12</span>):
     L <span style="color:#f92672">=</span> L<span style="color:#f92672">+</span>[randint(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>)]
 effectifs <span style="color:#f92672">=</span> {}
-<span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> L :
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> e <span style="color:#f92672">in</span> effectifs :
+<span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> L:
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> e <span style="color:#f92672">in</span> effectifs:
         effectifs[e] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">else</span> :
+    <span style="color:#66d9ef">else</span>:
         effectifs[e] <span style="color:#f92672">=</span> effectifs[e]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
 <span style="color:#66d9ef">print</span>(effectifs)
 </code></pre></div><p><code>{5: 3, 10: 1, 9: 1, 4: 1, 8: 1, 6: 2, 1: 3}</code></p>
@@ -1406,7 +1406,7 @@ plt<span style="color:#f92672">.</span>bar(clés, valeurs)
 plt<span style="color:#f92672">.</span>show()
 </code></pre></div><p><img src="/barplot.png?width=800px" alt=""></p>
 <p>La méthode <code>items</code> regroupe clés et valeurs au sein de tuples (<em>clé</em>,<em>valeur</em>).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> clé, valeur <span style="color:#f92672">in</span> effectifs<span style="color:#f92672">.</span>items() :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> clé, valeur <span style="color:#f92672">in</span> effectifs<span style="color:#f92672">.</span>items():
 		<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;nombre de&#39;</span>,clé,<span style="color:#e6db74">&#39;:&#39;</span>,valeur)
 </code></pre></div><p><code>nombre de 5 : 3</code><br>
 <code>nombre de 10 : 1</code><br>
@@ -2125,19 +2125,19 @@ infos[<span style="color:#e6db74">&#39;notes&#39;</span>][:] <span style="color:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675980057"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675980057"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675980057"></script>
-    <script src="/js/jquery.sticky.js?1675980057"></script>
-    <script src="/js/featherlight.min.js?1675980057"></script>
-    <script src="/js/highlight.pack.js?1675980057"></script>
+    <script src="/js/clipboard.min.js?1675980597"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675980597"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675980597"></script>
+    <script src="/js/jquery.sticky.js?1675980597"></script>
+    <script src="/js/featherlight.min.js?1675980597"></script>
+    <script src="/js/highlight.pack.js?1675980597"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675980057"></script>
-    <script src="/js/learn.js?1675980057"></script>
-    <script src="/js/hugo-learn.js?1675980057"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675980597"></script>
+    <script src="/js/learn.js?1675980597"></script>
+    <script src="/js/hugo-learn.js?1675980597"></script>
     
         
-            <script src="/mermaid/mermaid.js?1675980057"></script>
+            <script src="/mermaid/mermaid.js?1675980597"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
