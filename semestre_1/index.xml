@@ -13,10 +13,8 @@
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp0/</guid>
-      <description>TP 0 : Démarrage Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 Combien de fois une feuille de papier d’épaisseur $e=0,1$ mm doit-elle être pliée pour atteindre la Lune ?
- Écrivez dans la cellule suivante un code permettant d&amp;rsquo;obtenir la réponse. Le plus simple est d&amp;rsquo;utiliser une boucle while.
- Wolfram alpha vous donne avec précision la distance Terre-Lune.
-### VOTRE CODE  Dans la cellule suivante, affectez à la variable nb_plis la valeur entière trouvée.</description>
+      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  TP 0 : Démarrage Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 Combien de fois une feuille de papier d’épaisseur $e=0,1$ mm doit-elle être pliée pour atteindre la Lune ?
+ Écrivez dans la cellule suivante un code permettant d&amp;rsquo;obtenir la réponse.</description>
     </item>
     
     <item>
@@ -63,8 +61,7 @@ Peut-on faire mieux ?</description>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp5recu/</guid>
-      <description>Fonctions récursives Cliquez sur cette invitation pour récupérer le repository du TP.   import numpy as np import matplotlib.pyplot as plt from matplotlib.patches import Rectangle plt.style.use(&amp;#39;seaborn&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (10, 10) fig, ax = plt.subplots() ax.set_aspect(1) couleurs = plt.rcParams[&amp;#39;axes.prop_cycle&amp;#39;].by_key()[&amp;#39;color&amp;#39;]  Visualisation des appels récursifs Installons un module permettant de représenter sous forme de graphe les différents appels récursifs d&amp;rsquo;une fonction.
-%%capture !pip install recursionvisualisation==0.2 On construit une fonction récursive somme(n) qui retourne la somme des n premiers entiers et on utilise un décorateur (fonction qui modifie le comportement d&amp;rsquo;autres fonctions) pour visualiser les différents appels récursifs faits par somme.</description>
+      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  Fonctions récursives Cliquez sur cette invitation pour récupérer le repository du TP.   import numpy as np import matplotlib.pyplot as plt from matplotlib.patches import Rectangle plt.style.use(&amp;#39;seaborn&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (10, 10) fig, ax = plt.subplots() ax.set_aspect(1) couleurs = plt.</description>
     </item>
     
     <item>
@@ -73,10 +70,7 @@ Peut-on faire mieux ?</description>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp6tri/</guid>
-      <description>Algorithmes de tri Cliquez sur cette invitation pour récupérer le repository du TP. Trier c&amp;rsquo;est partir d&amp;rsquo;une structure de données désordonnée et la remettre en ordre.
-Les tris sont omniprésents en informatique et Tim Roughgarden (auteur d&#39;Algorithms illuminated) en parle même comme de la &amp;ldquo;mère de tous les problèmes algorithmiques&amp;rdquo;.
-Plusieurs stratégies existent. On va en passer certaines en revue et essayer de trier les algorithmes de tri.
- Tris par comparaison La plupart des algorithmes de tri sont dits par comparaison car ils reposent sur des comparaisons deux à deux des éléments de la liste.</description>
+      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  Algorithmes de tri Cliquez sur cette invitation pour récupérer le repository du TP. Tous ces algos de tri semblent faire correctement le boulot. Qu&#39;est-ce qui les différencie&amp;nbsp;? Trier c&amp;rsquo;est partir d&amp;rsquo;une structure de données désordonnée et la remettre en ordre.</description>
     </item>
     
     <item>

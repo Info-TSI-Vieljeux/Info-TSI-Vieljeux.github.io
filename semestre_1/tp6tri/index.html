@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1675780758" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675780758" rel="stylesheet">
-    <link href="/css/hybrid.css?1675780758" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675780758" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675780758" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675780758" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675780758" rel="stylesheet">
-    <link href="/css/theme.css?1675780758" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675780758" rel="stylesheet">
+    <link href="/css/nucleus.css?1675906587" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675906587" rel="stylesheet">
+    <link href="/css/hybrid.css?1675906587" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675906587" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675906587" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675906587" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675906587" rel="stylesheet">
+    <link href="/css/theme.css?1675906587" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675906587" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1675780758" rel="stylesheet">
+    <link href="/css/theme-green.css?1675906587" rel="stylesheet">
     
-    <link href="/css/foo.css?1675780758" rel="stylesheet"><link href="/css/bar.css?1675780758" rel="stylesheet">
+    <link href="/css/foo.css?1675906587" rel="stylesheet"><link href="/css/bar.css?1675906587" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1675780758"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675906587"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675780758"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675780758"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675906587"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675906587"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675780758"></script>
+<script type="text/javascript" src="/js/search.js?1675906587"></script>
 
     
   </div>
@@ -1113,9 +1113,36 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
+<link rel="stylesheet" href="/path/to/styles/default.min.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+#correc
+{
+  color: #006C65;
+  border-left: solid 10px #C7DDDC;
+}
+#comm
+{
+  color: #004D80;
+  border-left: solid 10px #B3CAD9;
+}
+#commsum
+{
+  color: #004D80;
+}
+#correcsum
+{
+  color: #006C65;
+}
+</style>
 <h1 id="algorithmes-de-tri">Algorithmes de tri</h1>
 <p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/kRMFzFeu">cette invitation</a> pour récupérer le repository du TP. </p>
 <p><img src="/comptri.png" alt=""></p>
+<p style="text-align:center">
+<i>Tous ces algos de tri semblent faire correctement le boulot. Qu'est-ce qui les différencie&nbsp;?</i>
+</p>
+<br>
 <p>Trier c&rsquo;est partir d&rsquo;une structure de données désordonnée et la remettre en ordre.<br>
 Les tris sont omniprésents en informatique et Tim Roughgarden (auteur d'<em>Algorithms illuminated</em>) en parle même comme de la &ldquo;<em>mère de tous les problèmes algorithmiques</em>&rdquo;.<br>
 Plusieurs stratégies existent. On va en passer certaines en revue et essayer de trier les algorithmes de tri.</p>
@@ -1157,37 +1184,119 @@ Plusieurs stratégies existent. On va en passer certaines en revue et essayer de
 <li>C : 12 et 12</li>
 <li>D : 16 et 8</li>
 </ul>
-<p>Vous pouvez trouver la réponse à la main, mais vous pouvez aussi intégrer à <code>fusion</code> une <a href="https://info-tsi-vieljeux.github.io/python/traitsgaux/#port%C3%A9e-lexicale">variable globale</a> <code>nb_comp</code> qui est incrémentée à chaque comparaison entre deux éléments de la liste.<br>
+<p>Vous pouvez trouver la réponse à la main, mais vous pouvez aussi intégrer à <code>fusion</code> une <a href="https://info-tsi-vieljeux.github.io/python/traitsgaux/#port%C3%A9e-lexicale"><strong>variable globale</strong></a> <code>nb_comp</code> qui est incrémentée à chaque comparaison entre deux éléments de la liste.<br>
 Pensez à systématiquement réinitialiser <code>nb_comp</code> à 0 avant chaque appel de <code>tri_fusion</code>, car sinon la valeur continue à courir. C&rsquo;est un des dangers de l&rsquo;utilisation de variables globales dans les fonctions.</p>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Incorporation d'un compteur de comparaisons dans <code>fusion</code>&nbsp;:
+<pre><code class="language-python">def fusion(L1,L2):
+    global nbcomp
+    if L1 == []:
+        return L2
+    if L2 == []:
+        return L1
+    if L1[0] <= L2[0]:
+        nbcomp += 1
+        return [L1[0]] + fusion(L1[1:],L2)
+    else:
+        nbcomp += 1
+        return [L2[0]] + fusion(L1,L2[1:])
+nbcomp = 0
+L1 = [1,2,3,4,5,6,7,8]
+tri_fusion(L1)
+print(f'nombre de comparaisons pour trier la liste {L1} : {nbcomp}')
+nbcomp = 0
+L2 = [8,7,6,5,4,3,2,1]
+tri_fusion(L2)
+print(f'nombre de comparaisons pour trier la liste {L2} : {nbcomp}')
+</code></pre>
+S'affiche alors&nbsp;:<br>
+<code>nombre de comparaisons pour trier la liste [1, 2, 3, 4, 5, 6, 7, 8] : 12</code><br>
+<code>nombre de comparaisons pour trier la liste [8, 7, 6, 5, 4, 3, 2, 1] : 12</code><br><br>
+C'était donc la réponse C.
+</blockquote>
+</details>
 <p> 
  </p>
 <h3 id="tri-par-insertion">Tri par insertion</h3>
 <p>On va écrire une version itérative de l&rsquo;algorithme de tri par insertion.</p>
 <p>Son principe : on compare chacun des éléments <code>i</code> de la liste donnée en argument (à partir du deuxième) à ceux qui le précèdent en remontant la liste un par un (<code>i-1</code>,<code>i-2</code>,etc.). Tant qu&rsquo;un des éléments qui précèdent est plus grand que l&rsquo;élément <code>i</code>, on les permute, jusqu&rsquo;à ce que l&rsquo;élément <code>i</code> soit à la bonne place.</p>
+<blockquote>
 <p>Construisez d&rsquo;abord une fonction <code>permute(L,i,j)</code> qui permute les éléments <code>i</code> et <code>j</code> d&rsquo;une liste <code>L</code>.<br></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">permute</span>(L,i,j) :
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">permute</span>(L,i,j):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    permute(L:list,i:int,j:int)-&gt;L:list
-</span><span style="color:#e6db74">    0 &lt; i,j &lt; len(L)
+</span><span style="color:#e6db74">    permute(L: list,i: int,j: int) -&gt; None
+</span><span style="color:#e6db74">    préconditions: 0 &lt; i,j &lt; len(L)
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><p>Puis complétez la fonction <code>tri_insertion</code> en utilisant <code>permute</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_insertion</span>(L) :
+</code></pre></div>
+<div class="notices info" ><p>On remarque que la fonction ne <strong>retourne rien</strong> (de manière assez paradoxale, il y a un objet python correspondant à &ldquo;rien&rdquo; qui s&rsquo;appelle <code>None</code>), mais elle aura bien un effet sur la liste du fait de son caractère <strong>mutable</strong>.<br>
+On dit alors que la fonction a un <strong>effet de bord</strong> (traduction bizarre de <em>side effect</em> qui signifie que la fonction a un effet en-dehors de son environnement local).<br>
+Et pour ce qui est de la liste, on dit qu&rsquo;elle a été modifiée <strong>en place</strong>, sans avoir eu besoin d&rsquo;en créer une copie.</p>
+
+</div>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def permute(L,i,j):
+    assert -len(L) <= i < len(L) and -len(L) <= j < len(L)
+    L[i], L[j] = L[j], L[i]
+</code></pre>
+</blockquote>
+</details>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Tester tous les cas particulier auxquels vous pensez qui pourraient mettre votre fonction en défaut</span>
+L <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
+permute(L,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>)
+L
+</code></pre></div><blockquote>
+<p>Puis complétez la fonction <code>tri_insertion</code> en utilisant <code>permute</code>.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_insertion</span>(L):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    tri_insertion(L:list)-&gt;L:list
+</span><span style="color:#e6db74">    tri_insertion(L: list) -&gt; None
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(L)) :
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,len(L)):
         j <span style="color:#f92672">=</span> i
         X <span style="color:#f92672">=</span> L[i]
-        <span style="color:#66d9ef">while</span> j <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> L[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;</span> X :
+        <span style="color:#66d9ef">while</span> j <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> L[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">&gt;</span> X:
             <span style="color:#75715e">### VOTRE CODE</span>
             j <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">return</span> L
-</code></pre></div><p>La cellule suivante permet de comparer le résultat de la fonction <code>tri_insertion</code> à la fonction native de tri <code>sorted</code> sur 1000 listes de 10 nombres tirés au hasard entre -5 et 5. Si pas d'<code>AssertionError</code>, a priori votre fonction fonctionne&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint,shuffle
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1000</span>) :
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def tri_insertion(L):
+    for i in range(1,len(L)):
+        j = i
+        X = L[i]
+        while j > 0 and L[j-1] > X:
+            permute(L,j,j-1)
+            j -= 1
+</code></pre>
+</blockquote>
+</details>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)</summary>
+<blockquote id="comm">
+Comme <code>permute</code>, <code>tri_insertion</code> ne retourne rien, mais la liste est bien finalement triée.<br>
+Rien ne nous empêche d'ailleurs d'ajouter un <code>return L</code> à la fin du code si on veut que la fonction retourn la liste.
+</code></pre>
+</blockquote>
+</details>
+<p>La cellule de tests suivante permet de comparer le résultat de la fonction <code>tri_insertion</code> à la fonction native de tri <code>sort</code> sur 1000 listes de 10 nombres tirés au hasard entre -5 et 5. Si pas d'<code>AssertionError</code>, a priori votre fonction&hellip; fonctionne.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1000</span>):
     L_desord <span style="color:#f92672">=</span> [randint(<span style="color:#f92672">-</span><span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">5</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
-    <span style="color:#66d9ef">assert</span> tri_insertion(L_desord) <span style="color:#f92672">==</span> sorted(L_desord), f<span style="color:#e6db74">&#34;y a un problème avec {L_desord} :</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">donne {tri_insertion(L_desord)}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">au lieu de {sorted(L_desord)}&#34;</span>
+    L_desord_copie1 <span style="color:#f92672">=</span> L_desord[:] <span style="color:#75715e"># attention à ne pas juste écrire L_desord_copie1 = L_desord (copie superficielle) !</span>
+    L_desord_copie2 <span style="color:#f92672">=</span> L_desord[:]
+    L_desord_copie1<span style="color:#f92672">.</span>sort()
+    tri_insertion(L_desord_copie2)
+    <span style="color:#66d9ef">assert</span> L_desord_copie1<span style="color:#f92672">==</span>L_desord_copie2, f<span style="color:#e6db74">&#34;y a un problème avec {L_desord} :</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">donne {L_desord_copie2}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">au lieu de {L_desord_copie1}&#34;</span>
 </code></pre></div><blockquote>
 <p>Combien de comparaisons entre deux éléments de la liste effectue l&rsquo;algorithme de tri insertion pour ordonner <code>[1,2,3,4,5,6,7,8]</code> et <code>[8,7,6,5,4,3,2,1]</code> ?</p>
 </blockquote>
@@ -1197,9 +1306,51 @@ Pensez à systématiquement réinitialiser <code>nb_comp</code> à 0 avant chaqu
 <li>C : 28 et 28</li>
 <li>D : 5 et 35</li>
 </ul>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Incorporation d'un compteur de comparaisons dans <code>tri_insertion</code> (on modifie un peu le code sans changer sa logique pour que le décompte soit plus évident)&nbsp;:
+<pre><code class="language-python">def tri_insertion(L):
+    global nbcomp
+    for i in range(1,len(L)):
+        j = i
+        X = L[i]
+        while j > 0:
+            nbcomp += 1
+            if L[j-1] > X:
+                permute(L,j,j-1)
+                j -= 1
+            else:
+                break
+nbcomp = 0
+L1 = [1,2,3,4,5,6,7,8]
+tri_insertion(L1[:])
+print(f'nombre de comparaisons pour trier la liste {L1} : {nbcomp}')
+nbcomp = 0
+L2 = [8,7,6,5,4,3,2,1]
+tri_insertion(L2[:])
+print(f'nombre de comparaisons pour trier la liste {L2} : {nbcomp}')
+</code></pre>
+S'affiche alors&nbsp;:<br>
+<code>nombre de comparaisons pour trier la liste [1, 2, 3, 4, 5, 6, 7, 8] : 7</code><br>
+<code>nombre de comparaisons pour trier la liste [8, 7, 6, 5, 4, 3, 2, 1] : 28</code><br><br>
+C'était donc la réponse A.
+</blockquote>
+</details>
 <blockquote>
 <p>Combien de comparaisons entre deux éléments de la liste demande le tri par insertion d&rsquo;une liste de 200 éléments rangés en ordre inverse ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+On est ici dans le pire des cas possibles pour <code>tri_insertion</code> (liste en ordre inversé)&nbsp;:<br>
+pour la $i^e$ des $n-1$ itérations dans la boucle principale, il y a $i$ tours dans le <code>while</code> avec à chaque fois une comparaison.<br>
+Le nombre de comparaisons est donc donné par&nbsp;:<br>
+$\sum_{i=1}^{n-1} i = n(n-1)/2$, soit ici $200\times 199 = 19900$
+</blockquote>
+</details>
 <p> 
  </p>
 <h3 id="tri-par-sélection">Tri par sélection</h3>
@@ -1213,14 +1364,28 @@ Pensez à systématiquement réinitialiser <code>nb_comp</code> à 0 avant chaqu
         fin pour<br>
         si min ≠ i, alors échanger L[i] et L[min]<br>
     fin pour<br>
-    retourner L<br>
 fin fonction</em></p>
 <blockquote>
 <p>Traduisez le pseudocode ci-dessus en python.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_selection</span>(L) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_selection</span>(L):
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><blockquote>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def tri_selection(L):
+    n = len(L)
+    for i in range(n-1):
+        min = i
+        for j in range(i+1,n):
+            if L[j] < L[min]:
+                min = j
+        if min != i:
+            permute(L,i,min)</code></pre>
+</blockquote>
+</details>
+<blockquote>
 <p>Combien de comparaisons entre deux éléments de la liste effectue l&rsquo;algorithme de tri par sélection pour ordonner <code>[1,2,3,4,5,6,7,8]</code> et <code>[8,7,6,5,4,3,2,1]</code> ?</p>
 </blockquote>
 <ul>
@@ -1229,7 +1394,38 @@ fin fonction</em></p>
 <li>C : 28 et 28</li>
 <li>D : 5 et 35</li>
 </ul>
-<p>Le tri par sélection ressemble beaucoup au tri par insertion. Dans les deux, après k traversées de la liste, les k premiers éléments sont triés. Cependant la différence fondamentale entre les deux algorithmes est le sens dans lequel ces tris s&rsquo;opèrent ; le tri par insertion trie de la fin vers le début alors que le tri par sélection trie du début vers la fin. Conséquence : dans le tri par sélection, les k premiers éléments de la liste en cours de tri sont les plus petits de la liste entière alors que dans le tri par insertion, ce sont seulement les k premiers éléments d&rsquo;origine triés.</p>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Incorporation d'un compteur de comparaisons dans <code>tri_selection</code>&nbsp;:
+<pre><code class="language-python">def tri_selection(L):
+    global nbcomp
+    n = len(L)
+    for i in range(n-1):
+        min = i
+        for j in range(i+1,n):
+            nbcomp += 1
+            if L[j] < L[min]:
+                min = j
+        if min != i:
+            permute(L,i,min)
+nbcomp = 0
+L1 = [1,2,3,4,5,6,7,8]
+tri_selection(L1[:])
+print(f'nombre de comparaisons pour trier la liste {L1} : {nbcomp}')
+nbcomp = 0
+L2 = [8,7,6,5,4,3,2,1]
+tri_selection(L2[:])
+print(f'nombre de comparaisons pour trier la liste {L2} : {nbcomp}')</code></pre>
+S'affiche alors&nbsp;:<br>
+<code>nombre de comparaisons pour trier la liste [1, 2, 3, 4, 5, 6, 7, 8] : 28</code><br>
+<code>nombre de comparaisons pour trier la liste [8, 7, 6, 5, 4, 3, 2, 1] : 28</code><br><br>
+C'était donc la réponse C.
+</blockquote>
+</details>
+<p>Le tri par sélection ressemble beaucoup au tri par insertion. Dans les deux, après k traversées de la liste, les k premiers éléments sont triés. Cependant la différence fondamentale entre les deux algorithmes est le sens dans lequel ces tris s&rsquo;opèrent ; le tri par insertion trie de la fin vers le début alors que le tri par sélection trie du début vers la fin.<br>
+Conséquence : dans le tri par sélection, les k premiers éléments de la liste en cours de tri sont les plus petits de la liste entière alors que dans le tri par insertion, ce sont seulement les k premiers éléments d&rsquo;origine qui sont triés.</p>
 <p>Le tri par sélection doit toujours inspecter tous les éléments restant pour trouver le plus petit, tandis que le tri par insertion ne requiert qu&rsquo;une seule comparaison quand le (k+1)<sup>e</sup> élément est plus grand que le k<sup>e</sup> ; lorsque c&rsquo;est fréquent (si la liste est déjà partiellement triée), le tri par insertion est bien plus efficace. En moyenne, le tri par insertion nécessite de comparer et décaler la moitié des éléments seulement, ce qui correspond donc à la moitié des comparaisons que le tri par sélection doit faire.</p>
 <p>Dans le pire des cas pour le tri par insertion (liste triée en sens inverse), les deux tris opèrent autant d&rsquo;opérations l&rsquo;un que l&rsquo;autre, mais le tri par insertion va nécessiter plus de permutations puisqu&rsquo;il décale toujours d&rsquo;une position voisine à l&rsquo;autre. Le dernier élément d&rsquo;une liste renversée, par exemple, va devoir traverser toute la liste en échangeant sa place avec chacun des éléments qui le précèdent, alors qu&rsquo;avec le tri par sélection, il n&rsquo;y a jamais au plus qu&rsquo;une permutation par élément.</p>
 <p>En général, le tri par insertion va écrire dans la liste $O(n^2)$ fois (chaque permutation écrit dans la liste), alors que le tri par sélection va écrire seulement $O(n)$ fois. Pour cette raison, le tri par sélection peut être préférable au tri par insertion lorsque l&rsquo;écriture sur la mémoire est significativement plus coûteuse que la lecture (comme sur les EEPROM ou sur les mémoires flash). Ce point est illustré dans l&rsquo;animation interactive du début car limiter les permutations y correspond à limiter les déplacements, ce qui donne l&rsquo;illusion d&rsquo;un algorithme plus rapide.</p>
@@ -1237,12 +1433,12 @@ fin fonction</em></p>
  </p>
 <h3 id="tri-à-bulles">Tri à bulles</h3>
 <p>Le tri à bulles est surtout à visée pédagogique, il ne sert quasiment jamais réellement. Il tire son nom du fait qu&rsquo;on pousse vers la fin de la liste, de proche en proche, des éléments de plus en plus grands, comme une bulle qui grossit en remontant à la surface.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_a_bulles</span>(L) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_a_bulles</span>(L):
     n <span style="color:#f92672">=</span> len(L)
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) :
-        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n<span style="color:#f92672">-</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) :
-            <span style="color:#66d9ef">if</span> L[j] <span style="color:#f92672">&gt;</span> L[j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] :
-                L <span style="color:#f92672">=</span> permute(L,j,j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n<span style="color:#f92672">-</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+            <span style="color:#66d9ef">if</span> L[j] <span style="color:#f92672">&gt;</span> L[j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]:
+                permute(L,j,j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
     <span style="color:#66d9ef">return</span> L
 </code></pre></div><blockquote>
 <p>Combien de comparaisons effectue l&rsquo;algorithme de tri à bulles pour ordonner <code>[1,2,3,4,5,6,7,8]</code> et <code>[8,7,6,5,4,3,2,1]</code> ?</p>
@@ -1253,9 +1449,43 @@ fin fonction</em></p>
 <li>C : 28 et 28</li>
 <li>D : 5 et 35</li>
 </ul>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Incorporation d'un compteur de comparaisons dans <code>tri_selection</code>&nbsp;:
+<pre><code class="language-python">def tri_a_bulles(L):
+    global nbcomp
+    n = len(L)
+    for i in range(n-1):
+        for j in range(n-i-1):
+            nbcomp += 1
+            if L[j] > L[j+1]:
+                permute(L,j,j+1)
+nbcomp = 0
+L1 = [1,2,3,4,5,6,7,8]
+tri_a_bulles(L1[:])
+print(f'nombre de comparaisons pour trier la liste {L1} : {nbcomp}')
+nbcomp = 0
+L2 = [8,7,6,5,4,3,2,1]
+tri_a_bulles(L2[:])
+print(f'nombre de comparaisons pour trier la liste {L2} : {nbcomp}')</code></pre>
+S'affiche alors&nbsp;:<br>
+<code>nombre de comparaisons pour trier la liste [1, 2, 3, 4, 5, 6, 7, 8] : 28</code><br>
+<code>nombre de comparaisons pour trier la liste [8, 7, 6, 5, 4, 3, 2, 1] : 28</code><br><br>
+C'était donc la réponse C.
+</blockquote>
+</details>
 <blockquote>
 <p>Combien de comparaisons demande le tri à bulles d&rsquo;une liste de 200 éléments rangés en ordre inverse  ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+$19\,900$ comme pour les autres tris vus jusqu'ici.
+</blockquote>
+</details>
 <p> 
  </p>
 <h3 id="tri-rapide">Tri rapide</h3>
@@ -1270,24 +1500,29 @@ Désavantage : il est instable.</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">partition</span>(L, g, d) :
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">partition</span>(L, g, d):
     p <span style="color:#f92672">=</span> L[g]
     i <span style="color:#f92672">=</span> g<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(g<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,d<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) :
-        <span style="color:#66d9ef">if</span> L[j] <span style="color:#f92672">&lt;</span> p :
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(g<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,d<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+        <span style="color:#66d9ef">if</span> L[j] <span style="color:#f92672">&lt;</span> p:
             permute(L,i,j)
             i <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
     permute(L,g,i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
     <span style="color:#66d9ef">return</span> i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_rapide</span>(L, g, d) :
-    <span style="color:#66d9ef">if</span> g <span style="color:#f92672">&lt;</span> d : 
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_rapide_gd</span>(L, g, d):
+    <span style="color:#66d9ef">if</span> g <span style="color:#f92672">&lt;</span> d: 
         pivot <span style="color:#f92672">=</span> randint(g,d)
         permute(L,pivot,g)
         pivot <span style="color:#f92672">=</span> partition(L, g, d)
         tri_rapide(L, g, pivot<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
         tri_rapide(L, pivot<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, d)
     <span style="color:#66d9ef">return</span> L
+</code></pre></div><p>Pour ne pas s&rsquo;embêter avec <code>g</code> et <code>d</code>, on peut encapsuler <code>tri_rapide_gd</code> dans une nouvelle fonction dont le seul rôle est d&rsquo;initialiser <code>g</code> et <code>d</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_rapide</span>(L):
+    g <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    d <span style="color:#f92672">=</span> len(L)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+    tri_rapide_gd(L, g, d)
 </code></pre></div><p><img src="/fusrap.png" alt=""></p>
 <p>La figure précédente permet de supposer que la complexité dans le pire des cas du tri fusion est égale à sa complexité dans le meilleur des cas et à la complexité en moyenne du tri rapide.</p>
 <p>Sur la vidéo qui suit, des danseurs hongrois exécutent une implémentation classique du tri rapide utilisant systématiquement le premier élément comme pivot (et non un élément tiré au hasard) et où la partition marche un peu différemment : le chapeau rouge (élément comparé au pivot) est donné au voisin le plus proche du pivot et quand le pivot récupère le chapeau rouge, il est à la bonne place.</p>
@@ -1296,16 +1531,25 @@ Désavantage : il est instable.</p>
   <iframe src="https://www.youtube.com/embed/ywWBy6J5gz8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
+<br>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)</summary>
+<blockquote id="comm">
+<a href="https://presentationssite.github.io/info/defis/#/6">Un des défis</a> de la section <a href="https://info-tsi-vieljeux.github.io/projets/"><i>Projets</i></a> du site propose d'implémenter cette variante danse hongroise du tri rapide.<br>La fonction de partition à base de chapeau rouge et chapeau noir diffère pas mal de celle écrite plus haut.<br>
+Un code possible est donné en descendant.
+</blockquote>
+</details>
 <p>En levant la contrainte d&rsquo;un tri en place, on escamote lâchement la réelle difficulté et on peut maintenant s&rsquo;affranchir de la fonction de partition, ce qui permet un code bien plus court et clair.<br>
 On va visualiser les différents appels récursifs d&rsquo;un tel code grâce au module introduit dans le TP précédent.<br></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> recursionvisualisation <span style="color:#f92672">import</span> viz, CallGraph
 cg <span style="color:#f92672">=</span> CallGraph()
 <span style="color:#a6e22e">@viz</span>(cg)
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">triRapide</span>(elements) :
-    <span style="color:#66d9ef">if</span> len(elements) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span> :
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">triRapide</span>(elements):
+    <span style="color:#66d9ef">if</span> len(elements) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span>:
         <span style="color:#66d9ef">return</span> elements
-    <span style="color:#66d9ef">else</span> : 
+    <span style="color:#66d9ef">else</span>: 
         pivot <span style="color:#f92672">=</span> elements[<span style="color:#ae81ff">0</span>]
         plusPetit <span style="color:#f92672">=</span> triRapide([e <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> elements[<span style="color:#ae81ff">1</span>:] <span style="color:#66d9ef">if</span> e <span style="color:#f92672">&lt;=</span> pivot])
         plusGrand <span style="color:#f92672">=</span> triRapide([e <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> elements[<span style="color:#ae81ff">1</span>:] <span style="color:#66d9ef">if</span> e <span style="color:#f92672">&gt;</span> pivot])
@@ -1319,6 +1563,19 @@ cg<span style="color:#f92672">.</span>render()
 <blockquote>
 <p>Quelle sera la taille de la pile d&rsquo;exécution si on donne en argument à <code>triRapide</code> une liste déjà triée de 500 éléments ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+$500$<br>
+En effet, le pivot serait sans cesse placé en première position donnant un appel récursif sur une liste vide et l'autre sur une liste avec un élément en moins.<br>
+Élément par élément, on arrive au cas de base sur le deuxième appel après avoir retiré 499 éléments, ce qui fait 500 appels avec l'appel initial.<br><br>
+<p>On peut s&rsquo;en convaincre en dessinant un arbre plus petit :</p>
+<pre><code class="language-python">triRapide([1,2,3,4,5])
+cg.render()</code></pre>
+<img src="/cgrendertrirap.png">
+</blockquote>
+</details>
 <p> </p>
 <hr>
 <p>Les tris par comparaison n&rsquo;ont que faire de la nature des éléments de la liste à trier du moment qu&rsquo;on peut les comparer entre eux. On peut ainsi trier tout aussi bien des chaînes de caractères que des flottants.<br>
@@ -1336,15 +1593,37 @@ Par contre, si les éléments de la liste sont contraints d&rsquo;une façon ou 
 <li>Il suffit enfin de parcourir <code>L_eff</code> depuis le début et pour chaque élément <code>L_eff[i]</code> non nul, d&rsquo;ajouter à une nouvelle liste <code>L_sortie</code> autant de fois <code>i</code> que la valeur de <code>L[i]</code>.</li>
 <li>Plus qu&rsquo;à retourner <code>L_sortie</code>.</li>
 </ul>
+<blockquote>
 <p>Implémentez la fonction <code>tri_par_denombrement</code> telle qu&rsquo;elle est décrite ci-dessus.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_par_denombrement</span>(L,m) :
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_par_denombrement</span>(L,m):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    tri_par_denombrement(L:list,m:int)-&gt;L_sortie:list
+</span><span style="color:#e6db74">    tri_par_denombrement(L: list,m: int) -&gt; L_sortie: list
 </span><span style="color:#e6db74">    m est la valeur maximum des éléments de L 
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><blockquote>
-<p>Le nombre d&rsquo;étapes de <code>tri_denombrement</code> peut s&rsquo;écrire en fonction du nombre d&rsquo;éléments <code>n</code> de la liste comme :</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def tri_par_denombrement(L,m):
+    L_eff = [0]*(m+1) # liste des effectifs
+    L_sortie = L.copy() # liste triée
+    n = len(L)
+    for i in range(n):
+        j = L[i]
+        L_eff[j] += 1
+    k = 0
+    for i in range(m):
+        for j in range(L_eff[i]):
+            L_sortie[k] = i
+            k += 1
+    return L_sortie
+</code></pre>
+</blockquote>
+</details>
+<blockquote>
+<p>Le nombre d&rsquo;étapes de <code>tri_denombrement</code> peut s&rsquo;écrire en fonction du nombre d&rsquo;éléments <code>n</code> de la liste comme (on considérera que <code>m</code> est une constante) :</p>
 </blockquote>
 <ul>
 <li>A : $a$</li>
@@ -1352,6 +1631,21 @@ Par contre, si les éléments de la liste sont contraints d&rsquo;une façon ou 
 <li>C : $a\times n^2+b\times n + c$</li>
 <li>D : $a\times n^3+b\times n^2 + c\times n + d$</li>
 </ul>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+$a\times n + b$
+<ul>
+<li>1<sup>re</sup> ligne : m+1 étapes</li>
+<li>2<sup>e</sup> ligne : n étapes</li>
+<li>3<sup>e</sup> ligne : 1 étape</li>
+<li>4<sup>e</sup> ligne - 6<sup>e</sup> ligne (boucle <code>for</code>) : 2n étapes (2 étapes par itération)</li>
+<li>7<sup>e</sup> ligne : 1 étape</li>
+<li>8<sup>e</sup> ligne - 11<sup>e</sup> ligne (boucles <code>for</code> imbriquées) : 2n étapes (il y aura en tout n tours dans la boucle intérieur puisqu'on parcourt l'ensemble des effectifs et il s'y trouve deux étapes) </li>
+</ul>
+</blockquote>
+</details>
 <p> 
  </p>
 <h2 id="comparer-les-tris">Comparer les tris</h2>
@@ -1382,7 +1676,14 @@ triabulles      <span style="color:#f92672">=</span> <span style="color:#e6db74"
 trifusion       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;O&#39;</span> <span style="color:#e6db74">&#39;X&#39;</span>
 trirapide       <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;O&#39;</span> <span style="color:#e6db74">&#39;X&#39;</span>
 tridenombrement <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;O&#39;</span> <span style="color:#e6db74">&#39;X&#39;</span>
-</code></pre></div><p> 
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Seuls le tri fusion et le tri par dénombrement ne sont pas en place (le tri rapide l'est même si on a aussi vu une implémentation plus simple qui ne l'était pas).<br>
+</blockquote>
+</details>
+<p> 
  </p>
 <h3 id="stabilité">Stabilité</h3>
 <p>Un algorithme de tri est <strong>stable</strong> s&rsquo;il conserve l&rsquo;ordre relatif de départ entre deux valeurs égales.<br>
@@ -1390,7 +1691,7 @@ Dans l&rsquo;animation suivante, un algorithme est stable si les deux barres noi
 <p align="center">
 <iframe src="https://trinket.io/embed/glowscript/cbf31d3200?outputOnly=true&start=result" width="800" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 </p>
-<p>On compte le nombre de fois que les caractères &lsquo;r&rsquo;, &lsquo;c&rsquo;, &lsquo;q&rsquo; et &lsquo;p&rsquo; apparaissent dans cette phrase :</p>
+<p>On compte le nombre de fois que les caractères &lsquo;r&rsquo;, &lsquo;c&rsquo;, &lsquo;q&rsquo; et &lsquo;p&rsquo; apparaissent dans cette phrase :</p>
 <ul>
 <li>&lsquo;r&rsquo; : 6</li>
 <li>&lsquo;c&rsquo; : 5</li>
@@ -1418,9 +1719,9 @@ Mais l&rsquo;algorithme n&rsquo;est alors plus en place ! On a troqué l&rsquo;i
 <blockquote>
 <p>Donnez le code de <code>minimum</code> et <code>tri_selection_stable</code> (avec une contrainte supplémentaire : le bloc de code de <code>tri_selection_stable</code> ne devra pas dépasser 4 lignes). Pour retirer un élément d&rsquo;une liste, vous pouvez regarder <a href="https://info-tsi-vieljeux.github.io/python/typesstruct/#retirer-un-%C3%A9l%C3%A9ment">ici</a>.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">minimum</span>(L) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">minimum</span>(L):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    minimum(L:list)-&gt;imin:int
+</span><span style="color:#e6db74">    minimum(L: list) -&gt; imin: int
 </span><span style="color:#e6db74">    imin est l&#39;indice du plus petit élément de la liste
 </span><span style="color:#e6db74">    et s&#39;il y a plusieurs minimaux, imin est le plus petit des indices
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
@@ -1430,8 +1731,35 @@ Mais l&rsquo;algorithme n&rsquo;est alors plus en place ! On a troqué l&rsquo;i
     
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_selection_stable</span>(L) :
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><p><img src="https://imgs.xkcd.com/comics/ineffective_sorts.png" alt=""></p>
-
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def minimum(L):
+    imin = 0
+    for i in range(1,len(L)):
+        if L[i] < L[imin]:
+            imin = i
+    return imin
+</code></pre>
+<pre><code class="language-python">def tri_selection_stable(L):
+    L_sortie = []
+    for i in range(len(L)):
+        L_sortie.append(L.pop(minimum(L)))
+    return L_sortie
+</code></pre>
+On pouvait réduire à 2 lignes avec une construction par compréhension de <code>L_sortie</code>.
+</blockquote>
+</details>
+<p><img src="https://imgs.xkcd.com/comics/ineffective_sorts.png" alt=""></p>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)</summary>
+<blockquote id="comm">
+Il existe <a href="https://www.explainxkcd.com/wiki/index.php/1185:_Ineffective_Sorts">un wiki</a> dédié à l'explication des dessins de <a href="https://xkcd.com">xkcd</a>.
+</code></pre>
+</blockquote>
+</details>
 
 <footer class="footline">
 	
@@ -2129,19 +2457,19 @@ Mais l&rsquo;algorithme n&rsquo;est alors plus en place ! On a troqué l&rsquo;i
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675780758"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675780758"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675780758"></script>
-    <script src="/js/jquery.sticky.js?1675780758"></script>
-    <script src="/js/featherlight.min.js?1675780758"></script>
-    <script src="/js/highlight.pack.js?1675780758"></script>
+    <script src="/js/clipboard.min.js?1675906587"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675906587"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675906587"></script>
+    <script src="/js/jquery.sticky.js?1675906587"></script>
+    <script src="/js/featherlight.min.js?1675906587"></script>
+    <script src="/js/highlight.pack.js?1675906587"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675780758"></script>
-    <script src="/js/learn.js?1675780758"></script>
-    <script src="/js/hugo-learn.js?1675780758"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675906587"></script>
+    <script src="/js/learn.js?1675906587"></script>
+    <script src="/js/hugo-learn.js?1675906587"></script>
     
         
-            <script src="/mermaid/mermaid.js?1675780758"></script>
+            <script src="/mermaid/mermaid.js?1675906587"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
