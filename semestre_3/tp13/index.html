@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1675993829" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675993829" rel="stylesheet">
-    <link href="/css/hybrid.css?1675993829" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675993829" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675993829" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675993829" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675993829" rel="stylesheet">
-    <link href="/css/theme.css?1675993829" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675993829" rel="stylesheet">
+    <link href="/css/nucleus.css?1676036297" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1676036297" rel="stylesheet">
+    <link href="/css/hybrid.css?1676036297" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1676036297" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1676036297" rel="stylesheet">
+    <link href="/css/auto-complete.css?1676036297" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1676036297" rel="stylesheet">
+    <link href="/css/theme.css?1676036297" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1676036297" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1675993829" rel="stylesheet">
+    <link href="/css/theme-green.css?1676036297" rel="stylesheet">
     
-    <link href="/css/foo.css?1675993829" rel="stylesheet"><link href="/css/bar.css?1675993829" rel="stylesheet">
+    <link href="/css/foo.css?1676036297" rel="stylesheet"><link href="/css/bar.css?1676036297" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1675993829"></script>
+    <script src="/js/jquery-3.3.1.min.js?1676036297"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675993829"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675993829"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1676036297"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1676036297"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675993829"></script>
+<script type="text/javascript" src="/js/search.js?1676036297"></script>
 
     
   </div>
@@ -1549,30 +1549,40 @@ kmeans_model <span style="color:#f92672">=</span> KMeans(n_clusters <span style=
 cluster_labels <span style="color:#f92672">=</span> kmeans_model<span style="color:#f92672">.</span>fit_predict(image_1D)
 centres <span style="color:#f92672">=</span> kmeans_model<span style="color:#f92672">.</span>cluster_centers_
 <span style="color:#66d9ef">print</span>(centres)
-</code></pre></div><pre><code class="language-nohighlight" data-lang="nohighlight">[[ 43.72023216  76.8437927  139.7439622 ]
-[ 65.2464465   40.79341585  42.47060682]
-[132.70876194  76.59044699  62.2814825 ]
-[186.45279371 137.82358444 113.88598154]
-[ 35.02064311  48.64635552  93.31092396]
-[ 99.94155291  58.02521904  52.17321541]
-[ 89.34394389 119.63315649 172.00437611]
-[ 27.29924084  25.17800936  34.18811588]
-[209.40854976 195.09625895 200.31127399]
-[155.8400736  105.64875463  88.45913989]]
-</code></pre><p>Pour faire passer les coordonnées de ces centres pour des couleurs, on convertit les flottants en entier :</p>
+</code></pre></div>
+
+<div style="font-family:monospace">
+[[ 43.72023216  76.8437927  139.7439622 ]<br>
+&nbsp;[ 65.2464465   40.79341585  42.47060682]<br>
+&nbsp;[132.70876194  76.59044699  62.2814825 ]<br>
+&nbsp;[186.45279371 137.82358444 113.88598154]<br>
+&nbsp;[ 35.02064311  48.64635552  93.31092396]<br>
+&nbsp;[ 99.94155291  58.02521904  52.17321541]<br>
+&nbsp;[ 89.34394389 119.63315649 172.00437611]<br>
+&nbsp;[ 27.29924084  25.17800936  34.18811588]<br>
+&nbsp;[209.40854976 195.09625895 200.31127399]<br>
+&nbsp;[155.8400736  105.64875463  88.45913989]]<br>
+</div>
+
+<p>Pour faire passer les coordonnées de ces centres pour des couleurs, on convertit les flottants en entier :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">couleurs <span style="color:#f92672">=</span> kmeans_model<span style="color:#f92672">.</span>cluster_centers_<span style="color:#f92672">.</span>round(<span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>astype(np<span style="color:#f92672">.</span>uint8)
 <span style="color:#66d9ef">print</span>(couleurs)
-</code></pre></div><pre><code class="language-nohighlight" data-lang="nohighlight">[[ 44  77 140]
-[ 65  41  42]
-[133  77  62]
-[186 138 114]
-[ 35  49  93]
-[100  58  52]
-[ 89 120 172]
-[ 27  25  34]
-[209 195 200]
-[156 106  88]]
-</code></pre><p>Plus qu&rsquo;à former l&rsquo;image finale. <code>numpy</code> permet de faire ça en une ligne&hellip;</p>
+</code></pre></div>
+
+<div style="font-family:monospace">
+[[ 44  77 140]<br>
+&nbsp;[ 65  41  42]<br>
+&nbsp;[133  77  62]<br>
+&nbsp;[186 138 114]<br>
+&nbsp;[ 35  49  93]<br>
+&nbsp;[100  58  52]<br>
+&nbsp;[ 89 120 172]<br>
+&nbsp;[ 27  25  34]<br>
+&nbsp;[209 195 200]<br>
+&nbsp;[156 106  88]]<br>
+</div>
+
+<p>Plus qu&rsquo;à former l&rsquo;image finale. <code>numpy</code> permet de faire ça en une ligne&hellip;</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">image_webb_clust <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(couleurs[cluster_labels],(h,l,c))
 webbClus <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>fromarray(image_webb_clust)
 display(webbClus)
@@ -2493,19 +2503,19 @@ Dans le code du cours, il manque à nouveau la définition d&rsquo;une fonction�
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675993829"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675993829"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675993829"></script>
-    <script src="/js/jquery.sticky.js?1675993829"></script>
-    <script src="/js/featherlight.min.js?1675993829"></script>
-    <script src="/js/highlight.pack.js?1675993829"></script>
+    <script src="/js/clipboard.min.js?1676036297"></script>
+    <script src="/js/perfect-scrollbar.min.js?1676036297"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1676036297"></script>
+    <script src="/js/jquery.sticky.js?1676036297"></script>
+    <script src="/js/featherlight.min.js?1676036297"></script>
+    <script src="/js/highlight.pack.js?1676036297"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675993829"></script>
-    <script src="/js/learn.js?1675993829"></script>
-    <script src="/js/hugo-learn.js?1675993829"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1676036297"></script>
+    <script src="/js/learn.js?1676036297"></script>
+    <script src="/js/hugo-learn.js?1676036297"></script>
     
         
-            <script src="/mermaid/mermaid.js?1675993829"></script>
+            <script src="/mermaid/mermaid.js?1676036297"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
