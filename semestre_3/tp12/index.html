@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1676036297" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1676036297" rel="stylesheet">
-    <link href="/css/hybrid.css?1676036297" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1676036297" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1676036297" rel="stylesheet">
-    <link href="/css/auto-complete.css?1676036297" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1676036297" rel="stylesheet">
-    <link href="/css/theme.css?1676036297" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1676036297" rel="stylesheet">
+    <link href="/css/nucleus.css?1676048970" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1676048970" rel="stylesheet">
+    <link href="/css/hybrid.css?1676048970" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1676048970" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1676048970" rel="stylesheet">
+    <link href="/css/auto-complete.css?1676048970" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1676048970" rel="stylesheet">
+    <link href="/css/theme.css?1676048970" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1676048970" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1676036297" rel="stylesheet">
+    <link href="/css/theme-green.css?1676048970" rel="stylesheet">
     
-    <link href="/css/foo.css?1676036297" rel="stylesheet"><link href="/css/bar.css?1676036297" rel="stylesheet">
+    <link href="/css/foo.css?1676048970" rel="stylesheet"><link href="/css/bar.css?1676048970" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1676036297"></script>
+    <script src="/js/jquery-3.3.1.min.js?1676048970"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1676036297"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1676036297"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1676048970"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1676048970"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1676036297"></script>
+<script type="text/javascript" src="/js/search.js?1676048970"></script>
 
     
   </div>
@@ -1089,6 +1089,29 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
+<link rel="stylesheet" href="/path/to/styles/default.min.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+#correc
+{
+  color: #006C65;
+  border-left: solid 10px #C7DDDC;
+}
+#comm
+{
+  color: #004D80;
+  border-left: solid 10px #B3CAD9;
+}
+#commsum
+{
+  color: #004D80;
+}
+#correcsum
+{
+  color: #006C65;
+}
+</style>
 <h1 id="tp-12--bases-de-données">TP 12 : bases de données</h1>
 <p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/r1jpOAN4">cette invitation</a> pour récupérer le repository du TP. </p>
 <br>
@@ -1102,7 +1125,8 @@ onload='renderMathInElement(document.body);'></script>
 </code></pre></div><p>Connectons-nous à la base <code>Population.db</code> issue de données de l&rsquo;INSEE
 pour pouvoir tester les exemples du cours et pour quelques questions.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span>sql sqlite:<span style="color:#f92672">///</span>s3<span style="color:#f92672">-</span>tp12<span style="color:#f92672">/</span>Population<span style="color:#f92672">.</span>db
-</code></pre></div><p>Dorénavent, il suffit de débuter chaque cellule par la commande magique <code>%%sql</code> et d&rsquo;écrire en dessous vos requêtes SQL. En ajoutant <code>resultats &lt;&lt;</code> à la ligne introductive, on stocke le résultat de la requête dans la variable <code>resultats</code>.</p>
+</code></pre></div><p><img src="/modelephysique.png?width=800px" alt=""></p>
+<p>Dorénavent, il suffit de débuter chaque cellule par la commande magique <code>%%sql</code> et d&rsquo;écrire en dessous vos requêtes SQL. En ajoutant <code>resultats &lt;&lt;</code> à la ligne introductive, on stocke le résultat de la requête dans la variable <code>resultats</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%%</span>sql resultats <span style="color:#f92672">&lt;&lt;</span>
 
 SELECT <span style="color:#f92672">*</span>
@@ -1201,18 +1225,1494 @@ LIMIT <span style="color:#ae81ff">10</span>;
 <blockquote>
 <p>Écrivez une requête affichant le numéro des départements contenant au moins une commune de plus de $100\,000$ habitants ainsi que le nom de ces communes.<br></p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="sql">SELECT CODDEP, COM
+FROM Communes
+WHERE POP > 100000;
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>CODDEP</th>
+            <th>COM</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>06</td>
+            <td>Nice</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Aix-en-Provence</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Caen</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Dijon</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>Besançon</td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>Brest</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>Nîmes</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>Toulouse</td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>Bordeaux</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>Montpellier</td>
+        </tr>
+        <tr>
+            <td>35</td>
+            <td>Rennes</td>
+        </tr>
+        <tr>
+            <td>37</td>
+            <td>Tours</td>
+        </tr>
+        <tr>
+            <td>38</td>
+            <td>Grenoble</td>
+        </tr>
+        <tr>
+            <td>42</td>
+            <td>Saint-Étienne</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>Nantes</td>
+        </tr>
+        <tr>
+            <td>45</td>
+            <td>Orléans</td>
+        </tr>
+        <tr>
+            <td>49</td>
+            <td>Angers</td>
+        </tr>
+        <tr>
+            <td>51</td>
+            <td>Reims</td>
+        </tr>
+        <tr>
+            <td>54</td>
+            <td>Nancy</td>
+        </tr>
+        <tr>
+            <td>57</td>
+            <td>Metz</td>
+        </tr>
+        <tr>
+            <td>59</td>
+            <td>Lille</td>
+        </tr>
+        <tr>
+            <td>63</td>
+            <td>Clermont-Ferrand</td>
+        </tr>
+        <tr>
+            <td>66</td>
+            <td>Perpignan</td>
+        </tr>
+        <tr>
+            <td>67</td>
+            <td>Strasbourg</td>
+        </tr>
+        <tr>
+            <td>68</td>
+            <td>Mulhouse</td>
+        </tr>
+        <tr>
+            <td>69</td>
+            <td>Villeurbanne</td>
+        </tr>
+        <tr>
+            <td>69</td>
+            <td>Lyon 3e Arrondissement</td>
+        </tr>
+        <tr>
+            <td>72</td>
+            <td>Le Mans</td>
+        </tr>
+        <tr>
+            <td>74</td>
+            <td>Annecy</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Paris 11e Arrondissement</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Paris 12e Arrondissement</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Paris 13e Arrondissement</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Paris 14e Arrondissement</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Paris 15e Arrondissement</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Paris 16e Arrondissement</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Paris 17e Arrondissement</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Paris 18e Arrondissement</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Paris 19e Arrondissement</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Paris 20e Arrondissement</td>
+        </tr>
+        <tr>
+            <td>76</td>
+            <td>Le Havre</td>
+        </tr>
+        <tr>
+            <td>76</td>
+            <td>Rouen</td>
+        </tr>
+        <tr>
+            <td>80</td>
+            <td>Amiens</td>
+        </tr>
+        <tr>
+            <td>83</td>
+            <td>Toulon</td>
+        </tr>
+        <tr>
+            <td>87</td>
+            <td>Limoges</td>
+        </tr>
+        <tr>
+            <td>92</td>
+            <td>Boulogne-Billancourt</td>
+        </tr>
+        <tr>
+            <td>93</td>
+            <td>Montreuil</td>
+        </tr>
+        <tr>
+            <td>93</td>
+            <td>Saint-Denis</td>
+        </tr>
+        <tr>
+            <td>95</td>
+            <td>Argenteuil</td>
+        </tr>
+        <tr>
+            <td>974</td>
+            <td>Saint-Denis</td>
+        </tr>
+        <tr>
+            <td>974</td>
+            <td>Saint-Paul</td>
+        </tr>
+    </tbody>
+</table>
+</blockquote>
+</details>
 <blockquote>
 <p>Écrivez maintenant une requête permettant d&rsquo;obtenir la liste des noms de chaque département associés au nombre de communes qu&rsquo;ils contiennent, en triant de manière décroissante selon le nombre de communes par département.<br></p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="sql">SELECT NBCOM,DEP
+FROM Departements
+ORDER BY NBCOM DESC;
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>NBCOM</th>
+            <th>DEP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>890</td>
+            <td>Pas-de-Calais</td>
+        </tr>
+        <tr>
+            <td>800</td>
+            <td>Aisne</td>
+        </tr>
+        <tr>
+            <td>772</td>
+            <td>Somme</td>
+        </tr>
+        <tr>
+            <td>725</td>
+            <td>Moselle</td>
+        </tr>
+        <tr>
+            <td>708</td>
+            <td>Seine-Maritime</td>
+        </tr>
+        <tr>
+            <td>698</td>
+            <td>Côte-d&#x27;Or</td>
+        </tr>
+        <tr>
+            <td>679</td>
+            <td>Oise</td>
+        </tr>
+        <tr>
+            <td>648</td>
+            <td>Nord</td>
+        </tr>
+        <tr>
+            <td>613</td>
+            <td>Marne</td>
+        </tr>
+        <tr>
+            <td>591</td>
+            <td>Meurthe-et-Moselle</td>
+        </tr>
+        <tr>
+            <td>586</td>
+            <td>Haute-Garonne</td>
+        </tr>
+        <tr>
+            <td>585</td>
+            <td>Eure</td>
+        </tr>
+        <tr>
+            <td>573</td>
+            <td>Doubs</td>
+        </tr>
+        <tr>
+            <td>565</td>
+            <td>Saône-et-Loire</td>
+        </tr>
+        <tr>
+            <td>546</td>
+            <td>Pyrénées-Atlantiques</td>
+        </tr>
+        <tr>
+            <td>539</td>
+            <td>Haute-Saône</td>
+        </tr>
+        <tr>
+            <td>535</td>
+            <td>Gironde</td>
+        </tr>
+        <tr>
+            <td>528</td>
+            <td>Calvados</td>
+        </tr>
+        <tr>
+            <td>514</td>
+            <td>Bas-Rhin</td>
+        </tr>
+        <tr>
+            <td>512</td>
+            <td>Isère</td>
+        </tr>
+        <tr>
+            <td>507</td>
+            <td>Seine-et-Marne</td>
+        </tr>
+        <tr>
+            <td>507</td>
+            <td>Vosges</td>
+        </tr>
+        <tr>
+            <td>505</td>
+            <td>Dordogne</td>
+        </tr>
+        <tr>
+            <td>499</td>
+            <td>Meuse</td>
+        </tr>
+        <tr>
+            <td>494</td>
+            <td>Jura</td>
+        </tr>
+        <tr>
+            <td>469</td>
+            <td>Hautes-Pyrénées</td>
+        </tr>
+        <tr>
+            <td>464</td>
+            <td>Puy-de-Dôme</td>
+        </tr>
+        <tr>
+            <td>463</td>
+            <td>Charente-Maritime</td>
+        </tr>
+        <tr>
+            <td>461</td>
+            <td>Gers</td>
+        </tr>
+        <tr>
+            <td>449</td>
+            <td>Ardennes</td>
+        </tr>
+        <tr>
+            <td>446</td>
+            <td>Manche</td>
+        </tr>
+        <tr>
+            <td>433</td>
+            <td>Aude</td>
+        </tr>
+        <tr>
+            <td>431</td>
+            <td>Aube</td>
+        </tr>
+        <tr>
+            <td>426</td>
+            <td>Haute-Marne</td>
+        </tr>
+        <tr>
+            <td>423</td>
+            <td>Yonne</td>
+        </tr>
+        <tr>
+            <td>393</td>
+            <td>Ain</td>
+        </tr>
+        <tr>
+            <td>385</td>
+            <td>Orne</td>
+        </tr>
+        <tr>
+            <td>366</td>
+            <td>Haut-Rhin</td>
+        </tr>
+        <tr>
+            <td>365</td>
+            <td>Charente</td>
+        </tr>
+        <tr>
+            <td>365</td>
+            <td>Eure-et-Loir</td>
+        </tr>
+        <tr>
+            <td>364</td>
+            <td>Drôme</td>
+        </tr>
+        <tr>
+            <td>354</td>
+            <td>Sarthe</td>
+        </tr>
+        <tr>
+            <td>351</td>
+            <td>Gard</td>
+        </tr>
+        <tr>
+            <td>348</td>
+            <td>Côtes-d&#x27;Armor</td>
+        </tr>
+        <tr>
+            <td>342</td>
+            <td>Hérault</td>
+        </tr>
+        <tr>
+            <td>335</td>
+            <td>Ardèche</td>
+        </tr>
+        <tr>
+            <td>333</td>
+            <td>Ille-et-Vilaine</td>
+        </tr>
+        <tr>
+            <td>327</td>
+            <td>Ariège</td>
+        </tr>
+        <tr>
+            <td>327</td>
+            <td>Landes</td>
+        </tr>
+        <tr>
+            <td>325</td>
+            <td>Loiret</td>
+        </tr>
+        <tr>
+            <td>323</td>
+            <td>Loire</td>
+        </tr>
+        <tr>
+            <td>319</td>
+            <td>Lot-et-Garonne</td>
+        </tr>
+        <tr>
+            <td>317</td>
+            <td>Allier</td>
+        </tr>
+        <tr>
+            <td>314</td>
+            <td>Tarn</td>
+        </tr>
+        <tr>
+            <td>313</td>
+            <td>Lot</td>
+        </tr>
+        <tr>
+            <td>309</td>
+            <td>Nièvre</td>
+        </tr>
+        <tr>
+            <td>287</td>
+            <td>Cher</td>
+        </tr>
+        <tr>
+            <td>285</td>
+            <td>Aveyron</td>
+        </tr>
+        <tr>
+            <td>280</td>
+            <td>Corrèze</td>
+        </tr>
+        <tr>
+            <td>279</td>
+            <td>Haute-Savoie</td>
+        </tr>
+        <tr>
+            <td>277</td>
+            <td>Finistère</td>
+        </tr>
+        <tr>
+            <td>273</td>
+            <td>Savoie</td>
+        </tr>
+        <tr>
+            <td>272</td>
+            <td>Indre-et-Loire</td>
+        </tr>
+        <tr>
+            <td>267</td>
+            <td>Loir-et-Cher</td>
+        </tr>
+        <tr>
+            <td>267</td>
+            <td>Rhône</td>
+        </tr>
+        <tr>
+            <td>266</td>
+            <td>Vienne</td>
+        </tr>
+        <tr>
+            <td>259</td>
+            <td>Yvelines</td>
+        </tr>
+        <tr>
+            <td>258</td>
+            <td>Vendée</td>
+        </tr>
+        <tr>
+            <td>257</td>
+            <td>Haute-Loire</td>
+        </tr>
+        <tr>
+            <td>256</td>
+            <td>Creuse</td>
+        </tr>
+        <tr>
+            <td>256</td>
+            <td>Deux-Sèvres</td>
+        </tr>
+        <tr>
+            <td>250</td>
+            <td>Morbihan</td>
+        </tr>
+        <tr>
+            <td>246</td>
+            <td>Cantal</td>
+        </tr>
+        <tr>
+            <td>241</td>
+            <td>Indre</td>
+        </tr>
+        <tr>
+            <td>240</td>
+            <td>Mayenne</td>
+        </tr>
+        <tr>
+            <td>236</td>
+            <td>Haute-Corse</td>
+        </tr>
+        <tr>
+            <td>226</td>
+            <td>Pyrénées-Orientales</td>
+        </tr>
+        <tr>
+            <td>207</td>
+            <td>Loire-Atlantique</td>
+        </tr>
+        <tr>
+            <td>198</td>
+            <td>Alpes-de-Haute-Provence</td>
+        </tr>
+        <tr>
+            <td>195</td>
+            <td>Tarn-et-Garonne</td>
+        </tr>
+        <tr>
+            <td>195</td>
+            <td>Haute-Vienne</td>
+        </tr>
+        <tr>
+            <td>194</td>
+            <td>Essonne</td>
+        </tr>
+        <tr>
+            <td>184</td>
+            <td>Val-d&#x27;Oise</td>
+        </tr>
+        <tr>
+            <td>177</td>
+            <td>Maine-et-Loire</td>
+        </tr>
+        <tr>
+            <td>163</td>
+            <td>Alpes-Maritimes</td>
+        </tr>
+        <tr>
+            <td>162</td>
+            <td>Hautes-Alpes</td>
+        </tr>
+        <tr>
+            <td>153</td>
+            <td>Var</td>
+        </tr>
+        <tr>
+            <td>152</td>
+            <td>Lozère</td>
+        </tr>
+        <tr>
+            <td>151</td>
+            <td>Vaucluse</td>
+        </tr>
+        <tr>
+            <td>124</td>
+            <td>Corse-du-Sud</td>
+        </tr>
+        <tr>
+            <td>119</td>
+            <td>Bouches-du-Rhône</td>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>Territoire de Belfort</td>
+        </tr>
+        <tr>
+            <td>47</td>
+            <td>Val-de-Marne</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>Seine-Saint-Denis</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>Hauts-de-Seine</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>Martinique</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>Guadeloupe</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>La Réunion</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>Guyane</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Paris</td>
+        </tr>
+    </tbody>
+</table>
+</blockquote>
+</details>
 <blockquote>
 <p>Écrivez ensuite une requête permettant d&rsquo;obtenir la liste des noms de communes donnés plusieurs fois associés au nombre de fois où ils sont répétés, nombre que l&rsquo;on rebaptisera <code>NB_REDOND</code>. La liste ne devra contenir que les noms donnés au moins 10 fois.<br></p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="sql">SELECT COM,COUNT(*) AS NB_REDOND
+FROM Communes
+GROUP BY COM
+HAVING NB_REDOND >= 10;
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>COM</th>
+            <th>NB_REDOND</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Beaulieu</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Saint-Aubin</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Saint-Sauveur</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>Sainte-Colombe</td>
+            <td>12</td>
+        </tr>
+    </tbody>
+</table>
+</blockquote>
+</details>
 <blockquote>
 <p>Écrivez une requête donnant le nom d&rsquo;une ville, ici &lsquo;La Rochelle&rsquo;, le nom du département auquel elle appartient, et le nom de la région auquelle elle appartient.</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="sql">SELECT COM, DEP, REG
+FROM Communes
+JOIN Regions ON Communes.CODREG = Regions.CODREG
+JOIN Departements ON Communes.CODDEP = Departements.CODDEP
+WHERE COM = "La Rochelle";
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>COM</th>
+            <th>DEP</th>
+            <th>REG</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>La Rochelle</td>
+            <td>Charente-Maritime</td>
+            <td>Nouvelle-Aquitaine</td>
+        </tr>
+        <tr>
+            <td>La Rochelle</td>
+            <td>Haute-Saône</td>
+            <td>Bourgogne-Franche-Comté</td>
+        </tr>
+    </tbody>
+</table>
+</blockquote>
+</details>
 <blockquote>
 <p>Écrivez enfin une requête donnant le nom du département Charente-Maritime, sa population, le nombre de communes qu&rsquo;il contient, le nom de la commune la plus peuplée et sa population ainsi que le nom de la commune la moins peuplée et sa population.<br></p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="sql">SELECT DEP, Departements.POP, Departements.NBCOM, MAXCOM, MAXPOP, MINCOM, MINPOP
+FROM ((SELECT CODDEP, COM AS MAXCOM, MAX(POP) AS MAXPOP  
+       FROM Communes
+       GROUP BY CODDEP) AS MAXOU
+       JOIN (SELECT CODDEP, COM AS MINCOM, MIN(POP) AS MINPOP  
+             FROM Communes
+             GROUP BY CODDEP) AS MINOU 
+       ON MINOU.CODDEP = MAXOU.CODDEP) AS Autojointure
+JOIN Departements ON Autojointure.CODDEP = Departements.CODDEP
+WHERE DEP = "Charente-Maritime";
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>DEP</th>
+            <th>POP</th>
+            <th>NBCOM</th>
+            <th>MAXCOM</th>
+            <th>MAXPOP</th>
+            <th>MINCOM</th>
+            <th>MINPOP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Charente-Maritime</td>
+            <td>667287</td>
+            <td>463</td>
+            <td>La Rochelle</td>
+            <td>79333</td>
+            <td>Lussac</td>
+            <td>47</td>
+        </tr>
+    </tbody>
+</table><br>
+On construit généralement des grosses requêtes comme celle-ci bloc par bloc qu'on joint ensuite ensemble.<br>
+Regardons par exemple à quoi ressemble la table intermédiaire <code>Autojointure</code> (qui a été construite, comme son nom l'indique, par autojointure).
+<pre><code class="sql">SELECT Autojointure.CODDEP, MAXCOM, MAXPOP, MINCOM, MINPOP
+FROM
+((SELECT CODDEP, COM AS MAXCOM, MAX(POP) AS MAXPOP  
+  FROM Communes
+  GROUP BY CODDEP) AS MAXOU
+  JOIN (SELECT CODDEP, COM AS MINCOM, MIN(POP) AS MINPOP  
+        FROM Communes
+        GROUP BY CODDEP) AS MINOU 
+  ON MINOU.CODDEP = MAXOU.CODDEP) AS Autojointure
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>CODDEP</th>
+            <th>MAXCOM</th>
+            <th>MAXPOP</th>
+            <th>MINCOM</th>
+            <th>MINPOP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>01</td>
+            <td>Bourg-en-Bresse</td>
+            <td>42853</td>
+            <td>Armix</td>
+            <td>31</td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>Saint-Quentin</td>
+            <td>54851</td>
+            <td>Tannières</td>
+            <td>17</td>
+        </tr>
+        <tr>
+            <td>03</td>
+            <td>Montluçon</td>
+            <td>35431</td>
+            <td>Saint-Éloy-d&#x27;Allier</td>
+            <td>38</td>
+        </tr>
+        <tr>
+            <td>04</td>
+            <td>Manosque</td>
+            <td>23197</td>
+            <td>Majastres</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>05</td>
+            <td>Gap</td>
+            <td>42176</td>
+            <td>La Haute-Beaume</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>06</td>
+            <td>Nice</td>
+            <td>345528</td>
+            <td>Auvare</td>
+            <td>33</td>
+        </tr>
+        <tr>
+            <td>07</td>
+            <td>Annonay</td>
+            <td>16920</td>
+            <td>Lafarre</td>
+            <td>39</td>
+        </tr>
+        <tr>
+            <td>08</td>
+            <td>Charleville-Mézières</td>
+            <td>47526</td>
+            <td>Le Mont-Dieu</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>09</td>
+            <td>Pamiers</td>
+            <td>16137</td>
+            <td>Senconac</td>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Troyes</td>
+            <td>63087</td>
+            <td>Ortillon</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Narbonne</td>
+            <td>56700</td>
+            <td>Fontanès-de-Sault</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Rodez</td>
+            <td>26410</td>
+            <td>Arnac-sur-Dourdou</td>
+            <td>37</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Aix-en-Provence</td>
+            <td>148336</td>
+            <td>Saint-Antonin-sur-Bayon</td>
+            <td>127</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Caen</td>
+            <td>108404</td>
+            <td>Rapilly</td>
+            <td>48</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Aurillac</td>
+            <td>26876</td>
+            <td>Valjouze</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Angoulême</td>
+            <td>43290</td>
+            <td>Saint-Sulpice-de-Ruffec</td>
+            <td>31</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>La Rochelle</td>
+            <td>79333</td>
+            <td>Lussac</td>
+            <td>47</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>Bourges</td>
+            <td>66606</td>
+            <td>Saint-Céols</td>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>Brive-la-Gaillarde</td>
+            <td>47615</td>
+            <td>Toy-Viam</td>
+            <td>38</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Dijon</td>
+            <td>161380</td>
+            <td>Les Goulles</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>Saint-Brieuc</td>
+            <td>45099</td>
+            <td>Loc-Envel</td>
+            <td>70</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>Guéret</td>
+            <td>13371</td>
+            <td>Beissat</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>Périgueux</td>
+            <td>31476</td>
+            <td>Faurilles</td>
+            <td>36</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>Besançon</td>
+            <td>121144</td>
+            <td>Châtillon-sur-Lison</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>Valence</td>
+            <td>66149</td>
+            <td>Rochefourchat</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>Évreux</td>
+            <td>47574</td>
+            <td>Vieux-Port</td>
+            <td>48</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>Chartres</td>
+            <td>39698</td>
+            <td>Morainville</td>
+            <td>19</td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>Brest</td>
+            <td>142555</td>
+            <td>Trégarvan</td>
+            <td>120</td>
+        </tr>
+        <tr>
+            <td>2A</td>
+            <td>Ajaccio</td>
+            <td>72228</td>
+            <td>Mela</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>2B</td>
+            <td>Bastia</td>
+            <td>49198</td>
+            <td>Érone</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>Nîmes</td>
+            <td>150786</td>
+            <td>Revens</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>Toulouse</td>
+            <td>498596</td>
+            <td>Bourg-d&#x27;Oueil</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>Auch</td>
+            <td>23276</td>
+            <td>Roquepine</td>
+            <td>35</td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>Bordeaux</td>
+            <td>264257</td>
+            <td>Bossugan</td>
+            <td>38</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>Montpellier</td>
+            <td>298933</td>
+            <td>Romiguières</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>35</td>
+            <td>Rennes</td>
+            <td>224655</td>
+            <td>Bléruais</td>
+            <td>108</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>Châteauroux</td>
+            <td>44662</td>
+            <td>Saint-Médard</td>
+            <td>52</td>
+        </tr>
+        <tr>
+            <td>37</td>
+            <td>Tours</td>
+            <td>139843</td>
+            <td>Couziers</td>
+            <td>111</td>
+        </tr>
+        <tr>
+            <td>38</td>
+            <td>Grenoble</td>
+            <td>160441</td>
+            <td>Oulles</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>39</td>
+            <td>Dole</td>
+            <td>24604</td>
+            <td>Mérona</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>Mont-de-Marsan</td>
+            <td>31220</td>
+            <td>Arx</td>
+            <td>49</td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>Blois</td>
+            <td>47418</td>
+            <td>La Madeleine-Villefrouin</td>
+            <td>31</td>
+        </tr>
+        <tr>
+            <td>42</td>
+            <td>Saint-Étienne</td>
+            <td>175792</td>
+            <td>La Chambonie</td>
+            <td>40</td>
+        </tr>
+        <tr>
+            <td>43</td>
+            <td>Le Puy-en-Velay</td>
+            <td>20096</td>
+            <td>Arlet</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>Nantes</td>
+            <td>323975</td>
+            <td>Juigné-des-Moutiers</td>
+            <td>335</td>
+        </tr>
+        <tr>
+            <td>45</td>
+            <td>Orléans</td>
+            <td>118632</td>
+            <td>Feins-en-Gâtinais</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td>46</td>
+            <td>Cahors</td>
+            <td>20877</td>
+            <td>Labastide-du-Haut-Mont</td>
+            <td>51</td>
+        </tr>
+        <tr>
+            <td>47</td>
+            <td>Agen</td>
+            <td>33464</td>
+            <td>Boussès</td>
+            <td>36</td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>Mende</td>
+            <td>13147</td>
+            <td>Sainte-Eulalie</td>
+            <td>38</td>
+        </tr>
+        <tr>
+            <td>49</td>
+            <td>Angers</td>
+            <td>158930</td>
+            <td>La Lande-Chasles</td>
+            <td>123</td>
+        </tr>
+        <tr>
+            <td>50</td>
+            <td>Cherbourg-en-Cotentin</td>
+            <td>80912</td>
+            <td>Taillepied</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>51</td>
+            <td>Reims</td>
+            <td>184114</td>
+            <td>Rouvroy-Ripont</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>52</td>
+            <td>Saint-Dizier</td>
+            <td>23427</td>
+            <td>Charmes-en-l&#x27;Angle</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>53</td>
+            <td>Laval</td>
+            <td>52370</td>
+            <td>Rennes-en-Grenouilles</td>
+            <td>105</td>
+        </tr>
+        <tr>
+            <td>54</td>
+            <td>Nancy</td>
+            <td>106504</td>
+            <td>Leménil-Mitry</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>55</td>
+            <td>Verdun</td>
+            <td>17906</td>
+            <td>Beaumont-en-Verdunois</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>56</td>
+            <td>Lorient</td>
+            <td>58732</td>
+            <td>Hœdic</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>57</td>
+            <td>Metz</td>
+            <td>120335</td>
+            <td>Molring</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>58</td>
+            <td>Nevers</td>
+            <td>34069</td>
+            <td>Moissy-Moulinot</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>59</td>
+            <td>Lille</td>
+            <td>236400</td>
+            <td>Dehéries</td>
+            <td>39</td>
+        </tr>
+        <tr>
+            <td>60</td>
+            <td>Beauvais</td>
+            <td>58520</td>
+            <td>Gouy-les-Groseillers</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>61</td>
+            <td>Alençon</td>
+            <td>26622</td>
+            <td>Le Ménil-Vicomte</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>62</td>
+            <td>Calais</td>
+            <td>73134</td>
+            <td>Guinecourt</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>63</td>
+            <td>Clermont-Ferrand</td>
+            <td>150596</td>
+            <td>La Godivelle</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>64</td>
+            <td>Pau</td>
+            <td>77070</td>
+            <td>Aubous</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>65</td>
+            <td>Tarbes</td>
+            <td>43821</td>
+            <td>Ourdon</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>66</td>
+            <td>Perpignan</td>
+            <td>120771</td>
+            <td>Sansa</td>
+            <td>19</td>
+        </tr>
+        <tr>
+            <td>67</td>
+            <td>Strasbourg</td>
+            <td>290106</td>
+            <td>Blancherupt</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td>68</td>
+            <td>Mulhouse</td>
+            <td>109531</td>
+            <td>Lucelle</td>
+            <td>33</td>
+        </tr>
+        <tr>
+            <td>69</td>
+            <td>Villeurbanne</td>
+            <td>153294</td>
+            <td>Vernay</td>
+            <td>105</td>
+        </tr>
+        <tr>
+            <td>70</td>
+            <td>Vesoul</td>
+            <td>15663</td>
+            <td>Ranzevelle</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>71</td>
+            <td>Chalon-sur-Saône</td>
+            <td>46577</td>
+            <td>Chérizet</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>72</td>
+            <td>Le Mans</td>
+            <td>146703</td>
+            <td>Nauvay</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>73</td>
+            <td>Chambéry</td>
+            <td>60478</td>
+            <td>Champ-Laurent</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td>74</td>
+            <td>Annecy</td>
+            <td>134101</td>
+            <td>Novel</td>
+            <td>51</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Paris 15e Arrondissement</td>
+            <td>232668</td>
+            <td>Paris 1er Arrondissement</td>
+            <td>16055</td>
+        </tr>
+        <tr>
+            <td>76</td>
+            <td>Le Havre</td>
+            <td>170120</td>
+            <td>Le Mesnil-Durdent</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>77</td>
+            <td>Meaux</td>
+            <td>56229</td>
+            <td>Montenils</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>78</td>
+            <td>Versailles</td>
+            <td>86846</td>
+            <td>Le Tartre-Gaudran</td>
+            <td>37</td>
+        </tr>
+        <tr>
+            <td>79</td>
+            <td>Niort</td>
+            <td>61027</td>
+            <td>Les Groseillers</td>
+            <td>57</td>
+        </tr>
+        <tr>
+            <td>80</td>
+            <td>Amiens</td>
+            <td>137380</td>
+            <td>Épécamps</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>81</td>
+            <td>Albi</td>
+            <td>50625</td>
+            <td>Senaux</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td>82</td>
+            <td>Montauban</td>
+            <td>62832</td>
+            <td>Goas</td>
+            <td>39</td>
+        </tr>
+        <tr>
+            <td>83</td>
+            <td>Toulon</td>
+            <td>180641</td>
+            <td>Vérignon</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>84</td>
+            <td>Avignon</td>
+            <td>92821</td>
+            <td>Lagarde-d&#x27;Apt</td>
+            <td>33</td>
+        </tr>
+        <tr>
+            <td>85</td>
+            <td>La Roche-sur-Yon</td>
+            <td>58103</td>
+            <td>Marillet</td>
+            <td>124</td>
+        </tr>
+        <tr>
+            <td>86</td>
+            <td>Poitiers</td>
+            <td>91487</td>
+            <td>Lauthiers</td>
+            <td>70</td>
+        </tr>
+        <tr>
+            <td>87</td>
+            <td>Limoges</td>
+            <td>133136</td>
+            <td>Surdoux</td>
+            <td>47</td>
+        </tr>
+        <tr>
+            <td>88</td>
+            <td>Épinal</td>
+            <td>33706</td>
+            <td>Maroncourt</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>89</td>
+            <td>Auxerre</td>
+            <td>35554</td>
+            <td>Bois-d&#x27;Arcy</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>90</td>
+            <td>Belfort</td>
+            <td>47242</td>
+            <td>Lamadeleine-Val-des-Anges</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>91</td>
+            <td>Évry-Courcouronnes</td>
+            <td>67317</td>
+            <td>Chatignonville</td>
+            <td>69</td>
+        </tr>
+        <tr>
+            <td>92</td>
+            <td>Boulogne-Billancourt</td>
+            <td>122825</td>
+            <td>Marnes-la-Coquette</td>
+            <td>1835</td>
+        </tr>
+        <tr>
+            <td>93</td>
+            <td>Saint-Denis</td>
+            <td>113766</td>
+            <td>Coubron</td>
+            <td>4963</td>
+        </tr>
+        <tr>
+            <td>94</td>
+            <td>Vitry-sur-Seine</td>
+            <td>95969</td>
+            <td>Périgny</td>
+            <td>2712</td>
+        </tr>
+        <tr>
+            <td>95</td>
+            <td>Argenteuil</td>
+            <td>111595</td>
+            <td>Charmont</td>
+            <td>36</td>
+        </tr>
+        <tr>
+            <td>971</td>
+            <td>Les Abymes</td>
+            <td>54027</td>
+            <td>Terre-de-Bas</td>
+            <td>999</td>
+        </tr>
+        <tr>
+            <td>972</td>
+            <td>Fort-de-France</td>
+            <td>77410</td>
+            <td>Grand&#x27;Rivière</td>
+            <td>621</td>
+        </tr>
+        <tr>
+            <td>973</td>
+            <td>Cayenne</td>
+            <td>65878</td>
+            <td>Saül</td>
+            <td>159</td>
+        </tr>
+        <tr>
+            <td>974</td>
+            <td>Saint-Denis</td>
+            <td>155302</td>
+            <td>Saint-Philippe</td>
+            <td>5264</td>
+        </tr>
+    </tbody>
+</table>
+</blockquote>
+</details>
 <hr>
 <p>Changeons maintenant de base de données pour celle qui a eu les  honneurs de l&rsquo;épreuve Centrale 2022.<br>
 Vous trouverez ci-dessous deux extraits du sujet : d&rsquo;abord l&rsquo;introduction générale de l&rsquo;épreuve puis la présentation de la base.</p>
@@ -1230,11 +2730,160 @@ Vous trouverez ci-dessous deux extraits du sujet : d&rsquo;abord l&rsquo;introd
 <ul>
 <li>a : il peut y avoir des noms identiques.</li>
 <li>b : une clé primaire est forcément constitué d&rsquo;entiers.</li>
-<li>c : pi_nom est une clé étrangère renvoyant à la table <code>circuit</code>.</li>
+<li>c : <code>pi_nom</code> est une clé étrangère renvoyant à la table <code>circuit</code>.</li>
 </ul>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+En cas d'homonymes (réponse a). <b>Une clé primaire doit être unique</b>.
+</blockquote>
+</details>
 <blockquote>
 <p>Estimez le nombre de lignes de la table <code>Tour</code> d&rsquo;après les informations données dans l&rsquo;énoncé du concours :</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+La table <code>Tour</code> contient un enregistrement par tour d'un participant.<br>
+Il y en a donc environ autant que de (nombre de championnats) $\times$ (nombre moyen de grands prix par championnat) $\times$ (nombre moyen de pilotes par grand prix) $\times$ (nombre moyen de tours par grand prix).<br>
+Cela donne environ $(2022-1950)\times 20 \times 20 \times 60\approx 1,7.10^6$ soit un peu moins de 2 millions de lignes.<br><br>
+Vérifions grâce à la requête suivante&nbsp;:
+<pre><code class="sql">SELECT COUNT(*)
+FROM Tour;
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>COUNT(*)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>517573</td>
+        </tr>
+    </tbody>
+</table><br>
+On peut supposer que notre surestimation vient des nombreux abandons ayant empêché les pilotes de boucler tous les tours d'un circuit.<br>
+Essayons de vérifier cette hypothèse&nbsp;:<br><br>
+Vérifions d'abord que la base de données va bien jusqu'à 2022&nbsp;:
+<pre><code class="sql">SELECT gp_date
+FROM GrandPrix
+ORDER BY gp_date DESC
+LIMIT 3;
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>gp_date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2022-11-20</td>
+        </tr>
+        <tr>
+            <td>2022-11-13</td>
+        </tr>
+        <tr>
+            <td>2022-10-30</td>
+        </tr>
+    </tbody>
+</table><br>
+Vérifions ensuite le nombre moyen de tours par participation&nbsp;:
+<pre><code class="sql">SELECT AVG(nb_tours)
+FROM (SELECT MAX(to_num) AS nb_tours
+      FROM Tour
+      GROUP BY Pa_id);
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>AVG(nb_tours)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>52.94864450127877</td>
+        </tr>
+    </tbody>
+</table><br>
+L'écart n'est pas assez grand pour expliquer la valeur obtenue...<br><br>
+Vérifions enfin le nombre moyen de course par année&nbsp;:
+<pre><code class="sql">SELECT COUNT(*)
+FROM GrandPrix;
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>COUNT(*)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1079</td>
+        </tr>
+    </tbody>
+</table><br>
+Étant donné que $1079/72\approx15$, l'énoncé nous a fait surestimer cette valeur.<br><br>
+Vérifions enfin le nombre moyen de pilotes par grand prix&nbsp;:<br>
+<pre><code class="sql">SELECT AVG(nb_pilotes)
+FROM (SELECT COUNT(pi_id) AS nb_pilotes
+      FROM Participation
+      GROUP BY gp_id)
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>AVG(nb_pilotes)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>24.0188679245283</td>
+        </tr>
+    </tbody>
+</table><br>
+Zut, là ça va dans le mauvais sens (on avait prix 20 pilotes par course)...<br><br>
+Reprenons le calcul : $72\times 15 \times 24 \times 53\approx 1,4.10^6$<br>
+On reste encore plus de deux fois trop grand...<br><br>
+L'autre hypothèse est que la base de données n'est pas complète.
+<pre><code class="sql">SELECT COUNT(*) 
+FROM (SELECT * 
+      FROM Tour
+      GROUP BY pa_id);
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>COUNT(*)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>9775</td>
+        </tr>
+    </tbody>
+</table>
+<pre><code class="sql">SELECT COUNT(*) 
+FROM Participation;
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>COUNT(*)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>25460</td>
+        </tr>
+    </tbody>
+</table><br>
+Bingo ! Beaucoup de participations (62%) ne semblent pas avoir de données dans la table <code>Tour</code>. 
+</blockquote>
+</details>
 <p>Connectons-nous à la base :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span>load_ext sql
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span>sql sqlite:<span style="color:#f92672">///</span>s3<span style="color:#f92672">-</span>tp12<span style="color:#f92672">/</span>F1<span style="color:#f92672">.</span>db
@@ -1242,9 +2891,422 @@ Vous trouverez ci-dessous deux extraits du sujet : d&rsquo;abord l&rsquo;introd
 <blockquote>
 <p>Écrire une requête SQL qui liste, par ordre chronologique, la date et le nom du circuit de toutes les courses qui se sont déroulées en France (<code>ci_pays</code> = <code>'France'</code>).<br></p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="sql">SELECT gp_date,ci_nom
+FROM (SELECT ci_nom, ci_pays, gp_date
+FROM GrandPrix
+JOIN Circuit ON GrandPrix.ci_id = Circuit.ci_id)
+WHERE ci_pays = 'France'
+ORDER BY gp_date;
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>gp_date</th>
+            <th>ci_nom</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1950-07-02</td>
+            <td>Reims-Gueux</td>
+        </tr>
+        <tr>
+            <td>1951-07-01</td>
+            <td>Reims-Gueux</td>
+        </tr>
+        <tr>
+            <td>1952-07-06</td>
+            <td>Rouen-Les-Essarts</td>
+        </tr>
+        <tr>
+            <td>1953-07-05</td>
+            <td>Reims-Gueux</td>
+        </tr>
+        <tr>
+            <td>1954-07-04</td>
+            <td>Reims-Gueux</td>
+        </tr>
+        <tr>
+            <td>1956-07-01</td>
+            <td>Reims-Gueux</td>
+        </tr>
+        <tr>
+            <td>1957-07-07</td>
+            <td>Rouen-Les-Essarts</td>
+        </tr>
+        <tr>
+            <td>1958-07-06</td>
+            <td>Reims-Gueux</td>
+        </tr>
+        <tr>
+            <td>1959-07-05</td>
+            <td>Reims-Gueux</td>
+        </tr>
+        <tr>
+            <td>1960-07-03</td>
+            <td>Reims-Gueux</td>
+        </tr>
+        <tr>
+            <td>1961-07-02</td>
+            <td>Reims-Gueux</td>
+        </tr>
+        <tr>
+            <td>1962-07-08</td>
+            <td>Rouen-Les-Essarts</td>
+        </tr>
+        <tr>
+            <td>1963-06-30</td>
+            <td>Reims-Gueux</td>
+        </tr>
+        <tr>
+            <td>1964-06-28</td>
+            <td>Rouen-Les-Essarts</td>
+        </tr>
+        <tr>
+            <td>1965-06-27</td>
+            <td>Charade Circuit</td>
+        </tr>
+        <tr>
+            <td>1966-07-03</td>
+            <td>Reims-Gueux</td>
+        </tr>
+        <tr>
+            <td>1967-07-02</td>
+            <td>Le Mans</td>
+        </tr>
+        <tr>
+            <td>1968-07-07</td>
+            <td>Rouen-Les-Essarts</td>
+        </tr>
+        <tr>
+            <td>1969-07-06</td>
+            <td>Charade Circuit</td>
+        </tr>
+        <tr>
+            <td>1970-07-05</td>
+            <td>Charade Circuit</td>
+        </tr>
+        <tr>
+            <td>1971-07-04</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1972-07-02</td>
+            <td>Charade Circuit</td>
+        </tr>
+        <tr>
+            <td>1973-07-01</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1974-07-07</td>
+            <td>Dijon-Prenois</td>
+        </tr>
+        <tr>
+            <td>1975-07-06</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1976-07-04</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1977-07-03</td>
+            <td>Dijon-Prenois</td>
+        </tr>
+        <tr>
+            <td>1978-07-02</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1979-07-01</td>
+            <td>Dijon-Prenois</td>
+        </tr>
+        <tr>
+            <td>1980-06-29</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1981-07-05</td>
+            <td>Dijon-Prenois</td>
+        </tr>
+        <tr>
+            <td>1982-07-25</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1982-08-29</td>
+            <td>Dijon-Prenois</td>
+        </tr>
+        <tr>
+            <td>1983-04-17</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1984-05-20</td>
+            <td>Dijon-Prenois</td>
+        </tr>
+        <tr>
+            <td>1985-07-07</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1986-07-06</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1987-07-05</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1988-07-03</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1989-07-09</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1990-07-08</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>1991-07-07</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>1992-07-05</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>1993-07-04</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>1994-07-03</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>1995-07-02</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>1996-06-30</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>1997-06-29</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>1998-06-28</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>1999-06-27</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>2000-07-02</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>2001-07-01</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>2002-07-21</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>2003-07-06</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>2004-07-04</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>2005-07-03</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>2006-07-16</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>2007-07-01</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>2008-06-22</td>
+            <td>Circuit de Nevers Magny-Cours</td>
+        </tr>
+        <tr>
+            <td>2018-06-24</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>2019-06-23</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>2021-06-20</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+        <tr>
+            <td>2022-07-24</td>
+            <td>Circuit Paul Ricard</td>
+        </tr>
+    </tbody>
+</table>
+</blockquote>
+</details>
 <blockquote>
 <p>Écrire une requête SQL qui liste, pour chaque course de l’année 2021, le nom du circuit, le nom du pilote gagnant et son temps de course (dans cet ordre).<br></p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="sql">SELECT ci_nom AS "Grand Prix", pi_nom AS Vainqueur,temps
+FROM Participation 
+JOIN GrandPrix ON GrandPrix.gp_id = Participation.gp_id
+JOIN Circuit ON GrandPrix.ci_id = Circuit.ci_id
+JOIN Pilote ON Participation.pi_id = Pilote.pi_id
+JOIN (SELECT pa_id,SUM(to_temps) as temps
+      FROM Tour
+      GROUP BY pa_id) AS tpstot
+ON Participation.pa_id = tpstot.pa_id
+WHERE gp_date >= 2021 AND gp_date < 2022 AND pa_cla = 1;
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>Grand Prix</th>
+            <th>Vainqueur</th>
+            <th>temps</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Bahrain International Circuit</td>
+            <td>Hamilton</td>
+            <td>5523897</td>
+        </tr>
+        <tr>
+            <td>Autodromo Enzo e Dino Ferrari</td>
+            <td>Verstappen</td>
+            <td>7354598</td>
+        </tr>
+        <tr>
+            <td>Autódromo Internacional do Algarve</td>
+            <td>Hamilton</td>
+            <td>5671421</td>
+        </tr>
+        <tr>
+            <td>Circuit de Barcelona-Catalunya</td>
+            <td>Hamilton</td>
+            <td>5587680</td>
+        </tr>
+        <tr>
+            <td>Circuit de Monaco</td>
+            <td>Verstappen</td>
+            <td>5936820</td>
+        </tr>
+        <tr>
+            <td>Baku City Circuit</td>
+            <td>Pérez</td>
+            <td>8016410</td>
+        </tr>
+        <tr>
+            <td>Circuit Paul Ricard</td>
+            <td>Verstappen</td>
+            <td>5245770</td>
+        </tr>
+        <tr>
+            <td>Red Bull Ring</td>
+            <td>Verstappen</td>
+            <td>4938925</td>
+        </tr>
+        <tr>
+            <td>Red Bull Ring</td>
+            <td>Verstappen</td>
+            <td>5034543</td>
+        </tr>
+        <tr>
+            <td>Silverstone Circuit</td>
+            <td>Hamilton</td>
+            <td>7103284</td>
+        </tr>
+        <tr>
+            <td>Hungaroring</td>
+            <td>Ocon</td>
+            <td>7483199</td>
+        </tr>
+        <tr>
+            <td>Circuit de Spa-Francorchamps</td>
+            <td>Verstappen</td>
+            <td>207071</td>
+        </tr>
+        <tr>
+            <td>Circuit Park Zandvoort</td>
+            <td>Verstappen</td>
+            <td>5405395</td>
+        </tr>
+        <tr>
+            <td>Autodromo Nazionale di Monza</td>
+            <td>Ricciardo</td>
+            <td>4914365</td>
+        </tr>
+        <tr>
+            <td>Sochi Autodrom</td>
+            <td>Hamilton</td>
+            <td>5441001</td>
+        </tr>
+        <tr>
+            <td>Istanbul Park</td>
+            <td>Bottas</td>
+            <td>5464103</td>
+        </tr>
+        <tr>
+            <td>Circuit of the Americas</td>
+            <td>Verstappen</td>
+            <td>5676552</td>
+        </tr>
+        <tr>
+            <td>Autódromo Hermanos Rodríguez</td>
+            <td>Verstappen</td>
+            <td>5919086</td>
+        </tr>
+        <tr>
+            <td>Autódromo José Carlos Pace</td>
+            <td>Hamilton</td>
+            <td>5542851</td>
+        </tr>
+        <tr>
+            <td>Losail International Circuit</td>
+            <td>Hamilton</td>
+            <td>5068471</td>
+        </tr>
+        <tr>
+            <td>Jeddah Corniche Circuit</td>
+            <td>Hamilton</td>
+            <td>7575118</td>
+        </tr>
+        <tr>
+            <td>Yas Marina Circuit</td>
+            <td>Verstappen</td>
+            <td>5417345</td>
+        </tr>
+    </tbody>
+</table>
+</blockquote>
+</details>
 <blockquote>
 <p>Que récupère la requête suivante ?</p>
 </blockquote>
@@ -1252,6 +3314,286 @@ Vous trouverez ci-dessous deux extraits du sujet : d&rsquo;abord l&rsquo;introd
 <blockquote>
 <p>La requête contient deux petites erreurs et une petite bizarrerie. Les identifier et proposer des corrections.</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Pour chaque circuit, on récupère son nom, le nom du pilote qui a fait le meilleur tour, la date à laquelle ce tour a eu lieu et le temps du tour.<br><br>
+Erreurs :<ul>
+<li>faute de frappe <code>to_tmps</code> à la fin</li>
+<li>bugue car nécessite de préciser dans quelle table prendre les <code>ci_id</code> (même si ce sont les mêmes)</li>
+<li>bizarre de grouper par <code>ci_id</code>, <code>ci_nom</code>...  Un seul des deux suffit !</li></ul>
+Requête corrigée :
+<pre><code class="sql">SELECT ci_nom, pi_nom, gp_date, to_temps
+FROM (SELECT Circuit.ci_id, ci_nom, MIN(to_temps) AS mtt
+        FROM Circuit
+            JOIN GrandPrix ON GrandPrix.ci_id = Circuit.ci_id
+            JOIN Participation ON Participation.gp_id = GrandPrix.gp_id
+            JOIN Tour ON Tour.pa_id = Participation.pa_id
+        GROUP BY
+            ci_nom
+        ) AS rdc
+    JOIN GrandPrix ON GrandPrix.ci_id = rdc.ci_id
+    JOIN Participation ON Participation.gp_id = GrandPrix.gp_id
+    JOIN Pilote ON Pilote.pi_id = Participation.pi_id
+    JOIN Tour ON Tour.pa_id = Participation.pa_id AND to_temps = mtt
+ORDER BY
+    ci_nom;
+</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>ci_nom</th>
+            <th>pi_nom</th>
+            <th>gp_date</th>
+            <th>to_temps</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>A1-Ring</td>
+            <td>Schumacher</td>
+            <td>2003-05-18</td>
+            <td>68337</td>
+        </tr>
+        <tr>
+            <td>Albert Park Grand Prix Circuit</td>
+            <td>Leclerc</td>
+            <td>2022-04-10</td>
+            <td>80260</td>
+        </tr>
+        <tr>
+            <td>Autodromo Enzo e Dino Ferrari</td>
+            <td>Hamilton</td>
+            <td>2020-11-01</td>
+            <td>75484</td>
+        </tr>
+        <tr>
+            <td>Autodromo Internazionale del Mugello</td>
+            <td>Hamilton</td>
+            <td>2020-09-13</td>
+            <td>78833</td>
+        </tr>
+        <tr>
+            <td>Autodromo Nazionale di Monza</td>
+            <td>Barrichello</td>
+            <td>2004-09-12</td>
+            <td>81046</td>
+        </tr>
+        <tr>
+            <td>Autódromo Hermanos Rodríguez</td>
+            <td>Bottas</td>
+            <td>2021-11-07</td>
+            <td>77774</td>
+        </tr>
+        <tr>
+            <td>Autódromo Internacional do Algarve</td>
+            <td>Hamilton</td>
+            <td>2020-10-25</td>
+            <td>78750</td>
+        </tr>
+        <tr>
+            <td>Autódromo José Carlos Pace</td>
+            <td>Bottas</td>
+            <td>2018-11-11</td>
+            <td>70540</td>
+        </tr>
+        <tr>
+            <td>Autódromo Juan y Oscar Gálvez</td>
+            <td>Berger</td>
+            <td>1997-04-13</td>
+            <td>87981</td>
+        </tr>
+        <tr>
+            <td>Autódromo do Estoril</td>
+            <td>Villeneuve</td>
+            <td>1996-09-22</td>
+            <td>82873</td>
+        </tr>
+        <tr>
+            <td>Bahrain International Circuit</td>
+            <td>Russell</td>
+            <td>2020-12-06</td>
+            <td>55404</td>
+        </tr>
+        <tr>
+            <td>Baku City Circuit</td>
+            <td>Leclerc</td>
+            <td>2019-04-28</td>
+            <td>103009</td>
+        </tr>
+        <tr>
+            <td>Buddh International Circuit</td>
+            <td>Vettel</td>
+            <td>2011-10-30</td>
+            <td>87249</td>
+        </tr>
+        <tr>
+            <td>Circuit Gilles Villeneuve</td>
+            <td>Bottas</td>
+            <td>2019-06-09</td>
+            <td>73078</td>
+        </tr>
+        <tr>
+            <td>Circuit Park Zandvoort</td>
+            <td>Hamilton</td>
+            <td>2021-09-05</td>
+            <td>71097</td>
+        </tr>
+        <tr>
+            <td>Circuit Paul Ricard</td>
+            <td>Vettel</td>
+            <td>2019-06-23</td>
+            <td>92740</td>
+        </tr>
+        <tr>
+            <td>Circuit de Barcelona-Catalunya</td>
+            <td>Fisichella</td>
+            <td>2005-05-08</td>
+            <td>75641</td>
+        </tr>
+        <tr>
+            <td>Circuit de Monaco</td>
+            <td>Hamilton</td>
+            <td>2021-05-23</td>
+            <td>72909</td>
+        </tr>
+        <tr>
+            <td>Circuit de Nevers Magny-Cours</td>
+            <td>Coulthard</td>
+            <td>2002-07-21</td>
+            <td>75045</td>
+        </tr>
+        <tr>
+            <td>Circuit de Spa-Francorchamps</td>
+            <td>Räikkönen</td>
+            <td>2004-08-29</td>
+            <td>105108</td>
+        </tr>
+        <tr>
+            <td>Circuit of the Americas</td>
+            <td>Leclerc</td>
+            <td>2019-11-03</td>
+            <td>96169</td>
+        </tr>
+        <tr>
+            <td>Circuito de Jerez</td>
+            <td>Frentzen</td>
+            <td>1997-10-26</td>
+            <td>83135</td>
+        </tr>
+        <tr>
+            <td>Fuji Speedway</td>
+            <td>Massa</td>
+            <td>2008-10-12</td>
+            <td>78426</td>
+        </tr>
+        <tr>
+            <td>Hockenheimring</td>
+            <td>Räikkönen</td>
+            <td>2004-07-25</td>
+            <td>73780</td>
+        </tr>
+        <tr>
+            <td>Hungaroring</td>
+            <td>Schumacher</td>
+            <td>2002-08-18</td>
+            <td>76207</td>
+        </tr>
+        <tr>
+            <td>Indianapolis Motor Speedway</td>
+            <td>Barrichello</td>
+            <td>2004-06-20</td>
+            <td>70399</td>
+        </tr>
+        <tr>
+            <td>Istanbul Park</td>
+            <td>Pablo Montoya</td>
+            <td>2005-08-21</td>
+            <td>84770</td>
+        </tr>
+        <tr>
+            <td>Jeddah Corniche Circuit</td>
+            <td>Hamilton</td>
+            <td>2021-12-05</td>
+            <td>90734</td>
+        </tr>
+        <tr>
+            <td>Korean International Circuit</td>
+            <td>Vettel</td>
+            <td>2011-10-16</td>
+            <td>99605</td>
+        </tr>
+        <tr>
+            <td>Losail International Circuit</td>
+            <td>Verstappen</td>
+            <td>2021-11-21</td>
+            <td>83196</td>
+        </tr>
+        <tr>
+            <td>Marina Bay Street Circuit</td>
+            <td>Magnussen</td>
+            <td>2018-09-16</td>
+            <td>101905</td>
+        </tr>
+        <tr>
+            <td>Nürburgring</td>
+            <td>Pablo Montoya</td>
+            <td>2001-06-24</td>
+            <td>78354</td>
+        </tr>
+        <tr>
+            <td>Red Bull Ring</td>
+            <td>Sainz</td>
+            <td>2020-07-12</td>
+            <td>65619</td>
+        </tr>
+        <tr>
+            <td>Sepang International Circuit</td>
+            <td>Vettel</td>
+            <td>2017-10-01</td>
+            <td>94080</td>
+        </tr>
+        <tr>
+            <td>Shanghai International Circuit</td>
+            <td>Schumacher</td>
+            <td>2004-09-26</td>
+            <td>92238</td>
+        </tr>
+        <tr>
+            <td>Silverstone Circuit</td>
+            <td>Schumacher</td>
+            <td>2004-07-11</td>
+            <td>78739</td>
+        </tr>
+        <tr>
+            <td>Sochi Autodrom</td>
+            <td>Hamilton</td>
+            <td>2019-09-29</td>
+            <td>95761</td>
+        </tr>
+        <tr>
+            <td>Suzuka Circuit</td>
+            <td>Hamilton</td>
+            <td>2019-10-13</td>
+            <td>90983</td>
+        </tr>
+        <tr>
+            <td>Valencia Street Circuit</td>
+            <td>Glock</td>
+            <td>2009-08-23</td>
+            <td>98683</td>
+        </tr>
+        <tr>
+            <td>Yas Marina Circuit</td>
+            <td>Verstappen</td>
+            <td>2021-12-12</td>
+            <td>86103</td>
+        </tr>
+    </tbody>
+</table>
+</blockquote>
+</details>
 
 
 <footer class="footline">
@@ -1950,19 +4292,19 @@ Vous trouverez ci-dessous deux extraits du sujet : d&rsquo;abord l&rsquo;introd
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1676036297"></script>
-    <script src="/js/perfect-scrollbar.min.js?1676036297"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1676036297"></script>
-    <script src="/js/jquery.sticky.js?1676036297"></script>
-    <script src="/js/featherlight.min.js?1676036297"></script>
-    <script src="/js/highlight.pack.js?1676036297"></script>
+    <script src="/js/clipboard.min.js?1676048970"></script>
+    <script src="/js/perfect-scrollbar.min.js?1676048970"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1676048970"></script>
+    <script src="/js/jquery.sticky.js?1676048970"></script>
+    <script src="/js/featherlight.min.js?1676048970"></script>
+    <script src="/js/highlight.pack.js?1676048970"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1676036297"></script>
-    <script src="/js/learn.js?1676036297"></script>
-    <script src="/js/hugo-learn.js?1676036297"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1676048970"></script>
+    <script src="/js/learn.js?1676048970"></script>
+    <script src="/js/hugo-learn.js?1676048970"></script>
     
         
-            <script src="/mermaid/mermaid.js?1676036297"></script>
+            <script src="/mermaid/mermaid.js?1676048970"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

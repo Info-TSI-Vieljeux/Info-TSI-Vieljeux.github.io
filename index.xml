@@ -331,11 +331,9 @@ Dans un modèle relationnel, les données sont organisées dans des tables (des 
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp12/</guid>
-      <description>TP 12 : bases de données Cliquez sur cette invitation pour récupérer le repository du TP. Présentation
+      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  TP 12 : bases de données Cliquez sur cette invitation pour récupérer le repository du TP. Présentation
 On va utiliser python dans ce tp pout accéder aux bases de données, mais de manière la plus transparente possible.
-Commençons par cloner le repository Github source dans l&amp;rsquo;instance Colab.
-!git clone https://github.com/Info-TSI-Vieljeux/s3-tp12 Puis, chargeons une extension ipython permettant de se connecter à une base de données et d&amp;rsquo;interagir avec en SQL.
-%load_ext sql Connectons-nous à la base Population.</description>
+Commençons par cloner le repository Github source dans l&amp;rsquo;instance Colab.</description>
     </item>
     
     <item>
