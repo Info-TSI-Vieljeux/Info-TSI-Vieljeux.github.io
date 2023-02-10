@@ -65,9 +65,9 @@ L&#39;apprentissage automatique (Machine Learning) est à l&amp;rsquo;intersecti
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp13/</guid>
-      <description>TP 13 : Algorithmes pour l&amp;rsquo;intelligence artificielle Cliquez sur cette invitation pour récupérer le repository du TP. Présentation
+      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  TP 13 : Algorithmes pour l&amp;rsquo;intelligence artificielle Cliquez sur cette invitation pour récupérer le repository du TP. Présentation
 Algorithme des k plus proches voisins Interpolation Construisons un jeu de données entâché de bruit :
-import matplotlib.pyplot as plt plt.style.use(&amp;#39;seaborn&amp;#39;) params = {&amp;#39;figure.figsize&amp;#39;: (15, 10), &amp;#39;axes.titlesize&amp;#39;: &amp;#39;xx-large&amp;#39;, &amp;#39;figure.dpi&amp;#39; : 150} plt.rcParams.update(params) from random import random from math import pi,cos X = [] Y = [] N = 400 for i in range(N) : x = pi*random()-pi/2 X.</description>
+import matplotlib.pyplot as plt plt.</description>
     </item>
     
   </channel>

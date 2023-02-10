@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1676048970" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1676048970" rel="stylesheet">
-    <link href="/css/hybrid.css?1676048970" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1676048970" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1676048970" rel="stylesheet">
-    <link href="/css/auto-complete.css?1676048970" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1676048970" rel="stylesheet">
-    <link href="/css/theme.css?1676048970" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1676048970" rel="stylesheet">
+    <link href="/css/nucleus.css?1676072199" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1676072199" rel="stylesheet">
+    <link href="/css/hybrid.css?1676072199" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1676072199" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1676072199" rel="stylesheet">
+    <link href="/css/auto-complete.css?1676072199" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1676072199" rel="stylesheet">
+    <link href="/css/theme.css?1676072199" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1676072199" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1676048970" rel="stylesheet">
+    <link href="/css/theme-green.css?1676072199" rel="stylesheet">
     
-    <link href="/css/foo.css?1676048970" rel="stylesheet"><link href="/css/bar.css?1676048970" rel="stylesheet">
+    <link href="/css/foo.css?1676072199" rel="stylesheet"><link href="/css/bar.css?1676072199" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1676048970"></script>
+    <script src="/js/jquery-3.3.1.min.js?1676072199"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1676048970"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1676048970"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1676072199"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1676072199"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1676048970"></script>
+<script type="text/javascript" src="/js/search.js?1676072199"></script>
 
     
   </div>
@@ -1101,6 +1101,29 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
+<link rel="stylesheet" href="/path/to/styles/default.min.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<style>
+#correc
+{
+  color: #006C65;
+  border-left: solid 10px #C7DDDC;
+}
+#comm
+{
+  color: #004D80;
+  border-left: solid 10px #B3CAD9;
+}
+#commsum
+{
+  color: #004D80;
+}
+#correcsum
+{
+  color: #006C65;
+}
+</style>
 <h1 id="tp-13--algorithmes-pour-lintelligence-artificielle">TP 13 : Algorithmes pour l&rsquo;intelligence artificielle</h1>
 <p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/pAgWypnI">cette invitation</a> pour récupérer le repository du TP. </p>
 <br>
@@ -1122,7 +1145,7 @@ X <span style="color:#f92672">=</span> []
 Y <span style="color:#f92672">=</span> []
 N <span style="color:#f92672">=</span> <span style="color:#ae81ff">400</span>
 
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N) :
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N):
     x <span style="color:#f92672">=</span> pi<span style="color:#f92672">*</span>random()<span style="color:#f92672">-</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
     X<span style="color:#f92672">.</span>append(x)
     y <span style="color:#f92672">=</span> cos(x<span style="color:#f92672">+</span><span style="color:#ae81ff">0.1</span><span style="color:#f92672">*</span>(random()<span style="color:#f92672">-</span><span style="color:#ae81ff">0.5</span>))<span style="color:#f92672">+</span><span style="color:#ae81ff">0.2</span><span style="color:#f92672">*</span>(random()<span style="color:#f92672">-</span><span style="color:#ae81ff">0.5</span>)
@@ -1136,18 +1159,35 @@ Votre fonction pourra utiliser la méthode native <code>sort</code> qui trie en 
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">KNN_interp</span>(x: float, k: int, Pts: list) <span style="color:#f92672">-&gt;</span> float:
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    préconditions : Pts est une liste de tuples contenant les coordonnées (x,y) des points d&#39;entraînement
-</span><span style="color:#e6db74">    postcondition : la fonction retourne la moyenne des ordonnées des k points dont l&#39;abscisse est la plus proche de x
+</span><span style="color:#e6db74">    préconditions: Pts est une liste de tuples contenant les coordonnées (x,y) des points d&#39;entraînement
+</span><span style="color:#e6db74">    postcondition: la fonction retourne la moyenne des ordonnées des k points dont l&#39;abscisse est la plus proche de x
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
    <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def KNN_interp(x,k,Pts):
+    Nv_Pts = []
+    for pt in Pts:
+        Nv_Pts.append((abs(pt[0]-x),pt[1]))
+    y = 0
+    Nv_Pts.sort()
+    for pt in Nv_Pts[:k]:
+        y += pt[1]
+    y /= k
+    return y
+</code></pre>
+</blockquote>
+</details>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)
 K <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">200</span>]
 N <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
 X <span style="color:#f92672">=</span> [<span style="color:#f92672">-</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span>pi<span style="color:#f92672">/</span>N<span style="color:#f92672">*</span>i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N)]
 i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> K :
+<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> K:
     Y <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> X :
+    <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> X:
         Y<span style="color:#f92672">.</span>append(KNN_interp(x,k,Pts))
     axs[i<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>,i<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>plot(X,Y,c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>,label<span style="color:#f92672">=</span>f<span style="color:#e6db74">&#39;k = {k}&#39;</span>)
     axs[i<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>,i<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>scatter(<span style="color:#f92672">*</span>zip(<span style="color:#f92672">*</span>Pts))
@@ -1167,25 +1207,67 @@ $$d_M(x,y) = |y_1-x_1|+|y_2-x_2|+\cdots+|y_n-x_n|$$</li>
 <p>Que vaut la distance euclidienne et la distance de Manhattan entre $A$ et $B$ dans la figure ci-dessus ?</p>
 </blockquote>
 <p><img src="/exomanhat.png?width=800px" alt=""></p>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+dE = 15 (hypoténuse d'un triangle reglangle de côtés 9 et 12)<br>
+dM = 21
+</blockquote>
+</details>
 <blockquote>
 <p>Existe-t-il plusieurs chemins différents ayant la même distance euclidienne ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Plein (combien ?)
+<img src="/cheminsmanhat.png" style="width:50%">
+</blockquote>
+</details>
 <blockquote>
 <p>Existe-t-il plusieurs chemins différents ayant la même distance de Manhattan ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Non, un seul (le segment de droite entre A et B).
+</blockquote>
+</details>
 <p>On utilisera dans la suite la distance euclidienne.</p>
 <blockquote>
 <p>Construisez une fonction <code>dist</code> prenant en paramètre les coordonnées d&rsquo;un point $x$ et les coordonnées d&rsquo;autres points sous la forme d&rsquo;une liste et qui retourne la liste des distances entre $x$ et les $n$ autres points.<br>Vous assurerez par un <code>assert</code> que tous les points ont bien le même nombre de coordonnées.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dist</span>(x: list, Pts: list) <span style="color:#f92672">-&gt;</span> list:
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    préconditions : x contient les coordonnées d&#39;un point
-</span><span style="color:#e6db74">                    Pts est une liste de tuples ou chaque tuple contient les coordonnées d&#39;un point
-</span><span style="color:#e6db74">                    tous les points doivent avoir le même nombre de coordonnées
-</span><span style="color:#e6db74">    postcondition : la fonction doit retourner la liste des distances entre le points x et chacun des points de la liste Pts.
+</span><span style="color:#e6db74">    préconditions: x contient les coordonnées d&#39;un point
+</span><span style="color:#e6db74">                   Pts est une liste de tuples ou chaque tuple contient les coordonnées d&#39;un point
+</span><span style="color:#e6db74">                   tous les points doivent avoir le même nombre de coordonnées
+</span><span style="color:#e6db74">    postcondition: la fonction doit retourner la liste des distances entre le points x et chacun des points de la liste Pts.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><p>On va se servir d&rsquo;un jeu de données célèbre pour tester l&rsquo;algorithme KNN : un extrait de la MNIST database contenant des images carrées (8 pixels sur 8 pixels) de chiffres écrits à la main, accompagnés de leur étiquette (le chiffre sensé être représenté sur l&rsquo;image).</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def dist(x,Pts):
+    n = len(x)
+    for pt in Pts:
+        assert n == len(pt), "Les points n'ont pas tous le même nombre de coordonnées !"
+    L = []
+    for pt in Pts:
+        d = 0
+        for i in range(n):
+            d += (pt[i]-x[i])**2
+        d = d**0.5
+        L.append(d)
+    return L
+</code></pre>
+</blockquote>
+</details>
+<p>On va se servir d&rsquo;un jeu de données célèbre pour tester l&rsquo;algorithme KNN : un extrait de la MNIST database contenant des images carrées (8 pixels sur 8 pixels) de chiffres écrits à la main, accompagnés de leur étiquette (le chiffre sensé être représenté sur l&rsquo;image).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.datasets <span style="color:#f92672">import</span> load_digits
 digits <span style="color:#f92672">=</span> load_digits()
 n_samples <span style="color:#f92672">=</span> len(digits<span style="color:#f92672">.</span>images)
@@ -1200,13 +1282,27 @@ labels <span style="color:#f92672">=</span> list(digits<span style="color:#f9267
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lignetomatrice</span>(liste64: list) <span style="color:#f92672">-&gt;</span> list:
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    posctconditions : la liste retournée doit être de dimensions 2 et de format 8*8
+</span><span style="color:#e6db74">    posctconditions: la liste retournée doit être de dimensions 2 et de format 8*8
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><p>Visualisons quelques unes des images grâce aux lignes suivantes et ajoutons le label comme titre à l&rsquo;image :</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def lignetomatrice(liste64):
+    mat = []
+    for j in range(64):
+        if j%8 == 0:
+            mat.append([])
+        mat[-1].append(liste64[j])
+    return mat
+</code></pre>
+</blockquote>
+</details>
+<p>Visualisons quelques unes des images grâce aux lignes suivantes et ajoutons le label comme titre à l&rsquo;image :</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>)
 i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-<span style="color:#66d9ef">for</span> ax <span style="color:#f92672">in</span> axs<span style="color:#f92672">.</span>flat :
+<span style="color:#66d9ef">for</span> ax <span style="color:#f92672">in</span> axs<span style="color:#f92672">.</span>flat:
     image64 <span style="color:#f92672">=</span> data[i]
     image88 <span style="color:#f92672">=</span> lignetomatrice(image64)
     ax<span style="color:#f92672">.</span>imshow(image88, interpolation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;nearest&#39;</span>, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Greys&#39;</span>)
@@ -1222,24 +1318,47 @@ labels_appr <span style="color:#f92672">=</span> labels[:n<span style="color:#f9
 data_test <span style="color:#f92672">=</span> data[n<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>:]
 labels_test <span style="color:#f92672">=</span> labels[n<span style="color:#f92672">//</span><span style="color:#ae81ff">2</span>:]
 </code></pre></div><blockquote>
-<p>C&rsquo;est le moment de construire une fonction <code>KNN_clas</code> prenant en paramètre une image (liste de 64 flottants), l&rsquo;entier $k$ du nombre de voisins à considérer, la liste des données servant à l&rsquo;apprentissage et la liste des étiquettes (dans le même ordre) et qui retourne un entier entre 0 et 9 correspondant au mode (étiquette la plus représentée) des k plus proches voisins.<br>Votre fonction devra utiliser la fonction <code>dist</code>.<br>Pour calculer le mode d&rsquo;une liste <code>L</code>, vous utiliserez l&rsquo;expression suivante <code>stats.mode(L).mode[0]</code>.<br>
+<p>C&rsquo;est le moment de construire une fonction <code>KNN_clas</code> prenant en paramètre une image (liste de 64 flottants), l&rsquo;entier $k$ du nombre de voisins à considérer, la liste des données servant à l&rsquo;apprentissage et la liste des étiquettes (dans le même ordre) et qui retourne un entier entre 0 et 9 correspondant au mode (étiquette la plus représentée) des k plus proches voisins.<br>Votre fonction devra utiliser la fonction <code>dist</code>.<br>
+Pour calculer le mode d&rsquo;une liste <code>L</code>, vous utiliserez <code>mode</code> du module statistics.<br>
 Aide : une liste de listes ou de tuples est triée en fonction du premier élément de la sous-liste ou du tuple.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> scipy <span style="color:#f92672">import</span> stats
 
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">KNN_class</span>(X: list, k: int, Appr: list, Etiq: list) <span style="color:#f92672">-&gt;</span> list:
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    préconditions :  X est l&#39;image dont on veut déterminer l&#39;étiquette
-</span><span style="color:#e6db74">                     Appr est l&#39;ensemble des données d&#39;apprentissage, c&#39;est une liste de listes,
-</span><span style="color:#e6db74">                     chacune de ces liste correspond à une image
-</span><span style="color:#e6db74">                     Etiq est une liste d&#39;entiers correspondant aux étiquettes de chaque image.
-</span><span style="color:#e6db74">    postconditions : la fonction doit retourner l&#39;étiquette la plus fréquente (mode) parmi les k images les plus proches
+</span><span style="color:#e6db74">    préconditions:  X est l&#39;image dont on veut déterminer l&#39;étiquette
+</span><span style="color:#e6db74">                    Appr est l&#39;ensemble des données d&#39;apprentissage, c&#39;est une liste de listes,
+</span><span style="color:#e6db74">                    chacune de ces liste correspond à une image
+</span><span style="color:#e6db74">                    Etiq est une liste d&#39;entiers correspondant aux étiquettes de chaque image.
+</span><span style="color:#e6db74">    postconditions: la fonction doit retourner l&#39;étiquette la plus fréquente (mode) parmi les k images les plus proches
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><h3 id="validation">Validation</h3>
-<p>La matrice de confusion va nous aider à évaluer notre algorithme de classification.<br>Commençons par construire une matrice carrée $10\times 10$ dont les lignes correspondent aux étiquettes réelles et les colonnes aux étiquettes prédites.<br>Rq : la cellule met environ 25s à s&rsquo;exécuter.</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">import statistics as stat
+def KNN_class(X,k,Appr,Etiq):
+    L = dist(X,Appr)
+    LplusEtiq = []
+    for i in range(len(L)):
+        LplusEtiq.append((L[i],Etiq[i]))
+    LplusEtiq.sort()
+    EtiqFin = []
+    for e in LplusEtiq[:k]:
+        EtiqFin.append(e[1])
+    return stat.mode(EtiqFin)
+</code></pre>
+</blockquote>
+</details>
+<br>
+<h3 id="validation">Validation</h3>
+<p>La matrice de confusion va nous aider à évaluer notre algorithme de classification.<br>
+Commençons par construire une matrice carrée $10\times 10$ dont les lignes correspondent aux étiquettes réelles et les colonnes aux étiquettes prédites.<br>
+On va prendre <code>k = 8</code> (comme ça, au hasard&hellip;).<br>
+Rq : la cellule met environ 25 s à s&rsquo;exécuter.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">M <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
-k <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+k <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>
 <span style="color:#66d9ef">for</span> m <span style="color:#f92672">in</span> range(len(data_test)) :
     i <span style="color:#f92672">=</span> labels_test[m] 
     j <span style="color:#f92672">=</span> KNN_class(data_test[m],k,data_appr,labels_appr)
@@ -1266,7 +1385,22 @@ s<span style="color:#f92672">.</span>xaxis<span style="color:#f92672">.</span>se
 <span style="color:#75715e">### VOTRE CODE</span>
 
 Mc3 <span style="color:#f92672">=</span> [[VP,FN],[FP,VN]]
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#f92672">=</span> len(data_test)
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python"># VP : chiffres prédits comme 3 et qui sont des 3
+VP = M[3][3]
+# FP : chiffre qui sont prédits comme des 3 mais qui n'en sont pas
+FP = sum([M[i][3] for i in range(len(M)) if i != 3])
+# VN : chiffres prédits comme autre chose que des 3 et qui sont bien autre chose
+VN = sum([sum([M[i][j] for j in range(len(M)) if j != 3]) for i in range(len(M)) if i!= 3]) 
+# FN : chiffres qui sont prédits comme autre chose que des 3 mais qui en sont
+FN = sum([sum([M[i][j] for j in range(len(M)) if j != 3]) for i in range(len(M)) if i== 3])
+</code></pre>
+</blockquote>
+</details>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#f92672">=</span> len(data_test)
 labels <span style="color:#f92672">=</span> [[f<span style="color:#e6db74">&#39;VP</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{VP}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{VP/n:.1%}&#39;</span>,f<span style="color:#e6db74">&#39;FN</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{FN}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{FN/n:.1%}&#39;</span>],[f<span style="color:#e6db74">&#39;FP</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{FP}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{FP/n:.1%}&#39;</span>,f<span style="color:#e6db74">&#39;VN</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{VN}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{VN/n:.1%}&#39;</span>]]
 x_axis_labels <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Positif&#39;</span>,<span style="color:#e6db74">&#39;Négatif&#39;</span>]
 y_axis_labels <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Positif&#39;</span>,<span style="color:#e6db74">&#39;Négatif&#39;</span>]
@@ -1285,37 +1419,63 @@ s<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39
 <li>b : il est plus précis que sensible (précision &gt; rappel)</li>
 </ul>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+La matrice de confusion nous montre que&nbsp;:
+<ul>
+<li>Parmi les 86 "4" prédits, tous sont bien des 4 $\Rightarrow$ précision de 100%</li>
+<li>Parmi tous les vrais "4" (92), 8 sont prédits comme étant autre chose (à chaque fois des 9...) $\Rightarrow$ rappel de 91,3%</li>
+</ul>
+Donc pour le chiffre 4, l'algo est plus précis que sensible.
+</blockquote>
+</details>
 <blockquote>
 <p>Calculez enfin l&rsquo;exactitude totale de l&rsquo;algorithme sur les 899 images testées.</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+On obtient l'exactitude en sommant les éléments dans la diagonale&nbsp;:<br>
+<code>val2 = sum([M[i][i] for i in range(len(M))])/len(datatest)</code><br>
+On obtient <b>95,4%</b>.
+</blockquote>
+</details>
 <p>Des librairies dédiées contenant des algorithmes optimisés permettent de grandement accélérer les choses.<br>Ici, on va utiliser <code>scikit-learn</code> qui s&rsquo;s&rsquo;appuie grandement sur <code>numpy</code>, lui-même principalement écrit en C.</p>
 <p><img src="https://i.redd.it/40t7alhvlac91.png?width=800px" alt=""></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.neighbors <span style="color:#f92672">import</span> KNeighborsClassifier
 
-model <span style="color:#f92672">=</span> KNeighborsClassifier(n_neighbors<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>) <span style="color:#75715e"># n_neighbors correspond à la valeur k</span>
+model <span style="color:#f92672">=</span> KNeighborsClassifier(n_neighbors<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>) <span style="color:#75715e"># n_neighbors correspond à la valeur k</span>
 model<span style="color:#f92672">.</span>fit(data_appr, labels_appr)
 predictions <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict(data_test) <span style="color:#75715e"># predictions est la liste des prédictions pour chaque image dans data_test</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">M <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
-k <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
 <span style="color:#66d9ef">for</span> m <span style="color:#f92672">in</span> range(len(data_test)) :
     i <span style="color:#f92672">=</span> labels_test[m] 
     j <span style="color:#f92672">=</span> predictions[m]
     M[i][j] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> seaborn <span style="color:#f92672">as</span> sns
-sns<span style="color:#f92672">.</span>heatmap(M,annot<span style="color:#f92672">=</span>True)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sns<span style="color:#f92672">.</span>heatmap(M,annot<span style="color:#f92672">=</span>True)
 </code></pre></div><p><img src="/matconftotsklearn.png?width=1200px" alt="png"></p>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)</summary>
+<blockquote id="comm">
+Les petites différences observées viennent de l'algorithme utilisé pour donner le mode statistique de la liste des chiffres prédits. Quel résultat donne-t-il quand il y a plusieurs modes possibles en concurrence (deux étiquettes majoritaires présentes autant de fois l'une que l'autre par exemple)&nbsp;? Suivant son choix, les résultats diffèrent. Et visiblement le mode du module <code>statistics</code> ne fait pas les mêmes choix que le mode utilisé par <code>scikit-learn</code>.
+</blockquote>
+</details>
 <blockquote>
 <p>Cherchons maintenant la valeur optimale de <strong>k</strong>, celle qui optimise l&rsquo;exactitude.<br>Pour cela, et par souci de rapidité, on va utiliser l&rsquo;implémentation de la librairie <code>scikit-learn</code> ci-dessus.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#f92672">=</span> len(data_test)
 K <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">50</span>)]
 Exa <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">50</span>) :
-    model <span style="color:#f92672">=</span> KNeighborsClassifier(n_neighbors<span style="color:#f92672">=</span>k) <span style="color:#75715e"># n_neighbors correspond à la valeur k</span>
+<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">50</span>):
+    model <span style="color:#f92672">=</span> KNeighborsClassifier(n_neighbors<span style="color:#f92672">=</span>k)
     model<span style="color:#f92672">.</span>fit(data_appr, labels_appr)
     predictions <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict(data_test)
     M <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>)]
-    <span style="color:#66d9ef">for</span> m <span style="color:#f92672">in</span> range(len(data_test)) :
+    <span style="color:#66d9ef">for</span> m <span style="color:#f92672">in</span> range(len(data_test)):
         i <span style="color:#f92672">=</span> labels_test[m] 
         j <span style="color:#f92672">=</span> predictions[m]
         M[i][j] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
@@ -1324,6 +1484,15 @@ plt<span style="color:#f92672">.</span>plot(K,Exa)
 plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;k&#39;</span>)
 plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;exactitude&#39;</span>)
 </code></pre></div><p><img src="/exfk.png?width=800px" alt="png"></p>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+$k=3$ optimise l'exactitude.
+</code></pre>
+</blockquote>
+</details>
+<br>
 <hr>
 <h2 id="algorithme-des-k-moyennes">Algorithme des k moyennes</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> random
@@ -1342,19 +1511,21 @@ plt<span style="color:#f92672">.</span>rcParams<span style="color:#f92672">.</sp
     itgen <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     distancemin <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
     sauvegarde_presente <span style="color:#f92672">=</span> False
-    <span style="color:#66d9ef">while</span> itgen <span style="color:#f92672">&lt;</span> itgenmax :  
+    <span style="color:#66d9ef">while</span> itgen <span style="color:#f92672">&lt;</span> itgenmax:  
         test <span style="color:#f92672">=</span> True
         iteration <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
         <span style="color:#75715e"># initialisation aléatoire des k centres</span>
         Centres <span style="color:#f92672">=</span> initialisation(k,data,dim)
         <span style="color:#75715e"># Copie des positions de ces centres pour tester plus loin s&#39;ils ont bougé</span>
         Centres_old <span style="color:#f92672">=</span> []
-        <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> Centres :
-            Centres_old<span style="color:#f92672">.</span>append(e[:]) <span style="color:#75715e"># on utilise le slicing pour faire une vraie copie et pas seulement une référence</span>
-        <span style="color:#66d9ef">while</span> test <span style="color:#f92672">and</span> (iteration <span style="color:#f92672">&lt;</span> itermax) :
+        <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> Centres:
+            Centres_old<span style="color:#f92672">.</span>append(e[:]) <span style="color:#75715e"># on utilise le slicing pour créer un nouvel objet et pas seulement une référence</span>
+        
+        <span style="color:#75715e">### coeur de l&#39;algorithme :</span>
+        <span style="color:#66d9ef">while</span> test <span style="color:#f92672">and</span> (iteration <span style="color:#f92672">&lt;</span> itermax):
             <span style="color:#75715e"># calcul des distance entre un centre et tous les points de données, pour chaque centre</span>
             Dist <span style="color:#f92672">=</span> []
-            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k) :
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k):
                 Dist<span style="color:#f92672">.</span>append(dist(Centres[i],data))
             <span style="color:#75715e"># attribution des données au centre le plus proche</span>
             Clusters <span style="color:#f92672">=</span> attribution(k,data,Dist)
@@ -1362,69 +1533,116 @@ plt<span style="color:#f92672">.</span>rcParams<span style="color:#f92672">.</sp
             deplacement(k,Clusters,Centres,data)
             <span style="color:#75715e"># si les clusters n&#39;ont pas bougé, test reste faux et on sort du while</span>
             test <span style="color:#f92672">=</span> False
-            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k) :
-                <span style="color:#66d9ef">if</span> max(dist(Centres[i],[Centres_old[i]])) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1e-6</span><span style="color:#f92672">*</span>max(Dist[i]) :
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k):
+                <span style="color:#66d9ef">if</span> max(dist(Centres[i],[Centres_old[i]])) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1e-6</span><span style="color:#f92672">*</span>max(Dist[i]):
                     test <span style="color:#f92672">=</span> True
-            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k) :
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k):
                 Centres_old[i] <span style="color:#f92672">=</span> Centres[i][:]
             iteration <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+        
+        <span style="color:#75715e"># on recommence plusieurs fois en calculant à chaque fois l&#39;inertie </span>
+        <span style="color:#75715e"># pour ne garder au final que l&#39;itération avec l&#39;inertie la plus petite</span>
+        <span style="color:#75715e"># le but est de se prémunir d&#39;un blocage sur une solution suboptimale</span>
         itgen <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
         distance <span style="color:#f92672">=</span> evaluation(k,Clusters,Centres,data)
-        <span style="color:#66d9ef">if</span> distance <span style="color:#f92672">&lt;</span> distancemin :
+        <span style="color:#66d9ef">if</span> distance <span style="color:#f92672">&lt;</span> distancemin:
             distancemin <span style="color:#f92672">=</span> distance
-            Clusters_save <span style="color:#f92672">=</span> Clusters[:]
+            Clusters_save <span style="color:#f92672">=</span> Clusters[:] <span style="color:#75715e"># meilleurs Clusters jusque-là</span>
             Centres_save <span style="color:#f92672">=</span> []
-            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k) :
-                Centres_save<span style="color:#f92672">.</span>append(Centres[i][:])
+            <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k):
+                Centres_save<span style="color:#f92672">.</span>append(Centres[i][:]) <span style="color:#75715e"># meilleurs Centres jusque-là</span>
             sauvegarde_presente <span style="color:#f92672">=</span> True
-    <span style="color:#66d9ef">if</span> sauvegarde_presente :
+    <span style="color:#66d9ef">if</span> sauvegarde_presente:
         Clusters <span style="color:#f92672">=</span> Clusters_save
         Centres <span style="color:#f92672">=</span> Centres_save
     <span style="color:#66d9ef">return</span> Clusters, Centres
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">initialisation</span>(k: int, data: list, dim : int) <span style="color:#f92672">-&gt;</span> list:
     Centres <span style="color:#f92672">=</span> []
-    Ampl <span style="color:#f92672">=</span>[]
-    <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> range(dim) :
+    Ampl <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> range(dim):
         MA <span style="color:#f92672">=</span> max([data[i][d] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(data))])
         MI <span style="color:#f92672">=</span> min([data[i][d] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(data))])
         Ampl<span style="color:#f92672">.</span>append((MI,MA))
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k) :
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k):
         Centres<span style="color:#f92672">.</span>append([])
-        <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> range(dim) :
+        <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> range(dim):
             Centres[i]<span style="color:#f92672">.</span>append(Ampl[d][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span>(Ampl[d][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span>Ampl[d][<span style="color:#ae81ff">0</span>])<span style="color:#f92672">*</span>random())
     <span style="color:#66d9ef">return</span> Centres
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">evaluation</span>(k: int, Clusters: list, Centres: list, data: list) <span style="color:#f92672">-&gt;</span> float:
     n <span style="color:#f92672">=</span> len(data)
     distance <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k) :
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(k):
         data_clusters <span style="color:#f92672">=</span> [data[j] <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(n) <span style="color:#66d9ef">if</span> Clusters[j] <span style="color:#f92672">==</span> i]
         distance <span style="color:#f92672">+=</span> sum(dist(Centres[i],data_clusters))
     <span style="color:#66d9ef">return</span> distance
 </code></pre></div><blockquote>
-<p>Il manque encore la définition de 2 fonctions utilisées dans <code>kmoyennes</code>.<br>Commençons par écrire la fonction permettant d&rsquo;attribuer un centre à chaque point de données</p>
+<p>Il manque encore la définition de 2 fonctions utilisées dans <code>kmoyennes</code>.<br>Commençons par écrire la fonction permettant d&rsquo;attribuer un centre à chaque point de données.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">attribution</span>(k: int, data: list, Dist: list) <span style="color:#f92672">-&gt;</span> list:
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    préconditions :  Dist est une liste à deux dimensions contenant k sous-listes
-</span><span style="color:#e6db74">                     chaque sous-liste contient les distances de chaque point de data à un des centres
-</span><span style="color:#e6db74">                     Une sous-liste correspond à un centre
-</span><span style="color:#e6db74">    postconditions : la fonction doit retourner (sous forme de liste) le numéro de cluster (de 0 à k-1) associé à chaque point de data
-</span><span style="color:#e6db74">                     Si le premier point appartient au cluster 1, le deuxième au cluster 3, le troisème au cluster 0,
-</span><span style="color:#e6db74">                     la liste Clusters commencera ainsi [1,3,0,...]
+</span><span style="color:#e6db74">    préconditions:  Dist est une liste à deux dimensions contenant k sous-listes
+</span><span style="color:#e6db74">                    chaque sous-liste contient les distances de chaque point de data à un des centres
+</span><span style="color:#e6db74">                    Une sous-liste correspond à un centre
+</span><span style="color:#e6db74">    postconditions: la fonction doit retourner (sous forme de liste) le numéro de cluster (de 0 à k-1) associé à chaque point de data
+</span><span style="color:#e6db74">                    Si le premier point appartient au cluster 1, le deuxième au cluster 3, le troisème au cluster 0,
+</span><span style="color:#e6db74">                    la liste Clusters commencera ainsi [1,3,0,...]
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><blockquote>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def attribution(k,data,Dist):
+    Cluster = []
+    n = len(data)
+    for m in range(n):
+        imin = 0
+        mini = Dist[0][m]
+        for i in range(1,k):
+            if Dist[i][m] < mini:
+                mini = Dist[i][m]
+                imin = i
+        Cluster.append(imin)
+    return Cluster
+</code></pre>
+</blockquote>
+</details>
+<blockquote>
 <p>Écrivons maintenant la fonction déplacement qui modifie en place la position des <em>k</em> centres.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">deplacement</span>(k: int, Clusters: list, Centres: list, data: list) <span style="color:#f92672">-&gt;</span> list:
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    préconditions:   Clusters est une liste du numéro de cluster associé au point à la même position dans data
-</span><span style="color:#e6db74">                     Centres doit être mutable
-</span><span style="color:#e6db74">    postconditions : en sortie, les positions des centres sont mis à jour 
-</span><span style="color:#e6db74">                     et correspondent aux barycentres des points qui leur sont attribués
+</span><span style="color:#e6db74">    préconditions:  Clusters est une liste du numéro de cluster associé au point à la même position dans data
+</span><span style="color:#e6db74">                    Centres doit être mutable
+</span><span style="color:#e6db74">    postconditions: en sortie, les positions des centres sont mis à jour 
+</span><span style="color:#e6db74">                    et correspondent aux barycentres des points qui leur sont attribués
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><p>Testons l&rsquo;algorithme sur des points dispersés artificiellement en 5 groupes.</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def deplacement(k,Clusters,Centres,data):
+    dim = len(data[0])
+    DataCluster = []
+    n = len(data)
+    for i in range(k):
+        DataCluster.append([])
+    for i in range(n):
+        DataCluster[Clusters[i]].append(data[i])
+    for i in range(k):
+        lcluster = len(DataCluster[i])
+        if lcluster != 0:
+            for l in range(dim):
+                moy = 0
+                for j in range(lcluster):
+                    moy += DataCluster[i][j][l]
+                moy /= lcluster
+                Centres[i][l] = moy
+</code></pre>
+</blockquote>
+</details>
+<p>Testons l&rsquo;algorithme sur des points dispersés artificiellement en 5 groupes.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> random
 n <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
 
@@ -1460,7 +1678,7 @@ ax<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">K <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">20</span>)]
 V <span style="color:#f92672">=</span> []
 n <span style="color:#f92672">=</span> len(data)
-<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> K :
+<span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> K:
     clusters, centres <span style="color:#f92672">=</span> kmoyennes(k,data)
     v <span style="color:#f92672">=</span> evaluation(k,clusters,centres,data)
     V<span style="color:#f92672">.</span>append(v)
@@ -1471,6 +1689,15 @@ plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;d
 </code></pre></div><p><img src="/distancefk.png?width=800px" alt="png"></p>
 <p>Si vous passez la valeur de <code>itgenmax</code> à <code>1</code> dans le code de <code>kmoyennes</code>, on obtient une courbe bien moins monotone. Le vérifier.<br>
 Voyez-vous pourquoi ?</p>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<img src="/itgenmax1.png">
+<code>itgenmax</code> correspond au nombre de fois que l'algorithme est relancé sachant qu'au final, on ne garde que la meilleure solution (celle minimisant l'inertie).<br>
+Sans répétition, la probabilité, pour un k donné, de se retrouver bloquer sur une solution suboptimale (augmentant l'inertie) est donc bien plus grande.
+</blockquote>
+</details>
 <p>Familiarisons-nous maintenant justement avec l&rsquo;implémentation de <code>scikit-learn</code> et vérifions qu&rsquo;elle fait bien le même boulot (mais bien plus vite).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.cluster <span style="color:#f92672">import</span> KMeans
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig,ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots()
@@ -1589,17 +1816,17 @@ display(webbClus)
 </code></pre></div><p><img src="/webbcarinacluster.png" alt="png"></p>
 <p>Vous allez faire le même travail sur la petite image suivante, mais sans utiliser <code>scikit-learn</code> (on reste avec notre lent <code>kmoyennes</code>) ni <code>numpy</code> (seulement des braves listes python).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">image_2D <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">64</span>) :
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">64</span>):
     image_2D<span style="color:#f92672">.</span>append([])
-    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">64</span>) :
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">64</span>):
         image_2D[i]<span style="color:#f92672">.</span>append((min(<span style="color:#ae81ff">255</span>,<span style="color:#ae81ff">64</span><span style="color:#f92672">+</span>(i<span style="color:#f92672">+</span>j)<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>),<span style="color:#ae81ff">255</span><span style="color:#f92672">-</span>i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">255</span><span style="color:#f92672">-</span>j<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span>))
 plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>))
 plt<span style="color:#f92672">.</span>imshow(image_2D)
 plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
 
 image_1D <span style="color:#f92672">=</span> [] 
-<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">64</span>) :
-    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">64</span>) :
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">64</span>):
+    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">64</span>):
         image_1D<span style="color:#f92672">.</span>append(image_2D[i][j])
 </code></pre></div><p><img src="/exsegmimage.png?width=800px" alt="png"></p>
 <blockquote>
@@ -1607,6 +1834,28 @@ image_1D <span style="color:#f92672">=</span> []
 Vous appelerez cette liste <code>image_2D_seg4</code>.<br>
 À la suite de votre cellule réponse, vous pourrez tester votre liste en affichant l&rsquo;image qu&rsquo;elle contient. Si vous obtenez 8 partitions, c&rsquo;est gagner (n&rsquo;hésitez pas à relancer l&rsquo;algo car il peut se bloquer sur un découpage suboptimal contenant moins de parties).</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">k = 8
+clusters,centres = kmoyennes(k,image_1D)
+for i in range(k):
+    for j in range(3):
+        centres[i][j] = int(centres[i][j])
+for i in range(len(image_1D)):
+    image_1D[i] = centres[clusters[i]]
+image_2D_seg4 = []
+i1D = 0
+for i in range(64):
+    image_2D_seg4.append([])
+    for j in range(64):
+        image_2D_seg4[i].append(image_1D[i1D])
+        i1D += 1
+</code></pre>
+</blockquote>
+</details>
+<br>
 <hr>
 <h2 id="jeux-daccessibilité-à-deux-joueurs">Jeux d&rsquo;accessibilité à deux joueurs</h2>
 <p>La démonstration du cours sur les graphes bipartis donne une idée d&rsquo;algorithme pour les détecter si le graphe est non orienté :</p>
@@ -1615,27 +1864,50 @@ Vous appelerez cette liste <code>image_2D_seg4</code>.<br>
 <li>on dresse un inventaire des distances entre le sommet de départ et les sommets explorés grâce à un dictionnaire,</li>
 <li>à chaque ajout d&rsquo;un sommet à la file, on enregistre sa distance dans le dictionnaire en ajoutant 1 à la distance de son prédécesseur.<br></li>
 </ul>
-<p>Pour prouver qu&rsquo;un graphe n&rsquo;est pas biparti, il suffit de trouver un cycle de longueur impair. Or la présence d&rsquo;un tel cycle impose de tomber sur un sommet déjà exploré avec la <strong>même distance au sommet de départ</strong> que son prédécesseur.</p>
+<p>Pour prouver qu&rsquo;un graphe n&rsquo;est pas biparti, il suffit de trouver au moins un cycle de longueur impair. Or la présence d&rsquo;un tel cycle impose de tomber sur un sommet déjà exploré avec la <strong>même distance au sommet de départ</strong> que son prédécesseur (s&rsquo;il n&rsquo;y a pas de cycle impair, cela n&rsquo;arrive jamais).</p>
 <blockquote>
-<p>Compléter alors la fonction suivante pour qu&rsquo;elle retourne vrai si le graphe est biparti et faux sinon.</p>
+<p>Compléter la fonction suivante pour qu&rsquo;elle retourne vrai si le graphe est biparti et faux sinon.</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">testBipartite</span>(G,depart) :
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">testBipartite</span>(G,depart):
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    precondition :   le graphe G doit être non orienté
-</span><span style="color:#e6db74">    postconditions : le dictionnaire Vus dit si un sommet a été exploré ou non
-</span><span style="color:#e6db74">                     le dictionnaire Distance donne la distance de chaque sommet ajouté par rapport au sommet de départ
-</span><span style="color:#e6db74">                     la fonction retourne Vrai si on tombe sur un sommet déjà exploré 
-</span><span style="color:#e6db74">                     dont la distance au sommet de départ est la même que celle de son prédécesseur
-</span><span style="color:#e6db74">                     et Faux si aucun tel cas n&#39;est rencontré.
+</span><span style="color:#e6db74">    precondition:   le graphe G doit être non orienté
+</span><span style="color:#e6db74">    postconditions: le dictionnaire Vus dit si un sommet a été exploré ou non
+</span><span style="color:#e6db74">                    le dictionnaire Distance donne la distance de chaque sommet ajouté par rapport au sommet de départ
+</span><span style="color:#e6db74">                    la fonction retourne Vrai si on tombe sur un sommet déjà exploré 
+</span><span style="color:#e6db74">                    dont la distance au sommet de départ est la même que celle de son prédécesseur
+</span><span style="color:#e6db74">                    et Faux si aucun tel cas n&#39;est rencontré.
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     Vus <span style="color:#f92672">=</span> {s : False <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G}
     Distance <span style="color:#f92672">=</span> {s : <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G}
     file <span style="color:#f92672">=</span> deque()
     file<span style="color:#f92672">.</span>append(depart)
     <span style="color:#75715e"># VOTRE CODE</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Deux graphes pour tester votre algorithme</span>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def testBipartite(G,depart):
+    Vus = {s : False for s in G}
+    Distance = {s : 0 for s in G}
+    file = deque()
+    file.append(depart)
+    while file:
+        sommet = file.popleft()
+        if not Vus[sommet]:
+            Vus[sommet] = True
+            for s in G[sommet]:
+                if Vus[s]:
+                    if Distance[s] == Distance[sommet]:
+                        return False
+                Distance[s] = Distance[sommet] + 1
+                file.append(s)
+    return True
+</code></pre>
+</blockquote>
+</details>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Deux graphes pour tester votre algorithme</span>
 Ga <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;</span>: [<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;E&#39;</span>],
       <span style="color:#e6db74">&#39;B&#39;</span>: [<span style="color:#e6db74">&#39;A&#39;</span>,<span style="color:#e6db74">&#39;C&#39;</span>,<span style="color:#e6db74">&#39;D&#39;</span>,<span style="color:#e6db74">&#39;F&#39;</span>],
       <span style="color:#e6db74">&#39;C&#39;</span>: [<span style="color:#e6db74">&#39;B&#39;</span>],
@@ -1655,12 +1927,71 @@ Gb <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;
 <p>Le graphe suivant est-il bipati ?</p>
 </blockquote>
 <p><img src="/exojeu1.png?width=700px" alt=""></p>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+Appelons <code>Gc</code> le graphe dessiné.
+<pre><code class="language-python">Gc = {0:[1,6,8,9],
+      1:[0,3,4,5],
+      2:[3,5,7],
+      3:[1,2,9],
+      4:[1,8,9],
+      5:[1,2,9],
+      6:[0,7],
+      7:[2,6,8,9],
+      8:[0,4,7],
+      9:[0,3,4,5,7],
+     }
+print(testBipartite(Ga,'A'))
+print(testBipartite(Gb,'A'))
+print(testBipartite(Gc,1))
+</code></pre>
+<code>True</code><br>
+<code>False</code><br>
+<code>True</code><br><br>
+On peut prouver que <code>Ga</code> et <code>Gc</code> sont bipartis en les 2-coloriant (il ne faut pas que 2 sommets adjacents aient la même couleur) alors que c'est impossible pour <code>Gb</code>&nbsp;:
+<img src="/2colo.png">
+</blockquote>
+</details>
+<br>
 <p>Revenons maintenant sur la <a href="https://info-tsi-vieljeux.github.io/semestre_3/ia/#une-des-nombreuses-variantes-du-jeu-de-nim">variante du jeu de Nim présenté dans le cours</a>.</p>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)</summary>
+<blockquote id="comm">
+<a href="https://colab.research.google.com/drive/1d6AR2SMrN2tmnmd_1bdQCBkrcUK22bL2?usp=sharing">Ce notebook Colab</a> reprend et détaille la partie qui suit du TP.
+</blockquote>
+</details>
 <blockquote>
-<p>Revenons maintenant sur la <a href="https://info-tsi-vieljeux.github.io/semestre_3/ia/#une-des-nombreuses-variantes-du-jeu-de-nim">variante du jeu de Nim présenté dans le cours</a>.<br>
-Construire le graphe correspondant à un paquet de 10 allumettes au départ.<br>
+<p>Construire le graphe correspondant à un paquet de 10 allumettes au départ.<br>
 Vous appelerez ce graphe <code>G1</code>.</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+La construction suivante est récursive&nbsp;: pour chaque sommet, on construit la liste de ses successeurs puis on appelle la fonction sur chacun d'eux. Le cas de base correspond à l'absence de successeur possible.
+<pre><code class="language-python">Depart = (10,9,0) # 0 pour Eve
+def constrG(S,G):
+    G[S] = []
+    if S[0] == 0:
+        return
+    i = 1
+    while i <= S[1] and S[0]-i >= 0:
+        if 2*i < S[0]-i:      
+            nvSommet = (S[0]-i,2*i,(1+S[2])%2)
+        else:
+            nvSommet = (S[0]-i,S[0]-i,(1+S[2])%2)
+        G[S].append(nvSommet)
+        i += 1
+    for s in G[S]:
+        constrG(s,G)
+G1 = {}
+constrG(Depart,G1)
+</code></pre>
+</blockquote>
+</details>
 <p>Eve est représentée par les ronds bleus dans la représentation suivante.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> networkx <span style="color:#f92672">as</span> nx
 <span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
@@ -1689,26 +2020,26 @@ plt<span style="color:#f92672">.</span>show()
 <p>Reprenons le code du cours visant à assembler l&rsquo;attracteur du jeu pour Eve.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">attracteur</span>(G: dict, F: list) <span style="color:#f92672">-&gt;</span> list:
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    préconditions : G est est un graphe sous forme de liste d&#39;adjacence implémentée par un dictionnaire
-</span><span style="color:#e6db74">                    F est la liste des sommets gagnants pour le joueur 1
-</span><span style="color:#e6db74">    postcondition : la fonction retourne l&#39;attracteur de F pour le joueur 1 sous forme d&#39;un dictionnaire
-</span><span style="color:#e6db74">                    dont les clés sont les sommets de G et les valeurs True ou False suivant que le sommet appartienne ou non à l&#39;attracteur
+</span><span style="color:#e6db74">    préconditions: G est est un graphe sous forme de liste d&#39;adjacence implémentée par un dictionnaire
+</span><span style="color:#e6db74">                   F est la liste des sommets gagnants pour le joueur 1
+</span><span style="color:#e6db74">    postcondition: la fonction retourne l&#39;attracteur de F pour le joueur 1 sous forme d&#39;un dictionnaire
+</span><span style="color:#e6db74">                   dont les clés sont les sommets de G et les valeurs True ou False suivant que le sommet appartienne ou non à l&#39;attracteur
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     Pred <span style="color:#f92672">=</span> inverseGraphe(G)
     n <span style="color:#f92672">=</span> {s:len(G[s]) <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G}
     Attr <span style="color:#f92672">=</span> {s:False <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G}
-    <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> F :
+    <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> F:
         Joueur1 <span style="color:#f92672">=</span> True
         propage(sommet,Joueur1,Attr,Pred,n)
     <span style="color:#66d9ef">return</span> Attr
 
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">propage</span>(sommet,Joueur1,Attr,Pred,n) :
-    <span style="color:#66d9ef">if</span> Attr[sommet] :
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">propage</span>(sommet,Joueur1,Attr,Pred,n):
+    <span style="color:#66d9ef">if</span> Attr[sommet]:
         <span style="color:#66d9ef">return</span>
     Attr[sommet] <span style="color:#f92672">=</span> True
-    <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> Pred[sommet] :
+    <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> Pred[sommet]:
         n[s] <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
-        <span style="color:#66d9ef">if</span> Joueur1 <span style="color:#f92672">or</span> (n[s] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) :
+        <span style="color:#66d9ef">if</span> Joueur1 <span style="color:#f92672">or</span> (n[s] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
             propage(s,<span style="color:#f92672">not</span> Joueur1,Attr,Pred,n)
 </code></pre></div><blockquote>
 <p>Il manque la définition de la fonction <code>inverseGraphe</code> qui retourne la liste d&rsquo;adjacence du graphe G dont on aurait inversé chacun des arcs.<br>
@@ -1716,10 +2047,23 @@ plt<span style="color:#f92672">.</span>show()
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inverseGraphe</span>(G: dict) <span style="color:#f92672">-&gt;</span> dict:
     <span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">    précondition : G est la liste d&#39;adjacence (sous forme de dictionnaire) d&#39;un graphe orienté
+</span><span style="color:#e6db74">    précondition: G est la liste d&#39;adjacence (sous forme de dictionnaire) d&#39;un graphe orienté
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
     <span style="color:#75715e"># VOTRE CODE</span>
-</code></pre></div><p>Fabriquons l&rsquo;attracteur de <code>G1</code>.</p>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def inverseGraphe(G):
+    inv = {s:[] for s in G}
+    for pred in G:
+        for succ in G[pred]:
+            inv[succ].append(pred)
+    return inv
+</code></pre>
+</blockquote>
+</details>
+<p>Fabriquons l&rsquo;attracteur de <code>G1</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Attr <span style="color:#f92672">=</span> attracteur(G1,[(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>)])
 </code></pre></div><p>Dans la représentation ci-dessous, l&rsquo;attracteur est en orange.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">g <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>DiGraph(G1)
@@ -1749,22 +2093,22 @@ ax<span style="color:#f92672">.</span>set_facecolor(<span style="color:#e6db74">
 ax<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>)
 plt<span style="color:#f92672">.</span>show()
 </code></pre></div><p><img src="/graphejeutp2.png" alt="png"></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">strategie</span>(G,depart,F,attracteur) :
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">strategie</span>(G,depart,F,attracteur):
     Joueur1 <span style="color:#f92672">=</span> True
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> attracteur[depart] :
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> attracteur[depart]:
         <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Pas de stratégie gagnante possible pour le joueur1 depuis cet endroit :(&#34;</span>)
         <span style="color:#66d9ef">return</span> False
     S <span style="color:#f92672">=</span> depart
-    <span style="color:#66d9ef">while</span> S <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> F :
-        <span style="color:#66d9ef">if</span> Joueur1 :
-            <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G[S] :
-                <span style="color:#66d9ef">if</span> attracteur[s] :
+    <span style="color:#66d9ef">while</span> S <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> F:
+        <span style="color:#66d9ef">if</span> Joueur1:
+            <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G[S]:
+                <span style="color:#66d9ef">if</span> attracteur[s]:
                     <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Coup gagnant : {s}.&#34;</span>)
                     S <span style="color:#f92672">=</span> s
                     <span style="color:#66d9ef">break</span>
-        <span style="color:#66d9ef">else</span> :
+        <span style="color:#66d9ef">else</span>:
             <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Qu&#39;a joué l&#39;adversaire ?&#34;</span>)
-            <span style="color:#66d9ef">for</span> i,s <span style="color:#f92672">in</span> enumerate(G[S],<span style="color:#ae81ff">1</span>) :
+            <span style="color:#66d9ef">for</span> i,s <span style="color:#f92672">in</span> enumerate(G[S],<span style="color:#ae81ff">1</span>):
                 <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;{i} : {s}&#34;</span>)
             S <span style="color:#f92672">=</span> G[S][int(input(<span style="color:#e6db74">&#34;Choisir : &#34;</span>))<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
         Joueur1 <span style="color:#f92672">=</span> <span style="color:#f92672">not</span> Joueur1
@@ -1773,20 +2117,77 @@ plt<span style="color:#f92672">.</span>show()
 <p>En utilisant le programme ci-dessus, répondre à la question suivante :<br>
 si Adam joue (6,4,0) à son premier coup, sur quel sommet doit se déplacer Eve pour continuer à avoir l&rsquo;avantage ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+(5,2,1)
+</blockquote>
+</details>
 <blockquote>
 <p>Créez un graphe <code>G2</code> pour répondre à cette question :<br>
 La position de départ $(21,5,0)$ est-elle gagnante ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">G2 = {}
+constrG((21,5,0),G2)
+strategie(G2,(21,5,0),[(0,0,1)],attracteur(G2,[(0,0,1)]))
+</code></pre>
+S'affiche alors&nbsp;:<br>
+<span style="font-family:monospace">Pas de stratégie gagnante possible pour le joueur1 depuis cet endroit :(</span>
+</blockquote>
+</details>
 <p>Rq : on peut montrer que le joueur 1 aura toujours une stratégie gagnante si la position de départ (le nombre initial d&rsquo;allumettes) ne se trouve pas dans la suite de Fibonacci.</p>
 <p>Passons maintenant au vrai jeu de Nim, dans sa variante misère, popularisé dans le film d&rsquo;Alain Resnais &ldquo;L&rsquo;Année dernière à Marienbad&rdquo;.<br>
 <img src="http://www.pilefacebis.com/sollers/IMG/jpg/marienbad_table_jeu.jpg" alt="">
 On a 4 tas composés au départ de 1, 3, 5 et 7 allumettes. Chaque joueur peut, l&rsquo;un après l&rsquo;autre, prendre autant d&rsquo;allumettes qu&rsquo;il le veut, mais dans un tas seulement.<br>
 La variante misère impose que celui qui prend la dernière allumette ait perdu !</p>
+<blockquote>
 <p>Composez le graphe du jeu que vous appelerez <code>G3</code>. Chaque sommet prendra la forme d&rsquo;un tuple de 5 entiers (les 4 premiers correspondent aux nombres d&rsquo;allumettes dans les 4 tas et le 5<sup>e</sup> est le numéro du joueur (0 pour Eve et 1 pour Adam).<br>
 La position de départ est alors <code>(1,3,5,7,0)</code>.</p>
+</blockquote>
 <blockquote>
 <p>La position de départ est-elle gagnante pour le joueur 1 (Eve) ?</p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def suivantsPossibles(sommet):
+    t1,t2,t3,t4,joueur = sommet
+    Suivants = []
+    for i in range(t1):
+        Suivants.append((i,t2,t3,t4,(1+joueur)%2))
+    for i in range(t2):
+        Suivants.append((t1,i,t3,t4,(1+joueur)%2))
+    for i in range(t3):
+        Suivants.append((t1,t2,i,t4,(1+joueur)%2))
+    for i in range(t4):
+        Suivants.append((t1,t2,t3,i,(1+joueur)%2))   
+    return Suivants
+</code></pre>
+<pre><code class="language-python">
+G3 = {}
+def constG(depart,G):
+    S = depart
+    Suivants = suivantsPossibles(S)
+    G[S] = Suivants
+    if len(Suivants) == 0:
+        return
+    else:
+        for s in Suivants:
+            if s not in G:
+                constG(s,G)
+constG((1,3,5,7,0),G3)
+</code></pre>
+Dans la variante misère, les positions gagnantes pour Eve correspondent à une allumette restante sur une des rangées lorsque c'est au tour d'Adam&nbsp:<br>
+<code>F = [(1,0,0,0,1),(0,1,0,0,1),(0,0,1,0,1),(0,0,0,1,1)]</code><br>
+<code>strategie(G3, (1,3,5,7,0), F, attracteur(G3,F))</code> nous apprend alors que c'est peine perdue de vouloir commencer comme nous montre cette <a href="https://presentationssite.github.io/info/nim/#/1">implémentation javascript</a>.
+</blockquote>
+</details>
 <p>La vidéo ci-dessous présente plus généralements les jeux de Nim. Ils ont la particularité d&rsquo;avoir une stratégie (due à M. Bouton) ne nécessitant pas le parcours du graphe théoriquement généralisable à tout jeu impartial.</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -1795,20 +2196,87 @@ La position de départ est alors <code>(1,3,5,7,0)</code>.</p>
 
 <br>
 <br>
-<p>Occupons-nous enfin du problème du sac-à-dos.<br>
-Dans le code du cours, il manque à nouveau la définition d&rsquo;une fonction : <code>sacadosGlouton</code>.<br></p>
+<p>Occupons-nous enfin du <strong>problème du sac-à-dos</strong>.<br></p>
+<details>
+<summary id="commsum">
+Commentaire (cliquer pour afficher)</summary>
+<blockquote id="comm">
+À nouveau, <a href="https://colab.research.google.com/drive/1tEKgcwUvv6mA_LXZS0S9iNB2a4bWVU_R?usp=sharing">un notebook Colab</a> explore cette dernière partie.
+</blockquote>
+</details>
+<p>Dans le code du cours, il manque à nouveau la définition d&rsquo;une fonction : <code>sacadosGlouton</code>.<br></p>
 <blockquote>
 <p>À vous de construire cette fonction qui donne la valeur du sac en suivant la logique gloutonne (et on s&rsquo;arrêtera au premier objet qui fait dépasser la capacité du sac).</p>
 </blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sacadosGlouton</span>(v: list,p: list,c: int) <span style="color:#f92672">-&gt;</span> int:
     <span style="color:#75715e">### VOTRE CODE</span>
-</code></pre></div><blockquote>
+</code></pre></div><details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def sacadosGlouton(v,p,c):
+    n = len(v)
+    ratio = []
+    valeur, poids = 0, 0
+    for i in range(n):
+        ratio.append((v[i]/p[i],v[i],p[i]))
+    ratio.sort(reverse=True)
+    for r,val,poi in ratio:
+        if poids + poi >= c:
+            return valeur
+        valeur += val
+        poids += poi
+</code></pre>
+</blockquote>
+</details>
+<blockquote>
 <p>Utiliser ensuite votre fonction et le code du cours pour déterminer la valeur du sac si $v=[1,2,\ldots,200]$, $p=[400,298,296,\ldots,2]$ et $c=156$ (ce nombre d&rsquo;objets rend la méthode par force brute totalement inutile).<br></p>
 </blockquote>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<pre><code class="language-python">def sacadosBB(v,p,c,i,valeur,poids,meilleure,potentiel):
+    global nbappels
+    nbappels += 1
+    n = len(v)
+    meilleure = max(meilleure,valeur)
+    if i == n:
+        if poids > c:
+            return 0
+        else:
+            return valeur
+    elif valeur + potentiel[i] < meilleure:
+        return valeur 
+    else:
+        valeurAvec = valeur + v[i]
+        poidsAvec = poids + p[i]
+        sol = sacadosBB_sol(v,p,c,i+1,valeur,poids,meilleure,potentiel)
+        if poidsAvec <= c:
+            sol = max(sol,sacadosBB_sol(v,p,c,i+1,valeurAvec,poidsAvec,meilleure,potentiel))
+        return sol
+</code></pre>
+<pre><code class="language-python">
+v = [i for i in range(1,201)]
+p = [2*i for i in range(200,0,-1)]
+c = 156
+nbappels = 0
+print(sacadosBB(v,p,c,0,0,0,meilleure,potentiel))
+</code></pre>
+On obtient ainsi $2334$ (l'algorithme glouton avait, lui, trouvé $2145$, ce qui n'est pas loin du tout et permet donc d'élaguer une grosse partie de l'arbre&nbsp;!).
+</blockquote>
+</details>
 <blockquote>
 <p>Déterminez aussi (grâce à une variable globale) le nombre d&rsquo;appels récursifs passés.</p>
 </blockquote>
-<p style="text-align:center;font-size:20px;font-weight:bold;color:green"><a href="https://presentationssite.github.io/info/last/">Éléments de correction</a></p>
+<details>
+<summary id="correcsum">
+Correction (cliquer pour afficher)</summary>
+<blockquote id="correc">
+<code>print(nbappels)</code> nous donne 64317, ce qui n'est vraiment pas énorme comparé au nombre d'appels qu'il faudrait à l'algo sans élagage.
+</blockquote>
+</details>
+
 
 <footer class="footline">
 	
@@ -2503,19 +2971,19 @@ Dans le code du cours, il manque à nouveau la définition d&rsquo;une fonction�
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1676048970"></script>
-    <script src="/js/perfect-scrollbar.min.js?1676048970"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1676048970"></script>
-    <script src="/js/jquery.sticky.js?1676048970"></script>
-    <script src="/js/featherlight.min.js?1676048970"></script>
-    <script src="/js/highlight.pack.js?1676048970"></script>
+    <script src="/js/clipboard.min.js?1676072199"></script>
+    <script src="/js/perfect-scrollbar.min.js?1676072199"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1676072199"></script>
+    <script src="/js/jquery.sticky.js?1676072199"></script>
+    <script src="/js/featherlight.min.js?1676072199"></script>
+    <script src="/js/highlight.pack.js?1676072199"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1676048970"></script>
-    <script src="/js/learn.js?1676048970"></script>
-    <script src="/js/hugo-learn.js?1676048970"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1676072199"></script>
+    <script src="/js/learn.js?1676072199"></script>
+    <script src="/js/hugo-learn.js?1676072199"></script>
     
         
-            <script src="/mermaid/mermaid.js?1676048970"></script>
+            <script src="/mermaid/mermaid.js?1676072199"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
