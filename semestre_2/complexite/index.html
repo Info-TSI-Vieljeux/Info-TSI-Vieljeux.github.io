@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1676072199" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1676072199" rel="stylesheet">
-    <link href="/css/hybrid.css?1676072199" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1676072199" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1676072199" rel="stylesheet">
-    <link href="/css/auto-complete.css?1676072199" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1676072199" rel="stylesheet">
-    <link href="/css/theme.css?1676072199" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1676072199" rel="stylesheet">
+    <link href="/css/nucleus.css?1676079051" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1676079051" rel="stylesheet">
+    <link href="/css/hybrid.css?1676079051" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1676079051" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1676079051" rel="stylesheet">
+    <link href="/css/auto-complete.css?1676079051" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1676079051" rel="stylesheet">
+    <link href="/css/theme.css?1676079051" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1676079051" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1676072199" rel="stylesheet">
+    <link href="/css/theme-green.css?1676079051" rel="stylesheet">
     
-    <link href="/css/foo.css?1676072199" rel="stylesheet"><link href="/css/bar.css?1676072199" rel="stylesheet">
+    <link href="/css/foo.css?1676079051" rel="stylesheet"><link href="/css/bar.css?1676079051" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1676072199"></script>
+    <script src="/js/jquery-3.3.1.min.js?1676079051"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1676072199"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1676072199"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1676079051"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1676079051"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1676072199"></script>
+<script type="text/javascript" src="/js/search.js?1676079051"></script>
 
     
   </div>
@@ -1362,21 +1362,26 @@ b, m <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, 
         t3 <span style="color:#f92672">+=</span> f3 <span style="color:#f92672">-</span> d3 <span style="color:#75715e">#f3-d3 = laps de temps qu&#39;a duré la recherche avec &#34;in&#34;</span>
     
     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;| {:&gt;4d} |{:^15.2E}|{:^16.2E}|{:^12.2E}|&#39;</span><span style="color:#f92672">.</span>format(b,t1<span style="color:#f92672">/</span>m,t2<span style="color:#f92672">/</span>m,t3<span style="color:#f92672">/</span>m))
-</code></pre></div><pre><code class="language-nohighlight" data-lang="nohighlight">|   n  | tps algo naïf | tps algo dicho |  tps &quot;in&quot;  |
-------------------------------------------------------
-|    2 |   3.56E-07    |    6.81E-07    |  1.90E-07  |
-|    4 |   4.04E-07    |    7.87E-07    |  2.12E-07  |
-|    8 |   4.58E-07    |    8.58E-07    |  2.38E-07  |
-|   16 |   5.86E-07    |    9.48E-07    |  2.80E-07  |
-|   32 |   8.11E-07    |    1.06E-06    |  3.60E-07  |
-|   64 |   1.30E-06    |    1.19E-06    |  5.37E-07  |
-|  128 |   2.25E-06    |    1.33E-06    |  8.83E-07  |
-|  256 |   4.18E-06    |    1.53E-06    |  1.57E-06  |
-|  512 |   8.09E-06    |    1.87E-06    |  2.96E-06  |
-| 1024 |   1.57E-05    |    2.14E-06    |  5.70E-06  |
-| 2048 |   3.09E-05    |    2.38E-06    |  1.12E-05  |
-| 4096 |   6.13E-05    |    2.63E-06    |  2.22E-05  |
-</code></pre><p><img src="/dicholin.png" alt=""></p>
+</code></pre></div>
+
+<div style="font-family:monospace">
+|&nbsp;&nbsp;&nbsp;n&nbsp;&nbsp;|&nbsp;tps algo naïf&nbsp;|&nbsp;tps algo dicho&nbsp;|&nbsp;&nbsp;tps "in"&nbsp;&nbsp;|<br>
+------------------------------------------------------<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;|&nbsp;&nbsp;&nbsp;3.56E-07&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;6.81E-07&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;1.90E-07&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;|&nbsp;&nbsp;&nbsp;4.04E-07&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;7.87E-07&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;2.12E-07&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;|&nbsp;&nbsp;&nbsp;4.58E-07&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;8.58E-07&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;2.38E-07&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;16&nbsp;|&nbsp;&nbsp;&nbsp;5.86E-07&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;9.48E-07&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;2.80E-07&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;32&nbsp;|&nbsp;&nbsp;&nbsp;8.11E-07&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;1.06E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;3.60E-07&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;64&nbsp;|&nbsp;&nbsp;&nbsp;1.30E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;1.19E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;5.37E-07&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;128&nbsp;|&nbsp;&nbsp;&nbsp;2.25E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;1.33E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;8.83E-07&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;256&nbsp;|&nbsp;&nbsp;&nbsp;4.18E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;1.53E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;1.57E-06&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;512&nbsp;|&nbsp;&nbsp;&nbsp;8.09E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;1.87E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;2.96E-06&nbsp;&nbsp;|<br>
+|&nbsp;1024&nbsp;|&nbsp;&nbsp;&nbsp;1.57E-05&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;2.14E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;5.70E-06&nbsp;&nbsp;|<br>
+|&nbsp;2048&nbsp;|&nbsp;&nbsp;&nbsp;3.09E-05&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;2.38E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;1.12E-05&nbsp;&nbsp;|<br>
+|&nbsp;4096&nbsp;|&nbsp;&nbsp;&nbsp;6.13E-05&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;2.63E-06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;2.22E-05&nbsp;&nbsp;|<br>
+</div>
+
+<p><img src="/dicholin.png" alt=""></p>
 <p><code>in</code> est plus rapide que l&rsquo;algo de recherche naïf mais ils réagissent tous deux pareil à un changement d&rsquo;échelle ; si on on multiplie n par 2, les deux algorithmes mettent 2 fois plus de temps. C&rsquo;est ce qui nous montre qu&rsquo;ils ont la même complexité ! <br>
 Pour la recherche dichotomique en revanche, une multiplication du nombre de valeur par 2 ne se solde pas par un doublement du temps, mais par l&rsquo;ajout d&rsquo;un temps constant seulement. C&rsquo;est typique d&rsquo;une complexité logarithmique.
 On remarque que</p>
@@ -2105,19 +2110,19 @@ Pour la fonction <code>neufs()</code>, la complexité en mémoire vient de la va
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1676072199"></script>
-    <script src="/js/perfect-scrollbar.min.js?1676072199"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1676072199"></script>
-    <script src="/js/jquery.sticky.js?1676072199"></script>
-    <script src="/js/featherlight.min.js?1676072199"></script>
-    <script src="/js/highlight.pack.js?1676072199"></script>
+    <script src="/js/clipboard.min.js?1676079051"></script>
+    <script src="/js/perfect-scrollbar.min.js?1676079051"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1676079051"></script>
+    <script src="/js/jquery.sticky.js?1676079051"></script>
+    <script src="/js/featherlight.min.js?1676079051"></script>
+    <script src="/js/highlight.pack.js?1676079051"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1676072199"></script>
-    <script src="/js/learn.js?1676072199"></script>
-    <script src="/js/hugo-learn.js?1676072199"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1676079051"></script>
+    <script src="/js/learn.js?1676079051"></script>
+    <script src="/js/hugo-learn.js?1676079051"></script>
     
         
-            <script src="/mermaid/mermaid.js?1676072199"></script>
+            <script src="/mermaid/mermaid.js?1676079051"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
