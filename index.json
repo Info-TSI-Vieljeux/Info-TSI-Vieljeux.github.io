@@ -74,7 +74,7 @@
 	"title": "Semestre 1",
 	"tags": [],
 	"description": "",
-	"content": "Semestre 1 Les séances de travaux pratiques du premier semestre poursuivent les objectifs suivants :\n consolider l’apprentissage de la programmation en langage Python qui a été entrepris dans les classes du lycée ; mettre en place un environnement de travail ; mettre en place une discipline de programmation : spécification précise des fonctions et programmes, annotations et commentaires, jeux de tests ; introduire les premiers éléments de complexité des algorithmes ; introduire des outils de validation : variants et invariants.  Liste des TP :  TP0 : TP introductif TP1 : recherche simple, dictionnaire, algos constants et linéaires TP2 : recherche d\u0026rsquo;un mot, d\u0026rsquo;un doublon, algos quadratiques, intégration numérique TP3 : utilisation de modules, fonctions statistiques, domaine de la science des données TP4 : recherche dichotomique, algos logarithmiques, recherche de racine TP5 : récursivité, tris récursifs, algorithme d\u0026rsquo;Euclide, dessiner des fractales TP6 : les algorithmes de tris, comparaisons TP7 : traitement d\u0026rsquo;image, matrices, utilisation de numpy.  "
+	"content": "Semestre 1 Les séances de travaux pratiques du premier semestre poursuivent les objectifs suivants :\n consolider l’apprentissage de la programmation en langage Python qui a été entrepris dans les classes du lycée ; mettre en place un environnement de travail ; mettre en place une discipline de programmation : spécification précise des fonctions et programmes, annotations et commentaires, jeux de tests ; introduire les premiers éléments de complexité des algorithmes ; introduire des outils de validation : variants et invariants.  Liste des TP :  TP0 : tp introductif TP1 : recherche simple, dictionnaire, algos constants et linéaires TP2 : recherche d\u0026rsquo;un mot, d\u0026rsquo;un doublon, algos quadratiques, intégration numérique TP3 : utilisation de modules, fonctions statistiques, domaine de la science des données TP4 : recherche dichotomique, algos logarithmiques, recherche de racine TP5 : récursivité, tris récursifs, algorithme d\u0026rsquo;Euclide, dessiner des fractales TP6 : les algorithmes de tris, comparaisons TP7 : traitement d\u0026rsquo;image, matrices, utilisation de numpy.  "
 },
 {
 	"uri": "https://info-tsi-vieljeux.github.io/semestre_2/complexite/",
@@ -109,7 +109,7 @@
 	"title": "Semestre 2",
 	"tags": [],
 	"description": "",
-	"content": "Semestre 2 On consolide certains concepts rencontrés pendant les TP du semestre 1 :\n les bonnes pratiques en programmation la correction et la terminaison d\u0026rsquo;un algorithme + TP8 la complexité + TP8  Puis on développe deux nouveaux points :\n la représentation des nombres + TP9 les graphes + TP10  "
+	"content": "Semestre 2 On consolide certains concepts rencontrés pendant les TP du semestre 1 :\n les bonnes pratiques en programmation la correction et la terminaison d\u0026rsquo;un algorithme (TP8) la complexité (TP8)  Puis on développe deux nouveaux chapitres :\n la représentation des nombres (TP9) les graphes (TP10)  "
 },
 {
 	"uri": "https://info-tsi-vieljeux.github.io/projets/ieee754/",
