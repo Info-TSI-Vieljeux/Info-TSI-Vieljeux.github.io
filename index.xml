@@ -333,7 +333,7 @@ Dans un modèle relationnel, les données sont organisées dans des tables (des 
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp12/</guid>
       <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  TP 12 : bases de données Cliquez sur cette invitation pour récupérer le repository du TP. Présentation
 On va utiliser python dans ce tp pout accéder aux bases de données, mais de manière la plus transparente possible.
-Commençons par cloner le repository Github source dans l&amp;rsquo;instance Colab.</description>
+ Un problème de mis-à-jour récent impose d&amp;rsquo;obliger Colab à passer à la dernière version du module permettant d&amp;rsquo;utiliser les commandes sql magiques.</description>
     </item>
     
     <item>
