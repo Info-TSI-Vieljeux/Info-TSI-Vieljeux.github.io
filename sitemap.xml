@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://info-tsi-vieljeux.github.io/semestre_2/bonnes_pratiques/</loc>
+    <loc>https://info-tsi-vieljeux.github.io/projets/doomsday/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url><url>
-    <loc>https://info-tsi-vieljeux.github.io/projets/oracle/</loc>
+    <loc>https://info-tsi-vieljeux.github.io/semestre_2/bonnes_pratiques/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url><url>
     <loc>https://info-tsi-vieljeux.github.io/semestre_1/tp0/</loc>
@@ -21,9 +21,6 @@
     <lastmod>2021-03-06T14:20:50+01:00</lastmod>
   </url><url>
     <loc>https://info-tsi-vieljeux.github.io/semestre_2/correctionterminaison/</loc>
-    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
-  </url><url>
-    <loc>https://info-tsi-vieljeux.github.io/projets/doomsday/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url><url>
     <loc>https://info-tsi-vieljeux.github.io/semestre_1/tp2imbrication/</loc>
@@ -93,6 +90,9 @@
     <lastmod>2021-03-06T14:20:50+01:00</lastmod>
   </url><url>
     <loc>https://info-tsi-vieljeux.github.io/semestre_2/graphes/</loc>
+    <lastmod>2021-03-06T14:23:56+01:00</lastmod>
+  </url><url>
+    <loc>https://info-tsi-vieljeux.github.io/projets/oracle/</loc>
     <lastmod>2021-03-06T14:23:56+01:00</lastmod>
   </url><url>
     <loc>https://info-tsi-vieljeux.github.io/semestre_2/tp10graphes/</loc>

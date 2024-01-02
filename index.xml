@@ -9,6 +9,16 @@
     <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate>
     <atom:link href="https://info-tsi-vieljeux.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Doomsday</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/doomsday/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      <guid>https://info-tsi-vieljeux.github.io/projets/doomsday/</guid>
+      <description>Algorithme du Doomsday Permet de trouver de tête le jour de la semaine pour n&amp;rsquo;importe quelle date du calendrier grégorien (à partir de 1753).
+On donne une date sous la forme $jour/mois/annee$.
+On décompose tout d&amp;rsquo;abord $annee$ en $s\times 100 + an$ où $s$ est le nombre de siècles ($an&amp;lt;100$).
+doomscentury $c$ on calcule le reste de la division euclidienne par 4 du nombre de siècle $s$ on multiplié par 2 on prend le complément à 7 $$c = 7-(s\mod 4) \times2 $$</description>
+    </item>
+    <item>
       <title>Les bonnes pratiques</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/bonnes_pratiques/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
@@ -16,16 +26,6 @@
       <description>Les bonnes pratiques Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&amp;rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est subitement devenu complètement cryptique.
 Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusement qu&amp;rsquo;il était facilement évitable&amp;hellip;
 Commenter son code Commenter son code via l&amp;rsquo;utilisation de # est la principale protection contre de telles autotortures.</description>
-    </item>
-    <item>
-      <title>Oracle</title>
-      <link>https://info-tsi-vieljeux.github.io/projets/oracle/</link>
-      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      <guid>https://info-tsi-vieljeux.github.io/projets/oracle/</guid>
-      <description>L&amp;rsquo;oracle d&amp;rsquo;Aaronson Un petit projet tout gentil pour la fin&amp;hellip;
-L&amp;rsquo;oracle d&amp;rsquo;Aaronson est un petit programme capable de prédire si une personne va taper &amp;ldquo;g&amp;rdquo; ou &amp;ldquo;h&amp;rdquo; sur son clavier avec une précision généralement supérieure à 60%.
-L&amp;rsquo;idée du programme de base :
-Pour chaque mot possible de 5 lettres (&amp;ldquo;g&amp;rdquo; ou &amp;ldquo;h&amp;rdquo;) entré par l&amp;rsquo;utilisateur, on tient à jour dans un registre la lettre que l&amp;rsquo;utilisateur tape tout de suite après.</description>
     </item>
     <item>
       <title>TP 0 : Démarrage</title>
@@ -61,16 +61,6 @@ Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/correctionterminaison/</guid>
       <description>Prouver un algorithme Le mot algorithme vient de la latinisation du nom du savant arabe al-Khuwārizmī (780-850) qui a entre autres permis l&amp;rsquo;introduction de l&amp;rsquo;algèbre en Europe (et il est aussi à l&amp;rsquo;origine de ce mot).
 Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc.</description>
-    </item>
-    <item>
-      <title>Doomsday</title>
-      <link>https://info-tsi-vieljeux.github.io/projets/doomsday/</link>
-      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      <guid>https://info-tsi-vieljeux.github.io/projets/doomsday/</guid>
-      <description>Algorithme du Doomsday Permet de trouver de tête le jour de la semaine pour n&amp;rsquo;importe quelle date du calendrier grégorien (à partir de 1753).
-On donne une date sous la forme $jour/mois/annee$.
-On décompose tout d&amp;rsquo;abord $annee$ en $s\times 100 + an$ où $s$ est le nombre de siècles ($an&amp;lt;100$).
-doomscentury $c$ on calcule le reste de la division euclidienne par 4 du nombre de siècle $s$ on multiplié par 2 on prend le complément à 7 $$c = 7-(s\mod 4) \times2 $$</description>
     </item>
     <item>
       <title>TP 2 : boucles imbriquées</title>
@@ -234,6 +224,16 @@ Plusieurs stratégies existent. On va en passer certaines en revue et essayer de
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/graphes/</guid>
       <description>Les graphes Quelques points et des traits pour les relier suffisent pour créer un graphe. Cette grande simplicité est pourtant à l&amp;rsquo;origine d&amp;rsquo;un foisonnement mathématiques impressionnant.
 Un peu d&amp;rsquo;histoire L&amp;rsquo;acte de naissance de la théorie des graphes date d&amp;rsquo;une petite énigme à laquelle s&amp;rsquo;attelaient sans succès les habitants de Königsberg. Comment un voyageur pouvait traverser les sept ponts sans jamais passer deux fois sur le même pont ? Euler résout le problème et fonda du même coup la théorie des graphes !</description>
+    </item>
+    <item>
+      <title>Oracle</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/oracle/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      <guid>https://info-tsi-vieljeux.github.io/projets/oracle/</guid>
+      <description>L&amp;rsquo;oracle d&amp;rsquo;Aaronson Un petit projet tout gentil pour la fin&amp;hellip;
+L&amp;rsquo;oracle d&amp;rsquo;Aaronson est un petit programme capable de prédire si une personne va taper &amp;ldquo;g&amp;rdquo; ou &amp;ldquo;h&amp;rdquo; sur son clavier avec une précision généralement supérieure à 60%.
+L&amp;rsquo;idée du programme de base :
+Pour chaque mot possible de 5 lettres (&amp;ldquo;g&amp;rdquo; ou &amp;ldquo;h&amp;rdquo;) entré par l&amp;rsquo;utilisateur, on tient à jour dans un registre la lettre que l&amp;rsquo;utilisateur tape tout de suite après.</description>
     </item>
     <item>
       <title>TP 10 : les graphes</title>
