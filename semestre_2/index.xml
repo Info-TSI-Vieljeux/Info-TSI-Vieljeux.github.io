@@ -6,91 +6,77 @@
     <description>Recent content in Semestre 2 on Cours info TSI</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate><atom:link href="https://info-tsi-vieljeux.github.io/semestre_2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate>
+    <atom:link href="https://info-tsi-vieljeux.github.io/semestre_2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Les bonnes pratiques</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/bonnes_pratiques/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/bonnes_pratiques/</guid>
       <description>Les bonnes pratiques Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&amp;rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est subitement devenu complètement cryptique.
 Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusement qu&amp;rsquo;il était facilement évitable&amp;hellip;
- Commenter son code Commenter son code via l&amp;rsquo;utilisation de # est la principale protection contre de telles autotortures.</description>
+Commenter son code Commenter son code via l&amp;rsquo;utilisation de # est la principale protection contre de telles autotortures.</description>
     </item>
-    
     <item>
       <title>Correction / Terminaison</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/correctionterminaison/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/correctionterminaison/</guid>
       <description>Prouver un algorithme Le mot algorithme vient de la latinisation du nom du savant arabe al-Khuwārizmī (780-850) qui a entre autres permis l&amp;rsquo;introduction de l&amp;rsquo;algèbre en Europe (et il est aussi à l&amp;rsquo;origine de ce mot).
 Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc.</description>
     </item>
-    
     <item>
       <title>Complexité</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/complexite/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/complexite/</guid>
       <description>Complexité d&amp;rsquo;un algorithme Parmi les 3 questions qu&amp;rsquo;on peut se poser naturellement devant un algorithme (termine-t-il ? est-il correct ? combien de temps met-il ?), on a laissé la dernière en plan dans le chapitre précédent.
 La question du temps mis par l&amp;rsquo;algorithme est le problème de la complexité de l&amp;rsquo;algorithme.
 L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique est de pouvoir comparer l’efficacité d’algorithmes résolvant le même problème. Dans une situation donnée, cela permet donc d&amp;rsquo;établir lequel des algorithmes disponibles est le meilleur (du point de vue temps d&amp;rsquo;exécution).</description>
     </item>
-    
     <item>
       <title>TP 8 : correction et complexité</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/tp8correc/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/tp8correc/</guid>
-      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; } 
-TP 8 : correction et complexité Cliquez sur cette invitation pour récupérer le repository du TP. Multiplication égyptienne Considérons le code suivant, qui implémente un ancien algorithme égyptien.
+      <description>TP 8 : correction et complexité Cliquez sur cette invitation pour récupérer le repository du TP. Multiplication égyptienne Considérons le code suivant, qui implémente un ancien algorithme égyptien.
 a et b sont supposés être des entiers positifs.
-def multegy(a, b): p = 0 while a &amp;gt; 0: if a%2 == 1: p += b b *= 2 a //= 2 return p  Qui est le variant de boucle permettant de prouver que multegy termine toujours ?</description>
+def multegy(a, b): p = 0 while a &amp;gt; 0: if a%2 == 1: p += b b *= 2 a //= 2 return p Qui est le variant de boucle permettant de prouver que multegy termine toujours ?</description>
     </item>
-    
     <item>
       <title>Les nombres en machine</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/nombre/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/nombre/</guid>
       <description>Représentation des nombres Comment un nombre est-il représenté à l&amp;rsquo;intérieur d&amp;rsquo;un ordinateur ?
 L&amp;rsquo;espace pour représenter un nombre en machine est limité. Si cette limitation n&amp;rsquo;a pas trop d&amp;rsquo;impact pour les entiers (surtout en Python !) elle devient très handicapante pour représenter les réels.
 La représentation machine d&amp;rsquo;un nombre est appelée mot machine. Sa taille est généralement aujourd&amp;rsquo;hui de 64 bits.
-  Les différentes bases Une écriture en base $b$ utilise $b$ chiffres différents :</description>
+Les différentes bases Une écriture en base $b$ utilise $b$ chiffres différents :</description>
     </item>
-    
     <item>
       <title>TP 9 : nombres en machine</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/tp9nombre/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/tp9nombre/</guid>
-      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  TP9 : nombres Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 : nombres palindromiques  Déterminer grâce à un code Python le plus petit nombre supérieur ou égal à $10,000$ dont l&amp;rsquo;écriture est palindromique (se lisant pareil dans les deux sens) à la fois en base 10 et en base 2.</description>
+      <description>TP9 : nombres Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 : nombres palindromiques Déterminer grâce à un code Python le plus petit nombre supérieur ou égal à $10,000$ dont l&amp;rsquo;écriture est palindromique (se lisant pareil dans les deux sens) à la fois en base 10 et en base 2.
+### VOTRE CODE Correction (cliquer pour afficher) a = False b = False i = 10000 while not (a and b): str_i_10 = str(i) str_i_2 = bin(i)[2:] a = str_i_10 == str_i_10[::-1] # i palindromique en base 10 b = str_i_2 == str_i_2[::-1] # i palindromique en base 2 i += 1 print(str_i_10,str_i_2) Saffiche alors&amp;nbsp;:</description>
     </item>
-    
     <item>
       <title>Graphes</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/graphes/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/graphes/</guid>
       <description>Les graphes Quelques points et des traits pour les relier suffisent pour créer un graphe. Cette grande simplicité est pourtant à l&amp;rsquo;origine d&amp;rsquo;un foisonnement mathématiques impressionnant.
 Un peu d&amp;rsquo;histoire L&amp;rsquo;acte de naissance de la théorie des graphes date d&amp;rsquo;une petite énigme à laquelle s&amp;rsquo;attelaient sans succès les habitants de Königsberg. Comment un voyageur pouvait traverser les sept ponts sans jamais passer deux fois sur le même pont ? Euler résout le problème et fonda du même coup la théorie des graphes !</description>
     </item>
-    
     <item>
       <title>TP 10 : les graphes</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/tp10graphes/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/tp10graphes/</guid>
-      <description>hljs.highlightAll();  #correc { color: #006C65; border-left: solid 10px #C7DDDC; } #comm { color: #004D80; border-left: solid 10px #B3CAD9; } #commsum { color: #004D80; } #correcsum { color: #006C65; }  TP10 : les graphes Cliquez sur cette invitation pour récupérer le repository du TP.  Le dessin ci-dessus peut se représenter par (choisir la bonne réponse) :
- a : un graphe orienté b : un graphe non orienté    Correction (cliquer pour afficher) Un graphe orienté.</description>
+      <description>TP10 : les graphes Cliquez sur cette invitation pour récupérer le repository du TP. Le dessin ci-dessus peut se représenter par (choisir la bonne réponse) :
+a : un graphe orienté b : un graphe non orienté Correction (cliquer pour afficher) Un graphe orienté. Le degré du sommet C vaut :
+a : 2 b : 3 c : 5 Correction (cliquer pour afficher) 5 Le distance de F à C vaut :</description>
     </item>
-    
   </channel>
 </rss>

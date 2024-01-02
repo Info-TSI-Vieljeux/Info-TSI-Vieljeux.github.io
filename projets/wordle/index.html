@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.120.4">
     <meta name="description" content="">
 
 
@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1697736121" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1697736121" rel="stylesheet">
-    <link href="/css/hybrid.css?1697736121" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1697736121" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1697736121" rel="stylesheet">
-    <link href="/css/auto-complete.css?1697736121" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1697736121" rel="stylesheet">
-    <link href="/css/theme.css?1697736121" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1697736121" rel="stylesheet">
+    <link href="/css/nucleus.css?1704198632" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1704198632" rel="stylesheet">
+    <link href="/css/hybrid.css?1704198632" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1704198632" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1704198632" rel="stylesheet">
+    <link href="/css/auto-complete.css?1704198632" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1704198632" rel="stylesheet">
+    <link href="/css/theme.css?1704198632" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1704198632" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1697736121" rel="stylesheet">
+    <link href="/css/theme-green.css?1704198632" rel="stylesheet">
     
-    <link href="/css/foo.css?1697736121" rel="stylesheet"><link href="/css/bar.css?1697736121" rel="stylesheet">
+    <link href="/css/foo.css?1704198632" rel="stylesheet"><link href="/css/bar.css?1704198632" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1697736121"></script>
+    <script src="/js/jquery-3.3.1.min.js?1704198632"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1697736121"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1697736121"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1704198632"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1704198632"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1697736121"></script>
+<script type="text/javascript" src="/js/search.js?1704198632"></script>
 
     
   </div>
@@ -719,9 +719,9 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/projets/wordle/" title="Wordle" class="dd-item active">
-        <a href="/projets/wordle/">
-        Wordle
+      <li data-nav-id="/projets/oracle/" title="Oracle" class="dd-item ">
+        <a href="/projets/oracle/">
+        Oracle
         
         </a>
     </li>
@@ -743,6 +743,27 @@ onload='renderMathInElement(document.body);'></script>
       <li data-nav-id="/projets/doomsday/" title="Doomsday" class="dd-item ">
         <a href="/projets/doomsday/">
         Doomsday
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/projets/wordle/" title="Wordle" class="dd-item active">
+        <a href="/projets/wordle/">
+        Wordle
         
         </a>
     </li>
@@ -827,27 +848,6 @@ onload='renderMathInElement(document.body);'></script>
       <li data-nav-id="/projets/nim/" title="Nim" class="dd-item ">
         <a href="/projets/nim/">
         Nim
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/projets/oracle/" title="Oracle" class="dd-item ">
-        <a href="/projets/oracle/">
-        Oracle
         
         </a>
     </li>
@@ -1102,15 +1102,15 @@ onload='renderMathInElement(document.body);'></script>
 <h1 id="wordle">Wordle</h1>
 <p>Écrire un solveur du jeu <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a> qui propose un premier mot puis qui propose le mot suivant en fonction du motif coloré qu&rsquo;on lui transmet en réponse au premier mot rentré, et ainsi de suite jusqu&rsquo;à ce qu&rsquo;il nous propose le mot du jour. Et le tout en moins de 6 essais.</p>
 <p>Pour récupérer dans le code la liste des 2315 mots pouvant être solution :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
-url1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
-liste_solutions <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url1,header<span style="color:#f92672">=</span>None)
-liste_solutions <span style="color:#f92672">=</span> liste_solutions[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
-</code></pre></div><p>Et pour la liste des mots 10657 mots autorisés (ne comprenant pas les mots solutions) :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">url2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gist.githubusercontent.com/cfreshman/cdcdf777450c5b5301e439061d29694c/raw/de1df631b45492e0974f7affe266ec36fed736eb/wordle-allowed-guesses.txt&#39;</span>
-liste_mots <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url2,header<span style="color:#f92672">=</span>None)
-liste_mots <span style="color:#f92672">=</span> liste_mots[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
-</code></pre></div><br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>url1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
+</span></span><span style="display:flex;"><span>liste_solutions <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url1,header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>liste_solutions <span style="color:#f92672">=</span> liste_solutions[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
+</span></span></code></pre></div><p>Et pour la liste des mots 10657 mots autorisés (ne comprenant pas les mots solutions) :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>url2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gist.githubusercontent.com/cfreshman/cdcdf777450c5b5301e439061d29694c/raw/de1df631b45492e0974f7affe266ec36fed736eb/wordle-allowed-guesses.txt&#39;</span>
+</span></span><span style="display:flex;"><span>liste_mots <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url2,header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>liste_mots <span style="color:#f92672">=</span> liste_mots[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
+</span></span></code></pre></div><br>
 <h3 id="mission-supplémentaire--évaluer-la-qualité-du-solveur">Mission supplémentaire : évaluer la qualité du solveur</h3>
 <p>Pour cela, il faut tester le programme sur chacun des 2315 mots pouvant être solution en laissant le programme jouer tout seul et en vérifiant qu&rsquo;il obtient le mot en au plus 6 essais.</p>
 <ul>
@@ -1130,180 +1130,180 @@ liste_mots <span style="color:#f92672">=</span> liste_mots[<span style="color:#a
 <br>
 <h3 id="une-solution-possible">Une solution possible</h3>
 <p>Cette solution est non optimale car elle n&rsquo;utilise pas tous les mots possibles, mais seulement la liste des mots solutions (permet d&rsquo;aller plus vite).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
-<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
-	
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">obtenir_motif</span>(mot: str,solution: str) <span style="color:#f92672">-&gt;</span> str:
-    motif_l <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>
-    sol <span style="color:#f92672">=</span> list(solution)
-    indices <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">5</span>))
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> indices[:]:
-        <span style="color:#66d9ef">if</span> mot[i] <span style="color:#f92672">==</span> solution[i]:
-            motif_l[i]<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;V&#39;</span>
-            sol<span style="color:#f92672">.</span>remove(mot[i])
-            indices<span style="color:#f92672">.</span>remove(i)
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> indices:
-        <span style="color:#66d9ef">if</span> mot[i] <span style="color:#f92672">in</span> sol:
-            motif_l[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;J&#39;</span>
-            sol<span style="color:#f92672">.</span>remove(mot[i])
-        <span style="color:#66d9ef">else</span>:
-            motif_l[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;G&#39;</span>
-    motif <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-    <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> motif_l:
-        motif <span style="color:#f92672">+=</span> s
-    <span style="color:#66d9ef">return</span> motif
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">conv_motif_nb</span>(motif: str) <span style="color:#f92672">-&gt;</span> int:
-    nb <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    rg <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> motif[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]:
-        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
-            <span style="color:#66d9ef">if</span> c<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;GJV&#39;</span>[i]:
-                nb <span style="color:#f92672">+=</span> i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">**</span>rg
-        rg <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">return</span> nb
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">entropie</span>(mot_test: str,liste_mots: list) <span style="color:#f92672">-&gt;</span> tuple:
-    n <span style="color:#f92672">=</span> len(liste_mots)
-    liste_mots_par_motifs <span style="color:#f92672">=</span> [[] <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span><span style="color:#f92672">**</span><span style="color:#ae81ff">5</span>)]
-    <span style="color:#66d9ef">for</span> mot <span style="color:#f92672">in</span> liste_mots:
-        liste_mots_par_motifs[conv_motif_nb(obtenir_motif(mot_test,mot))]<span style="color:#f92672">+=</span>[mot]
-    res <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">for</span> L <span style="color:#f92672">in</span> liste_mots_par_motifs:
-        X <span style="color:#f92672">=</span> len(L)
-        <span style="color:#66d9ef">if</span> X:
-            res <span style="color:#f92672">+=</span> <span style="color:#f92672">-</span>X<span style="color:#f92672">/</span>n<span style="color:#f92672">*</span>np<span style="color:#f92672">.</span>log2(X<span style="color:#f92672">/</span>n)
-    <span style="color:#66d9ef">return</span> res,liste_mots_par_motifs
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">resultats_depart</span>(liste_depart: list) <span style="color:#f92672">-&gt;</span> list:
-    Resultats <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(liste_depart)):
-        s,liste_indices_mots_par_motifs <span style="color:#f92672">=</span> entropie(liste_depart[i],liste_depart)
-        Resultats<span style="color:#f92672">.</span>append((s,i,liste_indices_mots_par_motifs))
-    <span style="color:#66d9ef">return</span> Resultats
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">resultats</span>(liste_depart: list,liste_mots_restants: list) <span style="color:#f92672">-&gt;</span> list:
-    Resultats <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> mot <span style="color:#f92672">in</span> liste_depart:
-        s,liste_mots_par_motifs <span style="color:#f92672">=</span> entropie(mot,liste_mots_restants)
-        Resultats<span style="color:#f92672">.</span>append((s,mot,liste_mots_par_motifs))
-    <span style="color:#66d9ef">return</span> Resultats
-
-<span style="color:#75715e"># from random import choice</span>
-<span style="color:#75715e"># mot_mystere = choice(liste)</span>
-<span style="color:#75715e"># print(mot_mystere)</span>
-
-<span style="color:#75715e">#####################################################</span>
-<span style="color:#75715e"># fabrication de la première liste de résultats (gagne du temps de l&#39;importer par la suite)</span>
-<span style="color:#75715e"># grosse liste</span>
-<span style="color:#75715e"># url = &#39;https://gist.githubusercontent.com/cfreshman/cdcdf777450c5b5301e439061d29694c/raw/de1df631b45492e0974f7affe266ec36fed736eb/wordle-allowed-guesses.txt&#39;</span>
-<span style="color:#75715e"># Liste des solutions (petite liste)</span>
-<span style="color:#75715e"># url = &#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
-<span style="color:#75715e"># dataf = pd.read_csv(url,header=None)</span>
-<span style="color:#75715e"># liste_mots_dep = dataf[0].values.tolist()</span>
-<span style="color:#75715e"># Resultats = resultats_depart(liste_mots_dep[:])</span>
-<span style="color:#75715e"># import csv</span>
-<span style="color:#75715e"># with open(&#39;liste_base.csv&#39;,&#39;w&#39;) as f:</span>
-<span style="color:#75715e">#     write = csv.writer(f)</span>
-<span style="color:#75715e">#     write.writerows(Resultats)</span>
-<span style="color:#75715e">#####################################################</span>
-
-<span style="color:#75715e"># importation liste des mots solution </span>
-<span style="color:#75715e"># (liste obtenue grace au code ci-dessus)</span>
-url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
-dataf <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url,header<span style="color:#f92672">=</span>None)
-liste_mots_dep <span style="color:#f92672">=</span> dataf[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
-<span style="color:#75715e"># importation des premiers résultats</span>
-url2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://cordier-phychi.toile-libre.org/divers/download/liste_base.csv&#39;</span>
-dataf_result <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url2,header<span style="color:#f92672">=</span>None)
-liste_resultats <span style="color:#f92672">=</span> dataf_result<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist() 
-<span style="color:#f92672">import</span> json
-Resultats <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">for</span> L1 <span style="color:#f92672">in</span> liste_resultats:
-    L <span style="color:#f92672">=</span> []
-    a,b,c <span style="color:#f92672">=</span> L1
-    k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    c <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(c)
-    <span style="color:#66d9ef">for</span> L2 <span style="color:#f92672">in</span> list(c):
-        L<span style="color:#f92672">.</span>append([])
-        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> L2:
-            L[k]<span style="color:#f92672">.</span>append(liste_mots_dep[int(i)])
-        k <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-    Resultats<span style="color:#f92672">.</span>append((float(a),liste_mots_dep[int(b)],L))
-
-<span style="color:#75715e">#####################################################</span>
-<span style="color:#75715e"># Si démarrage sans la première liste de résultas, décommenter les lignes qui suivent </span>
-<span style="color:#75715e"># liste des mots solutions</span>
-<span style="color:#75715e"># url = &#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
-<span style="color:#75715e"># dataf = pd.read_csv(url,header=None)</span>
-<span style="color:#75715e"># liste = dataf[0].values.tolist()</span>
-<span style="color:#75715e"># print(&#34;\nPatience... Le premier calcul est un peu long (environ 50 s)\n&#34;)</span>
-<span style="color:#75715e"># Resultats = resultats(liste[:],liste[:])</span>
-essais <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-essai1 <span style="color:#f92672">=</span> max(Resultats)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>upper()
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
-<span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Tentez le mot &#39;{essai1}&#39;&#34;</span>)
-<span style="color:#66d9ef">print</span>()
-motif_obtenu <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;puis entrez le motif obtenu</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">sous la forme d&#39;un mot de 5 lettres</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">choisies parmi &#39;g&#39;, &#39;j&#39; et &#39;v&#39; où</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;g&#39; désigne une lettre grise,</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;j&#39; une lettre jaune et</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;v&#39; une lettre verte</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">motif : &#34;</span>)<span style="color:#f92672">.</span>upper()
-<span style="color:#66d9ef">while</span> True <span style="color:#f92672">or</span> essais <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>:
-  liste_mots <span style="color:#f92672">=</span> max(Resultats)[<span style="color:#ae81ff">2</span>][conv_motif_nb(motif_obtenu)]
-  <span style="color:#66d9ef">if</span> len(liste_mots) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>)  
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;--&gt;&#39;</span>,end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>)
-    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;| {liste_mots[0].upper()} |&#34;</span>)
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)  
-    <span style="color:#66d9ef">break</span>
-  Resultats <span style="color:#f92672">=</span> resultats(liste_mots_dep,max(Resultats)[<span style="color:#ae81ff">2</span>][conv_motif_nb(motif_obtenu)])
-  nvessai <span style="color:#f92672">=</span> max(Resultats)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>upper()
-  <span style="color:#66d9ef">print</span>()
-  <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Tentez le mot &#39;{nvessai}&#39;&#34;</span>)
-  <span style="color:#66d9ef">print</span>()
-  motif_obtenu <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;motif : &#34;</span>)<span style="color:#f92672">.</span>upper()
-  essais <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-  
-<span style="color:#75715e">#####################################################</span>
-<span style="color:#75715e"># pour tester sur tous les mots</span>
-<span style="color:#75715e"># url = &#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
-<span style="color:#75715e"># liste = pd.read_csv(url,header=None)</span>
-<span style="color:#75715e"># liste = liste[0].values.tolist()</span>
-<span style="color:#75715e"># succes = 0</span>
-<span style="color:#75715e"># Distrib = [0]*6</span>
-<span style="color:#75715e"># nb_moy_tent = 0</span>
-<span style="color:#75715e"># count = 0</span>
-<span style="color:#75715e"># print(&#34;Patience... Le premier calcul est un peu long (environ 30 s)\n&#34;)</span>
-<span style="color:#75715e"># Res = resultats(liste[:],liste[:])[:]</span>
-<span style="color:#75715e"># for mot_mystere in liste:</span>
-<span style="color:#75715e">#     essais = 1</span>
-<span style="color:#75715e">#     conv_motif_nb</span>
-<span style="color:#75715e">#     Resultats = Res[:]</span>
-<span style="color:#75715e">#     motif_obtenu = obtenir_motif(&#39;raise&#39;,mot_mystere)</span>
-<span style="color:#75715e">#     if mot_mystere == &#39;raise&#39;:</span>
-<span style="color:#75715e">#         Distrib[0] += 1</span>
-<span style="color:#75715e">#         nb_moy_tent += essais</span>
-<span style="color:#75715e">#         print(count,mot_mystere,essais)</span>
-<span style="color:#75715e">#         count += 1</span>
-<span style="color:#75715e">#         continue</span>
-<span style="color:#75715e">#     while essais &lt;= 6:</span>
-<span style="color:#75715e">#         liste_mots = max(Resultats)[2][conv_motif_nb(motif_obtenu)]</span>
-<span style="color:#75715e">#         Resultats = resultats(liste,liste_mots)  </span>
-<span style="color:#75715e">#         motif_obtenu = obtenir_motif(max(Resultats)[1],mot_mystere)</span>
-<span style="color:#75715e">#         essais += 1</span>
-<span style="color:#75715e">#         if motif_obtenu == &#34;VVVVV&#34;:</span>
-<span style="color:#75715e">#             succes += 1</span>
-<span style="color:#75715e">#             Distrib[essais-1] += 1</span>
-<span style="color:#75715e">#             nb_moy_tent += essais</span>
-<span style="color:#75715e">#             print(count,mot_mystere,essais)</span>
-<span style="color:#75715e">#             break</span>
-<span style="color:#75715e">#         if len(liste_mots) == 1:</span>
-<span style="color:#75715e">#             succes += 1</span>
-<span style="color:#75715e">#             Distrib[essais-1] += 1</span>
-<span style="color:#75715e">#             nb_moy_tent += essais</span>
-<span style="color:#75715e">#             print(count,mot_mystere,essais)</span>
-<span style="color:#75715e">#             break</span>
-<span style="color:#75715e">#     count += 1</span>
-<span style="color:#75715e">#####################################################</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">obtenir_motif</span>(mot: str,solution: str) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>    motif_l <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>    sol <span style="color:#f92672">=</span> list(solution)
+</span></span><span style="display:flex;"><span>    indices <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> indices[:]:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> mot[i] <span style="color:#f92672">==</span> solution[i]:
+</span></span><span style="display:flex;"><span>            motif_l[i]<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;V&#39;</span>
+</span></span><span style="display:flex;"><span>            sol<span style="color:#f92672">.</span>remove(mot[i])
+</span></span><span style="display:flex;"><span>            indices<span style="color:#f92672">.</span>remove(i)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> indices:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> mot[i] <span style="color:#f92672">in</span> sol:
+</span></span><span style="display:flex;"><span>            motif_l[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;J&#39;</span>
+</span></span><span style="display:flex;"><span>            sol<span style="color:#f92672">.</span>remove(mot[i])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            motif_l[i] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;G&#39;</span>
+</span></span><span style="display:flex;"><span>    motif <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> motif_l:
+</span></span><span style="display:flex;"><span>        motif <span style="color:#f92672">+=</span> s
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> motif
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">conv_motif_nb</span>(motif: str) <span style="color:#f92672">-&gt;</span> int:
+</span></span><span style="display:flex;"><span>    nb <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    rg <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> motif[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> c<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;GJV&#39;</span>[i]:
+</span></span><span style="display:flex;"><span>                nb <span style="color:#f92672">+=</span> i<span style="color:#f92672">*</span><span style="color:#ae81ff">3</span><span style="color:#f92672">**</span>rg
+</span></span><span style="display:flex;"><span>        rg <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> nb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">entropie</span>(mot_test: str,liste_mots: list) <span style="color:#f92672">-&gt;</span> tuple:
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(liste_mots)
+</span></span><span style="display:flex;"><span>    liste_mots_par_motifs <span style="color:#f92672">=</span> [[] <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span><span style="color:#f92672">**</span><span style="color:#ae81ff">5</span>)]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> mot <span style="color:#f92672">in</span> liste_mots:
+</span></span><span style="display:flex;"><span>        liste_mots_par_motifs[conv_motif_nb(obtenir_motif(mot_test,mot))]<span style="color:#f92672">+=</span>[mot]
+</span></span><span style="display:flex;"><span>    res <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> L <span style="color:#f92672">in</span> liste_mots_par_motifs:
+</span></span><span style="display:flex;"><span>        X <span style="color:#f92672">=</span> len(L)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> X:
+</span></span><span style="display:flex;"><span>            res <span style="color:#f92672">+=</span> <span style="color:#f92672">-</span>X<span style="color:#f92672">/</span>n<span style="color:#f92672">*</span>np<span style="color:#f92672">.</span>log2(X<span style="color:#f92672">/</span>n)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> res,liste_mots_par_motifs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">resultats_depart</span>(liste_depart: list) <span style="color:#f92672">-&gt;</span> list:
+</span></span><span style="display:flex;"><span>    Resultats <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(liste_depart)):
+</span></span><span style="display:flex;"><span>        s,liste_indices_mots_par_motifs <span style="color:#f92672">=</span> entropie(liste_depart[i],liste_depart)
+</span></span><span style="display:flex;"><span>        Resultats<span style="color:#f92672">.</span>append((s,i,liste_indices_mots_par_motifs))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Resultats
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">resultats</span>(liste_depart: list,liste_mots_restants: list) <span style="color:#f92672">-&gt;</span> list:
+</span></span><span style="display:flex;"><span>    Resultats <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> mot <span style="color:#f92672">in</span> liste_depart:
+</span></span><span style="display:flex;"><span>        s,liste_mots_par_motifs <span style="color:#f92672">=</span> entropie(mot,liste_mots_restants)
+</span></span><span style="display:flex;"><span>        Resultats<span style="color:#f92672">.</span>append((s,mot,liste_mots_par_motifs))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Resultats
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># from random import choice</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># mot_mystere = choice(liste)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># print(mot_mystere)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#####################################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># fabrication de la première liste de résultats (gagne du temps de l&#39;importer par la suite)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># grosse liste</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># url = &#39;https://gist.githubusercontent.com/cfreshman/cdcdf777450c5b5301e439061d29694c/raw/de1df631b45492e0974f7affe266ec36fed736eb/wordle-allowed-guesses.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Liste des solutions (petite liste)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># url = &#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dataf = pd.read_csv(url,header=None)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># liste_mots_dep = dataf[0].values.tolist()</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Resultats = resultats_depart(liste_mots_dep[:])</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># import csv</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># with open(&#39;liste_base.csv&#39;,&#39;w&#39;) as f:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     write = csv.writer(f)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     write.writerows(Resultats)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#####################################################</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># importation liste des mots solution </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (liste obtenue grace au code ci-dessus)</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
+</span></span><span style="display:flex;"><span>dataf <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url,header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>liste_mots_dep <span style="color:#f92672">=</span> dataf[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># importation des premiers résultats</span>
+</span></span><span style="display:flex;"><span>url2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://cordier-phychi.toile-libre.org/divers/download/liste_base.csv&#39;</span>
+</span></span><span style="display:flex;"><span>dataf_result <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url2,header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>liste_resultats <span style="color:#f92672">=</span> dataf_result<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist() 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span>Resultats <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> L1 <span style="color:#f92672">in</span> liste_resultats:
+</span></span><span style="display:flex;"><span>    L <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    a,b,c <span style="color:#f92672">=</span> L1
+</span></span><span style="display:flex;"><span>    k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    c <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(c)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> L2 <span style="color:#f92672">in</span> list(c):
+</span></span><span style="display:flex;"><span>        L<span style="color:#f92672">.</span>append([])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> L2:
+</span></span><span style="display:flex;"><span>            L[k]<span style="color:#f92672">.</span>append(liste_mots_dep[int(i)])
+</span></span><span style="display:flex;"><span>        k <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    Resultats<span style="color:#f92672">.</span>append((float(a),liste_mots_dep[int(b)],L))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#####################################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Si démarrage sans la première liste de résultas, décommenter les lignes qui suivent </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># liste des mots solutions</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># url = &#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dataf = pd.read_csv(url,header=None)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># liste = dataf[0].values.tolist()</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># print(&#34;\nPatience... Le premier calcul est un peu long (environ 50 s)\n&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Resultats = resultats(liste[:],liste[:])</span>
+</span></span><span style="display:flex;"><span>essais <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>essai1 <span style="color:#f92672">=</span> max(Resultats)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>upper()
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Tentez le mot &#39;</span><span style="color:#e6db74">{</span>essai1<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>)
+</span></span><span style="display:flex;"><span>print()
+</span></span><span style="display:flex;"><span>motif_obtenu <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;puis entrez le motif obtenu</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">sous la forme d&#39;un mot de 5 lettres</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">choisies parmi &#39;g&#39;, &#39;j&#39; et &#39;v&#39; où</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;g&#39; désigne une lettre grise,</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;j&#39; une lettre jaune et</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;v&#39; une lettre verte</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">motif : &#34;</span>)<span style="color:#f92672">.</span>upper()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span> <span style="color:#f92672">or</span> essais <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span>:
+</span></span><span style="display:flex;"><span>  liste_mots <span style="color:#f92672">=</span> max(Resultats)[<span style="color:#ae81ff">2</span>][conv_motif_nb(motif_obtenu)]
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> len(liste_mots) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span>)  
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;--&gt;&#39;</span>,end <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39; &#39;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;| </span><span style="color:#e6db74">{</span>liste_mots[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>upper()<span style="color:#e6db74">}</span><span style="color:#e6db74"> |&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>  Resultats <span style="color:#f92672">=</span> resultats(liste_mots_dep,max(Resultats)[<span style="color:#ae81ff">2</span>][conv_motif_nb(motif_obtenu)])
+</span></span><span style="display:flex;"><span>  nvessai <span style="color:#f92672">=</span> max(Resultats)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>upper()
+</span></span><span style="display:flex;"><span>  print()
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Tentez le mot &#39;</span><span style="color:#e6db74">{</span>nvessai<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>)
+</span></span><span style="display:flex;"><span>  print()
+</span></span><span style="display:flex;"><span>  motif_obtenu <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;motif : &#34;</span>)<span style="color:#f92672">.</span>upper()
+</span></span><span style="display:flex;"><span>  essais <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#####################################################</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pour tester sur tous les mots</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># url = &#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># liste = pd.read_csv(url,header=None)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># liste = liste[0].values.tolist()</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># succes = 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Distrib = [0]*6</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nb_moy_tent = 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># count = 0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># print(&#34;Patience... Le premier calcul est un peu long (environ 30 s)\n&#34;)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Res = resultats(liste[:],liste[:])[:]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for mot_mystere in liste:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     essais = 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     conv_motif_nb</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     Resultats = Res[:]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     motif_obtenu = obtenir_motif(&#39;raise&#39;,mot_mystere)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     if mot_mystere == &#39;raise&#39;:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         Distrib[0] += 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         nb_moy_tent += essais</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         print(count,mot_mystere,essais)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         count += 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         continue</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     while essais &lt;= 6:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         liste_mots = max(Resultats)[2][conv_motif_nb(motif_obtenu)]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         Resultats = resultats(liste,liste_mots)  </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         motif_obtenu = obtenir_motif(max(Resultats)[1],mot_mystere)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         essais += 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         if motif_obtenu == &#34;VVVVV&#34;:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             succes += 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             Distrib[essais-1] += 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             nb_moy_tent += essais</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             print(count,mot_mystere,essais)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             break</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         if len(liste_mots) == 1:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             succes += 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             Distrib[essais-1] += 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             nb_moy_tent += essais</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             print(count,mot_mystere,essais)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             break</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     count += 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#####################################################</span>
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1757,23 +1757,6 @@ motif_obtenu <span style="color:#f92672">=</span> input(<span style="color:#e6db
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -1808,6 +1791,26 @@ motif_obtenu <span style="color:#f92672">=</span> input(<span style="color:#e6db
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1998,19 +2001,19 @@ motif_obtenu <span style="color:#f92672">=</span> input(<span style="color:#e6db
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1697736121"></script>
-    <script src="/js/perfect-scrollbar.min.js?1697736121"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1697736121"></script>
-    <script src="/js/jquery.sticky.js?1697736121"></script>
-    <script src="/js/featherlight.min.js?1697736121"></script>
-    <script src="/js/highlight.pack.js?1697736121"></script>
+    <script src="/js/clipboard.min.js?1704198632"></script>
+    <script src="/js/perfect-scrollbar.min.js?1704198632"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1704198632"></script>
+    <script src="/js/jquery.sticky.js?1704198632"></script>
+    <script src="/js/featherlight.min.js?1704198632"></script>
+    <script src="/js/highlight.pack.js?1704198632"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1697736121"></script>
-    <script src="/js/learn.js?1697736121"></script>
-    <script src="/js/hugo-learn.js?1697736121"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1704198632"></script>
+    <script src="/js/learn.js?1704198632"></script>
+    <script src="/js/hugo-learn.js?1704198632"></script>
     
         
-            <script src="/mermaid/mermaid.js?1697736121"></script>
+            <script src="/mermaid/mermaid.js?1704198632"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

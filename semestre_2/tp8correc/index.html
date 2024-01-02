@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.120.4">
     <meta name="description" content="">
 
 
@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1697736121" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1697736121" rel="stylesheet">
-    <link href="/css/hybrid.css?1697736121" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1697736121" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1697736121" rel="stylesheet">
-    <link href="/css/auto-complete.css?1697736121" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1697736121" rel="stylesheet">
-    <link href="/css/theme.css?1697736121" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1697736121" rel="stylesheet">
+    <link href="/css/nucleus.css?1704198632" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1704198632" rel="stylesheet">
+    <link href="/css/hybrid.css?1704198632" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1704198632" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1704198632" rel="stylesheet">
+    <link href="/css/auto-complete.css?1704198632" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1704198632" rel="stylesheet">
+    <link href="/css/theme.css?1704198632" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1704198632" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1697736121" rel="stylesheet">
+    <link href="/css/theme-green.css?1704198632" rel="stylesheet">
     
-    <link href="/css/foo.css?1697736121" rel="stylesheet"><link href="/css/bar.css?1697736121" rel="stylesheet">
+    <link href="/css/foo.css?1704198632" rel="stylesheet"><link href="/css/bar.css?1704198632" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1697736121"></script>
+    <script src="/js/jquery-3.3.1.min.js?1704198632"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1697736121"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1697736121"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1704198632"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1704198632"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1697736121"></script>
+<script type="text/javascript" src="/js/search.js?1704198632"></script>
 
     
   </div>
@@ -719,9 +719,9 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/projets/wordle/" title="Wordle" class="dd-item ">
-        <a href="/projets/wordle/">
-        Wordle
+      <li data-nav-id="/projets/oracle/" title="Oracle" class="dd-item ">
+        <a href="/projets/oracle/">
+        Oracle
         
         </a>
     </li>
@@ -743,6 +743,27 @@ onload='renderMathInElement(document.body);'></script>
       <li data-nav-id="/projets/doomsday/" title="Doomsday" class="dd-item ">
         <a href="/projets/doomsday/">
         Doomsday
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/projets/wordle/" title="Wordle" class="dd-item ">
+        <a href="/projets/wordle/">
+        Wordle
         
         </a>
     </li>
@@ -827,27 +848,6 @@ onload='renderMathInElement(document.body);'></script>
       <li data-nav-id="/projets/nim/" title="Nim" class="dd-item ">
         <a href="/projets/nim/">
         Nim
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/projets/oracle/" title="Oracle" class="dd-item ">
-        <a href="/projets/oracle/">
-        Oracle
         
         </a>
     </li>
@@ -1122,15 +1122,15 @@ onload='renderMathInElement(document.body);'></script>
 <h2 id="multiplication-égyptienne">Multiplication égyptienne</h2>
 <p>Considérons le code suivant, qui implémente un ancien algorithme égyptien.<br>
 <code>a</code> et <code>b</code> sont supposés être des entiers positifs.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">multegy</span>(a, b):
-    p <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-    <span style="color:#66d9ef">while</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
-        <span style="color:#66d9ef">if</span> a<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
-            p <span style="color:#f92672">+=</span> b
-        b <span style="color:#f92672">*=</span> <span style="color:#ae81ff">2</span>
-        a <span style="color:#f92672">//=</span> <span style="color:#ae81ff">2</span>
-    <span style="color:#66d9ef">return</span> p
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">multegy</span>(a, b):
+</span></span><span style="display:flex;"><span>    p <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> a<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>            p <span style="color:#f92672">+=</span> b
+</span></span><span style="display:flex;"><span>        b <span style="color:#f92672">*=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>        a <span style="color:#f92672">//=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> p
+</span></span></code></pre></div><blockquote>
 <p>Qui est le <strong>variant de boucle</strong> permettant de prouver que <code>multegy</code> termine toujours ?</p>
 <ul>
 <li>a : a</li>
@@ -1227,21 +1227,21 @@ La complexité globale reste donc en $O(\log a)$.
 </details>
 <p> </p>
 <h2 id="deux-fonctions-de-recherche">Deux fonctions de recherche</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche</span>(s, m):  
-    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(len(s) <span style="color:#f92672">-</span> len(m) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):  
-        b <span style="color:#f92672">=</span> True  
-        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(m)):  
-            <span style="color:#66d9ef">if</span> s[k <span style="color:#f92672">+</span> i] <span style="color:#f92672">!=</span> m[i]:  
-                b <span style="color:#f92672">=</span> False  
-        <span style="color:#66d9ef">if</span> b:  
-            <span style="color:#66d9ef">return</span> True  
-    <span style="color:#66d9ef">return</span> False 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche2</span>(s, m):  
-    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(len(s) <span style="color:#f92672">-</span> len(m) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):  
-        <span style="color:#66d9ef">if</span> s[k:k <span style="color:#f92672">+</span> len(m)] <span style="color:#f92672">==</span> m:  
-            <span style="color:#66d9ef">return</span> True  
-    <span style="color:#66d9ef">return</span> False 
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche</span>(s, m):  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(len(s) <span style="color:#f92672">-</span> len(m) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):  
+</span></span><span style="display:flex;"><span>        b <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(m)):  
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> s[k <span style="color:#f92672">+</span> i] <span style="color:#f92672">!=</span> m[i]:  
+</span></span><span style="display:flex;"><span>                b <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> b:  
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span> 
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche2</span>(s, m):  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(len(s) <span style="color:#f92672">-</span> len(m) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>):  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> s[k:k <span style="color:#f92672">+</span> len(m)] <span style="color:#f92672">==</span> m:  
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span> 
+</span></span></code></pre></div><blockquote>
 <p>Quelle est la complexité de la fonction cherche ? Et celle de cherche2 ?<br>
 Appelons <code>len(s)</code> n et <code>len(m)</code> p.</p>
 <ul>
@@ -1259,34 +1259,34 @@ Il ne faut pas simplement compter les imbrications de boucles (même si c'est so
 </blockquote>
 </details>
 <p>Exécuter le code suivant peut vous aider à confirmer votre réponse.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> time
-<span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
-
-abc <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">motdenlettres</span>(n): 
-    mot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
-    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
-        mot <span style="color:#f92672">+=</span> abc[randint(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">25</span>)]
-    <span style="color:#66d9ef">return</span> mot
-
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;|    n    |    p   | cherche2 |&#39;</span>)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>)
-<span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>):
-    n <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>j
-    s <span style="color:#f92672">=</span> motdenlettres(n)
-    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
-        p <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>k
-        m <span style="color:#f92672">=</span> motdenlettres(p)
-        
-        d <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-        cherche2(s,m)
-        f <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
-        t <span style="color:#f92672">=</span> f <span style="color:#f92672">-</span> d
-        
-        <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#39;|{n:^9d}|{p:^8d}|{t:^10.2E}|&#39;</span>)
-    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>)
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>abc <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">motdenlettres</span>(n): 
+</span></span><span style="display:flex;"><span>    mot <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(n):
+</span></span><span style="display:flex;"><span>        mot <span style="color:#f92672">+=</span> abc[randint(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">25</span>)]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> mot
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;|    n    |    p   | cherche2 |&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">6</span>):
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>j
+</span></span><span style="display:flex;"><span>    s <span style="color:#f92672">=</span> motdenlettres(n)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">**</span><span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">**</span>k
+</span></span><span style="display:flex;"><span>        m <span style="color:#f92672">=</span> motdenlettres(p)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        d <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>        cherche2(s,m)
+</span></span><span style="display:flex;"><span>        f <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>        t <span style="color:#f92672">=</span> f <span style="color:#f92672">-</span> d
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;|</span><span style="color:#e6db74">{</span>n<span style="color:#e6db74">:</span><span style="color:#e6db74">^9d</span><span style="color:#e6db74">}</span><span style="color:#e6db74">|</span><span style="color:#e6db74">{</span>p<span style="color:#e6db74">:</span><span style="color:#e6db74">^8d</span><span style="color:#e6db74">}</span><span style="color:#e6db74">|</span><span style="color:#e6db74">{</span>t<span style="color:#e6db74">:</span><span style="color:#e6db74">^10.2E</span><span style="color:#e6db74">}</span><span style="color:#e6db74">|&#39;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span>)
+</span></span></code></pre></div>
 
 <div style="font-family:monospace;">
 ------------------------------<br>
@@ -2045,19 +2045,19 @@ Vous trouverez des exemples de calcul de complexité et une <a href="https://pre
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1697736121"></script>
-    <script src="/js/perfect-scrollbar.min.js?1697736121"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1697736121"></script>
-    <script src="/js/jquery.sticky.js?1697736121"></script>
-    <script src="/js/featherlight.min.js?1697736121"></script>
-    <script src="/js/highlight.pack.js?1697736121"></script>
+    <script src="/js/clipboard.min.js?1704198632"></script>
+    <script src="/js/perfect-scrollbar.min.js?1704198632"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1704198632"></script>
+    <script src="/js/jquery.sticky.js?1704198632"></script>
+    <script src="/js/featherlight.min.js?1704198632"></script>
+    <script src="/js/highlight.pack.js?1704198632"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1697736121"></script>
-    <script src="/js/learn.js?1697736121"></script>
-    <script src="/js/hugo-learn.js?1697736121"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1704198632"></script>
+    <script src="/js/learn.js?1704198632"></script>
+    <script src="/js/hugo-learn.js?1704198632"></script>
     
         
-            <script src="/mermaid/mermaid.js?1697736121"></script>
+            <script src="/mermaid/mermaid.js?1704198632"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

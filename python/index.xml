@@ -6,62 +6,52 @@
     <description>Recent content in Python on Cours info TSI</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate><atom:link href="https://info-tsi-vieljeux.github.io/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate>
+    <atom:link href="https://info-tsi-vieljeux.github.io/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Traits généraux</title>
       <link>https://info-tsi-vieljeux.github.io/python/traitsgaux/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/python/traitsgaux/</guid>
       <description>Traits généraux Introduction Shell et IDE Python est un langage de programmation interprété développé par Guido van Rossum en 1989. Langage impératif de haut-niveau doté d&amp;rsquo;une syntaxe simple, Python s&amp;rsquo;adapte à de nombreux contextes grâce à sa modularité ; une importante librairie de modules et packages permet en effet d&amp;rsquo;étendre ses capacités.
 Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;utilisateur entre une commande Python qui est interprétée immédiatement lorsque Entrée est tapée.</description>
     </item>
-    
     <item>
       <title>Types de base</title>
       <link>https://info-tsi-vieljeux.github.io/python/typesbase/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/python/typesbase/</guid>
       <description>Types de base Les types de base en python (les catégories fondamentales des objets manipulés) sont :
-  Les entiers int (en anglais, entier se dit integer).
+Les entiers int (en anglais, entier se dit integer).
 Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est illimitée en Python.
-
-  Les flottants float. Ce sont des approximations de nombres réels. La méthode d&amp;rsquo;écriture en machine de ces nombres, équivalente à une écriture scientifique pour nombre binaire, explique leur nom : ce sont des nombres à virgule flottante.</description>
+Les flottants float. Ce sont des approximations de nombres réels. La méthode d&amp;rsquo;écriture en machine de ces nombres, équivalente à une écriture scientifique pour nombre binaire, explique leur nom : ce sont des nombres à virgule flottante.</description>
     </item>
-    
     <item>
       <title>Types structurés</title>
       <link>https://info-tsi-vieljeux.github.io/python/typesstruct/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/python/typesstruct/</guid>
       <description>Types structurés Les types structurés (chaînes, tuiles, listes, dictionnaires, ensembles) sont des objets composés ; ils contiennent eux-mêmes d&amp;rsquo;autres objets.
 Certains de ces objets composites sont en plus indicés. Comme leur nom l&amp;rsquo;indique, on peut parcourir les éléments présents d&amp;rsquo;une structure indicée à l&amp;rsquo;aide d&amp;rsquo;un indice (un nombre entier étiquetant l&amp;rsquo;indice). Les structures indicés sont donc ordonnées, ce sont des séquences. L&amp;rsquo;indice commence toujours à 0.
 Et donc si la structure contient n éléments, le dernier indice est n-1.</description>
     </item>
-    
     <item>
       <title>Strucutres de contrôle</title>
       <link>https://info-tsi-vieljeux.github.io/python/structcontr/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/python/structcontr/</guid>
       <description>Structures de contrôle Instruction d&amp;rsquo;affectation Définition Lorsqu&amp;rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction id().
 id(3.7) 4387417928
 Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&amp;rsquo;est à ça que servent les variables.</description>
     </item>
-    
     <item>
       <title>Divers</title>
       <link>https://info-tsi-vieljeux.github.io/python/divers/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
-      
       <guid>https://info-tsi-vieljeux.github.io/python/divers/</guid>
       <description>Divers Commentaires Tous les langages de programmations permettent d&amp;rsquo;introduire des commentaires dans le code qui servent d&amp;rsquo;aides et de repères à celui qui lit le code, mais qui sont ignorés lors de l&amp;rsquo;exécution.
 En Python, les commentaires sont introduits par le symbole dièse (hashtag) #.
- Utilisation de print print est la première fonction native que l&amp;rsquo;on rencontre. C&amp;rsquo;est une fonction à effet de bord : elle ne retourne rien (elle est de type None), mais elle permet d&amp;rsquo;afficher une chaîne de caractères, ou le contenu d&amp;rsquo;une variable, quel que soit son type.</description>
+Utilisation de print print est la première fonction native que l&amp;rsquo;on rencontre. C&amp;rsquo;est une fonction à effet de bord : elle ne retourne rien (elle est de type None), mais elle permet d&amp;rsquo;afficher une chaîne de caractères, ou le contenu d&amp;rsquo;une variable, quel que soit son type.</description>
     </item>
-    
   </channel>
 </rss>
