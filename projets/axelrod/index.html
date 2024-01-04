@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1704380990" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1704380990" rel="stylesheet">
-    <link href="/css/hybrid.css?1704380990" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1704380990" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1704380990" rel="stylesheet">
-    <link href="/css/auto-complete.css?1704380990" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1704380990" rel="stylesheet">
-    <link href="/css/theme.css?1704380990" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1704380990" rel="stylesheet">
+    <link href="/css/nucleus.css?1704403322" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1704403322" rel="stylesheet">
+    <link href="/css/hybrid.css?1704403322" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1704403322" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1704403322" rel="stylesheet">
+    <link href="/css/auto-complete.css?1704403322" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1704403322" rel="stylesheet">
+    <link href="/css/theme.css?1704403322" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1704403322" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1704380990" rel="stylesheet">
+    <link href="/css/theme-green.css?1704403322" rel="stylesheet">
     
-    <link href="/css/foo.css?1704380990" rel="stylesheet"><link href="/css/bar.css?1704380990" rel="stylesheet">
+    <link href="/css/foo.css?1704403322" rel="stylesheet"><link href="/css/bar.css?1704403322" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1704380990"></script>
+    <script src="/js/jquery-3.3.1.min.js?1704403322"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1704380990"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1704380990"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1704403322"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1704403322"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1704380990"></script>
+<script type="text/javascript" src="/js/search.js?1704403322"></script>
 
     
   </div>
@@ -1092,7 +1092,11 @@ onload='renderMathInElement(document.body);'></script>
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#mission-bonus-">Mission bonus :</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1127,6 +1131,7 @@ onload='renderMathInElement(document.body);'></script>
 <li><code>Eatherly</code> : commence par trahir puis trahit en proportion du taux de trahison de l&rsquo;autre jusqu&rsquo;à ce coup.</li>
 <li><code>Gofman</code> : commence par coopérer. Si les deux joueurs ont joué différemment au coup précédent, trahit avec une probabilité de 5/7, et coopère s&rsquo;ils ont joué la même chose.</li>
 <li><code>Tullock</code> : coopère les 10 premiers coups puis coopère à chaque coup 10% de moins que l&rsquo;autre a coopéré sur les 10 coups qui précèdent.</li>
+<li><code>Pavlov</code> : commence par coopérer. Si l&rsquo;autre a coopéré au dernier tour, on garde le même coup, sinon on change.</li>
 </ul>
 <p>Donnez le palmares du tournoi après 200 parties.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -1232,6 +1237,15 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Pavlov</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(liste_coups_adverses) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>liste_coups_joueur[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> liste_coups_joueur[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
 </span></span></code></pre></div><p>Match entre deux joueurs :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">partie</span>(joueurA,joueurB):
 </span></span><span style="display:flex;"><span>    nbre_parties <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
@@ -1269,11 +1283,16 @@ onload='renderMathInElement(document.body);'></script>
 </span></span></code></pre></div><p>Le tournoi (on fait s&rsquo;affronter tous les joueurs y compris eux-mêmes et on recommence 50 fois) :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tournoi</span>():
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> partie
-</span></span><span style="display:flex;"><span>    nb_tournois <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>    nb_tournois <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(nb_tournois):
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j,JA <span style="color:#f92672">in</span> enumerate(liste_joueurs):
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> JB <span style="color:#f92672">in</span> liste_joueurs[j:]:
 </span></span><span style="display:flex;"><span>                partie(JA,JB)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(matrice_tournoi)):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(len(matrice_tournoi[<span style="color:#ae81ff">0</span>])):
+</span></span><span style="display:flex;"><span>            matrice_tournoi[i][j] <span style="color:#f92672">=</span> int(matrice_tournoi[i][j]<span style="color:#f92672">/</span>nb_tournois)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> dico_scores:
+</span></span><span style="display:flex;"><span>        dico_scores[key] <span style="color:#f92672">=</span> int(dico_scores[key]<span style="color:#f92672">/</span>nb_tournois) 
 </span></span></code></pre></div><p>Pour réinitialiser les scores entre deux tournois :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">raz</span>():
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> liste_joueurs,liste_strategies,dico_strategies,dico_scores,matrice_tournoi
@@ -1292,19 +1311,20 @@ onload='renderMathInElement(document.body);'></script>
 </span></span></code></pre></div>
 
 <div style="font-family:monospace">
-TitforTwoTats&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 336032<br>
-Gofman&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 326049<br>
-Grudger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 325071<br>
-TitforTat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 324919<br>
-AllC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 323487<br>
-TwoTitsforTat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 322871<br>
-Tullock&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 300532<br>
-Alt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 295829<br>
-Rando &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 293803<br>
-Tester&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 280866<br>
-Eatherly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 280151<br>
-Joss&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 267697<br>
-AllD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 256572<br>
+TitforTwoTats&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 7320<br>
+Gofman&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 7127<br>
+TitforTat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 7117<br>
+Grudger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 7110<br>
+AllC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 7076<br>
+TwoTitsforTat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 7038<br>
+Pavlov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6949<br>
+Tullock&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6781<br>
+Alt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6356<br>
+Rando &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6336<br>
+Eatherly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6082<br>
+Tester&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 6066<br>
+Joss&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 5768<br>
+AllD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 5736<br>
 </div>
 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>),dpi<span style="color:#f92672">=</span><span style="color:#ae81ff">150</span>)
@@ -1314,6 +1334,278 @@ AllD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 </span></span><span style="display:flex;"><span>s<span style="color:#f92672">.</span>xaxis<span style="color:#f92672">.</span>set_label_position(<span style="color:#e6db74">&#39;top&#39;</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xticks(rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>)
 </span></span></code></pre></div><p><img src="/restournoi.png" alt=""></p>
+<script>
+// Helper function to simulate random number for strategies that require randomness
+function random() {
+    return Math.random();
+}
+
+function TitforTat(liste_coups_joueur, liste_coups_adverses) {
+    if (liste_coups_adverses.length === 0) {
+        return 1;
+    } else {
+        return liste_coups_adverses[liste_coups_adverses.length - 1];
+    }
+}
+
+function Grudger(liste_coups_joueur, liste_coups_adverses) {
+    if (liste_coups_adverses.length === 0) {
+        return 1;
+    }
+    for (let coup of liste_coups_adverses) {
+        if (coup === 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+function Joss(liste_coups_joueur, liste_coups_adverses) {
+    if (liste_coups_adverses.length === 0) {
+        return 1;
+    } else {
+        if (random() < 0.1) {
+            return 0;
+        } else {
+            return liste_coups_adverses[liste_coups_adverses.length - 1];
+        }
+    }
+}
+
+function Rando(liste_coups_joueur, liste_coups_adverses) {
+    return Math.round(random());
+}
+
+function AllD(liste_coups_joueur, liste_coups_adverses) {
+    return 0;
+}
+
+function AllC(liste_coups_joueur, liste_coups_adverses) {
+    return 1;
+}
+
+function TitforTwoTats(liste_coups_joueur, liste_coups_adverses) {
+    if (liste_coups_adverses.length < 2) {
+        return 1;
+    } else if (liste_coups_adverses.slice(-2).reduce((a, b) => a + b, 0) === 0) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+function TwoTitsforTat(liste_coups_joueur, liste_coups_adverses) {
+    if (liste_coups_adverses.length < 1) {
+        return 1;
+    } else if (liste_coups_adverses[liste_coups_adverses.length - 1] === 0 || (liste_coups_adverses.length > 1 && liste_coups_adverses[liste_coups_adverses.length - 2] === 0)) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+function Tester(liste_coups_joueur, liste_coups_adverses) {
+    if (liste_coups_adverses.length === 0) {
+        return 0;
+    } else if (liste_coups_adverses.length === 1) {
+        return liste_coups_adverses[0];
+    } else {
+        if (liste_coups_adverses[1]) { // Tit for Tat
+            return liste_coups_adverses[liste_coups_adverses.length - 1];
+        } else { // Alternance
+            return (liste_coups_adverses.length + 1) % 2;
+        }
+    }
+}
+
+function Eatherly(liste_coups_joueur, liste_coups_adverses) {
+    if (liste_coups_adverses.length === 0) {
+        return 0;
+    } else {
+        let cooperationRatio = (liste_coups_adverses.length - liste_coups_adverses.reduce((a, b) => a + b, 0)) / liste_coups_adverses.length;
+        if (random() < cooperationRatio) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+}
+
+function Alt(liste_coups_joueur, liste_coups_adverses) {
+    return (liste_coups_adverses.length + 1) % 2;
+}
+
+function Gofman(liste_coups_joueur, liste_coups_adverses) {
+    if (liste_coups_adverses.length === 0) {
+        return 1;
+    } else {
+        if (liste_coups_adverses[liste_coups_adverses.length - 1] !== liste_coups_joueur[liste_coups_joueur.length - 1]) {
+            if (random() < 2 / 7) {
+                return 1;
+            } else {
+                return 0;
+            }
+        } else {
+            return 1;
+        }
+    }
+}
+
+function Tullock(liste_coups_joueur, liste_coups_adverses) {
+    if (liste_coups_adverses.length < 11) {
+        return 1;
+    } else {
+        let cooperationRatio = liste_coups_adverses.reduce((a, b) => a + b, 0) / liste_coups_adverses.length;
+        if (random() < cooperationRatio - 0.1) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+}
+
+function Pavlov(liste_coups_joueur, liste_coups_adverses) {
+    // Commence par coopérer
+    if (liste_coups_joueur.length === 0) {
+        return 1;
+    }
+    let dernier_coup_joueur = liste_coups_joueur[liste_coups_joueur.length - 1];
+    let dernier_coup_adverse = liste_coups_adverses[liste_coups_adverses.length - 1];
+    // Gagnant si les deux coopèrent ou si le joueur seul trahit
+    if ((dernier_coup_joueur === 1 && dernier_coup_adverse === 1) || 
+        (dernier_coup_joueur === 0 && dernier_coup_adverse === 1)) {
+        return dernier_coup_joueur; // répète le dernier coup
+    } else {
+        return 1 - dernier_coup_joueur; // change le dernier coup
+    }
+}
+
+function partie(joueurA, joueurB) {
+    let nbre_parties = 200;
+    let score_joueurA = 0;
+    let score_joueurB = 0;
+    let liste_coups_joueurA = [];
+    let liste_coups_joueurB = [];
+
+    for (let i = 0; i < nbre_parties; i++) {
+        let JA = joueurA(liste_coups_joueurA, liste_coups_joueurB);
+        let JB = joueurB(liste_coups_joueurB, liste_coups_joueurA);
+        liste_coups_joueurA.push(JA);
+        liste_coups_joueurB.push(JB);
+        if (JA) {
+            if (JB) {
+                score_joueurA += 3;
+                score_joueurB += 3;
+            } else {
+                score_joueurA += 0;
+                score_joueurB += 5;
+            }
+        } else {
+            if (JB) {
+                score_joueurA += 5;
+                score_joueurB += 0;
+            } else {
+                score_joueurA += 1;
+                score_joueurB += 1;
+            }
+        }
+    }
+
+    return {score_joueurA, score_joueurB};
+}
+
+const strategies = {
+    "TitforTat": TitforTat,
+    "Grudger": Grudger,
+    "Joss": Joss,
+    "Rando": Rando,
+    "AllD": AllD,
+    "AllC": AllC,
+    "TitforTwoTats": TitforTwoTats,
+    "TwoTitsforTat": TwoTitsforTat,
+    "Tester": Tester,
+    "Eatherly": Eatherly,
+    "Alt": Alt,
+    "Gofman": Gofman,
+    "Tullock": Tullock,
+    "Pavlov": Pavlov
+};
+
+function playMatch() {
+    let playerAStrategyName = document.getElementById("playerAStrategy").value;
+    let playerBStrategyName = document.getElementById("playerBStrategy").value;
+
+    let playerAStrategy = strategies[playerAStrategyName];
+    let playerBStrategy = strategies[playerBStrategyName];
+
+    let {score_joueurA, score_joueurB} = partie(playerAStrategy, playerBStrategy);
+
+    document.getElementById("playerAScore").innerHTML = playerAStrategyName + " : " + score_joueurA;
+    document.getElementById("playerBScore").innerHTML = playerBStrategyName + " : " + score_joueurB;
+}
+
+</script>
+<div style="display: flex;justify-content: center;">
+<div>
+    <select id="playerAStrategy" style="font-size:2em;width:150px;">
+    <option value="TitforTat">Tit for Tat</option>
+    <option value="Grudger">Grudger</option>
+    <option value="Joss">Joss</option>
+    <option value="Rando">Rando</option>
+    <option value="AllD">AllD</option>
+    <option value="AllC">AllC</option>
+    <option value="TitforTwoTats">Tit for Two Tats</option>
+    <option value="TwoTitsforTat">Two Tits for Tat</option>
+    <option value="Tester">Tester</option>
+    <option value="Eatherly">Eatherly</option>
+    <option value="Alt">Alt</option>
+    <option value="Gofman">Gofman</option>
+    <option value="Tullock">Tullock</option>
+    <option value="Pavlov">Pavlov</option>
+</select>
+<p style="text-align:center; font-size:2em">&#9889;</p> 
+<select id="playerBStrategy" style="font-size:2em;width:150px;">
+     <option value="TitforTat">Tit for Tat</option>
+    <option value="Grudger">Grudger</option>
+    <option value="Joss">Joss</option>
+    <option value="Rando">Rando</option>
+    <option value="AllD">AllD</option>
+    <option value="AllC">AllC</option>
+    <option value="TitforTwoTats">Tit for Two Tats</option>
+    <option value="TwoTitsforTat">Two Tits for Tat</option>
+    <option value="Tester">Tester</option>
+    <option value="Eatherly">Eatherly</option>
+    <option value="Alt">Alt</option>
+    <option value="Gofman">Gofman</option>
+    <option value="Tullock">Tullock</option>
+  <option value="Pavlov">Pavlov</option>
+</select>
+</div>
+</div>
+<div style="text-align:center">
+<style>
+  button {
+            font-size: 1.2em; 
+            padding: 10px 20px; 
+            border-radius: 20px; 
+            border: none; 
+            background-color: lightgreen; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+        }
+        button:hover {
+            background-color: red; 
+            color: white;
+        }
+</style>
+<p><button onclick="playMatch()">Lancer le match</button></p>
+<h3>Scores:</h4>
+<p id="playerAScore" style="font-size:30px">Player A : 0</p>
+<p id="playerBScore" style="font-size:30px">Player B : 0</p>
+</div>
+<hr>
+<h2 id="mission-bonus-">Mission bonus :</h2>
+<p>Imaginer une nouvelle stratégie qui se hisse sur le podium en tournoi contre les autres stratégies déjà implémentées.</p>
 
 
 <footer class="footline">
@@ -2028,19 +2320,19 @@ AllD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1704380990"></script>
-    <script src="/js/perfect-scrollbar.min.js?1704380990"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1704380990"></script>
-    <script src="/js/jquery.sticky.js?1704380990"></script>
-    <script src="/js/featherlight.min.js?1704380990"></script>
-    <script src="/js/highlight.pack.js?1704380990"></script>
+    <script src="/js/clipboard.min.js?1704403322"></script>
+    <script src="/js/perfect-scrollbar.min.js?1704403322"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1704403322"></script>
+    <script src="/js/jquery.sticky.js?1704403322"></script>
+    <script src="/js/featherlight.min.js?1704403322"></script>
+    <script src="/js/highlight.pack.js?1704403322"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1704380990"></script>
-    <script src="/js/learn.js?1704380990"></script>
-    <script src="/js/hugo-learn.js?1704380990"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1704403322"></script>
+    <script src="/js/learn.js?1704403322"></script>
+    <script src="/js/hugo-learn.js?1704403322"></script>
     
         
-            <script src="/mermaid/mermaid.js?1704380990"></script>
+            <script src="/mermaid/mermaid.js?1704403322"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
