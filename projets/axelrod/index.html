@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1704326623" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1704326623" rel="stylesheet">
-    <link href="/css/hybrid.css?1704326623" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1704326623" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1704326623" rel="stylesheet">
-    <link href="/css/auto-complete.css?1704326623" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1704326623" rel="stylesheet">
-    <link href="/css/theme.css?1704326623" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1704326623" rel="stylesheet">
+    <link href="/css/nucleus.css?1704380876" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1704380876" rel="stylesheet">
+    <link href="/css/hybrid.css?1704380876" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1704380876" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1704380876" rel="stylesheet">
+    <link href="/css/auto-complete.css?1704380876" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1704380876" rel="stylesheet">
+    <link href="/css/theme.css?1704380876" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1704380876" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1704326623" rel="stylesheet">
+    <link href="/css/theme-green.css?1704380876" rel="stylesheet">
     
-    <link href="/css/foo.css?1704326623" rel="stylesheet"><link href="/css/bar.css?1704326623" rel="stylesheet">
+    <link href="/css/foo.css?1704380876" rel="stylesheet"><link href="/css/bar.css?1704380876" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1704326623"></script>
+    <script src="/js/jquery-3.3.1.min.js?1704380876"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1704326623"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1704326623"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1704380876"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1704380876"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1704326623"></script>
+<script type="text/javascript" src="/js/search.js?1704380876"></script>
 
     
   </div>
@@ -1122,6 +1122,7 @@ onload='renderMathInElement(document.body);'></script>
 <li><code>Grudger</code> : commence par coopérer mais dès que l&rsquo;autre trahit, trahit toujours.</li>
 <li><code>Joss</code> : commence par coopérer puis joue le coup précédent de l&rsquo;adversaire sauf 10% du temps où il trahit.</li>
 <li><code>TitforTwoTats</code> : trahit si l&rsquo;autre trahit deux fois de suite, coopère sinon.</li>
+<li><code>TwoTitsforTat</code> : coopère tant que l&rsquo;autre coopère, mais à chaque trahison de l&rsquo;adversaire, trahit deux fois consécutives.</li>
 <li><code>Tester</code> : commence par trahir. Si l&rsquo;autre a coopérer au premier coup, <code>Tester</code> se repent et joue <code>TitforTat</code> pour la suite, sinon il joue <code>Alt</code>.</li>
 <li><code>Eatherly</code> : commence par trahir puis trahit en proportion du taux de trahison de l&rsquo;autre jusqu&rsquo;à ce coup.</li>
 <li><code>Gofman</code> : commence par coopérer. Si les deux joueurs ont joué différemment au coup précédent, trahit avec une probabilité de 5/7, et coopère s&rsquo;ils ont joué la même chose.</li>
@@ -1176,6 +1177,14 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(liste_coups_adverses) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">TwoTitsforTat</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(liste_coups_adverses) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">or</span> (len(liste_coups_adverses) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
@@ -1236,19 +1245,19 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>        liste_coups_joueurA<span style="color:#f92672">.</span>append(JA)
 </span></span><span style="display:flex;"><span>        liste_coups_joueurB<span style="color:#f92672">.</span>append(JB)
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> JA:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> JB:
-</span></span><span style="display:flex;"><span>            score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3</span>
-</span></span><span style="display:flex;"><span>            score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> JB:
+</span></span><span style="display:flex;"><span>                score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>                score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>                score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">5</span>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>            score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>            score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">5</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> JB:
-</span></span><span style="display:flex;"><span>            score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">5</span>
-</span></span><span style="display:flex;"><span>            score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>            score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>            score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> JB:
+</span></span><span style="display:flex;"><span>                score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>                score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> joueurA <span style="color:#f92672">==</span> joueurB:
 </span></span><span style="display:flex;"><span>        dico_scores[joueurA] <span style="color:#f92672">+=</span> score_joueurA
 </span></span><span style="display:flex;"><span>        matrice_tournoi[liste_joueurs<span style="color:#f92672">.</span>index(joueurA)][liste_joueurs<span style="color:#f92672">.</span>index(joueurA)] <span style="color:#f92672">+=</span> score_joueurA
@@ -1268,8 +1277,8 @@ onload='renderMathInElement(document.body);'></script>
 </span></span></code></pre></div><p>Pour réinitialiser les scores entre deux tournois :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">raz</span>():
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> liste_joueurs,liste_strategies,dico_strategies,dico_scores,matrice_tournoi
-</span></span><span style="display:flex;"><span>    liste_joueurs <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;TitforTat&#34;</span>,<span style="color:#e6db74">&#34;Grudger&#34;</span>,<span style="color:#e6db74">&#34;Joss&#34;</span>,<span style="color:#e6db74">&#34;AllD&#34;</span>,<span style="color:#e6db74">&#34;AllC&#34;</span>,<span style="color:#e6db74">&#34;TitforTwoTats&#34;</span>,<span style="color:#e6db74">&#34;Tester&#34;</span>,<span style="color:#e6db74">&#34;Eatherly&#34;</span>,<span style="color:#e6db74">&#34;Alt&#34;</span>,<span style="color:#e6db74">&#34;Gofman&#34;</span>,<span style="color:#e6db74">&#34;Tullock&#34;</span>,<span style="color:#e6db74">&#34;Rando&#34;</span>]
-</span></span><span style="display:flex;"><span>    liste_strategies <span style="color:#f92672">=</span> [TitforTat,Grudger,Joss,AllD,AllC,TitforTwoTats,Tester,Eatherly,Alt,Gofman,Tullock,Rando]
+</span></span><span style="display:flex;"><span>    liste_joueurs <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;TitforTat&#34;</span>,<span style="color:#e6db74">&#34;Grudger&#34;</span>,<span style="color:#e6db74">&#34;Joss&#34;</span>,<span style="color:#e6db74">&#34;AllD&#34;</span>,<span style="color:#e6db74">&#34;AllC&#34;</span>,<span style="color:#e6db74">&#34;TitforTwoTats&#34;</span>,<span style="color:#e6db74">&#34;Tester&#34;</span>,<span style="color:#e6db74">&#34;Eatherly&#34;</span>,<span style="color:#e6db74">&#34;Alt&#34;</span>,<span style="color:#e6db74">&#34;Gofman&#34;</span>,<span style="color:#e6db74">&#34;Tullock&#34;</span>,<span style="color:#e6db74">&#34;Rando&#34;</span>,<span style="color:#e6db74">&#34;TwoTitsforTat&#34;</span>]
+</span></span><span style="display:flex;"><span>    liste_strategies <span style="color:#f92672">=</span> [TitforTat,Grudger,Joss,AllD,AllC,TitforTwoTats,Tester,Eatherly,Alt,Gofman,Tullock,Rando,TwoTitsforTat]
 </span></span><span style="display:flex;"><span>    dico_strategies <span style="color:#f92672">=</span> {J:S <span style="color:#66d9ef">for</span> (J,S) <span style="color:#f92672">in</span> zip(liste_joueurs,liste_strategies)}
 </span></span><span style="display:flex;"><span>    dico_scores <span style="color:#f92672">=</span> {J:<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> J <span style="color:#f92672">in</span> liste_joueurs}
 </span></span><span style="display:flex;"><span>    matrice_tournoi <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(len(liste_joueurs))] <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(len(liste_joueurs))]
@@ -1283,18 +1292,19 @@ onload='renderMathInElement(document.body);'></script>
 </span></span></code></pre></div>
 
 <div style="font-family:monospace">
-TitforTwoTat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 306105<br>
+TitforTwoTats&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 336032<br>
+Gofman&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 326049<br>
+Grudger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 325071<br>
+TitforTat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 324919<br>
+AllC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 323487<br>
+TwoTitsforTat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 322871<br>
 Tullock&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 300532<br>
-Gofman&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 296694<br>
-TitforTat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 295112<br>
-Grudger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 294854<br>
-AllC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 293610<br>
-Alt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 290168<br>
-Rando &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 280000<br>
-Tester&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 275042<br>
-Eatherly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 269839<br>
-Joss&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 268720<br>
-AllD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 256764<br>
+Alt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 295829<br>
+Rando &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 293803<br>
+Tester&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 280866<br>
+Eatherly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 280151<br>
+Joss&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 267697<br>
+AllD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 256572<br>
 </div>
 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>),dpi<span style="color:#f92672">=</span><span style="color:#ae81ff">150</span>)
@@ -2018,19 +2028,19 @@ AllD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1704326623"></script>
-    <script src="/js/perfect-scrollbar.min.js?1704326623"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1704326623"></script>
-    <script src="/js/jquery.sticky.js?1704326623"></script>
-    <script src="/js/featherlight.min.js?1704326623"></script>
-    <script src="/js/highlight.pack.js?1704326623"></script>
+    <script src="/js/clipboard.min.js?1704380876"></script>
+    <script src="/js/perfect-scrollbar.min.js?1704380876"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1704380876"></script>
+    <script src="/js/jquery.sticky.js?1704380876"></script>
+    <script src="/js/featherlight.min.js?1704380876"></script>
+    <script src="/js/highlight.pack.js?1704380876"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1704326623"></script>
-    <script src="/js/learn.js?1704326623"></script>
-    <script src="/js/hugo-learn.js?1704326623"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1704380876"></script>
+    <script src="/js/learn.js?1704380876"></script>
+    <script src="/js/hugo-learn.js?1704380876"></script>
     
         
-            <script src="/mermaid/mermaid.js?1704326623"></script>
+            <script src="/mermaid/mermaid.js?1704380876"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
