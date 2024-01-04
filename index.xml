@@ -263,6 +263,15 @@ Pivot de Gauss Deux problèmes liés aux flottants :
 la vérification de la non nullité du pivot le choix du pivot Comment vérifier qu&amp;rsquo;un pivot potentiel est nul ?</description>
     </item>
     <item>
+      <title>Tournoi d&#39;Axelrod</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/axelrod/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      <guid>https://info-tsi-vieljeux.github.io/projets/axelrod/</guid>
+      <description>Le tournoi d&amp;rsquo;Axelrod La mission est d&amp;rsquo;implémenter le tournoi d&amp;rsquo;Axelrod première version présenté dans la vidéo ci-dessous.
+Vous ferez concourir les stratégies suivantes en écrivant une fonction par stratégie :
+AllC : coopère toujours. AllD : trahit toujours. Rando : joue au hasard. Alt : alterne un coup sur deux. TitforTat : coopère au premier coup puis joue le coup précédent de l&amp;rsquo;adversaire. Grudger : commence par coopérer mais dès que l&amp;rsquo;autre trahit, trahit toujours.</description>
+    </item>
+    <item>
       <title>TP 11 : algorithmique numérique</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_3/tp11/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>

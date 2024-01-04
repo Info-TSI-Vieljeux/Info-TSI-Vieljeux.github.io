@@ -8,7 +8,7 @@
 
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
-    <title>Intelligence Artificielle - Cours info TSI</title>
+    <title>Tournoi d&#39;Axelrod - Cours info TSI</title>
     
     
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
@@ -65,7 +65,7 @@ onload='renderMathInElement(document.body);'></script>
     
 	
   </head>
-  <body class="" data-url="/semestre_3/ia/">
+  <body class="" data-url="/projets/axelrod/">
     <nav id="sidebar" class="">
 
 
@@ -693,7 +693,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/projets/" title="Projets" class="dd-item
-        
+        parent
         
         
         ">
@@ -866,7 +866,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/projets/axelrod/" title="Tournoi d&#39;Axelrod" class="dd-item ">
+      <li data-nav-id="/projets/axelrod/" title="Tournoi d&#39;Axelrod" class="dd-item active">
         <a href="/projets/axelrod/">
         Tournoi d&#39;Axelrod
         
@@ -895,7 +895,7 @@ onload='renderMathInElement(document.body);'></script>
   
     
     <li data-nav-id="/semestre_3/" title="Semestre 3" class="dd-item
-        parent
+        
         
         
         ">
@@ -1005,7 +1005,7 @@ onload='renderMathInElement(document.body);'></script>
  
   
     
-      <li data-nav-id="/semestre_3/ia/" title="Intelligence Artificielle" class="dd-item active">
+      <li data-nav-id="/semestre_3/ia/" title="Intelligence Artificielle" class="dd-item ">
         <a href="/semestre_3/ia/">
         Intelligence Artificielle
         
@@ -1085,42 +1085,14 @@ onload='renderMathInElement(document.body);'></script>
                   <span class="links">
                  
                  
-                   Intelligence Artificielle
+                   Tournoi d&#39;Axelrod
                  
                   </span>
                 </div>
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#algorithme-des-k-plus-proches-voisins----exemple-dapprentissage-supervisé">Algorithme des <em>k</em> plus proches voisins &ndash; Exemple d&rsquo;apprentissage supervisé</a>
-      <ul>
-        <li><a href="#principe">Principe</a></li>
-        <li><a href="#choix-de-k">Choix de <em>k</em></a></li>
-        <li><a href="#validation----matrice-de-confusion">Validation &ndash; Matrice de confusion</a></li>
-      </ul>
-    </li>
-    <li><a href="#algorithme-des-k-moyennes----exemple-dapprentissage-non-supervisé">Algorithme des <em>k</em>-moyennes &ndash; Exemple d&rsquo;apprentissage non supervisé</a>
-      <ul>
-        <li><a href="#principe-1">Principe</a></li>
-        <li><a href="#choix-de-k-1">Choix de <em>k</em></a></li>
-        <li><a href="#limites">Limites</a></li>
-        <li><a href="#applications">Applications</a></li>
-      </ul>
-    </li>
-    <li><a href="#jeux-daccessibilité-sur-un-graphe">Jeux d&rsquo;accessibilité sur un graphe</a>
-      <ul>
-        <li><a href="#larène">L&rsquo;arène</a></li>
-        <li><a href="#exemples">Exemples</a></li>
-        <li><a href="#stratégie">Stratégie</a></li>
-        <li><a href="#arbre-et-minimax">Arbre et minimax</a></li>
-      </ul>
-    </li>
-    <li><a href="#sac-à-dos-et-heuristique">Sac à dos et heuristique</a></li>
-    <li><a href="#un-chouïa-dapprentissage-profond-pour-les-curieux">Un chouïa d&rsquo;apprentissage profond pour les curieux</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1138,543 +1110,200 @@ onload='renderMathInElement(document.body);'></script>
         
 
 
-<h1 id="algorithmes-pour-lintelligence-artificielle">Algorithmes pour l&rsquo;Intelligence Artificielle</h1>
-<p>L&rsquo;<strong>intelligence arificielle</strong> (IA) est une discipline  scientifique qui a vu officiellement le jour en 1956. Elle repose sur la conjecture selon laquelle toutes les fonctions cognitives, en particulier l&rsquo;apprentissage, le raisonnement, le calcul, la perception, la mémorisation, voire la découverte scientifique ou la créativité artistique, peuvent être décrites avec une précision telle qu&rsquo;il serait possible de les reproduire sur des ordinateurs.</p>
-<p><img src="/vennia.png?width=600px" alt=""></p>
-<p>L&rsquo;<strong>apprentissage automatique</strong> (Machine Learning) est à l&rsquo;intersection de l&rsquo;IA et d&rsquo;un autre champ scientifique : la science des données (data science).</p>
-<p>Arthur Samuel définit l&rsquo;apprentissage automatique ainsi en 1959 :</p>
-<blockquote>
-<p>La capacité à apprendre sans avoir été spécifiquement programmé pour.</p>
-</blockquote>
-<p>En pratique, il s&rsquo;agit de produire des réponses adaptées aux données fournies en entrée (identifier des motifs, des tendances, construire des modèles, faire des prédictions). L&rsquo;apprentissage automatique n&rsquo;est donc ni plus ni moins que du traitement de données visant à prédire des résultats en fonction des données entrantes.</p>
-<p>Le diagramme suivant<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> survole le domaine.</p>
-<div style=" position: relative;overflow: hidden;max-width: max(100%,900px);margin: auto; padding-bottom: min(100%,900px);"> 
-<iframe src="//plotly.com/~Chinasky/10.embed" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;border:none"></iframe>
-</div>
-<p>On va s&rsquo;intéresser dans ce cours à l&rsquo;apprentissage automatique dit &ldquo;classique&rdquo;<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> qui regroupe des algorithmes très simples nés dans les années 50 et toujours utilisés aujourd&rsquo;hui à peu près partout.
-Cette branche classique de l&rsquo;apprentissage automatique se décompose prinicipalement en deux familles d&rsquo;algorithmes : <strong>l&rsquo;apprentissage supervisé</strong> et son pendant, <strong>l&rsquo;apprentissage non supervisé</strong>. Nous allons étudier un algorithme star de chacune de ces familles.
-<img src="https://i.vas3k.ru/7w1.jpg?width=800px" alt=""></p>
-<br>
-<h2 id="algorithme-des-k-plus-proches-voisins----exemple-dapprentissage-supervisé">Algorithme des <em>k</em> plus proches voisins &ndash; Exemple d&rsquo;apprentissage supervisé</h2>
-<p>L&rsquo;algorithme des <em>k</em> plus proches voisin (<em>k</em>-nearest neighbors ou KNN) est une des techniques les plus simples en apprentissage automatique. Sa facilité d&rsquo;utilisation et sa rapidité en font un outil de choix dans l&rsquo;industrie.</p>
-<p>KNN est un algorithme d&rsquo;apprentissage supervisé ; cela signifie que l&rsquo;algorithme nécessite des données classifiées en amont qui vont lui servir à trouver la bonne étiquette pour d&rsquo;autres données non encore classifiées.</p>
-<p>Suivant la nature de l&rsquo;étiquette, KNN peut servir à :</p>
+<h1 id="le-tournoi-daxelrod">Le tournoi d&rsquo;Axelrod</h1>
+<p>La mission est d&rsquo;implémenter le tournoi d&rsquo;Axelrod première version présenté dans la vidéo ci-dessous.</p>
+<p>Vous ferez concourir les stratégies suivantes en écrivant une fonction par stratégie :</p>
 <ul>
-<li>une <strong>classification</strong> des nouvelles données si les étiquettes sont des catagories ;</li>
-<li>une <strong>régression</strong> si les étiquettes sont des nombres.</li>
+<li><code>AllC</code> : coopère toujours.</li>
+<li><code>AllD</code> : trahit toujours.</li>
+<li><code>Rando</code> : joue au hasard.</li>
+<li><code>Alt</code> : alterne un coup sur deux.</li>
+<li><code>TitforTat</code> : coopère au premier coup puis joue le coup précédent de l&rsquo;adversaire.</li>
+<li><code>Grudger</code> : commence par coopérer mais dès que l&rsquo;autre trahit, trahit toujours.</li>
+<li><code>Joss</code> : commence par coopérer puis joue le coup précédent de l&rsquo;adversaire sauf 10% du temps où il trahit.</li>
+<li><code>TitforTwoTats</code> : trahit si l&rsquo;autre trahit deux fois de suite, coopère sinon.</li>
+<li><code>Tester</code> : commence par trahir. Si l&rsquo;autre a coopérer au premier coup, <code>Tester</code> se repent et joue <code>TitforTat</code> pour la suite, sinon il joue <code>Alt</code>.</li>
+<li><code>Eatherly</code> : commence par trahir puis trahit en proportion du taux de trahison de l&rsquo;autre jusqu&rsquo;à ce coup.</li>
+<li><code>Gofman</code> : commence par coopérer. Si les deux joueurs ont joué différemment au coup précédent, trahit avec une probabilité de 5/7, et coopère s&rsquo;ils ont joué la même chose.</li>
+<li><code>Tullock</code> : coopère les 10 premiers coups puis coopère à chaque coup 10% de moins que l&rsquo;autre a coopéré sur les 10 coups qui précèdent.</li>
 </ul>
-<h3 id="principe">Principe</h3>
-<p>KNN enregistre, dans un premier temps, tous les points de données étiquetées qui vont lui servir à l&rsquo;apprentissage (c&rsquo;est le training set). Puis, quand arrive un point de donnée non étiqueté, l&rsquo;algorithme calcule sa distance aux autres points et sélectionne les <strong>k</strong> plus proches. On a alors deux cas possibles :</p>
-<ul>
-<li>si les étiquettes sont des catégories, l&rsquo;algorithme calcule <strong>le mode</strong> des catégories des voisins sélectionnés (catégorie la plus représentée).</li>
-<li>si les étiquettes sont des nombres, l&rsquo;algorithme calcule <strong>la moyenne</strong> des étiquettes des voisins sélectionnés.</li>
-</ul>
-<p>L&rsquo;algorithme des <em>k</em> plus proches voisins est <strong>non paramétrique</strong> dans le sens où aucun modèle mathématique de classification ou régression n&rsquo;est construit à partir des données (pas de paramètre à ajuster) puisque toutes les données d&rsquo;apprentissage sont enregistrées telles quelles.<br>
-Cela signifie qu&rsquo;on ne présuppose rien de particulier sur les données (à part que des points proches appartiennent à la même catégorie). L&rsquo;algorithme est donc particulièrement robuste (les données parlent d&rsquo;elles-même) et simple à mettre à jour (suffit d&rsquo;ajouter les nouvelles données d&rsquo;apprentissage).</p>
-<br>
-<h3 id="choix-de-k">Choix de <em>k</em></h3>
-<p><img src="/gifknn.gif" alt=""></p>
-<p>Comme le montre la petite animation ci-dessus, le <strong>choix de k</strong> modifie le résultat obtenu.</p>
-<ul>
-<li>Si <em>k</em> est trop petit, le moyennage est faible et donc la variabilité va être très grande. On parle alors de surapprentissage (<strong>overfitting</strong>).</li>
-<li>En augmentant <em>k</em>, les résultats obtenus se stabilisent (vote de la majorité) et les erreurs diminuent, jusqu&rsquo;au moment où la boule à l&rsquo;intérieur de laquelle se fait le moyennage devient trop grosse, amenant in fine l&rsquo;algorithme a choisir systématiquement la catégorie majoritaire, quel que soit le point&hellip; On augmente alors le <strong>biais</strong> (ici, le biais est le préjudice en faveur du plus grand nombre). L&rsquo;ajustement ne suit plus les variations, on parle de sous-apprentissage (<strong>underfitting</strong>).</li>
-</ul>
-<p>Pour résumer :</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">variance</th>
-<th style="text-align:center">biais</th>
-<th style="text-align:center">Cas d&rsquo;une régression</th>
-<th style="text-align:center">Cas d&rsquo;une classification</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>k trop petit</strong> $\rightarrow$ <strong>overfitting</strong></td>
-<td style="text-align:center">forte</td>
-<td style="text-align:center">faible</td>
-<td style="text-align:center"><img src="/overfreg.png?width=200px" alt=""></td>
-<td style="text-align:center"><img src="/overfclas.png?width=200px" alt=""></td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>k trop grand</strong> $\rightarrow$ <strong>underfitting</strong></td>
-<td style="text-align:center">faible</td>
-<td style="text-align:center">fort</td>
-<td style="text-align:center"><img src="/underfreg.png?width=200px" alt=""></td>
-<td style="text-align:center"><img src="/underfclas.png?width=200px" alt=""></td>
-</tr>
-</tbody>
-</table>
-
-<div class="notices tip" ><p>Lorsqu&rsquo;on ne connaît rien sur les données, on peut toujours commencer par prendre la racine carrée du nombre de points dans l&rsquo;ensemble d&rsquo;entraînement comme <em>k</em> de départ.</p>
-
-</div>
-<p>Le choix de <em>k</em> est donc affaire de compromis. Pour le rendre plus scientifique, on peut chercher à mesurer la performance de l&rsquo;algorithme pour différentes valeurs de <em>k</em>.</p>
-<p>Mais comment mesure-t-on la <strong>performance d&rsquo;un algorithme d&rsquo;apprentissage automatique</strong> ?</p>
-<br>
-<h3 id="validation----matrice-de-confusion">Validation &ndash; Matrice de confusion</h3>
-<p>La <strong>matrice de confusion</strong> permet d&rsquo;évaluer la qualité des prédictions d&rsquo;un algorithme.</p>
-<p>Prenons l&rsquo;exemple de l&rsquo;utilisation de KNN sur une banque d&rsquo;images de chiffres écrits à la main et plus spécifiquement concentrons-nous sur sa capacité à reconnaître des &ldquo;3&rdquo;.</p>
-<p><img src="/MnistExamples.png" alt=""></p>
-<p>On découpe l&rsquo;espace en 4 cadrans. Sur une dimension, on regroupe d&rsquo;un côté les données pertinentes (les 3) et de l&rsquo;autre le reste des données (les non 3), et on décompose l&rsquo;autre dimension en prédictions positives (les 3 prédits) et négatives (les non 3 prédits).</p>
-<p>Puis on compte dans chaque cadran le nombre de données correspondant au recouvrement des prédictions et de la réalité. Un nom issu du vocabulaire des diagnostics médicaux est attribué à chacun de ces cadrans :</p>
-<ul>
-<li>les <strong>vrais positifs</strong> VP (les 3 identifiés comme des 3),</li>
-<li>les <strong>vrais négatifs</strong> VN (les non 3 identifiés comme des non 3),</li>
-<li>les <strong>faux positifs</strong> FP (les non 3 identifiés comme des 3),</li>
-<li>les <strong>faux négatifs</strong> FN (les 3 identifiés comme des non 3).</li>
-</ul>
-<p>À partir de ces effectifs, on peut calculer 3 grandeurs permettant d&rsquo;évaluer la qualité de la prédiction :</p>
-<style>
-#prec p:first-child:after {
-    content: 'Précision';
-}
-</style>
-
-<div class="notices def"  id="prec"  ><p>Nombre de données bien prédites parmi les prédictions positives :
-$$\frac{VP}{VP+FP}$$</p>
-
-</div>
-<style>
-#rap p:first-child:after {
-    content: 'Rappel ou sensibilité';
-}
-</style>
-
-<div class="notices def"  id="rap"  ><p>Nombre de données bien prédites parmi les données positives :
-$$\frac{VP}{VP+FN}$$<br></p>
-
-</div>
-<style>
-#exa p:first-child:after {
-    content: 'Exactitude (accuracy)';
-}
-</style>
-
-<div class="notices def"  id="exa"  ><p>$$\frac{VP+VN}{VP+VN+FP+FN}$$<br></p>
-
-</div>
-
-<div class="notices info" ><p>Un algorithme peut très bien être très précis (les prédictions positives sont bien des 3), mais peu sensible, avec un faible taux de rappel (parmi tous les 3, peu ont été identifiés).<br>
-À l&rsquo;inverse, on peut avoir une bonne sensibilité (la plupart des vrais 3 ont été identifiés comme tel), mais peu précis (beaucoup de chiffres identifiés comme des 3 sont en fait d&rsquo;autres chiffres).</p>
-
-</div>
-<p><img src="/matconfus.png?width=800px" alt=""></p>
-
-<div class="notices tip" ><p>On peut tout aussi bien définir la matrice de confusion avec les prédictions sur les lignes et la réalité sur les colonnes.</p>
-
-</div>
-<p>Maintenant qu&rsquo;on sait évaluer l&rsquo;algorithme, cherchons la valeur de <strong>k</strong> qui maximise l&rsquo;exactitude.</p>
-<p>Dans le graphe ci-dessous, on a tracé l&rsquo;<em>exactitude</em> de l&rsquo;algorithme pour la reconnaissance des &ldquo;9&rdquo; en fonction de la valeur de <em>k</em>  (ce sont les mêmes jeux de données test et d&rsquo;apprentissage que dans le TP).
-<img src="/meilleurk.png?width=600px" alt="">
-Si notre but est de reconnaître le mieux possible les 9 manuscrits, il semblerait que la valeur de <em>k</em> optimale soit 18.</p>
-<br>
-<h2 id="algorithme-des-k-moyennes----exemple-dapprentissage-non-supervisé">Algorithme des <em>k</em>-moyennes &ndash; Exemple d&rsquo;apprentissage non supervisé</h2>
-<p>Le boulot de l&rsquo;algorithme des <strong><em>k</em>-moyennes</strong> (k-means) n&rsquo;est pas d&rsquo;étiqueter les données, mais de les regrouper par famille. C&rsquo;est donc un algorithme de <strong>partitionnement</strong> des données (clustering).</p>
-<p>Contrairement à KNN, l&rsquo;algorithme des <em>k</em>-moyennes ne nécessite pas de données préétiquetées. Il fait ainsi parti des algorithmes d&rsquo;apprentissage automatique <strong>non-supervisé</strong> (il se débrouille tout seul avec les données mystères).<br></p>
-<p>Par contre, l&rsquo;algorithme partage avec KNN sa grande simplicité d&rsquo;emploi et son efficacité qui le rendent lui aussi très populaire dans l&rsquo;industrie.</p>
-<br>
-<h3 id="principe-1">Principe</h3>
-<p>L&rsquo;algorithme dépend d&rsquo;un seul paramètre en plus des données : le nombre de partitions (clusters) <em>k</em>.</p>
-<p>On commence par choisir <em>k</em> points au hasard dans l&rsquo;espace des données (il peut s&rsquo;agir de <em>k</em> points de données ou de <em>k</em> autres points). Ce sont les <em>k</em> centres (ou centroïdes).</p>
-
-<div class="notices tip" ><p>Plus les points choisis au départ sont éloignés les uns des autres, mieux c&rsquo;est. Une amélioration de l&rsquo;algorithme de base proposée en 2007, k-means++, s&rsquo;en assure.</p>
-
-</div>
-<p>On attribue ensuite à chaque centre tous les points de données qui lui sont le plus proches, formant ainsi <em>k</em> groupes.</p>
-<p>Enfin, on déplace chaque centre au barycentre de son groupe.</p>
-<p>On répète les deux dernières opérations (attribution des points les plus près et déplacement des centres) tant que les centres bougent d&rsquo;une itération à l&rsquo;autre.</p>
-<p><img src="/kmeans.gif" alt=""></p>
-<p>L&rsquo;algorithme vise à résoudre au final un problème d&rsquo;optimisation ; son but est en effet de trouver le minimum de la distance entre les points à l&rsquo;intérieur de chaque partition.</p>
-<p>Mathématiquement, étant donné un ensemble de points $(x_1,x_2,\ldots,x_n)$, on cherche à partitionner les $n$ points en $k$ ensembles $S=\{S_1,S_2,\ldots,S_k\}$ en minimisant la grandeur  :
-$$I = \sum_{i=1}^{k}\sum_{x_j \in S_i}||x_i-\mu_i||^2$$
-où $\mu_i$ est le barycentre des points dans $S_i$.</p>
-<p>$I$ est la variance intra-classe ou <strong>inertie</strong> intra-classe (terme surtout utilisé en anglais).</p>
-<br>
-<h3 id="choix-de-k-1">Choix de <em>k</em></h3>
-<p>Choisir le bon nombre de clusters est crucial pour l&rsquo;algorithme des <em>k</em>-moyennes, comme l&rsquo;illustre l&rsquo;exemple suivant :</p>
-<p><img src="/choixdek.png" alt=""></p>
-<p>Mais ce n&rsquo;est pas toujours simple (contrairement à l&rsquo;exemple) de deviner le bon nombre de clusters juste en inspectant les données. Alors comment faire ?</p>
-<p>On pourrait se dire qu&rsquo;il suffit de prendre le modèle avec la plus faible inertie. Mais malheureusement, l&rsquo;inertie n&rsquo;est pas une métrique adaptée au choix de <em>k</em> puisqu&rsquo;elle ne fait que descendre quand <em>k</em> augmente&hellip; Logique : plus il y a de clusters, plus la distance intra-cluster diminue&amp;nbsp!</p>
-<p>Traçons l&rsquo;inertie en fonction de <em>k</em> pour y voir plus clair :
-<img src="/inertiefctk3.png?width=700px" alt=""></p>
-<p>On remarque qu&rsquo;ici, le nombre de clusters idéal correspond au point d&rsquo;inflexion de la courbe (ou, si on imagine un bras, au coude).</p>
-<p>Confirmons en simulant des données séparées en 5 tas et en retraçant la courbe.
-<img src="/inertiefctk5.png?width=1400px" alt=""></p>
-<p>Là encore, le coude indique le nombre <em>k</em> idéal.<br>
-On semble donc avoir trouver une tactique utilisable lorsqu&rsquo;on n&rsquo;a pas d&rsquo;autres indices.</p>
-<p>
-<div class="notices tip" ><p>Il existe des méthodes plus précises pour déterminer <em>k</em>, mais elles sont aussi plus gourmandes en calcul. La plus répandue utilise les <em>coefficients de silhouette</em> de chaque point  (différence entre la distance moyenne avec les points du même groupe (cohésion) et la distance moyenne avec les points des autres groupes voisins (séparation)).</p>
-
-</div>
-<img src="/xkcdkmeans.png?width=400px" alt=""></p>
-<h3 id="limites">Limites</h3>
-<p>L&rsquo;algorithme des $k$-moyennes se confronte à une difficulté classique en apprentissage automatique, et plus généralement pour tout problème d&rsquo;optimisation : <strong>obtenir un minimum global plutôt qu&rsquo;un minimum local</strong>.</p>
-<p><img src="/localglobal.png?width=600px" alt=""></p>
-<p>La convergence vers un des minima locaux dépend crucialement de la position initiale des centres.</p>
-<p>Dans l&rsquo;exemple suivant, on obtient 3 partitionnements différents pour 3 initialisations différentes des centres.</p>
-<p><img src="/subopti.png?width=700px" alt=""></p>
-<p>On vérifie que les centres sont bien bloqués sur leur position dans les deux premiers cas puisqu&rsquo;aucun changement d&rsquo;attribution n&rsquo;est possible.</p>
-<p>Dans l&rsquo;algo classique, pour pallier au mieux ce problème, on initialise les centres aléatoirement et on relance l&rsquo;algorithme un certain nombre de fois pour ne garder au final que la solution qui minimise l&rsquo;inertie intra-classe.</p>
-<p>Autre souci des <em>k</em>-moyennes : des difficultés pour partitionner des clusters de différentes tailles, différentes densités ou des formes non sphériques.</p>
-<br>
-<h3 id="applications">Applications</h3>
-<p>L&rsquo;algorithme des <em>k</em>-moyennes ne présuppose rien sur les données et peut s&rsquo;avérer, par le fait, très utile en première approche.</p>
-
-<div class="notices tip" ><p>C&rsquo;est bien ce rôle de défricheur qu&rsquo;on a donné à l&rsquo;algorithme dans le TP3 lors de l&rsquo;analyse de l&rsquo;enquête mondiale sur le bonheur pour créer des groupes de pays similaires et tenter de comprendre ce qui les rassemble.</p>
-
-</div>
-<p>L&rsquo;algorithme permet aussi de trancher des débats de la plus haute importance sur les couleurs comme  &ldquo;<font color=#00aaaa>est-ce plus vert que bleu ?</font>&rdquo; en organisant un combat entre les centroïdes de chaque couleur.<br>
-Dans la même veine, on peut utiliser <em>k</em>-moyennes pour <strong>segmenter une image</strong> par couleur (voir TP13), ce qui peut s&rsquo;avérer intéressant pour des données satellite par exemple. Le choix de <em>k</em> correspond alors au nombre de couleurs qu&rsquo;on veut garder.</p>
-<p>L&rsquo;exemple ci-dessous est issu du TP :
-<img src="/moswebb.png" alt=""></p>
-<p>La simplicité de <em>k</em>-moyennes en fait un bon outil de dégrossissage des données, y compris sur des données déjà étiquetées. Cela permet de réduire leur dimensionnalité, avant d&rsquo;utiliser des algorithmes plus complexes d&rsquo;apprentissage supervisé.</p>
-<br>
-<h2 id="jeux-daccessibilité-sur-un-graphe">Jeux d&rsquo;accessibilité sur un graphe</h2>
-<p>Cette partie du cours a moins à voir avec les jeux vidéo qu&rsquo;avec la modélisation de systèmes réactifs (automate bancaire, système-environnement), les problèmes de contrôle, la théorie de la décision, les problèmes de routage sur Internet, l&rsquo;économie&hellip; Autant de domaînes admettant une description en terme d&rsquo;opposition entre adversaires sur une arêne (un des adversaires pouvant modéliser l&rsquo;environnement). La détermination d&rsquo;une stratégie gagnante résout alors le problème posé en assurant sa correction.</p>
-<br>
-<h3 id="larène">L&rsquo;arène</h3>
-<p>On entendra ici par jeu :</p>
-<ul>
-<li>des jeux à deux joueurs ($J_1$ et $J_2$ ou Eve et Adam)</li>
-<li>à <strong>information complète</strong> : les deux joueurs savent tout (pas comme aux cartes)</li>
-<li><strong>alternés</strong> (pas comme à chifoumi)</li>
-<li><strong>non randomisés</strong> (pas de hasard)</li>
-</ul>
-<p>L&rsquo;<strong>arène</strong> dans laquelle le jeu prend place est un <strong>graphe orienté biparti</strong>.</p>
-<style>
-#bipa p:first-child:after {
-    content: 'Graphe biparti';
-}
-</style>
-
-<div class="notices def"  id="bipa"  ><p>Un graphe biparti (ou bipartite) $G$ est un graphe dont l&rsquo;ensemble des sommets peut être divisé en deux sous-ensembles de sommets disjoints $S_1$ et $S_2$ ($S_1$ et $S_2$ sont une partition de $S$ : $S_1\cup S_2=S$, $S_1\cap S_2=\varnothing$) tels que chaque arête de $G$ a une extrémité dans $S_1$ et l&rsquo;autre dans $S_2$.</p>
-
-</div>
-<p><img src="/animbipar.gif" alt=""></p>
-
-<div class="notices tip" ><p>Un graphe est biparti si on peut colorier tous les sommets du graphe avec seulement deux couleurs de manière à ce que deux sommets voisins n&rsquo;aient jamais la même couleur (on parle alors de <strong>2-coloriage</strong>).<br>
-On peut montrer qu&rsquo;un graphe est biparti si et seulement si il ne possède pas de cycle de longueur impaire.<br></p>
-
-</div>
-<blockquote>
-<p>Démonstration de &ldquo;graphe biparti $\Leftrightarrow$ pas de cycle impair&rdquo; :</p>
-<ul>
-<li>
-<p>On montre $\Rightarrow$ en constatant l&rsquo;impossibilité d&rsquo;un 2-coloriage sur un cycle impair. <em>Donc tout graphe contenant un cycle impair ne peut pas être biparti.</em></p>
-</li>
-<li>
-<p>Et on montre $\Leftarrow$ en essayant de créer un 2-coloriage depuis un sommet ; tant qu&rsquo;on ne rencontre pas de cycle, pas de problème.<br>
-Tous les sommets à une distance impaire du sommet de départ sont coloriés d&rsquo;une couleur et tous ceux à une distance paire sont coloriés de l&rsquo;autre couleur.<br>
-Donc un graphe sans cycle est toujours biparti.<br>
-Place aux cycles maintenant. Supposons que deux des chemins partant d&rsquo;un sommet se rejoignent, alors on a deux possibilités :</p>
-<ul>
-<li>la jonction se fait entre deux sommets de couleurs différentes et le 2-coloriage reste possible.<br>
-Dans ce cas, on joint un chemin de longueur pair et un chemin de longueur impair, ce qui donne un cycle de longueur pair (avec le +1 de l&rsquo;arête de la jonction).</li>
-<li>la jonction se fait entre sommets de la même couleur rendant impossible le 2-coloriage.<br>
-Dans ce deuxième cas, on obtient nécessairement un cycle de longueur impaire puisqu&rsquo;on joint deux chemins de la même parité (+ 1 de l&rsquo;arête de jonction).<br></li>
-</ul>
-<p>Seuls les cycles impairs font donc échouer le 2-coloriage. <em>Tout graphe non biparti contient au moins un cycle impair.</em></p>
-</li>
-</ul>
-</blockquote>
-<p>Retournons aux jeux&hellip;<br>
-Deux joueurs, $J_1$ et $J_2$, s&rsquo;affrontent sur un graphe orienté biparti $G=(S,A)$ où $S$ est constitué des sommets contrôlés par le joueur 1, $S_1$, et de ceux contrôlés par le joueur 2, $S_2$. Chaque sommet est une position valide du jeu et chaque arête est un mouvement autorisé entre ces positions.</p>
-<p>Il manque encore une condition de gain pour rendre le jeu intéressant ; dans le cas d&rsquo;un <strong>jeu d&rsquo;accessibilité</strong>, on attribue à chaque joueur un sous-ensemble de sommets correspondant à des états gagnants qu&rsquo;il convient d&rsquo;atteindre pour&hellip; gagner. Il peut aussi exister un sous-ensemble de sommets correspondant à des états de partie nulle.</p>
-<p>Un jeu d&rsquo;accessibilité est alors défini par un quadruplet $(G,S_1,S_2,F)$ où $(G,S_1,S_2)$ est une arène et $F$ est l&rsquo;ensemble des sommets gagnants pour $J_1$.</p>
-<br>
-<h3 id="exemples">Exemples</h3>
-<h4 id="chomp">Chomp</h4>
-<p>Chomp est un jeu où les deux adversaires mangent à tour de rôle des carrés de chocolat d&rsquo;une tablette avec la &ldquo;contrainte&rdquo; de manger tous les carrés à droite et au-dessus du carré choisi. Le perdant doit manger le brocoli qui reste à la fin.</p>
-<p>Eve commence le jeu avec la tablette ci-dessous composé de 5 carrés. Il existe alors 9 configurations possibles, pas toutes atteignables par les deux joueurs.</p>
-<p>Traçons l&rsquo;arène (les ronds bleus sont les positions contrôlées par Eve et les carrés roses par Adam).</p>
-<p>$F$ (sommet gagnant pour Eve) est le carré rose avec un brocoli puisque l&rsquo;atteindre signifie qu&rsquo;Adam se retrouve avec le légume à manger.</p>
-<p><img src="/chompintro.gif" alt=""></p>
-<br>
-<h4 id="une-des-nombreuses-variantes-du-jeu-de-nim">Une des nombreuses variantes du jeu de Nim</h4>
-<p>Un tas d&rsquo;allumettes est disposé devant Eve et Adam. Eve joue en premier et peut retirer autant d&rsquo;allumettes qu&rsquo;elle le souhaite du moment qu&rsquo;elle en prend au moins une et qu&rsquo;elle en laisse au moins une. C&rsquo;est ensuite au tour d&rsquo;Adam de retirer des allumettes avec pour tous les tours qui suivent une contrainte supplémentaire : on ne peut pas retirer plus de deux fois le nombre d&rsquo;allumettes prises par son adversaire au tour précédent. Le joueur qui retire la dernière allumette gagne. Il n&rsquo;y a pas de match nul.</p>
-<p>Traçons le graphe du jeu en supposant que l&rsquo;on commence avec 5 allumettes et étiquetons les sommets avec le couple (nombre d&rsquo;allumettes présentes, nombres d&rsquo;allumettes prenables). L&rsquo;étiquette du nœud de départ est donc (5,4).<br>
-On a indiqué en jaune le sommet à atteindre pour Eve (sommet de $F$).</p>
-<p><img src="/variantenim.png?width=600px" alt=""></p>
-<p>Le graphe est ici plutôt simple, mais on verra <a href="http://localhost:1313/semestre_3/tp13/#jeux-daccessibilit%C3%A9-%C3%A0-deux-joueurs">dans le TP</a> que pour des nombres d&rsquo;allumettes plus grand, on sera content de pouvoir confier la tâche de sa construction à python.</p>
-
-<div class="notices tip" ><p>Ce jeu est une variante du jeu de Nim (voir TP) comme en fait tout jeu impartial à deux joueurs (théorème de Sprague-Grundy). Un <strong>jeu impartial</strong> est un jeu tour par tour dans lequel les coups autorisés, ainsi que les gains obtenus, dépendent uniquement de la position, et pas du joueur dont c&rsquo;est le tour. C&rsquo;est le cas de Chomp qui est donc, lui aussi, un jeu de Nim déguisé&hellip; Un jeu qui n&rsquo;est pas impartial est appelé <strong>jeu partisan</strong> (le morpion ou les échecs par exemple).</p>
-
-</div>
-<br>
-<h4 id="morpion-tic-tac-toe">Morpion (tic-tac-toe)</h4>
-<p>Pas besoin de rappeler les règles du morpion (oxo en belgique).<br>
-Dans cet exemple, Eve démarre sur un jeu déjà avancé, elle a les ronds.<br>
-Cette fois-ci, $F$ contient plusieurs sommets (toujours indiqués en jaune).</p>
-<p><img src="/graphetictac1.png?width=1000px" alt=""></p>
-<br>
-<h3 id="stratégie">Stratégie</h3>
-<p>Gagner la partie, c&rsquo;est arriver sur un sommet de $F$. Comment savoir si Eve peut ou non gagner selon sa position de départ ? Et si elle le peut, comment mettre au point pour elle une stratégie gagnante ?</p>
-<br>
-<h4 id="positions-gagnantes-et-attracteurs">Positions gagnantes et attracteurs</h4>
-<p>Pour déterminer l&rsquo;ensemble des positions gagnantes pour Eve sur l&rsquo;arène, on travaille récursivement depuis les sommets de $F$ en suivant les deux préceptes suivants :</p>
-<ul>
-<li>un sommet d&rsquo;Eve est gagnant si <strong>un</strong> de ses arcs sortants le lie à un sommet gagnant.<br>
-Eve n&rsquo;a alors plus qu&rsquo;à emprunter ce chemin.<br>
-<img src="/sommetgagnant1.png?width=200px" alt=""></li>
-<li>un sommet d&rsquo;Adam est gagnant (pour Eve) si <strong>tous</strong> ses arcs sortants le lie à un sommet gagnant.<br>
-En effet, Adam ne peut alors pas éviter de mettre Eve dans une position gagnante.
-<img src="/sommetgagnant2.png?width=200px" alt=""></li>
-</ul>
-<p>Formalisons un peu tout ça en définissant la suite $Attr_i(F)$ qui contient l&rsquo;ensemble des sommets gagnants après $i$ étapes :
-$$ \begin{array}{lll} Attr_0(F) &amp;= &amp;F \\  Attr_{i+1}(F) &amp;= &amp;Attr_{i}(F) \\ &amp;&amp;\cup \{s \in S_1|Succ(s)\cap Attr_i(F) ≠ \varnothing \} \\ &amp;&amp;\cup \{s\in S_2| Succ(s)\subseteq Attr_i(F)\} \end{array} $$
-Étant donné que $Attr_i(F) \subseteq Attr_{i+1}(F) \subseteq S$, pour tout $i≥0$, si on suppose le graphe fini, la suite est croissante et bornée et donc stationnaire (à partir d&rsquo;un certain $i=i_0$, $Attr_i(F)$ est constante, et si $|G|=n$, $i_0$ vaut au plus $n-1$).</p>
-
-<div class="notices info" ><p>On appelle <strong>attracteur</strong> de $F$ pour le joueur $J_1$  la limite de $Attr_i(F)$. On le note $Attr(F)$.<br>
-Tout sommet dans l&rsquo;attracteur est une <strong>position gagnante</strong> pour $J_1$.</p>
-
-</div>
-<p>Le complémentaire d&rsquo;un attracteur est appelé <strong>piège</strong>. Si le joueur 1 est sur une position n&rsquo;appartenant pas à son attracteur (et donc à son piège), cela signifie que :</p>
-<ul>
-<li>si c&rsquo;est son tour, tous les mouvements possibles restent dans le piège,</li>
-<li>si c&rsquo;est le tour de l&rsquo;adversaire, celui-ci a toujours au moins une possibilité de laisser le joueur 1 dans le piège.</li>
-</ul>
-<p>Cette position est donc perdante&hellip;</p>
-<br>
-<h5 id="détermination-à-la-main-de-lattracteur-dans-les-exemples-précédents">Détermination &ldquo;à la main&rdquo; de l&rsquo;attracteur dans les exemples précédents</h5>
-<p>L&rsquo;attracteur dans l&rsquo;exemple du jeu Chomp contient 9 sommets, dont le somme de départ.</p>
-<p><img src="/chompattract.gif" alt=""></p>
-<p>Dans le cas de la variante de Nim, l&rsquo;attracteur se réduit à $Attr(G) = \{(0,0,1) , (1,1,0) , (2,2,0) \}$ où la troisième valeur des triplets correspond au joueur qui contôle le sommet (0 pour Eve et 1 pour Adam). Le sommet de départ $(5,4,0)$ n&rsquo;est pas dedans $\Rightarrow$ c&rsquo;est perdu pour Eve 😭..</p>
-<p><img src="/nimvarattr.png?width=600px" alt=""></p>
-<p>Enfin, sur l&rsquo;exemple du morpion, l&rsquo;attracteur contient 13 sommets dont celui de départ.</p>
-<p><img src="/morpionattr.gif" alt=""></p>
-<br>
-<h5 id="programme-permettant-de-calculer-lattracteur">Programme permettant de calculer l&rsquo;attracteur</h5>
-<p>On peut écrire un programme récursif calculant l&rsquo;attracteur en temps linéaire en $|S | + |A|$ (<a href="https://info-tsi-vieljeux.github.io/semestre_2/graphes/#parcours-dun-graphe">rappelons-nous</a> que le parcours complet d&rsquo;un graphe est au mieux en $O(|S | + |A|)$ car cela correspond à parcourir les $|S|$ sommets et les $|A|$ arêtes). Pour éviter de calculer plusieurs fois le même élément, l&rsquo;algorithme tient à jour, pour chaque sommet $s$, un compteur <code>n</code> des successeurs non encore inspectés (sous la forme d&rsquo;un dictionnaire) .</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">attracteur</span>(G: dict, F: list) <span style="color:#f92672">-&gt;</span> list:
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    préconditions: G est est un graphe sous forme de liste d&#39;adjacence implémentée par un dictionnaire
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                   F est la liste des sommets gagnants pour le joueur 1
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    postcondition: la fonction retourne l&#39;attracteur de F pour le joueur 1 sous forme d&#39;un dictionnaire
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                   dont les clés sont les sommets de G et les valeurs True ou False suivant que le sommet appartienne ou non à l&#39;attracteur
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    Pred <span style="color:#f92672">=</span> inverseGraphe(G)
-</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> {s:len(G[s]) <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G}
-</span></span><span style="display:flex;"><span>    Attr <span style="color:#f92672">=</span> {s:<span style="color:#66d9ef">False</span> <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> G}
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> sommet <span style="color:#f92672">in</span> F:
-</span></span><span style="display:flex;"><span>        Joueur1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-</span></span><span style="display:flex;"><span>        propage(sommet,Joueur1,Attr,Pred,n)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Attr
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">propage</span>(sommet,Joueur1,Attr,Pred,n):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> Attr[sommet]:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
-</span></span><span style="display:flex;"><span>    Attr[sommet] <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> Pred[sommet]:
-</span></span><span style="display:flex;"><span>        n[s] <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e"># un successeur de s en moins</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> Joueur1 <span style="color:#f92672">or</span> (n[s] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) :
-</span></span><span style="display:flex;"><span>            propage(s,<span style="color:#f92672">not</span> Joueur1,Attr,Pred,n)
-</span></span></code></pre></div><br>
-<h4 id="stratégie-gagnante">Stratégie gagnante</h4>
-<style>
-#moryless p:first-child:after {
-    content: 'Stratégie sans mémoire gagnante';
-}
-</style>
-
-<div class="notices def"  id="moryless"  ><p>Une <strong>stratégie sans mémoire</strong> est une fonction $\sigma$ qui assigne un mouvement autorisé à un joueur pour chaque position non terminale : $\forall s\in S, (s,\sigma(s))\in A.$<br>
-Un joueur sur une position $s$ suit une stratégie s&rsquo;il emprunte le chemin $&lt;s,\sigma(s),\sigma^2(s),\ldots&gt;$. Elle est dite sans mémoire car pour une position donnée, la stratégie est indépendante du chemin qui y a mené ($\sigma$ ne dépend que du sommet).<br>
-Une <strong>stratégie sans mémoire gagnante</strong> depuis une position donnée garantit la victoire au joueur en un nombre de coups limité. Pour le joueur 1, une stratégie gagnante garantit d&rsquo;arriver sur un sommet de $F$. Mais suivant la position de départ, une telle stratégie n&rsquo;existe pas forcément&hellip;</p>
-
-</div>
-<p>En construisant l&rsquo;attracteur, on répond à notre première question : <strong>la position d&rsquo;Eve est-elle gagnante ? Il suffit de vérifier qu&rsquo;elle appartient à l&rsquo;attracteur.</strong><br>
-Si c&rsquo;est le cas, une stratégie gagnante est facile à mettre en place ; il faut faire en sorte que chaque déplacement sur le graphe (chaque coup joué) se fasse vers un sommet de l&rsquo;attracteur. Chaque coup d&rsquo;Eve vers un sommet de l&rsquo;attracteur piège aussi le coup suivant d&rsquo;Adam dans l&rsquo;attracteur.<br>
-Comme son nom l&rsquo;indique, l&rsquo;attracteur attire irrémédiablement vers $F$, assurant la victoire au joueur 1.</p>
-<p>Le joueur 2 aussi, bien sûr, a son attracteur, et il appartient au complémentaire de l&rsquo;attracteur du joueur 1, piège du joueur 1. Donc un seul écart du joueur 1 en dehors de son attracteur, et s&rsquo;en est fini pour lui, le joueur 2 peut le condanner à rester dans le piège.
-<img src="https://media2.giphy.com/media/yEIJLJXHwJHZm/giphy.gif" alt=""></p>
-<p>Revenons à nos exemples :</p>
-<ul>
-<li>Pour Chomp, le joueur 1 appartient à l&rsquo;attracteur, ce qui signifie que sa position de départ est gagnante. Par conséquent, il a une stratégie gagnante. Mais attention à ne pas se tromper au début ! Sur 5 mouvements possibles, le seul assurant la victoire est de manger le carré en haut à droite.</li>
-<li>Pour la variante de Nim, c&rsquo;est foutu&hellip; Quelle que soit notre stratégie, elle sera perdante.</li>
-<li>Enfin, pour Tic-tac-toe, la victoire tend les bras au joueur 1. Et, sans surprise, son premier mouvement doit être de prendre le milieu.</li>
-</ul>
-<br>
-<h3 id="arbre-et-minimax">Arbre et minimax</h3>
-<p>Pour des jeux comme les échecs, le graphe est bien trop gros pour pouvoir appliquer nos méthodes précédentes. Alors comment s&rsquo;en sortir ?</p>
-<p>L&rsquo;idée est de se contenter d&rsquo;une recherche partielle autour de la position actuelle donnant à l&rsquo;algorithme seulement quelques coups d&rsquo;avance. Il évalue alors les différentes positions futures possibles en leur attribuant un score issu d&rsquo;une <strong>heuristique</strong>.</p>
-<style>
-#heuri p:first-child:after {
-    content: 'Heuristique';
-}
-</style>
-
-<div class="notices def"  id="heuri"  ><p>Une heuristique est une méthode de calcul qui fournit rapidement une solution réalisable, pas nécessairement optimale ou exacte, pour un problème d&rsquo;optimisation difficile. Elle  s&rsquo;impose quand les algorithmes de résolution exacte sont impraticables, à savoir de complexité polynomiale de haut degré, exponentielle ou plus.<br>
-Une heuristique est donc un compromis entre d&rsquo;un côté l&rsquo;optimalité (trouver la meilleure solution) et/ou la complétude (trouver toutes les solutions) de l&rsquo;algorithme et de l&rsquo;autre côté sa vitesse.</p>
-
-</div>
-<p>Pour implémenter efficacement cette recherche partielle, l&rsquo;idée est d&rsquo;utiliser un arbre plutôt que l&rsquo;arêne précédente. Quelle différence ? L&rsquo;absence de cycle qui va permettre d&rsquo;élaguer ! On le paye au prix de la redondance des sommets (le même sommet peut apparaître plusieurs fois dans l&rsquo;arbre). Pour chaque position, les différents coups possibles correspondent aux différentes branches et on avance ainsi niveau par niveau jusqu&rsquo;aux feuilles représentant les positions terminales.</p>
-<p>Le gros avantage d&rsquo;un arbre est qu&rsquo;il permet facilement de ne garder que quelques niveaux (on raccourci alors toutes les branches jusqu&rsquo;à la profondeur considérée).</p>
-<p>Muni de cet arbre, l&rsquo;algorithme se lance dans un parcours en profondeur jusqu&rsquo;à la profondeur maximale stipulée. Lorsque ce niveau est atteint (2, par exemple, si on veut que l&rsquo;IA ait deux coups d&rsquo;avance), l&rsquo;algorithme évalue les feuilles grâce à son heuristique, puis il propage ce score vers les niveaux supérieurs en suivant le <strong>principe du minimax</strong> :</p>
-<ul>
-<li>sur un niveau correspondant au joueur 1, on sélectionne la valeur <strong>maximale</strong> parmi les branches,</li>
-<li>et sur un niveau correspondant à l&rsquo;adversaire, on sélectionne la valeur <strong>minimale</strong>.</li>
-</ul>
-<p>Le pricipe est de maximiser les gains du joueur 1 tout en minimisant ceux du joueur 2.
-La valeur est au final transmise à la racine (la position depuis laquelle on a lancé la recherche) et la meilleure branche est sélectionnée.</p>
-<p>Prenons l&rsquo;exemple du jeu de Morpion. Une heuristique possible pour évaluer un plateau pourrait consister à compter $+1$ pour chaque alignement encore possible pour le joueur et  $-1$ pour ceux encore possibles pour son adversaire.</p>
-<p><img src="/minimaxgif.gif" alt=""></p>
-<p>L&rsquo;arbre total du morpion n&rsquo;est pas si gros ; le <strong>facteur de ramification</strong> $b$ est de 5 en moyenne et il y a au plus 9 niveaux (9 coups), ce qui donne $\approx 5^9 = 1\,953\,125$ (à titre de comparaison, aux échecs, $b\approx35$ et un partie dure en moyenne 100 coups, ce qui donne $b^m\approx10^{54}$ sommets à inspecter&hellip;).</p>
-<p>L&rsquo;algorithme minimax appliqué au morpion inspecte en réalité environ 4 fois moins de sommets que les deux millions prédits, car ce chiffre ne tient pas compte des nombreuses parties potentielles se terminant avant le neuvième coup. Il en inspecte néanmoins beaucoup plus qu&rsquo;il ne faudrait (il n&rsquo;y a que $9!=362\,880$ coups possibles si l&rsquo;ordi commence et seulement $8!=40\,320$ si l&rsquo;humain a l&rsquo;honneur), ce qui illustre le fait qu&rsquo;un arbre contient beaucoup de sommets redondants par rapport au graphe du jeu dont il est tiré (c&rsquo;est le prix à payer pour casser les cycles).</p>
-<p>La taille modéré de l&rsquo;arbre permet de l&rsquo;explorer jusqu&rsquo;aux parties finales, mais on peut constater en jouant avec le petit programme ci-dessous que la réduction à une profondeur d&rsquo;un seul niveau grâce à l&rsquo;heuristique<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> est tout autant redoutable en inspectant presque 4000 fois moins de sommets !</p>
-<p>
-<iframe src="https://trinket.io/embed/python/5a7f499742" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-</p>
-<p>Cela prouve qu&rsquo;au morpion, 1 coup d&rsquo;avance, c&rsquo;est bien suffisant&hellip; Mais ce n&rsquo;est pas vraiment le cas aux échecs, où les plus grands joueurs (comme Kasparov) prévoient jusqu&rsquo;à 12 coups à l&rsquo;avance ! Deep Blue, qui a battu Kasparov en 1997, cherchait jusqu&rsquo;à une profondeur typiquement comprise entre 6 et 16, mais pouvait aller jusqu&rsquo;à 40 dans certaines situations.</p>
-<p>Dans le cas des échecs, l&rsquo;heuristique permettant d&rsquo;évaluer un état de l&rsquo;échiquier est bein plus complexe qu&rsquo;au morpion. Elle doit prendre en compte la quantité de pièces et pions restants, la qualité des pièces et les positions de tout ce beau monde (domination du centre, structure compacte, etc.).</p>
-<p>La taille du jeu de Go rend vaine toute tentative de type minimax. C&rsquo;est au point que les grands joueurs de Go ont longtemps refusé de jouer contre des ordinateurs, non par peur de perdre, mais parcequ&rsquo;ils les trouvaient trop mauvais. C&rsquo;est l&rsquo;essor du deep learning, et donc une philosophie basée sur l&rsquo;apprentissage plus que sur la stratégie, qui a permis à <a href="https://www.deepmind.com/research/highlighted-research/alphago">la machine</a> de devenir un adversaire coriace à ce jeu-là aussi.</p>
-<br>
-<h2 id="sac-à-dos-et-heuristique">Sac à dos et heuristique</h2>
-<p>Voyons enfin une autre utilisation d&rsquo;heuristique avec le problème du sac à dos, ici dans sa version &ldquo;0/1&rdquo; (knapsack 0/1 en anglais).</p>
-<p>Le problème du sac à dos est un problème classique d&rsquo;optimisation avec d&rsquo;importantes applications théoriques et industrielles.</p>
-<p>Soit $x\in\mathbb{N}^{*}$, soit $v$ une séquence de $n$ éléments appartenant à $\mathbb{N}^{*}$, et soit $p$ une séquence de $n$ éléments appartenant à $\{1,2,&hellip;,c\}$.<br>
-Nous appelons $c$ la capacité, $v$ la séquence de valeurs et $p$ la séquence de poids.<br>
-Le problème du sac à dos consiste à mettre des objets de poids $p$, dans un sac à dos qui peut contenir un poids maximal $c$, de telle sorte que la valeur des objets choisis est maximisée.<br>
-Plus formellement, cela revient à maximiser
-$$\text{val}(x)=\sum_{i=1}^n x[i]\cdot v[i]$$
-sous la contrainte $c≥\sum_{i=1}^n x[i]\cdot p[i]$, où $x\in\{0,1\}^n$ indique les objets choisis.</p>
-<p>Exemple : supposons que le sac ait une capacité de 900 et que l&rsquo;on cherche à y placer les objets suivants</p>
-<table>
-<thead>
-<tr>
-<th>objets</th>
-<th style="text-align:center">🥏</th>
-<th style="text-align:center">🎺</th>
-<th style="text-align:center">🥊</th>
-<th style="text-align:center">🧸</th>
-<th style="text-align:center">🪠</th>
-<th style="text-align:center">⏰</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>valeurs $v$</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">50</td>
-<td style="text-align:center">65</td>
-<td style="text-align:center">20</td>
-<td style="text-align:center">10</td>
-<td style="text-align:center">12</td>
-</tr>
-<tr>
-<td>poids $p$</td>
-<td style="text-align:center">320</td>
-<td style="text-align:center">700</td>
-<td style="text-align:center">845</td>
-<td style="text-align:center">180</td>
-<td style="text-align:center">70</td>
-<td style="text-align:center">420</td>
-</tr>
-</tbody>
-</table>
-<p>Le plus simple pour arriver à nos fins est de suivre une <strong>stratégie gloutonne</strong> (une stratégie étape par étape où un critère de classement permet de sélectionner le prochain objet à ajouter). Un critère qui semble prometteur est le ratio valeur/poids de chaque objet. L&rsquo;idée est alors de placer les objets dans le sac dans l&rsquo;ordre inverse de leur ratio. Cela semble une bonne stratégie puisque les objets ajoutés maximisent ainsi la valeur qu&rsquo;ils apportent par rappor à la place qu&rsquo;ils prennent. Mais si l&rsquo;approche gloutonne a l&rsquo;avantage d&rsquo;être très simple, le revers de la médaille est qu&rsquo;elle est à courte vue, on perd la vision d&rsquo;ensemble. Et dans certaines configurations, comme c&rsquo;est le cas dans notre exemple, cela s&rsquo;avère contre-productif.</p>
-<table>
-<thead>
-<tr>
-<th>objets</th>
-<th style="text-align:center">🥏</th>
-<th style="text-align:center">🎺</th>
-<th style="text-align:center">🥊</th>
-<th style="text-align:center">🧸</th>
-<th style="text-align:center">🪠</th>
-<th style="text-align:center">⏰</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ratio $v/p$</td>
-<td style="text-align:center">1/64</td>
-<td style="text-align:center">1/14</td>
-<td style="text-align:center">1/13</td>
-<td style="text-align:center">1/9</td>
-<td style="text-align:center">1/7</td>
-<td style="text-align:center">1/35</td>
-</tr>
-</tbody>
-</table>
-<p>L&rsquo;approche gloutonne nous encourage ici à placer d&rsquo;abord 🪠 dans le sac, puis 🧸, et c&rsquo;est tout. Plus de place pour l&rsquo;objet suivant (🥊). On obtient finalement une valeur de 30 et un poids de 250.<br>
-Cet exemple nous montre que l&rsquo;approche gloutonne ne garantit pas l&rsquo;optimalité (loin de là même, vu la place qu&rsquo;il reste dans le sac&hellip;). On pourrait néanmoins facilement améliorer les choses en continuant d&rsquo;essayer de placer les éléments de ratio plus grand sans s&rsquo;arrêter au premier blocage. On tente 🎺, trop grosse, puis ⏰, là ça rentre, et enfin 🥏 qui ne loge pas. On obtient ainsi une valeur de 42 et un poids de 670. Mais même ainsi, on n&rsquo;a pas obtenu la réponse optimale.</p>
-<p>Puisqu&rsquo;on suppose, dans cette version &ldquo;0/1&rdquo; du problème qu&rsquo;un objet est soit présent, soit absent (pas de fraction et pas de multiple), on peut représenter l&rsquo;ensemble des possibilités par un <strong>arbre binaire</strong>.<br>
-Une méthode sûre pour résoudre le problème consiste alors à parcourir l&rsquo;arbre dans son entièreté et regarder la valeur et le poids de chaque branche complète (de la racine jusqu&rsquo;à la feuille), pour choisir au final la branche la plus rémunératrice et repectant la contrainte de capacité.<br>
-C&rsquo;est la méthode par <strong>force brute</strong>.</p>
-<p><img src="/arbreknapsack.png" alt=""></p>
-<p>Un algorithme récursif possible pour faire ce travail (à chaque embranchement, on compare avec et sans l&rsquo;objet) :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sacadosBrute</span>(v,p,c,i,valeur,poids):
-</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(v)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> n:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> poids <span style="color:#f92672">&gt;</span> c:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> valeur
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        valeurAvec <span style="color:#f92672">=</span> valeur <span style="color:#f92672">+</span> v[i]
-</span></span><span style="display:flex;"><span>        poidsAvec <span style="color:#f92672">=</span> poids <span style="color:#f92672">+</span> p[i]
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> max(sacadosBrute(v,p,c,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,valeur,poids),sacadosBrute(v,p,c,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,valeurAvec,poidsAvec))
-</span></span></code></pre></div><p>Comme vous l&rsquo;aurez deviné, la résolution du problème du sac à dos par force brute est en $O(2^n)$ où $n$ est le nombre d&rsquo;objets. Donc au-delà de quelques dizaines d&rsquo;objets, c&rsquo;est mort&hellip;</p>
-<p>Pour améliorer les choses, on peut utiliser la méthode &ldquo;séparation et évaluation&rdquo; (<strong>branch and bond</strong> ou BB en anglais) qui vise à élaguer l&rsquo;arbre autant que faire se peut.<br>
-Arrivé à un certain sommet de l&rsquo;arbre, si l&rsquo;objet se trouvant en-dessous amène à un dépassement de la capacité, cela ne sert plus à rien de continuer sa branche, alors on coupe.<br>
-L&rsquo;autre idée est d&rsquo;utiliser la détermination de la valeur optimale du sac par la méthode gloutonne comme une <strong>heuristique</strong> ; si sous un sommet, la somme des valeurs des objets restant aboutit à une valeur totale inférieure à l&rsquo;heuristique, on coupe.</p>
-<p>Voilà un code possible :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sacadosBB</span>(v,p,c,i,valeur,poids,meilleure,potentiel):
-</span></span><span style="display:flex;"><span>    nbappels <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(v)
-</span></span><span style="display:flex;"><span>    meilleure <span style="color:#f92672">=</span> max(meilleure,valeur)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> n:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> poids <span style="color:#f92672">&gt;</span> c:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> valeur
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> valeur <span style="color:#f92672">+</span> potentiel[i] <span style="color:#f92672">&lt;</span> meilleure:
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> valeur 
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        valeurAvec <span style="color:#f92672">=</span> valeur <span style="color:#f92672">+</span> v[i]
-</span></span><span style="display:flex;"><span>        poidsAvec <span style="color:#f92672">=</span> poids <span style="color:#f92672">+</span> p[i]
-</span></span><span style="display:flex;"><span>        sol <span style="color:#f92672">=</span> sacadosBB(v,p,c,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,valeur,poids,meilleure,potentiel)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> poidsAvec <span style="color:#f92672">&lt;=</span> c:
-</span></span><span style="display:flex;"><span>            sol <span style="color:#f92672">=</span> max(sol,sacadosBB(v,p,c,i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,valeurAvec,poidsAvec,meilleure,potentiel))
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> sol
-</span></span></code></pre></div><p>Cela donne un arbre bien plus clairsemé sur notre exemple (et avec, qui plus est, une heuristique qui ne nous aide pas des masses, car très mauvaise).</p>
-<p><img src="/arbreknapsackBB.png" alt=""></p>
-<p>Une autre technique possible est d&rsquo;utiliser la <strong>programmation dynamique</strong> qui est présentée dans la vidéo ci-dessous.</p>
-
+<p>Donnez le palmares du tournoi après 200 parties.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/F48AbiZGds0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/mScpHTIi-kM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-
-
-<div class="notices tip" ><p>La programmation dynamique n&rsquo;est pas au programme de TSI, mais c&rsquo;est une part importante du programme des autres sections.</p>
-
-</div>
-<p><img src="/boprodyn.pdf" alt=""></p>
 <br>
-<h2 id="un-chouïa-dapprentissage-profond-pour-les-curieux">Un chouïa d&rsquo;apprentissage profond pour les curieux</h2>
-<p>Géniale série de 4 vidéos de 3Blue1Brown sur les réseaux de neurones :</p>
-<div style="position:relative; width:560px; max-width: 100%; margin-left: auto;margin-right: auto;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="max-width: 100%;"></iframe>
-</div>
-<p>Chouette récente vidéo de ScienceEtonnante sur les IA génératives :</p>
-<div style="position:relative; width:560px; max-width: 100%; margin-left: auto;margin-right: auto;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tdelUss-5hY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="max-width: 100%;"></iframe>
-</div><div class="footnotes" role="doc-endnotes">
 <hr>
-<ol>
-<li id="fn:1">
-<p>adapté de <a href="https://medium.com/@solclover">cet auteur</a>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2">
-<p>graphe issue de <a href="https://vas3k.com/blog/machine_learning/">cette introduction assez sympa</a> à l&rsquo;apprentissage automatique.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:3">
-<p>2-ply minimax en anglais&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
+<h1 id="une-solution-">Une solution :</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span></code></pre></div><p>Les différentes stratégies :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">TitforTat</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(liste_coups_adverses) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Grudger</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(liste_coups_adverses) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Joss</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(liste_coups_adverses) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> random()<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0.1</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Rando</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> int(random()<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">AllD</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">AllC</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">TitforTwoTats</span>(liste_coups_joueur,liste_coups_adverses): <span style="color:#75715e"># tit for 2 tats</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(liste_coups_adverses) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Tester</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(liste_coups_adverses) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> len(liste_coups_adverses) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> liste_coups_adverses[<span style="color:#ae81ff">1</span>]: <span style="color:#75715e"># tit for tat</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>: <span style="color:#75715e"># alternance</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> (len(liste_coups_adverses)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Eatherly</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(liste_coups_adverses) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> random() <span style="color:#f92672">&lt;</span> (len(liste_coups_adverses)<span style="color:#f92672">-</span>sum(liste_coups_adverses))<span style="color:#f92672">/</span>len(liste_coups_adverses):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Alt</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (len(liste_coups_adverses)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Gofman</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(liste_coups_adverses) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> liste_coups_adverses[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">!=</span> liste_coups_joueur[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> random() <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">/</span><span style="color:#ae81ff">7</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Tullock</span>(liste_coups_joueur,liste_coups_adverses):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(liste_coups_adverses) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">11</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> random() <span style="color:#f92672">&lt;</span> sum(liste_coups_adverses)<span style="color:#f92672">/</span>len(liste_coups_adverses)<span style="color:#f92672">-</span><span style="color:#ae81ff">0.1</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>Match entre deux joueurs :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">partie</span>(joueurA,joueurB):
+</span></span><span style="display:flex;"><span>    nbre_parties <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>    score_joueurA <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    score_joueurB <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    liste_coups_joueurA <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    liste_coups_joueurB <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(nbre_parties):
+</span></span><span style="display:flex;"><span>        JA <span style="color:#f92672">=</span> dico_strategies[joueurA](liste_coups_joueurA,liste_coups_joueurB)
+</span></span><span style="display:flex;"><span>        JB <span style="color:#f92672">=</span> dico_strategies[joueurB](liste_coups_joueurB,liste_coups_joueurA)
+</span></span><span style="display:flex;"><span>        liste_coups_joueurA<span style="color:#f92672">.</span>append(JA)
+</span></span><span style="display:flex;"><span>        liste_coups_joueurB<span style="color:#f92672">.</span>append(JB)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> JA:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> JB:
+</span></span><span style="display:flex;"><span>            score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>            score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> JB:
+</span></span><span style="display:flex;"><span>            score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>            score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            score_joueurA <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            score_joueurB <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> joueurA <span style="color:#f92672">==</span> joueurB:
+</span></span><span style="display:flex;"><span>        dico_scores[joueurA] <span style="color:#f92672">+=</span> score_joueurA
+</span></span><span style="display:flex;"><span>        matrice_tournoi[liste_joueurs<span style="color:#f92672">.</span>index(joueurA)][liste_joueurs<span style="color:#f92672">.</span>index(joueurA)] <span style="color:#f92672">+=</span> score_joueurA
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        dico_scores[joueurA] <span style="color:#f92672">+=</span> score_joueurA
+</span></span><span style="display:flex;"><span>        dico_scores[joueurB] <span style="color:#f92672">+=</span> score_joueurB
+</span></span><span style="display:flex;"><span>        matrice_tournoi[liste_joueurs<span style="color:#f92672">.</span>index(joueurB)][liste_joueurs<span style="color:#f92672">.</span>index(joueurA)] <span style="color:#f92672">+=</span> score_joueurB
+</span></span><span style="display:flex;"><span>        matrice_tournoi[liste_joueurs<span style="color:#f92672">.</span>index(joueurA)][liste_joueurs<span style="color:#f92672">.</span>index(joueurB)] <span style="color:#f92672">+=</span> score_joueurA
+</span></span></code></pre></div><p>Le tournoi (on fait s&rsquo;affronter tous les joueurs y compris eux-mêmes et on recommence 50 fois) :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tournoi</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> partie
+</span></span><span style="display:flex;"><span>    nb_tournois <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(nb_tournois):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> j,JA <span style="color:#f92672">in</span> enumerate(liste_joueurs):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> JB <span style="color:#f92672">in</span> liste_joueurs[j:]:
+</span></span><span style="display:flex;"><span>                partie(JA,JB)
+</span></span></code></pre></div><p>Pour réinitialiser les scores entre deux tournois :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">raz</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">global</span> liste_joueurs,liste_strategies,dico_strategies,dico_scores,matrice_tournoi
+</span></span><span style="display:flex;"><span>    liste_joueurs <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;TitforTat&#34;</span>,<span style="color:#e6db74">&#34;Grudger&#34;</span>,<span style="color:#e6db74">&#34;Joss&#34;</span>,<span style="color:#e6db74">&#34;AllD&#34;</span>,<span style="color:#e6db74">&#34;AllC&#34;</span>,<span style="color:#e6db74">&#34;TitforTwoTats&#34;</span>,<span style="color:#e6db74">&#34;Tester&#34;</span>,<span style="color:#e6db74">&#34;Eatherly&#34;</span>,<span style="color:#e6db74">&#34;Alt&#34;</span>,<span style="color:#e6db74">&#34;Gofman&#34;</span>,<span style="color:#e6db74">&#34;Tullock&#34;</span>,<span style="color:#e6db74">&#34;Rando&#34;</span>]
+</span></span><span style="display:flex;"><span>    liste_strategies <span style="color:#f92672">=</span> [TitforTat,Grudger,Joss,AllD,AllC,TitforTwoTats,Tester,Eatherly,Alt,Gofman,Tullock,Rando]
+</span></span><span style="display:flex;"><span>    dico_strategies <span style="color:#f92672">=</span> {J:S <span style="color:#66d9ef">for</span> (J,S) <span style="color:#f92672">in</span> zip(liste_joueurs,liste_strategies)}
+</span></span><span style="display:flex;"><span>    dico_scores <span style="color:#f92672">=</span> {J:<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> J <span style="color:#f92672">in</span> liste_joueurs}
+</span></span><span style="display:flex;"><span>    matrice_tournoi <span style="color:#f92672">=</span> [[<span style="color:#ae81ff">0</span> <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(len(liste_joueurs))] <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(len(liste_joueurs))]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>raz()
+</span></span><span style="display:flex;"><span>tournoi()
+</span></span><span style="display:flex;"><span>liste_scores <span style="color:#f92672">=</span> [dico_scores[k] <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> dico_scores]
+</span></span><span style="display:flex;"><span>combo <span style="color:#f92672">=</span> list(zip(liste_scores,liste_joueurs))
+</span></span><span style="display:flex;"><span>combo<span style="color:#f92672">.</span>sort(reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> s,j <span style="color:#f92672">in</span> combo:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>j<span style="color:#e6db74">:</span><span style="color:#e6db74">17</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> : </span><span style="color:#e6db74">{</span>s<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div>
+
+<div style="font-family:monospace">
+TitforTwoTat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 306105<br>
+Tullock&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 300532<br>
+Gofman&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 296694<br>
+TitforTat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 295112<br>
+Grudger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 294854<br>
+AllC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 293610<br>
+Alt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 290168<br>
+Rando &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 280000<br>
+Tester&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 275042<br>
+Eatherly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 269839<br>
+Joss&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 268720<br>
+AllD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 256764<br>
 </div>
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">15</span>),dpi<span style="color:#f92672">=</span><span style="color:#ae81ff">150</span>)
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>heatmap(matrice_tournoi, annot<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, fmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;d&#34;</span>, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;YlGnBu&#39;</span>, xticklabels<span style="color:#f92672">=</span>liste_joueurs, yticklabels<span style="color:#f92672">=</span>liste_joueurs)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;both&#39;</span>, which<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;both&#39;</span>, length<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>s<span style="color:#f92672">.</span>xaxis<span style="color:#f92672">.</span>tick_top()
+</span></span><span style="display:flex;"><span>s<span style="color:#f92672">.</span>xaxis<span style="color:#f92672">.</span>set_label_position(<span style="color:#e6db74">&#39;top&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xticks(rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>)
+</span></span></code></pre></div><p><img src="/restournoi.png" alt=""></p>
 
 
 <footer class="footline">
@@ -2115,6 +1744,158 @@ L&rsquo;autre idée est d&rsquo;utiliser la détermination de la valeur optimale
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -2207,158 +1988,6 @@ L&rsquo;autre idée est d&rsquo;utiliser la détermination de la valeur optimale
             
             
                 
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 

@@ -75,5 +75,14 @@ L&amp;rsquo;oracle d&amp;rsquo;Aaronson est un petit programme capable de prédi
 L&amp;rsquo;idée du programme de base :
 Pour chaque mot possible de 5 lettres (&amp;ldquo;g&amp;rdquo; ou &amp;ldquo;h&amp;rdquo;) entré par l&amp;rsquo;utilisateur, on tient à jour dans un registre la lettre que l&amp;rsquo;utilisateur tape tout de suite après.</description>
     </item>
+    <item>
+      <title>Tournoi d&#39;Axelrod</title>
+      <link>https://info-tsi-vieljeux.github.io/projets/axelrod/</link>
+      <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
+      <guid>https://info-tsi-vieljeux.github.io/projets/axelrod/</guid>
+      <description>Le tournoi d&amp;rsquo;Axelrod La mission est d&amp;rsquo;implémenter le tournoi d&amp;rsquo;Axelrod première version présenté dans la vidéo ci-dessous.
+Vous ferez concourir les stratégies suivantes en écrivant une fonction par stratégie :
+AllC : coopère toujours. AllD : trahit toujours. Rando : joue au hasard. Alt : alterne un coup sur deux. TitforTat : coopère au premier coup puis joue le coup précédent de l&amp;rsquo;adversaire. Grudger : commence par coopérer mais dès que l&amp;rsquo;autre trahit, trahit toujours.</description>
+    </item>
   </channel>
 </rss>
