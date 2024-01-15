@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1705348705" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1705348705" rel="stylesheet">
-    <link href="/css/hybrid.css?1705348705" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1705348705" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1705348705" rel="stylesheet">
-    <link href="/css/auto-complete.css?1705348705" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1705348705" rel="stylesheet">
-    <link href="/css/theme.css?1705348705" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1705348705" rel="stylesheet">
+    <link href="/css/nucleus.css?1705348991" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1705348991" rel="stylesheet">
+    <link href="/css/hybrid.css?1705348991" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1705348991" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1705348991" rel="stylesheet">
+    <link href="/css/auto-complete.css?1705348991" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1705348991" rel="stylesheet">
+    <link href="/css/theme.css?1705348991" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1705348991" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1705348705" rel="stylesheet">
+    <link href="/css/theme-green.css?1705348991" rel="stylesheet">
     
-    <link href="/css/foo.css?1705348705" rel="stylesheet"><link href="/css/bar.css?1705348705" rel="stylesheet">
+    <link href="/css/foo.css?1705348991" rel="stylesheet"><link href="/css/bar.css?1705348991" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1705348705"></script>
+    <script src="/js/jquery-3.3.1.min.js?1705348991"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1705348705"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1705348705"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1705348991"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1705348991"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1705348705"></script>
+<script type="text/javascript" src="/js/search.js?1705348991"></script>
 
     
   </div>
@@ -1244,7 +1244,7 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>        s,liste_mots_par_motifs <span style="color:#f92672">=</span> entropie(mot,liste_mots_restants)
 </span></span><span style="display:flex;"><span>        Resultats<span style="color:#f92672">.</span>append((s,mot,liste_mots_par_motifs))
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Resultats
-</span></span></code></pre></div><p>Le code suivant permet d&rsquo;enregistrer la liste donnée par la fonction <code>resultats_depart</code> dans un fichier csv pour s&rsquo;éviter de refaire le calcul à chaque fois qu&rsquo;on lance le programme. Cette liste est en effet un peu longue à générer. Le fichier csv produit pèse 31,5 Mo.</p>
+</span></span></code></pre></div><p>Le code suivant permet d&rsquo;enregistrer la liste donnée par la fonction <code>resultats_depart</code> dans un fichier csv pour s&rsquo;éviter de refaire ce premier long calcul à chaque fois qu&rsquo;on lance le programme. Le fichier <code>csv</code> produit pèse 31,5 Mo (et plus d'1 Go avec tous les mots possibles&hellip;).</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Liste des mots solutions </span>
 </span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
 </span></span><span style="display:flex;"><span>dataf <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url,header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
@@ -1254,7 +1254,7 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>    write <span style="color:#f92672">=</span> csv<span style="color:#f92672">.</span>writer(f)
 </span></span><span style="display:flex;"><span>    write<span style="color:#f92672">.</span>writerows(Resultats)
 </span></span></code></pre></div><p>Maintenant, on peut jouer&hellip;<br></p>
-<p>Demandons déjà quels sont, d&rsquo;après notre modèle, les 3 meilleures et les 3 pires ouvertures :</p>
+<p>Demandons déjà quelles sont, d&rsquo;après notre modèle, les 3 meilleures et les 3 pires ouvertures :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Rescla <span style="color:#f92672">=</span> sorted(Resultats,reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
 </span></span><span style="display:flex;"><span>    print(Rescla[i][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>upper())
@@ -2129,19 +2129,19 @@ motif : ggjgg<br>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1705348705"></script>
-    <script src="/js/perfect-scrollbar.min.js?1705348705"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1705348705"></script>
-    <script src="/js/jquery.sticky.js?1705348705"></script>
-    <script src="/js/featherlight.min.js?1705348705"></script>
-    <script src="/js/highlight.pack.js?1705348705"></script>
+    <script src="/js/clipboard.min.js?1705348991"></script>
+    <script src="/js/perfect-scrollbar.min.js?1705348991"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1705348991"></script>
+    <script src="/js/jquery.sticky.js?1705348991"></script>
+    <script src="/js/featherlight.min.js?1705348991"></script>
+    <script src="/js/highlight.pack.js?1705348991"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1705348705"></script>
-    <script src="/js/learn.js?1705348705"></script>
-    <script src="/js/hugo-learn.js?1705348705"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1705348991"></script>
+    <script src="/js/learn.js?1705348991"></script>
+    <script src="/js/hugo-learn.js?1705348991"></script>
     
         
-            <script src="/mermaid/mermaid.js?1705348705"></script>
+            <script src="/mermaid/mermaid.js?1705348991"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
