@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1705151067" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1705151067" rel="stylesheet">
-    <link href="/css/hybrid.css?1705151067" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1705151067" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1705151067" rel="stylesheet">
-    <link href="/css/auto-complete.css?1705151067" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1705151067" rel="stylesheet">
-    <link href="/css/theme.css?1705151067" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1705151067" rel="stylesheet">
+    <link href="/css/nucleus.css?1705348607" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1705348607" rel="stylesheet">
+    <link href="/css/hybrid.css?1705348607" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1705348607" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1705348607" rel="stylesheet">
+    <link href="/css/auto-complete.css?1705348607" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1705348607" rel="stylesheet">
+    <link href="/css/theme.css?1705348607" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1705348607" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1705151067" rel="stylesheet">
+    <link href="/css/theme-green.css?1705348607" rel="stylesheet">
     
-    <link href="/css/foo.css?1705151067" rel="stylesheet"><link href="/css/bar.css?1705151067" rel="stylesheet">
+    <link href="/css/foo.css?1705348607" rel="stylesheet"><link href="/css/bar.css?1705348607" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1705151067"></script>
+    <script src="/js/jquery-3.3.1.min.js?1705348607"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1705151067"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1705151067"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1705348607"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1705348607"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1705151067"></script>
+<script type="text/javascript" src="/js/search.js?1705348607"></script>
 
     
   </div>
@@ -1149,9 +1149,11 @@ onload='renderMathInElement(document.body);'></script>
 <li>Explications supplémentaires de <a href="https://scienceetonnante.com/2022/02/13/comment-craquer-le-jeu-wordle-sutom/">David Louapre</a>.</li>
 </ul>
 <br>
+<hr>
+<br>
 <h3 id="une-solution-possible">Une solution possible</h3>
 
-<div class="notices note" ><p>Disclaimer : cette solution est non optimale car elle n&rsquo;utilise pas tous les mots possibles, mais seulement la liste des mots solutions (permet d&rsquo;aller plus vite).</p>
+<div class="notices note" ><p>Disclaimer : cette solution n&rsquo;est pas obtimale puisqu&rsquo;elle n&rsquo;utilise que les mots solutions (pour aller plus vite) ce qui nous prive d&rsquo;un fort potentiel supplémentaire de discrimination.<br>Remarquons aussi qu&rsquo;une stratégie reposant sur la liste complète de mots sans connaître par avance l&rsquo;ensemble des mots solutions (solution &ldquo;sans triche&rdquo; donc) ne serait pas forcément plus efficace (meilleure discrimination mais pour un choix bien plus grand). On va le tester à la fin.</p>
 
 </div>
 <p>Import des modules et définition des fonctions dont on aura besoin :</p>
@@ -1242,8 +1244,8 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>        s,liste_mots_par_motifs <span style="color:#f92672">=</span> entropie(mot,liste_mots_restants)
 </span></span><span style="display:flex;"><span>        Resultats<span style="color:#f92672">.</span>append((s,mot,liste_mots_par_motifs))
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Resultats
-</span></span></code></pre></div><p>Le code suivant permet d&rsquo;enregistrer la liste donnée par la fonction <code>entropie_depart</code> dans un fichier csv afin de pouvoir l&rsquo;utiliser directement dans la suite. Cette liste est en effet un peu longue à générer ; le fichier csv produit fait 31,5 Mo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Liste des solutions </span>
+</span></span></code></pre></div><p>Le code suivant permet d&rsquo;enregistrer la liste donnée par la fonction <code>resultats_depart</code> dans un fichier csv pour s&rsquo;éviter de refaire le calcul à chaque fois qu&rsquo;on lance le programme. Cette liste est en effet un peu longue à générer. Le fichier csv produit pèse 31,5 Mo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Liste des mots solutions </span>
 </span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
 </span></span><span style="display:flex;"><span>dataf <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url,header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
 </span></span><span style="display:flex;"><span>liste_mots_dep <span style="color:#f92672">=</span> dataf[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
@@ -1251,12 +1253,33 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;liste_base.csv&#39;</span>,<span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
 </span></span><span style="display:flex;"><span>    write <span style="color:#f92672">=</span> csv<span style="color:#f92672">.</span>writer(f)
 </span></span><span style="display:flex;"><span>    write<span style="color:#f92672">.</span>writerows(Resultats)
-</span></span></code></pre></div><p>Maintenant, on peut jouer :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># importation liste des mots solution </span>
-</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
-</span></span><span style="display:flex;"><span>dataf <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url,header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
-</span></span><span style="display:flex;"><span>liste_mots_dep <span style="color:#f92672">=</span> dataf[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># importation des premiers résultats</span>
+</span></span></code></pre></div><p>Maintenant, on peut jouer&hellip;<br></p>
+<p>Demandons déjà quels sont, d&rsquo;après notre modèle, les 3 meilleures et les 3 pires ouvertures :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Rescla <span style="color:#f92672">=</span> sorted(Resultats,reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>    print(Rescla[i][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>upper())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;-&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span>):
+</span></span><span style="display:flex;"><span>    print(Rescla[<span style="color:#f92672">-</span>i][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>upper())
+</span></span></code></pre></div><p><code>RAISE</code><br>
+<code>SLATE</code><br>
+<code>CRATE</code><br>
+<code>-----</code><br>
+<code>FUZZY</code><br>
+<code>JAZZY</code><br>
+<code>MAMMA</code><br></p>
+<p>En utilisant la liste complète des mots, on aurait obtenu :<br></p>
+<p><code>TARES</code><br>
+<code>LARES</code><br>
+<code>RALES</code><br>
+<code>-----</code><br>
+<code>QAJAQ</code><br>
+<code>XYLYL</code><br>
+<code>IMMIX</code><br></p>
+<p>Écrivons maintenant le code nous permettant de vaincre le Wordle du jour :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># on récupère les résultats du fichier csv</span>
 </span></span><span style="display:flex;"><span>dataf_result <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;liste_base.csv&#39;</span>,header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
 </span></span><span style="display:flex;"><span>liste_resultats <span style="color:#f92672">=</span> dataf_result<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist() 
 </span></span><span style="display:flex;"><span>Resultats <span style="color:#f92672">=</span> []
@@ -1272,6 +1295,12 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>        k <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>    Resultats<span style="color:#f92672">.</span>append((float(a),liste_mots_dep[int(b)],L))
 </span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Et on récupère aussi la liste des mots solutions</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
+</span></span><span style="display:flex;"><span>dataf <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url,header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>liste_mots_dep <span style="color:#f92672">=</span> dataf[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># puis on lance la machine    </span>
 </span></span><span style="display:flex;"><span>essais <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>essai1 <span style="color:#f92672">=</span> max(Resultats)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>upper()
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
@@ -1286,14 +1315,38 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;| </span><span style="color:#e6db74">{</span>liste_mots[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>upper()<span style="color:#e6db74">}</span><span style="color:#e6db74"> |&#34;</span>)
 </span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">4</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">9</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)  
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
-</span></span><span style="display:flex;"><span>    Resultats <span style="color:#f92672">=</span> resultats(liste_mots_dep,max(Resultats)[<span style="color:#ae81ff">2</span>][conv_motif_nb(motif_obtenu)])
+</span></span><span style="display:flex;"><span>    Resultats <span style="color:#f92672">=</span> resultats(liste_mots_dep,liste_mots)
 </span></span><span style="display:flex;"><span>    nvessai <span style="color:#f92672">=</span> max(Resultats)[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>upper()
 </span></span><span style="display:flex;"><span>    print()
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Tentez le mot &#39;</span><span style="color:#e6db74">{</span>nvessai<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>)
 </span></span><span style="display:flex;"><span>    print()
 </span></span><span style="display:flex;"><span>    motif_obtenu <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;motif : &#34;</span>)<span style="color:#f92672">.</span>upper()
 </span></span><span style="display:flex;"><span>    essais <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span></code></pre></div><p>Pour tester tous les mots et ainsi évaluer la stratégie :</p>
+</span></span></code></pre></div><p>Exemple :</p>
+
+
+<div style="font-family:monospace">
+Tentez le mot 'RAISE'<br>
+<br>
+puis entrez le motif obtenu<br>
+sous la forme d'un mot de 5 lettres<br>
+choisies parmi 'g', 'j' et 'v' où<br>
+'g' désigne une lettre grise,<br>
+'j' une lettre jaune et<br>
+'v' une lettre verte<br>
+<br>
+motif : gjvgg<br>
+<br>
+Tentez le mot 'CLOWN'<br>
+<br>
+motif : ggjgg<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;---------<br>
+--> | AXIOM |<br>
+&nbsp;&nbsp;&nbsp;&nbsp;---------<br>
+  </div>
+
+<p>Pour tester tous les mots et ainsi évaluer la stratégie :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://gist.githubusercontent.com/cfreshman/a03ef2cba789d8cf00c08f767e0fad7b/raw/5d752e5f0702da315298a6bb5a771586d6ff445c/wordle-answers-alphabetical.txt&#39;</span>
 </span></span><span style="display:flex;"><span>liste <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url,header<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
 </span></span><span style="display:flex;"><span>liste <span style="color:#f92672">=</span> liste[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>values<span style="color:#f92672">.</span>tolist()
@@ -1301,7 +1354,7 @@ onload='renderMathInElement(document.body);'></script>
 </span></span><span style="display:flex;"><span>Distrib <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#ae81ff">6</span>
 </span></span><span style="display:flex;"><span>nb_moy_tent <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Patience... Le premier calcul est un peu long (environ 30 s)</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Patience... Le premier calcul est un peu long</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>Res <span style="color:#f92672">=</span> resultats(liste[:],liste[:])[:]
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> mot_mystere <span style="color:#f92672">in</span> liste:
 </span></span><span style="display:flex;"><span>    essais <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
@@ -1351,6 +1404,17 @@ onload='renderMathInElement(document.body);'></script>
 <code>Nombre de mots trouvés en 6 essais : 3</code><br>
 <code>Le mot a en moyenne été trouvé en 3.67 essais</code><br></p>
 <p><img src="/histowordle.png" alt=""></p>
+<p>En utilisant tous les mots autorisés mais sans isoler le sous-ensemble solution (sans &ldquo;triche&rdquo;), les résultats sont moins bons : un mot n&rsquo;est pas découvert (il faut 7 essais pour découvrir Ferry) et la moyenne est au delà de 4 essais.</p>
+<p><code>Nombre de mots testés : 2315</code><br>
+<code>Nombre de mots trouvés en 6 tentatives ou moins : 2314</code><br>
+<code>Nombre de mots trouvés en 1 essais : 0</code><br>
+<code>Nombre de mots trouvés en 2 essais : 4</code><br>
+<code>Nombre de mots trouvés en 3 essais : 320</code><br>
+<code>Nombre de mots trouvés en 4 essais : 1430</code><br>
+<code>Nombre de mots trouvés en 5 essais : 529</code><br>
+<code>Nombre de mots trouvés en 6 essais : 31</code><br>
+<code>Le mot a en moyenne été trouvé en 4.11 essais</code><br></p>
+<p><img src="/histwordle2.png" alt=""></p>
 
 
 <footer class="footline">
@@ -2065,19 +2129,19 @@ onload='renderMathInElement(document.body);'></script>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1705151067"></script>
-    <script src="/js/perfect-scrollbar.min.js?1705151067"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1705151067"></script>
-    <script src="/js/jquery.sticky.js?1705151067"></script>
-    <script src="/js/featherlight.min.js?1705151067"></script>
-    <script src="/js/highlight.pack.js?1705151067"></script>
+    <script src="/js/clipboard.min.js?1705348607"></script>
+    <script src="/js/perfect-scrollbar.min.js?1705348607"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1705348607"></script>
+    <script src="/js/jquery.sticky.js?1705348607"></script>
+    <script src="/js/featherlight.min.js?1705348607"></script>
+    <script src="/js/highlight.pack.js?1705348607"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1705151067"></script>
-    <script src="/js/learn.js?1705151067"></script>
-    <script src="/js/hugo-learn.js?1705151067"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1705348607"></script>
+    <script src="/js/learn.js?1705348607"></script>
+    <script src="/js/hugo-learn.js?1705348607"></script>
     
         
-            <script src="/mermaid/mermaid.js?1705151067"></script>
+            <script src="/mermaid/mermaid.js?1705348607"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
