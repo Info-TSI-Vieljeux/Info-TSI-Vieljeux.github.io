@@ -4,325 +4,254 @@
     <title>Introduction on Cours info TSI</title>
     <link>https://info-tsi-vieljeux.github.io/</link>
     <description>Recent content in Introduction on Cours info TSI</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>fr</language>
-    <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 06 Mar 2021 14:23:56 +0100</lastBuildDate>
     <atom:link href="https://info-tsi-vieljeux.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Doomsday</title>
       <link>https://info-tsi-vieljeux.github.io/projets/doomsday/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/projets/doomsday/</guid>
-      <description>Algorithme du Doomsday Permet de trouver de tête le jour de la semaine pour n&amp;rsquo;importe quelle date du calendrier grégorien (à partir de 1753).
-On donne une date sous la forme $jour/mois/annee$.
-On décompose tout d&amp;rsquo;abord $annee$ en $s\times 100 + an$ où $s$ est le nombre de siècles ($an&amp;lt;100$).
-doomscentury $c$ on calcule le reste de la division euclidienne par 4 du nombre de siècle $s$ on multiplié par 2 on prend le complément à 7 $$c = 7-(s\mod 4) \times2 $$</description>
+      <description>Algorithme du Doomsday Permet de trouver de tête le jour de la semaine pour n&amp;rsquo;importe quelle date du calendrier grégorien (à partir de 1753).&#xA;On donne une date sous la forme $jour/mois/annee$.&#xA;On décompose tout d&amp;rsquo;abord $annee$ en $s\times 100 + an$ où $s$ est le nombre de siècles ($an&amp;lt;100$).&#xA;doomscentury $c$ on calcule le reste de la division euclidienne par 4 du nombre de siècle $s$ on multiplié par 2 on prend le complément à 7 $$c = 7-(s\mod 4) \times2 $$</description>
     </item>
     <item>
       <title>Les bonnes pratiques</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/bonnes_pratiques/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/bonnes_pratiques/</guid>
-      <description>Les bonnes pratiques Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&amp;rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est subitement devenu complètement cryptique.
-Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusement qu&amp;rsquo;il était facilement évitable&amp;hellip;
-Commenter son code Commenter son code via l&amp;rsquo;utilisation de # est la principale protection contre de telles autotortures.</description>
+      <description>Les bonnes pratiques Beaucoup de personnes amenées à coder plus ou moins régulièrement se sont un jour retrouvées à maudire leur moi du passé en reprenant un programme qu&amp;rsquo;ils avaient écrit seulement quelques semaines/mois auparavant mais qui leur est subitement devenu complètement cryptique.&#xA;Le temps perdu est alors énorme et vécu d&amp;rsquo;autant plus douloureusement qu&amp;rsquo;il était facilement évitable&amp;hellip;&#xA;Commenter son code Commenter son code via l&amp;rsquo;utilisation de # est la principale protection contre de telles autotortures.</description>
     </item>
     <item>
       <title>TP 0 : Démarrage</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp0/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp0/</guid>
-      <description>TP 0 : Démarrage Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 Combien de fois une feuille de papier d’épaisseur $e=0,1$ mm doit-elle être pliée pour atteindre la Lune ?
-Écrivez dans la cellule suivante un code permettant d&amp;rsquo;obtenir la réponse. Le plus simple est d&amp;rsquo;utiliser une boucle while.
-Wolfram alpha vous donne avec précision la distance Terre-Lune.
-### VOTRE CODE Correction (cliquer pour afficher) e = 0.</description>
+      <description>TP 0 : Démarrage Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 Combien de fois une feuille de papier d’épaisseur $e=0,1$ mm doit-elle être pliée pour atteindre la Lune ?&#xA;Écrivez dans la cellule suivante un code permettant d&amp;rsquo;obtenir la réponse. Le plus simple est d&amp;rsquo;utiliser une boucle while.&#xA;Wolfram alpha vous donne avec précision la distance Terre-Lune.&#xA;### VOTRE CODE Correction (cliquer pour afficher) e = 0.</description>
     </item>
     <item>
       <title>TP 1 : recherche simple</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp1recherche/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp1recherche/</guid>
-      <description>TP 1 : Recherche séquentielle dans un tableau unidimensionnel. Dictionnaires. Cliquez sur cette invitation pour récupérer le repository du TP. Recherche d&amp;rsquo;un élément dans une liste Écrire une fonction recherche qui prend pour argument un élément et une liste et qui retourne True si l&amp;rsquo;élément est présent et False sinon.
-Le corps de la fonction devra comprendre une boucle.
-Rq : le but de recherche est de reproduire le fonctionnement du mot clé in.</description>
+      <description>TP 1 : Recherche séquentielle dans un tableau unidimensionnel. Dictionnaires. Cliquez sur cette invitation pour récupérer le repository du TP. Recherche d&amp;rsquo;un élément dans une liste Écrire une fonction recherche qui prend pour argument un élément et une liste et qui retourne True si l&amp;rsquo;élément est présent et False sinon.&#xA;Le corps de la fonction devra comprendre une boucle.&#xA;Rq : le but de recherche est de reproduire le fonctionnement du mot clé in.</description>
     </item>
     <item>
       <title>Traits généraux</title>
       <link>https://info-tsi-vieljeux.github.io/python/traitsgaux/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/python/traitsgaux/</guid>
-      <description>Traits généraux Introduction Shell et IDE Python est un langage de programmation interprété développé par Guido van Rossum en 1989. Langage impératif de haut-niveau doté d&amp;rsquo;une syntaxe simple, Python s&amp;rsquo;adapte à de nombreux contextes grâce à sa modularité ; une importante librairie de modules et packages permet en effet d&amp;rsquo;étendre ses capacités.
-Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;utilisateur entre une commande Python qui est interprétée immédiatement lorsque Entrée est tapée.</description>
+      <description>Traits généraux Introduction Shell et IDE Python est un langage de programmation interprété développé par Guido van Rossum en 1989. Langage impératif de haut-niveau doté d&amp;rsquo;une syntaxe simple, Python s&amp;rsquo;adapte à de nombreux contextes grâce à sa modularité ; une importante librairie de modules et packages permet en effet d&amp;rsquo;étendre ses capacités.&#xA;Python possède son propre shell (interface en ligne de commande) : l&amp;rsquo;utilisateur entre une commande Python qui est interprétée immédiatement lorsque Entrée est tapée.</description>
     </item>
     <item>
       <title>Correction / Terminaison</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/correctionterminaison/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/correctionterminaison/</guid>
-      <description>Prouver un algorithme Le mot algorithme vient de la latinisation du nom du savant arabe al-Khuwārizmī (780-850) qui a entre autres permis l&amp;rsquo;introduction de l&amp;rsquo;algèbre en Europe (et il est aussi à l&amp;rsquo;origine de ce mot).
-Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc.</description>
+      <description>Prouver un algorithme Le mot algorithme vient de la latinisation du nom du savant arabe al-Khuwārizmī (780-850) qui a entre autres permis l&amp;rsquo;introduction de l&amp;rsquo;algèbre en Europe (et il est aussi à l&amp;rsquo;origine de ce mot).&#xA;Un algorithme est une méthode qui sert à résoudre un problème en un nombre fini d’étapes : chercher un mot dans le dictionnaire, classer des mots par ordre alphabétique, classer des nombres par ordre de grandeur, chercher le meilleur parcours possible sur une carte, trouver une racine carrée, construire des listes de nombres premiers, etc.</description>
     </item>
     <item>
       <title>TP 2 : boucles imbriquées</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp2imbrication/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp2imbrication/</guid>
-      <description>Algorithmes opérant sur une structure séquentielle par boucles imbriquées Cliquez sur cette invitation pour récupérer le repository du TP. Chercher un mot dans un texte Écrire une fonction cherche_mot naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.
-Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&amp;rsquo;est pas plus long que le texte.</description>
+      <description>Algorithmes opérant sur une structure séquentielle par boucles imbriquées Cliquez sur cette invitation pour récupérer le repository du TP. Chercher un mot dans un texte Écrire une fonction cherche_mot naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.&#xA;Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&amp;rsquo;est pas plus long que le texte.</description>
     </item>
     <item>
       <title>Types de base</title>
       <link>https://info-tsi-vieljeux.github.io/python/typesbase/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/python/typesbase/</guid>
-      <description>Types de base Les types de base en python (les catégories fondamentales des objets manipulés) sont :
-Les entiers int (en anglais, entier se dit integer).
-Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est illimitée en Python.
-Les flottants float. Ce sont des approximations de nombres réels. La méthode d&amp;rsquo;écriture en machine de ces nombres, équivalente à une écriture scientifique pour nombre binaire, explique leur nom : ce sont des nombres à virgule flottante.</description>
+      <description>Types de base Les types de base en python (les catégories fondamentales des objets manipulés) sont :&#xA;Les entiers int (en anglais, entier se dit integer).&#xA;Exemples : 1, 2, 1012, -18 etc. Leur précision est infinie et leur taille est illimitée en Python.&#xA;Les flottants float. Ce sont des approximations de nombres réels. La méthode d&amp;rsquo;écriture en machine de ces nombres, équivalente à une écriture scientifique pour nombre binaire, explique leur nom : ce sont des nombres à virgule flottante.</description>
     </item>
     <item>
       <title>Wordle</title>
       <link>https://info-tsi-vieljeux.github.io/projets/wordle/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/projets/wordle/</guid>
-      <description>Wordle Écrire un solveur du jeu Wordle qui propose un premier mot puis qui propose le mot suivant en fonction du motif coloré qu&amp;rsquo;on lui transmet en réponse au premier mot rentré, et ainsi de suite jusqu&amp;rsquo;à ce qu&amp;rsquo;il nous propose le mot du jour. Et le tout en moins de 6 essais.
-Pour récupérer dans le code la liste des 2315 mots pouvant être solution :
-import pandas as pd url1 = &amp;#39;https://gist.</description>
+      <description>Wordle Écrire un solveur du jeu Wordle qui propose un premier mot puis qui propose le mot suivant en fonction du motif coloré qu&amp;rsquo;on lui transmet en réponse au premier mot rentré, et ainsi de suite jusqu&amp;rsquo;à ce qu&amp;rsquo;il nous propose le mot du jour. Et le tout en moins de 6 essais.&#xA;Pour récupérer dans le code la liste des 2315 mots pouvant être solution :&#xA;import pandas as pd url1 = &amp;#39;https://gist.</description>
     </item>
     <item>
       <title>Complexité</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/complexite/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/complexite/</guid>
-      <description>Complexité d&amp;rsquo;un algorithme Parmi les 3 questions qu&amp;rsquo;on peut se poser naturellement devant un algorithme (termine-t-il ? est-il correct ? combien de temps met-il ?), on a laissé la dernière en plan dans le chapitre précédent.
-La question du temps mis par l&amp;rsquo;algorithme est le problème de la complexité de l&amp;rsquo;algorithme.
-L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique est de pouvoir comparer l’efficacité d’algorithmes résolvant le même problème. Dans une situation donnée, cela permet donc d&amp;rsquo;établir lequel des algorithmes disponibles est le meilleur (du point de vue temps d&amp;rsquo;exécution).</description>
+      <description>Complexité d&amp;rsquo;un algorithme Parmi les 3 questions qu&amp;rsquo;on peut se poser naturellement devant un algorithme (termine-t-il ? est-il correct ? combien de temps met-il ?), on a laissé la dernière en plan dans le chapitre précédent.&#xA;La question du temps mis par l&amp;rsquo;algorithme est le problème de la complexité de l&amp;rsquo;algorithme.&#xA;L&amp;rsquo;objectif premier d&amp;rsquo;un calcul de complexité algorithmique est de pouvoir comparer l’efficacité d’algorithmes résolvant le même problème. Dans une situation donnée, cela permet donc d&amp;rsquo;établir lequel des algorithmes disponibles est le meilleur (du point de vue temps d&amp;rsquo;exécution).</description>
     </item>
     <item>
       <title>Stéganographie</title>
       <link>https://info-tsi-vieljeux.github.io/projets/steganographie/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/projets/steganographie/</guid>
-      <description>Stéganographie Première mission Dévoiler le message caché dans les 2 bits de poids faible de l&amp;rsquo;image fournie (dont l&amp;rsquo;adresse est https://info-tsi-vieljeux.github.io/cryptedimage.png).
-Importons d&amp;rsquo;abord les modules nécessaires :
-from PIL import Image import urllib.request # pour récupérer une image sur le web from IPython.display import display # pour afficher dans un notebook import numpy as np Ce petit code suffit pour dévoiler l&amp;rsquo;image cachée dans l&amp;rsquo;image :
-def decache_image(image): image_decrypt = (image % 2**2) * 2**6 + 2**5 return image_decrypt image % 2**2 récupère les deux bits de poids faibles.</description>
+      <description>Stéganographie Première mission Dévoiler le message caché dans les 2 bits de poids faible de l&amp;rsquo;image fournie (dont l&amp;rsquo;adresse est https://info-tsi-vieljeux.github.io/cryptedimage.png).&#xA;Importons d&amp;rsquo;abord les modules nécessaires :&#xA;from PIL import Image import urllib.request # pour récupérer une image sur le web from IPython.display import display # pour afficher dans un notebook import numpy as np Ce petit code suffit pour dévoiler l&amp;rsquo;image cachée dans l&amp;rsquo;image :&#xA;def decache_image(image): image_decrypt = (image % 2**2) * 2**6 + 2**5 return image_decrypt image % 2**2 récupère les deux bits de poids faibles.</description>
     </item>
     <item>
       <title>TP 3 : utilisation de modules</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp3data/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp3data/</guid>
-      <description>L&amp;rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.
-On va se placer dans un des champs les plus porteurs actuellement (et où python est très utilisé), l&amp;rsquo;analyse de données.
-Cliquez sur cette invitation pour récupérer le repository du TP. Exploration d&amp;rsquo;un jeu de données Statistiques simples import pandas as pd # bibliothèques dédiée au traitement de jeux de données import matplotlib.</description>
+      <description>L&amp;rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.&#xA;On va se placer dans un des champs les plus porteurs actuellement (et où python est très utilisé), l&amp;rsquo;analyse de données.&#xA;Cliquez sur cette invitation pour récupérer le repository du TP. Exploration d&amp;rsquo;un jeu de données Statistiques simples import pandas as pd # bibliothèques dédiée au traitement de jeux de données import matplotlib.</description>
     </item>
     <item>
       <title>Types structurés</title>
       <link>https://info-tsi-vieljeux.github.io/python/typesstruct/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/python/typesstruct/</guid>
-      <description>Types structurés Les types structurés (chaînes, tuiles, listes, dictionnaires, ensembles) sont des objets composés ; ils contiennent eux-mêmes d&amp;rsquo;autres objets.
-Certains de ces objets composites sont en plus indicés. Comme leur nom l&amp;rsquo;indique, on peut parcourir les éléments présents d&amp;rsquo;une structure indicée à l&amp;rsquo;aide d&amp;rsquo;un indice (un nombre entier étiquetant l&amp;rsquo;indice). Les structures indicés sont donc ordonnées, ce sont des séquences. L&amp;rsquo;indice commence toujours à 0.
-Et donc si la structure contient n éléments, le dernier indice est n-1.</description>
+      <description>Types structurés Les types structurés (chaînes, tuiles, listes, dictionnaires, ensembles) sont des objets composés ; ils contiennent eux-mêmes d&amp;rsquo;autres objets.&#xA;Certains de ces objets composites sont en plus indicés. Comme leur nom l&amp;rsquo;indique, on peut parcourir les éléments présents d&amp;rsquo;une structure indicée à l&amp;rsquo;aide d&amp;rsquo;un indice (un nombre entier étiquetant l&amp;rsquo;indice). Les structures indicés sont donc ordonnées, ce sont des séquences. L&amp;rsquo;indice commence toujours à 0.&#xA;Et donc si la structure contient n éléments, le dernier indice est n-1.</description>
     </item>
     <item>
       <title>IEEE-754</title>
       <link>https://info-tsi-vieljeux.github.io/projets/ieee754/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/projets/ieee754/</guid>
-      <description>IEEE-754 Réaliser un convertisseur permettant de donner l&amp;rsquo;écriture d&amp;rsquo;un flottant sous la forme d&amp;rsquo;un mot binaire de 64 bits suivant la norme IEEE-754 (cf. cours sur le codage des nombres). Réaliser aussi le convertisseur inverse, du mot 64 bits au nombre décimal. Pour vérifier Nombre à convertir en mot machine 64 bits : Conversion
-Mot machine 64 bits à convertir en nombre décimal : Conversion
-Une solution possible La fonction suivante convertit la partie fractionnaire du nombre n en binaire et donne ainsi son développement binaire (équivalent d&amp;rsquo;un dévelopement décimal).</description>
+      <description>IEEE-754 Réaliser un convertisseur permettant de donner l&amp;rsquo;écriture d&amp;rsquo;un flottant sous la forme d&amp;rsquo;un mot binaire de 64 bits suivant la norme IEEE-754 (cf. cours sur le codage des nombres). Réaliser aussi le convertisseur inverse, du mot 64 bits au nombre décimal. Pour vérifier Nombre à convertir en mot machine 64 bits : Conversion&#xA;Mot machine 64 bits à convertir en nombre décimal : Conversion&#xA;Une solution possible La fonction suivante convertit la partie fractionnaire du nombre n en binaire et donne ainsi son développement binaire (équivalent d&amp;rsquo;un dévelopement décimal).</description>
     </item>
     <item>
       <title>Strucutres de contrôle</title>
       <link>https://info-tsi-vieljeux.github.io/python/structcontr/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/python/structcontr/</guid>
-      <description>Structures de contrôle Instruction d&amp;rsquo;affectation Définition Lorsqu&amp;rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction id().
-id(3.7) 4387417928
-Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&amp;rsquo;est à ça que servent les variables.</description>
+      <description>Structures de contrôle Instruction d&amp;rsquo;affectation Définition Lorsqu&amp;rsquo;un objet est créé dans un programme Python, une certaine place en mémoire lui est allouée. Cette place est repérée par une adresse dont la valeur peut être obtenue grâce à la fonction id().&#xA;id(3.7) 4387417928&#xA;Il est beaucoup plus pratique de pouvoir récupérer une valeur en mémoire grâce à un petit nom plutôt que par son adresse. C&amp;rsquo;est à ça que servent les variables.</description>
     </item>
     <item>
       <title>TP 4 : algorithmes dichotomiques</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp4dicho/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp4dicho/</guid>
-      <description>Algorithmes dichotomiques Cliquez sur cette invitation pour récupérer le repository du TP. Recherche dichotomique L&amp;rsquo;algorithme de recherche mis au point dans le tp1 compte dans le pire des cas autant d&amp;rsquo;étapes que l&amp;rsquo;ensemble scruté contient d&amp;rsquo;éléments.
-Peut-on faire mieux ?
-Dans le cas, d&amp;rsquo;un ensemble ordonné trié, la réponse est oui. On peut même faire beaucoup mieux !
-Imaginons que l&amp;rsquo;on cherche une carte dans un jeu trié en ordre croissant.</description>
+      <description>Algorithmes dichotomiques Cliquez sur cette invitation pour récupérer le repository du TP. Recherche dichotomique L&amp;rsquo;algorithme de recherche mis au point dans le tp1 compte dans le pire des cas autant d&amp;rsquo;étapes que l&amp;rsquo;ensemble scruté contient d&amp;rsquo;éléments.&#xA;Peut-on faire mieux ?&#xA;Dans le cas, d&amp;rsquo;un ensemble ordonné trié, la réponse est oui. On peut même faire beaucoup mieux !&#xA;Imaginons que l&amp;rsquo;on cherche une carte dans un jeu trié en ordre croissant.</description>
     </item>
     <item>
       <title>TP 8 : correction et complexité</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/tp8correc/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/tp8correc/</guid>
-      <description>TP 8 : correction et complexité Cliquez sur cette invitation pour récupérer le repository du TP. Multiplication égyptienne Considérons le code suivant, qui implémente un ancien algorithme égyptien.
-a et b sont supposés être des entiers positifs.
-def multegy(a, b): p = 0 while a &amp;gt; 0: if a%2 == 1: p += b b *= 2 a //= 2 return p Qui est le variant de boucle permettant de prouver que multegy termine toujours ?</description>
+      <description>TP 8 : correction et complexité Cliquez sur cette invitation pour récupérer le repository du TP. Multiplication égyptienne Considérons le code suivant, qui implémente un ancien algorithme égyptien.&#xA;a et b sont supposés être des entiers positifs.&#xA;def multegy(a, b): p = 0 while a &amp;gt; 0: if a%2 == 1: p += b b *= 2 a //= 2 return p Qui est le variant de boucle permettant de prouver que multegy termine toujours ?</description>
     </item>
     <item>
       <title>Les nombres en machine</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/nombre/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/nombre/</guid>
-      <description>Représentation des nombres Comment un nombre est-il représenté à l&amp;rsquo;intérieur d&amp;rsquo;un ordinateur ?
-L&amp;rsquo;espace pour représenter un nombre en machine est limité. Si cette limitation n&amp;rsquo;a pas trop d&amp;rsquo;impact pour les entiers (surtout en Python !) elle devient très handicapante pour représenter les réels.
-La représentation machine d&amp;rsquo;un nombre est appelée mot machine. Sa taille est généralement aujourd&amp;rsquo;hui de 64 bits.
-Les différentes bases Une écriture en base $b$ utilise $b$ chiffres différents :</description>
+      <description>Représentation des nombres Comment un nombre est-il représenté à l&amp;rsquo;intérieur d&amp;rsquo;un ordinateur ?&#xA;L&amp;rsquo;espace pour représenter un nombre en machine est limité. Si cette limitation n&amp;rsquo;a pas trop d&amp;rsquo;impact pour les entiers (surtout en Python !) elle devient très handicapante pour représenter les réels.&#xA;La représentation machine d&amp;rsquo;un nombre est appelée mot machine. Sa taille est généralement aujourd&amp;rsquo;hui de 64 bits.&#xA;Les différentes bases Une écriture en base $b$ utilise $b$ chiffres différents :</description>
     </item>
     <item>
       <title>Nombre de Bacon</title>
       <link>https://info-tsi-vieljeux.github.io/projets/bacon/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/projets/bacon/</guid>
-      <description>Nombre de Bacon On part d&amp;rsquo;un ensemble de 250 films populaires. Pour chaque film, on a la liste des acteurs qui y jouent.
-À partir de ces informations, on peut créer un graphe où les sommets sont les films et les acteurs et où une arête lie un acteur à un film dans lequel il joue.
-Le graphe obtenu est biparti car il n&amp;rsquo;y a pas d&amp;rsquo;arête entre les acteurs, ni entre les films, seulement entre sommets de catégories différentes.</description>
+      <description>Nombre de Bacon On part d&amp;rsquo;un ensemble de 250 films populaires. Pour chaque film, on a la liste des acteurs qui y jouent.&#xA;À partir de ces informations, on peut créer un graphe où les sommets sont les films et les acteurs et où une arête lie un acteur à un film dans lequel il joue.&#xA;Le graphe obtenu est biparti car il n&amp;rsquo;y a pas d&amp;rsquo;arête entre les acteurs, ni entre les films, seulement entre sommets de catégories différentes.</description>
     </item>
     <item>
       <title>TP 5 : fonctions récursives</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp5recu/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp5recu/</guid>
-      <description>Fonctions récursives Cliquez sur cette invitation pour récupérer le repository du TP. import numpy as np import matplotlib.pyplot as plt from matplotlib.patches import Rectangle plt.style.use(&amp;#39;seaborn&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (10, 10) fig, ax = plt.subplots() ax.set_aspect(1) couleurs = plt.rcParams[&amp;#39;axes.prop_cycle&amp;#39;].by_key()[&amp;#39;color&amp;#39;] Visualisation des appels récursifs Installons un module permettant de représenter sous forme de graphe les différents appels récursifs d&amp;rsquo;une fonction.
-%%capture !pip install recursionvisualisation==0.2 On construit une fonction récursive somme(n) qui retourne la somme des n premiers entiers et on utilise un décorateur (fonction qui modifie le comportement d&amp;rsquo;autres fonctions) pour visualiser les différents appels récursifs faits par somme.</description>
+      <description>Fonctions récursives Cliquez sur cette invitation pour récupérer le repository du TP. import numpy as np import matplotlib.pyplot as plt from matplotlib.patches import Rectangle plt.style.use(&amp;#39;seaborn&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (10, 10) fig, ax = plt.subplots() ax.set_aspect(1) couleurs = plt.rcParams[&amp;#39;axes.prop_cycle&amp;#39;].by_key()[&amp;#39;color&amp;#39;] Visualisation des appels récursifs Installons un module permettant de représenter sous forme de graphe les différents appels récursifs d&amp;rsquo;une fonction.&#xA;%%capture !pip install recursionvisualisation==0.2 On construit une fonction récursive somme(n) qui retourne la somme des n premiers entiers et on utilise un décorateur (fonction qui modifie le comportement d&amp;rsquo;autres fonctions) pour visualiser les différents appels récursifs faits par somme.</description>
     </item>
     <item>
       <title>Nim</title>
       <link>https://info-tsi-vieljeux.github.io/projets/nim/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/projets/nim/</guid>
-      <description>Jeu de Nim Présentation du jeu et de l&amp;rsquo;algorithme de Bouton :
-Mission : Coder une IA qui joue un coup gagnant lorsqu&amp;rsquo;elle est est en position gagnante (en suivant l&amp;rsquo;algorithme de Bouton) et qui joue aléatoirement si elle est sur une position perdante.
-Jouer contre une telle IA.
-Un code solution possible : # exemple de plateau : [1,3,5,7] from random import randint def tourIA(plateau): nimSomme = 0 for nb in plateau: nimSomme ^= nb if nimSomme == 0: # position perdante ligne = randint(0,len(plateau)-1) while plateau[ligne] == 0: ligne = randint(0,len(plateau)-1) nbjetons = randint(1,plateau[ligne]) plateau[ligne] -= nbjetons print(f&amp;#34;l&amp;#39;IA en prend {nbjetons} sur la ligne {ligne+1}&amp;#34;) print(plateau) else: compteur = 0 for i in range(len(plateau)): if plateau[i] !</description>
+      <description>Jeu de Nim Présentation du jeu et de l&amp;rsquo;algorithme de Bouton :&#xA;&amp;lt;div style=&amp;quot;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&amp;quot;&amp;gt; &amp;lt;iframe allow=&amp;quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&amp;quot; allowfullscreen=&amp;quot;allowfullscreen&amp;quot; loading=&amp;quot;eager&amp;quot; referrerpolicy=&amp;quot;strict-origin-when-cross-origin&amp;quot; src=&amp;quot;https://www.youtube.com/embed/2jahbr5wMHk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&amp;quot; style=&amp;quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&amp;quot; title=&amp;quot;YouTube video&amp;quot; &amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;/div&amp;gt; Mission : Coder une IA qui joue un coup gagnant lorsqu&amp;rsquo;elle est est en position gagnante (en suivant l&amp;rsquo;algorithme de Bouton) et qui joue aléatoirement si elle est sur une position perdante.</description>
     </item>
     <item>
       <title>TP 6 : algorithmes de tri</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp6tri/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp6tri/</guid>
-      <description>Algorithmes de tri Cliquez sur cette invitation pour récupérer le repository du TP. Tous ces algos de tri semblent faire correctement le boulot. Qu&#39;est-ce qui les différencie&amp;nbsp;? Trier c&amp;rsquo;est partir d&amp;rsquo;une structure de données désordonnée et la remettre en ordre.
-Les tris sont omniprésents en informatique et Tim Roughgarden (auteur d&amp;rsquo;Algorithms illuminated) en parle même comme de la &amp;ldquo;mère de tous les problèmes algorithmiques&amp;rdquo;.
-Plusieurs stratégies existent. On va en passer certaines en revue et essayer de trier les algorithmes de tri.</description>
+      <description>Algorithmes de tri Cliquez sur cette invitation pour récupérer le repository du TP. Tous ces algos de tri semblent faire correctement le boulot. Qu&#39;est-ce qui les différencie&amp;nbsp;? Trier c&amp;rsquo;est partir d&amp;rsquo;une structure de données désordonnée et la remettre en ordre.&#xA;Les tris sont omniprésents en informatique et Tim Roughgarden (auteur d&amp;rsquo;Algorithms illuminated) en parle même comme de la &amp;ldquo;mère de tous les problèmes algorithmiques&amp;rdquo;.&#xA;Plusieurs stratégies existent. On va en passer certaines en revue et essayer de trier les algorithmes de tri.</description>
     </item>
     <item>
       <title>TP 9 : nombres en machine</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/tp9nombre/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/tp9nombre/</guid>
-      <description>TP9 : nombres Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 : nombres palindromiques Déterminer grâce à un code Python le plus petit nombre supérieur ou égal à $10,000$ dont l&amp;rsquo;écriture est palindromique (se lisant pareil dans les deux sens) à la fois en base 10 et en base 2.
-### VOTRE CODE Correction (cliquer pour afficher) a = False b = False i = 10000 while not (a and b): str_i_10 = str(i) str_i_2 = bin(i)[2:] a = str_i_10 == str_i_10[::-1] # i palindromique en base 10 b = str_i_2 == str_i_2[::-1] # i palindromique en base 2 i += 1 print(str_i_10,str_i_2) Saffiche alors&amp;nbsp;:</description>
+      <description>TP9 : nombres Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 : nombres palindromiques Déterminer grâce à un code Python le plus petit nombre supérieur ou égal à $10,000$ dont l&amp;rsquo;écriture est palindromique (se lisant pareil dans les deux sens) à la fois en base 10 et en base 2.&#xA;### VOTRE CODE Correction (cliquer pour afficher) a = False b = False i = 10000 while not (a and b): str_i_10 = str(i) str_i_2 = bin(i)[2:] a = str_i_10 == str_i_10[::-1] # i palindromique en base 10 b = str_i_2 == str_i_2[::-1] # i palindromique en base 2 i += 1 print(str_i_10,str_i_2) Saffiche alors&amp;nbsp;:</description>
     </item>
     <item>
       <title>Graphes</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/graphes/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/graphes/</guid>
-      <description>Les graphes Quelques points et des traits pour les relier suffisent pour créer un graphe. Cette grande simplicité est pourtant à l&amp;rsquo;origine d&amp;rsquo;un foisonnement mathématiques impressionnant.
-Un peu d&amp;rsquo;histoire L&amp;rsquo;acte de naissance de la théorie des graphes date d&amp;rsquo;une petite énigme à laquelle s&amp;rsquo;attelaient sans succès les habitants de Königsberg. Comment un voyageur pouvait traverser les sept ponts sans jamais passer deux fois sur le même pont ? Euler résout le problème et fonda du même coup la théorie des graphes !</description>
+      <description>Les graphes Quelques points et des traits pour les relier suffisent pour créer un graphe. Cette grande simplicité est pourtant à l&amp;rsquo;origine d&amp;rsquo;un foisonnement mathématiques impressionnant.&#xA;Un peu d&amp;rsquo;histoire L&amp;rsquo;acte de naissance de la théorie des graphes date d&amp;rsquo;une petite énigme à laquelle s&amp;rsquo;attelaient sans succès les habitants de Königsberg. Comment un voyageur pouvait traverser les sept ponts sans jamais passer deux fois sur le même pont ? Euler résout le problème et fonda du même coup la théorie des graphes !</description>
     </item>
     <item>
       <title>Oracle</title>
       <link>https://info-tsi-vieljeux.github.io/projets/oracle/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/projets/oracle/</guid>
-      <description>L&amp;rsquo;oracle d&amp;rsquo;Aaronson Un petit projet tout gentil pour la fin&amp;hellip;
-L&amp;rsquo;oracle d&amp;rsquo;Aaronson est un petit programme capable de prédire si une personne va taper &amp;ldquo;g&amp;rdquo; ou &amp;ldquo;h&amp;rdquo; sur son clavier avec une précision généralement supérieure à 60%.
-L&amp;rsquo;idée du programme de base :
-Pour chaque mot possible de 5 lettres (&amp;ldquo;g&amp;rdquo; ou &amp;ldquo;h&amp;rdquo;) entré par l&amp;rsquo;utilisateur, on tient à jour dans un registre la lettre que l&amp;rsquo;utilisateur tape tout de suite après.</description>
+      <description>L&amp;rsquo;oracle d&amp;rsquo;Aaronson Un petit projet tout gentil pour la fin&amp;hellip;&#xA;L&amp;rsquo;oracle d&amp;rsquo;Aaronson est un petit programme capable de prédire si une personne va taper &amp;ldquo;g&amp;rdquo; ou &amp;ldquo;h&amp;rdquo; sur son clavier avec une précision généralement supérieure à 60%.&#xA;L&amp;rsquo;idée du programme de base :&#xA;Pour chaque mot possible de 5 lettres (&amp;ldquo;g&amp;rdquo; ou &amp;ldquo;h&amp;rdquo;) entré par l&amp;rsquo;utilisateur, on tient à jour dans un registre la lettre que l&amp;rsquo;utilisateur tape tout de suite après.</description>
     </item>
     <item>
       <title>TP 10 : les graphes</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_2/tp10graphes/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_2/tp10graphes/</guid>
-      <description>TP10 : les graphes Cliquez sur cette invitation pour récupérer le repository du TP. Le dessin ci-dessus peut se représenter par (choisir la bonne réponse) :
-a : un graphe orienté b : un graphe non orienté Correction (cliquer pour afficher) Un graphe orienté. Le degré du sommet C vaut :
-a : 2 b : 3 c : 5 Correction (cliquer pour afficher) 5 Le distance de F à C vaut :</description>
+      <description>TP10 : les graphes Cliquez sur cette invitation pour récupérer le repository du TP. Le dessin ci-dessus peut se représenter par (choisir la bonne réponse) :&#xA;a : un graphe orienté b : un graphe non orienté Correction (cliquer pour afficher) Un graphe orienté. Le degré du sommet C vaut :&#xA;a : 2 b : 3 c : 5 Correction (cliquer pour afficher) 5 Le distance de F à C vaut :</description>
     </item>
     <item>
       <title>TP 7 : matrices de pixels et image</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp7image/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp7image/</guid>
-      <description>Tableau de pixels et images Cliquez sur cette invitation pour récupérer le repository du TP. Importer une image PIL (python imaging library) est l&amp;rsquo;une des librairies Python permettant de manipuler des fichiers image. On va l&amp;rsquo;utiliser en association avec numpy qui est le module de choix pour jouer avec des tableaux numériques.
-Listes et tableaux (array en anglais) :
-Les deux structures permettent l&amp;rsquo;indexation, le découpage et l&amp;rsquo;itération sur les éléments.</description>
+      <description>Tableau de pixels et images Cliquez sur cette invitation pour récupérer le repository du TP. Importer une image PIL (python imaging library) est l&amp;rsquo;une des librairies Python permettant de manipuler des fichiers image. On va l&amp;rsquo;utiliser en association avec numpy qui est le module de choix pour jouer avec des tableaux numériques.&#xA;Listes et tableaux (array en anglais) :&#xA;Les deux structures permettent l&amp;rsquo;indexation, le découpage et l&amp;rsquo;itération sur les éléments.</description>
     </item>
     <item>
       <title>Algorithmique numérique</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_3/numerique/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/numerique/</guid>
-      <description>Algorithmique numérique L&amp;rsquo;informatique n&amp;rsquo;aime pas les flottants mais les physiciens et les mathématiciens désireux de simulations ou de résolution d&amp;rsquo;équations font difficilement sans&amp;hellip; Il faut alors optimiser les algorithmes pour qu&amp;rsquo;ils évitent le mieux possible les pièges tendus par le codage fatalement imparfait des nombres réels en machine (pensez à revoir le chapitre en question pour vous rafraîchir la mémoire).
-Pivot de Gauss Deux problèmes liés aux flottants :
-la vérification de la non nullité du pivot le choix du pivot Comment vérifier qu&amp;rsquo;un pivot potentiel est nul ?</description>
+      <description>Algorithmique numérique L&amp;rsquo;informatique n&amp;rsquo;aime pas les flottants mais les physiciens et les mathématiciens désireux de simulations ou de résolution d&amp;rsquo;équations font difficilement sans&amp;hellip; Il faut alors optimiser les algorithmes pour qu&amp;rsquo;ils évitent le mieux possible les pièges tendus par le codage fatalement imparfait des nombres réels en machine (pensez à revoir le chapitre en question pour vous rafraîchir la mémoire).&#xA;Pivot de Gauss Deux problèmes liés aux flottants :&#xA;la vérification de la non nullité du pivot le choix du pivot Comment vérifier qu&amp;rsquo;un pivot potentiel est nul ?</description>
     </item>
     <item>
       <title>Tournoi d&#39;Axelrod</title>
       <link>https://info-tsi-vieljeux.github.io/projets/axelrod/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/projets/axelrod/</guid>
-      <description>Le tournoi d&amp;rsquo;Axelrod La mission est d&amp;rsquo;implémenter le tournoi d&amp;rsquo;Axelrod première version présenté dans la vidéo ci-dessous.
-Vous ferez concourir les stratégies suivantes en écrivant une fonction par stratégie :
-AllC : coopère toujours. AllD : trahit toujours. Rando : joue au hasard. Alt : alterne un coup sur deux. TitforTat : coopère au premier coup puis joue le coup précédent de l&amp;rsquo;adversaire. Grudger : commence par coopérer mais dès que l&amp;rsquo;autre trahit, trahit toujours.</description>
+      <description>Le tournoi d&amp;rsquo;Axelrod La mission est d&amp;rsquo;implémenter le tournoi d&amp;rsquo;Axelrod première version présenté dans la vidéo ci-dessous.&#xA;Vous ferez concourir les stratégies suivantes en écrivant une fonction par stratégie :&#xA;AllC : coopère toujours. AllD : trahit toujours. Rando : joue au hasard. Alt : alterne un coup sur deux. TitforTat : coopère au premier coup puis joue le coup précédent de l&amp;rsquo;adversaire. Grudger : commence par coopérer mais dès que l&amp;rsquo;autre trahit, trahit toujours.</description>
     </item>
     <item>
       <title>TP 11 : algorithmique numérique</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_3/tp11/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp11/</guid>
-      <description>TP 11 : algorithmique numérique Cliquez sur cette invitation pour récupérer le repository du TP. Pivot de Gauss Présentation
-On cherche résoudre un système d&amp;rsquo;équations grâce à la méthode du pivot de Gauss (on ne considèrera que des systèmes de n équations avec un nombre d&amp;rsquo;inconnues inférieur ou égal à n).
-Pour cela, on crée une fonction qui transforme la matrice augmentée obtenue à partir du sytème en une matrice échelonnée.</description>
+      <description>TP 11 : algorithmique numérique Cliquez sur cette invitation pour récupérer le repository du TP. Pivot de Gauss Présentation&#xA;On cherche résoudre un système d&amp;rsquo;équations grâce à la méthode du pivot de Gauss (on ne considèrera que des systèmes de n équations avec un nombre d&amp;rsquo;inconnues inférieur ou égal à n).&#xA;Pour cela, on crée une fonction qui transforme la matrice augmentée obtenue à partir du sytème en une matrice échelonnée.</description>
     </item>
     <item>
       <title>Bases de données</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_3/basededonnes/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/basededonnes/</guid>
-      <description>Bases de données Les bases de données (database en anglais) sont une forme d&amp;rsquo;organisation des données. Elles permettent de centraliser différentes données en évitant les duplications inutiles et en garantissant un accès contrôlé évitant les corruptions. Une base de données peut gérer des données organisées suivant différents modèles : navigationnel, hierarchique, relationnel, post-relationnel&amp;hellip; C&amp;rsquo;est le modèle relationnel, le plus utilisé, qui va nous intéresser ici.
-Dans un modèle relationnel, les données sont organisées dans des tables (des tableaux à deux dimensions) ayant des relations entre elles via des clés étrangères.</description>
+      <description>Bases de données Les bases de données (database en anglais) sont une forme d&amp;rsquo;organisation des données. Elles permettent de centraliser différentes données en évitant les duplications inutiles et en garantissant un accès contrôlé évitant les corruptions. Une base de données peut gérer des données organisées suivant différents modèles : navigationnel, hierarchique, relationnel, post-relationnel&amp;hellip; C&amp;rsquo;est le modèle relationnel, le plus utilisé, qui va nous intéresser ici.&#xA;Dans un modèle relationnel, les données sont organisées dans des tables (des tableaux à deux dimensions) ayant des relations entre elles via des clés étrangères.</description>
     </item>
     <item>
       <title>TP 12 : bases de données</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_3/tp12/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp12/</guid>
-      <description>TP 12 : bases de données Cliquez sur cette invitation pour récupérer le repository du TP. Présentation
-On va utiliser python dans ce tp pout accéder aux bases de données, mais de manière la plus transparente possible.
-Un problème de mis-à-jour récent impose d&amp;rsquo;obliger Colab à passer à la dernière version du module permettant d&amp;rsquo;utiliser les commandes sql magiques.
-La première commande exécutée de votre notebook devra donc être (ajoutez la commande dans une nouvelle cellule au début du notebook) :</description>
+      <description>TP 12 : bases de données Cliquez sur cette invitation pour récupérer le repository du TP. Présentation&#xA;On va utiliser python dans ce tp pout accéder aux bases de données, mais de manière la plus transparente possible.&#xA;Un problème de mis-à-jour récent impose d&amp;rsquo;obliger Colab à passer à la dernière version du module permettant d&amp;rsquo;utiliser les commandes sql magiques.&#xA;La première commande exécutée de votre notebook devra donc être (ajoutez la commande dans une nouvelle cellule au début du notebook) :</description>
     </item>
     <item>
       <title>Intelligence Artificielle</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_3/ia/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/ia/</guid>
-      <description>Algorithmes pour l&amp;rsquo;Intelligence Artificielle L&amp;rsquo;intelligence arificielle (IA) est une discipline scientifique qui a vu officiellement le jour en 1956. Elle repose sur la conjecture selon laquelle toutes les fonctions cognitives, en particulier l&amp;rsquo;apprentissage, le raisonnement, le calcul, la perception, la mémorisation, voire la découverte scientifique ou la créativité artistique, peuvent être décrites avec une précision telle qu&amp;rsquo;il serait possible de les reproduire sur des ordinateurs.
-L&amp;rsquo;apprentissage automatique (Machine Learning) est à l&amp;rsquo;intersection de l&amp;rsquo;IA et d&amp;rsquo;un autre champ scientifique : la science des données (data science).</description>
+      <description>Algorithmes pour l&amp;rsquo;Intelligence Artificielle L&amp;rsquo;intelligence arificielle (IA) est une discipline scientifique qui a vu officiellement le jour en 1956. Elle repose sur la conjecture selon laquelle toutes les fonctions cognitives, en particulier l&amp;rsquo;apprentissage, le raisonnement, le calcul, la perception, la mémorisation, voire la découverte scientifique ou la créativité artistique, peuvent être décrites avec une précision telle qu&amp;rsquo;il serait possible de les reproduire sur des ordinateurs.&#xA;L&amp;rsquo;apprentissage automatique (Machine Learning) est à l&amp;rsquo;intersection de l&amp;rsquo;IA et d&amp;rsquo;un autre champ scientifique : la science des données (data science).</description>
     </item>
     <item>
       <title>TP 13 : intelligence artificielle</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_3/tp13/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_3/tp13/</guid>
-      <description>TP 13 : Algorithmes pour l&amp;rsquo;intelligence artificielle Cliquez sur cette invitation pour récupérer le repository du TP. Présentation
-Algorithme des k plus proches voisins Interpolation Construisons un jeu de données entâché de bruit :
-import matplotlib.pyplot as plt plt.style.use(&amp;#39;seaborn&amp;#39;) params = {&amp;#39;figure.figsize&amp;#39;: (15, 10), &amp;#39;axes.titlesize&amp;#39;: &amp;#39;xx-large&amp;#39;, &amp;#39;figure.dpi&amp;#39; : 150} plt.rcParams.update(params) from random import random from math import pi,cos X = [] Y = [] N = 400 for i in range(N): x = pi*random()-pi/2 X.</description>
+      <description>TP 13 : Algorithmes pour l&amp;rsquo;intelligence artificielle Cliquez sur cette invitation pour récupérer le repository du TP. Présentation&#xA;Algorithme des k plus proches voisins Interpolation Construisons un jeu de données entâché de bruit :&#xA;import matplotlib.pyplot as plt plt.style.use(&amp;#39;seaborn&amp;#39;) params = {&amp;#39;figure.figsize&amp;#39;: (15, 10), &amp;#39;axes.titlesize&amp;#39;: &amp;#39;xx-large&amp;#39;, &amp;#39;figure.dpi&amp;#39; : 150} plt.rcParams.update(params) from random import random from math import pi,cos X = [] Y = [] N = 400 for i in range(N): x = pi*random()-pi/2 X.</description>
     </item>
     <item>
       <title>Divers</title>
       <link>https://info-tsi-vieljeux.github.io/python/divers/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/python/divers/</guid>
-      <description>Divers Commentaires Tous les langages de programmations permettent d&amp;rsquo;introduire des commentaires dans le code qui servent d&amp;rsquo;aides et de repères à celui qui lit le code, mais qui sont ignorés lors de l&amp;rsquo;exécution.
-En Python, les commentaires sont introduits par le symbole dièse (hashtag) #.
-Utilisation de print print est la première fonction native que l&amp;rsquo;on rencontre. C&amp;rsquo;est une fonction à effet de bord : elle ne retourne rien (elle est de type None), mais elle permet d&amp;rsquo;afficher une chaîne de caractères, ou le contenu d&amp;rsquo;une variable, quel que soit son type.</description>
+      <description>Divers Commentaires Tous les langages de programmations permettent d&amp;rsquo;introduire des commentaires dans le code qui servent d&amp;rsquo;aides et de repères à celui qui lit le code, mais qui sont ignorés lors de l&amp;rsquo;exécution.&#xA;En Python, les commentaires sont introduits par le symbole dièse (hashtag) #.&#xA;Utilisation de print print est la première fonction native que l&amp;rsquo;on rencontre. C&amp;rsquo;est une fonction à effet de bord : elle ne retourne rien (elle est de type None), mais elle permet d&amp;rsquo;afficher une chaîne de caractères, ou le contenu d&amp;rsquo;une variable, quel que soit son type.</description>
     </item>
   </channel>
 </rss>

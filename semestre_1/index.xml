@@ -4,81 +4,65 @@
     <title>Semestre 1 on Cours info TSI</title>
     <link>https://info-tsi-vieljeux.github.io/semestre_1/</link>
     <description>Recent content in Semestre 1 on Cours info TSI</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>fr</language>
-    <lastBuildDate>Sat, 06 Mar 2021 14:20:50 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 06 Mar 2021 14:23:56 +0100</lastBuildDate>
     <atom:link href="https://info-tsi-vieljeux.github.io/semestre_1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TP 0 : Démarrage</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp0/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp0/</guid>
-      <description>TP 0 : Démarrage Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 Combien de fois une feuille de papier d’épaisseur $e=0,1$ mm doit-elle être pliée pour atteindre la Lune ?
-Écrivez dans la cellule suivante un code permettant d&amp;rsquo;obtenir la réponse. Le plus simple est d&amp;rsquo;utiliser une boucle while.
-Wolfram alpha vous donne avec précision la distance Terre-Lune.
-### VOTRE CODE Correction (cliquer pour afficher) e = 0.</description>
+      <description>TP 0 : Démarrage Cliquez sur cette invitation pour récupérer le repository du TP. Exo 1 Combien de fois une feuille de papier d’épaisseur $e=0,1$ mm doit-elle être pliée pour atteindre la Lune ?&#xA;Écrivez dans la cellule suivante un code permettant d&amp;rsquo;obtenir la réponse. Le plus simple est d&amp;rsquo;utiliser une boucle while.&#xA;Wolfram alpha vous donne avec précision la distance Terre-Lune.&#xA;### VOTRE CODE Correction (cliquer pour afficher) e = 0.</description>
     </item>
     <item>
       <title>TP 1 : recherche simple</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp1recherche/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp1recherche/</guid>
-      <description>TP 1 : Recherche séquentielle dans un tableau unidimensionnel. Dictionnaires. Cliquez sur cette invitation pour récupérer le repository du TP. Recherche d&amp;rsquo;un élément dans une liste Écrire une fonction recherche qui prend pour argument un élément et une liste et qui retourne True si l&amp;rsquo;élément est présent et False sinon.
-Le corps de la fonction devra comprendre une boucle.
-Rq : le but de recherche est de reproduire le fonctionnement du mot clé in.</description>
+      <description>TP 1 : Recherche séquentielle dans un tableau unidimensionnel. Dictionnaires. Cliquez sur cette invitation pour récupérer le repository du TP. Recherche d&amp;rsquo;un élément dans une liste Écrire une fonction recherche qui prend pour argument un élément et une liste et qui retourne True si l&amp;rsquo;élément est présent et False sinon.&#xA;Le corps de la fonction devra comprendre une boucle.&#xA;Rq : le but de recherche est de reproduire le fonctionnement du mot clé in.</description>
     </item>
     <item>
       <title>TP 2 : boucles imbriquées</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp2imbrication/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp2imbrication/</guid>
-      <description>Algorithmes opérant sur une structure séquentielle par boucles imbriquées Cliquez sur cette invitation pour récupérer le repository du TP. Chercher un mot dans un texte Écrire une fonction cherche_mot naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.
-Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&amp;rsquo;est pas plus long que le texte.</description>
+      <description>Algorithmes opérant sur une structure séquentielle par boucles imbriquées Cliquez sur cette invitation pour récupérer le repository du TP. Chercher un mot dans un texte Écrire une fonction cherche_mot naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.&#xA;Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&amp;rsquo;est pas plus long que le texte.</description>
     </item>
     <item>
       <title>TP 3 : utilisation de modules</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp3data/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp3data/</guid>
-      <description>L&amp;rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.
-On va se placer dans un des champs les plus porteurs actuellement (et où python est très utilisé), l&amp;rsquo;analyse de données.
-Cliquez sur cette invitation pour récupérer le repository du TP. Exploration d&amp;rsquo;un jeu de données Statistiques simples import pandas as pd # bibliothèques dédiée au traitement de jeux de données import matplotlib.</description>
+      <description>L&amp;rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.&#xA;On va se placer dans un des champs les plus porteurs actuellement (et où python est très utilisé), l&amp;rsquo;analyse de données.&#xA;Cliquez sur cette invitation pour récupérer le repository du TP. Exploration d&amp;rsquo;un jeu de données Statistiques simples import pandas as pd # bibliothèques dédiée au traitement de jeux de données import matplotlib.</description>
     </item>
     <item>
       <title>TP 4 : algorithmes dichotomiques</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp4dicho/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp4dicho/</guid>
-      <description>Algorithmes dichotomiques Cliquez sur cette invitation pour récupérer le repository du TP. Recherche dichotomique L&amp;rsquo;algorithme de recherche mis au point dans le tp1 compte dans le pire des cas autant d&amp;rsquo;étapes que l&amp;rsquo;ensemble scruté contient d&amp;rsquo;éléments.
-Peut-on faire mieux ?
-Dans le cas, d&amp;rsquo;un ensemble ordonné trié, la réponse est oui. On peut même faire beaucoup mieux !
-Imaginons que l&amp;rsquo;on cherche une carte dans un jeu trié en ordre croissant.</description>
+      <description>Algorithmes dichotomiques Cliquez sur cette invitation pour récupérer le repository du TP. Recherche dichotomique L&amp;rsquo;algorithme de recherche mis au point dans le tp1 compte dans le pire des cas autant d&amp;rsquo;étapes que l&amp;rsquo;ensemble scruté contient d&amp;rsquo;éléments.&#xA;Peut-on faire mieux ?&#xA;Dans le cas, d&amp;rsquo;un ensemble ordonné trié, la réponse est oui. On peut même faire beaucoup mieux !&#xA;Imaginons que l&amp;rsquo;on cherche une carte dans un jeu trié en ordre croissant.</description>
     </item>
     <item>
       <title>TP 5 : fonctions récursives</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp5recu/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp5recu/</guid>
-      <description>Fonctions récursives Cliquez sur cette invitation pour récupérer le repository du TP. import numpy as np import matplotlib.pyplot as plt from matplotlib.patches import Rectangle plt.style.use(&amp;#39;seaborn&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (10, 10) fig, ax = plt.subplots() ax.set_aspect(1) couleurs = plt.rcParams[&amp;#39;axes.prop_cycle&amp;#39;].by_key()[&amp;#39;color&amp;#39;] Visualisation des appels récursifs Installons un module permettant de représenter sous forme de graphe les différents appels récursifs d&amp;rsquo;une fonction.
-%%capture !pip install recursionvisualisation==0.2 On construit une fonction récursive somme(n) qui retourne la somme des n premiers entiers et on utilise un décorateur (fonction qui modifie le comportement d&amp;rsquo;autres fonctions) pour visualiser les différents appels récursifs faits par somme.</description>
+      <description>Fonctions récursives Cliquez sur cette invitation pour récupérer le repository du TP. import numpy as np import matplotlib.pyplot as plt from matplotlib.patches import Rectangle plt.style.use(&amp;#39;seaborn&amp;#39;) plt.rcParams[&amp;#39;figure.figsize&amp;#39;] = (10, 10) fig, ax = plt.subplots() ax.set_aspect(1) couleurs = plt.rcParams[&amp;#39;axes.prop_cycle&amp;#39;].by_key()[&amp;#39;color&amp;#39;] Visualisation des appels récursifs Installons un module permettant de représenter sous forme de graphe les différents appels récursifs d&amp;rsquo;une fonction.&#xA;%%capture !pip install recursionvisualisation==0.2 On construit une fonction récursive somme(n) qui retourne la somme des n premiers entiers et on utilise un décorateur (fonction qui modifie le comportement d&amp;rsquo;autres fonctions) pour visualiser les différents appels récursifs faits par somme.</description>
     </item>
     <item>
       <title>TP 6 : algorithmes de tri</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp6tri/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp6tri/</guid>
-      <description>Algorithmes de tri Cliquez sur cette invitation pour récupérer le repository du TP. Tous ces algos de tri semblent faire correctement le boulot. Qu&#39;est-ce qui les différencie&amp;nbsp;? Trier c&amp;rsquo;est partir d&amp;rsquo;une structure de données désordonnée et la remettre en ordre.
-Les tris sont omniprésents en informatique et Tim Roughgarden (auteur d&amp;rsquo;Algorithms illuminated) en parle même comme de la &amp;ldquo;mère de tous les problèmes algorithmiques&amp;rdquo;.
-Plusieurs stratégies existent. On va en passer certaines en revue et essayer de trier les algorithmes de tri.</description>
+      <description>Algorithmes de tri Cliquez sur cette invitation pour récupérer le repository du TP. Tous ces algos de tri semblent faire correctement le boulot. Qu&#39;est-ce qui les différencie&amp;nbsp;? Trier c&amp;rsquo;est partir d&amp;rsquo;une structure de données désordonnée et la remettre en ordre.&#xA;Les tris sont omniprésents en informatique et Tim Roughgarden (auteur d&amp;rsquo;Algorithms illuminated) en parle même comme de la &amp;ldquo;mère de tous les problèmes algorithmiques&amp;rdquo;.&#xA;Plusieurs stratégies existent. On va en passer certaines en revue et essayer de trier les algorithmes de tri.</description>
     </item>
     <item>
       <title>TP 7 : matrices de pixels et image</title>
       <link>https://info-tsi-vieljeux.github.io/semestre_1/tp7image/</link>
       <pubDate>Sat, 06 Mar 2021 14:23:56 +0100</pubDate>
       <guid>https://info-tsi-vieljeux.github.io/semestre_1/tp7image/</guid>
-      <description>Tableau de pixels et images Cliquez sur cette invitation pour récupérer le repository du TP. Importer une image PIL (python imaging library) est l&amp;rsquo;une des librairies Python permettant de manipuler des fichiers image. On va l&amp;rsquo;utiliser en association avec numpy qui est le module de choix pour jouer avec des tableaux numériques.
-Listes et tableaux (array en anglais) :
-Les deux structures permettent l&amp;rsquo;indexation, le découpage et l&amp;rsquo;itération sur les éléments.</description>
+      <description>Tableau de pixels et images Cliquez sur cette invitation pour récupérer le repository du TP. Importer une image PIL (python imaging library) est l&amp;rsquo;une des librairies Python permettant de manipuler des fichiers image. On va l&amp;rsquo;utiliser en association avec numpy qui est le module de choix pour jouer avec des tableaux numériques.&#xA;Listes et tableaux (array en anglais) :&#xA;Les deux structures permettent l&amp;rsquo;indexation, le découpage et l&amp;rsquo;itération sur les éléments.</description>
     </item>
   </channel>
 </rss>
