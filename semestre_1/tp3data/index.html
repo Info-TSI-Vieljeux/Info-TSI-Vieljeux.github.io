@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1738708659" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1738708659" rel="stylesheet">
-    <link href="/css/hybrid.css?1738708659" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1738708659" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1738708659" rel="stylesheet">
-    <link href="/css/auto-complete.css?1738708659" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1738708659" rel="stylesheet">
-    <link href="/css/theme.css?1738708659" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1738708659" rel="stylesheet">
+    <link href="/css/nucleus.css?1739703242" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1739703242" rel="stylesheet">
+    <link href="/css/hybrid.css?1739703242" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1739703242" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1739703242" rel="stylesheet">
+    <link href="/css/auto-complete.css?1739703242" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1739703242" rel="stylesheet">
+    <link href="/css/theme.css?1739703242" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1739703242" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1738708659" rel="stylesheet">
+    <link href="/css/theme-green.css?1739703242" rel="stylesheet">
     
-    <link href="/css/foo.css?1738708659" rel="stylesheet"><link href="/css/bar.css?1738708659" rel="stylesheet">
+    <link href="/css/foo.css?1739703242" rel="stylesheet"><link href="/css/bar.css?1739703242" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1738708659"></script>
+    <script src="/js/jquery-3.3.1.min.js?1739703242"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1738708659"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1738708659"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1739703242"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1739703242"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1738708659"></script>
+<script type="text/javascript" src="/js/search.js?1739703242"></script>
 
     
   </div>
@@ -1138,6 +1138,10 @@ onload='renderMathInElement(document.body);'></script>
 {
   color: #006C65;
 }
+#debord
+{
+overflow-x: auto; 
+}
 </style>
 <br>
 <p>L&rsquo;idée de ce TP est de constater combien des modules/bibliothèques adaptés peuvent fournir des outils puissants et permettre un gain de temps gigantesque.<br>
@@ -1167,12 +1171,11 @@ Pour obtenir de l&rsquo;aide sur un module, on peut demander à Python (<code>he
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
-
     .dataframe tbody tr th {
         vertical-align: top;
     }
@@ -1374,7 +1377,7 @@ Pour obtenir de l&rsquo;aide sur un module, on peut demander à Python (<code>he
 </span></span><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">3</span>)
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1454,7 +1457,7 @@ Pour obtenir de l&rsquo;aide sur un module, on peut demander à Python (<code>he
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>tail(<span style="color:#ae81ff">3</span>)
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1538,7 +1541,7 @@ Pour obtenir de l&rsquo;aide sur un module, on peut demander à Python (<code>he
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>describe()
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1733,7 +1736,7 @@ Mais on peut évidemment choisir un autre critère de classement si on le désir
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PIB par habitant (log)&#34;</span>,ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1890,7 +1893,7 @@ Mais on peut évidemment choisir un autre critère de classement si on le désir
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Corruption perçue&#34;</span>,ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head()
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1992,7 +1995,7 @@ Mais on peut évidemment choisir un autre critère de classement si on le désir
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Générosité&#34;</span>,ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>iloc[[<span style="color:#ae81ff">45</span>]]
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2066,7 +2069,7 @@ Il s'agit de <code>'Russia'</code>.
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># plutôt que les opérateurs élément par élément &#39;and&#39; et &#39;or&#39; qui lèveraient une erreur.</span>
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2194,7 +2197,9 @@ Et on n'a plus qu'à survoler la classe la plus peuplée pour découvrir le nomb
 <p>On remarque que le jeu de données contient une colonne catégorielle : &ldquo;Région du monde&rdquo;.<br>
 Cela va nous permettre d&rsquo;explorer de possibles dynamiques régionales : est-ce que les pays d&rsquo;une même zone ont des indicateurs semblables ?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pd<span style="color:#f92672">.</span>unique(data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>]) <span style="color:#75715e"># permet d&#39;afficher une seule fois chacune des valeurs différentes de la colonne</span>
-</span></span></code></pre></div><p><code>array(['Western Europe', 'North America and ANZ','Middle East and North Africa', 'Latin America and Caribbean','Central and Eastern Europe', 'East Asia', 'Southeast Asia','Commonwealth of Independent States', 'Sub-Saharan Africa','South Asia'], dtype=object)</code></p>
+</span></span></code></pre></div><div id="debord">
+<code>array(['Western Europe', 'North America and ANZ','Middle East and North Africa', 'Latin America and Caribbean','Central and Eastern Europe', 'East Asia', 'Southeast Asia','Commonwealth of Independent States', 'Sub-Saharan Africa','South Asia'], dtype=object)</code>
+</div>
 <p>Traçons des diagrammes en boîte à moustaches représentant les scores de bonheur pour chacune des régions.</p>
 
 <div class="notices note" ><p>Construction des boîtes à moustaches (ou diagrammes en boîtes de Tukey) :<br>
@@ -2244,7 +2249,6 @@ Il s'agit de 'Latin America and Caribbean'.
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>conditions <span style="color:#f92672">=</span> [(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Western Europe&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;North America and ANZ&#39;</span>),(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;South Asia&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Sub-Saharan Africa&#39;</span>)]
 </span></span><span style="display:flex;"><span>choix <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#34;Nord&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#34;Sud&#34;&#39;</span>]
 </span></span><span style="display:flex;"><span>data_monde[<span style="color:#e6db74">&#39;Groupe&#39;</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>select(conditions, choix, default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Autres&#39;</span>)
-</span></span><span style="display:flex;"><span>deux_gpes <span style="color:#f92672">=</span> data_monde[data_monde[<span style="color:#e6db74">&#34;Groupe&#34;</span>]<span style="color:#f92672">.</span>isin([<span style="color:#e6db74">&#39;&#34;Nord&#34;&#39;</span>,<span style="color:#e6db74">&#39;&#34;Sud&#34;&#39;</span>])]
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Un peu long à s&#39;exécuter (environ 30 s)</span>
 </span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;white&#34;</span>)
 </span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>PairGrid(data_monde, diag_sharey<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Groupe&#34;</span>)
@@ -2378,7 +2382,7 @@ Plotly.d3.json("/scat3Dgpe.json", function(err, fig) {
 </span></span><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">3</span>)
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2516,7 +2520,7 @@ Mais pourquoi donc ? <code>plotly express</code> permet de tracer la carte d&rsq
 </span></span><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>head()
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2665,7 +2669,7 @@ Plotly.d3.json("/cartechoro1.json", function(err, fig) {
 </span></span><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">1</span>)
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2829,7 +2833,7 @@ vert
 </span></span><span style="display:flex;"><span>serie_temp
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2942,7 +2946,7 @@ vert
 </span></span><span style="display:flex;"><span>serie_temp<span style="color:#f92672">.</span>head()
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -3011,7 +3015,7 @@ vert
 </span></span><span style="display:flex;"><span>serie_temp<span style="color:#f92672">.</span>head()
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -3084,7 +3088,7 @@ vert
 </span></span><span style="display:flex;"><span>serie_temp<span style="color:#f92672">.</span>head()
 </span></span></code></pre></div>
 
-<div>
+<div id="debord">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -3984,19 +3988,19 @@ Correction (cliquer pour afficher)</summary>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1738708659"></script>
-    <script src="/js/perfect-scrollbar.min.js?1738708659"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1738708659"></script>
-    <script src="/js/jquery.sticky.js?1738708659"></script>
-    <script src="/js/featherlight.min.js?1738708659"></script>
-    <script src="/js/highlight.pack.js?1738708659"></script>
+    <script src="/js/clipboard.min.js?1739703242"></script>
+    <script src="/js/perfect-scrollbar.min.js?1739703242"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1739703242"></script>
+    <script src="/js/jquery.sticky.js?1739703242"></script>
+    <script src="/js/featherlight.min.js?1739703242"></script>
+    <script src="/js/highlight.pack.js?1739703242"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1738708659"></script>
-    <script src="/js/learn.js?1738708659"></script>
-    <script src="/js/hugo-learn.js?1738708659"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1739703242"></script>
+    <script src="/js/learn.js?1739703242"></script>
+    <script src="/js/hugo-learn.js?1739703242"></script>
     
         
-            <script src="/mermaid/mermaid.js?1738708659"></script>
+            <script src="/mermaid/mermaid.js?1739703242"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
