@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1743081384" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1743081384" rel="stylesheet">
-    <link href="/css/hybrid.css?1743081384" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1743081384" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1743081384" rel="stylesheet">
-    <link href="/css/auto-complete.css?1743081384" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1743081384" rel="stylesheet">
-    <link href="/css/theme.css?1743081384" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1743081384" rel="stylesheet">
+    <link href="/css/nucleus.css?1743081929" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1743081929" rel="stylesheet">
+    <link href="/css/hybrid.css?1743081929" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1743081929" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1743081929" rel="stylesheet">
+    <link href="/css/auto-complete.css?1743081929" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1743081929" rel="stylesheet">
+    <link href="/css/theme.css?1743081929" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1743081929" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1743081384" rel="stylesheet">
+    <link href="/css/theme-green.css?1743081929" rel="stylesheet">
     
-    <link href="/css/foo.css?1743081384" rel="stylesheet"><link href="/css/bar.css?1743081384" rel="stylesheet">
+    <link href="/css/foo.css?1743081929" rel="stylesheet"><link href="/css/bar.css?1743081929" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1743081384"></script>
+    <script src="/js/jquery-3.3.1.min.js?1743081929"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1743081384"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1743081384"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1743081929"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1743081929"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1743081384"></script>
+<script type="text/javascript" src="/js/search.js?1743081929"></script>
 
     
   </div>
@@ -1129,18 +1129,22 @@ onload='renderMathInElement(document.body);'></script>
 <p>Python est un langage de programmation interprété développé par Guido van Rossum en 1989. Langage impératif de haut-niveau doté d&rsquo;une syntaxe simple, Python s&rsquo;adapte à de nombreux contextes grâce à sa modularité ; une importante librairie de modules et packages permet en effet d&rsquo;étendre ses capacités.</p>
 <p>Python possède son propre shell (interface en ligne de commande) : l&rsquo;utilisateur entre une commande Python qui est interprétée immédiatement lorsque <code>Entrée</code> est tapée.<br>
 Au lancement, le shell Python, poli, se présente :</p>
-<p><img src="/shell0.png?height=80px" alt=""></p>
+<div style="position:relative;margin-left:auto;margin-right:auto;width:550px;max-width:100%;">
+<img src="/shell0.png" style="box-shadow:none;background:none;border-radius:3px;">
+</div>
 <p>Les 3 chevrons sont l&rsquo;invite (ou prompt) où les commandes seront écrites.<br>
 IPython, un shell plus évolué, utilise <code>[1]</code> comme invite (où le chiffre dans les crochets s&rsquo;incrémente à chaque commande).<br>
 Pour sortir du shell classique, il faut taper <code>exit()</code>, et <code>exit</code> ou <code>quit</code> pour sortie du shell IPython.</p>
 <p>On peut tout à fait exécuter des commandes Python une à une dans le shell.<br>
 Une commande qui renvoie un résultat est appelée <strong>expression</strong>, alors qu&rsquo;une commande qui ne renvoie rien est une <strong>instruction</strong>.<br>
-Toute fonction est une expression, mais certaines ont en plus un <strong>effet</strong>  sur l&rsquo;environnement comme <code>print()</code> qui permet d&rsquo;afficher une chaîne de caractères dans le shell ou dans un fichier (elle retourne aussi la valeur <code>None</code> qui est omise dans ce cas par le shell).
-<img src="/shell.png?height=95px" alt="">
+Toute fonction est une expression, mais certaines ont en plus un <strong>effet</strong>  sur l&rsquo;environnement comme <code>print()</code> qui permet d&rsquo;afficher une chaîne de caractères dans le shell ou dans un fichier (elle retourne aussi la valeur <code>None</code> qui est omise dans ce cas par le shell).</p>
+<div style="position:relative;margin-left:auto;margin-right:auto;width:350px;max-width:100%;">
+<img src="/shell.png" style="box-shadow:none;background:none;border-radius:3px;">
+</div>
 
 <div class="notices note" ><p>Par une mauvaise traduction de l&rsquo;anglais <em>side effect</em>, les fonctions qui modifient un état en dehors de leur environnement local comme une modification de la mémoire (écriture d&rsquo;un fichier) ou une modification d&rsquo;un périphérique (affichage sur l&rsquo;écran par exemple) sont dites à <strong>effet de bord</strong>.</p>
 
-</div></p>
+</div>
 <p>Pour les projets plus complexes nécessitant d&rsquo;enchaîner les instructions, on écrit l&rsquo;ensemble de ces commandes (le programme) dans un éditeur de texte et on enregistre le fichier avec une extension <code>.py</code>.<br>
 On demande alors à l&rsquo;interprète Python d&rsquo;exécuter l&rsquo;ensemble du script en utilisant la commande <code>python nom_du_fichier.py</code> dans le shell de l&rsquo;OS. Les différents retours dans le shell ne sont alors plus affichés, seuls les effets ont un&hellip; effet.</p>
 <p>Le plus simple pour coder est d&rsquo;utiliser un environnement de travail (<strong>IDE</strong> pour &ldquo;integrated development environment&rdquo;) qui combine un éditeur de code et un shell Python permettant d&rsquo;exécuter le script entier ou une partie directement via l&rsquo;interface.<br></p>
@@ -1153,7 +1157,9 @@ On demande alors à l&rsquo;interprète Python d&rsquo;exécuter l&rsquo;ensembl
 <h2 id="typage-dynamique">Typage dynamique</h2>
 <p>Contrairement à des langages à typage statique comme le C, <strong>le type de la variable n&rsquo;a pas besoin d&rsquo;être déclarée en Python</strong>. On parle alors de <strong>typage dynamique</strong>.<br>
 L&rsquo;interprète Python détermine par lui-même le type en fonction de l&rsquo;objet affecté à la variable.</p>
-<p><img src="/shell2.png?height=115px" alt=""></p>
+<div style="position:relative;margin-left:auto;margin-right:auto;width:350px;max-width:100%;">
+<img src="/shell2.png" style="box-shadow:none;background:none;border-radius:3px;">
+</div>
 <p> </p>
 <h2 id="principe-dindentation">Principe d&rsquo;indentation</h2>
 <p>Beaucoup de langage de programmation (C++, Java par exemple) utilisent des accolades <code>{}</code> pour définir un <strong>bloc de code</strong> (boucles,fonctions, instructions conditionnelles). Python utilise l&rsquo;<strong>indentation</strong> (<a href="https://www.youtube.com/watch?v=SsoOG6ZeyUI&amp;t=2s">décalage d&rsquo;un nombre constant d&rsquo;espaces blancs, généralement 4, ou une tabulation</a>).</p>
@@ -1948,19 +1954,19 @@ On dit que les arguments d&rsquo;une fonction sont transmis <strong>par valeurs<
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1743081384"></script>
-    <script src="/js/perfect-scrollbar.min.js?1743081384"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1743081384"></script>
-    <script src="/js/jquery.sticky.js?1743081384"></script>
-    <script src="/js/featherlight.min.js?1743081384"></script>
-    <script src="/js/highlight.pack.js?1743081384"></script>
+    <script src="/js/clipboard.min.js?1743081929"></script>
+    <script src="/js/perfect-scrollbar.min.js?1743081929"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1743081929"></script>
+    <script src="/js/jquery.sticky.js?1743081929"></script>
+    <script src="/js/featherlight.min.js?1743081929"></script>
+    <script src="/js/highlight.pack.js?1743081929"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1743081384"></script>
-    <script src="/js/learn.js?1743081384"></script>
-    <script src="/js/hugo-learn.js?1743081384"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1743081929"></script>
+    <script src="/js/learn.js?1743081929"></script>
+    <script src="/js/hugo-learn.js?1743081929"></script>
     
         
-            <script src="/mermaid/mermaid.js?1743081384"></script>
+            <script src="/mermaid/mermaid.js?1743081929"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
