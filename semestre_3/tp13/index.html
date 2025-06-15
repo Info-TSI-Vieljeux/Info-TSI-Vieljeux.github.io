@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 
 
@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1749170272" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1749170272" rel="stylesheet">
-    <link href="/css/hybrid.css?1749170272" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1749170272" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1749170272" rel="stylesheet">
-    <link href="/css/auto-complete.css?1749170272" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1749170272" rel="stylesheet">
-    <link href="/css/theme.css?1749170272" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1749170272" rel="stylesheet">
+    <link href="/css/nucleus.css?1749997019" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1749997019" rel="stylesheet">
+    <link href="/css/hybrid.css?1749997019" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1749997019" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1749997019" rel="stylesheet">
+    <link href="/css/auto-complete.css?1749997019" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1749997019" rel="stylesheet">
+    <link href="/css/theme.css?1749997019" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1749997019" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1749170272" rel="stylesheet">
+    <link href="/css/theme-green.css?1749997019" rel="stylesheet">
     
-    <link href="/css/foo.css?1749170272" rel="stylesheet"><link href="/css/bar.css?1749170272" rel="stylesheet">
+    <link href="/css/foo.css?1749997019" rel="stylesheet"><link href="/css/bar.css?1749997019" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1749170272"></script>
+    <script src="/js/jquery-3.3.1.min.js?1749997019"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1749170272"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1749170272"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1749997019"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1749997019"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1749170272"></script>
+<script type="text/javascript" src="/js/search.js?1749997019"></script>
 
     
   </div>
@@ -1188,8 +1188,7 @@ list-style-type: disclosure-open;
 </span></span></code></pre></div><p><img src="/datainterp.png?width=800px" alt="png"></p>
 <blockquote>
 <p>Mettez maintenant au point une fonction <code>KNN_interp</code> ayant pour paramètre le nombre de voisins à considérer $k$, les données d&rsquo;apprentissage sous la forme d&rsquo;une liste et l&rsquo;abscisse de la nouvelle donnée dont on cherche l&rsquo;ordonnée.<br>Elle retourne l&rsquo;ordonnée de la nouvelle donnée en prenant la moyenne des $k$ ordonnées les plus proches.
-Votre fonction pourra utiliser la méthode native <code>sort</code> qui trie en place une liste <code>L</code> (la liste triée s&rsquo;obtient grâce à <code>L.sort()</code>).</p>
-</blockquote>
+Votre fonction pourra utiliser la méthode native <code>sort</code> qui trie en place une liste <code>L</code> (la liste triée s&rsquo;obtient grâce à <code>L.sort()</code>).</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">KNN_interp</span>(x: float, k: int, Pts: list) <span style="color:#f92672">-&gt;</span> float:
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    préconditions: Pts est une liste de tuples contenant les coordonnées (x,y) des points d&#39;entraînement
@@ -1237,8 +1236,7 @@ $$d_E(x,y) = \sqrt{(y_1-x_1)^2+(y_2-x_2)^2+\cdots+(y_n-x_n)^2}$$</li>
 $$d_M(x,y) = |y_1-x_1|+|y_2-x_2|+\cdots+|y_n-x_n|$$</li>
 </ul>
 <blockquote>
-<p>Que vaut la distance euclidienne et la distance de Manhattan entre $A$ et $B$ dans la figure ci-dessus ?</p>
-</blockquote>
+<p>Que vaut la distance euclidienne et la distance de Manhattan entre $A$ et $B$ dans la figure ci-dessus ?</p></blockquote>
 <p><img src="/exomanhat.png?width=800px" alt=""></p>
 <details>
 <summary id="correcsum">
@@ -1249,8 +1247,7 @@ dM = 21
 </blockquote>
 </details>
 <blockquote>
-<p>Existe-t-il plusieurs chemins différents ayant la même distance euclidienne ?</p>
-</blockquote>
+<p>Existe-t-il plusieurs chemins différents ayant la même distance euclidienne ?</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1260,8 +1257,7 @@ Plein (combien ?)
 </blockquote>
 </details>
 <blockquote>
-<p>Existe-t-il plusieurs chemins différents ayant la même distance de Manhattan ?</p>
-</blockquote>
+<p>Existe-t-il plusieurs chemins différents ayant la même distance de Manhattan ?</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1271,8 +1267,7 @@ Non, un seul (le segment de droite entre A et B).
 </details>
 <p>On utilisera dans la suite la distance euclidienne.</p>
 <blockquote>
-<p>Construisez une fonction <code>dist</code> prenant en paramètre les coordonnées d&rsquo;un point $x$ et les coordonnées d&rsquo;autres points sous la forme d&rsquo;une liste et qui retourne la liste des distances entre $x$ et les $n$ autres points.<br>Vous assurerez par un <code>assert</code> que tous les points ont bien le même nombre de coordonnées.</p>
-</blockquote>
+<p>Construisez une fonction <code>dist</code> prenant en paramètre les coordonnées d&rsquo;un point $x$ et les coordonnées d&rsquo;autres points sous la forme d&rsquo;une liste et qui retourne la liste des distances entre $x$ et les $n$ autres points.<br>Vous assurerez par un <code>assert</code> que tous les points ont bien le même nombre de coordonnées.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dist</span>(x: list, Pts: list) <span style="color:#f92672">-&gt;</span> list:
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    préconditions: x contient les coordonnées d&#39;un point
@@ -1311,8 +1306,7 @@ Correction (cliquer pour afficher)</summary>
 <code>data</code> contient une liste de 1797 images qui sont donc chacune une liste de 64 valeurs.<br>
 <code>labels</code> contient les étiquettes correspondantes (dans le même ordre).<br></p>
 <blockquote>
-<p>Construisez une fonction capable de transformer une liste de 64 valeurs en une matrice $8\times 8$ :</p>
-</blockquote>
+<p>Construisez une fonction capable de transformer une liste de 64 valeurs en une matrice $8\times 8$ :</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lignetomatrice</span>(liste64: list) <span style="color:#f92672">-&gt;</span> list:
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    posctconditions: la liste retournée doit être de dimensions 2 et de format 8*8
@@ -1353,8 +1347,7 @@ Correction (cliquer pour afficher)</summary>
 </span></span></code></pre></div><blockquote>
 <p>C&rsquo;est le moment de construire une fonction <code>KNN_clas</code> prenant en paramètre une image (liste de 64 flottants), l&rsquo;entier $k$ du nombre de voisins à considérer, la liste des données servant à l&rsquo;apprentissage et la liste des étiquettes (dans le même ordre) et qui retourne un entier entre 0 et 9 correspondant au mode (étiquette la plus représentée) des k plus proches voisins.<br>Votre fonction devra utiliser la fonction <code>dist</code>.<br>
 Pour calculer le mode d&rsquo;une liste <code>L</code>, vous utiliserez <code>mode</code> du module statistics.<br>
-Aide : une liste de listes ou de tuples est triée en fonction du premier élément de la sous-liste ou du tuple.</p>
-</blockquote>
+Aide : une liste de listes ou de tuples est triée en fonction du premier élément de la sous-liste ou du tuple.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> scipy <span style="color:#f92672">import</span> stats
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">KNN_class</span>(X: list, k: int, Appr: list, Etiq: list) <span style="color:#f92672">-&gt;</span> list:
@@ -1409,8 +1402,7 @@ Rq : la cellule met environ 25 s à s&rsquo;exécuter.</p>
 <li>vrais négatifs VN</li>
 <li>faux positifs FP</li>
 <li>faux négatifs FN</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># La matrice de confusion Mc3 devra avoir la forme [[VP,FP],[FN,VN]]</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Les valeurs VP,FP,FN,VN sont des entiers correspondant aux effectifs dans chaque catégorie</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Attention : vos calculs doivent pouvoir s&#39;adapter automatiquement à une autre matrice M !!</span>
@@ -1450,8 +1442,7 @@ FN = sum([sum([M[i][j] for j in range(len(M)) if j != 3]) for i in range(len(M))
 <ul>
 <li>a : il est plus sensible que précis (rappel &gt; précision)</li>
 <li>b : il est plus précis que sensible (précision &gt; rappel)</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1465,8 +1456,7 @@ Donc pour le chiffre 4, l'algo est plus précis que sensible.
 </blockquote>
 </details>
 <blockquote>
-<p>Calculez enfin l&rsquo;exactitude totale de l&rsquo;algorithme sur les 899 images testées.</p>
-</blockquote>
+<p>Calculez enfin l&rsquo;exactitude totale de l&rsquo;algorithme sur les 899 images testées.</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1498,8 +1488,7 @@ Les petites différences observées viennent de l'algorithme utilisé pour donne
 </blockquote>
 </details>
 <blockquote>
-<p>Cherchons maintenant la valeur optimale de <strong>k</strong>, celle qui optimise l&rsquo;exactitude.<br>Pour cela, et par souci de rapidité, on va utiliser l&rsquo;implémentation de la librairie <code>scikit-learn</code> ci-dessus.</p>
-</blockquote>
+<p>Cherchons maintenant la valeur optimale de <strong>k</strong>, celle qui optimise l&rsquo;exactitude.<br>Pour cela, et par souci de rapidité, on va utiliser l&rsquo;implémentation de la librairie <code>scikit-learn</code> ci-dessus.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>n <span style="color:#f92672">=</span> len(data_test)
 </span></span><span style="display:flex;"><span>K <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">50</span>)]
 </span></span><span style="display:flex;"><span>Exa <span style="color:#f92672">=</span> []
@@ -1609,8 +1598,7 @@ $k=3$ optimise l'exactitude.
 </span></span><span style="display:flex;"><span>        distance <span style="color:#f92672">+=</span> sum(dist(Centres[i],data_clusters))
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> distance
 </span></span></code></pre></div><blockquote>
-<p>Il manque encore la définition de 2 fonctions utilisées dans <code>kmoyennes</code>.<br>Commençons par écrire la fonction permettant d&rsquo;attribuer un centre à chaque point de données.</p>
-</blockquote>
+<p>Il manque encore la définition de 2 fonctions utilisées dans <code>kmoyennes</code>.<br>Commençons par écrire la fonction permettant d&rsquo;attribuer un centre à chaque point de données.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">attribution</span>(k: int, data: list, Dist: list) <span style="color:#f92672">-&gt;</span> list:
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    préconditions:  Dist est une liste à deux dimensions contenant k sous-listes
@@ -1641,8 +1629,7 @@ Correction (cliquer pour afficher)</summary>
 </blockquote>
 </details>
 <blockquote>
-<p>Écrivons maintenant la fonction déplacement qui modifie en place la position des <em>k</em> centres.</p>
-</blockquote>
+<p>Écrivons maintenant la fonction déplacement qui modifie en place la position des <em>k</em> centres.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">deplacement</span>(k: int, Clusters: list, Centres: list, data: list) <span style="color:#f92672">-&gt;</span> list:
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    préconditions:  Clusters est une liste du numéro de cluster associé au point à la même position dans data
@@ -1865,8 +1852,7 @@ Ensuite, on applique l&rsquo;algorithme (celui de <code>scikit-learn</code> vu l
 <blockquote>
 <p>Vous devez obtenir une liste bidimensionnelle contenant les valeurs des pixels de l&rsquo;image segmentée en 8.<br>
 Vous appelerez cette liste <code>image_2D_seg4</code>.<br>
-À la suite de votre cellule réponse, vous pourrez tester votre liste en affichant l&rsquo;image qu&rsquo;elle contient. Si vous obtenez 8 partitions, c&rsquo;est gagner (n&rsquo;hésitez pas à relancer l&rsquo;algo car il peut se bloquer sur un découpage suboptimal contenant moins de parties).</p>
-</blockquote>
+À la suite de votre cellule réponse, vous pourrez tester votre liste en affichant l&rsquo;image qu&rsquo;elle contient. Si vous obtenez 8 partitions, c&rsquo;est gagner (n&rsquo;hésitez pas à relancer l&rsquo;algo car il peut se bloquer sur un découpage suboptimal contenant moins de parties).</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1899,8 +1885,7 @@ for i in range(64):
 </ul>
 <p>Pour prouver qu&rsquo;un graphe n&rsquo;est pas biparti, il suffit de trouver au moins un cycle de longueur impair. Or la présence d&rsquo;un tel cycle impose de tomber sur un sommet déjà exploré avec la <strong>même distance au sommet de départ</strong> que son prédécesseur (s&rsquo;il n&rsquo;y a pas de cycle impair, cela n&rsquo;arrive jamais).</p>
 <blockquote>
-<p>Compléter la fonction suivante pour qu&rsquo;elle retourne vrai si le graphe est biparti et faux sinon.</p>
-</blockquote>
+<p>Compléter la fonction suivante pour qu&rsquo;elle retourne vrai si le graphe est biparti et faux sinon.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> deque
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">testBipartite</span>(G,depart):
@@ -1957,8 +1942,7 @@ Correction (cliquer pour afficher)</summary>
 </span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;F&#39;</span>: [<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;E&#39;</span>]
 </span></span><span style="display:flex;"><span>     }
 </span></span></code></pre></div><blockquote>
-<p>Le graphe suivant est-il bipati ?</p>
-</blockquote>
+<p>Le graphe suivant est-il bipati ?</p></blockquote>
 <p><img src="/exojeu1.png?width=700px" alt=""></p>
 <details>
 <summary id="correcsum">
@@ -1998,8 +1982,7 @@ Commentaire (cliquer pour afficher)</summary>
 </details>
 <blockquote>
 <p>Construire le graphe correspondant à un paquet de 10 allumettes au départ.<br>
-Vous appelerez ce graphe <code>G1</code>.</p>
-</blockquote>
+Vous appelerez ce graphe <code>G1</code>.</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2076,8 +2059,7 @@ constrG(Depart,G1)
 </span></span><span style="display:flex;"><span>            propage(s,<span style="color:#f92672">not</span> Joueur1,Attr,Pred,n)
 </span></span></code></pre></div><blockquote>
 <p>Il manque la définition de la fonction <code>inverseGraphe</code> qui retourne la liste d&rsquo;adjacence du graphe G dont on aurait inversé chacun des arcs.<br>
-À vous de jouer&hellip;</p>
-</blockquote>
+À vous de jouer&hellip;</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inverseGraphe</span>(G: dict) <span style="color:#f92672">-&gt;</span> dict:
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    précondition: G est la liste d&#39;adjacence (sous forme de dictionnaire) d&#39;un graphe orienté
@@ -2148,8 +2130,7 @@ Correction (cliquer pour afficher)</summary>
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;C&#39;est gagné !&#34;</span>)
 </span></span></code></pre></div><blockquote>
 <p>En utilisant le programme ci-dessus, répondre à la question suivante :<br>
-si Adam joue (6,4,0) à son premier coup, sur quel sommet doit se déplacer Eve pour continuer à avoir l&rsquo;avantage ?</p>
-</blockquote>
+si Adam joue (6,4,0) à son premier coup, sur quel sommet doit se déplacer Eve pour continuer à avoir l&rsquo;avantage ?</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2159,8 +2140,7 @@ Correction (cliquer pour afficher)</summary>
 </details>
 <blockquote>
 <p>Créez un graphe <code>G2</code> pour répondre à cette question :<br>
-La position de départ $(21,5,0)$ est-elle gagnante ?</p>
-</blockquote>
+La position de départ $(21,5,0)$ est-elle gagnante ?</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2180,11 +2160,9 @@ On a 4 tas composés au départ de 1, 3, 5 et 7 allumettes. Chaque joueur peut, 
 La variante misère impose que celui qui prend la dernière allumette ait perdu !</p>
 <blockquote>
 <p>Composez le graphe du jeu que vous appelerez <code>G3</code>. Chaque sommet prendra la forme d&rsquo;un tuple de 5 entiers (les 4 premiers correspondent aux nombres d&rsquo;allumettes dans les 4 tas et le 5<sup>e</sup> est le numéro du joueur (0 pour Eve et 1 pour Adam).<br>
-La position de départ est alors <code>(1,3,5,7,0)</code>.</p>
-</blockquote>
+La position de départ est alors <code>(1,3,5,7,0)</code>.</p></blockquote>
 <blockquote>
-<p>La position de départ est-elle gagnante pour le joueur 1 (Eve) ?</p>
-</blockquote>
+<p>La position de départ est-elle gagnante pour le joueur 1 (Eve) ?</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2222,12 +2200,8 @@ Dans la variante misère, les positions gagnantes pour Eve correspondent à une 
 </blockquote>
 </details>
 <p>La vidéo ci-dessous présente plus généralements les jeux de Nim. Ils ont la particularité d&rsquo;avoir une stratégie (due à M. Bouton) ne nécessitant pas le parcours du graphe théoriquement généralisable à tout jeu impartial.</p>
-
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/2jahbr5wMHk?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/2jahbr5wMHk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 
 <br>
@@ -2242,8 +2216,7 @@ Commentaire (cliquer pour afficher)</summary>
 </details>
 <p>Dans le code du cours, il manque à nouveau la définition d&rsquo;une fonction : <code>sacadosGlouton</code>.<br></p>
 <blockquote>
-<p>À vous de construire cette fonction qui donne la valeur du sac en suivant la logique gloutonne (et on s&rsquo;arrêtera au premier objet qui fait dépasser la capacité du sac).</p>
-</blockquote>
+<p>À vous de construire cette fonction qui donne la valeur du sac en suivant la logique gloutonne (et on s&rsquo;arrêtera au premier objet qui fait dépasser la capacité du sac).</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sacadosGlouton</span>(v: list,p: list,c: int) <span style="color:#f92672">-&gt;</span> int:
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">### VOTRE CODE</span>
 </span></span></code></pre></div><details>
@@ -2266,8 +2239,7 @@ Correction (cliquer pour afficher)</summary>
 </blockquote>
 </details>
 <blockquote>
-<p>Utiliser ensuite votre fonction et le code du cours pour déterminer la valeur du sac si $v=[1,2,\ldots,200]$, $p=[400,298,296,\ldots,2]$ et $c=156$ (ce nombre d&rsquo;objets rend la méthode par force brute totalement inutile).<br></p>
-</blockquote>
+<p>Utiliser ensuite votre fonction et le code du cours pour déterminer la valeur du sac si $v=[1,2,\ldots,200]$, $p=[400,298,296,\ldots,2]$ et $c=156$ (ce nombre d&rsquo;objets rend la méthode par force brute totalement inutile).<br></p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2303,8 +2275,7 @@ On obtient ainsi $2334$ (l'algorithme glouton avait, lui, trouvé $2145$, ce qui
 </blockquote>
 </details>
 <blockquote>
-<p>Déterminez aussi (grâce à une variable globale) le nombre d&rsquo;appels récursifs passés.</p>
-</blockquote>
+<p>Déterminez aussi (grâce à une variable globale) le nombre d&rsquo;appels récursifs passés.</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -3023,19 +2994,19 @@ Correction (cliquer pour afficher)</summary>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1749170272"></script>
-    <script src="/js/perfect-scrollbar.min.js?1749170272"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1749170272"></script>
-    <script src="/js/jquery.sticky.js?1749170272"></script>
-    <script src="/js/featherlight.min.js?1749170272"></script>
-    <script src="/js/highlight.pack.js?1749170272"></script>
+    <script src="/js/clipboard.min.js?1749997019"></script>
+    <script src="/js/perfect-scrollbar.min.js?1749997019"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1749997019"></script>
+    <script src="/js/jquery.sticky.js?1749997019"></script>
+    <script src="/js/featherlight.min.js?1749997019"></script>
+    <script src="/js/highlight.pack.js?1749997019"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1749170272"></script>
-    <script src="/js/learn.js?1749170272"></script>
-    <script src="/js/hugo-learn.js?1749170272"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1749997019"></script>
+    <script src="/js/learn.js?1749997019"></script>
+    <script src="/js/hugo-learn.js?1749997019"></script>
     
         
-            <script src="/mermaid/mermaid.js?1749170272"></script>
+            <script src="/mermaid/mermaid.js?1749997019"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 
 
@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1749170272" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1749170272" rel="stylesheet">
-    <link href="/css/hybrid.css?1749170272" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1749170272" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1749170272" rel="stylesheet">
-    <link href="/css/auto-complete.css?1749170272" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1749170272" rel="stylesheet">
-    <link href="/css/theme.css?1749170272" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1749170272" rel="stylesheet">
+    <link href="/css/nucleus.css?1749997019" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1749997019" rel="stylesheet">
+    <link href="/css/hybrid.css?1749997019" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1749997019" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1749997019" rel="stylesheet">
+    <link href="/css/auto-complete.css?1749997019" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1749997019" rel="stylesheet">
+    <link href="/css/theme.css?1749997019" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1749997019" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1749170272" rel="stylesheet">
+    <link href="/css/theme-green.css?1749997019" rel="stylesheet">
     
-    <link href="/css/foo.css?1749170272" rel="stylesheet"><link href="/css/bar.css?1749170272" rel="stylesheet">
+    <link href="/css/foo.css?1749997019" rel="stylesheet"><link href="/css/bar.css?1749997019" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1749170272"></script>
+    <script src="/js/jquery-3.3.1.min.js?1749997019"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1749170272"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1749170272"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1749997019"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1749997019"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1749170272"></script>
+<script type="text/javascript" src="/js/search.js?1749997019"></script>
 
     
   </div>
@@ -1276,8 +1276,7 @@ C&rsquo;est sur la détermination de la pente de la tangente à partir de $f$ qu
 </ul>
 <blockquote>
 <p>Illustration avec le mouvement vertical d&rsquo;un ballon ($h=dt$ et $f(t,y(t))=v_y(t)$) :
-<img src="/eulersimple.png?width=400px" alt=""></p>
-</blockquote>
+<img src="/eulersimple.png?width=400px" alt=""></p></blockquote>
 <p>Cette méthode ainsi décrite est dite <strong>explicite</strong> car chaque $y_{i+1}$ est une fonction explicite des $y_j$ pour $j≤i$.</p>
 
 <div class="notices info" ><p>La méthode d&rsquo;Euler permet d&rsquo;intégrer des équations différentielles de tout ordre puisqu&rsquo;une équation diférentielle d&rsquo;un ordre supérieur à 1 peut toujours s&rsquo;exprimer comme un système d&rsquo;équations du premier ordre.</p>
@@ -1297,8 +1296,7 @@ $$
 \dot{z_1}(t) = z_2(t) \\
 \dot{z_2}(t) = -\frac{g}{L}\sin{z_1(t)}  \\
 \end{cases}
-$$</p>
-</blockquote>
+$$</p></blockquote>
 <br>
 <h3 id="limites">Limites</h3>
 <h4 id="erreur-de-troncature-locale">Erreur de troncature locale</h4>
@@ -1330,8 +1328,7 @@ En python, comme la mantisse d&rsquo;un flottant correspond à 53 bits, l&rsquo;
 </div>
 <blockquote>
 <p>Le code ci-dessous trouve la première puissance de 2, $x$, pour laquelle $x+1$ est arrondie à $x$ (<strong>absorption</strong>), provoquant une erreur relative (la plus grande possible) de $1/x$.
-<img src="/petitcodeepsilon.png?width=300px" alt=""></p>
-</blockquote>
+<img src="/petitcodeepsilon.png?width=300px" alt=""></p></blockquote>
 <p>Par conséquent, l&rsquo;erreur d&rsquo;arrondi sur chaque valeur $y_n$ obtenue par la méthode d&rsquo;Euler est de l&rsquo;ordre de $\varepsilon y_n$. Et en considérant ces erreurs d&rsquo;arrondi comme des variables aléatoires indépendantes, l&rsquo;erreur d&rsquo;arrondi totale va être de l&rsquo;ordre de $\varepsilon\sqrt{n}$ où $n$, le nombre de valeurs calculées, est inversement proportionnel au pas.<br>
 Finalement, l&rsquo;erreur d&rsquo;arrondi globale est proportionnelle à $\frac{\varepsilon}{\sqrt{h}}$ et donc diverge lorsque $h$ tend vers 0 !</p>
 <p>Réduire l&rsquo;erreur de troncature se fait donc au détriment de l&rsquo;erreur d&rsquo;arrondi. Néanmoins, on peut se prémunir en bonne part des erreurs d&rsquo;arrondi grâce à une sommation compensée (algorithme de Kahan).</p>
@@ -1353,8 +1350,7 @@ $$\lambda_{\genfrac{}{}{0pt}{}{1}{2}} = \omega_0\left(\frac{1}{2Q} \pm i\sqrt{\l
 et donc pour que $hk=h\lambda_{\genfrac{}{}{0pt}{}{1}{2}}$ soit à l&rsquo;intérieur du domaîne de stabilité, il faut que $\left(-\frac{h\omega_0}{2Q}+1\right)^2 + \left(\frac{h\omega_0}{2Q}\right)^2(4Q^2-1) ≤ 1$.
 <img src="/soleulerstable2.png?width=500px" alt="">
 <img src="/soleulerstable.png?width=1000px" alt="">
-En passant la valeur de $h$ à <code>0.002</code> dans le programme de l&rsquo;oscillateur harmonique amorti, on constate effectivement que l&rsquo;amplitude de l&rsquo;oscillation daigne  bien maintenant diminuer&hellip;</p>
-</blockquote>
+En passant la valeur de $h$ à <code>0.002</code> dans le programme de l&rsquo;oscillateur harmonique amorti, on constate effectivement que l&rsquo;amplitude de l&rsquo;oscillation daigne  bien maintenant diminuer&hellip;</p></blockquote>
 <p>Pour résumer, la méthode d&rsquo;Euler explicite a pour qualité d&rsquo;être très simple à coder, mais elle cumule de nombreux défauts&hellip;</p>
 <br>
 <h3 id="méthode-deuler-implicite">Méthode d&rsquo;Euler implicite</h3>
@@ -2115,19 +2111,19 @@ Résoudre numériquement l&rsquo;équation différentielle revient donc à inté
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1749170272"></script>
-    <script src="/js/perfect-scrollbar.min.js?1749170272"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1749170272"></script>
-    <script src="/js/jquery.sticky.js?1749170272"></script>
-    <script src="/js/featherlight.min.js?1749170272"></script>
-    <script src="/js/highlight.pack.js?1749170272"></script>
+    <script src="/js/clipboard.min.js?1749997019"></script>
+    <script src="/js/perfect-scrollbar.min.js?1749997019"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1749997019"></script>
+    <script src="/js/jquery.sticky.js?1749997019"></script>
+    <script src="/js/featherlight.min.js?1749997019"></script>
+    <script src="/js/highlight.pack.js?1749997019"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1749170272"></script>
-    <script src="/js/learn.js?1749170272"></script>
-    <script src="/js/hugo-learn.js?1749170272"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1749997019"></script>
+    <script src="/js/learn.js?1749997019"></script>
+    <script src="/js/hugo-learn.js?1749997019"></script>
     
         
-            <script src="/mermaid/mermaid.js?1749170272"></script>
+            <script src="/mermaid/mermaid.js?1749997019"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

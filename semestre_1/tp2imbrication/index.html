@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 
 
@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1749170272" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1749170272" rel="stylesheet">
-    <link href="/css/hybrid.css?1749170272" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1749170272" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1749170272" rel="stylesheet">
-    <link href="/css/auto-complete.css?1749170272" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1749170272" rel="stylesheet">
-    <link href="/css/theme.css?1749170272" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1749170272" rel="stylesheet">
+    <link href="/css/nucleus.css?1749997019" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1749997019" rel="stylesheet">
+    <link href="/css/hybrid.css?1749997019" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1749997019" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1749997019" rel="stylesheet">
+    <link href="/css/auto-complete.css?1749997019" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1749997019" rel="stylesheet">
+    <link href="/css/theme.css?1749997019" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1749997019" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1749170272" rel="stylesheet">
+    <link href="/css/theme-green.css?1749997019" rel="stylesheet">
     
-    <link href="/css/foo.css?1749170272" rel="stylesheet"><link href="/css/bar.css?1749170272" rel="stylesheet">
+    <link href="/css/foo.css?1749997019" rel="stylesheet"><link href="/css/bar.css?1749997019" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1749170272"></script>
+    <script src="/js/jquery-3.3.1.min.js?1749997019"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1749170272"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1749170272"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1749997019"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1749997019"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1749170272"></script>
+<script type="text/javascript" src="/js/search.js?1749997019"></script>
 
     
   </div>
@@ -1155,8 +1155,7 @@ list-style-type: disclosure-open;
 <h2 id="chercher-un-mot-dans-un-texte">Chercher un mot dans un texte</h2>
 <blockquote>
 <p>Écrire une fonction <code>cherche_mot</code> naïve qui recherche si un mot est présent dans un texte en comparant chaque morceau du texte de la taille du mot au mot recherché.<br>
-Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&rsquo;est pas plus long que le texte.</p>
-</blockquote>
+Vous devrez vous assurez (grâce à des assertions) que le mot et le texte sont bien des chaînes de caractères et que le mot n&rsquo;est pas plus long que le texte.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cherche_mot</span>(mot, texte):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    cherche_mot(mot: string, texte: string) -&gt; bool
@@ -1200,8 +1199,7 @@ Par exemple, ici, on aurait pu écrire <code>print(texte[i:i+m])</code> en premi
 </span></span><span style="display:flex;"><span>mot_de_passe <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;...&#39;</span>
 </span></span><span style="display:flex;"><span>cherche_mot(mot_de_passe,rockyou)
 </span></span></code></pre></div><blockquote>
-<p>Quel est le nombre minimum de comparaisons à faire pour s&rsquo;assurer qu&rsquo;un mot de 3 caractères est absent d&rsquo;une chaîne de 10 caractères ? Attention, comparer deux mots ne compte pas que pour une seule comparaison !</p>
-</blockquote>
+<p>Quel est le nombre minimum de comparaisons à faire pour s&rsquo;assurer qu&rsquo;un mot de 3 caractères est absent d&rsquo;une chaîne de 10 caractères ? Attention, comparer deux mots ne compte pas que pour une seule comparaison !</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1235,8 +1233,7 @@ Cela fait donc en tout $m\times(n-m+1)=nm-m^2+m$ comparaisons, soit 24 ici.
 </span></span></code></pre></div><p><img src="/rechmot.png" alt=""></p>
 <p>Sur le même modèle, vous allez tracer l&rsquo;évolution du temps d&rsquo;exécution de <code>cherche_mot</code> en fonction de la taille du mot pour une taille de texte fixe et pour des mots petits devant le texte.</p>
 <blockquote>
-<p>Pour cela vous compléterez le code ci-dessous.</p>
-</blockquote>
+<p>Pour cela vous compléterez le code ci-dessous.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>I, T_ch_mot <span style="color:#f92672">=</span> [], []
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>texte <span style="color:#f92672">=</span> rockyou[:<span style="color:#ae81ff">200000</span>]
@@ -1268,8 +1265,7 @@ ax.set_title("Temps d'excution de 'cherche_mot' en fonction de la longueur du mo
 </details>
 <p><img src="/che_mot_texte.png" alt=""></p>
 <blockquote>
-<p>Pour des petits mots par rapport au texte et en appelant $n$ la longueur du texte et $m$ la longueur du mot, quelle fonction semble-t-elle le mieux modéliser l&rsquo;évolution du temps d&rsquo;exécution en fonction de $n$ et $m$ ?</p>
-</blockquote>
+<p>Pour des petits mots par rapport au texte et en appelant $n$ la longueur du texte et $m$ la longueur du mot, quelle fonction semble-t-elle le mieux modéliser l&rsquo;évolution du temps d&rsquo;exécution en fonction de $n$ et $m$ ?</p></blockquote>
 <ul>
 <li>A : $a\times m + b\times n$ où $a$ et $b$ sont des constantes</li>
 <li>B : $a\times m^2$ où $a$ est une constante</li>
@@ -1303,8 +1299,7 @@ On peut donc supposé un temps d'exécution proportionnel à $n\times m$ (répon
 </span></span></code></pre></div><p><code>Un élément en double a été trouvé :</code><br>
 <code>🍊</code></p>
 <blockquote>
-<p>Combien de fois la comparaison <code>liste[i] == liste[j]</code> est-elle opérée au maximum si la liste contient 200 éléments ?</p>
-</blockquote>
+<p>Combien de fois la comparaison <code>liste[i] == liste[j]</code> est-elle opérée au maximum si la liste contient 200 éléments ?</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1328,8 +1323,7 @@ Soit ici, $39\,800$ comparaisons.
 </span></span></code></pre></div><p><code>Un élément en double a été trouvé :</code><br>
 <code>🍊</code></p>
 <blockquote>
-<p>Combien de comparaisons sont opérées au maximum avec cette nouvelle fonction si la liste contient 200 éléments ?</p>
-</blockquote>
+<p>Combien de comparaisons sont opérées au maximum avec cette nouvelle fonction si la liste contient 200 éléments ?</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Pour vous aider à raisonner</span>
 </span></span><span style="display:flex;"><span>N <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) :
@@ -1449,8 +1443,7 @@ Deux gros avantages à ce type d'écriture&nbsp;:
 $$ \int_{-\pi}^{3\pi/2}(x^2\cos(x)+10)dx = 2+23\pi-9\frac{\pi^2}{4}\approx 52,05$$</p>
 <blockquote>
 <p>Pour quelle valeur de $n$, la valeur de $I$ atteint-elle 52,0 (à 0,5 près) avec la méthode des rectangles à gauche ?<br>
-Vous appelerez cette valeur <code>n_cible</code> et votre code devra l&rsquo;afficher.</p>
-</blockquote>
+Vous appelerez cette valeur <code>n_cible</code> et votre code devra l&rsquo;afficher.</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2180,19 +2173,19 @@ Cela donne $70$ étapes pour la méthode des rectangles à gauche alors qu'on vo
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1749170272"></script>
-    <script src="/js/perfect-scrollbar.min.js?1749170272"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1749170272"></script>
-    <script src="/js/jquery.sticky.js?1749170272"></script>
-    <script src="/js/featherlight.min.js?1749170272"></script>
-    <script src="/js/highlight.pack.js?1749170272"></script>
+    <script src="/js/clipboard.min.js?1749997019"></script>
+    <script src="/js/perfect-scrollbar.min.js?1749997019"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1749997019"></script>
+    <script src="/js/jquery.sticky.js?1749997019"></script>
+    <script src="/js/featherlight.min.js?1749997019"></script>
+    <script src="/js/highlight.pack.js?1749997019"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1749170272"></script>
-    <script src="/js/learn.js?1749170272"></script>
-    <script src="/js/hugo-learn.js?1749170272"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1749997019"></script>
+    <script src="/js/learn.js?1749997019"></script>
+    <script src="/js/hugo-learn.js?1749997019"></script>
     
         
-            <script src="/mermaid/mermaid.js?1749170272"></script>
+            <script src="/mermaid/mermaid.js?1749997019"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

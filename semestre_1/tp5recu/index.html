@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 
 
@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1749170272" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1749170272" rel="stylesheet">
-    <link href="/css/hybrid.css?1749170272" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1749170272" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1749170272" rel="stylesheet">
-    <link href="/css/auto-complete.css?1749170272" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1749170272" rel="stylesheet">
-    <link href="/css/theme.css?1749170272" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1749170272" rel="stylesheet">
+    <link href="/css/nucleus.css?1749997019" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1749997019" rel="stylesheet">
+    <link href="/css/hybrid.css?1749997019" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1749997019" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1749997019" rel="stylesheet">
+    <link href="/css/auto-complete.css?1749997019" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1749997019" rel="stylesheet">
+    <link href="/css/theme.css?1749997019" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1749997019" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1749170272" rel="stylesheet">
+    <link href="/css/theme-green.css?1749997019" rel="stylesheet">
     
-    <link href="/css/foo.css?1749170272" rel="stylesheet"><link href="/css/bar.css?1749170272" rel="stylesheet">
+    <link href="/css/foo.css?1749997019" rel="stylesheet"><link href="/css/bar.css?1749997019" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1749170272"></script>
+    <script src="/js/jquery-3.3.1.min.js?1749997019"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1749170272"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1749170272"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1749997019"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1749997019"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1749170272"></script>
+<script type="text/javascript" src="/js/search.js?1749997019"></script>
 
     
   </div>
@@ -1160,12 +1160,8 @@ list-style-type: disclosure-open;
 </style></p>
 <h1 id="fonctions-récursives">Fonctions récursives</h1>
 <p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/ti0x49a6">cette invitation</a> pour récupérer le repository du TP. </p>
-
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/lIIXLQvcd4Q?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/lIIXLQvcd4Q?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
@@ -1199,8 +1195,7 @@ list-style-type: disclosure-open;
 Le cas de base correspond à la première valeur retournée (0 ici) et donc au premier appel retiré de la pile. Tous les appels précédents sont restés <strong>en attente</strong>.<br>
 On remonte ensuite chronologiquement la pile des appels avec à chaque fois une nouvelle valeur retournée, jusqu&rsquo;à l&rsquo;appel initial, appelé <strong>appel terminal</strong>.</p>
 <blockquote>
-<p>Combien l&rsquo;expression <code>somme(100)</code> va-t-elle provoquer d&rsquo;appels de la fonction <code>somme</code> ?</p>
-</blockquote>
+<p>Combien l&rsquo;expression <code>somme(100)</code> va-t-elle provoquer d&rsquo;appels de la fonction <code>somme</code> ?</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1225,8 +1220,7 @@ En effet, <code>fib(5)</code> appelle <code>fib(4)</code> qui appelle <code>fib(
 <code>fib(2)</code> fait son deuxième appel : <code>fib(0)</code>. <code>fib(0)</code> étant l&rsquo;autre cas de base, il retourne une valeur (0) et est retiré de la pile. <code>fib(2)</code> peut maintenant elle aussi retourner une valeur (1+0) et est à son tour retirée de la pile.<br>
 Le dernier appel en attente est dorénavant <code>fib(3)</code> qui fait maintenant son deuxième appel : <code>fib(1)</code>. <code>fib(1)</code> retourne 1 et est retiré de la liste, <code>fib(2)</code> retourne 2 (1+1) et est retirée à son tour, et on remonte à <code>fib(4)</code> qui fait son deuxième appel, <code>fib(2)</code>, qui elle-même appelle <code>fib(1)</code>, etc.</p>
 <blockquote>
-<p>Quelle sera la taille maximale de la pile d&rsquo;exécution de <code>fib(100)</code> ?</p>
-</blockquote>
+<p>Quelle sera la taille maximale de la pile d&rsquo;exécution de <code>fib(100)</code> ?</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1246,8 +1240,7 @@ Par contre, le nombre d'appels est bien plus grand (cf. vidéo).
 <p>Construisons les deux tris récursifs présentés dans la vidéo.</p>
 <h3 id="tri-insertion">Tri insertion</h3>
 <blockquote>
-<p>Écrire la fonction <code>insertion</code> qui insert au bon endroit un nombre dans une liste triée afin qu&rsquo;elle reste triée.</p>
-</blockquote>
+<p>Écrire la fonction <code>insertion</code> qui insert au bon endroit un nombre dans une liste triée afin qu&rsquo;elle reste triée.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">insertion</span>(element,Ltriee):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    insertion(element: nombre, Ltriee: liste de nombres) -&gt; Lsortie: liste de nombres
@@ -1272,8 +1265,7 @@ Correction (cliquer pour afficher)</summary>
 </blockquote>
 </details>
 <blockquote>
-<p>Combien d&rsquo;itérations sont nécessaires dans le pire des cas pour insérer un élément dans une liste de longueur <code>n</code> ?</p>
-</blockquote>
+<p>Combien d&rsquo;itérations sont nécessaires dans le pire des cas pour insérer un élément dans une liste de longueur <code>n</code> ?</p></blockquote>
 <ul>
 <li>A : $n$</li>
 <li>B : $2n$</li>
@@ -1287,8 +1279,7 @@ $n$
 </blockquote>
 </details>
 <blockquote>
-<p>Ajouter le cas de base à la fonction <code>tri_insertion</code> :</p>
-</blockquote>
+<p>Ajouter le cas de base à la fonction <code>tri_insertion</code> :</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_insertion</span>(liste) :
 </span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(liste)
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">### VOTRE CODE</span>
@@ -1313,8 +1304,7 @@ Correction (cliquer pour afficher)</summary>
 </blockquote>
 </details>
 <blockquote>
-<p>Combien d&rsquo;appels à <code>tri_insertion</code> sont faits au sein de <code>tri_insertion(L)</code> quand <code>L</code> à une taille <code>n</code> ?</p>
-</blockquote>
+<p>Combien d&rsquo;appels à <code>tri_insertion</code> sont faits au sein de <code>tri_insertion(L)</code> quand <code>L</code> à une taille <code>n</code> ?</p></blockquote>
 <ul>
 <li>A : $n-1$</li>
 <li>B : $2^n$</li>
@@ -1329,17 +1319,12 @@ $n-1$
 </details>
 <p> </p>
 <h3 id="tri-fusion">Tri fusion</h3>
-
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/XaqR3G_NVoo?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/XaqR3G_NVoo?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 
 <blockquote>
-<p>Écrire la fonction <code>fusion</code> qui fusionne deux listes triées en une seule liste triée.</p>
-</blockquote>
+<p>Écrire la fonction <code>fusion</code> qui fusionne deux listes triées en une seule liste triée.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fusion</span>(Ltrie1,Ltrie2):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    fusion(Ltrie1: liste de nombres, Ltrie2: liste de nombres) -&gt; liste_sortie: liste de nombres
@@ -1365,8 +1350,7 @@ $n-1$
   </blockquote>
   </details>
 <blockquote>
-<p>Compléter la définition de <code>tri_fusion</code> pour le rendre opérant. Il faut que chaque appel récursif concerne approximativement une moitié de la liste.</p>
-</blockquote>
+<p>Compléter la définition de <code>tri_fusion</code> pour le rendre opérant. Il faut que chaque appel récursif concerne approximativement une moitié de la liste.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">tri_fusion</span>(L):
 </span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(L)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
@@ -1386,8 +1370,7 @@ On écrit donc&nbsp;:<br>
 <p>Supposons que la longueur de la liste <code>L</code> soit une puissance de 2.<br>
 Au niveau de récursivité $j$ (à l&rsquo;appel initial de <code>tri_fusion(L)</code>, $j=0$, pour les deux appels à <code>tri_fusion</code> au sein de <code>tri_fusion(L)</code>, $j=1$, etc.), on a décomposé le problème initial en &hellip; fusions, chacune opérant sur des sous-listes de taille &hellip; .</p>
 <blockquote>
-<p>Par quoi faut-il compléter les pointillés respectivement ?</p>
-</blockquote>
+<p>Par quoi faut-il compléter les pointillés respectivement ?</p></blockquote>
 <ul>
 <li>A : $2^j$ et $2^j$</li>
 <li>B : $n/2^j$ et $n/2^j$</li>
@@ -1408,8 +1391,7 @@ On a décomposé le problème initial en $2^j$ fusions, chacune opérant sur des
 Principe de l&rsquo;algorithme : le plus grand commun divisieur (pgcd) entre deux nombres a et b est le même que celui entre b et le reste de la division euclidienne de a par b ($a\pmod b$). Algébriquement, cela donne $\text{pgcd}(a,b)=\text{pgcd}(b,a\pmod b)$.<br>
 On a donc ainsi réduit le problème initial en un problème plus simple, ce qui permet d&rsquo;appliquer la technique algorithmique <strong>diviser pour régner</strong>.</p>
 <blockquote>
-<p>Écrivez une fonction récursive <code>pgcd</code> permettant de calculer le pgcd entre deux nombres (n&rsquo;oubliez pas le cas de base qu&rsquo;il vous faudra déterminer).</p>
-</blockquote>
+<p>Écrivez une fonction récursive <code>pgcd</code> permettant de calculer le pgcd entre deux nombres (n&rsquo;oubliez pas le cas de base qu&rsquo;il vous faudra déterminer).</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pgcd</span>(a,b):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    pgcd(a: int,b: int) -&gt; int
@@ -1485,8 +1467,7 @@ Une vidéo un peu chargée sur la complexité de l'algorithme d'Euclide&nbsp;:<b
 </span></span><span style="display:flex;"><span>cercles((<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">10</span>),<span style="color:#ae81ff">20</span>)
 </span></span></code></pre></div><p><img src="/cerclesrecu.png" alt="png"></p>
 <blockquote>
-<p>Définir une fonction récursive <code>dessin</code> qui affiche l&rsquo;image ci-dessous avec l&rsquo;appel <code>dessin((0,0),20)</code>.</p>
-</blockquote>
+<p>Définir une fonction récursive <code>dessin</code> qui affiche l&rsquo;image ci-dessous avec l&rsquo;appel <code>dessin((0,0),20)</code>.</p></blockquote>
 <p><img src="/dessin_a_reproduire.png" alt=""></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dessin</span>(centre,rayon):
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">### VOTRE CODE</span>
@@ -1521,8 +1502,7 @@ Correction (cliquer pour afficher)</summary>
 </span></span></code></pre></div><p><img src="/Linden1.png" alt="png"></p>
 <p>Comme c&rsquo;est plus courant de penser en termes de coordonnées, on va construire une fonction <code>dessine_points</code> qui permet de tracer des lignes joignant une liste de points donnés sous le format <code>(x,y)</code>.</p>
 <blockquote>
-<p>Complétez la définition de <code>dessine_points</code> ci-dessous.</p>
-</blockquote>
+<p>Complétez la définition de <code>dessine_points</code> ci-dessous.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dessine_points</span>(liste_points):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    précondition: liste_points est une liste de tuples contenant chacun deux nombres (x1,y1),(x2,y2),etc.
@@ -1556,8 +1536,7 @@ Correction (cliquer pour afficher)</summary>
 <p>On va donc devoir convertir une suite de consignes comme <code>'A+A-A+A-A'</code> en une liste de points.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> pi, sin, cos
 </span></span></code></pre></div><blockquote>
-<p>Compléter la définition de <code>consigne_vers_points</code> de façon à ce que le nouveau point <code>(x_new,y_new)</code> corresponde à une tortue ayant avancé de la distance <code>D</code> dans la direction actuelle depuis <code>(x_old,y_old)</code> (il manque seulement la définition de <code>y_new</code>).</p>
-</blockquote>
+<p>Compléter la définition de <code>consigne_vers_points</code> de façon à ce que le nouveau point <code>(x_new,y_new)</code> corresponde à une tortue ayant avancé de la distance <code>D</code> dans la direction actuelle depuis <code>(x_old,y_old)</code> (il manque seulement la définition de <code>y_new</code>).</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">consigne_vers_points</span>(consigne,angle):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    consigne_vers_points(consigne: string) -&gt; liste_de_points: list
@@ -1594,8 +1573,7 @@ Il manque la définition de <code>y_new</code>&nbsp;:<br>
 </span></span></code></pre></div><p><img src="/Linden2.png" alt="png"></p>
 <blockquote>
 <p>Donner la consigne et l&rsquo;angle permettant de tracer le triangle équilatéral suivant (<strong>votre consigne ne devra comprendre que 5 caractères !</strong>) :
-<img src="/trianglefractale.png" alt=""></p>
-</blockquote>
+<img src="/trianglefractale.png" alt=""></p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>clear()
 </span></span><span style="display:flex;"><span>consigne <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;...&#39;</span>
 </span></span><span style="display:flex;"><span>angle <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
@@ -1620,8 +1598,7 @@ Imaginons la séquence &lsquo;abca&rsquo; et les règles suivantes :</p>
 <p>Alors la séquence &lsquo;abca&rsquo; transformée par la règle devient &lsquo;babacb&rsquo; (&lsquo;c&rsquo; n&rsquo;étant pas touché par la règle, il n&rsquo;est pas modifié).</p>
 <blockquote>
 <p>Construisez une fonction <code>transformation</code> prenant en argumant une chaîne de caractères appelée <em>axiome</em> et une <em>règle</em> donnée sous la forme d&rsquo;un dictionnaire et retournant la séquence transformée.<br>
-Pour la règle de notre exemple, le dictionnaire serait <code>{'a':'b','b':'aba'}</code>.</p>
-</blockquote>
+Pour la règle de notre exemple, le dictionnaire serait <code>{'a':'b','b':'aba'}</code>.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">transformation</span>(axiome,regle):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    transformation(axiome: string, regle: dictionnary) -&gt; nvelle_chaine: string
@@ -1652,8 +1629,7 @@ Correction (cliquer pour afficher)</summary>
 <li>sinon, on retourne le résultat de la transformation appliquée non plus sur l&rsquo;axiome, mais sur la transformation de l&rsquo;axiome par la règle, et on diminue le niveau d&rsquo;une unité (il faut nécessairement faire en sorte d&rsquo;atterrir sur le cas de base).</li>
 </ul>
 <blockquote>
-<p>Complétez la définition de la fonction ci-dessous et testez-la dans la cellule suivante (il ne manque que l&rsquo;appel récursif).</p>
-</blockquote>
+<p>Complétez la définition de la fonction ci-dessous et testez-la dans la cellule suivante (il ne manque que l&rsquo;appel récursif).</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">transformation_recu</span>(axiome,regle,niveau):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    transformation_recu(axiome: string, regle: dictionnary, niveau: int) -&gt; nvelle_chaine: string
@@ -1688,8 +1664,7 @@ transformation_recu(transformation(axiome,regle),regle,niveau-1)
 </span></span></code></pre></div><p>À partir d&rsquo;un axiome, d&rsquo;une règle de transformation, et de l&rsquo;application récursive de la transformation sur l&rsquo;axiome, on obtient une consigne permettant de faire dessiner des fractales à la tortue !</p>
 <p>Pour le flacon de Koch, on part d&rsquo;un triangle équilatéral comme axiome (construit à partir d&rsquo;un angle de π/3 pour les virages de la tortue), et pour chaque segment de droite, on suit la règle de transformation représentée dans le schéma suivant.<br></p>
 <blockquote>
-<p>À vous de déterminer l&rsquo;axiome et la bonne règle.</p>
-</blockquote>
+<p>À vous de déterminer l&rsquo;axiome et la bonne règle.</p></blockquote>
 <p><img src="/RegleKoch.png?width=800px" alt=""></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>axiome <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;...&#39;</span>
 </span></span><span style="display:flex;"><span>regle_Koch <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;A&#39;</span>:<span style="color:#e6db74">&#39;...&#39;</span>}
@@ -1761,8 +1736,7 @@ Pour cela, il faut ajouter deux nouvelles consignes à <code>consigne_vers_point
 </span></span><span style="display:flex;"><span>dessine_points(consigne_vers_points_branche(<span style="color:#e6db74">&#39;A[-A]+A&#39;</span>, pi<span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>))
 </span></span></code></pre></div><p><img src="/Linden3.png" alt="png"></p>
 <blockquote>
-<p>Reproduisez la figure suivante en définissant la bonne consigne et le bon angle :</p>
-</blockquote>
+<p>Reproduisez la figure suivante en définissant la bonne consigne et le bon angle :</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>clear(ax<span style="color:#f92672">.</span>clear(<span style="color:#960050;background-color:#1e0010">`</span>ax<span style="color:#f92672">.</span>clear(ax<span style="color:#f92672">.</span>clear(<span style="color:#960050;background-color:#1e0010">`</span>)
 </span></span><span style="display:flex;"><span>consigne <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;...&#39;</span>
 </span></span><span style="display:flex;"><span>angle <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
@@ -2503,19 +2477,19 @@ Correction (cliquer pour afficher)</summary>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1749170272"></script>
-    <script src="/js/perfect-scrollbar.min.js?1749170272"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1749170272"></script>
-    <script src="/js/jquery.sticky.js?1749170272"></script>
-    <script src="/js/featherlight.min.js?1749170272"></script>
-    <script src="/js/highlight.pack.js?1749170272"></script>
+    <script src="/js/clipboard.min.js?1749997019"></script>
+    <script src="/js/perfect-scrollbar.min.js?1749997019"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1749997019"></script>
+    <script src="/js/jquery.sticky.js?1749997019"></script>
+    <script src="/js/featherlight.min.js?1749997019"></script>
+    <script src="/js/highlight.pack.js?1749997019"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1749170272"></script>
-    <script src="/js/learn.js?1749170272"></script>
-    <script src="/js/hugo-learn.js?1749170272"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1749997019"></script>
+    <script src="/js/learn.js?1749997019"></script>
+    <script src="/js/hugo-learn.js?1749997019"></script>
     
         
-            <script src="/mermaid/mermaid.js?1749170272"></script>
+            <script src="/mermaid/mermaid.js?1749997019"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

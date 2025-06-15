@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 
 
@@ -35,22 +35,22 @@ onload='renderMathInElement(document.body);'></script>
     
 
     
-    <link href="/css/nucleus.css?1749170272" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1749170272" rel="stylesheet">
-    <link href="/css/hybrid.css?1749170272" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1749170272" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1749170272" rel="stylesheet">
-    <link href="/css/auto-complete.css?1749170272" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1749170272" rel="stylesheet">
-    <link href="/css/theme.css?1749170272" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1749170272" rel="stylesheet">
+    <link href="/css/nucleus.css?1749997019" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1749997019" rel="stylesheet">
+    <link href="/css/hybrid.css?1749997019" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1749997019" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1749997019" rel="stylesheet">
+    <link href="/css/auto-complete.css?1749997019" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1749997019" rel="stylesheet">
+    <link href="/css/theme.css?1749997019" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1749997019" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1749170272" rel="stylesheet">
+    <link href="/css/theme-green.css?1749997019" rel="stylesheet">
     
-    <link href="/css/foo.css?1749170272" rel="stylesheet"><link href="/css/bar.css?1749170272" rel="stylesheet">
+    <link href="/css/foo.css?1749997019" rel="stylesheet"><link href="/css/bar.css?1749997019" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1749170272"></script>
+    <script src="/js/jquery-3.3.1.min.js?1749997019"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +91,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1749170272"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1749170272"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1749997019"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1749997019"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1749170272"></script>
+<script type="text/javascript" src="/js/search.js?1749997019"></script>
 
     
   </div>
@@ -1193,8 +1193,7 @@ list-style-type: disclosure-open;
 </span></span></code></pre></div><p>Il ne reste plus qu&rsquo;à définir la fonction <code>recherchePivot</code>&hellip;<br>Dans sa version naïve, il s&rsquo;agit simplement du prochain élément dans la diagonale.<br></p>
 <blockquote>
 <p>Écrire la fonction <code>recherchePivotNaive</code> correspondante en essayant de vous y retrouver avec les indices.
-La fonction doit retourner l&rsquo;indice du pivot.</p>
-</blockquote>
+La fonction doit retourner l&rsquo;indice du pivot.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recherchePivotNaive</span>(M: list,h: int,k: int) <span style="color:#f92672">-&gt;</span> int:
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># VOTRE CODE</span>
 </span></span></code></pre></div><details>
@@ -1239,8 +1238,7 @@ Tout simplement...
 0.0       1.0      8500.0    8500.0  
 0.0       0.0       1.0      0.9995 
 </code></pre><blockquote>
-<p>Construisons maintenant une fonction <code>substitution</code> qui part d&rsquo;une matrice échelonnée  $M_{n,n+1}$ et qui en déduit le vecteur solution $V$ du système d&rsquo;équations représenté par la matrice.</p>
-</blockquote>
+<p>Construisons maintenant une fonction <code>substitution</code> qui part d&rsquo;une matrice échelonnée  $M_{n,n+1}$ et qui en déduit le vecteur solution $V$ du système d&rsquo;équations représenté par la matrice.</p></blockquote>
 <p>$\color{green}V \color{black} = (\color{green}v_1\color{black},\color{green}v_2\color{black},\color{green}\ldots\color{black},\color{green}v_n\color{black})^t$ est tel que :</p>
 <p>$$ \begin{cases} m_{11}\,\color{green}v_1\color{black} +m_{12}\,\color{green}v_2\color{black} + \ldots + m_{1n}\,\color{green}v_n\color{black} = m_{1\,n+1} \\m_{21}\,\color{green}v_1\color{black}+m_{22}\,\color{green}v_2\color{black} + \ldots + m_{2n}\,\color{green}v_n\color{black} = m_{2\,n+1} \\ \quad\vdots \qquad\qquad\vdots\;\;\;\;\;\;\;\;\ddots\qquad \vdots \qquad\qquad\vdots\\m_{n1}\,\color{green}v_1\color{black} +m_{n2}\,\color{green}v_2\color{black} + \ldots + m_{nn}\,\color{green}v_n\color{black} = m_{n\,n+1} \end{cases} $$</p>
 <p>où $m_{ii} = 1$ pour $i$ allant de $1$ à $n$, et où $m_{i,j}=0$ pour $i&gt;j$.</p>
@@ -1282,8 +1280,7 @@ Correction (cliquer pour afficher)</summary>
 y = 5
 z = 0.9995
 </code></pre><blockquote>
-<p>Reprenons la fonction <code>recherchePivot</code> afin d&rsquo;implémenter la <strong>méthode du pivot partiel</strong>.<br>Pour cela, <code>recherchePivotPartiel</code> devra fournir l&rsquo;indice de la ligne où se trouve l&rsquo;élément de <strong>plus grande valeur absolue</strong> parmi les éléments sur la diagonale et en dessous (≥<code>h</code>) dans la colonne considérée (<code>k</code>).</p>
-</blockquote>
+<p>Reprenons la fonction <code>recherchePivot</code> afin d&rsquo;implémenter la <strong>méthode du pivot partiel</strong>.<br>Pour cela, <code>recherchePivotPartiel</code> devra fournir l&rsquo;indice de la ligne où se trouve l&rsquo;élément de <strong>plus grande valeur absolue</strong> parmi les éléments sur la diagonale et en dessous (≥<code>h</code>) dans la colonne considérée (<code>k</code>).</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recherchePivotPartiel</span>(M: list,h: int,k: int) <span style="color:#f92672">-&gt;</span> int:
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># VOTRE CODE</span>
 </span></span></code></pre></div><details>
@@ -1333,8 +1330,7 @@ z = 0.9998
 a : linéaire<br>
 b : quadratique<br>
 c : cubique<br>
-d : polynomiale de degré &gt; 3</p>
-</blockquote>
+d : polynomiale de degré &gt; 3</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1352,8 +1348,7 @@ On se retrouve finalement avec une somme de carrés consécutifs en terme de nom
 <p>L&rsquo;augmentation du nombre $n$ de points d&rsquo;interpolation ne constitue pas nécessairement une bonne stratégie d&rsquo;approximation comme on va le voir dans l&rsquo;exemple suivant.</p>
 <blockquote>
 <p>Définir en Python dans la cellule ci-dessous la fonction $f:x\mapsto\frac{1}{1+x^2}$.<br>
-La fonction devra s&rsquo;appeler <code>f</code>.</p>
-</blockquote>
+La fonction devra s&rsquo;appeler <code>f</code>.</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1365,8 +1360,7 @@ Correction (cliquer pour afficher)</summary>
 </details>
 <blockquote>
 <p>Construisez maintenant le polynôme d&rsquo;interpolation de Lagrange en suivant la formule du cours.<br>
-Attention : le nombre de points $n$ est un paramètre de la fonction construite.</p>
-</blockquote>
+Attention : le nombre de points $n$ est un paramètre de la fonction construite.</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">interp</span>(f, n: int, interv: tuple, x: float) <span style="color:#f92672">-&gt;</span> float:
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    postcondition: la fonction retourne P(x) où P est le polynôme d&#39;interpolation de Lagrange de f passant par les n points.
@@ -1399,8 +1393,7 @@ La somme est dans la boucle extérieure et le produit dans la boucle intérieure
 </blockquote>
 </details>
 <blockquote>
-<p>Quelle est la complexité de la fonction <code>interp</code> en fonction du nombre de nœuds $n$ ?</p>
-</blockquote>
+<p>Quelle est la complexité de la fonction <code>interp</code> en fonction du nombre de nœuds $n$ ?</p></blockquote>
 <ul>
 <li>a : linéaire</li>
 <li>b : quadratique</li>
@@ -1497,8 +1490,7 @@ Quadratique
 <blockquote>
 <p>À vous de jouer pour construire la fonction d&rsquo;interpolation par morceaux de degré 2.<br>
 On prendra systématiqement 2 intervalles successifs pour obtenir les 3 points à interpoler. Attention à ce que les morceaux successifs ne se superposent pas (au morceau constitué des 3 nœuds situés aux abscisses $\left(x_0 + i\times\frac{I}{N},x_0 + (i+1)\times\frac{I}{N},x_0 + (i+2)\times\frac{I}{N}\right)$ devra succéder un morceau constitué des 3 nœuds $\left(x_0 + (i+2)\times\frac{I}{N},x_0 + (i+3)\times\frac{I}{N},x_0 + (i+4)\times\frac{I}{N}\right)$ (en appelant $I$ l&rsquo;intervalle).<br>
-On utilisera dans le code la fonction <code>interp</code> (définie plus haut) sur les 3 points du morceau.<br></p>
-</blockquote>
+On utilisera dans le code la fonction <code>interp</code> (définie plus haut) sur les 3 points du morceau.<br></p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">interp_quad</span>(f,interv,N,x):
 </span></span><span style="display:flex;"><span>    debut,fin <span style="color:#f92672">=</span> interv[<span style="color:#ae81ff">0</span>],interv[<span style="color:#ae81ff">1</span>]
 </span></span><span style="display:flex;"><span>    X <span style="color:#f92672">=</span> [debut <span style="color:#f92672">+</span> i<span style="color:#f92672">*</span>(fin<span style="color:#f92672">-</span>debut)<span style="color:#f92672">/</span>(N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(N)]
@@ -1578,8 +1570,7 @@ Correction (cliquer pour afficher)</summary>
 <p style="text-align:center;font-size:20px;font-weight:bold"><a href="https://presentationssite.github.io/info/euler/">Présentation</a></p>
 <blockquote>
 <p>Complétez la fonction <code>Euler</code> ci-dessous qui implémente la méthode d&rsquo;Euler explicite permettant de résoudre les équations différentielles du premier ordre :
-$$\begin{cases}y&rsquo;(t)=f(t,y(t))\\y(t_0)=y_0\end{cases}$$</p>
-</blockquote>
+$$\begin{cases}y&rsquo;(t)=f(t,y(t))\\y(t_0)=y_0\end{cases}$$</p></blockquote>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Euler</span>(f,t0,tf,y0,h):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    postconditions: T est la liste des ti et Y est la liste des valeurs yi=y(ti)
@@ -1667,8 +1658,7 @@ Déterminons la position de l&rsquo;ascenceur au cours du temps.</p>
 </span></span><span style="display:flex;"><span>    V<span style="color:#f92672">.</span>append(v)
 </span></span><span style="display:flex;"><span>    Y<span style="color:#f92672">.</span>append(y)
 </span></span></code></pre></div><blockquote>
-<p>Quelle méthode d&rsquo;intégration a-t-elle été mise en œuvre dans le code ci-dessus ?</p>
-</blockquote>
+<p>Quelle méthode d&rsquo;intégration a-t-elle été mise en œuvre dans le code ci-dessus ?</p></blockquote>
 <ul>
 <li>a : méthode d&rsquo;Euler explicite</li>
 <li>b: méthode d&rsquo;Euler implicite</li>
@@ -1686,8 +1676,7 @@ Il s'agit donc de la méthode semi-explicite.
 </blockquote>
 </details>
 <blockquote>
-<p>Imaginons qu&rsquo;un pallier fasse 6 m et que le point de départ de l&rsquo;ascenceur corresponde au RDC (étage 0), quels sont les 2 autres étages visités par l&rsquo;ascenceur ?</p>
-</blockquote>
+<p>Imaginons qu&rsquo;un pallier fasse 6 m et que le point de départ de l&rsquo;ascenceur corresponde au RDC (étage 0), quels sont les 2 autres étages visités par l&rsquo;ascenceur ?</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -1707,8 +1696,7 @@ $$\begin{cases}\sigma = 3\\\rho = 26.5\\\beta = 1\end{cases}$$
 et $(x_0;y_0;z_0)=(0;1;1,05)$.<br></p>
 <blockquote>
 <p>Vous utiliserez la méthode d&rsquo;Euler explicite et prendrez un pas de $0,01$.<br>
-Votre code devra produire les 3 listes de 10001 éléments contenant les valeurs $x(t_i),y(t_i),z(t_i)$ pour chaque $t_i \in [0,100]$ et elles devront être nommées (pour faire original) <code>X</code>, <code>Y</code> et <code>Z</code>.</p>
-</blockquote>
+Votre code devra produire les 3 listes de 10001 éléments contenant les valeurs $x(t_i),y(t_i),z(t_i)$ pour chaque $t_i \in [0,100]$ et elles devront être nommées (pour faire original) <code>X</code>, <code>Y</code> et <code>Z</code>.</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2450,19 +2438,19 @@ while t <= 100:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1749170272"></script>
-    <script src="/js/perfect-scrollbar.min.js?1749170272"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1749170272"></script>
-    <script src="/js/jquery.sticky.js?1749170272"></script>
-    <script src="/js/featherlight.min.js?1749170272"></script>
-    <script src="/js/highlight.pack.js?1749170272"></script>
+    <script src="/js/clipboard.min.js?1749997019"></script>
+    <script src="/js/perfect-scrollbar.min.js?1749997019"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1749997019"></script>
+    <script src="/js/jquery.sticky.js?1749997019"></script>
+    <script src="/js/featherlight.min.js?1749997019"></script>
+    <script src="/js/highlight.pack.js?1749997019"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1749170272"></script>
-    <script src="/js/learn.js?1749170272"></script>
-    <script src="/js/hugo-learn.js?1749170272"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1749997019"></script>
+    <script src="/js/learn.js?1749997019"></script>
+    <script src="/js/hugo-learn.js?1749997019"></script>
     
         
-            <script src="/mermaid/mermaid.js?1749170272"></script>
+            <script src="/mermaid/mermaid.js?1749997019"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
