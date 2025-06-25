@@ -11,46 +11,44 @@
     <title>TP 4 : algorithmes dichotomiques - Cours info TSI</title>
     
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-
-
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-
-
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI"
-crossorigin="anonymous"
-onload='renderMathInElement(document.body);'></script>
-
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-            delimiters: [
-                {left: "$$", right: "$$", display: true},
-                {left: "$", right: "$", display: false}
-            ]
-        });
-    });
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']]
+  },
+
+   
+  displayOverflow: 'linebreak',   
+};
 </script>
+
+
+<script async
+  src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js"
+  id="MathJax-script"></script>
+
+
     
 
     
-    <link href="/css/nucleus.css?1749997019" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1749997019" rel="stylesheet">
-    <link href="/css/hybrid.css?1749997019" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1749997019" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1749997019" rel="stylesheet">
-    <link href="/css/auto-complete.css?1749997019" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1749997019" rel="stylesheet">
-    <link href="/css/theme.css?1749997019" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1749997019" rel="stylesheet">
+    <link href="/css/nucleus.css?1750891390" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1750891390" rel="stylesheet">
+    <link href="/css/hybrid.css?1750891390" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1750891390" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1750891390" rel="stylesheet">
+    <link href="/css/auto-complete.css?1750891390" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1750891390" rel="stylesheet">
+    <link href="/css/theme.css?1750891390" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1750891390" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1749997019" rel="stylesheet">
+    <link href="/css/theme-green.css?1750891390" rel="stylesheet">
     
-    <link href="/css/foo.css?1749997019" rel="stylesheet"><link href="/css/bar.css?1749997019" rel="stylesheet">
+    <link href="/css/foo.css?1750891390" rel="stylesheet"><link href="/css/bar.css?1750891390" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1749997019"></script>
+    <script src="/js/jquery-3.3.1.min.js?1750891390"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -91,14 +89,14 @@ onload='renderMathInElement(document.body);'></script>
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1749997019"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1749997019"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1750891390"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1750891390"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1749997019"></script>
+<script type="text/javascript" src="/js/search.js?1750891390"></script>
 
     
   </div>
@@ -2456,19 +2454,19 @@ On constate que l'accroissement du nombre d'itérations semble proportionnel à 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1749997019"></script>
-    <script src="/js/perfect-scrollbar.min.js?1749997019"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1749997019"></script>
-    <script src="/js/jquery.sticky.js?1749997019"></script>
-    <script src="/js/featherlight.min.js?1749997019"></script>
-    <script src="/js/highlight.pack.js?1749997019"></script>
+    <script src="/js/clipboard.min.js?1750891390"></script>
+    <script src="/js/perfect-scrollbar.min.js?1750891390"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1750891390"></script>
+    <script src="/js/jquery.sticky.js?1750891390"></script>
+    <script src="/js/featherlight.min.js?1750891390"></script>
+    <script src="/js/highlight.pack.js?1750891390"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1749997019"></script>
-    <script src="/js/learn.js?1749997019"></script>
-    <script src="/js/hugo-learn.js?1749997019"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1750891390"></script>
+    <script src="/js/learn.js?1750891390"></script>
+    <script src="/js/hugo-learn.js?1750891390"></script>
     
         
-            <script src="/mermaid/mermaid.js?1749997019"></script>
+            <script src="/mermaid/mermaid.js?1750891390"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
