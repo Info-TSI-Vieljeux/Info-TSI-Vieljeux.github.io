@@ -33,22 +33,22 @@ window.MathJax = {
     
 
     
-    <link href="/css/nucleus.css?1762432599" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1762432599" rel="stylesheet">
-    <link href="/css/hybrid.css?1762432599" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1762432599" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1762432599" rel="stylesheet">
-    <link href="/css/auto-complete.css?1762432599" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1762432599" rel="stylesheet">
-    <link href="/css/theme.css?1762432599" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1762432599" rel="stylesheet">
+    <link href="/css/nucleus.css?1767486725" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1767486725" rel="stylesheet">
+    <link href="/css/hybrid.css?1767486725" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1767486725" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1767486725" rel="stylesheet">
+    <link href="/css/auto-complete.css?1767486725" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1767486725" rel="stylesheet">
+    <link href="/css/theme.css?1767486725" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1767486725" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1762432599" rel="stylesheet">
+    <link href="/css/theme-green.css?1767486725" rel="stylesheet">
     
-    <link href="/css/foo.css?1762432599" rel="stylesheet"><link href="/css/bar.css?1762432599" rel="stylesheet">
+    <link href="/css/foo.css?1767486725" rel="stylesheet"><link href="/css/bar.css?1767486725" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1762432599"></script>
+    <script src="/js/jquery-3.3.1.min.js?1767486725"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -89,14 +89,14 @@ window.MathJax = {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1762432599"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1762432599"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1767486725"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1767486725"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1762432599"></script>
+<script type="text/javascript" src="/js/search.js?1767486725"></script>
 
     
   </div>
@@ -1733,7 +1733,7 @@ st.stdev(Liste_scores)
 </code></pre>
 </blockquote>
 </details>
-<p>Tracons maintenant un diagramme en batons des scores de bonheur des 60 premiers pays.</p>
+<p>Traçons maintenant un diagramme en bâtons des scores de bonheur des 60 premiers pays.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig,ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">4</span>))
 </span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>barplot(ax <span style="color:#f92672">=</span> ax,x <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>index[:<span style="color:#ae81ff">60</span>], y <span style="color:#f92672">=</span> data_monde[<span style="color:#e6db74">&#39;Score de bonheur&#39;</span>]<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">60</span>))
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xticks(rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>)
@@ -2175,18 +2175,54 @@ On peut zoomer sur ces graphiques interactifs et obtenir des informations en sur
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Cette fois-ci, le nombre de classes est désigné par nbins.</span>
 </span></span></code></pre></div><p>
   
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 
 
 
-<div id="/corrup.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-66a5f363cc40d42c84ad12e1e2a18806" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/corrup.json", function(err, fig) {
-    Plotly.plot('\/corrup.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-66a5f363cc40d42c84ad12e1e2a18806");
+    return;
+  }
+
+  
+  const url = "\/corrup.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-66a5f363cc40d42c84ad12e1e2a18806", fig.data, fig.layout, { responsive: true });
+})();
 </script></p>
 <blockquote>
-<p>Modifez le graphe précedent pour répondre à cette question : combien la classe la plus peuplée de l&rsquo;histogramme de l&rsquo;espérence de vie en bonne santé compte-elle de valeurs si l&rsquo;histogramme comporte 30 classes ?</p></blockquote>
+<p>Modifiez le graphe précédent pour répondre à cette question : combien la classe la plus peuplée de l&rsquo;histogramme de l&rsquo;espérance de vie en bonne santé compte-elle de valeurs si l&rsquo;histogramme comporte 30 classes ?</p></blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2233,11 +2269,47 @@ Pour les moustaches, on calcule d&rsquo;abord 1,5 fois la distance interquartile
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>px<span style="color:#f92672">.</span>scatter(data_monde,x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;PIB par habitant (log)&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Score de bonheur&#39;</span>, hover_name<span style="color:#f92672">=</span>data_monde<span style="color:#f92672">.</span>index, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Région du monde&#39;</span>)
 </span></span></code></pre></div>
 
-<div id="/zoompairplot.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-b2961e0f2001e0322a1b148016348a50" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/zoompairplot.json", function(err, fig) {
-    Plotly.plot('\/zoompairplot.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-b2961e0f2001e0322a1b148016348a50");
+    return;
+  }
+
+  
+  const url = "\/zoompairplot.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-b2961e0f2001e0322a1b148016348a50", fig.data, fig.layout, { responsive: true });
+})();
 </script>
 <blockquote>
 <p>Trouvez la région du monde représentée sur le graphe suivant (le graphe interactif permet de trouver la réponse facilement).
@@ -2330,11 +2402,47 @@ Commentaire (cliquer pour afficher)&nbsp;</summary>
 </span></span><span style="display:flex;"><span>px<span style="color:#f92672">.</span>bar(components<span style="color:#f92672">.</span>T, x<span style="color:#f92672">=</span>data<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>values[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], y<span style="color:#f92672">=</span>n_c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, labels<span style="color:#f92672">=</span>{<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>n_c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Composante Principale (CP) </span><span style="color:#e6db74">{</span>n_c<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>})
 </span></span></code></pre></div>
 
-<div id="/compppale.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-33e6ad903c4973ea9483d58c852e6c6c" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/compppale.json", function(err, fig) {
-    Plotly.plot('\/compppale.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-33e6ad903c4973ea9483d58c852e6c6c");
+    return;
+  }
+
+  
+  const url = "\/compppale.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-33e6ad903c4973ea9483d58c852e6c6c", fig.data, fig.layout, { responsive: true });
+})();
 </script>
 <blockquote>
 <p>Quelle est le nom de la variable participant le plus à la composante principale n°34 ?</p></blockquote>
@@ -2352,11 +2460,47 @@ La 'Générosité'.
 </span></span></code></pre></div><p>
 
 
-<div id="/explvariance.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-50c4345dc49213d5b589b8943f822010" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/explvariance.json", function(err, fig) {
-    Plotly.plot('\/explvariance.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-50c4345dc49213d5b589b8943f822010");
+    return;
+  }
+
+  
+  const url = "\/explvariance.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-50c4345dc49213d5b589b8943f822010", fig.data, fig.layout, { responsive: true });
+})();
 </script></p>
 <p>Les trois premières composantes expliquent plus de 80% de la variance !</p>
 <p>Plaçons les données dans un espace réduit à ces 3 dimensions :</p>
@@ -2366,11 +2510,47 @@ Plotly.d3.json("/explvariance.json", function(err, fig) {
 </span></span><span style="display:flex;"><span>              hover_name<span style="color:#f92672">=</span>data_monde<span style="color:#f92672">.</span>index)
 </span></span></code></pre></div>
 
-<div id="/scat3Dgpe.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-1285e1b8f47bc5001a18f5ac098cf154" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/scat3Dgpe.json", function(err, fig) {
-    Plotly.plot('\/scat3Dgpe.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-1285e1b8f47bc5001a18f5ac098cf154");
+    return;
+  }
+
+  
+  const url = "\/scat3Dgpe.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-1285e1b8f47bc5001a18f5ac098cf154", fig.data, fig.layout, { responsive: true });
+})();
 </script>
 <p>On constate à nouveau que nos 3 groupes discriminent plutôt très bien nos données même si quelques chevauchements existent.</p>
 <p>C&rsquo;est le moment d&rsquo;utiliser l&rsquo;algorithme des k-moyennes pour essayer de former 3 groupes homogènes :</p>
@@ -2479,11 +2659,47 @@ Plotly.d3.json("/scat3Dgpe.json", function(err, fig) {
 </span></span><span style="display:flex;"><span>fig<span style="color:#f92672">.</span>update_layout(legend_title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Cluster&#34;</span>)
 </span></span></code></pre></div>
 
-<div id="/scat3Dclust.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-fcd028f9039dbb97c9ee9ac707940191" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/scat3Dclust.json", function(err, fig) {
-    Plotly.plot('\/scat3Dclust.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-fcd028f9039dbb97c9ee9ac707940191");
+    return;
+  }
+
+  
+  const url = "\/scat3Dclust.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-fcd028f9039dbb97c9ee9ac707940191", fig.data, fig.layout, { responsive: true });
+})();
 </script>
 <p>Les 3 clusters créés reproduisent à peu de chose près les 3 groupes &ldquo;Nord&rdquo;, &ldquo;Sud&rdquo;, &ldquo;Intermédiaire&rdquo; construits à la main.</p>
 <blockquote>
@@ -2658,11 +2874,47 @@ Mais pourquoi donc ? <code>plotly express</code> permet de tracer la carte d&rsq
 </span></span><span style="display:flex;"><span>fig<span style="color:#f92672">.</span>show()
 </span></span></code></pre></div>
 
-<div id="/cartechoro1.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-653fa42c1ad93ebd05cb76576a6ce936" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/cartechoro1.json", function(err, fig) {
-    Plotly.plot('\/cartechoro1.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-653fa42c1ad93ebd05cb76576a6ce936");
+    return;
+  }
+
+  
+  const url = "\/cartechoro1.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-653fa42c1ad93ebd05cb76576a6ce936", fig.data, fig.layout, { responsive: true });
+})();
 </script>
 <p>On est maintenant paré pour représenter les 3 clusters obtenus par l&rsquo;algo des k-moyennes du tp3b.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde[<span style="color:#e6db74">&#34;Cluster&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;n°</span><span style="color:#e6db74">{</span>cluster<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">for</span> cluster <span style="color:#f92672">in</span> data_monde[<span style="color:#e6db74">&#34;Cluster&#34;</span>]<span style="color:#f92672">.</span>astype(<span style="color:#e6db74">&#39;int64&#39;</span>) <span style="color:#66d9ef">if</span> cluster <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;nan&#39;</span>]
@@ -2747,11 +2999,47 @@ Plotly.d3.json("/cartechoro1.json", function(err, fig) {
 </span></span><span style="display:flex;"><span>fig<span style="color:#f92672">.</span>show()
 </span></span></code></pre></div>
 
-<div id="/cartechoro2.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-cf9256a80c240848c183292a158b5db3" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/cartechoro2.json", function(err, fig) {
-    Plotly.plot('\/cartechoro2.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-cf9256a80c240848c183292a158b5db3");
+    return;
+  }
+
+  
+  const url = "\/cartechoro2.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-cf9256a80c240848c183292a158b5db3", fig.data, fig.layout, { responsive: true });
+})();
 </script>
 <p>Terminons en fabriquant une carte régionale.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> reg <span style="color:#f92672">in</span> pd<span style="color:#f92672">.</span>unique(data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>]):
@@ -2781,11 +3069,47 @@ Plotly.d3.json("/cartechoro2.json", function(err, fig) {
 </span></span><span style="display:flex;"><span>fig<span style="color:#f92672">.</span>show()
 </span></span></code></pre></div>
 
-<div id="/cartechoro3.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-944ca4b77825545be5220b12c63f05a6" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/cartechoro3.json", function(err, fig) {
-    Plotly.plot('\/cartechoro3.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-944ca4b77825545be5220b12c63f05a6");
+    return;
+  }
+
+  
+  const url = "\/cartechoro3.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-944ca4b77825545be5220b12c63f05a6", fig.data, fig.layout, { responsive: true });
+})();
 </script>
 <blockquote>
 <p>Modifiez les cellules qui précèdent pour que le graphique ci-dessus affiche la carte du score de générosité des pays d&rsquo;Asie du sud-est.</p></blockquote>
@@ -3181,11 +3505,47 @@ vert
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>px<span style="color:#f92672">.</span>line(serie_temp[[<span style="color:#e6db74">&#34;Consommation&#34;</span>,<span style="color:#e6db74">&#34;Vent&#34;</span>,<span style="color:#e6db74">&#34;Solaire&#34;</span>]])
 </span></span></code></pre></div>
 
-<div id="/linecomplet.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-8f0bd9d963eff3d075e37b7b7d95b96a" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/linecomplet.json", function(err, fig) {
-    Plotly.plot('\/linecomplet.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-8f0bd9d963eff3d075e37b7b7d95b96a");
+    return;
+  }
+
+  
+  const url = "\/linecomplet.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-8f0bd9d963eff3d075e37b7b7d95b96a", fig.data, fig.layout, { responsive: true });
+})();
 </script>
 <p>On constate d&rsquo;importantes variations saisonnières.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>zoom <span style="color:#f92672">=</span> serie_temp[serie_temp[<span style="color:#e6db74">&#39;année&#39;</span>]<span style="color:#f92672">==</span><span style="color:#ae81ff">2016</span>]
@@ -3195,11 +3555,47 @@ Plotly.d3.json("/linecomplet.json", function(err, fig) {
 </span></span><span style="display:flex;"><span>fig<span style="color:#f92672">.</span>add_traces([fig1<span style="color:#f92672">.</span>data[<span style="color:#ae81ff">0</span>],<span style="color:#f92672">*</span>[fig2<span style="color:#f92672">.</span>data[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">7</span>)]])
 </span></span></code></pre></div>
 
-<div id="/zoom2016.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-a67cff9ad850b45ff53e05e624030fe7" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/zoom2016.json", function(err, fig) {
-    Plotly.plot('\/zoom2016.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-a67cff9ad850b45ff53e05e624030fe7");
+    return;
+  }
+
+  
+  const url = "\/zoom2016.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-a67cff9ad850b45ff53e05e624030fe7", fig.data, fig.layout, { responsive: true });
+})();
 </script>
 <p>Une variabilité hebdomadaire se superpose à la tendance saisonnière.</p>
 <p>Grâce à la méthode des dataframe pandas <code>groupby</code>, on peut facilement grouper les donner de manière à obtenir les statistiques qui nous intéressent.<br>
@@ -3256,11 +3652,47 @@ On retrouve une philosophie proche des fonctions d'agrégations en SQL.
 </span></span><span style="display:flex;"><span>px<span style="color:#f92672">.</span>box(serie_temp,x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;jour&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Consommation&#39;</span>,hover_data<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;date&#34;</span>})
 </span></span></code></pre></div>
 
-<div id="/jourparjour.json" class="plotly" style="height:600px"></div>
+
+
+<div id="plotly-0c71cb21973d983123d51156e4a8cc25" class="plotly" style="height: 600px;"></div>
+
 <script>
-Plotly.d3.json("/jourparjour.json", function(err, fig) {
-    Plotly.plot('\/jourparjour.json', fig.data, fig.layout, {responsive: true});
-});
+(async () => {
+  
+  if (!window.Plotly) {
+    if (!window.__plotlyLoadingPromise) {
+      window.__plotlyLoadingPromise = new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.plot.ly/plotly-2.27.0.min.js";
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => reject(new Error("Échec de chargement Plotly (CDN)."));
+        document.head.appendChild(s);
+      });
+    }
+    try {
+      await window.__plotlyLoadingPromise;
+    } catch (e) {
+      console.error(e);
+      return;
+    }
+  }
+
+  if (!window.Plotly) {
+    console.error("Plotly absent après chargement :", "plotly-0c71cb21973d983123d51156e4a8cc25");
+    return;
+  }
+
+  
+  const url = "\/jourparjour.json";
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error("JSON Plotly introuvable:", url, res.status);
+    return;
+  }
+  const fig = await res.json();
+  Plotly.newPlot("plotly-0c71cb21973d983123d51156e4a8cc25", fig.data, fig.layout, { responsive: true });
+})();
 </script>
 <blockquote>
 <p>Pourquoi y a-t-il autant de points au-delà des moustaches les jours de semaine ?</p></blockquote>
@@ -3984,19 +4416,19 @@ Correction (cliquer pour afficher)</summary>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1762432599"></script>
-    <script src="/js/perfect-scrollbar.min.js?1762432599"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1762432599"></script>
-    <script src="/js/jquery.sticky.js?1762432599"></script>
-    <script src="/js/featherlight.min.js?1762432599"></script>
-    <script src="/js/highlight.pack.js?1762432599"></script>
+    <script src="/js/clipboard.min.js?1767486725"></script>
+    <script src="/js/perfect-scrollbar.min.js?1767486725"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1767486725"></script>
+    <script src="/js/jquery.sticky.js?1767486725"></script>
+    <script src="/js/featherlight.min.js?1767486725"></script>
+    <script src="/js/highlight.pack.js?1767486725"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1762432599"></script>
-    <script src="/js/learn.js?1762432599"></script>
-    <script src="/js/hugo-learn.js?1762432599"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1767486725"></script>
+    <script src="/js/learn.js?1767486725"></script>
+    <script src="/js/hugo-learn.js?1767486725"></script>
     
         
-            <script src="/mermaid/mermaid.js?1762432599"></script>
+            <script src="/mermaid/mermaid.js?1767486725"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
