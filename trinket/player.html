@@ -18,6 +18,7 @@
     --tk-accent:#2b7a4b;       /* vert "exécuter" */
     --tk-accent-hover:#246b41;
     --tk-stop:#d14b3d;         /* rouge "arrêter" */
+    --tk-input:#1971c2;        /* bleu de la saisie console (façon Trinket) */
     --tk-tab-active:#ffffff;
     --tk-error:#c0392b;
     --tk-radius:8px;
@@ -83,7 +84,15 @@
   /* Sortie */
   .tk-out{padding:10px 12px}
   .tk-stdout{margin:0;font-family:var(--tk-mono);font-size:13.5px;line-height:1.45;white-space:pre-wrap;word-break:break-word}
-  .tk-stdin{font-family:var(--tk-mono);font-size:13.5px;border:1px solid var(--tk-border);border-radius:4px;padding:1px 4px}
+  /* Saisie input() façon Trinket : inline dans la console, texte bleu, sans
+     cadre, avec un curseur bloc clignotant (pas le caret natif). */
+  .tk-inwrap{white-space:pre}
+  .tk-stdin{font:inherit;color:var(--tk-input);border:0;background:transparent;
+    padding:0;margin:0;outline:none;caret-color:transparent;vertical-align:baseline}
+  .tk-instyle{color:var(--tk-input)}   /* valeur validée, conservée en bleu */
+  .tk-caret{display:inline-block;width:0.6em;height:1.1em;background:var(--tk-muted);
+    vertical-align:text-bottom;animation:tk-blink 1.05s steps(1,start) infinite}
+  @keyframes tk-blink{50%{opacity:0}}
   .tk-canvas{display:flex;justify-content:center}
   .tk-error{color:var(--tk-error);font-family:var(--tk-mono);font-size:13px;white-space:pre-wrap;margin-top:6px}
   /* Fichiers générés (open()/write) : reproduit l'onglet "fichier" de Trinket */
@@ -565,13 +574,31 @@ function makeInputFun(){
   return function(promptStr){
     return new Promise(function(resolve){
       if (promptStr) els.stdout.appendChild(document.createTextNode(promptStr));
-      var inp = el("input", {class:"tk-stdin", type:"text"});
-      els.stdout.appendChild(inp);
+      var wrap  = el("span", {class:"tk-inwrap"});
+      var inp   = el("input", {class:"tk-stdin", type:"text",
+                               autocomplete:"off", autocorrect:"off", spellcheck:"false"});
+      var caret = el("span", {class:"tk-caret"});
+      wrap.appendChild(inp); wrap.appendChild(caret);
+      els.stdout.appendChild(wrap);
+
+      // largeur auto : police monospace → 1 caractère = 1ch, le curseur suit
+      function grow(){ inp.style.width = inp.value.length + "ch"; }
+      grow();
       inp.focus();
+
+      // un clic dans la console redonne le focus à la saisie en cours
+      function refocus(){ if (document.body.contains(inp)) inp.focus(); }
+      els.stdout.addEventListener("click", refocus);
+
+      inp.addEventListener("input", grow);
       inp.addEventListener("keydown", function(ev){
         if (ev.key === "Enter"){
+          ev.preventDefault();
+          els.stdout.removeEventListener("click", refocus);
           var v = inp.value;
-          inp.replaceWith(document.createTextNode(v + "\n"));
+          var done = el("span", {class:"tk-instyle"});
+          done.textContent = v + "\n";          // valeur conservée en bleu, dans le flux
+          wrap.replaceWith(done);
           resolve(v);
         }
       });
