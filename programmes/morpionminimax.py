@@ -31,7 +31,7 @@ while choix not in ("O","N","o","n"):
     choix = input("\nVoulez-vous jouer en premier ? O ou N : ")
 
 if typeIA == "1" and choix in ("n","N"):
-  print("\nLe premier coup de l'IA peut prendre un peu de temps...")
+    print("\nLe premier coup de l'IA peut prendre un peu de temps...")
 
 print("\nl'IA a les 'O'\n")
 IA = 'O'
@@ -139,7 +139,7 @@ def tour_IA(plateau):
 if choix in ("O","o"):
     affichage(plateau)
     tour_humain(plateau)
- 
+
 while True:
     input("Au tour de l'IA (appuyez sur Entrée) ")
     tour_IA(plateau)
