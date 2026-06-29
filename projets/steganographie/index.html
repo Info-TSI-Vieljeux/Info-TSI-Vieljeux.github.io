@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.150.1">
+    <meta name="generator" content="Hugo 0.163.1">
     <meta name="description" content="">
 
 
@@ -33,22 +33,22 @@ window.MathJax = {
     
 
     
-    <link href="/css/nucleus.css?1779369903" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1779369903" rel="stylesheet">
-    <link href="/css/hybrid.css?1779369903" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1779369903" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1779369903" rel="stylesheet">
-    <link href="/css/auto-complete.css?1779369903" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1779369903" rel="stylesheet">
-    <link href="/css/theme.css?1779369903" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1779369903" rel="stylesheet">
+    <link href="/css/nucleus.css?1782736912" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1782736912" rel="stylesheet">
+    <link href="/css/hybrid.css?1782736912" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1782736912" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1782736912" rel="stylesheet">
+    <link href="/css/auto-complete.css?1782736912" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1782736912" rel="stylesheet">
+    <link href="/css/theme.css?1782736912" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1782736912" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1779369903" rel="stylesheet">
+    <link href="/css/theme-green.css?1782736912" rel="stylesheet">
     
-    <link href="/css/foo.css?1779369903" rel="stylesheet"><link href="/css/bar.css?1779369903" rel="stylesheet">
+    <link href="/css/foo.css?1782736912" rel="stylesheet"><link href="/css/bar.css?1782736912" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1779369903"></script>
+    <script src="/js/jquery-3.3.1.min.js?1782736912"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -85,18 +85,18 @@ window.MathJax = {
     
         <div class="searchbox">
     <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1779369903"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1779369903"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1782736912"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1782736912"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1779369903"></script>
+<script type="text/javascript" src="/js/search.js?1782736912"></script>
 
     
   </div>
@@ -1118,12 +1118,12 @@ window.MathJax = {
 <p>Dévoiler le message caché dans les 2 bits de poids faible de l&rsquo;image fournie (dont l&rsquo;adresse est <a href="https://info-tsi-vieljeux.github.io/imageprojet.png">https://info-tsi-vieljeux.github.io/cryptedimage.png</a>).</p>
 <p><img src="/cryptedimage.png" alt=""></p>
 <p>Importons d&rsquo;abord les modules nécessaires :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.request <span style="color:#75715e"># pour récupérer une image sur le web</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> IPython.display <span style="color:#f92672">import</span> display <span style="color:#75715e"># pour afficher dans un notebook</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
 </span></span></code></pre></div><p>Ce petit code suffit pour dévoiler l&rsquo;image cachée dans l&rsquo;image :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decache_image</span>(image):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decache_image</span>(image):
 </span></span><span style="display:flex;"><span>    image_decrypt <span style="color:#f92672">=</span> (image <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">6</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">**</span><span style="color:#ae81ff">5</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> image_decrypt
 </span></span></code></pre></div><ul>
@@ -1132,12 +1132,12 @@ window.MathJax = {
 <li><code>+ 2**5</code> permet de décaller les valeurs pour les centrer entre 0 et 255 $\rightarrow\{32,96,160,224\}$.</li>
 </ul>
 <p>Pour l&rsquo;afficher (sur un notebook type Colab) :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>final <span style="color:#f92672">=</span> decache_image(cache)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>final <span style="color:#f92672">=</span> decache_image(cache)
 </span></span><span style="display:flex;"><span>affichage <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>fromarray(comparaison)
 </span></span><span style="display:flex;"><span>display(affichage)
 </span></span></code></pre></div><p><img src="/imagedevoile.png" alt=""></p>
 <p>On peut vérifier que l&rsquo;image obtenue est bien codée sur 2 bits avec le code suivant :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(set(final<span style="color:#f92672">.</span>flatten()))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(set(final<span style="color:#f92672">.</span>flatten()))
 </span></span></code></pre></div><p><code>{32, 224, 96, 160}</code><br></p>
 <p><code>flatten</code> est une méthode de <code>numpy</code> permettant de transformer un tableau multidimensionnel en un tableau unidimensionnel (ici, le tableau image 3D devient donc un tableau 1D de longueur $l\times L \times 3$).<br>
 <code>set</code> est une fonction native python permettant de convertir une séquence d&rsquo;objets en une nouvelle structure, l&rsquo;ensemble (en python, c&rsquo;est le type<code>set</code>). Son grand avantage est d&rsquo;éliminer automatiquement tout doublon !</p>
@@ -1145,7 +1145,7 @@ window.MathJax = {
 <h2 id="deuxième-mission">Deuxième mission</h2>
 <p>Il faut donc réussir à convertir l&rsquo;image secrète en 6 bits (2 bits pour chaque pixel) et l&rsquo;image servant de cache en 18 bits (6 bits pour chaque pixel) avant d&rsquo;additionner les deux images, faisant en sorte que l&rsquo;image à cacher corresponde aux deux bits de poids faible de l&rsquo;image finale.</p>
 <p><img src="/missionimage.png" alt=""></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cache_image</span>(image1,image2):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cache_image</span>(image1,image2):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    cache_image(image1 : numpy.ndarray (H1,L1,3),image2 : numpy.ndarray (H2,L2,3)) -&gt; numpy.ndarray (H1,L1,3)
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    cache image2 dans image1 après l&#39;avoir recadrée si besoin
@@ -1160,7 +1160,7 @@ window.MathJax = {
 </span></span><span style="display:flex;"><span>    imagemix[h:h<span style="color:#f92672">+</span>H2,l:l<span style="color:#f92672">+</span>L2] <span style="color:#f92672">+=</span> hidden
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> imagemix
 </span></span></code></pre></div><p>Et pour faciliter l&rsquo;utilisation d&rsquo;url pour chaque image :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cachageimage</span>():
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cachageimage</span>():
 </span></span><span style="display:flex;"><span>    opener<span style="color:#f92672">=</span>urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>build_opener()
 </span></span><span style="display:flex;"><span>    opener<span style="color:#f92672">.</span>addheaders<span style="color:#f92672">=</span>[(<span style="color:#e6db74">&#39;User-Agent&#39;</span>,<span style="color:#e6db74">&#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1941.0 Safari/537.36&#39;</span>)]
 </span></span><span style="display:flex;"><span>    urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>install_opener(opener) <span style="color:#75715e"># sans ce bazar, certains sites refusent la visite car le fouineur se présente pas comme un browser</span>
@@ -1889,19 +1889,19 @@ window.MathJax = {
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1779369903"></script>
-    <script src="/js/perfect-scrollbar.min.js?1779369903"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1779369903"></script>
-    <script src="/js/jquery.sticky.js?1779369903"></script>
-    <script src="/js/featherlight.min.js?1779369903"></script>
-    <script src="/js/highlight.pack.js?1779369903"></script>
+    <script src="/js/clipboard.min.js?1782736912"></script>
+    <script src="/js/perfect-scrollbar.min.js?1782736912"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1782736912"></script>
+    <script src="/js/jquery.sticky.js?1782736912"></script>
+    <script src="/js/featherlight.min.js?1782736912"></script>
+    <script src="/js/highlight.pack.js?1782736912"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1779369903"></script>
-    <script src="/js/learn.js?1779369903"></script>
-    <script src="/js/hugo-learn.js?1779369903"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1782736912"></script>
+    <script src="/js/learn.js?1782736912"></script>
+    <script src="/js/hugo-learn.js?1782736912"></script>
     
         
-            <script src="/mermaid/mermaid.js?1779369903"></script>
+            <script src="/mermaid/mermaid.js?1782736912"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

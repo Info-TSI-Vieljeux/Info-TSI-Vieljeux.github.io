@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.150.1">
+    <meta name="generator" content="Hugo 0.163.1">
     <meta name="description" content="">
 
 
@@ -33,22 +33,22 @@ window.MathJax = {
     
 
     
-    <link href="/css/nucleus.css?1779369903" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1779369903" rel="stylesheet">
-    <link href="/css/hybrid.css?1779369903" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1779369903" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1779369903" rel="stylesheet">
-    <link href="/css/auto-complete.css?1779369903" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1779369903" rel="stylesheet">
-    <link href="/css/theme.css?1779369903" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1779369903" rel="stylesheet">
+    <link href="/css/nucleus.css?1782736912" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1782736912" rel="stylesheet">
+    <link href="/css/hybrid.css?1782736912" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1782736912" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1782736912" rel="stylesheet">
+    <link href="/css/auto-complete.css?1782736912" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1782736912" rel="stylesheet">
+    <link href="/css/theme.css?1782736912" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1782736912" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1779369903" rel="stylesheet">
+    <link href="/css/theme-green.css?1782736912" rel="stylesheet">
     
-    <link href="/css/foo.css?1779369903" rel="stylesheet"><link href="/css/bar.css?1779369903" rel="stylesheet">
+    <link href="/css/foo.css?1782736912" rel="stylesheet"><link href="/css/bar.css?1782736912" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1779369903"></script>
+    <script src="/js/jquery-3.3.1.min.js?1782736912"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -85,18 +85,18 @@ window.MathJax = {
     
         <div class="searchbox">
     <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1779369903"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1779369903"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1782736912"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1782736912"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1779369903"></script>
+<script type="text/javascript" src="/js/search.js?1782736912"></script>
 
     
   </div>
@@ -1158,7 +1158,7 @@ On va se placer dans un des champs les plus porteurs actuellement (et où python
 <p style="text-align: center;">  Cliquez sur <a href="https://classroom.github.com/a/3BZhe_dl">cette invitation</a> pour récupérer le repository du TP. </p>
 <h1 id="exploration-dun-jeu-de-données">Exploration d&rsquo;un jeu de données</h1>
 <h2 id="statistiques-simples">Statistiques simples</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd <span style="color:#75715e"># bibliothèques dédiée au traitement de jeux de données</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd <span style="color:#75715e"># bibliothèques dédiée au traitement de jeux de données</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt <span style="color:#75715e"># bibliothèque graphique</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns <span style="color:#75715e"># bibliothèque graphique reposant sur matplotlib et dédiée plus particulièrement à la représentation de jeux de données</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np <span style="color:#75715e"># bibliothèque puissante permettant de gérer des tableaux multidimensionnels</span>
@@ -1167,16 +1167,16 @@ On va se placer dans un des champs les plus porteurs actuellement (et où python
 </span></span></code></pre></div><p>Pour pouvoir être importé, un module doit avoir été préalablement installé. Les plus importants sont installés par défaut dans certaines distributions (comme Anaconda).<br>
 Les gros modules sont généralement importés sous la forme <code>import module as x</code> où <code>x</code> est un raccourci pour le nom du module (<code>np</code> pour <code>numpy</code> ou <code>plt</code> pour <code>matplotlib.pyplot</code>). Se référer au cours Python pour les autres formes d&rsquo;importation.<br>
 Pour obtenir de l&rsquo;aide sur un module, on peut demander à Python (<code>help(pd)</code> par exemple pour avoir de l&rsquo;aide sur pandas ou <code>help(pd.read_csv)</code> pour avoir de l&rsquo;aide sur la fonction spécifique <code>read_csv</code>), mais il y a généralement beaucoup moins indigeste : l&rsquo;aide en ligne des modules (<a href="(https://pandas.pydata.org/docs/user_guide/index.html)">pour Pandas par exemple</a>).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># paramètres par défaut pour les graphes</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># paramètres par défaut pour les graphes</span>
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;figure.figsize&#39;</span>] <span style="color:#f92672">=</span> (<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">6</span>)
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;font.family&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;serif&#34;</span>
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;font.size&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>
 </span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;white&#34;</span>)
 </span></span></code></pre></div><p>Le premier jeu de données qu&rsquo;on va utiliser est issu du <a href="https://worldhappiness.report">World Happiness report</a> (une publication annuelle de l&rsquo;ONU mesurant le degrés de bonheur de la population mondiale par pays à partir de sondages).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/Info-TSI-Vieljeux/s1-tp3/main/2020.csv&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://raw.githubusercontent.com/Info-TSI-Vieljeux/s1-tp3/main/2020.csv&#34;</span>
 </span></span><span style="display:flex;"><span>data_monde <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url,sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;;&#34;</span>,index_col<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#75715e"># data_monde est une dataframe Pandas</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Une dataframe est une sorte de dictionnaire dont les clés sont les en-têtes des colonnes et dont les lignes sont indexées.</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde
 </span></span></code></pre></div>
 
 <div id="debord">
@@ -1381,7 +1381,7 @@ Pour obtenir de l&rsquo;aide sur un module, on peut demander à Python (<code>he
 <li><strong>corruption perçue</strong> : moyenne des réponses à la question binaire &ldquo;la corruption est-elle répandue dans le gouvernement ?&rdquo; (0 : non, 1 : oui)</li>
 </ul>
 <p>On simplifie un peu le jeu de données en retirant la colonne &lsquo;Écart-type&rsquo; et &lsquo;Score de bonheur en distopie&rsquo; (score minimal obtenu).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>drop(columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Écart-type&#39;</span>,<span style="color:#e6db74">&#39;Score de bonheur en Distopie&#39;</span>], inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>drop(columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Écart-type&#39;</span>,<span style="color:#e6db74">&#39;Score de bonheur en Distopie&#39;</span>], inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 </span></span><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">3</span>)
 </span></span></code></pre></div>
 
@@ -1462,7 +1462,7 @@ Pour obtenir de l&rsquo;aide sur un module, on peut demander à Python (<code>he
 </table>
 </div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>tail(<span style="color:#ae81ff">3</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>tail(<span style="color:#ae81ff">3</span>)
 </span></span></code></pre></div>
 
 <div id="debord">
@@ -1543,10 +1543,10 @@ Pour obtenir de l&rsquo;aide sur un module, on peut demander à Python (<code>he
 </div>
 
 <p>Traçons un histogramme brut du jeu de données complet pour y voir plus clair (la librairie Seaborn rend cela très simple).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>histplot(data<span style="color:#f92672">=</span>data_monde)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>histplot(data<span style="color:#f92672">=</span>data_monde)
 </span></span></code></pre></div><p><img src="/histoseaborn.png" alt=""></p>
 <p>La méthode <code>describe</code> s&rsquo;appliquant à des dataframe pandas retourne un résumé statistique très pratique des données de chaque colonne :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>describe()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>describe()
 </span></span></code></pre></div>
 
 <div id="debord">
@@ -1668,8 +1668,9 @@ Pour obtenir de l&rsquo;aide sur un module, on peut demander à Python (<code>he
 <li>une fonction <code>moyenne</code> qui retourne la moyenne des éléments d&rsquo;une liste,</li>
 <li>une fonction <code>mediane</code> qui retourne la médiane des éléments d&rsquo;une liste triée en ordre croissant.</li>
 </ul>
-<p>L&rsquo;utilisation de fonctions statistiques déjà existantes est bien sûr prohibée.</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decompte</span>(L):
+<p>L&rsquo;utilisation de fonctions statistiques déjà existantes est bien sûr prohibée.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decompte</span>(L):
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    decompte(L: liste) -&gt; entier
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
@@ -1707,12 +1708,13 @@ Correction (cliquer pour afficher)</summary>
 </details>
 <blockquote>
 <p>Calculez, pour les 3 formes d&rsquo;importation du module, l&rsquo;écart-type des éléments de la liste <code>Liste_scores</code> en utilisant la fonction <code>stdev</code> du module <code>statistics</code>.<br>
-Il s&rsquo;agit d&rsquo;évaluer directement l&rsquo;expresion (le nombre doit s&rsquo;afficher sous la cellule sans utiliser de <code>print</code>).</p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> statistics
+Il s&rsquo;agit d&rsquo;évaluer directement l&rsquo;expresion (le nombre doit s&rsquo;afficher sous la cellule sans utiliser de <code>print</code>).</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> statistics
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># CODE</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> statistics <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> statistics <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># CODE</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> statistics <span style="color:#66d9ef">as</span> st
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> statistics <span style="color:#66d9ef">as</span> st
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># CODE</span>
 </span></span></code></pre></div><details>
 <summary id="correcsum">
@@ -1732,14 +1734,14 @@ st.stdev(Liste_scores)
 </blockquote>
 </details>
 <p>Traçons maintenant un diagramme en bâtons des scores de bonheur des 60 premiers pays.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig,ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">4</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig,ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">4</span>))
 </span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>barplot(ax <span style="color:#f92672">=</span> ax,x <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>index[:<span style="color:#ae81ff">60</span>], y <span style="color:#f92672">=</span> data_monde[<span style="color:#e6db74">&#39;Score de bonheur&#39;</span>]<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">60</span>))
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xticks(rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">90</span>)
 </span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;&#39;</span>)
 </span></span></code></pre></div><p><img src="/batonmonde.png" alt=""></p>
 <p>On remarque que les pays sont classés par score de bonheur décroissant dans le jeu de données d&rsquo;origine.<br>
 Mais on peut évidemment choisir un autre critère de classement si on le désire :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PIB par habitant (log)&#34;</span>,ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PIB par habitant (log)&#34;</span>,ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">10</span>)
 </span></span></code></pre></div>
 
 <div id="debord">
@@ -1896,7 +1898,7 @@ Mais on peut évidemment choisir un autre critère de classement si on le désir
 </table>
 </div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Corruption perçue&#34;</span>,ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Corruption perçue&#34;</span>,ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>head()
 </span></span></code></pre></div>
 
 <div id="debord">
@@ -1998,7 +2000,7 @@ Mais on peut évidemment choisir un autre critère de classement si on le désir
 </table>
 </div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Générosité&#34;</span>,ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>iloc[[<span style="color:#ae81ff">45</span>]]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Générosité&#34;</span>,ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>iloc[[<span style="color:#ae81ff">45</span>]]
 </span></span></code></pre></div>
 
 <div id="debord">
@@ -2058,7 +2060,8 @@ Mais on peut évidemment choisir un autre critère de classement si on le désir
 
 <p>D&rsquo;après la cellule précédente, le 46<sup>e</sup> (le 1<sup>er</sup> est à l&rsquo;indice 0) meilleur score de générosité appartient au Danemark.</p>
 <blockquote>
-<p>Quel pays correspond à la 59<sup>e</sup> plus courte espérance de vie en bonne santé ?</p></blockquote>
+<p>Quel pays correspond à la 59<sup>e</sup> plus courte espérance de vie en bonne santé ?</p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2069,7 +2072,7 @@ Il s'agit de <code>'Russia'</code>.
 </blockquote>
 </details>
 <p>On peut aussi aisément filtrer le jeu de données en fonction de n&rsquo;importe quel critère :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde[(data_monde[<span style="color:#e6db74">&#34;Espérance de vie en bonne santé&#34;</span>]<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">60</span>) <span style="color:#f92672">&amp;</span> (data_monde[<span style="color:#e6db74">&#34;Espérance de vie en bonne santé&#34;</span>]<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">61</span>)]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde[(data_monde[<span style="color:#e6db74">&#34;Espérance de vie en bonne santé&#34;</span>]<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">60</span>) <span style="color:#f92672">&amp;</span> (data_monde[<span style="color:#e6db74">&#34;Espérance de vie en bonne santé&#34;</span>]<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">61</span>)]
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Rq : pandas nécessite les opérateurs logiques bit à bit &#39;&amp;&#39; (et) et &#39;|&#39; (ou) </span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># plutôt que les opérateurs élément par élément &#39;and&#39; et &#39;or&#39; qui lèveraient une erreur.</span>
 </span></span></code></pre></div>
@@ -2141,7 +2144,8 @@ Il s'agit de <code>'Russia'</code>.
 </div>
 
 <blockquote>
-<p>Quel pays possède un score de bonheur inférieur à 5 malgré une valeur de corruption perçue inférieure à 0.5 ?</p></blockquote>
+<p>Quel pays possède un score de bonheur inférieur à 5 malgré une valeur de corruption perçue inférieure à 0.5 ?</p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2152,8 +2156,8 @@ Il s'agit de <code>'Rwanda'</code>.
 </blockquote>
 </details>
 <p>Pour récupérer l&rsquo;ensemble des données d&rsquo;un pays en particulier, on utilise :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>loc[<span style="color:#e6db74">&#39;France&#39;</span>]
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Région du monde                    Western Europe
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>loc[<span style="color:#e6db74">&#39;France&#39;</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Région du monde                    Western Europe
 </span></span><span style="display:flex;"><span>Score de bonheur                           <span style="color:#ae81ff">6.6638</span>
 </span></span><span style="display:flex;"><span>PIB par habitant (log)                  <span style="color:#ae81ff">10.584223</span>
 </span></span><span style="display:flex;"><span>Entraide sociale                         <span style="color:#ae81ff">0.937104</span>
@@ -2163,13 +2167,13 @@ Il s'agit de <code>'Rwanda'</code>.
 </span></span><span style="display:flex;"><span>Corruption perçue                        <span style="color:#ae81ff">0.583521</span>
 </span></span><span style="display:flex;"><span>Name: France, dtype: object
 </span></span></code></pre></div><p>Pour chaque variable mesurée (chaque colonne), on peut facilement tracer des histogrammes illustrant la répartition des valeurs.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>displot(data_monde, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Score de bonheur&#34;</span>, bins<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>,  kde<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>, aspect<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>displot(data_monde, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Score de bonheur&#34;</span>, bins<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>,  kde<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>, aspect<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># bins contrôle le nombre de classes</span>
 </span></span></code></pre></div><p><img src="/histobonhseab.png" alt=""></p>
 <p>On peut faciliter la lecture des graphes en les rendant interactif.</p>
 <p>On utilise pour cela la bibliothèque <code>Plotly express</code> qui sait (comme seaborn) parler à une dataframe pandas.<br>
 On peut zoomer sur ces graphiques interactifs et obtenir des informations en survolant avec le curseur.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>px<span style="color:#f92672">.</span>histogram(data_monde,<span style="color:#e6db74">&#39;Corruption perçue&#39;</span>,nbins<span style="color:#f92672">=</span><span style="color:#ae81ff">40</span>,title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Corruption perçue&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>px<span style="color:#f92672">.</span>histogram(data_monde,<span style="color:#e6db74">&#39;Corruption perçue&#39;</span>,nbins<span style="color:#f92672">=</span><span style="color:#ae81ff">40</span>,title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Corruption perçue&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Cette fois-ci, le nombre de classes est désigné par nbins.</span>
 </span></span></code></pre></div><p>
   
@@ -2220,7 +2224,8 @@ On peut zoomer sur ces graphiques interactifs et obtenir des informations en sur
 })();
 </script></p>
 <blockquote>
-<p>Modifiez le graphe précédent pour répondre à cette question : combien la classe la plus peuplée de l&rsquo;histogramme de l&rsquo;espérance de vie en bonne santé compte-elle de valeurs si l&rsquo;histogramme comporte 30 classes ?</p></blockquote>
+<p>Modifiez le graphe précédent pour répondre à cette question : combien la classe la plus peuplée de l&rsquo;histogramme de l&rsquo;espérance de vie en bonne santé compte-elle de valeurs si l&rsquo;histogramme comporte 30 classes ?</p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2235,7 +2240,7 @@ Et on n'a plus qu'à survoler la classe la plus peuplée pour découvrir le nomb
 <h2 id="regroupement-des-données">Regroupement des données</h2>
 <p>On remarque que le jeu de données contient une colonne catégorielle : &ldquo;Région du monde&rdquo;.<br>
 Cela va nous permettre d&rsquo;explorer de possibles dynamiques régionales : est-ce que les pays d&rsquo;une même zone ont des indicateurs semblables ?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pd<span style="color:#f92672">.</span>unique(data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>]) <span style="color:#75715e"># permet d&#39;afficher une seule fois chacune des valeurs différentes de la colonne</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pd<span style="color:#f92672">.</span>unique(data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>]) <span style="color:#75715e"># permet d&#39;afficher une seule fois chacune des valeurs différentes de la colonne</span>
 </span></span></code></pre></div><div id="debord">
 <code>array(['Western Europe', 'North America and ANZ','Middle East and North Africa', 'Latin America and Caribbean','Central and Eastern Europe', 'East Asia', 'Southeast Asia','Commonwealth of Independent States', 'Sub-Saharan Africa','South Asia'], dtype=object)</code>
 </div>
@@ -2247,24 +2252,24 @@ Pour les moustaches, on calcule d&rsquo;abord 1,5 fois la distance interquartile
 
 </div>
 <p>À nouveau Seaborn rend cela très simple&hellip;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;white&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;white&#34;</span>)
 </span></span><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">8</span>))
 </span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>boxplot(ax <span style="color:#f92672">=</span> ax, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Score de bonheur&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Région du monde&#34;</span>, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;husl&#34;</span>, data<span style="color:#f92672">=</span>data_monde)
 </span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>despine(offset<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, trim<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 </span></span><span style="display:flex;"><span>ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;&#39;</span>)
 </span></span></code></pre></div><p><img src="/moustacheseab.png" alt=""></p>
 <p>Traçons maintenant un graphe plus général représentant toutes les relations possibles entre deux axes du jeu de données pour voir si certaines combinaisons discriminent plus nettement les différentes régions.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Un peu long à s&#39;exécuter (environ 30 s)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Un peu long à s&#39;exécuter (environ 30 s)</span>
 </span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>pairplot(data_monde, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Région du monde&#34;</span>, corner<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 </span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>_legend<span style="color:#f92672">.</span>set_bbox_to_anchor((<span style="color:#ae81ff">0.6</span>, <span style="color:#ae81ff">0.8</span>))
 </span></span></code></pre></div><p><img src="/pairplotseab.png" alt="png"></p>
 <p>On constate que les groupes régionaux sont relativement homogènes pour la plupart des critères.</p>
 <p>Zoomons sur un de ces graphes :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;whitegrid&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;whitegrid&#34;</span>)
 </span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>jointplot(data<span style="color:#f92672">=</span>data_monde,x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;PIB par habitant (log)&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Score de bonheur&#34;</span>, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Région du monde&#34;</span>, kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;scatter&#39;</span>, height<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>, legend<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
 </span></span></code></pre></div><p><img src="/zoompairplot.png" alt="png"></p>
 <p>Une version interactive du même graphique permet de consulter les informations pour chaque point :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>px<span style="color:#f92672">.</span>scatter(data_monde,x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;PIB par habitant (log)&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Score de bonheur&#39;</span>, hover_name<span style="color:#f92672">=</span>data_monde<span style="color:#f92672">.</span>index, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Région du monde&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>px<span style="color:#f92672">.</span>scatter(data_monde,x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;PIB par habitant (log)&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Score de bonheur&#39;</span>, hover_name<span style="color:#f92672">=</span>data_monde<span style="color:#f92672">.</span>index, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Région du monde&#39;</span>)
 </span></span></code></pre></div>
 
 
@@ -2311,7 +2316,8 @@ Pour les moustaches, on calcule d&rsquo;abord 1,5 fois la distance interquartile
 </script>
 <blockquote>
 <p>Trouvez la région du monde représentée sur le graphe suivant (le graphe interactif permet de trouver la réponse facilement).
-<img src="/graphemystere.png?width=600" alt=""></p></blockquote>
+<img src="/graphemystere.png?width=600" alt=""></p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2320,10 +2326,10 @@ Il s'agit de 'Latin America and Caribbean'.
 </blockquote>
 </details>
 <p>Allons maintenant au-delà de la proximité géographique pour regrouper les pays en 3 grands blocs socioéconomiques : &ldquo;Nord&rdquo;, &ldquo;Sud&rdquo;, &ldquo;Intermédiaire&rdquo;.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>conditions <span style="color:#f92672">=</span> [(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Western Europe&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;North America and ANZ&#39;</span>),(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;South Asia&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Sub-Saharan Africa&#39;</span>)]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>conditions <span style="color:#f92672">=</span> [(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Western Europe&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;North America and ANZ&#39;</span>),(data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;South Asia&#39;</span>) <span style="color:#f92672">|</span> (data_monde[<span style="color:#e6db74">&#39;Région du monde&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;Sub-Saharan Africa&#39;</span>)]
 </span></span><span style="display:flex;"><span>choix <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;&#34;Nord&#34;&#39;</span>, <span style="color:#e6db74">&#39;&#34;Sud&#34;&#39;</span>]
 </span></span><span style="display:flex;"><span>data_monde[<span style="color:#e6db74">&#39;Groupe&#39;</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>select(conditions, choix, default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Autres&#39;</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Un peu long à s&#39;exécuter (environ 30 s)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Un peu long à s&#39;exécuter (environ 30 s)</span>
 </span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;white&#34;</span>)
 </span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>PairGrid(data_monde, diag_sharey<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Groupe&#34;</span>)
 </span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>map_upper(sns<span style="color:#f92672">.</span>scatterplot)
@@ -2337,17 +2343,18 @@ Il s'agit de 'Latin America and Caribbean'.
 <h2 id="corrélations">Corrélations</h2>
 <p>Les graphiques précédents mettent en évidence des corrélations assez fortes entre certaines grandeurs.<br>
 Creusons un peu.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>PairGrid(data_monde, y_vars<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;Score de bonheur&#34;</span>], x_vars<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;PIB par habitant (log)&#34;</span>, <span style="color:#e6db74">&#34;Corruption perçue&#34;</span>], height<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>, aspect<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>g <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>PairGrid(data_monde, y_vars<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;Score de bonheur&#34;</span>], x_vars<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;PIB par habitant (log)&#34;</span>, <span style="color:#e6db74">&#34;Corruption perçue&#34;</span>], height<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>, aspect<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>)
 </span></span><span style="display:flex;"><span>g<span style="color:#f92672">.</span>map(sns<span style="color:#f92672">.</span>regplot)
 </span></span></code></pre></div><p><img src="/pairgrid.png" alt="png"></p>
 <p>On constate sur cet exemple que le score de bonheur est corrélé positivement avec le PIB par habitant et négativement avec le degré de corruption perçue.</p>
 <p>Pour avoir un panorama complet, traçons la matrice de corrélation donnant, pour chaque couple de variable, la valeur du coefficient de corrélation $r$ (valeur entre -1 et 1 traduisant le degré de dépendance linéaire entre deux variables) :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">10</span>))   
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>,<span style="color:#ae81ff">10</span>))   
 </span></span><span style="display:flex;"><span>cmap <span style="color:#f92672">=</span> sns<span style="color:#f92672">.</span>diverging_palette(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">230</span>, <span style="color:#ae81ff">90</span>, <span style="color:#ae81ff">60</span>, as_cmap<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)<span style="color:#f92672">.</span>reversed() <span style="color:#75715e"># choix de la palette de couleurs</span>
 </span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>heatmap(data_monde<span style="color:#f92672">.</span>iloc[:,<span style="color:#ae81ff">1</span>:]<span style="color:#f92672">.</span>corr(), cmap<span style="color:#f92672">=</span>cmap, center<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, annot<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, fmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;.2f&#34;</span>, linewidth <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span>, ax<span style="color:#f92672">=</span>ax)
 </span></span></code></pre></div><p><img src="/heatmap.png" alt="png"></p>
 <blockquote>
-<p>Citez les deux variables les moins corrélées entre elles (donner les noms exacts tels qu&rsquo;ils apparaissent dans les données, attention à la casse). L&rsquo;ordre des variables n&rsquo;est pas important.</p></blockquote>
+<p>Citez les deux variables les moins corrélées entre elles (donner les noms exacts tels qu&rsquo;ils apparaissent dans les données, attention à la casse). L&rsquo;ordre des variables n&rsquo;est pas important.</p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2385,18 +2392,18 @@ Commentaire (cliquer pour afficher)&nbsp;</summary>
 <p>L&rsquo;animation suivante montre comment serait sélectionné l&rsquo;axe de la composante principale dans un espace à deux dimensions : il correspond à la position de la droite pour  laquelle la distance cumulée de tous les points à la droite est la plus grande.</p>
 <p><img src="/acp.gif" alt=""></p>
 <p>La bibliothèque <code>Scikit-learn</code>, destinée à l&rsquo;apprentissage automatique, contient tout ce qu&rsquo;il nous faut :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.decomposition <span style="color:#f92672">import</span> PCA <span style="color:#75715e"># l&#39;algorithme d&#39;analyse en composantes principales (PCA en anglais)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.decomposition <span style="color:#f92672">import</span> PCA <span style="color:#75715e"># l&#39;algorithme d&#39;analyse en composantes principales (PCA en anglais)</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> StandardScaler <span style="color:#75715e"># pour centrer-réduire les données</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.cluster <span style="color:#f92672">import</span> KMeans <span style="color:#75715e"># l&#39;algorithme des k-moyennes</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>variables <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>values[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>variables <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>values[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
 </span></span><span style="display:flex;"><span>scaler <span style="color:#f92672">=</span> StandardScaler()
 </span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> scaler<span style="color:#f92672">.</span>fit_transform(data_monde[variables]) 
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># chaque vecteur correspondant à chacune des variables est maintenant centré-réduit</span>
 </span></span><span style="display:flex;"><span>pca <span style="color:#f92672">=</span> PCA()
 </span></span><span style="display:flex;"><span>components <span style="color:#f92672">=</span> pca<span style="color:#f92672">.</span>fit_transform(X)
 </span></span></code></pre></div><p>Quelle combinaison des variables de départ utilise la première composante ? Les quelqus lignes suivantes permettent de le déterminer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>copy() <span style="color:#75715e"># pour pouvoir revenir sur le graphe suivant même après ajout de colonnes à data_monde</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>n_c <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e"># numéro de la composante principale à décrire</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data <span style="color:#f92672">=</span> data_monde<span style="color:#f92672">.</span>copy() <span style="color:#75715e"># pour pouvoir revenir sur le graphe suivant même après ajout de colonnes à data_monde</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>n_c <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e"># numéro de la composante principale à décrire</span>
 </span></span><span style="display:flex;"><span>px<span style="color:#f92672">.</span>bar(components<span style="color:#f92672">.</span>T, x<span style="color:#f92672">=</span>data<span style="color:#f92672">.</span>columns<span style="color:#f92672">.</span>values[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], y<span style="color:#f92672">=</span>n_c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, labels<span style="color:#f92672">=</span>{<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>n_c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Composante Principale (CP) </span><span style="color:#e6db74">{</span>n_c<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>})
 </span></span></code></pre></div>
 
@@ -2443,7 +2450,8 @@ Commentaire (cliquer pour afficher)&nbsp;</summary>
 })();
 </script>
 <blockquote>
-<p>Quelle est le nom de la variable participant le plus à la composante principale n°34 ?</p></blockquote>
+<p>Quelle est le nom de la variable participant le plus à la composante principale n°34 ?</p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2452,7 +2460,7 @@ La 'Générosité'.
 </blockquote>
 </details>
 <p>Représentons le pourcentage de variance expliquée par chacune des composantes :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>exp_var_cumul <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>cumsum(pca<span style="color:#f92672">.</span>explained_variance_ratio_)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>exp_var_cumul <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>cumsum(pca<span style="color:#f92672">.</span>explained_variance_ratio_)
 </span></span><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>bar(x<span style="color:#f92672">=</span>range(<span style="color:#ae81ff">1</span>, exp_var_cumul<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>),y<span style="color:#f92672">=</span>pca<span style="color:#f92672">.</span>explained_variance_ratio_,labels<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;x&#34;</span>: <span style="color:#e6db74">&#34;composante&#34;</span>, <span style="color:#e6db74">&#34;y&#34;</span>: <span style="color:#e6db74">&#34;% variance expliquée&#34;</span>})
 </span></span><span style="display:flex;"><span>fig<span style="color:#f92672">.</span>add_scatter(x<span style="color:#f92672">=</span>list(range(<span style="color:#ae81ff">1</span>, exp_var_cumul<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)), y<span style="color:#f92672">=</span>exp_var_cumul, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>, showlegend<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
 </span></span></code></pre></div><p>
@@ -2502,7 +2510,7 @@ La 'Générosité'.
 </script></p>
 <p>Les trois premières composantes expliquent plus de 80% de la variance !</p>
 <p>Plaçons les données dans un espace réduit à ces 3 dimensions :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>px<span style="color:#f92672">.</span>scatter_3d(components, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, z<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>px<span style="color:#f92672">.</span>scatter_3d(components, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, z<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, 
 </span></span><span style="display:flex;"><span>              color<span style="color:#f92672">=</span>data_monde[<span style="color:#e6db74">&#39;Groupe&#39;</span>],
 </span></span><span style="display:flex;"><span>              labels<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;0&#39;</span>: <span style="color:#e6db74">&#39;CP 1&#39;</span>, <span style="color:#e6db74">&#39;1&#39;</span>: <span style="color:#e6db74">&#39;CP 2&#39;</span>, <span style="color:#e6db74">&#39;2&#39;</span>: <span style="color:#e6db74">&#39;CP 3&#39;</span>},
 </span></span><span style="display:flex;"><span>              hover_name<span style="color:#f92672">=</span>data_monde<span style="color:#f92672">.</span>index)
@@ -2552,7 +2560,7 @@ La 'Générosité'.
 </script>
 <p>On constate à nouveau que nos 3 groupes discriminent plutôt très bien nos données même si quelques chevauchements existent.</p>
 <p>C&rsquo;est le moment d&rsquo;utiliser l&rsquo;algorithme des k-moyennes pour essayer de former 3 groupes homogènes :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># on ne garde que les 3 premières composantes principales</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># on ne garde que les 3 premières composantes principales</span>
 </span></span><span style="display:flex;"><span>pca <span style="color:#f92672">=</span> PCA(n_components <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>)
 </span></span><span style="display:flex;"><span>pca<span style="color:#f92672">.</span>fit(X)
 </span></span><span style="display:flex;"><span>score_pca <span style="color:#f92672">=</span> pca<span style="color:#f92672">.</span>transform(X)
@@ -2649,7 +2657,7 @@ La 'Générosité'.
 </table>
 </div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>scatter_3d(components, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, z<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>scatter_3d(components, x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, y<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, z<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, 
 </span></span><span style="display:flex;"><span>              color<span style="color:#f92672">=</span>data_monde[<span style="color:#e6db74">&#39;Cluster&#39;</span>],
 </span></span><span style="display:flex;"><span>              labels<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;0&#39;</span>: <span style="color:#e6db74">&#39;CP 1&#39;</span>, <span style="color:#e6db74">&#39;1&#39;</span>: <span style="color:#e6db74">&#39;CP 2&#39;</span>, <span style="color:#e6db74">&#39;2&#39;</span>: <span style="color:#e6db74">&#39;CP 3&#39;</span>},
 </span></span><span style="display:flex;"><span>              color_discrete_sequence<span style="color:#f92672">=</span>px<span style="color:#f92672">.</span>colors<span style="color:#f92672">.</span>qualitative<span style="color:#f92672">.</span>Bold,
@@ -2701,7 +2709,8 @@ La 'Générosité'.
 </script>
 <p>Les 3 clusters créés reproduisent à peu de chose près les 3 groupes &ldquo;Nord&rdquo;, &ldquo;Sud&rdquo;, &ldquo;Intermédiaire&rdquo; construits à la main.</p>
 <blockquote>
-<p>À quel cluster correspondent approximativement les pays du groupe &ldquo;Sud&rdquo; ?</p></blockquote>
+<p>À quel cluster correspondent approximativement les pays du groupe &ldquo;Sud&rdquo; ?</p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2711,7 +2720,8 @@ Au cluster "1".
 </details>
 <p>Mais l&rsquo;accord n&rsquo;est pas parfait !</p>
 <blockquote>
-<p>Citez un pays qui appartient au groupe &ldquo;Nord&rdquo; mais qui n&rsquo;appartient pas au cluster lui correspondant.</p></blockquote>
+<p>Citez un pays qui appartient au groupe &ldquo;Nord&rdquo; mais qui n&rsquo;appartient pas au cluster lui correspondant.</p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -2728,8 +2738,8 @@ On remarque qu'il s'agit exclusivement de pays du sud de l'Europe.
 <h1 id="un-peu-de-géographie">Un peu de géographie</h1>
 <p>Le module suivant va permettre d&rsquo;ajouter à nos données le code à 3 lettres (SO 3166-1 alpha-3) de chaque pays.<br>
 Mais pourquoi donc ? <code>plotly express</code> permet de tracer la carte d&rsquo;un pays directement à partir de ce petit code de 3 lettres !</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> country_converter <span style="color:#66d9ef">as</span> coco
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>iso3 <span style="color:#f92672">=</span> coco<span style="color:#f92672">.</span>convert(names<span style="color:#f92672">=</span>data_monde<span style="color:#f92672">.</span>index, to<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ISO3&#39;</span>, not_found<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> country_converter <span style="color:#66d9ef">as</span> coco
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>iso3 <span style="color:#f92672">=</span> coco<span style="color:#f92672">.</span>convert(names<span style="color:#f92672">=</span>data_monde<span style="color:#f92672">.</span>index, to<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ISO3&#39;</span>, not_found<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
 </span></span><span style="display:flex;"><span>data_monde[<span style="color:#e6db74">&#34;code&#34;</span>] <span style="color:#f92672">=</span> iso3
 </span></span><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>head()
 </span></span></code></pre></div>
@@ -2854,7 +2864,7 @@ Mais pourquoi donc ? <code>plotly express</code> permet de tracer la carte d&rsq
 </table>
 </div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>choropleth(data_monde,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>choropleth(data_monde,
 </span></span><span style="display:flex;"><span>                    locations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;code&#34;</span>,
 </span></span><span style="display:flex;"><span>                    color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Score de bonheur&#34;</span>,
 </span></span><span style="display:flex;"><span>                    projection <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;orthographic&#34;</span>,
@@ -2915,7 +2925,7 @@ Mais pourquoi donc ? <code>plotly express</code> permet de tracer la carte d&rsq
 })();
 </script>
 <p>On est maintenant paré pour représenter les 3 clusters obtenus par l&rsquo;algo des k-moyennes du tp3b.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde[<span style="color:#e6db74">&#34;Cluster&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;n°</span><span style="color:#e6db74">{</span>cluster<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">for</span> cluster <span style="color:#f92672">in</span> data_monde[<span style="color:#e6db74">&#34;Cluster&#34;</span>]<span style="color:#f92672">.</span>astype(<span style="color:#e6db74">&#39;int64&#39;</span>) <span style="color:#66d9ef">if</span> cluster <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;nan&#39;</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>data_monde[<span style="color:#e6db74">&#34;Cluster&#34;</span>] <span style="color:#f92672">=</span> [<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;n°</span><span style="color:#e6db74">{</span>cluster<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">for</span> cluster <span style="color:#f92672">in</span> data_monde[<span style="color:#e6db74">&#34;Cluster&#34;</span>]<span style="color:#f92672">.</span>astype(<span style="color:#e6db74">&#39;int64&#39;</span>) <span style="color:#66d9ef">if</span> cluster <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;nan&#39;</span>]
 </span></span><span style="display:flex;"><span>data_monde<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">1</span>)
 </span></span></code></pre></div>
 
@@ -2983,7 +2993,7 @@ Mais pourquoi donc ? <code>plotly express</code> permet de tracer la carte d&rsq
 </table>
 </div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>choropleth(data_monde,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>choropleth(data_monde,
 </span></span><span style="display:flex;"><span>                    locations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;code&#34;</span>,
 </span></span><span style="display:flex;"><span>                    color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Cluster&#34;</span>,
 </span></span><span style="display:flex;"><span>                    projection <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;natural earth&#34;</span>,
@@ -3040,7 +3050,7 @@ Mais pourquoi donc ? <code>plotly express</code> permet de tracer la carte d&rsq
 })();
 </script>
 <p>Terminons en fabriquant une carte régionale.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> reg <span style="color:#f92672">in</span> pd<span style="color:#f92672">.</span>unique(data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>]):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> reg <span style="color:#f92672">in</span> pd<span style="color:#f92672">.</span>unique(data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>]):
 </span></span><span style="display:flex;"><span>    print(reg)
 </span></span></code></pre></div><p><code>Western Europe</code><br>
 <code>North America and ANZ</code><br>
@@ -3052,8 +3062,8 @@ Mais pourquoi donc ? <code>plotly express</code> permet de tracer la carte d&rsq
 <code>Commonwealth of Independent States</code><br>
 <code>Sub-Saharan Africa</code><br>
 <code>South Asia</code><br></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>region <span style="color:#f92672">=</span> data_monde[data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Middle East and North Africa&#34;</span>]
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>choropleth(region,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>region <span style="color:#f92672">=</span> data_monde[data_monde[<span style="color:#e6db74">&#34;Région du monde&#34;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Middle East and North Africa&#34;</span>]
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>choropleth(region,
 </span></span><span style="display:flex;"><span>                    locations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;code&#34;</span>,
 </span></span><span style="display:flex;"><span>                    color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Score de bonheur&#34;</span>,
 </span></span><span style="display:flex;"><span>                    projection <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;natural earth&#34;</span>,
@@ -3110,7 +3120,8 @@ Mais pourquoi donc ? <code>plotly express</code> permet de tracer la carte d&rsq
 })();
 </script>
 <blockquote>
-<p>Modifiez les cellules qui précèdent pour que le graphique ci-dessus affiche la carte du score de générosité des pays d&rsquo;Asie du sud-est.</p></blockquote>
+<p>Modifiez les cellules qui précèdent pour que le graphique ci-dessus affiche la carte du score de générosité des pays d&rsquo;Asie du sud-est.</p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -3133,7 +3144,8 @@ fig.show()
 </blockquote>
 </details>
 <blockquote>
-<p>De quelle couleur est le Vietnam sur cette carte ?</p></blockquote>
+<p>De quelle couleur est le Vietnam sur cette carte ?</p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -3147,7 +3159,7 @@ vert
 <hr>
 <h1 id="série-temporelle">Série temporelle</h1>
 <p>Utilisons un nouveau jeu de données comprenant des relevés de consommation électrique allemands entre 2006 et 2018 :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://cordier-phychi.toile-libre.org/Info/github/elec_allemagne.csv&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://cordier-phychi.toile-libre.org/Info/github/elec_allemagne.csv&#34;</span>
 </span></span><span style="display:flex;"><span>serie_temp <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(url,sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;,&#34;</span>)
 </span></span><span style="display:flex;"><span>serie_temp<span style="color:#f92672">.</span>drop(columns<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Wind+Solar&#34;</span>,inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 </span></span><span style="display:flex;"><span>serie_temp
@@ -3261,7 +3273,7 @@ vert
 </div>
 
 <p>Petit toilettage des données : on transforme les valeurs de la colonne des dates en un type date reconnu par pandas et on les utilise comme index.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>serie_temp[<span style="color:#e6db74">&#39;Date&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_datetime(serie_temp[<span style="color:#e6db74">&#39;Date&#39;</span>])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>serie_temp[<span style="color:#e6db74">&#39;Date&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_datetime(serie_temp[<span style="color:#e6db74">&#39;Date&#39;</span>])
 </span></span><span style="display:flex;"><span>serie_temp <span style="color:#f92672">=</span> serie_temp<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;Date&#39;</span>)
 </span></span><span style="display:flex;"><span>serie_temp<span style="color:#f92672">.</span>head()
 </span></span></code></pre></div>
@@ -3331,7 +3343,7 @@ vert
 </div>
 
 <p>On francise ensuite les noms de colonne&hellip;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>serie_temp<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Consommation&#34;</span>,<span style="color:#e6db74">&#34;Vent&#34;</span>,<span style="color:#e6db74">&#34;Solaire&#34;</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>serie_temp<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Consommation&#34;</span>,<span style="color:#e6db74">&#34;Vent&#34;</span>,<span style="color:#e6db74">&#34;Solaire&#34;</span>]
 </span></span><span style="display:flex;"><span>serie_temp<span style="color:#f92672">.</span>head()
 </span></span></code></pre></div>
 
@@ -3400,7 +3412,7 @@ vert
 </div>
 
 <p>Et enfin, on ajoute des colonnes &ldquo;jour&rdquo;, &ldquo;mois&rdquo; et &ldquo;année&rdquo;.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>serie_temp[<span style="color:#e6db74">&#39;jour&#39;</span>] <span style="color:#f92672">=</span> serie_temp<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>day_name()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>serie_temp[<span style="color:#e6db74">&#39;jour&#39;</span>] <span style="color:#f92672">=</span> serie_temp<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>day_name()
 </span></span><span style="display:flex;"><span>serie_temp[<span style="color:#e6db74">&#39;mois&#39;</span>] <span style="color:#f92672">=</span> serie_temp<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>month
 </span></span><span style="display:flex;"><span>serie_temp[<span style="color:#e6db74">&#39;année&#39;</span>] <span style="color:#f92672">=</span> serie_temp<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>year
 </span></span><span style="display:flex;"><span>serie_temp[<span style="color:#e6db74">&#34;date&#34;</span>] <span style="color:#f92672">=</span> serie_temp<span style="color:#f92672">.</span>index
@@ -3500,7 +3512,7 @@ vert
 </table>
 </div>
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>px<span style="color:#f92672">.</span>line(serie_temp[[<span style="color:#e6db74">&#34;Consommation&#34;</span>,<span style="color:#e6db74">&#34;Vent&#34;</span>,<span style="color:#e6db74">&#34;Solaire&#34;</span>]])
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>px<span style="color:#f92672">.</span>line(serie_temp[[<span style="color:#e6db74">&#34;Consommation&#34;</span>,<span style="color:#e6db74">&#34;Vent&#34;</span>,<span style="color:#e6db74">&#34;Solaire&#34;</span>]])
 </span></span></code></pre></div>
 
 
@@ -3546,7 +3558,7 @@ vert
 })();
 </script>
 <p>On constate d&rsquo;importantes variations saisonnières.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>zoom <span style="color:#f92672">=</span> serie_temp[serie_temp[<span style="color:#e6db74">&#39;année&#39;</span>]<span style="color:#f92672">==</span><span style="color:#ae81ff">2016</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>zoom <span style="color:#f92672">=</span> serie_temp[serie_temp[<span style="color:#e6db74">&#39;année&#39;</span>]<span style="color:#f92672">==</span><span style="color:#ae81ff">2016</span>]
 </span></span><span style="display:flex;"><span>fig1 <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>line(zoom,<span style="color:#e6db74">&#39;date&#39;</span>,<span style="color:#e6db74">&#39;Consommation&#39;</span>)
 </span></span><span style="display:flex;"><span>fig2 <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>scatter(zoom,<span style="color:#e6db74">&#39;date&#39;</span>,<span style="color:#e6db74">&#39;Consommation&#39;</span>,color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;jour&#39;</span>)
 </span></span><span style="display:flex;"><span>fig <span style="color:#f92672">=</span> go<span style="color:#f92672">.</span>Figure()
@@ -3598,7 +3610,7 @@ vert
 <p>Une variabilité hebdomadaire se superpose à la tendance saisonnière.</p>
 <p>Grâce à la méthode des dataframe pandas <code>groupby</code>, on peut facilement grouper les donner de manière à obtenir les statistiques qui nous intéressent.<br>
 Exemple : trouvons combien d&rsquo;électricité d&rsquo;origine éolienne a été produite chaque mois en 2016.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>serie_temp[serie_temp[<span style="color:#e6db74">&#39;année&#39;</span>]<span style="color:#f92672">==</span><span style="color:#ae81ff">2016</span>]<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#34;mois&#34;</span>)[<span style="color:#e6db74">&#34;Vent&#34;</span>]<span style="color:#f92672">.</span>sum()
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>serie_temp[serie_temp[<span style="color:#e6db74">&#39;année&#39;</span>]<span style="color:#f92672">==</span><span style="color:#ae81ff">2016</span>]<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#34;mois&#34;</span>)[<span style="color:#e6db74">&#34;Vent&#34;</span>]<span style="color:#f92672">.</span>sum()
 </span></span></code></pre></div><p><code>mois</code><br>
 <code>1     9264.588</code><br>
 <code>2     9814.294</code><br>
@@ -3614,7 +3626,8 @@ Exemple : trouvons combien d&rsquo;électricité d&rsquo;origine éolienne a ét
 <code>12    9252.290</code><br>
 <code>Name: Vent, dtype: float64</code></p>
 <blockquote>
-<p>Sur le modèle précédent, déterminez le jour de la semaine où l&rsquo;Allemagne a consommé le plus d&rsquo;électricité en moyenne en 2016 (vous pourrez utilisez la méthode <code>mean</code> à la place de <code>sum</code>).</p></blockquote>
+<p>Sur le modèle précédent, déterminez le jour de la semaine où l&rsquo;Allemagne a consommé le plus d&rsquo;électricité en moyenne en 2016 (vous pourrez utilisez la méthode <code>mean</code> à la place de <code>sum</code>).</p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -3632,7 +3645,7 @@ On retrouve une philosophie proche des fonctions d'agrégations en SQL.
 </blockquote>
 </details>
 <p>Traçons une boîte à moustaches de la répartition des 3 variables mois par mois :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">10</span>), sharex<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fig, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">10</span>), sharex<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> var, ax <span style="color:#f92672">in</span> zip([<span style="color:#e6db74">&#39;Consommation&#39;</span>, <span style="color:#e6db74">&#39;Solaire&#39;</span>, <span style="color:#e6db74">&#39;Vent&#39;</span>], axes):
 </span></span><span style="display:flex;"><span>    sns<span style="color:#f92672">.</span>boxplot(data<span style="color:#f92672">=</span>serie_temp, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mois&#39;</span>, y<span style="color:#f92672">=</span>var, ax<span style="color:#f92672">=</span>ax)  
 </span></span><span style="display:flex;"><span>    ax<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;GWh&#39;</span>)
@@ -3646,7 +3659,7 @@ On retrouve une philosophie proche des fonctions d'agrégations en SQL.
 <li>beaucoup de valeurs se retrouvent à l&rsquo;extérieur des moustaches supérieures pour la production éolienne, ce qui est probablement dû à des périodes de fort vent.</li>
 </ul>
 <p>Regardons maintenant jour par jour :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>serie_temp[<span style="color:#e6db74">&#34;date&#34;</span>]<span style="color:#f92672">=</span>(serie_temp<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %B&#39;</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>serie_temp[<span style="color:#e6db74">&#34;date&#34;</span>]<span style="color:#f92672">=</span>(serie_temp<span style="color:#f92672">.</span>index<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %B&#39;</span>))
 </span></span><span style="display:flex;"><span>px<span style="color:#f92672">.</span>box(serie_temp,x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;jour&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Consommation&#39;</span>,hover_data<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;date&#34;</span>})
 </span></span></code></pre></div>
 
@@ -3693,7 +3706,8 @@ On retrouve une philosophie proche des fonctions d'agrégations en SQL.
 })();
 </script>
 <blockquote>
-<p>Pourquoi y a-t-il autant de points au-delà des moustaches les jours de semaine ?</p></blockquote>
+<p>Pourquoi y a-t-il autant de points au-delà des moustaches les jours de semaine ?</p>
+</blockquote>
 <details>
 <summary id="correcsum">
 Correction (cliquer pour afficher)</summary>
@@ -4414,19 +4428,19 @@ Correction (cliquer pour afficher)</summary>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1779369903"></script>
-    <script src="/js/perfect-scrollbar.min.js?1779369903"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1779369903"></script>
-    <script src="/js/jquery.sticky.js?1779369903"></script>
-    <script src="/js/featherlight.min.js?1779369903"></script>
-    <script src="/js/highlight.pack.js?1779369903"></script>
+    <script src="/js/clipboard.min.js?1782736912"></script>
+    <script src="/js/perfect-scrollbar.min.js?1782736912"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1782736912"></script>
+    <script src="/js/jquery.sticky.js?1782736912"></script>
+    <script src="/js/featherlight.min.js?1782736912"></script>
+    <script src="/js/highlight.pack.js?1782736912"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1779369903"></script>
-    <script src="/js/learn.js?1779369903"></script>
-    <script src="/js/hugo-learn.js?1779369903"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1782736912"></script>
+    <script src="/js/learn.js?1782736912"></script>
+    <script src="/js/hugo-learn.js?1782736912"></script>
     
         
-            <script src="/mermaid/mermaid.js?1779369903"></script>
+            <script src="/mermaid/mermaid.js?1782736912"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

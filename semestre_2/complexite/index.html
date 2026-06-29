@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.150.1">
+    <meta name="generator" content="Hugo 0.163.1">
     <meta name="description" content="">
 
 
@@ -33,22 +33,22 @@ window.MathJax = {
     
 
     
-    <link href="/css/nucleus.css?1779369903" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1779369903" rel="stylesheet">
-    <link href="/css/hybrid.css?1779369903" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1779369903" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1779369903" rel="stylesheet">
-    <link href="/css/auto-complete.css?1779369903" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1779369903" rel="stylesheet">
-    <link href="/css/theme.css?1779369903" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1779369903" rel="stylesheet">
+    <link href="/css/nucleus.css?1782736912" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1782736912" rel="stylesheet">
+    <link href="/css/hybrid.css?1782736912" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1782736912" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1782736912" rel="stylesheet">
+    <link href="/css/auto-complete.css?1782736912" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1782736912" rel="stylesheet">
+    <link href="/css/theme.css?1782736912" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1782736912" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1779369903" rel="stylesheet">
+    <link href="/css/theme-green.css?1782736912" rel="stylesheet">
     
-    <link href="/css/foo.css?1779369903" rel="stylesheet"><link href="/css/bar.css?1779369903" rel="stylesheet">
+    <link href="/css/foo.css?1782736912" rel="stylesheet"><link href="/css/bar.css?1782736912" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1779369903"></script>
+    <script src="/js/jquery-3.3.1.min.js?1782736912"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -85,18 +85,18 @@ window.MathJax = {
     
         <div class="searchbox">
     <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <input data-search-input id="search-by" type="search" placeholder="Rechercher...">
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1779369903"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1779369903"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1782736912"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1782736912"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1779369903"></script>
+<script type="text/javascript" src="/js/search.js?1782736912"></script>
 
     
   </div>
@@ -1119,8 +1119,8 @@ window.MathJax = {
 <p>L&rsquo;objectif premier d&rsquo;un calcul de complexité algorithmique est de pouvoir comparer l’efficacité d’algorithmes résolvant le même problème. Dans une situation donnée, cela permet donc d&rsquo;établir lequel des algorithmes disponibles est le meilleur (du point de vue temps d&rsquo;exécution).</p>
 <p> 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/sNJbVamAQ6A?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-    </div>
+			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/sNJbVamAQ6A?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+		</div>
 
  </p>
 <h2 id="complexité-en-temps">complexité en temps</h2>
@@ -1146,13 +1146,14 @@ soit le nombre de chiffres que comporte l&rsquo;écriture en décimal de $n$, c.
 <p>Vu la finalité informatique de nos algorithmes, nous devrions choisir le nombre de chiffres dans l&rsquo;écriture binaire de l&rsquo;entier, mais par souci de simplicité, on considèrera le plus souvent la valeur de l&rsquo;entier comme taille.<br>
 Néanmoins, lors de l&rsquo;étude de la complexité des algorithmes arithmétiques (test de primalité, algorithme d&rsquo;Euclide, etc.), la taille de l&rsquo;entier est le paramètre important et il faudra donc considérer la taille de l&rsquo;entrée $n$ comme étant $\log_2(n)$.</p>
 <p><em>Exemple : la fonction somme</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">somme</span>(L):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">somme</span>(L):
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    s <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#66d9ef">for</span> e <span style="color:#f92672">in</span> L:
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>        s <span style="color:#f92672">+=</span> e
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    <span style="color:#66d9ef">return</span> s
 </span></span></code></pre></div><blockquote>
-<p>Le calcul <code>somme([1,2,3])</code> nécessite à priori 4 opérations (1 fois la ligne 2, et 3 fois la ligne 4). Toutefois, la notion d&rsquo;opération élémentaire n&rsquo;est pas précisément définie : on pourrait considérer par exemple que la ligne 4 fait non pas une, mais deux opérations élémentaires (une somme puis une affectation) et alors <code>somme([1,2,3])</code> nécessiterait 7 opérations.</p></blockquote>
+<p>Le calcul <code>somme([1,2,3])</code> nécessite à priori 4 opérations (1 fois la ligne 2, et 3 fois la ligne 4). Toutefois, la notion d&rsquo;opération élémentaire n&rsquo;est pas précisément définie : on pourrait considérer par exemple que la ligne 4 fait non pas une, mais deux opérations élémentaires (une somme puis une affectation) et alors <code>somme([1,2,3])</code> nécessiterait 7 opérations.</p>
+</blockquote>
 <p>Cette imprécision est sans conséquence, car on estime la complexité &ldquo;à la louche&rdquo;. Pour définir formellement ce que signifie ce &ldquo;à la louche&rdquo;, nous introduisons les trois notations suivantes :</p>
 <p>
 <div class="notices def" ><p>Étant donné deux fonctions $\mathbb{N}\rightarrow \mathbb{R}^*_+$ $f$ et $g$ :
@@ -1182,46 +1183,46 @@ Dès $n&gt;3$, $T(n)&lt;6n$, ce qu&rsquo;on réécrit $T(n)&lt;6\times g(n)$ ave
 <p>Des algorithmes appartenant à une <strong>même classe</strong> sont alors considérés comme de <strong>complexité équivalente</strong> ; ils ont la <strong>même efficacité</strong>.</p>
 <p>Le tableau suivant récapitule les complexités de référence (rangées par ordre croissant) :</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: center">$\mathcal{O}$</th>
-          <th style="text-align: center">Type de complexité</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center">$\mathcal{O(1)}$</td>
-          <td style="text-align: center">constant</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">$\mathcal{O}(\ln(n))$</td>
-          <td style="text-align: center">logarithmique</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">$\mathcal{O}(n)$</td>
-          <td style="text-align: center">linéaire</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">$\mathcal{O}(n\times\ln(n))$</td>
-          <td style="text-align: center">quasi-linéaire</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">$\mathcal{O}(n^2)$</td>
-          <td style="text-align: center">quadratique</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">$\mathcal{O}(n^3)$</td>
-          <td style="text-align: center">cubique</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">$\mathcal{O}(2^n)$</td>
-          <td style="text-align: center">exponentiel</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">$\mathcal{O}(n!)$</td>
-          <td style="text-align: center">factoriel</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: center">$\mathcal{O}$</th>
+					<th style="text-align: center">Type de complexité</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center">$\mathcal{O(1)}$</td>
+					<td style="text-align: center">constant</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">$\mathcal{O}(\ln(n))$</td>
+					<td style="text-align: center">logarithmique</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">$\mathcal{O}(n)$</td>
+					<td style="text-align: center">linéaire</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">$\mathcal{O}(n\times\ln(n))$</td>
+					<td style="text-align: center">quasi-linéaire</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">$\mathcal{O}(n^2)$</td>
+					<td style="text-align: center">quadratique</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">$\mathcal{O}(n^3)$</td>
+					<td style="text-align: center">cubique</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">$\mathcal{O}(2^n)$</td>
+					<td style="text-align: center">exponentiel</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">$\mathcal{O}(n!)$</td>
+					<td style="text-align: center">factoriel</td>
+			</tr>
+	</tbody>
 </table>
 <p><img src="/reffct.jpeg" alt=""></p>
 
@@ -1243,70 +1244,70 @@ Mais attention, quand on nous demande la complexité asymptotique au pire de $T(
 <p> </p>
 <p><em>Ordres de grandeurs</em> : en supposant qu&rsquo;un système donné permette un milliard d&rsquo;opérations par seconde (de type constant), on obtient les valeurs de temps d&rsquo;exécution suivantes en fonction du type de complexité et de la taille des données :</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: center">taille des données</th>
-          <th style="text-align: center">$\ln n$</th>
-          <th style="text-align: center">$n$</th>
-          <th style="text-align: center">$n\ln n$</th>
-          <th style="text-align: center">$n^2$</th>
-          <th style="text-align: center">$n^3$</th>
-          <th style="text-align: center">$2^n$</th>
-          <th style="text-align: center">$n!$</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center">$10^2$</td>
-          <td style="text-align: center">$5$ ns</td>
-          <td style="text-align: center">$100$ ns</td>
-          <td style="text-align: center">$500$ ns</td>
-          <td style="text-align: center">$10$ μs</td>
-          <td style="text-align: center">$1$ ms</td>
-          <td style="text-align: center">$4.10^{13}$ ans</td>
-          <td style="text-align: center">$3.10^{141}$ ans</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">$10^3$</td>
-          <td style="text-align: center">$7$ ns</td>
-          <td style="text-align: center">$1$ μs</td>
-          <td style="text-align: center">$7$ μs</td>
-          <td style="text-align: center">$1$ ms</td>
-          <td style="text-align: center">$1$ s</td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-      </tr>
-      <tr>
-          <td style="text-align: center">$10^4$</td>
-          <td style="text-align: center">$9$ ns</td>
-          <td style="text-align: center">$10$ μs</td>
-          <td style="text-align: center">$90$ μs</td>
-          <td style="text-align: center">$100$ ms</td>
-          <td style="text-align: center">$17$ min</td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-      </tr>
-      <tr>
-          <td style="text-align: center">$10^5$</td>
-          <td style="text-align: center">$12$ ns</td>
-          <td style="text-align: center">$100$ μs</td>
-          <td style="text-align: center">$1,2$ ms</td>
-          <td style="text-align: center">$10$ s</td>
-          <td style="text-align: center">$12$ jours</td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-      </tr>
-      <tr>
-          <td style="text-align: center">$10^6$</td>
-          <td style="text-align: center">$14$ ns</td>
-          <td style="text-align: center">$1$ ms</td>
-          <td style="text-align: center">$14$ ms</td>
-          <td style="text-align: center">$17$ min</td>
-          <td style="text-align: center">$32$ ans</td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: center">taille des données</th>
+					<th style="text-align: center">$\ln n$</th>
+					<th style="text-align: center">$n$</th>
+					<th style="text-align: center">$n\ln n$</th>
+					<th style="text-align: center">$n^2$</th>
+					<th style="text-align: center">$n^3$</th>
+					<th style="text-align: center">$2^n$</th>
+					<th style="text-align: center">$n!$</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: center">$10^2$</td>
+					<td style="text-align: center">$5$ ns</td>
+					<td style="text-align: center">$100$ ns</td>
+					<td style="text-align: center">$500$ ns</td>
+					<td style="text-align: center">$10$ μs</td>
+					<td style="text-align: center">$1$ ms</td>
+					<td style="text-align: center">$4.10^{13}$ ans</td>
+					<td style="text-align: center">$3.10^{141}$ ans</td>
+			</tr>
+			<tr>
+					<td style="text-align: center">$10^3$</td>
+					<td style="text-align: center">$7$ ns</td>
+					<td style="text-align: center">$1$ μs</td>
+					<td style="text-align: center">$7$ μs</td>
+					<td style="text-align: center">$1$ ms</td>
+					<td style="text-align: center">$1$ s</td>
+					<td style="text-align: center"></td>
+					<td style="text-align: center"></td>
+			</tr>
+			<tr>
+					<td style="text-align: center">$10^4$</td>
+					<td style="text-align: center">$9$ ns</td>
+					<td style="text-align: center">$10$ μs</td>
+					<td style="text-align: center">$90$ μs</td>
+					<td style="text-align: center">$100$ ms</td>
+					<td style="text-align: center">$17$ min</td>
+					<td style="text-align: center"></td>
+					<td style="text-align: center"></td>
+			</tr>
+			<tr>
+					<td style="text-align: center">$10^5$</td>
+					<td style="text-align: center">$12$ ns</td>
+					<td style="text-align: center">$100$ μs</td>
+					<td style="text-align: center">$1,2$ ms</td>
+					<td style="text-align: center">$10$ s</td>
+					<td style="text-align: center">$12$ jours</td>
+					<td style="text-align: center"></td>
+					<td style="text-align: center"></td>
+			</tr>
+			<tr>
+					<td style="text-align: center">$10^6$</td>
+					<td style="text-align: center">$14$ ns</td>
+					<td style="text-align: center">$1$ ms</td>
+					<td style="text-align: center">$14$ ms</td>
+					<td style="text-align: center">$17$ min</td>
+					<td style="text-align: center">$32$ ans</td>
+					<td style="text-align: center"></td>
+					<td style="text-align: center"></td>
+			</tr>
+	</tbody>
 </table>
 <p> 
 
@@ -1326,7 +1327,7 @@ Mais attention, quand on nous demande la complexité asymptotique au pire de $T(
 <li>L&rsquo;algorithme de recherche par dichotomie (TP4) est de complexité logarithmique puisque l&rsquo;algorithme nécessite au pire $\log_2 n$ passages dans la boucle et chaque instruction dans la boucle (comparaison, division euclidienne, affectations) se fait en temps constant $$T(n)=\log_2(n)\times \mathcal{O}(1) = \mathcal{O}(\ln n)$$</li>
 </ul>
 <p>Plus tordu : trouvons la complexité de la fonction <code>neufs()</code> suivante qui calcule naïvement le plus grand nombre de 9 consécutifs dans l&rsquo;écriture en base 10 de $n$.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">neufs</span>(n):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">neufs</span>(n):
 </span></span><span style="display:flex;"><span>    L <span style="color:#f92672">=</span> []
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> n<span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
 </span></span><span style="display:flex;"><span>        L<span style="color:#f92672">.</span>append(n<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>)
@@ -1342,12 +1343,13 @@ Mais attention, quand on nous demande la complexité asymptotique au pire de $T(
 <p>Chacune des instructions utilisées est en $\mathcal{O}(1)$ (temps constant). On utilise bien <code>max</code> qui a une complexité linéaire, mais on ne l&rsquo;utilise que sur 2 valeurs.<br>
 On passe dans le premier <code>while</code> une fois par chiffre de $n$ en base 10 (<code>n//10</code> fait perdre un chiffre à $n$), soit environ $\log_{10}(n)$ fois.<br>
 La liste <code>L</code> contient alors (à moins de 1 près) $\log_{10}(n)$ valeurs. On passe dans le <code>for</code> $\log_{10}(n)$ fois, et au pire le même nombre de fois dans le second <code>while</code>.<br>
-La complexité est donc $T(n)=\underbrace{\log_{10}(n) \times \mathcal{O}(1)}<em>{\text{premier while}}+\underbrace{\log</em>{10}(n) \times\log_{10}(n) \times\mathcal{O}(1)}_{\text{boucles imbriquées}}=\mathcal{O}(\ln ^2 n)$</p></blockquote>
+La complexité est donc $T(n)=\underbrace{\log_{10}(n) \times \mathcal{O}(1)}<em>{\text{premier while}}+\underbrace{\log</em>{10}(n) \times\log_{10}(n) \times\mathcal{O}(1)}_{\text{boucles imbriquées}}=\mathcal{O}(\ln ^2 n)$</p>
+</blockquote>
 <p> </p>
 <p><strong>La complexité sert essentiellement à comparer les algorithmes.</strong><br>
 On peut aussi tenter de confirmer expérimentalement nos conclusions en mesurant le temps mis par la machine pour faire tourner l&rsquo;algorithme. Grâce au module <code>time</code>, on va ainsi pouvoir vérifier empiriquement que l&rsquo;algorithme de recherche par dichotomie est bien meilleur que l&rsquo;algorithme de recherche naïf. On va aussi tenter d&rsquo;en savoir plus sur l&rsquo;opérateur natif <code>in</code> qui accomplit la même fonction.<br>
 Pour cela, on va mesurer le temps mis par les différentes méthodes pour chercher un nombre au hasard entre $0$ et $b$ dans une liste des $b$ premiers entiers. On moyenne ce temps en faisant $50\,000$ essais avec des nombres à rechercher différents. Puis on multiplie $b$ par $2$ et on recommence :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> random
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>b, m <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">50000</span>
@@ -1424,8 +1426,8 @@ Pour la fonction <code>neufs()</code>, la complexité en mémoire vient de la va
 <hr>
 <p>Dans la vidéo suivante, on compare plusieurs algorithmes dont la mission est de trouver un doublon dans une liste. Quel est le meilleur ? Étudions leurs complexités en temps et en espace.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/-73jokmqmd0?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-    </div>
+			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/-73jokmqmd0?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+		</div>
 
 
 
@@ -2141,19 +2143,19 @@ Pour la fonction <code>neufs()</code>, la complexité en mémoire vient de la va
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1779369903"></script>
-    <script src="/js/perfect-scrollbar.min.js?1779369903"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1779369903"></script>
-    <script src="/js/jquery.sticky.js?1779369903"></script>
-    <script src="/js/featherlight.min.js?1779369903"></script>
-    <script src="/js/highlight.pack.js?1779369903"></script>
+    <script src="/js/clipboard.min.js?1782736912"></script>
+    <script src="/js/perfect-scrollbar.min.js?1782736912"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1782736912"></script>
+    <script src="/js/jquery.sticky.js?1782736912"></script>
+    <script src="/js/featherlight.min.js?1782736912"></script>
+    <script src="/js/highlight.pack.js?1782736912"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1779369903"></script>
-    <script src="/js/learn.js?1779369903"></script>
-    <script src="/js/hugo-learn.js?1779369903"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1782736912"></script>
+    <script src="/js/learn.js?1782736912"></script>
+    <script src="/js/hugo-learn.js?1782736912"></script>
     
         
-            <script src="/mermaid/mermaid.js?1779369903"></script>
+            <script src="/mermaid/mermaid.js?1782736912"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
