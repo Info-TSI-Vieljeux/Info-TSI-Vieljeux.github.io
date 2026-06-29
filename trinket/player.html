@@ -80,6 +80,9 @@
     tab-size:4;
   }
   .CodeMirror{height:100% !important;font-family:var(--tk-mono);font-size:13.5px}
+  /* ligne active (curseur) surlignée en gris, façon Trinket */
+  .CodeMirror-activeline-background{background:#eceff3}
+  .CodeMirror-activeline-gutter{background:#e4e8ee}
 
   /* Sortie */
   .tk-out{padding:10px 12px}
@@ -149,6 +152,7 @@ var LIBS = {
   cmCss: "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css",
   cmJs:  "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js",
   cmPy:  "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js",
+  cmActiveLine: "https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/selection/active-line.min.js",
 
   gsBase:    "glowscript_libraries/",   // relatif à player.html → /trinket/glowscript_libraries/
   gsVersion: "3.2",                     // version GlowScript par défaut (surchargée par version="…" du shortcode)
@@ -332,10 +336,12 @@ function buildUI(){
     loadCss(LIBS.cmCss)
       .then(function(){ return loadScript(LIBS.cmJs); })
       .then(function(){ return loadScript(LIBS.cmPy); })
+      .then(function(){ return loadScript(LIBS.cmActiveLine); })
       .then(function(){
         editor = window.CodeMirror.fromTextArea(ta, {
           mode: "python", lineNumbers: true, indentUnit: 4, tabSize: 4,
-          indentWithTabs: false, lineWrapping: false, viewportMargin: Infinity
+          indentWithTabs: false, lineWrapping: false, viewportMargin: Infinity,
+          styleActiveLine: true   // surligne la ligne où se trouve le curseur (façon Trinket)
         });
         editor.setSize("100%", "100%");
       })
