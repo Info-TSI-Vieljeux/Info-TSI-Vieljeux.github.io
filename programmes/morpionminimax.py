@@ -64,7 +64,7 @@ def victoire(plateau,joueur):
 
 def fini(plateau,joueur):
     if victoire(plateau,joueur):
-        print("Victoire de {joueur} !")
+        print(f"Victoire de {joueur} !")
         return True
     elif (len(cases_restantes(plateau)) == 0):
         print("Match nul !")
