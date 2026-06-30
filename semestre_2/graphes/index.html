@@ -33,22 +33,22 @@ window.MathJax = {
     
 
     
-    <link href="/css/nucleus.css?1782772212" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1782772212" rel="stylesheet">
-    <link href="/css/hybrid.css?1782772212" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1782772212" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1782772212" rel="stylesheet">
-    <link href="/css/auto-complete.css?1782772212" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1782772212" rel="stylesheet">
-    <link href="/css/theme.css?1782772212" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1782772212" rel="stylesheet">
+    <link href="/css/nucleus.css?1782778663" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1782778663" rel="stylesheet">
+    <link href="/css/hybrid.css?1782778663" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1782778663" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1782778663" rel="stylesheet">
+    <link href="/css/auto-complete.css?1782778663" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1782778663" rel="stylesheet">
+    <link href="/css/theme.css?1782778663" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1782778663" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1782772212" rel="stylesheet">
+    <link href="/css/theme-green.css?1782778663" rel="stylesheet">
     
-    <link href="/css/foo.css?1782772212" rel="stylesheet"><link href="/css/bar.css?1782772212" rel="stylesheet">
+    <link href="/css/foo.css?1782778663" rel="stylesheet"><link href="/css/bar.css?1782778663" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1782772212"></script>
+    <script src="/js/jquery-3.3.1.min.js?1782778663"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -89,14 +89,14 @@ window.MathJax = {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1782772212"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1782772212"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1782778663"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1782778663"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1782772212"></script>
+<script type="text/javascript" src="/js/search.js?1782778663"></script>
 
     
   </div>
@@ -1333,7 +1333,12 @@ L&rsquo;ensemble des prédécesseurs d&rsquo;un sommet $s_i \in S$ est noté $Pr
 </div>
 <p>Un graphe orienté permet, par exemple, de résumer les relations dans un chi-fou-mi (ici dans la variante puits montrant bien que jouer &ldquo;pierre&rdquo; est sans intérêt, ou encore dans la variante <a href="https://youtu.be/Kov2G0GouBw">pierre-feuille-ciseaux-lézard-spock</a> de The Big Bang Theory).
 <img src="/chifoumi.png?width=800" alt=""></p>
-<p>Pour &ldquo;pierre-feuille-ciseaux-puits&rdquo;, le graphe $G(S,A)$ a pour sommets $S=\{pierre,feuille,ciseaux,puits\}$ et pour arêtes $A=\{(ciseaux,feuille),(feuille,puits),(feuille,pierre),(puits,pierre),(puits,ciseaux),(pierre,ciseaux)\}$.</p>
+<p>Pour &ldquo;pierre-feuille-ciseaux-puits&rdquo;, le graphe $G(S,A)$ a pour sommets :</p>
+<p>$$S=\{pierre,feuille,ciseaux,puits\}$$</p>
+<p>Et pour arêtes :</p>
+ <div id="debord">
+ $$A= \{{(ciseaux,feuille),(feuille,puits),(feuille,pierre),(puits,pierre),(puits,ciseaux),(pierre,ciseaux)\}}$$
+ </div>
 <p> 
  </p>
 <h3 id="degré-dun-sommet">Degré d&rsquo;un sommet</h3>
@@ -1446,10 +1451,10 @@ La ligne A du RER forme un arbre, mais pas la ligne C.</p>
 <p>La notion de longueur de chemin nous permet ensuite de définir la notion de distance dans un graphe.</p>
 
 <div class="notices def" ><p>Soit un graphe $G=(S,A)$.
-La <strong>distance</strong> d&rsquo;un sommet à un autre est la longueur du plus court chemin/chaîne entre ces deux sommets, ou $\infty$ s&rsquo;il n&rsquo;y a pas un tel chemin/chaîne :<br>
+La <strong>distance</strong> d&rsquo;un sommet à un autre est la longueur du plus court chemin/chaîne entre ces deux sommets, ou $\infty$ s&rsquo;il n&rsquo;y a pas de tel chemin/chaîne :<br>
 $$
 \forall x,y \in S,d(x,y)=\left\lbrace
-\begin{array}{ll} k \; &amp;\text{si le plus court chemin de x vers y est de longueur k}\\ \infty  &amp;\text{sinon}\end{array}\right.
+\begin{array}{ll} k \; &amp;\text{longueur du plus court chemin s&rsquo;il existe}\\ \infty  &amp;\text{sinon}\end{array}\right.
 $$</p>
 
 </div>
@@ -1864,8 +1869,10 @@ entre une structure de données abstraite (ou plutôt <strong>type de données a
 <li>La recherche du sommet non validé ayant un score minimal et sa validation. Elle se fait via la fonction <code>sommet_suivant</code> qui est en $O(n)$.</li>
 <li>La mise à jour des scores des sommets. Elle se fait en temps constant mais concerne tous les successeurs du sommet étudié.</li>
 </ul>
-<p>On obtient :
-$$\sum_{u\in S}\left(T(\text{obtenir le sommet min et le retirer})+\left(\sum_{v\in Succ(u)}T(\text{mettre à jour le score})\right)\right) = O(n^2+m) = O(n^2)$$</p>
+<p>On obtient :</p>
+<div id="debord">
+$$\sum_{u\in S}\left(T(\text{obtenir le sommet min et le retirer})+\left(\sum_{v\in Succ(u)}T(\text{mettre à jour le score})\right)\right) = O(n^2+m) = O(n^2)$$
+</div>
 <p> </p>
 <p>Comme <a href="#structures-de-donn%C3%A9es">évoqué plus haut</a>, on peut améliorer la complexité en utilisant une structure de données adaptée au problème : la <strong>file de priorité</strong> implémentée par un tas.<br>
 L&rsquo;idée est d&rsquo;optimiser le choix du prochain sommet inspecté, celui au plus bas score parmi les sommets pas encore validés. En effet, réinspecter systématiquement toute la liste des sommets restants (c&rsquo;est ce que fait la fonction <code>sommet_suivant</code>) gaspille de l&rsquo;information. C&rsquo;est sur ce point que le tas vient à la rescousse :<br>
@@ -1905,8 +1912,10 @@ le tas est une structure de données de type arbre qui permet de retrouver direc
 Et donc $O(\log m)=O(2\log n)=O(\log n)$.<br></p>
 
 </div>
-<p>On entre au pire $m$ fois dans la boucle <code>while</code>, mais  la boucle <code>for</code> n&rsquo;est exécutée que  $n$ fois car la condition <code>score_actuel &lt;= Scores[sommet_actuel]</code> nous assure de ne traiter qu&rsquo;une seule fois chaque sommet.
-$$\sum_{O(m)}T(\text{retirer la racine du tas})+\sum_{u \in S}\left(\sum_{v\in Succ(u)}\left(T(\text{mettre à jour le score})+T(\text{placer dans le tas})\right)\right)= O(m\log n+m\log n) = O(m \log n)$$</p>
+<p>On entre au pire $m$ fois dans la boucle <code>while</code>, mais  la boucle <code>for</code> n&rsquo;est exécutée que  $n$ fois car la condition <code>score_actuel &lt;= Scores[sommet_actuel]</code> nous assure de ne traiter qu&rsquo;une seule fois chaque sommet.</p>
+<div id="debord">
+$$\sum_{O(m)}T(\text{retirer la racine du tas})+\sum_{u \in S}\left(\sum_{v\in Succ(u)}\left(T(\text{mettre à jour le score})+T(\text{placer dans le tas})\right)\right)= O(m\log n+m\log n) = O(m \log n)$$
+</div>
 
 <div class="notices note" ><p>Cette implémentation n&rsquo;est réellement avantageuse que si le graphe est creux (pour ne pas avoir $|A|$ de l&rsquo;ordre de $|S|^2$). Mais même si le tas contient au pire de l&rsquo;ordre de $|A|$ éléments, c&rsquo;est en pratique quasiment jamais le cas puisqu&rsquo;il faudrait qu&rsquo;à chaque arête parcourue lors de l&rsquo;inspection des voisins, il y ait mise à jour du score d&rsquo;un sommet (pour provoquer son ajout au tas).</p>
 
@@ -2635,19 +2644,19 @@ $$\sum_{O(m)}T(\text{retirer la racine du tas})+\sum_{u \in S}\left(\sum_{v\in S
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1782772212"></script>
-    <script src="/js/perfect-scrollbar.min.js?1782772212"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1782772212"></script>
-    <script src="/js/jquery.sticky.js?1782772212"></script>
-    <script src="/js/featherlight.min.js?1782772212"></script>
-    <script src="/js/highlight.pack.js?1782772212"></script>
+    <script src="/js/clipboard.min.js?1782778663"></script>
+    <script src="/js/perfect-scrollbar.min.js?1782778663"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1782778663"></script>
+    <script src="/js/jquery.sticky.js?1782778663"></script>
+    <script src="/js/featherlight.min.js?1782778663"></script>
+    <script src="/js/highlight.pack.js?1782778663"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1782772212"></script>
-    <script src="/js/learn.js?1782772212"></script>
-    <script src="/js/hugo-learn.js?1782772212"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1782778663"></script>
+    <script src="/js/learn.js?1782778663"></script>
+    <script src="/js/hugo-learn.js?1782778663"></script>
     
         
-            <script src="/mermaid/mermaid.js?1782772212"></script>
+            <script src="/mermaid/mermaid.js?1782778663"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
