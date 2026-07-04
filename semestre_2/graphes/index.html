@@ -33,22 +33,22 @@ window.MathJax = {
     
 
     
-    <link href="/css/nucleus.css?1783114711" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1783114711" rel="stylesheet">
-    <link href="/css/hybrid.css?1783114711" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1783114711" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1783114711" rel="stylesheet">
-    <link href="/css/auto-complete.css?1783114711" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1783114711" rel="stylesheet">
-    <link href="/css/theme.css?1783114711" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1783114711" rel="stylesheet">
+    <link href="/css/nucleus.css?1783205156" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1783205156" rel="stylesheet">
+    <link href="/css/hybrid.css?1783205156" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1783205156" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1783205156" rel="stylesheet">
+    <link href="/css/auto-complete.css?1783205156" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1783205156" rel="stylesheet">
+    <link href="/css/theme.css?1783205156" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1783205156" rel="stylesheet">
     
-    <link href="/css/theme-green.css?1783114711" rel="stylesheet">
+    <link href="/css/theme-green.css?1783205156" rel="stylesheet">
     
-    <link href="/css/foo.css?1783114711" rel="stylesheet"><link href="/css/bar.css?1783114711" rel="stylesheet">
+    <link href="/css/foo.css?1783205156" rel="stylesheet"><link href="/css/bar.css?1783205156" rel="stylesheet">
 
 
-    <script src="/js/jquery-3.3.1.min.js?1783114711"></script>
+    <script src="/js/jquery-3.3.1.min.js?1783205156"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -89,14 +89,14 @@ window.MathJax = {
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1783114711"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1783114711"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1783205156"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1783205156"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/info-tsi-vieljeux.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1783114711"></script>
+<script type="text/javascript" src="/js/search.js?1783205156"></script>
 
     
   </div>
@@ -1451,11 +1451,11 @@ La ligne A du RER forme un arbre, mais pas la ligne C.</p>
 <p>La notion de longueur de chemin nous permet ensuite de définir la notion de distance dans un graphe.</p>
 
 <div class="notices def" ><p>Soit un graphe $G=(S,A)$.
-La <strong>distance</strong> d&rsquo;un sommet à un autre est la longueur du plus court chemin/chaîne entre ces deux sommets, ou $\infty$ s&rsquo;il n&rsquo;y a pas de tel chemin/chaîne :<br>
-$$
+La <strong>distance</strong> d&rsquo;un sommet à un autre est la longueur du plus court chemin/chaîne entre ces deux sommets, ou $\infty$ s&rsquo;il n&rsquo;y a pas de tel chemin/chaîne :<br>
+$
 \forall x,y \in S,d(x,y)=\left\lbrace
 \begin{array}{ll} k \; &amp;\text{longueur du plus court chemin s&rsquo;il existe}\\ \infty  &amp;\text{sinon}\end{array}\right.
-$$</p>
+$</p>
 
 </div>
 
@@ -1640,12 +1640,14 @@ Comme souvent en python, un module dédié, ici <code>collecions.deque</code>, v
 </span></span><span style="display:flex;"><span>            Vus[sommet] <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
 </span></span><span style="display:flex;"><span>            Sommets<span style="color:#f92672">.</span>append(sommet) 
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Sommets
-</span></span></code></pre></div><p><code>parcours_largeur(G,&quot;Bob&quot;)</code> renvoie
+</span></span></code></pre></div><p style="overflow-x:auto;">
+<code>parcours_largeur(G,"Bob")</code> renvoie
 <code>['Bob', 'Alice', 'Dave', 'Charlie', 'Elisa', 'Farid', 'Gus', 'Hector']</code>.
+</p>
 
 <div class="notices warning" ><p>Si on ne marque pas les sommets vus (ici grâce au dictionnaire <code>Vus</code>), on  se retrouve avec une boucle infinie dès qu&rsquo;il y a un circuit ou un cycle (le simple graphe 🦉⇆🐘 par exemple).</p>
 
-</div></p>
+</div>
 <p> 
  </p>
 <p><strong>Exemples d&rsquo;applications du parcours en largeur :</strong></p>
@@ -1677,8 +1679,10 @@ Comme souvent en python, un module dédié, ici <code>collecions.deque</code>, v
 </span></span><span style="display:flex;"><span>            Vus[sommet] <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
 </span></span><span style="display:flex;"><span>            Sommets<span style="color:#f92672">.</span>append(sommet) 
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Sommets
-</span></span></code></pre></div><p><code>parcours_profondeur(G,&quot;Bob&quot;)</code> renvoie
-<code>['Bob', 'Charlie', 'Hector', 'Elisa', 'Dave', 'Gus', 'Farid', 'Alice']</code>.</p>
+</span></span></code></pre></div><p style="overflow-x:auto;">
+<code>parcours_profondeur(G,"Bob")</code> renvoie
+<code>['Bob', 'Charlie', 'Hector', 'Elisa', 'Dave', 'Gus', 'Farid', 'Alice']</code>.
+</p>
 <p> </p>
 <p><strong>Exemples d&rsquo;applications du parcours en profondeur :</strong></p>
 <ul>
@@ -2644,19 +2648,19 @@ $$\sum_{O(m)}T(\text{retirer la racine du tas})+\sum_{u \in S}\left(\sum_{v\in S
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1783114711"></script>
-    <script src="/js/perfect-scrollbar.min.js?1783114711"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1783114711"></script>
-    <script src="/js/jquery.sticky.js?1783114711"></script>
-    <script src="/js/featherlight.min.js?1783114711"></script>
-    <script src="/js/highlight.pack.js?1783114711"></script>
+    <script src="/js/clipboard.min.js?1783205156"></script>
+    <script src="/js/perfect-scrollbar.min.js?1783205156"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1783205156"></script>
+    <script src="/js/jquery.sticky.js?1783205156"></script>
+    <script src="/js/featherlight.min.js?1783205156"></script>
+    <script src="/js/highlight.pack.js?1783205156"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1783114711"></script>
-    <script src="/js/learn.js?1783114711"></script>
-    <script src="/js/hugo-learn.js?1783114711"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1783205156"></script>
+    <script src="/js/learn.js?1783205156"></script>
+    <script src="/js/hugo-learn.js?1783205156"></script>
     
         
-            <script src="/mermaid/mermaid.js?1783114711"></script>
+            <script src="/mermaid/mermaid.js?1783205156"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
