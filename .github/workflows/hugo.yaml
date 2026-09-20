@@ -39,7 +39,12 @@ jobs:
       - name: Construire le site
         env:
           HUGO_BASEURL: ${{ steps.pages.outputs.base_url }}
-        run: hugo --minify --baseURL "${HUGO_BASEURL}"
+        # Pas de --minify : le premier graphique Plotly de
+        # Semestre_3/tp11.md est tronqué en plein milieu de son tableau
+        # de données JSON (copier-coller incomplet), ce qui casse le
+        # parseur JS du minifieur. Reconstituer les données manquantes
+        # n'est pas sûr à faire à l'aveugle, donc on ne minifie pas.
+        run: hugo --baseURL "${HUGO_BASEURL}"
 
       - name: Publier l'artefact Pages
         uses: actions/upload-pages-artifact@v3
