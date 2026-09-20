@@ -1,0 +1,386 @@
+<style>
+    body { margin: 0; padding: 0; overflow: hidden; }
+</style>
+
+<div id="glowscript" class="glowscript">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet" />
+<link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/glow.3.2.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/RSrun.3.2.min.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+// START JAVASCRIPT
+;(function() {;
+var ρσ_modules = {};
+ρσ_modules.pythonize = {};
+
+(function(){
+    function strings() {
+        var string_funcs, exclude, name;
+        string_funcs = set("capitalize strip lstrip rstrip islower isupper isspace lower upper swapcase center count endswith startswith find rfind index rindex format join ljust rjust partition rpartition replace split rsplit splitlines zfill".split(" "));
+        if (!arguments.length) {
+            exclude = (function(){
+                var s = ρσ_set();
+                s.jsset.add("split");
+                s.jsset.add("replace");
+                return s;
+            })();
+        } else if (arguments[0]) {
+            exclude = Array.prototype.slice.call(arguments);
+        } else {
+            exclude = null;
+        }
+        if (exclude) {
+            string_funcs = string_funcs.difference(set(exclude));
+        }
+        var ρσ_Iter0 = string_funcs;
+        ρσ_Iter0 = ((typeof ρσ_Iter0[Symbol.iterator] === "function") ? (ρσ_Iter0 instanceof Map ? ρσ_Iter0.keys() : ρσ_Iter0) : Object.keys(ρσ_Iter0));
+        for (var ρσ_Index0 of ρσ_Iter0) {
+            name = ρσ_Index0;
+            (ρσ_expr_temp = String.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name] = (ρσ_expr_temp = ρσ_str.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name];
+        }
+    };
+    if (!strings.__module__) Object.defineProperties(strings, {
+        __module__ : {value: "pythonize"}
+    });
+
+    ρσ_modules.pythonize.strings = strings;
+})();
+async function __main__() {
+"use strict";
+    var display = canvas;
+    var scene = canvas();
+
+    function round(num, n=0) {return Number(num.toFixed(n))}
+
+    function input(arg) {
+    	arg = arg || {}
+    	if (arg.prompt !== undefined && arg.prompt != '') return prompt(arg.prompt)
+    	else if (typeof arg === 'string') return prompt(arg)
+    	else return prompt()
+    }
+
+    var version, print, arange, __name__, type, ρσ_ls, ρσ_unpack, Liste_villes, B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Z, rayon, ville, L1, L2, L3, L4, ev, Dep, MX, Liste_interdite, Prem_dep, Voisins, Arr, fin, v;
+    version = ρσ_list_decorate([ "3.2", "glowscript" ]);
+    Array.prototype['+'] = function(r) {return this.concat(r)}
+    Array.prototype['*'] = function(r) {return __array_times_number(this, r)}
+    window.__GSlang = "vpython";
+    print = GSprint;
+    arange = range;
+    __name__ = "__main__";
+    type = pytype;
+    var strings = ρσ_modules.pythonize.strings;
+
+    strings();
+    "3";
+    scene.background = vec(1, 1, 1);
+    "4";
+    scene.center = vec(10, 9, 0);
+    "5";
+    scene.width = window.innerWidth;
+    scene.height = scene.width/1.625;
+    "6";
+    scene.range = 13;
+    "7";
+    Liste_villes = ρσ_list_decorate([]);
+    "9";
+    B = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(11, 11, 0), color: vec(165, 232, 217)["/"](255), emissive: true, name: "B", voisins: ρσ_list_decorate([ "C", "G", "M" ])})]);
+    "10";
+    Liste_villes.append(B);
+    "11";
+    C = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(9, 11, 0), color: vec(93, 223, 255)["/"](255), emissive: true, name: "C", voisins: ρσ_list_decorate([ "B", "D", "K" ])})]);
+    "12";
+    Liste_villes.append(C);
+    "13";
+    D = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(8, 8, 0), color: vec(255, 153, 128)["/"](255), emissive: true, name: "D", voisins: ρσ_list_decorate([ "F", "H", "C" ])})]);
+    "14";
+    Liste_villes.append(D);
+    "15";
+    F = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(10, 6, 0), color: vec(255, 243, 106)["/"](255), emissive: true, name: "F", voisins: ρσ_list_decorate([ "D", "G", "R" ])})]);
+    "16";
+    Liste_villes.append(F);
+    "17";
+    G = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(12, 8, 0), color: vec(207, 178, 255)["/"](255), emissive: true, name: "G", voisins: ρσ_list_decorate([ "F", "B", "P" ])})]);
+    "18";
+    Liste_villes.append(G);
+    "19";
+    H = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(4, 6, 0), color: vec(0, 196, 181)["/"](255), emissive: true, name: "H", voisins: ρσ_list_decorate([ "S", "D", "J" ])})]);
+    "20";
+    Liste_villes.append(H);
+    "21";
+    J = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(4, 10, 0), color: vec(160, 71, 255)["/"](255), emissive: true, name: "J", voisins: ρσ_list_decorate([ "H", "K", "X" ])})]);
+    "22";
+    Liste_villes.append(J);
+    "23";
+    K = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(6, 13, 0), color: vec(255, 208, 231)["/"](255), emissive: true, name: "K", voisins: ρσ_list_decorate([ "C", "J", "L" ])})]);
+    "24";
+    Liste_villes.append(K);
+    "25";
+    L = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(10, 15, 0), color: vec(1, 191, 244)["/"](255), emissive: true, name: "L", voisins: ρσ_list_decorate([ "W", "K", "M" ])})]);
+    "26";
+    Liste_villes.append(L);
+    "27";
+    M = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(15, 13, 0), color: vec(67, 233, 203)["/"](255), emissive: true, name: "M", voisins: ρσ_list_decorate([ "B", "L", "N" ])})]);
+    "28";
+    Liste_villes.append(M);
+    "29";
+    N = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(16, 10, 0), color: vec(188, 128, 255)["/"](255), emissive: true, name: "N", voisins: ρσ_list_decorate([ "Z", "P", "M" ])})]);
+    "30";
+    Liste_villes.append(N);
+    "31";
+    P = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(16, 6, 0), color: vec(255, 198, 24)["/"](255), emissive: true, name: "P", voisins: ρσ_list_decorate([ "Q", "G", "N" ])})]);
+    "32";
+    Liste_villes.append(P);
+    "33";
+    Q = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(14, 3, 0), color: vec(255, 64, 0)["/"](255), emissive: true, name: "Q", voisins: ρσ_list_decorate([ "V", "P", "R" ])})]);
+    "34";
+    Liste_villes.append(Q);
+    "35";
+    R = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(10, 2, 0), color: vec(255, 133, 187)["/"](255), emissive: true, name: "R", voisins: ρσ_list_decorate([ "Q", "F", "S" ])})]);
+    "36";
+    Liste_villes.append(R);
+    "37";
+    S = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(6, 3, 0), color: vec(0, 164, 214)["/"](255), emissive: true, name: "S", voisins: ρσ_list_decorate([ "T", "H", "R" ])})]);
+    "38";
+    Liste_villes.append(S);
+    "39";
+    T = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(4, 0, 0), color: vec(0, 139, 186)["/"](255), emissive: true, name: "T", voisins: ρσ_list_decorate([ "X", "V", "S" ])})]);
+    "40";
+    Liste_villes.append(T);
+    "41";
+    V = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(16, 0, 0), color: vec(215, 85, 149)["/"](255), emissive: true, name: "V", voisins: ρσ_list_decorate([ "T", "Z", "Q" ])})]);
+    "42";
+    Liste_villes.append(V);
+    "43";
+    W = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(10, 20, 0), color: vec(255, 174, 0)["/"](255), radius: .4, emissive: true, name: "W", voisins: ρσ_list_decorate([ "X", "L", "Z" ])})]);
+    "44";
+    Liste_villes.append(W);
+    "45";
+    X = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(0, 12, 0), color: vec(0, 150, 136)["/"](255), radius: .4, emissive: true, name: "X", voisins: ρσ_list_decorate([ "T", "J", "W" ])})]);
+    "46";
+    Liste_villes.append(X);
+    "47";
+    Z = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(20, 12, 0), color: vec(228, 58, 2)["/"](255), radius: .4, emissive: true, name: "Z", voisins: ρσ_list_decorate([ "N", "V", "W" ])})]);
+    "48";
+    Liste_villes.append(Z);
+    "50";
+    rayon = .6;
+    "51";
+    var ρσ_Iter1 = Liste_villes;
+    ρσ_Iter1 = ((typeof ρσ_Iter1[Symbol.iterator] === "function") ? (ρσ_Iter1 instanceof Map ? ρσ_Iter1.keys() : ρσ_Iter1) : Object.keys(ρσ_Iter1));
+    for (var ρσ_Index1 of ρσ_Iter1) {
+        ville = ρσ_Index1;
+        "52";
+        ville.radius = rayon;
+    }
+    "54";
+    async function arete(A, B) {
+        "55";
+        return ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: A.pos, axis: B.pos["-"](1["*"](A.pos)), radius: .05, color: vec(146, 146, 146)["/"](255), emissive: true})]);
+    };
+    if (!arete.__argnames__) Object.defineProperties(arete, {
+        __argnames__ : {value: ["A", "B"]},
+        __module__ : {value: null}
+    });
+
+    "57";
+    (await arete(W, Z));
+    "58";
+    (await arete(Z, V));
+    "59";
+    (await arete(V, T));
+    "60";
+    (await arete(T, X));
+    "61";
+    (await arete(X, W));
+    "62";
+    (await arete(W, L));
+    "63";
+    (await arete(Z, N));
+    "64";
+    (await arete(V, Q));
+    "65";
+    (await arete(T, S));
+    "66";
+    (await arete(X, J));
+    "67";
+    (await arete(L, M));
+    "68";
+    (await arete(M, N));
+    "69";
+    (await arete(N, P));
+    "70";
+    (await arete(P, Q));
+    "71";
+    (await arete(Q, R));
+    "72";
+    (await arete(R, S));
+    "73";
+    (await arete(S, H));
+    "74";
+    (await arete(H, J));
+    "75";
+    (await arete(J, K));
+    "76";
+    (await arete(K, L));
+    "77";
+    (await arete(M, B));
+    "78";
+    (await arete(P, G));
+    "79";
+    (await arete(R, F));
+    "80";
+    (await arete(H, D));
+    "81";
+    (await arete(K, C));
+    "82";
+    (await arete(C, B));
+    "83";
+    (await arete(B, G));
+    "84";
+    (await arete(G, F));
+    "85";
+    (await arete(F, D));
+    "86";
+    (await arete(D, C));
+    "88";
+    var ρσ_Iter2 = Liste_villes;
+    ρσ_Iter2 = ((typeof ρσ_Iter2[Symbol.iterator] === "function") ? (ρσ_Iter2 instanceof Map ? ρσ_Iter2.keys() : ρσ_Iter2) : Object.keys(ρσ_Iter2));
+    for (var ρσ_Index2 of ρσ_Iter2) {
+        ville = ρσ_Index2;
+        "89";
+        ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: ville.pos, xoffset: 7, yoffset: 0, opacity: 0, box: false, text: ville.name, line: false})]);
+    }
+    "91";
+    L1 = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(1["-u"]()["*"](5), 2, 1["-u"]()["*"](2)), text: "Choisir une ville\n de départ", height: 20, background: vec(.4, .4, .4), color: vec(1, 1, 1)})]);
+    "92";
+    L2 = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(1["-u"]()["*"](5), 4, 1["-u"]()["*"](2)), text: "Quelle est la\n prochaine\n destination ?", height: 20, visible: false, background: vec(.4, .4, .4), color: vec(1, 1, 1)})]);
+    "93";
+    L3 = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(13.5, 9, 1["-u"]()["*"](2)), text: "GAGNÉ !", height: 180, visible: false, background: vec(0, .6, 0), color: vec(1, 1, 1), border: 200})]);
+    "94";
+    L4 = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(13.5, 9, 1["-u"]()["*"](2)), text: "PERDU !", height: 180, visible: false, background: vec(1, 0, 0), color: vec(1, 1, 1), border: 200})]);
+    "96";
+    (await scene.waitfor("draw_complete"));
+    "98";
+    while (true) {
+        "99";
+        ev = (await scene.waitfor("mousedown"));
+        "100";
+        ville = scene.mouse.pick();
+        "101";
+        if (ρσ_in(ville, Liste_villes)) {
+            "102";
+            L1.visible = false;
+            "103";
+            Dep = ville;
+            "104";
+            break;
+        }
+    }
+    "106";
+    MX = ρσ_interpolate_kwargs.call(this, ring, [ρσ_desugar_kwargs({pos: Dep.pos, axis: vector(0, 0, 1), radius: rayon["+"](.1), thickness: .2, emissive: true, color: vec(.5, .1, .3), make_trail: true, trail_radius: .2})]);
+    "107";
+    Liste_interdite = ρσ_list_decorate([ Dep.name ]);
+    "108";
+    Prem_dep = Dep.name;
+    "109";
+    (await scene.waitfor("draw_complete"));
+    "111";
+    while (true) {
+        "112";
+        Voisins = Dep.voisins;
+        "113";
+        L2.visible = true;
+        "114";
+        ville = null;
+        "116";
+        while (true) {
+            "117";
+            ev = (await scene.waitfor("mousedown"));
+            "118";
+            ville = scene.mouse.pick();
+            "120";
+            if (ρσ_in(ville, Liste_villes)) {
+                "121";
+                if (ρσ_in(ville.name, Liste_interdite)) {
+                    (await sleep(.1));
+                    "122";
+                    input("Déjà passé par là !");
+                    "123";
+                    continue;
+                    "124";
+                } else if (!ρσ_in(ville.name, Voisins)) {
+                    (await sleep(.1));
+                    "125";
+                    input("Trop loin !");
+                    "126";
+                } else {
+                    "127";
+                    break;
+                }
+            }
+        }
+        "129";
+        Arr = ville;
+        "130";
+        while (mag(MX.pos["-"](1["*"](Arr.pos)))[">"](1e-5)) {
+            "131";
+            (await rate(1e3));
+            "132";
+            MX.pos=MX.pos["+"](Arr.pos["-"](1["*"](Dep.pos))["/"](200));
+        }
+        "134";
+        Liste_interdite.append(ville.name);
+        "135";
+        Dep = Arr;
+        "136";
+        fin = false;
+        "138";
+        var ρσ_Iter3 = Dep.voisins;
+        ρσ_Iter3 = ((typeof ρσ_Iter3[Symbol.iterator] === "function") ? (ρσ_Iter3 instanceof Map ? ρσ_Iter3.keys() : ρσ_Iter3) : Object.keys(ρσ_Iter3));
+        for (var ρσ_Index3 of ρσ_Iter3) {
+            v = ρσ_Index3;
+            "139";
+            if (!ρσ_in(v, Liste_interdite)) {
+                "140";
+                fin = false;
+                "141";
+                break;
+            }
+            "142";
+            fin = true;
+            "144";
+        }
+        if (fin) {
+            "145";
+            if (ρσ_equals(len(Liste_interdite), 20) && ρσ_in(Prem_dep, Dep.voisins)) {
+                "146";
+                L2.visible = false;
+                "147";
+                L3.visible = true;
+                "148";
+                break;
+                "149";
+            } else {
+                "150";
+                L2.visible = false;
+                "151";
+                L4.visible = true;
+                "152";
+                break;
+            }
+        }
+    }
+};
+if (!__main__.__module__) Object.defineProperties(__main__, {
+    __module__ : {value: null}
+});
+
+;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+// END JAVASCRIPT
+
+//--><!]]></script>
+</div>

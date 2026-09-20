@@ -1,0 +1,4 @@
+{{ if not (.Page.Scratch.Get "plotlyloaded") }}
+  {{ .Page.Scratch.Set "plotlyloaded" true }}
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+{{ end }}

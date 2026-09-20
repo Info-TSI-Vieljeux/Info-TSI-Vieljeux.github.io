@@ -1,0 +1,19 @@
+<!-- partials/math.html -->
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']]
+  },
+
+  /* Gestion des formules trop larges (nouveauté v4) */
+  displayOverflow: 'linebreak',   // coupe les équations plutôt que déborder
+};
+</script>
+
+<!-- CHTML = rendu HTML+CSS (recommandé si tu veux le line-breaking) -->
+<script async
+  src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-chtml.js"
+  id="MathJax-script"></script>
+
