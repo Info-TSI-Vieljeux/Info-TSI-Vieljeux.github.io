@@ -139,10 +139,8 @@ Règles sur les noms de variables :
 - ils peuvent contenir n'importe quelles lettres ou chiffres et le tiret-bas "_" mais ne doivent pas commencer par un chiffre.
 - certains noms sont interdits (attention en particulier à lambda) :
 
-`and`  `assert`  `break`  `class`  `continue`  `def`  `del`  `elif`  `else`  `except`  `finally`  `for`  `from`  `global`  `if` \
-`import`  `in`  `is`  `lambda`  `nonlocal`  `not`  `or`  `pass`  `print`  `raise`  `return`  `try`  `while`  `yield`
 
-
+<code>and</code> <code>assert</code> <code>break</code> <code>class</code> <code>continue</code> <code>def</code> <code>del</code> <code>elif</code> <code>else</code> <code>except</code> <code>finally</code>  <code>for</code> <code>from</code> <code>global</code> <code>if</code> <code>import</code> <code>in</code> <code>is</code> <code>lambda</code> <code>nonlocal</code> <code>not</code> <code>or</code> <code>pass</code> <code>print</code> <code>raise</code> <code>return</code> <code>try</code> <code>while</code> <code>yield</code>
 
 {{% notice warning%}} 
 
